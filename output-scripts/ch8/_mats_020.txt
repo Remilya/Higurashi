@@ -1,0 +1,3352 @@
+// Higurashi Türkçe Çeviri & Yerelleştirme: @Remilya | https://github.com/Remilya/Higurashi
+void main()
+{
+
+	PlayBGM( 1, "semi_r", 120, 0 );
+
+	ModSetLayerFilter(1, 256, "none");
+	ModDrawCharacter(1, 9, "sprite/ta1_human_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 8, 0, FALSE );
+	DrawSceneWithMask( "background/chika_sekyurithi", "maskup", 1, 0, 300 );
+
+	ClearMessage();
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f6d9a8>鷹野</color>", NULL, "<color=#f6d9a8>Takano</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 9, "ps3/s13/09/ds41080170", 128, TRUE);
+	OutputLine(NULL, "「……確かですわよね？！",
+		   NULL, "\"...Emin misiniz?!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 9, "ps3/s13/09/ds41080171", 128, TRUE);
+	OutputLine(NULL, "　確かに昨日の時点で、入江所長は女王感染者が在宅しているのを確認したんですわよね…？！」",
+		   NULL, " Kraliçe taşıyıcının dün evde olduğunu gerçekten teyit ettiniz mi?\"", Line_Normal);
+	ClearMessage();
+
+	DisableWindow();
+	ModSetLayerFilter(2, 256, "none");
+	ModDrawCharacterWithFiltering(2, 10, "sprite/iri2_majime2_", "0", "maskright", 1, 160, 0, FALSE, 0, 0, 0, 0, 0, 10, 300, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>Irie</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s13/10/ds41100276", 128, TRUE);
+	OutputLine(NULL, "「在宅を確認なんてひどい…。",
+		   NULL, "\"Teyit etmek derken neyi kastediyorsunuz?", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s13/10/ds41100277", 128, TRUE);
+	OutputLine(NULL, "夏風邪を引かれたというので、様子を見に行ったのです。",
+		   NULL, " Sadece soğuk algınlığına yakalandığını duyduğum için uğramıştım.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s13/10/ds41100278", 128, TRUE);
+	OutputLine(NULL, "…………ですから、梨花ちゃんの死体が見付かるなんて、",
+		   NULL, " ......Öyleyse cesedini nasıl bulmuş olabilirler ki?", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s13/10/ds41100279", 128, TRUE);
+	OutputLine(NULL, "はははは、ありえるわけがないじゃないですか。」",
+		   NULL, " Hahahaha, bu imkânsız.\"", Line_Normal);
+	ClearMessage();
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f6d9a8>鷹野</color>", NULL, "<color=#f6d9a8>Takano</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 9, "ps3/s13/09/ds41080172", 128, TRUE);
+	OutputLine(NULL, "「そうですわよ、ありえるわけがないんですわ…。",
+		   NULL, "\"Doğru, bu imkânsız...", Line_WaitForInput);
+	ModPlayVoiceLS(4, 9, "ps3/s13/09/ds41080173", 128, TRUE);
+	OutputLine(NULL, "で、…でも、",
+		   NULL, " A... Ama,", Line_Continue);
+	// (backup) SetValidityOfInput( FALSE );
+	Wait( 800 );
+	// (backup) SetValidityOfInput( TRUE );
+	OutputLine(NULL, "それを確認しないと、信じてしまって、",
+		   NULL, " teyit edilmediği sürece,", Line_Continue);
+	// (backup) SetValidityOfInput( FALSE );
+	Wait( 600 );
+	// (backup) SetValidityOfInput( TRUE );
+	OutputLine(NULL, "その、…誤解する人もいますので…。」",
+		   NULL, " bazıları yanlış anlayabilir...\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	DisableWindow();
+	ModDrawCharacter(2, 10, "sprite/iri2_majime_", "2", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 10, 200, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>Irie</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s13/10/ds41100280", 128, TRUE);
+	OutputLine(NULL, "「誰が、何の誤解をするんですか…？」",
+		   NULL, "\"Kim neyi yanlış anlayacakmış?\"", Line_Normal);
+	ClearMessage();
+
+	DisableWindow();
+	ModDrawCharacter(1, 9, "sprite/ta1_kanashimi_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 8, 200, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f6d9a8>鷹野</color>", NULL, "<color=#f6d9a8>Takano</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 9, "ps3/s13/09/ds41080174", 128, TRUE);
+	OutputLine(NULL, "「……そ、その、",
+		   NULL, "\"...Y-Yani demek istediğim,", Line_Continue);
+	// (backup) SetValidityOfInput( FALSE );
+	Wait( 900 );
+	// (backup) SetValidityOfInput( TRUE );
+	OutputLine(NULL, "……古手梨花が死んだなどと村に知れたら、大変な騒ぎになりますし…。」",
+		   NULL, " Rika Furude'nin öldüğünü öğrenirlerse bütün köy paniğe kapılır...\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　入江は、鷹野の嘘がこれほどわかりやすく苦し紛れだと感じたのはこれが初めてだった。",
+		   NULL, "Artık yalan söylediğinden eminim.", Line_Normal);
+	ClearMessage();
+
+	DrawSceneWithMask( "black", "maskdown", 1, 0, 300 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　……もう富竹さんの調査結果を待つまでもなく、確信できる。",
+		   NULL, "...Tomitake-san'dan haber beklememe bile gerek yok.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　鷹野さんの目的は、緊急マニュアルだ。",
+		   NULL, "Takano-san'ın amacı acil durum yönetmeliğini yürürlüğe koymak.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　…その前提を崩されることを狼狽しているのだ。",
+		   NULL, "...Bunun temel dayanağı yıkılmak üzere ve bu yüzden panikliyor.", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　…彼女に対し、同情的に言えば、……誰も理解を示さなかった研究に、誰かが理解を示し、彼女の拠り所になってくれた。",
+		   NULL, "...Sonunda araştırmasına ilgi gösteren birini bulmuştu... ve bu da kendisini daha iyi hissetmesini sağlamıştı.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　……その、海原に浮かぶ藁のような儚い拠り所に、切り捨てられたくなくて……、こうして慌てふためいているのだ。",
+		   NULL, "...Oysa o kişi şimdi onunla bağlarını koparmak üzere... işte bu yüzden panikliyor.", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　それはこの上なく哀れな姿。",
+		   NULL, "Olabildiğince acınası bir halde.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　…もし可能で、伸ばすべき手があるならば、…溺れる彼女に手を差し伸べたいと思った。",
+		   NULL, "...Eğer mümkün olsaydı, ona ulaşmanın bir yolu olsaydı, boğulmaktan kurtarmak için ona elimi uzatırdım.", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　……だが、手が、届かない。",
+		   NULL, "Ama elim ona asla ulaşamayacak.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　彼女が伸ばさない限り。",
+		   NULL, "O kendi elini uzatmadığı sürece ona ulaşamayacak.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　…自分が溺れていて、助けを欲していることを認めない限り、手は届かない。",
+		   NULL, "...Boğuluyor ama yardım istemeyi reddettiği sürece ona asla ulaşamayacağım.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　彼女はそれに気付かない限り、私がいくら手を伸ばしてもそれを払いのけるだろう。",
+		   NULL, "Bunu kendi başına fark edene dek, elimi ne kadar uzatırsam uzatayım yardım elimi reddedecek.", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　……だが、私のその他人事な想像はすぐに打ち切られた。",
+		   NULL, "...Ancak bencil hayal gücümün şimdilik burada durması gerekiyor.", Line_Normal);
+	ClearMessage();
+
+	FadeOutBGM( 1, 300, FALSE );
+	PlayBGM( 0, "higurashi_utu", 120, 0 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　梨花ちゃんが在宅しているのかいないのか。",
+		   NULL, "Rika-chan evde mi, değil mi?", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　そこに話が及べば、中にいると言ってきた自分に疑いがかかるということだ。",
+		   NULL, "Eğer ayrıntılara girerse, ona Rika-chan'ı evde gördüğümü söylediğim için benden şüphelenecektir.", Line_WaitForInput);
+	OutputLine(NULL, "………危険が一気に高まったことも意味する。",
+		   NULL, " ...Bu da beni çok tehlikeli bir duruma sokar.", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　さっきから受話器に耳を当てていた隊員が、諦めたような顔をして受話器を置いた。",
+		   NULL, "Bir süredir telefonla konuşmakta olan bir adam ahizeyi yerine koydu.", Line_Normal);
+	ClearMessage();
+
+	DrawSceneWithMask( "background/chika_sekyurithi", "maskup", 1, 0, 300 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>山狗</color>", NULL, "<color=#f5e6d3>Mountain Dog</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_yamab1012", 128, TRUE);
+	OutputLine(NULL, "「……三佐。",
+		   NULL, "\"...Binbaşım.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_yamab1013", 128, TRUE);
+	OutputLine(NULL, "電話に出ません。",
+		   NULL, " Cevap yok.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_yamab1014", 128, TRUE);
+	OutputLine(NULL, "不在のようです。」",
+		   NULL, " Evde kimse yok.\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	DisableWindow();
+	ModDrawCharacterWithFiltering(2, 9, "sprite/ta1_iradachi_", "0", "maskright", 1, 160, 0, FALSE, 0, 0, 0, 0, 0, 10, 300, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f6d9a8>鷹野</color>", NULL, "<color=#f6d9a8>Takano</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 9, "ps3/s13/09/ds41080175", 128, TRUE);
+	OutputLine(NULL, "「監視班は何と言ってるの。」",
+		   NULL, "\"Gözlem birimi ne diyor?\"", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>山狗</color>", NULL, "<color=#f5e6d3>Mountain Dog</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_yamab1015", 128, TRUE);
+	OutputLine(NULL, "「いえ、監視体制に入った１７日以降、外出の形跡はなく、電話の一本もありません。」",
+		   NULL, "\"Gözleme başladıkları gün olan ayın 17'sinden beri tek bir telefon görüşmesi bile yapılmamış.\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	DisableWindow();
+	ModDrawCharacter(2, 9, "sprite/ta1_human_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 10, 200, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f6d9a8>鷹野</color>", NULL, "<color=#f6d9a8>Takano</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 9, "ps3/s13/09/ds41080176", 128, TRUE);
+	OutputLine(NULL, "「ねぇ、入江先生。",
+		   NULL, "\"Hey, Direktör Irie......", Line_WaitForInput);
+	ModPlayVoiceLS(4, 9, "ps3/s13/09/ds41080177", 128, TRUE);
+	OutputLine(NULL, "…………ということは、まだ中に梨花ちゃんたちはいる、ということですわよね…？」",
+		   NULL, " Bu, Rika-chan'ın hâlâ evde olduğu anlamına geliyor, değil mi?\"", Line_Normal);
+	ClearMessage();
+
+	DisableWindow();
+	ModDrawCharacterWithFiltering(1, 10, "sprite/iri2_def1_", "0", "maskleft", 1, -160, 0, FALSE, 0, 0, 0, 0, 0, 8, 300, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>Irie</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s13/10/ds41100281", 128, TRUE);
+	OutputLine(NULL, "「……え、…えぇ。",
+		   NULL, "\"Eh, ah... evet.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s13/10/ds41100282", 128, TRUE);
+	OutputLine(NULL, "そういうことだと思いますが、はは、どうでしょう。",
+		   NULL, " Sanırım öyle... Emin değilim.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s13/10/ds41100283", 128, TRUE);
+	OutputLine(NULL, "もうだいぶ治りかけて元気になってますからねぇ。",
+		   NULL, " Durumu çok daha iyiye gitmişti.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s13/10/ds41100284", 128, TRUE);
+	OutputLine(NULL, "うまく抜け出して遊びに行ってるのかもしれません。",
+		   NULL, " Belki gizlice dışarı sıvışmıştır ya da öyle bir şeydir.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s13/10/ds41100285", 128, TRUE);
+	OutputLine(NULL, "……ほら、今日は綿流しのお祭りじゃありませんか。",
+		   NULL, " ...Bugün festival günü, hatırlıyorsunuz değil mi? ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>Irie</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s13/10/ds41100286", 128, TRUE);
+	OutputLine(NULL, "梨花ちゃんの家の近くには確か、模擬店部会の水場が設けられていたはずです。",
+		   NULL, "Sanırım Rika-chan'ın evinin yakınlarında kurulmuş birkaç tezgâh var.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s13/10/ds41100287", 128, TRUE);
+	OutputLine(NULL, "人の出入りも多いですから、監視の方が見逃してしまった可能性も…。」",
+		   NULL, " Etrafta çok fazla insan var, belki gözlemcileriniz onu gözden kaçırmıştır.\"", Line_Normal);
+	ClearMessage();
+
+	DrawScene( "background/chika_sekyurithi", 300 );
+	ModSetLayerFilter(0, 256, "none");
+	ModDrawCharacterWithFiltering(0, 9, "sprite/ta1_hatena_", "0", "maskright", 1, 0, 0, FALSE, 0, 0, 0, 0, 0, 9, 300, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f6d9a8>鷹野</color>", NULL, "<color=#f6d9a8>Takano</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 9, "ps3/s13/09/ds41080178", 128, TRUE);
+	OutputLine(NULL, "「…どうなの？",
+		   NULL, "\"...Ee?", Line_WaitForInput);
+	ModPlayVoiceLS(4, 9, "ps3/s13/09/ds41080179", 128, TRUE);
+	OutputLine(NULL, "　そんなことはありえるの？」",
+		   NULL, " Böyle bir şey mümkün olabilir mi?\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>山狗</color>", NULL, "<color=#f5e6d3>Mountain Dog</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_yamab1016", 128, TRUE);
+	OutputLine(NULL, "「入江所長が出られた後には必ずシールしています。",
+		   NULL, "\"Direktör Irie her ayrıldığında, arkasından eve mühür yerleştiriyoruz.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_yamab1017", 128, TRUE);
+	OutputLine(NULL, "まさか、窓から出たのでもない限りありえないでしょう。」",
+		   NULL, " Pencereden dışarı çıkmış olabileceğini sanmıyorum.\"", Line_Normal);
+	ClearMessage();
+
+	DisableWindow();
+	ModDrawCharacter(0, 9, "sprite/ta1_human_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 9, 200, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f6d9a8>鷹野</color>", NULL, "<color=#f6d9a8>Takano</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 9, "ps3/s13/09/ds41080180", 128, TRUE);
+	OutputLine(NULL, "「山狗は、あくまでもＲは家を出ていないと、そう言うのよね…？」",
+		   NULL, "\"Yani Dağ Köpekleri, R'nin evden ayrılmadığından emin, değil mi?\"", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>山狗</color>", NULL, "<color=#f5e6d3>Mountain Dog</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_yamab1018", 128, TRUE);
+	OutputLine(NULL, "「そうです。",
+		   NULL, "\"Evet.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_yamab1019", 128, TRUE);
+	OutputLine(NULL, "間違いありません。",
+		   NULL, " Eminiz.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_yamab1020", 128, TRUE);
+	OutputLine(NULL, "ＲはＲ宅内です。",
+		   NULL, " R, R konutunun içinde.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_yamab1021", 128, TRUE);
+	OutputLine(NULL, "そして１７日以降、一度たりとも外出していません。",
+		   NULL, " Ve ayın 17'sinden beri evden dışarı çıkmadı.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_yamab1022", 128, TRUE);
+	OutputLine(NULL, "絶対に在宅しています。」",
+		   NULL, " Bundan eminiz.\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f6d9a8>鷹野</color>", NULL, "<color=#f6d9a8>Takano</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 9, "ps3/s13/09/ds41080181", 128, TRUE);
+	OutputLine(NULL, "「……それを確認したのが入江所長だけで、山狗の誰一人確認していないのに、そうだと言える…、",
+		   NULL, "\"...İçeriyi kontrol eden tek kişi Direktör Irie'ydi ve Dağ Köpekleri'nden kimse bakmadı...", Line_Continue);
+	// (backup) SetValidityOfInput( FALSE );
+	Wait( 600 );
+	// (backup) SetValidityOfInput( TRUE );
+	OutputLine(NULL, "……のね？」",
+		   NULL, " ama yine de bundan eminsiniz, öyle mi?\"", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>山狗</color>", NULL, "<color=#f5e6d3>Mountain Dog</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_yamab1023", 128, TRUE);
+	OutputLine(NULL, "「……ぇっと、…………………ぅ。」",
+		   NULL, "\"...Şey, ımm......... hım.\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　山狗の隊員が助け舟を求めるように入江を見る。",
+		   NULL, "Dağ Köpekleri'nden biri bana baktı.", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　…入江は一度、固い唾を飲み込んでから、それに頷き返してやった。",
+		   NULL, "...Yutkundum ve ardından başımla onu onayladım.", Line_Normal);
+	ClearMessage();
+
+	DisableWindow();
+	ModDrawCharacter(0, 9, "sprite/ta1_sakebi_", "2", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 9, 200, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f6d9a8>鷹野</color>", NULL, "<color=#f6d9a8>Takano</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 9, "ps3/s13/09/ds41080182", 128, TRUE);
+	OutputLine(NULL, "「なら、どうして興宮署でＲの死体が出てきたりするのッ？！」",
+		   NULL, "\"Öyleyse karakoldaki R'nin cesedini nasıl açıklıyorsunuz?\"", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>山狗</color>", NULL, "<color=#f5e6d3>Mountain Dog</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_yamab1024", 128, TRUE);
+	OutputLine(NULL, "「ですからそれは誤報の可能性も…。",
+		   NULL, "\"Dediğim gibi, bir tür hata yapmış olmaları mümkün.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_yamab1025", 128, TRUE);
+	OutputLine(NULL, "その後の情報では身元不明死体の検死はまだ終わっておらず、古手梨花であるというのは何者かの憶測に過ぎない可能性が高いと…。」",
+		   NULL, " Otopsi henüz tamamlanmadı ve cesedin Rika Furude'ye ait olduğu doğrulanmadı. Sadece bir söylentiden ibaret olabilir...\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f6d9a8>鷹野</color>", NULL, "<color=#f6d9a8>Takano</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 9, "ps3/s13/09/ds41080183", 128, TRUE);
+	OutputLine(NULL, "「もうその話は聞き飽きたわッ！！！",
+		   NULL, "\"Bunu zaten söylediniz!!!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 9, "ps3/s13/09/ds41080184", 128, TRUE);
+	OutputLine(NULL, "　その怪情報が流れて、東京にまで伝わってからもう何時間が経過してると思ってるの！！",
+		   NULL, " O söylenti Tokyo'ya ulaştığından beri kaç saat geçti sanıyorsunuz?", Line_WaitForInput);
+	ModPlayVoiceLS(4, 9, "ps3/s13/09/ds41080185", 128, TRUE);
+	OutputLine(NULL, "　このままでは東京に、",
+		   NULL, " Bu konuda bir şey yapmazsak Tokyo......", Line_Continue);
+	// (backup) SetValidityOfInput( FALSE );
+	Wait( 600 );
+	// (backup) SetValidityOfInput( TRUE );
+	OutputLine(NULL, "………ん……。」",
+		   NULL, " hnn...\"", Line_Normal);
+	ClearMessage();
+
+	DisableWindow();
+	FadeBustshotWithFiltering( 0, "mask00" , 0, FALSE, 0, 0, 400, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　鷹野は入江がいることを思い出し、そこまでで口をつぐんだ。",
+		   NULL, "Takano-san hemen yanında durduğumu fark etti ve çenesini kapattı.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　だが、入江はその先に何を続けるつもりだったのか、想像はついていた。",
+		   NULL, "Gerçi ne söylemek istediğini zaten anlayabiliyordum.", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>山狗</color>", NULL, "<color=#f5e6d3>Mountain Dog</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_yamab1026", 128, TRUE);
+	OutputLine(NULL, "「三佐、東京の野村さまよりお電話です。」",
+		   NULL, "\"Binbaşım, Tokyo'dan Nomura-sama sizi telefondan arıyor.\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	DisableWindow();
+	ModDrawCharacterWithFiltering(2, 9, "sprite/ta1_iradachi_", "0", "maskright", 1, 160, 0, FALSE, 0, 0, 0, 0, 0, 10, 300, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f6d9a8>鷹野</color>", NULL, "<color=#f6d9a8>Takano</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 9, "ps3/s13/09/ds41080186", 128, TRUE);
+	OutputLine(NULL, "「……………く…。",
+		   NULL, "\".........Kahretsin...", Line_WaitForInput);
+	ModPlayVoiceLS(4, 9, "ps3/s13/09/ds41080187", 128, TRUE);
+	OutputLine(NULL, "だからしばらく待てと言ってるのに……！」",
+		   NULL, " Ona bana biraz daha zaman vermesini söylemiştim...!\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　普段、あれだけ余裕を見せる鷹野が、人目もはばからず頭を掻き毟る。",
+		   NULL, "Takano-san normalde kendine çok hâkimdir ama şu anda pek iyi durumda değil.", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　彼女の焦る気持ちが、心だけでなく体にも出ていた。",
+		   NULL, "Vücut dili bile ne kadar gergin olduğunu açıkça belli ediyor.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　…体に爪を立てるのが癖なのだろう。",
+		   NULL, "...Kendini kaşıma alışkanlığı mı var acaba?", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　彼女が腕を組む時に指が当たる場所は、ぎゅうっと深い爪の跡が残り、彼女の焦る気持ちを如実に物語っていた。",
+		   NULL, "Kollarını kavuşturduğunda, tırnaklarının tenine değdiği yerlerdeki izleri görebiliyordum. İyi durumda olmadığı çok açık.", Line_Normal);
+	ClearMessage();
+
+	DisableWindow();
+	ModDrawCharacterWithFiltering(1, 10, "sprite/iri2_def2_", "2", "maskleft", 1, -160, 0, FALSE, 0, 0, 0, 0, 0, 8, 300, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>Irie</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s13/10/ds41100288", 128, TRUE);
+	OutputLine(NULL, "「鷹野さんはお忙しいようですね。",
+		   NULL, "\"Takano-san şu anda oldukça meşgul.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s13/10/ds41100289", 128, TRUE);
+	OutputLine(NULL, "私が出ましょう。",
+		   NULL, " Telefona ben bakayım.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s13/10/ds41100290", 128, TRUE);
+	OutputLine(NULL, "野村さんですか？",
+		   NULL, " Nomura-san, değil mi?", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s13/10/ds41100291", 128, TRUE);
+	OutputLine(NULL, "　初めてお電話する方ですね。」",
+		   NULL, " Onunla daha önce hiç konuşmamıştım, değil mi?\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>山狗</color>", NULL, "<color=#f5e6d3>Mountain Dog</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_yamab1027", 128, TRUE);
+	OutputLine(NULL, "「い、いえ、三佐宛てですので…。」",
+		   NULL, "\"Üzgünüm, bu telefon Binbaşı için...\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　隊員は渋る様子で鷹野の顔と見比べる。",
+		   NULL, "Dağ Köpeği sırayla Takano-san'ın ve benim yüzüme baktı.", Line_Normal);
+	ClearMessage();
+
+	DisableWindow();
+	ModDrawCharacter(2, 9, "sprite/ta1_human_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 10, 200, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f6d9a8>鷹野</color>", NULL, "<color=#f6d9a8>Takano</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 9, "ps3/s13/09/ds41080188", 128, TRUE);
+	OutputLine(NULL, "「……入江所長。",
+		   NULL, "\"......Direktör Irie.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 9, "ps3/s13/09/ds41080189", 128, TRUE);
+	OutputLine(NULL, "今、ちょっと立て込んでおりますの。",
+		   NULL, " Halletmem gereken birkaç iş var.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 9, "ps3/s13/09/ds41080190", 128, TRUE);
+	OutputLine(NULL, "大変申し訳ございませんけど、所長室にお戻りいただいてもいいですかしら。」",
+		   NULL, " Lütfen izin verir misiniz?\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	DisableWindow();
+	ModDrawCharacter(1, 10, "sprite/iri2_majime_", "2", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 8, 200, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>Irie</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s13/10/ds41100292", 128, TRUE);
+	OutputLine(NULL, "「……………そうですか。",
+		   NULL, "\"...Oh, elbette.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s13/10/ds41100293", 128, TRUE);
+	OutputLine(NULL, "……そうですね。",
+		   NULL, " ...Anlıyorum.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s13/10/ds41100294", 128, TRUE);
+	OutputLine(NULL, "入江機関の運営はあなたに任せています。",
+		   NULL, " Enstitünün başında siz varsınız.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s13/10/ds41100295", 128, TRUE);
+	OutputLine(NULL, "私が口を出すことではありませんね。」",
+		   NULL, " Hiçbir şey söylememeliyim, ha?\"", Line_Normal);
+	ClearMessage();
+
+	DrawScene( "background/chika_sekyurithi", 300 );
+	ModDrawCharacterWithFiltering(0, 9, "sprite/ta1_human_", "0", "maskright", 1, 0, 0, FALSE, 0, 0, 0, 0, 0, 9, 300, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f6d9a8>鷹野</color>", NULL, "<color=#f6d9a8>Takano</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 9, "ps3/s13/09/ds41080191", 128, TRUE);
+	OutputLine(NULL, "「誰か所長室までお送りして。",
+		   NULL, "\"Birisi onu Direktörün ofisine götürsün.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 9, "ps3/s13/09/ds41080192", 128, TRUE);
+	OutputLine(NULL, "……早く！」",
+		   NULL, " Çabuk!\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　それは露骨な、出て行けと同じ意味の言葉だ。",
+		   NULL, "Temelde bana defolup gitmemi söylüyor.", Line_WaitForInput);
+	OutputLine(NULL, "…入江は刃向かわず、セキュリティルームを後にした。",
+		   NULL, " ...Güvenlik odasından sessizce ayrıldım.", Line_Normal);
+	ClearMessage();
+
+	FadeOutBGM( 0, 400, FALSE );
+	DrawScene( "black", 400 );
+	PlayBGM( 1, "semi_r", 120, 0 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f6d9a8>鷹野</color>", NULL, "<color=#f6d9a8>Takano</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 9, "ps3/s13/09/ds41080193", 128, TRUE);
+	OutputLine(NULL, "「もしもし、鷹野です。",
+		   NULL, "\"Alo, ben Takano.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 9, "ps3/s13/09/ds41080194", 128, TRUE);
+	OutputLine(NULL, "お待たせして申し訳ございませんわ。」",
+		   NULL, " Beklettiğim için özür dilerim.\"", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>野村</color>", NULL, "<color=#f5e6d3>Nomura</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_nomura1086", 128, TRUE);
+	OutputLine(NULL, "「……何度もお電話して申し訳ございませんです。",
+		   NULL, "\"Sizi tekrar tekrar aradığım için kusura bakmayın.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_nomura1087", 128, TRUE);
+	OutputLine(NULL, "いかがですか、興宮署の情報については確認できましたか？」",
+		   NULL, " Peki yeni bir şey öğrenebildiniz mi?\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f6d9a8>鷹野</color>", NULL, "<color=#f6d9a8>Takano</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 9, "ps3/s13/09/ds41080195", 128, TRUE);
+	OutputLine(NULL, "「申し訳ございません。",
+		   NULL, "\"Özür dilerim.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 9, "ps3/s13/09/ds41080196", 128, TRUE);
+	OutputLine(NULL, "今、急ぐように指示をしているところです。",
+		   NULL, " Adamlarıma bu işin aslını derhal öğrenmelerini emrettim.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 9, "ps3/s13/09/ds41080197", 128, TRUE);
+	OutputLine(NULL, "すでに内部協力員を興宮署に向わせましたので、その連絡を待つだけなのですが…。」",
+		   NULL, " Bazıları karakola doğru yola çıktı, onlardan haber bekliyorum.\"", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>野村</color>", NULL, "<color=#f5e6d3>Nomura</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_nomura1088", 128, TRUE);
+	OutputLine(NULL, "「そうですか、ではもうじきですね。",
+		   NULL, "\"Anlıyorum, yani yakında onlardan haber alırsınız, değil mi?", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_nomura1089", 128, TRUE);
+	OutputLine(NULL, "では、何時頃までにこちらにご連絡をいただけますか？」",
+		   NULL, " Bizi saat kaç gibi arayabilirsiniz sizce?\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f6d9a8>鷹野</color>", NULL, "<color=#f6d9a8>Takano</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 9, "ps3/s13/09/ds41080198", 128, TRUE);
+	OutputLine(NULL, "「えっと！",
+		   NULL, "\"Imm!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 9, "ps3/s13/09/ds41080199", 128, TRUE);
+	OutputLine(NULL, "　もちろん分かり次第すぐにご連絡申し上げます。",
+		   NULL, " Bir şey öğrenir öğrenmez sizi arayacağım.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 9, "ps3/s13/09/ds41080200", 128, TRUE);
+	OutputLine(NULL, "ただそれが何時になるかはお約束が難しいのですが、……大至急、えぇ、急がせておりますので…、えぇ！」",
+		   NULL, " Ama saat kaçta olacağını söylemek zor... tabii mümkün olan en kısa sürede...\"", Line_Normal);
+	ClearMessage();
+
+	DrawScene( "background/aka2", 1000 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>野村</color>", NULL, "<color=#f5e6d3>Nomura</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_nomura1090", 128, TRUE);
+	OutputLine(NULL, "「……ふふふふ。",
+		   NULL, "\"...Kih kih kih.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_nomura1091", 128, TRUE);
+	OutputLine(NULL, "三佐。",
+		   NULL, " Binbaşı,", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_nomura1092", 128, TRUE);
+	OutputLine(NULL, "飛行機に乗ったことはおありですか？」",
+		   NULL, " daha önce hiç uçağa bindiniz mi?\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f6d9a8>鷹野</color>", NULL, "<color=#f6d9a8>Takano</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 9, "ps3/s13/09/ds41080201", 128, TRUE);
+	OutputLine(NULL, "「え？",
+		   NULL, "\"Eh?", Line_WaitForInput);
+	ModPlayVoiceLS(4, 9, "ps3/s13/09/ds41080202", 128, TRUE);
+	OutputLine(NULL, "　あ、あぁ、もちろんですわ…。」",
+		   NULL, " Ah, evet, elbette...\"", Line_Normal);
+	ClearMessage();
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>野村</color>", NULL, "<color=#f5e6d3>Nomura</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_nomura1093", 128, TRUE);
+	OutputLine(NULL, "「飛行機が離陸するために加速する時。",
+		   NULL, "\"Bir uçak havalanırken muazzam miktarda güce ihtiyaç duyulur.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_nomura1094", 128, TRUE);
+	OutputLine(NULL, "この時に大きな出力を出すため、エンジントラブルを起こすことがあるのだそうです。",
+		   NULL, " Bu yüzden bazen kalkış sırasında motor arızası yaşanır. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>野村</color>", NULL, "<color=#f5e6d3>Nomura</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "org/s13/00/vt4a_nomura1095_org", 128, TRUE);
+	OutputLine(NULL, "その時、まだ大して速度が出ていないならブレーキを掛け、離陸を断念するそうですが、もしすでに充分な速度が出ていた場合は、ブレーキはかえって危険なため、そのまま離陸をしてしまうのだそうです。",
+		   NULL, "Uçak henüz hızlanmadıysa yapması gereken tek şey yavaşlayıp kalkışı iptal etmektir; ancak çoktan hızlandıysa durmak daha tehlikelidir, bu yüzden devam edip havalanırlar. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>野村</color>", NULL, "<color=#f5e6d3>Nomura</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_nomura1097", 128, TRUE);
+	OutputLine(NULL, "四発の旅客機なら、内１つのエンジンが壊れていても飛行は可能ですから。",
+		   NULL, "Bir jet uçağının dört motoru vardır, dolayısıyla bir motor bozulsa bile sorunsuzca uçmaya devam edebilir.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_nomura1098", 128, TRUE);
+	OutputLine(NULL, "それはもちろんこの度の作戦も同じです。",
+		   NULL, " Bizim operasyonumuzda da durum aynı. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>野村</color>", NULL, "<color=#f5e6d3>Nomura</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_nomura1099", 128, TRUE);
+	OutputLine(NULL, "エンジンはひとつではありませんから、充分な速度が出ていれば離陸に踏み切るでしょう。",
+		   NULL, "Birden fazla motorumuz var, yani yeterli hıza ulaşırsak planımıza devam edeceğiz.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_nomura1100", 128, TRUE);
+	OutputLine(NULL, "後のことはどうとでもなります。",
+		   NULL, " Daha sonra ne yapacağımıza bakarız.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_nomura1101", 128, TRUE);
+	OutputLine(NULL, "………ですが、この度の作戦という飛行機は、まだ充分な速度どころか、これから離陸しようという段階です。",
+		   NULL, " ...Ama biz henüz sadece kalkışa hazırlanıyoruz.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_nomura1102", 128, TRUE);
+	OutputLine(NULL, "お分かりですね？」",
+		   NULL, " Ne demek istediğimi anlıyor musunuz?\"", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　終末作戦の第一段階は、監査役の富竹暗殺から幕を開ける。",
+		   NULL, "Operasyonun ilk adımı Tomitake'nin suikastıydı.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　…それすらまだ始まっていないのだから、それは的を得ている。",
+		   NULL, "Bu henüz gerçekleşmemişti bile, dolayısıyla Nomura'nın söyledikleri doğruydu.", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>野村</color>", NULL, "<color=#f5e6d3>Nomura</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_nomura1103", 128, TRUE);
+	OutputLine(NULL, "「もし、貴女が乗った旅客機が、離陸前からエンジンが故障しているとわかったらどうしますか？",
+		   NULL, "\"İçinde bulunduğunuz uçağın daha havalanmadan önce bir motorunun bozuk olduğunu bilseydiniz ne yapardınız?", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_nomura1104", 128, TRUE);
+	OutputLine(NULL, "　降りるでしょう？",
+		   NULL, " Uçaktan inerdiniz, değil mi?", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_nomura1105", 128, TRUE);
+	OutputLine(NULL, "　同じことです。",
+		   NULL, " Bizim için de aynı şey geçerli. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>野村</color>", NULL, "<color=#f5e6d3>Nomura</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_nomura1106", 128, TRUE);
+	OutputLine(NULL, "離陸前からエンジンに故障が見付かったため、乗客であるクライアントたちが飛行機を降りたがっています。」",
+		   NULL, "Müşterilerimiz kalkıştan önce motor arızası olduğunu öğrendikleri için uçaktan inmek istiyorlar.\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　…もう後戻りできない段階に至れば、多少のミスに目くじらを立てることはなくなる。",
+		   NULL, "Eğer geri dönülmez noktaya çoktan ulaşmış olsalardı, küçük bir hata o kadar da önemli olmazdı.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　……だが、後戻りができる今の段階だからこそ、彼らはデリケートで、わずかの失態にも過敏になるのだ。",
+		   NULL, "Fakat henüz o noktadan önce oldukları için en ufak bir hataya karşı bile aşırı temkinli yaklaşıyorlardı.", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f6d9a8>鷹野</color>", NULL, "<color=#f6d9a8>Takano</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 9, "ps3/s13/09/ds41080203", 128, TRUE);
+	OutputLine(NULL, "「そ、それが本当に故障なのか、今、点検させているところなのです。」",
+		   NULL, "\"Ş-Şu anda bunun gerçekten bir motor arızası olup olmadığını kontrol ediyoruz.\"", Line_Normal);
+	ClearMessage();
+
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>野村</color>", NULL, "<color=#f5e6d3>Nomura</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_nomura1107", 128, TRUE);
+	OutputLine(NULL, "「えぇ、存じています。",
+		   NULL, "\"Biliyorum.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_nomura1108", 128, TRUE);
+	OutputLine(NULL, "貴女は管制塔の管制官。",
+		   NULL, " Siz kontrol kulesindeki bir hava trafik kontrolörü gibisiniz.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_nomura1109", 128, TRUE);
+	OutputLine(NULL, "私は彼らをなだめる添乗員。",
+		   NULL, " Ben de yolcuları sakinleştirmeye çalışan bir kabin görevlisi gibiyim. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>野村</color>", NULL, "<color=#f5e6d3>Nomura</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_nomura1110", 128, TRUE);
+	OutputLine(NULL, "離陸の見込みの薄くなる飛行機から降りたいと言い出すクライアントたちを懸命になだめているところです。",
+		   NULL, "Uçağın hiç havalanamama ihtimali olsa bile, onları uçakta kalmaya ikna etmek için elimden geleni yapıyorum.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_nomura1111", 128, TRUE);
+	OutputLine(NULL, "…これ以上、事態の改善が遅れると、この飛行プラン自体がなかったことになります。",
+		   NULL, " Sorunu çözmek çok uzun sürerse bu uçuş tamamen iptal edilebilir. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>野村</color>", NULL, "<color=#f5e6d3>Nomura</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_nomura1112", 128, TRUE);
+	OutputLine(NULL, "………鷹野三佐？",
+		   NULL, "Binbaşı Takano, bu da büyükbabanızın çalışmasının sonsuza dek bir delinin saçmalığı olarak anılacağı anlamına gelir.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_nomura1113", 128, TRUE);
+	OutputLine(NULL, "　それはつまり、貴女の祖父の論文が、世迷言の狂人論文であったと烙印を押されることですよ？」",
+		   NULL, " Bunu anlıyor musunuz?\"", Line_Normal);
+	ClearMessage();
+
+	ModFadeOutBGM( 1, 1000, FALSE, 0 );
+	DrawScene( "background/aka1", 1000 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f6d9a8>鷹野</color>", NULL, "<color=#f6d9a8>Takano</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 9, "ps3/s13/09/ds41080204", 128, TRUE);
+	OutputLine(NULL, "「……………く……。」",
+		   NULL, "\".........\"", Line_Normal);
+	ClearMessage();
+
+	PlayBGM( 3, "kaze", 120, 0 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>野村</color>", NULL, "<color=#f5e6d3>Nomura</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_nomura1114", 128, TRUE);
+	OutputLine(NULL, "「１人の少女が死ぬと村人が全員錯乱する？",
+		   NULL, "\"Tek bir kız öldüğünde bütün köylüler delirecekmiş.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_nomura1115", 128, TRUE);
+	OutputLine(NULL, "　…ふふふははは、ばっかみたい。",
+		   NULL, " ...Kihkihhahaha, bu fazlasıyla saçma.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_nomura1116", 128, TRUE);
+	OutputLine(NULL, "何を根拠にそんな世迷言を。",
+		   NULL, " Böyle bir fikri nereden çıkardınız?", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_nomura1117", 128, TRUE);
+	OutputLine(NULL, "この分厚い研究結果は全てそんな空想論文だ、",
+		   NULL, " Kulağa bir çeşit fantezi gibi geliyor,", Line_Continue);
+	// (backup) SetValidityOfInput( FALSE );
+	Wait( 800 );
+	// (backup) SetValidityOfInput( TRUE );
+	OutputLine(NULL, "なぁんて、ふふふふあはははは、",
+		   NULL, " bu ne biçim iş, kihkihkihahahaha,", Line_Continue);
+	// (backup) SetValidityOfInput( FALSE );
+	Wait( 1000 );
+	// (backup) SetValidityOfInput( TRUE );
+	OutputLine(NULL, "おっかしいぃ。",
+		   NULL, " çok aptalca... ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>野村</color>", NULL, "<color=#f5e6d3>Nomura</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_nomura1118", 128, TRUE);
+	OutputLine(NULL, "高野一二三と鷹野三四って何なのかしらぁ。",
+		   NULL, "Hifumi ve Miyo Takano kendilerini ne sanıyorlar acaba?", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_nomura1119", 128, TRUE);
+	OutputLine(NULL, "おかしいおかしい、おっかしい、ふふふふふふはははははははははは……。」",
+		   NULL, " Fazlasıyla komik, kihkihkihkihkihhahahahahahahahahahahahaha...\"", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　鷹野がぎりぎりと歯軋りをする。",
+		   NULL, "Takano dişlerini gıcırdattı.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　そして受話器を握り潰すくらいにギリギリと爪を立てて…。",
+		   NULL, "Ahizeyi öyle sıkı kavradı ki eklemleri bembeyaz kesildi.", Line_Normal);
+	ClearMessage();
+
+	FadeOutBGM( 3, 400, FALSE );
+	DrawScene( "black", 400 );
+	ModPlayBGM( 0, "higurashi_utu", 120, 0, 0 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>野村</color>", NULL, "<color=#f5e6d3>Nomura</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_nomura1120", 128, TRUE);
+	OutputLine(NULL, "「…………と。",
+		   NULL, "\".........Her neyse.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_nomura1121", 128, TRUE);
+	OutputLine(NULL, "なってしまいます。",
+		   NULL, " Şimdi neler olacağını anlıyor musunuz?", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_nomura1122", 128, TRUE);
+	OutputLine(NULL, "おわかりですか…？",
+		   NULL, " Anladınız mı?", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_nomura1123", 128, TRUE);
+	OutputLine(NULL, "　これは、貴女と貴女の尊敬してやまないおじいちゃんの、名誉を守るためでもあるんですよ…？」",
+		   NULL, " Tıpkı sizinki gibi büyükbabanızın onuru da buna bağlı.\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f6d9a8>鷹野</color>", NULL, "<color=#f6d9a8>Takano</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 9, "ps3/s13/09/ds41080205", 128, TRUE);
+	OutputLine(NULL, "「…え、………えぇ…。",
+		   NULL, "\"E... Evet...", Line_WaitForInput);
+	ModPlayVoiceLS(4, 9, "ps3/s13/09/ds41080206", 128, TRUE);
+	OutputLine(NULL, "お気遣いをありがとうございますわ…。」",
+		   NULL, " Bizi düşündüğünüz için teşekkür ederim...\"", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>野村</color>", NULL, "<color=#f5e6d3>Nomura</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_nomura1124", 128, TRUE);
+	OutputLine(NULL, "「安心してください。",
+		   NULL, "\"Endişelenmeyin.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_nomura1125", 128, TRUE);
+	OutputLine(NULL, "私は貴女の唯一の味方です。",
+		   NULL, " Sizin tek müttefikiniz benim.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_nomura1126", 128, TRUE);
+	OutputLine(NULL, "貴女にとって一番幸せで報われる最後になるよう、最後までお手伝いします。",
+		   NULL, " Sizi mutlu edecek sona ulaşmanıza yardım edeceğim. En sonuna kadar yanınızda olacağım. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>野村</color>", NULL, "<color=#f5e6d3>Nomura</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_nomura1127", 128, TRUE);
+	OutputLine(NULL, "……ですので、どうか私の顔も立てて、興宮署の情報の真偽を確かめてください。",
+		   NULL, "Bu yüzden lütfen Okinomiya Polis Karakolu'ndan gelen bilginin doğru mu yoksa yanlış mı olduğunu öğrenin.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_nomura1128", 128, TRUE);
+	OutputLine(NULL, "私も努力してますけど、機嫌を損ねるクライアントの皆さんのお相手は楽ではないもので。」",
+		   NULL, " Elimden geleni yapacağım ama memnuniyetsiz müşterilerle uğraşmak kolay değil.\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f6d9a8>鷹野</color>", NULL, "<color=#f6d9a8>Takano</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 9, "ps3/s13/09/ds41080207", 128, TRUE);
+	OutputLine(NULL, "「……ご迷惑をお掛けしますわ…。",
+		   NULL, "\"...Sizi bunlarla uğraşmak zorunda bıraktığım için özür dilerim.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 9, "ps3/s13/09/ds41080208", 128, TRUE);
+	OutputLine(NULL, "もうしばらくだけご猶予を…。",
+		   NULL, " Lütfen bana biraz daha zaman verin.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 9, "ps3/s13/09/ds41080209", 128, TRUE);
+	OutputLine(NULL, "えぇ……。",
+		   NULL, " Evet...", Line_WaitForInput);
+	ModPlayVoiceLS(4, 9, "ps3/s13/09/ds41080210", 128, TRUE);
+	OutputLine(NULL, "……はい、失礼いたします。」",
+		   NULL, " ...Evet, hoşça kalın.\"", Line_Normal);
+	ClearMessage();
+
+	DrawScene( "background/chika_sekyurithi", 400 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　鷹野は向こうが受話器を置いたことを確かめてから、ガチャンと叩きつけるように受話器を置いた。",
+		   NULL, "Takano önce Nomura'nın telefonu kapattığından emin oldu, ardından kendisi de kapattı.", Line_Normal);
+	ClearMessage();
+
+	DisableWindow();
+	ModDrawCharacterWithFiltering(0, 9, "sprite/ta1_sakebi_", "2", "maskleft", 1, 0, 0, FALSE, 0, 0, 0, 0, 0, 9, 300, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f6d9a8>鷹野</color>", NULL, "<color=#f6d9a8>Takano</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 9, "ps3/s13/09/ds41080211", 128, TRUE);
+	OutputLine(NULL, "「小此木から連絡はまだないの！！",
+		   NULL, "\"Okonogi hâlâ aramadı mı?", Line_WaitForInput);
+	ModPlayVoiceLS(4, 9, "ps3/s13/09/ds41080212", 128, TRUE);
+	OutputLine(NULL, "　電話して！！」",
+		   NULL, " Arayın onu!!\"", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>山狗</color>", NULL, "<color=#f5e6d3>Mountain Dog</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_yamab1028", 128, TRUE);
+	OutputLine(NULL, "「三佐、つい１０分前に電話したばかりです…。",
+		   NULL, "\"Binbaşım, daha on dakika önce aradık...", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_yamab1029", 128, TRUE);
+	OutputLine(NULL, "情報が入ればすぐに連絡してくることになっています。",
+		   NULL, " Bir şey öğrenir öğrenmez araması gerekiyor.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_yamab1030", 128, TRUE);
+	OutputLine(NULL, "少しお休みになられては…。",
+		   NULL, " Neden biraz mola vermiyorsunuz...?", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_yamab1031", 128, TRUE);
+	OutputLine(NULL, "先ほどのコーヒーも、」",
+		   NULL, " Kahveniz...\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	PlaySE( 0, "s_chisibuki", 128, 64 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　気遣うように隊員が差し出した紙コップのコーヒーを鷹野が払いのけると、それは床に叩きつけられて、フロアタイルの上に黒い水溜りを作った。",
+		   NULL, "Birim üyesi Takano'ya bir fincan kahve ikram etmeye çalıştı ama Takano elinin tersiyle fincanı itti. Fincan yere düşerek siyah bir birikinti oluşturdu.", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　その様子に、セキュリティルームは、息を呑む音さえ静まり返る。",
+		   NULL, "Güvenlik odasındaki herkes sessizliğe gömüldü.", Line_Normal);
+	ClearMessage();
+
+	DisableWindow();
+	ModDrawCharacter(0, 9, "sprite/ta1_human_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 9, 200, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f6d9a8>鷹野</color>", NULL, "<color=#f6d9a8>Takano</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 9, "ps3/s13/09/ds41080213", 128, TRUE);
+	OutputLine(NULL, "「………何よ……。",
+		   NULL, "\"......Lanet olsun...", Line_WaitForInput);
+	ModPlayVoiceLS(4, 9, "ps3/s13/09/ds41080214", 128, TRUE);
+	OutputLine(NULL, "ぼけっとしている暇があったら、誰かモップでも持ってきなさい！",
+		   NULL, " Birisi bu pisliği temizlemek için paspas getirsin!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 9, "ps3/s13/09/ds41080215", 128, TRUE);
+	OutputLine(NULL, "　１０分前に電話してても構わない、もう一度かけて催促して！！",
+		   NULL, " On dakika önce aramış olmamız umurumda değil, tekrar arayın onu!!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 9, "ps3/s13/09/ds41080216", 128, TRUE);
+	OutputLine(NULL, "　古手梨花の死体のわけないという裏付けと、",
+		   NULL, " Ona Rika Furude'nin ölmediğine dair kanıt bulmasını,", Line_Continue);
+	// (backup) SetValidityOfInput( FALSE );
+	Wait( 800 );
+	// (backup) SetValidityOfInput( TRUE );
+	OutputLine(NULL, "………行方不明の富竹の確保よッ！！」",
+		   NULL, " ve ayrıca Tomitake'yi yakalamasını söyleyin!!\"", Line_Normal);
+	ClearMessage();
+
+	DisableWindow();
+	FadeBustshotWithFiltering( 0, "mask00" , 0, FALSE, 0, 0, 400, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　もう鷹野も気付きかけていた。",
+		   NULL, "Takano bir şeyleri fark etmeye başlıyordu.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　…富竹の行方不明が、何か嫌な意味があることに気付きかけていた。",
+		   NULL, "...Artık Tomitake'nin ortadan kayboluşunun arkasında bir iş olduğunu sezebiliyordu.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　…富竹を捕まえれば、きっと興宮署のことも知っているに違いない…！",
+		   NULL, "...Tomitake, Okinomiya Polis Karakolu'nda olup bitenler hakkında bir şeyler biliyor olmalıydı.", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　あの一見、間抜けそうな男は、どういうわけか我々の計画を見抜き、揺さぶりをかけるよう工作したのだ。",
+		   NULL, "Aptal gibi görünebilirdi ama bir şekilde planı öğrenmişti ve Takano'nun işini bozmaya çalışıyordu.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　…そう、全て富竹の差し金に違いない…！！",
+		   NULL, "...Yani tüm bunların arkasında açıkça Tomitake vardı!!", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　大人しく今日を過ごしていたなら、せめて死ぬ前に祭りのひと時を楽しませてやろうと、取り計らってやろうと思っていたのに……ッ！！",
+		   NULL, "Eğer uslu dursaydı, Takano o gece festivalin tadını çıkarmasına izin vermeyi düşünüyordu.", Line_Normal);
+	ClearMessage();
+
+	DrawSceneWithMask( "black", "maskdown", 1, 0, 1300 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　……一番手っ取り早いのはあの家にいる古手梨花の顔を私が見ること。",
+		   NULL, "...Takano'nun neler olup bittiğinden emin olmasının en hızlı yolu, Rika Furude'nin yüzünü evinde bizzat görmek olurdu.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　でも私はこの場を離れられないし、入江では信用できないし、",
+		   NULL, "Ama buradan ayrılamazdı ve Irie'ye de güvenemezdi.", Line_WaitForInput);
+	OutputLine(NULL, "……祭りで人が大勢出入りしてるから山狗も監視が精一杯で迂闊に近付けないし…。",
+		   NULL, " Üstelik festival yüzünden etrafta çok fazla insan olduğundan Dağ Köpekleri'nin başı kalabalıktı.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　せめて電話に出てくれればいいものを、なぜか電話に出ないし…！！",
+		   NULL, "Telefona cevap verse bu da yeterdi ama cevap vermiyordu...!!", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　これじゃあ、あの家はもぬけの殻で、",
+		   NULL, "Bu da evin boş olduğu...", Line_WaitForInput);
+	OutputLine(NULL, "……古手梨花の死は本当だということになってしまう。",
+		   NULL, " ve Rika Furude'nin ölümünün gerçek olduğu anlamına geliyordu.", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　どこで狂った？",
+		   NULL, "Ne ters gitmişti?", Line_WaitForInput);
+	OutputLine(NULL, "　誰が騙したッ？！",
+		   NULL, " Takano'yu kim kandırmıştı?", Line_Normal);
+	ClearMessage();
+
+	ModPlayBGM( 0, "higurashi_utu", 120, 0, 1 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　……決まってる。",
+		   NULL, "...Tek bir kişi vardı.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　…在宅確認をした唯一の人物、",
+		   NULL, "...Onu evde gördüğünü iddia eden tek kişi.", Line_ContinueAfterTyping);
+	SetValidityOfInput( FALSE );
+	Wait( 800 );
+	SetValidityOfInput( TRUE );
+	OutputLine(NULL, "……入江が一番怪しいじゃないか。",
+		   NULL, " ...Etraftaki en şüpheli kişi Irie'ydi.", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　富竹がすでに宿を抜け出してどこかに潜伏しているように、",
+		   NULL, "Tomitake otelden ayrılmıştı ve hiçbir yerde bulunamıyordu,", Line_WaitForInput);
+	OutputLine(NULL, "……梨花もすでにあの家を抜け出して別の場所に潜伏しているんじゃないだろうか。",
+		   NULL, " belki Rika da evinden ayrılmış ve başka bir yerde saklanıyordu.", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　だったなら、………入江は裏切り者で、",
+		   NULL, "Başka bir deyişle... Irie ona ihanet etmiş", Line_ContinueAfterTyping);
+	SetValidityOfInput( FALSE );
+	Wait( 1000 );
+	SetValidityOfInput( TRUE );
+	OutputLine(NULL, "…富竹と内通している………？",
+		   NULL, " ve Tomitake ile irtibata mı geçmişti...?", Line_Normal);
+	ClearMessage();
+
+	ModDrawCharacter(0, 9, "sprite/ta1_human_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 9, 0, FALSE );
+	DrawSceneWithMask( "background/chika_sekyurithi", "maskup", 1, 0, 300 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f6d9a8>鷹野</color>", NULL, "<color=#f6d9a8>Takano</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 9, "ps3/s13/09/ds41080217", 128, TRUE);
+	OutputLine(NULL, "「…………い、入江所長に監視をつけるのよ。」",
+		   NULL, "\"......Direktör Irie'yi gözlem altına alın.\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>山狗</color>", NULL, "<color=#f5e6d3>Mountain Dog</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_yamab1032", 128, TRUE);
+	OutputLine(NULL, "「まさか、所長の在宅確認が、",
+		   NULL, "\"Ne? Yalan söylediğini mi", Line_Continue);
+	// (backup) SetValidityOfInput( FALSE );
+	Wait( 600 );
+	// (backup) SetValidityOfInput( TRUE );
+	OutputLine(NULL, "……嘘…？！",
+		   NULL, " kastediyorsunuz?", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_yamab1033", 128, TRUE);
+	OutputLine(NULL, "　どうして所長が！」",
+		   NULL, " Ama neden böyle bir şey yapsın ki?\"", Line_Normal);
+	ClearMessage();
+
+	DisableWindow();
+	ModDrawCharacter(0, 9, "sprite/ta1_iradachi_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 9, 200, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f6d9a8>鷹野</color>", NULL, "<color=#f6d9a8>Takano</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 9, "ps3/s13/09/ds41080218", 128, TRUE);
+	OutputLine(NULL, "「……富竹はいつの段階でかわからないけれど、私たちの計画に気付いたのよ。",
+		   NULL, "\"Tomitake planımızı fark etmiş olmalı.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 9, "ps3/s13/09/ds41080219", 128, TRUE);
+	OutputLine(NULL, "そして、宿を脱出し、Ｒも秘密裏に安全なところへ避難させた。",
+		   NULL, " Otelden ayrıldı ve Rika'ya güvenli bir yere gitmesini söyledi.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 9, "ps3/s13/09/ds41080220", 128, TRUE);
+	OutputLine(NULL, "…私たちはまんまと騙されて、空き家を見張り続けていたのよ……！！」",
+		   NULL, " Bizi kandırdı, biz de bunca zamandır boş bir evi gözetliyormuşuz!!\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>山狗</color>", NULL, "<color=#f5e6d3>Mountain Dog</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_yamab1034", 128, TRUE);
+	OutputLine(NULL, "「あ、空き家ということはありえません。",
+		   NULL, "\"O ev boş olamaz.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_yamab1035", 128, TRUE);
+	OutputLine(NULL, "人影が確かに…！」",
+		   NULL, " İçeride kesinlikle birisi var!\"", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f6d9a8>鷹野</color>", NULL, "<color=#f6d9a8>Takano</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 9, "ps3/s13/09/ds41080221", 128, TRUE);
+	OutputLine(NULL, "「それがＲだという保証はあるの？！",
+		   NULL, "\"İçeridekinin R olduğuna dair kanıtınız var mı?!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 9, "ps3/s13/09/ds41080222", 128, TRUE);
+	OutputLine(NULL, "　Ｒじゃない。",
+		   NULL, " O değil.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 9, "ps3/s13/09/ds41080223", 128, TRUE);
+	OutputLine(NULL, "監視する山狗を騙すだけの役で、誰かがあそこに身代わりとして留守をしている、そうよそうに違いないわ…！！",
+		   NULL, " O kişi sırf Dağ Köpekleri'ni kandırmak, sadece Rika evdeymiş gibi göstermek için orada. Hepsi bu!!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 9, "ps3/s13/09/ds41080224", 128, TRUE);
+	OutputLine(NULL, "　小此木に、Ｒ宅への強行突入を命じなさい！",
+		   NULL, " Okonogi'ye R konutuna zorla girmesini söyleyin! ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f6d9a8>鷹野</color>", NULL, "<color=#f6d9a8>Takano</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 9, "ps3/s13/09/ds41080225", 128, TRUE);
+	OutputLine(NULL, "　誰がいるんだか知らないけど、そいつは富竹や梨花に通じてる。",
+		   NULL, "İçeride kim var bilmiyorum ama her kimse Tomitake ve Rika ile bağlantılı.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 9, "ps3/s13/09/ds41080226", 128, TRUE);
+	OutputLine(NULL, "そいつを締め上げるのよッ！！」",
+		   NULL, " Sıkıştırın onları!!\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>山狗</color>", NULL, "<color=#f5e6d3>Mountain Dog</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_yamab1036", 128, TRUE);
+	OutputLine(NULL, "「……し、しかし、Ｒ宅への突入は、本日は不可能です…！",
+		   NULL, "\"...A-Ama... R konutuna zorla giremeyiz, bugün olmaz!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_yamab1037", 128, TRUE);
+	OutputLine(NULL, "　Ｒ宅前は水場になっており、祭りの関係者が常にごった返しています。",
+		   NULL, " Etrafta çok fazla festival ziyaretçisi var.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_yamab1038", 128, TRUE);
+	OutputLine(NULL, "今日の祭りが終わる深夜までは不可能です…！！」",
+		   NULL, " Gece yarısı civarında festival bitene kadar içeri giremeyiz...!!\"", Line_Normal);
+	ClearMessage();
+
+	DisableWindow();
+	ModDrawCharacter(0, 9, "sprite/ta1_sakebi_", "2", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 9, 200, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f6d9a8>鷹野</color>", NULL, "<color=#f6d9a8>Takano</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 9, "ps3/s13/09/ds41080227", 128, TRUE);
+	OutputLine(NULL, "「それを何とかするのが山狗でしょうがッ！！",
+		   NULL, "\"Hepiniz bu yüzden buradasınız, değil mi?", Line_WaitForInput);
+	ModPlayVoiceLS(4, 9, "ps3/s13/09/ds41080228", 128, TRUE);
+	OutputLine(NULL, "　何とかしなさい、何とかッ！！！",
+		   NULL, " Bir şeyler yapın işte!!!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 9, "ps3/s13/09/ds41080229", 128, TRUE);
+	OutputLine(NULL, "　…何で？！　何で私が言うことじゃ聞いてくれないの？！",
+		   NULL, " ...Neden? Neden size söylediğim şeyi yapamıyorsunuz?", Line_WaitForInput);
+	ModPlayVoiceLS(4, 9, "ps3/s13/09/ds41080230", 128, TRUE);
+	OutputLine(NULL, "　私の言うことは聞けないって言うの？！",
+		   NULL, " Emirlerime uyamıyor musunuz?", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	DisableWindow();
+	ModDrawCharacter(0, 9, "sprite/ta1_kanashimi_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 9, 200, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f6d9a8>鷹野</color>", NULL, "<color=#f6d9a8>Takano</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 9, "ps3/s13/09/ds41080231", 128, TRUE);
+	OutputLine(NULL, "　……私の…保護者の言うことじゃなきゃ、聞けないって言うの…。",
+		   NULL, "...Neden? Sadece hamimin emirlerine mi uyabiliyorsunuz?", Line_WaitForInput);
+	ModPlayVoiceLS(4, 9, "ps3/s13/09/ds41080232", 128, TRUE);
+	OutputLine(NULL, "…ぅううぅぅぅ……！」",
+		   NULL, " Ooooh...!\"", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　隊員たちは沈黙するしかない。",
+		   NULL, "Birim üyeleri yalnızca sessizlik içinde izleyebildi.", Line_WaitForInput);
+	OutputLine(NULL, "…どんな言葉をかけても今の鷹野の慰めにならないとわかっていたから。",
+		   NULL, " Hiçbir şeyin onu teselli edemeyeceğini biliyorlardı.", Line_Normal);
+	ClearMessage();
+
+	DrawSceneWithMask( "black", "maskdown", 1, 0, 300 );
+	PlayBGM( 1, "denwa_m", 120, 0 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　……そんな中、沈黙を切り裂く電話の呼び出し音が鳴る。",
+		   NULL, "...Telefonun sesi aniden sessizliği bozdu.", Line_WaitForInput);
+	OutputLine(NULL, "鷹野がびくっとする。",
+		   NULL, " Takano resmen yerinden sıçradı.", Line_Normal);
+	ClearMessage();
+
+	FadeOutBGM( 1, 300, FALSE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>山狗</color>", NULL, "<color=#f5e6d3>Mountain Dog</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_yamab1039", 128, TRUE);
+	OutputLine(NULL, "「…はい。",
+		   NULL, "\"...Evet.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_yamab1040", 128, TRUE);
+	OutputLine(NULL, "……………え？！",
+		   NULL, " .........Ne?", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_yamab1041", 128, TRUE);
+	OutputLine(NULL, "　さ、三佐、朗報ですッ！",
+		   NULL, " Binbaşım, iyi haber!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_yamab1042", 128, TRUE);
+	OutputLine(NULL, "　鴉が東京調査部の定期連絡先の、で、電話番号特定に成功したとのことです！！",
+		   NULL, " Karga, Tokyo'daki araştırma şubesinin düzenli raporlar için aradığı numarayı başarıyla ele geçirdi!!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_yamab1043", 128, TRUE);
+	OutputLine(NULL, "　電話番号は鹿骨市内！",
+		   NULL, " Telefon numarası Shishibone'de! ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>山狗</color>", NULL, "<color=#f5e6d3>Mountain Dog</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_yamab1044", 128, TRUE);
+	OutputLine(NULL, "　山狗が住所の特定作業に入りました！！」",
+		   NULL, "Dağ Köpekleri adresi tam olarak tespit etmeye çalışıyor!!\"", Line_Normal);
+	ClearMessage();
+
+	FadeOutBGM( 0, 300, FALSE );
+	ModDrawCharacter(0, 14, "sprite/oko_niyari_", "2", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 9, 0, FALSE );
+	DrawSceneWithMask( "background/kai_jyun", "maskup", 1, 0, 300 );
+	ModPlayBGM( 0, "G_Tactics", 120, 0, 0 );
+	ModPlayBGM( 0, "primal-beat-of-horrow_T", 120, 0, 1 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#3e5745>小此木</color>", NULL, "<color=#3e5745>Okonogi</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 14, "ps3/s13/14/ds41130081", 128, TRUE);
+	OutputLine(NULL, "「富竹だ、間違いない！！！",
+		   NULL, "\"Bu Tomitake! Kesinlikle o olmalı!!!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 14, "ps3/s13/14/ds41130082", 128, TRUE);
+	OutputLine(NULL, "　雲雀、腕利きを集めろ。",
+		   NULL, " Toygar, en yetenekli adamlarını topla.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 14, "ps3/s13/14/ds41130083", 128, TRUE);
+	OutputLine(NULL, "ヤツは用心してるぞ、ぬかるんじゃねぇ！！",
+		   NULL, " Tedbirli davranıyor, o yüzden hiçbir hata yapmayın!!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 14, "ps3/s13/14/ds41130084", 128, TRUE);
+	OutputLine(NULL, "　白鷺はバックアップしろ！」",
+		   NULL, " Balıkçıl, onlara destek verin!!\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>雲雀１</color>", NULL, "<color=#f5e6d3>Skylark 1</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_01hibari1001", 128, TRUE);
+	OutputLine(NULL, "「了解！！",
+		   NULL, "\"Anlaşıldı!!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_01hibari1002", 128, TRUE);
+	OutputLine(NULL, "　雲雀１より全班員へ。",
+		   NULL, " Toygar 1'den tüm birimlere.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_01hibari1003", 128, TRUE);
+	OutputLine(NULL, "突入先が特定され次第、出動するぞ！",
+		   NULL, " Adresi alır almaz harekete geçeceğiz!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_01hibari1004", 128, TRUE);
+	OutputLine(NULL, "　全員、搭乗しろ！！」",
+		   NULL, " Herkes araçlara binsin!!\"", Line_Normal);
+	ClearMessage();
+
+	DisableWindow();
+	ModDrawCharacter(0, 14, "sprite/oko_sakebi_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 9, 200, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#3e5745>小此木</color>", NULL, "<color=#3e5745>Okonogi</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 14, "ps3/s13/14/ds41130085", 128, TRUE);
+	OutputLine(NULL, "「くそぉ…、電電公社の協力員はまだかッ！！！」",
+		   NULL, "\"Kahretsin, telefon şirketindeki adamımız hâlâ aramadı mı?\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>鳳２</color>", NULL, "<color=#f5e6d3>Phoenix 2</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_02ootori1001", 128, TRUE);
+	OutputLine(NULL, "「調べさせてます！！",
+		   NULL, "\"Hemen bakıyorum!!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_02ootori1002", 128, TRUE);
+	OutputLine(NULL, "　５分です！」",
+		   NULL, " Bana beş dakika verin!\"", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　時計は、……午前９時まであと１５分足らずだ。",
+		   NULL, "Saat sabah 8.45'ti.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　市内のどこに潜伏してるかわからないが、…場所によっては距離上の理由だけでアウトだ。",
+		   NULL, "Shishibone'nin neresinde kaldığını bilmiyorlardı ama bulunduğu yere bağlı olarak sabah dokuza kadar oraya ulaşmak için çok uzak olabilirdi.", Line_WaitForInput);
+	OutputLine(NULL, "こいつは運頼みになる……！！",
+		   NULL, " Şansa güvenmek zorunda kalacaklardı!!", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#3e5745>小此木</color>", NULL, "<color=#3e5745>Okonogi</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 14, "ps3/s13/14/ds41130086", 128, TRUE);
+	OutputLine(NULL, "「馬鹿野郎ッ、５分じゃねぇ５０秒だッ！！",
+		   NULL, "\"Lanet olsun! 5 dakikada değil, 50 saniyede hallet!!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 14, "ps3/s13/14/ds41130087", 128, TRUE);
+	OutputLine(NULL, "　何やってやがんだ、端末に番号打つだけだろうがッ！！」",
+		   NULL, " Neden bu kadar uzun sürüyor? Altı üstü bilgisayara numaraları girecek!!\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>鳳２</color>", NULL, "<color=#f5e6d3>Phoenix 2</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_02ootori1003", 128, TRUE);
+	OutputLine(NULL, "「来ました！！",
+		   NULL, "\"Bulduk!!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_02ootori1004", 128, TRUE);
+	OutputLine(NULL, "　住所は市内平坂一丁目ＸＸ番、ホテルモデラート！",
+		   NULL, " Adres Hirasaka 1-XX Blok, Otel Moderato!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_02ootori1005", 128, TRUE);
+	OutputLine(NULL, "　交換機を経由してるため、部屋番号は不明！！」",
+		   NULL, " Santral üzerinden bağlandığı için oda numarası bilinmiyor!!\"", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#3e5745>小此木</color>", NULL, "<color=#3e5745>Okonogi</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 14, "ps3/s13/14/ds41130088", 128, TRUE);
+	OutputLine(NULL, "「聞こえたな雲雀ッ！！」",
+		   NULL, "\"Duydun mu, Toygar?\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>雲雀１</color>", NULL, "<color=#f5e6d3>Skylark 1</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_01hibari1005", 128, TRUE);
+	OutputLine(NULL, "「了解、出動ッ！！！」",
+		   NULL, "\"Aldık, hemen yola çıkıyoruz!!\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	DrawSceneWithMask( "black", "maskright", 7, 0, 300 );
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　平坂一丁目なら幸運だ、ここからすぐ近くだ！！",
+		   NULL, "Şanslarına Hirasaka 1. Blok yeterince yakındı!!", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　やはり読みは当たっていた。",
+		   NULL, "Okonogi haklı çıkmıştı.", Line_WaitForInput);
+	OutputLine(NULL, "ヤツはすぐ近くに潜伏していたのだ！",
+		   NULL, " Tomitake yakınlarda saklanıyordu!", Line_Normal);
+	ClearMessage();
+
+	DisableWindow();
+	PlayBGM( 1, "Mati", 120, 0 );
+	SetValidityOfInput( FALSE );
+	Wait( 2000 );
+	SetValidityOfInput( TRUE );
+	ModFadeOutBGM( 1, 300, FALSE, 0 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　小此木造園の業務車両のシャッターが次々開き、白いワゴン車が次々飛び出していく…！",
+		   NULL, "Okonogi Peyzajcılık'ın garaj kapıları birbiri ardına açıldı ve beyaz minibüsler aceleyle hızla uzaklaştı.", Line_Normal);
+	ClearMessage();
+
+
+	ModFadeOutBGM( 1, 300, FALSE, 1 );
+
+	DrawSceneWithMask( "background/kai_ten", "maskup", 1, 0, 300 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#3e5745>小此木</color>", NULL, "<color=#3e5745>Okonogi</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 14, "ps3/s13/14/ds41130089", 128, TRUE);
+	OutputLine(NULL, "「ぃ野郎…。",
+		   NULL, "\"O aşağılık herif...", Line_WaitForInput);
+	ModPlayVoiceLS(4, 14, "ps3/s13/14/ds41130090", 128, TRUE);
+	OutputLine(NULL, "今度はこっちの番だ。",
+		   NULL, " Şimdi sıra bizde.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 14, "ps3/s13/14/ds41130091", 128, TRUE);
+	OutputLine(NULL, "まさか調査部に俺の子飼いが混じってるとは思わなかったろうよ…。",
+		   NULL, " Araştırma şubesinde ona karşı çalışan biri olabileceğini aklının ucundan bile geçirmedi.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 14, "ps3/s13/14/ds41130092", 128, TRUE);
+	OutputLine(NULL, "……こっちが今度は貴様を奇襲してやるぜ…！！」",
+		   NULL, " ...Şimdi baskın sırası bizde!!\"", Line_Normal);
+	ClearMessage();
+
+	FadeOutBGM( 0, 1000, FALSE );
+	DrawScene( "black", 1000 );
+	SetValidityOfInput( FALSE );
+	Wait( 4000 );
+	SetValidityOfInput( TRUE );
+
+	PlayBGM( 0, "semi", 120, 0 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　ホテルモデラート。",
+		   NULL, "Otel Moderato...", Line_WaitForInput);
+	OutputLine(NULL, "…響きの割に安っぽい煤けた看板だった。",
+		   NULL, " ...İsmine rağmen önünde ucuz, lekeli bir tabela duruyordu.", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　場末のビジネスホテル崩れで、潜伏者にとってとても都合のいいホテルだったに違いない。",
+		   NULL, "Kasabanın dış mahallelerinde, birinin gizlenmesi için mükemmel bir yer olan köhne bir iş oteliydi.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　時代に合わせてラブホテル風に改装すれば少しは客足も見込めたのだろうが、改装工事のための資金的余裕はなく、いつ潰れてもおかしくない。",
+		   NULL, "Binayı daha modern bir aşk oteline dönüştürseler belki birkaç müşteri çekebilirlerdi ama tadilat için sermayeleri olmadığı ve her an batabilecekleri açıktı. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "…そんなホテルだった。",
+		   NULL, "...İşte öyle bir oteldi.", Line_Normal);
+	ClearMessage();
+
+	DrawSceneWithMask( "background/si_h2", "maskup", 1, 0, 300 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　その２階の一室に、富竹が潜んでいた。",
+		   NULL, "Tomitake ikinci kattaki odalardan birinde kalıyordu.", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　室内は、最初の富竹の宿に比べてもさらに貧相しく、寝床と内線電話しかないという有様だった。",
+		   NULL, "Odanın içi önceki otelinden daha kötüydü. Sadece bir yatak ve bir telefon vardı.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　……だが、その電話が富竹にとって今、唯一必要なものでもある。",
+		   NULL, "Ama şu anda en çok ihtiyaç duyduğu şey o telefondu.", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　定時連絡以外に連絡を取らないならば、富竹は宿を固定せず、常に移動し続ける方が安全ではある。",
+		   NULL, "Düzenli raporlar almak zorunda olmasaydı, daha güvenli olacağı için sürekli otel değiştirirdi.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　…だが、調査部の進展を刻一刻と待ち、その内容によって対応が変ってくる現在の状況では、不必要な移動はかえって緊急の連絡を困難にしかねない。",
+		   NULL, "Ancak araştırma şubesinden güncel bilgilere ihtiyacı vardı ve hareket planı bu bilgilere göre değişecekti. Gereksiz yere yer değiştirmek, acil bir durumda iletişim kopukluğuna yol açabilirdi.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　…………まさか、東京調査部の内側にもスパイが入り込んでいるなど、そこまでは富竹も考えが至らなかった。",
+		   NULL, "Tomitake araştırma şubesinde bir casus olabileceğinden hiç şüphelenmemişti.", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　時計の針の音だけが室内に響き渡る。",
+		   NULL, "Saatin tik tak sesleri odanın içinde yankılanıyordu.", Line_Normal);
+	ClearMessage();
+
+	DrawScene( "black", 400 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　もうすぐ９時だ。",
+		   NULL, "Saat neredeyse sabah dokuz olmuştu.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　……だが、別に９時ジャストに電話がなければいけないわけじゃない。",
+		   NULL, "...Ama telefon tam dokuzda çalmayabilirdi.", Line_WaitForInput);
+	OutputLine(NULL, "……富竹は焦らず、受話器の前で待ち続ける。",
+		   NULL, " Tomitake sabırla telefonun önünde bekledi.", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　電話で、誰が出て、何を聞かれても冷静に現在の状況を説明できるよう、要点を頭の中でまとめ、呼吸を落ち着ける。",
+		   NULL, "Sorulara daha sakin cevap verebilmek için kafasındaki bilgileri düzene sokmaya çalıştı.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　…同時に、何かの手段で敵がここを嗅ぎ付け、襲撃してくる可能性も排除しない。",
+		   NULL, "Aynı zamanda bir saldırı ihtimalini de aklından çıkarmıyordu.", Line_Normal);
+	ClearMessage();
+
+	FadeOutBGM( 0, 40, FALSE );
+	DrawScene( "background/si_h2", 400 );
+	ModPlayBGM( 0, "deadend", 120, 0, 0 );
+	ModPlayBGM( 0, "G_Operation", 120, 0, 1 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　その時、どこか遠くの部屋で女性の悲鳴が聞こえた。",
+		   NULL, "Tam o sırada uzaktan bir kadın çığlığı duydu.", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　……何事かと思っていると、また遠くで、別の女性の悲鳴が聞こえた。",
+		   NULL, "...Tekrar oldu. Bir çığlık daha duydu.", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　ホテルの館内を覆いだす、ばたばたとした気配。",
+		   NULL, "Tomitake otelin içinde bir şeyler döndüğünü sezdi.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　……直感する。",
+		   NULL, "Sezgileri ona", Line_WaitForInput);
+	OutputLine(NULL, "何者かが、それも大勢で、マスターキーを使い、全室をチェックしているのだ…！",
+		   NULL, " birinin maymuncukla her odayı tek tek kontrol ettiğini söylüyordu!", Line_Normal);
+	ClearMessage();
+
+	DrawScene( "black", 400 );
+	DrawScene( "background/sora", 400 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　富竹はカーテンを細く開けて表を見る。",
+		   NULL, "Tomitake perdeyi hafifçe araladı.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　…通りには数人の山狗隊員が立ち、ホテルからの退路を遮断、包囲していた。",
+		   NULL, "...Otelin tüm çıkışlarını tutmuş birkaç Dağ Köpeği gördü.", Line_WaitForInput);
+	OutputLine(NULL, "……いつの間に！！",
+		   NULL, " ...Ne zamandır oradaydılar?!", Line_Normal);
+	ClearMessage();
+
+	DrawScene( "black", 400 );
+	DrawScene( "background/si_h2", 400 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　…やられた。",
+		   NULL, "...Sonunda.", Line_WaitForInput);
+	OutputLine(NULL, "ヤツらは自分の寝床を探り当ててきたのだ…！！",
+		   NULL, " Sonunda nerede olduğunu bulmuşlardı.", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　どたどたとした足音はすぐ隣の部屋から聞こえる。",
+		   NULL, "Tomitake onların gürültülü ayak seslerini duyabiliyordu.", Line_WaitForInput);
+	OutputLine(NULL, "いや声も聞こえた。",
+		   NULL, " Seslerini de duydu.", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>雲雀１</color>", NULL, "<color=#f5e6d3>Skylark 1</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_01hibari1006", 128, TRUE);
+	OutputLine(NULL, "「空室だ、次！！」",
+		   NULL, "\"Burası boş. Sıradaki!!\"", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　この安ホテルにチェーンはない。",
+		   NULL, "Bu ucuz otelin kapılarında zincir olmazdı.", Line_WaitForInput);
+	OutputLine(NULL, "マスターキーを拒む手段はないのだ。",
+		   NULL, " Maymuncuğa karşı koymanın hiçbir yolu yoktu.", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　退路遮断に割いてる人数と気配から考えて、敵は２０人近くいるだろう。",
+		   NULL, "Tomitake yaklaşık yirmi kişi olduklarını anlayabiliyordu.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　いや、もっとかもしれない。",
+		   NULL, "Hayır, belki daha da fazlaydılar.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　抗戦は不可能だ。",
+		   NULL, "Onlarla dövüşmeye çalışmanın hiçbir faydası olmazdı.", Line_WaitForInput);
+	OutputLine(NULL, "隠れるしかない！！",
+		   NULL, " Yapabileceği tek şey saklanmaktı!!", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　ベッドの下？",
+		   NULL, "Yatağın altına mı?", Line_WaitForInput);
+	OutputLine(NULL, "　風呂場？",
+		   NULL, " Yoksa banyoya mı?", Line_WaitForInput);
+	OutputLine(NULL, "　映画のように簡単に天井が開くわけがない。",
+		   NULL, " En azından tavan filmlerdeki gibi açılmazdı.", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　窓から外へ？",
+		   NULL, "Pencereden dışarı mı atlamalıydı?", Line_WaitForInput);
+	OutputLine(NULL, "　……ここは２階だ。",
+		   NULL, " ...Ne de olsa ikinci kattaydı.", Line_WaitForInput);
+	OutputLine(NULL, "飛び降りられない高さじゃない。",
+		   NULL, " Böyle bir atlayıştan sağ kurtulmak tamamen mümkündü.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　だが向こうもそれは警戒してる。",
+		   NULL, "Ancak bunu bekliyor olacaklardı.", Line_WaitForInput);
+	OutputLine(NULL, "でもここは市街地のど真ん中だ。",
+		   NULL, " Yine de burası tam şehrin göbeğiydi.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　脚力に自信さえあれば逃げ切ることも不可能じゃない…！！",
+		   NULL, "Bacaklarına güveniyorsa onları geride bırakmak imkânsız olmazdı!!", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　ついに富竹の部屋の前に、どたどたという足音が殺到する。",
+		   NULL, "Tomitake çok geçmeden kapısının önünde ayak sesleri duydu.", Line_WaitForInput);
+	OutputLine(NULL, "……もうこれまでだッ！！",
+		   NULL, " ...İşte başlıyordu!!", Line_Normal);
+	ClearMessage();
+
+	DisableWindow();
+	FadeOutBGM( 0, 1300, FALSE );
+	PlaySE( 0, "s_furu", 128, 64 );
+	DrawSceneWithMask( "white", "maskc", 1, 0, 1300 );
+	SetValidityOfInput( FALSE );
+	Wait( 1000 );
+	SetValidityOfInput( TRUE );
+	DrawScene( "background/sora", 400 );
+	PlaySE( 0, "s_Down", 128, 64 );
+	ModPlayBGM( 0, "samayoi", 120, 0, 0 );
+	ModPlayBGM( 0, "attack", 120, 0, 1 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　窓から威勢よく飛び出し、階下に降り立つ富竹…！",
+		   NULL, "Pencereden dışarı atladı!", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　もちろん、山狗たちが待ち受けていた。",
+		   NULL, "Elbette aşağıda onu bekleyen Dağ Köpekleri vardı.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　いたぞと指を刺し、６人ほどが猛烈な速度で駆けて来る！",
+		   NULL, "Onu işaret ettiler ve içlerinden yaklaşık altısı peşinden koşmaya başladı!", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　富竹は降り立ったその体制から低い姿勢のまま飛び出す！！",
+		   NULL, "Tomitake yere indiği pozisyondan anında ileri doğru fırladı!!", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　隊員たちは追いながら驚く。",
+		   NULL, "Bu, Dağ Köpekleri'ni hazırlıksız yakaladı.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　飛び降りたあの体制からすぐにあれだけの速度で疾駆できるとは…！",
+		   NULL, "İkinci katın penceresinden atlar atlamaz depara kalkmıştı!", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　しかし富竹にとってはそれほど不思議なことじゃない。",
+		   NULL, "Tomitake böyle bir şey yapmaya hazırlıklıydı.", Line_WaitForInput);
+	OutputLine(NULL, "万が一のこのような事態に備えて日々体を鍛えているのだ。",
+		   NULL, " Tıpkı bunun gibi acil bir durum ihtimaline karşı antrenman yapıyordu.", Line_Normal);
+	ClearMessage();
+
+	DrawScene( "black", 400 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>雲雀１０</color>", NULL, "<color=#f5e6d3>Skylark 10</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_10hibari1001", 128, TRUE);
+	OutputLine(NULL, "「雲雀１０より雲雀１！！",
+		   NULL, "\"Toygar 10'dan Toygar 1'e!!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_10hibari1002", 128, TRUE);
+	OutputLine(NULL, "　標的発見！",
+		   NULL, " Hedefi tespit ettik!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_10hibari1003", 128, TRUE);
+	OutputLine(NULL, "　追跡中！！",
+		   NULL, " Kaçıyor!!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_10hibari1004", 128, TRUE);
+	OutputLine(NULL, "　応援求む！！」",
+		   NULL, " Desteğe ihtiyacımız var!!\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>雲雀１</color>", NULL, "<color=#f5e6d3>Skylark 1</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_01hibari1007", 128, TRUE);
+	OutputLine(NULL, "「雲雀１より白鷺！",
+		   NULL, "\"Toygar 1'den Balıkçıl'a!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_01hibari1008", 128, TRUE);
+	OutputLine(NULL, "　標的は裏通りを西に向かい逃走！！",
+		   NULL, " Hedef arka sokakları kullanarak batıya doğru ilerliyor!!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_01hibari1009", 128, TRUE);
+	OutputLine(NULL, "　制圧しろ！！」",
+		   NULL, " Durdurun onu!!\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>白鷺１</color>", NULL, "<color=#f5e6d3>Heron 1</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_01shira1001", 128, TRUE);
+	OutputLine(NULL, "「白鷺了解！！",
+		   NULL, "\"Anlaşıldı!!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_01shira1002", 128, TRUE);
+	OutputLine(NULL, "　白鷺２、３、４！！",
+		   NULL, " Balıkçıl 2, 3 ve 4!!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_01shira1003", 128, TRUE);
+	OutputLine(NULL, "　そっちへ行くぞッ！！！」",
+		   NULL, " Hemen oraya yönelin!!!\"", Line_Normal);
+	ClearMessage();
+
+	DrawSceneWithMask( "background/mati4", "maskright", 7, 0, 300 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>白鷺２</color>", NULL, "<color=#f5e6d3>Heron 2</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_02shira1001", 128, TRUE);
+	OutputLine(NULL, "「……来たぞ…！！",
+		   NULL, "\"...İşte geliyor...!!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_02shira1002", 128, TRUE);
+	OutputLine(NULL, "　ヤツだ！！！」",
+		   NULL, " Bu o!!!\"", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　富竹の前に、電信柱の物陰から３人の隊員が飛び出し立ち塞がる！",
+		   NULL, "Dağ Köpekleri'nin üç üyesi sokak lambasının arkasından fırlayıp Tomitake'nin yolunu kesti!", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	PlaySE( 0, "s_furu", 128, 64 );
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　彼らは機関車のような重量感で突進してくる富竹との間合いを計る。",
+		   NULL, "Onu durdurmaya hazırlandılar ama Tomitake son hızla koşmaya devam etti.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　相手は自分たちを倒そうと走ってくるのではない。",
+		   NULL, "Çok geçmeden, onları devirmek için üzerlerine doğru koşmadığını fark ettiler.", Line_WaitForInput);
+	OutputLine(NULL, "自分たちを潜り抜けて逃げ去ろうとしているのだ。",
+		   NULL, " Yanlarından sıyrılıp geçmeye çalışıyordu.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　ファイティングポーズなど何の役にも立たない。",
+		   NULL, "Dövüş pozisyonu almalarının hiçbir anlamı yoktu.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　彼らは腰を低く落とし、一度に飛び掛って重さで圧殺しようと目論んだ。",
+		   NULL, "Alçaldılar ve aynı anda üzerine atılıp onu yere yıkmaya çalıştılar.", Line_Normal);
+	ClearMessage();
+
+	DrawScene( "black", 50 );
+	PlaySE( 0, "s_furu", 128, 64 );
+
+	SetSpeedOfMessage( TRUE, 128 );
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>白鷺２</color>", NULL, "<color=#f5e6d3>Heron 2</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_02shira1003", 128, TRUE);
+	OutputLine(NULL, "「今だ！！",
+		   NULL, "\"Şimdi!!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_02shira1004", 128, TRUE);
+	OutputLine(NULL, "　うおおおりゃあああああ…！！！」",
+		   NULL, " Huooooaarryyaaaaahh!!!\"", Line_Continue);
+	OutputLineAll(NULL, "", Line_Normal);
+
+	ClearMessage();
+	SetSpeedOfMessage( FALSE, 0 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　その低い腰からの飛び掛りを、逆に飛び越えるように！",
+		   NULL, "Tomitake üzerlerinden atladı!", Line_WaitForInput);
+	OutputLine(NULL, "　飛翔する富竹はまるでハードルを飛び越える陸上選手のようだった。",
+		   NULL, " Engelin üzerinden atlayan bir Olimpiyat atleti gibi üzerlerinden sıçradı.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　だが、彼は陸上選手じゃないし敵もハードルではない。",
+		   NULL, "Ama o bir Olimpiyat atleti değildi, onlar da engel değildi.", Line_WaitForInput);
+	OutputLine(NULL, "…だから富竹の突き出された踵が正面の男の顔に、めりりと打ち込まれる！！",
+		   NULL, " Tomitake'nin topuğu Köpekler'den birine çarptı!!", Line_ContinueAfterTyping);
+
+	PlaySE( 0, "s_Down", 128, 64 );
+	StartShakingOfWindow( 241, 40, 0, 2, 3*2, FALSE );
+	StartShakingOfAllObjects( 241, 40, 0, 2, 3*2, TRUE );
+
+	OutputLineAll(NULL, "", Line_Normal);
+
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　左右の二人は何とか富竹に組み付いたつもりだった。",
+		   NULL, "Tomitake'yi iki yandan kıskaca alan ikisi onu yakaladıklarını sandılar.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	PlaySE( 0, "s_furu", 128, 64 );
+	SetValidityOfInput( FALSE );
+	Wait( 300 );
+	SetValidityOfInput( TRUE );
+	PlaySE( 0, "s_furu", 128, 64 );
+	SetValidityOfInput( FALSE );
+	Wait( 300 );
+	SetValidityOfInput( TRUE );
+	PlaySE( 0, "s_furu", 128, 64 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　だが、富竹は突進の重量感からは想像もつかないくらい軽やかに身を翻ると、二人の顔面が互いに勢い込んでぶつかるように頭を抱え、猛烈な力を加えて打ちつけ合ってやった。",
+		   NULL, "Ancak Tomitake kolayca üzerlerinden uçarken ikisinin de kafasından kavradı ve başlarını birbirine çarptı.", Line_ContinueAfterTyping);
+
+	PlaySE( 0, "s_tataku", 128, 64 );
+	StartShakingOfWindow( 241, 40, 0, 0, 4*2, FALSE );
+	StartShakingOfAllObjects( 241, 40, 0, 0, 4*2, TRUE );
+
+	OutputLineAll(NULL, "", Line_Normal);
+
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　この程度の攻撃で３人を沈黙させるには至らないが、彼らから逃れるには充分過ぎる隙を得る！",
+		   NULL, "Tomitake bunun onları durdurmayacağını biliyordu ama en azından kaçmak için biraz zaman kazanacaktı.", Line_Normal);
+	ClearMessage();
+
+	DrawScene( "background/sora", 400 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>白鷺２</color>", NULL, "<color=#f5e6d3>Heron 2</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_02shira1005", 128, TRUE);
+	OutputLine(NULL, "「標的、西側阻止線を突破！",
+		   NULL, "\"Hedef batı önleme ekibini yarıp geçti!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_02shira1006", 128, TRUE);
+	OutputLine(NULL, "　追跡中！！」",
+		   NULL, " Hâlâ koşuyor!!\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>白鷺１</color>", NULL, "<color=#f5e6d3>Heron 1</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_01shira1004", 128, TRUE);
+	OutputLine(NULL, "「馬鹿野郎、何やってんだッ！！",
+		   NULL, "\"Lanet olsun, ne yapıyorsunuz siz?!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_01shira1005", 128, TRUE);
+	OutputLine(NULL, "　白鷺１０！！",
+		   NULL, " Balıkçıl 10!!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_01shira1006", 128, TRUE);
+	OutputLine(NULL, "　車両で回り込め、２つ先のブロックを左折で、９時方向にヤツを捉える！！」",
+		   NULL, " Arabayla etrafından dolaşın. İkinci soldan dönün, saat 9 yönünde onu kıstıracağız!!\"", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>白鷺３</color>", NULL, "<color=#f5e6d3>Heron 3</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_03shira1001", 128, TRUE);
+	OutputLine(NULL, "「大丈夫かッ？！",
+		   NULL, "\"İyi misin?", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_03shira1002", 128, TRUE);
+	OutputLine(NULL, "　くそぉおお！！",
+		   NULL, " Kahretsin!!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_03shira1003", 128, TRUE);
+	OutputLine(NULL, "　逃がすなぁ！！！」",
+		   NULL, " Kaçmasına izin vermeyin!!\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>白鷺４</color>", NULL, "<color=#f5e6d3>Heron 4</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_04shira1001", 128, TRUE);
+	OutputLine(NULL, "「あンの野郎、何て馬鹿力だ…。",
+		   NULL, "\"Ne... güç ama...", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_04shira1002", 128, TRUE);
+	OutputLine(NULL, "クソ、鼻血が止まらねぇ…！！」",
+		   NULL, " Kahretsin, burnum kanıyor!!\"", Line_Normal);
+	ClearMessage();
+
+	DrawSceneWithMask( "background/mati_o1", "maskright", 7, 0, 300 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　富竹の正面の十字路に、スライドドアが開きっぱなしのワゴン車が飛び込んでくる！",
+		   NULL, "Tomitake ileride kapısı ardına kadar açık bir minibüs gördü!", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　それはブレーキで止まりきれず、ブロック塀に側面を打ち付けるように停まると、中からわらわらと４〜５人の隊員が飛び出してくる…！！",
+		   NULL, "Minibüs zamanında duramadı ve duvara çarptı. Durur durmaz içinden birkaç Dağ Köpeği fırladı.", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>白鷺１０</color>", NULL, "<color=#f5e6d3>Heron 10</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_10shira1001", 128, TRUE);
+	OutputLine(NULL, "「是が非でも止めろ！！",
+		   NULL, "\"Ne pahasına olursa olsun durdurun onu!!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_10shira1002", 128, TRUE);
+	OutputLine(NULL, "　後がないぞッ！！！」",
+		   NULL, " Durdurun onu!!!\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>白鷺８</color>", NULL, "<color=#f5e6d3>Heron 8</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_08shira1001", 128, TRUE);
+	OutputLine(NULL, "「かかってきやがれ畜生めッ、こっちは５人だ！！！」",
+		   NULL, "\"Hadi ama, beş kişiyiz biz!!!\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　富竹の前方に待ち構える５人！",
+		   NULL, "Tomitake önünde beş adam gördü!", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　だが、富竹は自分がその５人程度で止められるとはまるで夢にも思わなかった。",
+		   NULL, "Ama bu beş kişinin bile onu durdurabileceğini düşünmüyordu.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　……汽車の前方に人がいたら警笛を鳴らすのはなぜ？　汽車が傷つくからじゃない。",
+		   NULL, "...Trenler rayların üzerindeki insanlara neden korna çalar?", Line_WaitForInput);
+	OutputLine(NULL, "相手が跳ね飛ばされるからだッ！！",
+		   NULL, " Tren hasar göreceği için değil; insanlar zarar göreceği için!!", Line_Normal);
+	ClearMessage();
+
+	DisableWindow();
+	ModDrawCharacter(0, 8, "sprite/tomi3_ikari_", "2", -40, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 9, 200, TRUE );
+
+	SetSpeedOfMessage( TRUE, 128 );
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#945c44>富竹</color>", NULL, "<color=#945c44>Tomitake</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 8, "ps3/s13/08/ds41090150", 128, TRUE);
+	OutputLine(NULL, "「うぉおおおぉおおどっけええぇええッ！！！」",
+		   NULL, "\"Çekiiiiiliiiiiiin!!!\"", Line_Continue);
+
+	StartShakingOfWindow( 241, 40, 0, 2, 4*2, FALSE );
+	StartShakingOfAllObjects( 241, 40, 0, 2, 4*2, TRUE );
+
+	SetSpeedOfMessage( FALSE, 0 );
+	OutputLineAll(NULL, "", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　その雄叫びはまさに機関車の警笛！　自分の邪魔だからどけと言ってるんじゃない。",
+		   NULL, "Onlara bir tren kornası gibi kükredi! Onları yoluna çıktıkları için uyarmıyordu.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　怪我をしたくなかったらどけと警告しているのだッ！！",
+		   NULL, "Zarar görmemeleri için kenara çekilmeleri konusunda uyarıyordu!!", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>白鷺７</color>", NULL, "<color=#f5e6d3>Heron 7</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_07shira1001", 128, TRUE);
+	OutputLine(NULL, "「こ、こっちはこれだけ人数がいるんだ！！",
+		   NULL, "\"B-Bakın kaç kişiyiz!!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_07shira1002", 128, TRUE);
+	OutputLine(NULL, "　体重だけ見たってヤツの５倍だぞ！！",
+		   NULL, " Beşe bir üstünüz!!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_07shira1003", 128, TRUE);
+	OutputLine(NULL, "　それだけに圧し掛かられてもなおヤツを止められないってのか？！",
+		   NULL, " Bana onu durduramayacağımızı söylemeyin!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_10shira1003", 128, TRUE);
+	OutputLine(NULL, "　ありえない！！",
+		   NULL, " İmkânı yok!!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_10shira1004", 128, TRUE);
+	OutputLine(NULL, "　ありえねぇ、絶対ここで止めろッ！！！",
+		   NULL, " Bizi geçmesinin imkânı yok!!!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_10shira1005", 128, TRUE);
+	OutputLine(NULL, "　かかれぇええぇえええぇえええ！！！！」",
+		   NULL, " Hadi bakalırıııııııız!!!!\"", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　不敵に、…いや、笑っていない。",
+		   NULL, "Tomitake sırıtmadı.", Line_WaitForInput);
+	OutputLine(NULL, "機関車は笑わないッ！！！",
+		   NULL, " Ne de olsa... trenler sırıtmazdı!!!", Line_Normal);
+	ClearMessage();
+
+	PlaySE( 0, "s_daidageki", 128, 64 );
+	StartShakingOfWindow( 241, 40, 0, 2, 4*2, FALSE );
+	StartShakingOfAllObjects( 241, 40, 0, 2, 4*2, FALSE );
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#945c44>富竹</color>", NULL, "<color=#945c44>Tomitake</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 8, "ps3/s13/08/ds41090151", 128, TRUE);
+	OutputLine(NULL, "「ううおおおおおおおおおおおおおおッ！！！」",
+		   NULL, "\"Ooooohhhhhhhhhhhhhhh!!!\"", Line_Normal);
+	ClearMessage();
+
+	DisableWindow();
+	EnlargeScreen( 288, 216, 64, 48, FALSE, 300, TRUE );
+	DrawScene( "black", 50 );
+	FadeOutBGM( 0, 300, FALSE );
+
+	SetSpeedOfMessage( TRUE, 128 );
+	Wait( 5000 );
+	PlaySE( 0, "s_Kyupiin", 128, 64 );
+	Wait( 2000 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>白鷺１</color>", NULL, "<color=#f5e6d3>Heron 1</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_01shira1007", 128, TRUE);
+	OutputLine(NULL, "「富竹の確保に成功しました。」",
+		   NULL, "\"Tomitake'yi yakaladık.\"", Line_Normal);
+	ClearMessage();
+
+	ModDrawCharacter(0, 9, "sprite/ta1_akuwarai_", "2", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 9, 0, FALSE );
+	DrawSceneWithMask( "background/chika_sekyurithi", "maskup", 1, 0, 300 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f6d9a8>鷹野</color>", NULL, "<color=#f6d9a8>Takano</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 9, "ps3/s13/09/ds41080233", 128, TRUE);
+	OutputLine(NULL, "「本当？！",
+		   NULL, "\"Gerçekten mi?!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 9, "ps3/s13/09/ds41080234", 128, TRUE);
+	OutputLine(NULL, "　くすくす、あっさりだったわねぇ。",
+		   NULL, " Kih kih, o kadar da uzun sürmedi.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 9, "ps3/s13/09/ds41080235", 128, TRUE);
+	OutputLine(NULL, "色々と聞きたいことがあるわ。",
+		   NULL, " Ona birkaç soru sormak istiyorum.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 9, "ps3/s13/09/ds41080236", 128, TRUE);
+	OutputLine(NULL, "殺しちゃ駄目よ、こっちへ連行して！",
+		   NULL, " Onu öldürmeyin, tamam mı? Buraya getirin!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 9, "ps3/s13/09/ds41080237", 128, TRUE);
+	OutputLine(NULL, "　どうせ殺すけど、彼には似合いの死がすでに用意してあるんだからね。",
+		   NULL, " Onu daha sonra öldüreceğiz ama gitmesi için şimdiden harika bir yol buldum bile. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f6d9a8>鷹野</color>", NULL, "<color=#f6d9a8>Takano</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 9, "ps3/s13/09/ds41080238", 128, TRUE);
+	OutputLine(NULL, "…くすくすくすくす。」",
+		   NULL, "...Kih kih kih kih.\"", Line_Normal);
+	ClearMessage();
+
+	DrawScene( "black", 400 );
+	PlayBGM( 1, "denwa_m", 120, 0 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　その頃、……ホテルの富竹の一室では、部屋の主を失った電話が戻るはずのない主を求めて、いつまでも呼び出し音を鳴らせ続けていた…。",
+		   NULL, "Telefon, Tomitake'nin boş otel odasının içinde çalmaya devam etti.", Line_Normal);
+	ClearMessage();
+
+	FadeOutBGM( 1, 1000, FALSE );
+	DrawScene( "background/sinryou_soto1", 1000 );
+	PlayBGM( 0, "semi", 120, 0 );
+	SetSpeedOfMessage( FALSE, 0 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　両手両足を手錠で拘束され、猿ぐつわまでされた富竹が入江診療所の裏口に運び込まれたのは、それから３０分後のことだった。",
+		   NULL, "Otuz dakika içinde Tomitake, ağzı tıkalı ve kelepçeli bir halde Irie Enstitüsü'nün arka kapısından içeri sürüklendi.", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　富竹は薬物でも与えられたのか、ぐったりとしていて動かなかった。",
+		   NULL, "Tomitake sanki sakinleştirici verilmiş gibi kımıldamıyordu bile.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　それを隊員たちに抱えられるようにしてワゴン車から運び出されている。",
+		   NULL, "Dağ Köpeği üyeleri onu minibüsten indirip taşımışlardı.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　…入江は所長室の窓からその様子に気付き、飛び出してきた。",
+		   NULL, "...Irie penceresinden Tomitake'yi gördü ve aceleyle ofisinden dışarı çıktı.", Line_Normal);
+	ClearMessage();
+
+	DrawSceneWithMask( "black", "maskleft", 1, 0, 300 );
+	ModDrawCharacter(2, 9, "sprite/ta1_def_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 10, 0, FALSE );
+	DrawSceneWithMask( "background/sinryou_sinsatu3", "maskleft", 1, 0, 300 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　そこにはもう鷹野の姿もあった。",
+		   NULL, "Takano çoktan oradaydı.", Line_Normal);
+	ClearMessage();
+
+	DisableWindow();
+	ModDrawCharacterWithFiltering(1, 10, "sprite/iri2_majime_", "2", "maskleft", 1, -160, 0, FALSE, 0, 0, 0, 0, 0, 8, 300, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>Irie</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s13/10/ds41100296", 128, TRUE);
+	OutputLine(NULL, "「……こ、…これは何事ですか鷹野さん。」",
+		   NULL, "\"...N... Neler oluyor burada, Takano-san?\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　隊員たちが、無言だが厳しさを感じさせる目をぎょろりと入江に向ける。",
+		   NULL, "Dağ Köpekleri sessizce Irie'ye ters ters baktı.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　……来てはならぬところに来た、というのを肌で感じるほどだった。",
+		   NULL, "...Odasından çıkmaması gerektiğini fark etti.", Line_Normal);
+	ClearMessage();
+
+	DisableWindow();
+	FadeOutBGM( 0, 200, FALSE );
+	ModDrawCharacter(2, 9, "sprite/ta1_akuwarai_", "2", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 10, 200, TRUE );
+	PlayBGM( 0, "semi_r", 120, 0 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f6d9a8>鷹野</color>", NULL, "<color=#f6d9a8>Takano</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 9, "ps3/s13/09/ds41080239", 128, TRUE);
+	OutputLine(NULL, "「ジロウさんの姿が見えないと思ったら。何と末期発症をしていたのですわ。",
+		   NULL, "\"Jirou-san'ı bir süredir görmemiştim, ben de endişelenip Dağ Köpekleri'ne onu arattım.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 9, "ps3/s13/09/ds41080240", 128, TRUE);
+	OutputLine(NULL, "不審に思い、山狗たちに探させていて正解でした。」",
+		   NULL, " İyi ki de öyle yapmışım, çünkü bakın, son evreye girmiş.\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>Irie</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s13/10/ds41100297", 128, TRUE);
+	OutputLine(NULL, "「ま、末期発症…？",
+		   NULL, "\"S-Son evre semptomları mı göstermeye başladı?", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s13/10/ds41100298", 128, TRUE);
+	OutputLine(NULL, "　富竹さんがですか…？！」",
+		   NULL, " Emin misiniz...?!\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　もちろん、ぐったりとしている富竹がそれに答えるわけもない。",
+		   NULL, "Elbette Tomitake cevap vermedi.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　だが、入江はそれ以上を口には出さなかった。",
+		   NULL, "Irie daha fazla bir şey söylememeye karar verdi.", Line_Normal);
+	ClearMessage();
+
+	DisableWindow();
+	ModDrawCharacter(1, 10, "sprite/iri2_majime2_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 8, 200, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>Irie</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s13/10/ds41100299", 128, TRUE);
+	OutputLine(NULL, "「そうですか……。",
+		   NULL, "\"Anlıyorum...", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s13/10/ds41100300", 128, TRUE);
+	OutputLine(NULL, "それはとても不幸なことです。",
+		   NULL, " Bu çok talihsiz bir durum.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s13/10/ds41100301", 128, TRUE);
+	OutputLine(NULL, "すぐに治療薬を投与してください。」",
+		   NULL, " Ona mümkün olan en kısa sürede ilaç verelim.\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	DisableWindow();
+	ModDrawCharacter(2, 9, "sprite/ta1_warai_", "2", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 10, 200, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f6d9a8>鷹野</color>", NULL, "<color=#f6d9a8>Takano</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 9, "ps3/s13/09/ds41080241", 128, TRUE);
+	OutputLine(NULL, "「もちろんですわ。",
+		   NULL, "\"Elbette.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 9, "ps3/s13/09/ds41080242", 128, TRUE);
+	OutputLine(NULL, "投与の間に合う段階だといいのですが。",
+		   NULL, " Umarım çok geç kalmamışızdır.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 9, "ps3/s13/09/ds41080243", 128, TRUE);
+	OutputLine(NULL, "…くすくす。」",
+		   NULL, " ...Kih kih.\"", Line_Normal);
+	ClearMessage();
+
+	DrawSceneWithMask( "black", "maskdown", 1, 0, 300 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　入江は理解していた。",
+		   NULL, "Irie zaten biliyordu.", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　山狗たちが、内偵していた富竹を見付け出して捕らえたのだ。",
+		   NULL, "Dağ Köpekleri onun izini bulmuştu.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　富竹は東京と話を付けられたのか。",
+		   NULL, "Irie, Tomitake'nin Tokyo ile bir şeyler ayarlayıp ayarlayamadığından emin değildi.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　番犬部隊を鎮圧に送ってもらえるように話をできたのか。",
+		   NULL, "Kan Tazıları'nın çağrılıp çağrılmadığından bile emin değildi.", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　……いや、多分できていない。",
+		   NULL, "Tomitake'nin vaktinin olmadığını tahmin edebiliyordu.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　番犬が派遣されるという事態になれば、多分、彼らはその情報を察知する。",
+		   NULL, "Eğer Kan Tazıları çağrılmış olsaydı, Dağ Köpekleri bu istihbaratı yakalardı.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　そうしたらもう言い逃れなど出来る段階ではない。",
+		   NULL, "Ve eğer durum öyle olsaydı...", Line_WaitForInput);
+	OutputLine(NULL, "ここを放棄して逃走するはずだ。",
+		   NULL, " muhtemelen her şeyi bırakıp kaçarlardı.", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　富竹を捕らえて地下に担ぎ込むということは、……まだそこまで至っておらず、事態をうやむやにして誤魔化せる程度の段階なのだということだ。",
+		   NULL, "Ama Tomitake yakalanmıştı ve onu Enstitüye geri getirmişlerdi. Bu da işin o raddeye varmadığı ve hâlâ hasarı onarmaya çalıştıkları anlamına geliyordu.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　つまり、…富竹に私たちが期待したことが、完遂できなかったのだ…。",
+		   NULL, "...Başka bir deyişle Tomitake, umdukları şeyi başaramamıştı...", Line_Normal);
+	ClearMessage();
+
+	FadeOutBGM( 0, 300, FALSE );
+	DrawSceneWithMask( "background/sinryou_sinsatu2", "maskup", 1, 0, 300 );
+	PlayBGM( 0, "higurashi_utu", 120, 0 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　彼らは富竹をどうするつもりだろう。",
+		   NULL, "Tomitake'ye ne yapacaklardı?", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　生かして連れてきたのだから、拷問にでもかけて何かの口を割らせようとするのか。",
+		   NULL, "Onu canlı getirdiklerine göre, işkenceyle itiraf ettirmeyi mi planlıyorlardı?", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　危険だ…。",
+		   NULL, "Bu onun için çok tehlikeli olurdu.", Line_WaitForInput);
+	OutputLine(NULL, "このままでは多分、彼は殺されてしまう。",
+		   NULL, " Muhtemelen sonunda ölürdü.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　彼に代わって今度は自分が何とかしなくてはならないんだ…！",
+		   NULL, "Irie, Tomitake'nin yerine bir şeyler yapmak zorunda olduğunu fark etti!", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　入江が富竹を救出しなくてはならない最大の理由は、彼が「東京」への連絡方法を持たないためだった。",
+		   NULL, "Irie'nin Tomitake'yi kurtarmak zorunda olmasının asıl nedeni, kendi başına Tokyo ile iletişime geçmesinin hiçbir yolu olmamasıydı.", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　鷹野は入江を形骸化させ、機関を牛耳るため、東京への連絡方法は機密であるとし、",
+		   NULL, "Takano, Irie'nin işe yaramaz halde kalmasını istiyordu,", Line_WaitForInput);
+	OutputLine(NULL, "入江に連絡方法を明かしていなかったためである。",
+		   NULL, " bu yüzden ona Tokyo ile nasıl temasa geçileceğini hiç söylememişti.", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　そのため、入江は東京からの電話を受けることはできても、鷹野を経由せずに連絡を取る方法を知らなかったのだ。",
+		   NULL, "Irie Tokyo'dan telefon alabiliyordu ama onları yalnızca Takano aracılığıyla arayabiliyordu.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　つまり、…富竹がキーマンであることに代わりはなく、…富竹を救出する以外に勝ち方がないのである…。",
+		   NULL, "Dolayısıyla kilit isim Tomitake'ydi. ...Irie onu kurtarmadığı sürece kazanmaları imkânsızdı...", Line_Normal);
+	ClearMessage();
+
+	PlayBGM( 1, "semi_r", 120, 0 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　しかし、自分は山狗のような特殊部隊でも何でもない。",
+		   NULL, "Ama Irie, Dağ Köpekleri gibi değildi.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　ただの医者で研究者だ。",
+		   NULL, "O sadece bir araştırmacıydı.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　非常召集がかかり、セキュリティが最高まであげられた研究区画から彼を救出するなど、とてもできやしない……。",
+		   NULL, "Irie'nin Tomitake'yi böylesine yüksek güvenlikli bir bölgeden kurtarmasının imkânı yoktu...", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　ここには、診療所警護のため、保安要員の山狗が８名もいる。",
+		   NULL, "Binada sekiz Dağ Köpeği vardı.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　……普段は多くても２名なのだが、鷹野さんが非常召集をかけたため、見たこともない人数が詰め込んでいるのだ。",
+		   NULL, "...Normalde sadece iki kişi olurlardı ama Takano daha fazlasını çağırmıştı.", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　もちろん地下の研究区画は厳重なセキュリティが施されていて、パスカードがなければ入ることも出ることもできない。",
+		   NULL, "Elbette bodrum katı yüksek güvenlikli bir alandı ve içeri girmek için giriş kartı gerekiyordu.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　……つまり、パスカードを持つ、彼らの息のかかっていない人間、…つまり、入江にしか富竹を救助することはできないのだ。",
+		   NULL, "O kart yalnızca Irie'nin konumundaki kişilere verilirdi.", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　パスカードの認証の他に指紋による個人認証も並行する最新式のセキュリティだ。",
+		   NULL, "Giriş kartına ek olarak parmak izi eşleşmesi de gerekiyordu.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　だからこのパスカードを誰かに譲渡しても意味がない。",
+		   NULL, "Tek başına giriş kartı yetmezdi.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　このカードを持つ、入江にしか、地下区画から富竹を救出できないのだ。",
+		   NULL, "Dolayısıyla Tomitake'yi o yüksek güvenlikli bodrumdan kurtarabilecek tek kişi Irie'ydi.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　だからこそ、……いくら無理でも、",
+		   NULL, "Bu yüzden... imkânsız olsa bile...", Line_ContinueAfterTyping);
+	SetValidityOfInput( FALSE );
+	Wait( 800 );
+	SetValidityOfInput( TRUE );
+	OutputLine(NULL, "…入江がやらなければならない…。",
+		   NULL, " Irie bunu yapmak zorundaydı.", Line_Normal);
+	ClearMessage();
+
+	ModPlayBGM( 3, "kaze", 120, 0, 1 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　入江は自らの勇気を振り絞ろうと、両拳を作ってぐっと握り締めたが、自らの震えに気付かされるだけだった。",
+		   NULL, "Irie kendine cesaret vermek için ellerini yumruk yapıp sıkıca sıktı ama yalnızca yumruklarının titrediğini fark etti.", Line_Normal);
+	ClearMessage();
+
+
+	DisableWindow();
+	FadeOutBGM( 0, 400, FALSE );
+	FadeOutBGM( 1, 400, FALSE );
+	ModFadeOutBGM( 3, 400, FALSE, 1 );
+	DrawBustshot( 7, "filter_hanyu", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 12, 700, FALSE );
+	ModSetLayerFilter(0, 179, "none");
+	ModDrawCharacter(0, 12, "sprite/ha1_def2_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 9*2, 1000, TRUE );
+	PlayBGM( 1, "suzu", 120, 0 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　……………入江。",
+		   NULL, ".........Irie.", Line_WaitForInput);
+	OutputLine(NULL, "忘れましたですか…？",
+		   NULL, " Unuttun mu...?", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　その時、入江は以前、赤坂に受けた忠告を思い出す。",
+		   NULL, "Irie, Akasaka'nın ona söylediklerini hatırladı.", Line_Normal);
+	ClearMessage();
+
+	DrawSceneWithMask("background/sinryou_sinsatu2", "maskc", 0, 0, 1000 );
+	FadeOutBGM( 1, 1000, FALSE );
+	DrawScene( "black", 1000 );
+	ModSetLayerFilter(2, 256, "flashback");
+	ModDrawCharacterWithFiltering(2, 13, "sprite/aks1_shinken_", "0", "maskm1", 1, 160, 0, FALSE, 0, 0, 0, 0, 0, 10, 1300, TRUE );
+	PlayBGM( 0, "pros", 120, 0 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#797d8a>赤坂</color>", NULL, "<color=#797d8a>Akasaka</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 13, "org/s13/13/ds41120298_org", 128, TRUE);
+	OutputLine(NULL, "　自らの危機を測るのはとても難しいことです。",
+		   NULL, "\"Ancak kendi tehlikenizi önceden kestirmek çok zordur.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 13, "ps3/s13/13/ds41120299", 128, TRUE);
+	OutputLine(NULL, "まだ大丈夫、多分大丈夫などと思っている内に連絡の機会さえ逃してしまいかねません。",
+		   NULL, " Bunu hafife alamazsınız. Telefon açma fırsatı bile bulamayabilirsiniz.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 13, "ps3/s13/13/ds41120300", 128, TRUE);
+	OutputLine(NULL, "…少しでも嫌な予感がしたら緊急時と判断していいでしょう。",
+		   NULL, " Tuhaf bir şey sezersiniz, bu acil bir durum demektir. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#797d8a>赤坂</color>", NULL, "<color=#797d8a>Akasaka</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 13, "ps3/s13/13/ds41120301", 128, TRUE);
+	OutputLine(NULL, "…陰謀の度合いから考えて、敵は私たちを生かしはしません。",
+		   NULL, "Komplonun ciddiyeti düşünülürse bizi öldürmekten çekinmeyeceklerdir.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 13, "ps3/s13/13/ds41120302", 128, TRUE);
+	OutputLine(NULL, "くれぐれもご用心を。",
+		   NULL, " Lütfen çok dikkatli olun.\"", Line_Normal);
+	ClearMessage();
+
+	DrawScene( "black", 1000 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　入江の背中を冷たい汗が一滴、すーっと流れる…。",
+		   NULL, "Irie sırtından soğuk terler boşandığını hissetti...", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　赤坂に言われた緊急時とは、…今のことではないのか。",
+		   NULL, "Akasaka'nın bahsettiği acil durum bu muydu?", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　まだ大丈夫なんて甘えが、自らの逃げ出す余地さえ失わせる…。",
+		   NULL, "Her şeyin hâlâ yolunda olduğunu düşünmemeliydi. Kaçma şansını kaybedebilirdi...", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　……そうだ。ここで私が勇気を出したとしても、それは蛮勇でしかない。",
+		   NULL, "Tek başına bir şey yapmaya çalışmanın aptallık olduğunu fark etti.", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　自分の手元にはパスカードがある。",
+		   NULL, "Güvenlik giriş kartı onda olduğu doğruydu.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　……だからと言って、自分１人で救出しなければならないわけじゃない。",
+		   NULL, "...Ama bu, Tomitake'yi tek başına kurtarmak zorunda olduğu anlamına gelmiyordu.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　…みんなが力を合わせているように、自分もみんなの力を借りるべきなのだ。",
+		   NULL, "Tıpkı diğer herkesin çabalarını birleştirmeye çalıştığı gibi, o da yardım istemeliydi.", Line_Normal);
+	ClearMessage();
+
+	DrawScene( "background/aka2", 400 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　そして、富竹が捕まったということは、……すでに山狗が自分たちへの攻撃を認識し、反撃に転じていることを示す。",
+		   NULL, "Ayrıca Tomitake onların elindeydi; bu da Dağ Köpekleri'nin saldırı altında olduklarını fark ettikleri ve karşı saldırıya hazırlandıkları anlamına geliyordu.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　いや、今や自分に疑いの目が向けられていても何もおかしいことはないのだ。",
+		   NULL, "Irie'den de şüpheleniyor olmaları çok muhtemeldi.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　梨花の家に山狗たちが一度踏み込めば、自分がついてきた嘘は瞬時に暴かれる。",
+		   NULL, "Rika'nın evine zorla girdiklerinde Irie'nin yalanları ortaya çıkacaktı.", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　……そう。",
+		   NULL, "...Gerçekten de.", Line_WaitForInput);
+	OutputLine(NULL, "今が赤坂の教えてくれた、緊急時なのだ。",
+		   NULL, " Akasaka'nın bahsettiği acil durum buydu.", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　入江はそれを判断する。",
+		   NULL, "Irie bunu fark etmişti.", Line_WaitForInput);
+	OutputLine(NULL, "…すでに自分に危険が迫っているのだ。",
+		   NULL, " Zaten tehlikedeydi.", Line_WaitForInput);
+	OutputLine(NULL, "……今すぐここを脱出した方がいい。",
+		   NULL, " Derhal buradan ayrılması gerekiyordu.", Line_Normal);
+	ClearMessage();
+
+	DrawScene( "black", 400 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　非常時の集合場所は園崎家だ。",
+		   NULL, "Acil bir durumda toplanma noktaları Sonozaki Malikanesi'ydi.", Line_WaitForInput);
+	OutputLine(NULL, "園崎家に味方は集まる。",
+		   NULL, " Müttefikleri Sonozaki Malikanesi'nde toplanıyordu.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　状況を話し、富竹救出の作戦を練るべきなのだ。",
+		   NULL, "Durumu onlara açıklamalı ve Tomitake'yi nasıl kurtaracaklarını düşünmeliydi.", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　多分、鷹野さんはすぐには殺さない。",
+		   NULL, "Takano muhtemelen Tomitake'yi hemen öldürmezdi.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　……５年目の祟りになぞらえて今夜に殺すつもりだ。",
+		   NULL, "Onu beşinci yılın laneti olarak o gece öldürmeyi planlıyordu.", Line_WaitForInput);
+	OutputLine(NULL, "だから時間はわずかだがある。",
+		   NULL, " Yani hâlâ biraz vakit vardı.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　こちらには他に味方もいるし、パスカードを持つ自分もいれば、まだ救出するチャンスは残るのだ。",
+		   NULL, "Müttefikleri vardı ve güvenlik giriş kartıyla onu kurtarma şansı hâlâ mevcuttu.", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　なら、自分が脱出することを赤坂にも連絡しないと…。",
+		   NULL, "Irie, Akasaka'ya kaçtığını bildirmek zorundaydı...", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　自分が疑われれば、あの家には誰がいるのか、ということになり赤坂にも危険が及ぶ。",
+		   NULL, "Eğer Irie'den şüphelenirlerse evi kontrol ederlerdi ve Akasaka da tehlikeye girerdi.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　……連鎖的に危険が起こる可能性が高い…！",
+		   NULL, "...Başka bir deyişle, bu bir zincirleme reaksiyona yol açabilirdi...!", Line_Normal);
+	ClearMessage();
+
+	DrawScene( "background/ke5", 400 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>Irie</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s13/10/ds41100302", 128, TRUE);
+	OutputLine(NULL, "「…………………………………。」",
+		   NULL, "\"..................\"", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　こうして入江は、見逃しかねなかった、最後の逃走のタイミングを見誤らずに済む。",
+		   NULL, "Irie kaçmak için son şansını kaçırmadı.", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　…逃げる前の最後の仕事だ。",
+		   NULL, "Ama yine de son görevini yapması gerekiyordu.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　入江は所長席の受話器を取り、梨花の家の短縮番号のボタンを押してから受話器を脇に置き、掛けっぱなしの状態のまま放置した。",
+		   NULL, "Irie masasındaki telefonu kaldırdı, Rika'nın ev numarasını tuşladı ve odadan çıktı.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　……このまま、ずっと鳴らし続けるのが緊急事態の連絡なのだ。",
+		   NULL, "...Telefon bu şekilde çalmaya devam ederek acil durum sinyalini verecekti.", Line_Normal);
+	ClearMessage();
+
+	DrawSceneWithMask( "background/sinryou_sinsatu1", "maskright", 1, 0, 300 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　入江は、あと何年この所長室で執務をすることになるのかと感慨にふけったことがあるのを思い出す。",
+		   NULL, "Irie, bu Direktör odasında daha ne kadar kalacağını merak ettiği zamanları hatırladı.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　まさか、この部屋を去る日が、こんなにも唐突に訪れるとは思わなかった…。",
+		   NULL, "O günün bu kadar aniden geleceğini hiç bilmiyordu...", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　常に卓上に置いていた両親の写真立てが目に入る。",
+		   NULL, "Masasının üzerindeki, anne ve babasının çerçeveli fotoğrafını fark etti.", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　………父と母の誤解を解き、……家族愛を取り戻すために足を踏み入れたこの世界だった。",
+		   NULL, "......Irie, anne ve babası arasındaki yanlış anlaşılmayı gidermek ve aile bağlarını yeniden kazanabilmek için doktor olmuştu.", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　…それが、………いつの間にこんなことに巻き込まれるような道に入ってしまったのか。",
+		   NULL, "Ama... böylesi bir işin içine nasıl bulaşmıştı?", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　いや、……またきっと帰って来る。",
+		   NULL, "Hayır... geri dönecekti.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　そして私は再びここで執務をし、…雛見沢症候群という不幸な病気を撲滅するため、戦い続けるのだ。",
+		   NULL, "Geri dönecek ve Hinamizawa Sendromu'na karşı mücadelesini sürdürecekti.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　…私は、その責任を絶対に放棄したりしない…！",
+		   NULL, "Bu sorumluluğu asla terk etmeyeceğine dair kendi kendine yemin etti.", Line_Normal);
+	ClearMessage();
+
+	DrawSceneWithMask( "black", "maskdown", 1, 0, 300 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>Irie</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s13/10/ds41100303", 128, TRUE);
+	OutputLine(NULL, "「……必ず戻って来るよ。",
+		   NULL, "\"...Geri döneceğim.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s13/10/ds41100304", 128, TRUE);
+	OutputLine(NULL, "……父さん、母さん。」",
+		   NULL, " ...Anne, Baba.\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　入江は最後の別れを残し、所長室を後にした。",
+		   NULL, "Irie son vedasını etti ve Direktörün ofisinden ayrıldı.", Line_Normal);
+	ClearMessage();
+
+	FadeOutBGM( 0, 1000, FALSE );
+	DrawScene( "background/chika_sekyurithi", 1000 );
+	PlayBGM( 0, "semi_r", 120, 0 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>山狗</color>", NULL, "<color=#f5e6d3>Mountain Dog</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_yamab1045", 128, TRUE);
+	OutputLine(NULL, "「……三佐。",
+		   NULL, "\"...Binbaşım.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_yamab1046", 128, TRUE);
+	OutputLine(NULL, "所長室の内線から外線へ通話中です。",
+		   NULL, " Direktörün ofisinden dışarıdaki bir numaraya arama yapılıyor.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_yamab1047", 128, TRUE);
+	OutputLine(NULL, "…電話番号は、",
+		   NULL, " Telefon numarası...", Line_Continue);
+	// (backup) SetValidityOfInput( FALSE );
+	Wait( 800 );
+	// (backup) SetValidityOfInput( TRUE );
+
+	OutputLine(NULL, "……Ｒ宅です！」",
+		   NULL, " R konutu!\"", Line_Normal);
+	ClearMessage();
+
+	DisableWindow();
+	ModSetLayerFilter(2, 256, "none");
+	ModDrawCharacterWithFiltering(2, 9, "sprite/ta1_human_", "0", "maskright", 1, 160, 0, FALSE, 0, 0, 0, 0, 0, 10, 300, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f6d9a8>鷹野</color>", NULL, "<color=#f6d9a8>Takano</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 9, "ps3/s13/09/ds41080244", 128, TRUE);
+	OutputLine(NULL, "「え？",
+		   NULL, "\"Eh?", Line_WaitForInput);
+	ModPlayVoiceLS(4, 9, "ps3/s13/09/ds41080245", 128, TRUE);
+	OutputLine(NULL, "　………どういうこと、それは？",
+		   NULL, " ...Bu ne anlama geliyor?", Line_WaitForInput);
+	ModPlayVoiceLS(4, 9, "ps3/s13/09/ds41080246", 128, TRUE);
+	OutputLine(NULL, "　盗聴できるの？」",
+		   NULL, " Dinleyebilir misiniz?\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>山狗</color>", NULL, "<color=#f5e6d3>Mountain Dog</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_yamab1048", 128, TRUE);
+	OutputLine(NULL, "「もちろんです。",
+		   NULL, "\"Elbette.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_yamab1049", 128, TRUE);
+	OutputLine(NULL, "ここでもモニターできます…！」",
+		   NULL, " Hoparlöre veriyorum...!\"", Line_Normal);
+	ClearMessage();
+
+	ModFadeOutBGM( 0, 300, FALSE, 0 );
+	ModPlayBGM( 1, "denwa_m", 120, 0, 0 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　隊員がコンソールをいじると、室内スピーカーから電話の呼び出し音が聞こえてきた。",
+		   NULL, "Üyelerden biri bir düğmeyi çevirdi. Çalma sesi duyuldu.", Line_Normal);
+	ClearMessage();
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f6d9a8>鷹野</color>", NULL, "<color=#f6d9a8>Takano</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 9, "ps3/s13/09/ds41080247", 128, TRUE);
+	OutputLine(NULL, "「……一体、このタイミングで入江所長は何をあの家に電話しようというの…？」",
+		   NULL, "\"...Direktör Irie neden şimdi o evi arıyor?\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>山狗</color>", NULL, "<color=#f5e6d3>Mountain Dog</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_yamab1050", 128, TRUE);
+	OutputLine(NULL, "「…やはり、Ｒは在宅していて、富竹を捕らえたことを連絡しようとしているのでは。」",
+		   NULL, "\"...Belki R gerçekten evdedir ve ona Tomitake'nin yakalandığını haber vermeye çalışıyordur.\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	DisableWindow();
+	ModDrawCharacter(2, 9, "sprite/ta1_akuwarai_", "2", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 10, 200, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f6d9a8>鷹野</color>", NULL, "<color=#f6d9a8>Takano</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 9, "ps3/s13/09/ds41080248", 128, TRUE);
+	OutputLine(NULL, "「……………ありえないことじゃないわ。",
+		   NULL, "\".........Olabilir.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 9, "ps3/s13/09/ds41080249", 128, TRUE);
+	OutputLine(NULL, "……くすくす、聞かれてるとも知らずに。」",
+		   NULL, " ...Kih kih, dinlediğimizden hiç haberi yok.\"", Line_Normal);
+	ClearMessage();
+
+	DrawScene( "black", 400 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　さぁ、何を話すというの入江。",
+		   NULL, "Irie ne hakkında konuşacaktı acaba?", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　…話してみなさいな、聞いていてあげるから。",
+		   NULL, "Takano konuşmayı gizlice dinlemek için sabırla bekledi.", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　…しかし、呼び出し音がいつまでも繰り返される。",
+		   NULL, "...Ancak çalma sesinden başka hiçbir şey yoktu.", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　もう３０秒近くは鳴らしているだろうか。",
+		   NULL, "Otuz saniyeden fazla olmuştu.", Line_WaitForInput);
+	OutputLine(NULL, "…出ない。",
+		   NULL, " ...Cevap yoktu.", Line_WaitForInput);
+	OutputLine(NULL, "……やはり留守なのだろうか。",
+		   NULL, " Evde kimse yoktu.", Line_Normal);
+	ClearMessage();
+
+	DrawSceneWithMask( "background/chika_sekyurithi", "maskup", 1, 0, 300 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>山狗</color>", NULL, "<color=#f5e6d3>Mountain Dog</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_yamab1051", 128, TRUE);
+	OutputLine(NULL, "「………所長も根気がありますね。",
+		   NULL, "\"......Direktör de amma sabırlıymış.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_yamab1052", 128, TRUE);
+	OutputLine(NULL, "……必ずいるはずだという強い確信があるのでしょうか。」",
+		   NULL, " ...Sanırım evde olduğundan emin.\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	ModPlayBGM( 0, "G_Tactics", 120, 0, 0 );
+	ModFadeOutBGM( 0, 300, FALSE, 1 );
+	ModPlayBGM( 1, "primal-beat-of-horrow_T", 120, 0, 1 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>山狗</color>", NULL, "<color=#f5e6d3>Mountain Dog</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_yamaa1043", 128, TRUE);
+	OutputLine(NULL, "「さ、三佐！！",
+		   NULL, "\"B-Binbaşım!!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_yamaa1044", 128, TRUE);
+	OutputLine(NULL, "　裏口のモニターカメラに所長の姿が！！」",
+		   NULL, " Direktör arka kapıdaki güvenlik kamerasında göründü!!\"", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　四分割された白黒の監視モニターには、裏口の扉から駆け出していく入江の姿が映っていた。",
+		   NULL, "Siyah beyaz dörtlü monitörde Irie'nin arka kapıdan koşarak çıktığı görülüyordu.", Line_Normal);
+	ClearMessage();
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f6d9a8>鷹野</color>", NULL, "<color=#f6d9a8>Takano</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 9, "ps3/s13/09/ds41080250", 128, TRUE);
+	OutputLine(NULL, "「……どういうことッ？！",
+		   NULL, "\"...Neler oluyor?", Line_WaitForInput);
+	ModPlayVoiceLS(4, 9, "ps3/s13/09/ds41080251", 128, TRUE);
+	OutputLine(NULL, "　じゃあ誰が所長室から電話をしているの？！」",
+		   NULL, " Direktörün odasından kim arıyor?\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　鷹野が混乱している間にも、延々と呼び出し音が聞こえ続ける…。",
+		   NULL, "Takano'nun kafası tamamen karışmıştı ama çalma sesi devam ediyordu...", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　………まさか…………！",
+		   NULL, "......Olamazdı......!", Line_WaitForInput);
+	OutputLine(NULL, "　鷹野は自分の瞳孔が開いていくような感触を覚える…。",
+		   NULL, " Takano sonunda neler olup bittiğini anladı.", Line_Normal);
+	ClearMessage();
+
+	DisableWindow();
+	ModSetLayerFilter(0, 256, "none");
+	ModDrawCharacterWithFiltering(0, 9, "sprite/ta1_sakebi_", "2", "maskright", 1, 0, 0, FALSE, 0, 0, 0, 0, 0, 9, 300, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f6d9a8>鷹野</color>", NULL, "<color=#f6d9a8>Takano</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 9, "ps3/s13/09/ds41080252", 128, TRUE);
+	OutputLine(NULL, "「罠よッ！！！",
+		   NULL, "\"Bu bir tuzak!!!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 9, "ps3/s13/09/ds41080253", 128, TRUE);
+	OutputLine(NULL, "　ヤツは私たちが監視しているのを知ってて、わざと空電話をかけて油断させた！！",
+		   NULL, " Dinlediğimizi biliyordu, bu yüzden sahte bir arama yaptı!!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 9, "ps3/s13/09/ds41080254", 128, TRUE);
+	OutputLine(NULL, "　入江は裏切り者の仲間よ！！",
+		   NULL, " Irie bir hain!!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 9, "ps3/s13/09/ds41080255", 128, TRUE);
+	OutputLine(NULL, "　捕らえてッ！！！」",
+		   NULL, " Yakalayın onu!!!\"", Line_Normal);
+	ClearMessage();
+
+	ModFadeOutBGM( 1, 400, FALSE, 0 );
+	DrawScene( "black", 400 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>山狗</color>", NULL, "<color=#f5e6d3>Mountain Dog</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_yamaa1045", 128, TRUE);
+	OutputLine(NULL, "「い、１階保安室ッ！！",
+		   NULL, "\"B-Birinci kattaki güvenlik odası!!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_yamaa1046", 128, TRUE);
+	OutputLine(NULL, "　入江所長を制圧せよ！！",
+		   NULL, " Direktör Irie'yi durdurun!!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_yamaa1047", 128, TRUE);
+	OutputLine(NULL, "　標的は裏口から職員駐車場へ！！」",
+		   NULL, " Hedef arka kapıdan personel otoparkına doğru ilerliyor!!\"", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　１階保安室でトランプに興じていた２人は、カードを飛び散らせながら保安室を飛び出す！！",
+		   NULL, "Birinci kattaki güvenlik odasında iskambil oynayan iki Dağ Köpeği anında harekete geçti!!", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　彼らの保安室は裏口のすぐ脇にあったから、入江はまだ捕らえられる距離内のはずだった。",
+		   NULL, "Güvenlik odası arka kapının hemen yanındaydı, dolayısıyla Irie hâlâ ulaşabilecekleri mesafedeydi.", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　……一方、入江のミスは致命的だった。",
+		   NULL, "...Irie ciddi bir hata yapmıştı.", Line_Normal);
+	ClearMessage();
+
+	DrawScene( "background/sinryou_soto3", 400 );
+	ModPlayBGM( 1, "semi", 120, 0, 0 );
+	ModPlayBGM( 0, "semi", 120, 0, 1 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　鷹野たちが電話に耳を澄ませている最初の３０秒で診療所を脱出できたのだ。",
+		   NULL, "Takano ve adamları çalma sesini dinlerken geçen otuz saniye içinde klinikten ayrılabilirdi.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　だが、一度は駐車場まで辿り着いた入江は、車のキーを所長席に忘れていたことを思い出し、取りに戻ってしまったのだ。",
+		   NULL, "Ancak otoparka vardığında arabasının anahtarını Direktörün ofisindeki masasında unuttuğunu fark etmiş, bu yüzden geri dönüp almak zorunda kalmıştı.", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　キーを忘れたにしても、今さら戻るべきではなかった。",
+		   NULL, "Ancak bu noktada geri dönmemesi gerektiğini anlamıştı.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　徒歩でそのまま脱出するべきだったのだ。",
+		   NULL, "Yürüyerek kaçmalıydı.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　……だが、入江は赤坂のように緊急事態に慣れているわけじゃない。",
+		   NULL, "Fakat Irie, Akasaka'nın aksine acil durumlara alışkın değildi.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　生まれてこの方、一度も危機にあったことがない一般人として当然のミステイクだった。",
+		   NULL, "Tehlikeli hiçbir şey yaşamamış normal bir insanın yapacağı tipik bir hataydı bu.", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　二重にミスを犯しながらも、それでも赤坂への連絡を忘れなかったことを褒めるべきだ。",
+		   NULL, "Hatalar yapmış olsa da Akasaka'yı aramayı unutmamıştı.", Line_Normal);
+	ClearMessage();
+
+	DrawScene( "black", 400 );
+	DrawScene( "background/kuruma2", 400 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　こういう時に限り不器用になってしまうのは焦る人間の悲しさだ。",
+		   NULL, "İnsanlar acele ettiklerinde genellikle son derece sakarlaşırlar.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　普段はただひねるだけのキーなのに、ただそれだけのことができず、焦ってしまう…！",
+		   NULL, "Yapması gereken tek şey anahtarı çevirmekti ama bunu bile düzgünce beceremiyordu...!", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　ドルルルルン！！",
+		   NULL, "Anahtarı çevirmeye devam etti...", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　ようやくエンジンが着火する…！",
+		   NULL, "Ve sonunda motor çalıştı!", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　大丈夫だ、自分が脱出するのはバレていない。",
+		   NULL, "Irie hâlâ güvende olduğunu düşünüyordu.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　バレたって、ちょっと買い物にでも行くと言って誤魔化せばいい…。",
+		   NULL, "İçlerinden biri onu sorgulasa bile, tek yapması gereken bir şey almak için dışarı çıktığını söylemek olurdu.", Line_Normal);
+	ClearMessage();
+
+	DrawSceneWithMask( "black", "maskright", 7, 0, 300 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　そんなことを考えながら、嫌な汗でぐっしょり濡れた左手でサイドブレーキを下ろした時、",
+		   NULL, "Terli sol eliyle el frenini indirdiğinde,", Line_WaitForInput);
+	OutputLine(NULL, "バックミラーに裏口が荒々しく開けられ山狗が２人飛び出してくるのが見えた。",
+		   NULL, " arka kapıdan fırlayan iki Dağ Köpeği'ni gördü.", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　彼らはきょろきょろと見回し、……その１人とミラー越しに目が合った気がした。",
+		   NULL, "İkisi etrafa bakınırken, dikiz aynasında Irie ile içlerinden birinin gözleri buluştu.", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　バックミラーの中の１人がこちらを指差し、２人が駆けてくるのが見える。",
+		   NULL, "Adam Irie'nin arabasını işaret etti ve ikisi birden arabaya doğru koşmaya başladı.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　その表情はこれ以上なく真剣で、間違っても、拾った落し物のボールペンを持ってきてくれるようには見えなかった。",
+		   NULL, "İkisi de son derece ciddi görünüyordu ve kesinlikle düşürdüğü bir kalemi geri vermek için peşinden koşuyormuş gibi değillerdi.", Line_Normal);
+	ClearMessage();
+
+	DrawScene( "white", 400 );
+	ModFadeOutBGM( 1, 400, FALSE, 0 );
+	DrawScene( "background/kuruma2", 400 );
+
+	PlayBGM( 3, "kaze", 120, 0 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>Irie</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s13/10/ds41100305", 128, TRUE);
+	OutputLine(NULL, "「……ふ、……ううぅううううぅうぅ…！！」",
+		   NULL, "\"...Oooh.... ooooooooooohh...!!\"", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　入江の全身から、これ以上まだ出るのかというほど、嫌な汗がぶわっと湧き出る！",
+		   NULL, "Irie'nin vücudu ter içinde kalmıştı!", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	FadeOutBGM( 0, 300, FALSE );
+	ModFadeOutBGM( 1, 300, FALSE, 1 );
+	FadeOutBGM( 3, 300, FALSE );
+	ModPlayBGM( 1, "samayoi", 120, 0, 0 );
+	ModPlayBGM( 2, "samayoi", 120, 0, 1 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　彼らが車に飛び乗る前に、入江の車はホイルスピンしながら急発進した。",
+		   NULL, "İkisi arabanın üzerine atlayamadan Irie gaz pedalına kökledi ve araba patinaj çektikten sonra hızla fırladı.", Line_Normal);
+	ClearMessage();
+
+	DrawSceneWithMask( "black", "maskright", 1, 0, 300 );
+	DrawSceneWithMask( "background/sinryou_soto3", "maskright", 1, 0, 300 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　もちろん敵はそれで肩を落としたりはしない。",
+		   NULL, "Elbette Köpekler pes etmedi.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　すぐに自分たちも車に乗り込むと追跡を開始した。",
+		   NULL, "Kendi arabalarına binip Irie'yi kovalamaya başladılar.", Line_Normal);
+	ClearMessage();
+
+	DrawSceneWithMask( "black", "maskleft", 1, 0, 300 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>山狗</color>", NULL, "<color=#f5e6d3>Mountain Dog</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_yamac1001", 128, TRUE);
+	OutputLine(NULL, "「………保安より本部！",
+		   NULL, "\"...Güvenlikten üsse!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_yamac1002", 128, TRUE);
+	OutputLine(NULL, "　所長は車両で逃走中。",
+		   NULL, " Direktör arabasıyla kaçıyor.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_yamac1003", 128, TRUE);
+	OutputLine(NULL, "強制停車させますか、どうぞ！」",
+		   NULL, " Onu zorla durdurmamızı ister misiniz?\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>山狗</color>", NULL, "<color=#f5e6d3>Mountain Dog</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_yamaa1048", 128, TRUE);
+	OutputLine(NULL, "「三佐…！」",
+		   NULL, "\"Binbaşım...!\"", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f6d9a8>鷹野</color>", NULL, "<color=#f6d9a8>Takano</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 9, "ps3/s13/09/ds41080256", 128, TRUE);
+	OutputLine(NULL, "「……鷹野よ。",
+		   NULL, "\"...Ben Takano.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 9, "ps3/s13/09/ds41080257", 128, TRUE);
+	OutputLine(NULL, "恐らく行き先は古手神社ね。",
+		   NULL, " Muhtemelen Furude Tapınağı'na gidiyordur.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 9, "ps3/s13/09/ds41080258", 128, TRUE);
+	OutputLine(NULL, "神社に行かれたら今日は人だらけ、捕らえることは難しくなるわ。",
+		   NULL, " Orada çok fazla insan var, bu yüzden onu yakalamak imkânsız olur.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 9, "ps3/s13/09/ds41080259", 128, TRUE);
+	OutputLine(NULL, "多少の怪我も構わない。",
+		   NULL, " Pekâlâ, yaralanmasını dert etmeyin.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 9, "ps3/s13/09/ds41080260", 128, TRUE);
+	OutputLine(NULL, "行かせては駄目ッ！！",
+		   NULL, " Gitmesine izin vermeyin!! ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f6d9a8>鷹野</color>", NULL, "<color=#f6d9a8>Takano</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 9, "ps3/s13/09/ds41080261", 128, TRUE);
+	OutputLine(NULL, "　強引に停車させなさい…！」",
+		   NULL, "Ne pahasına olursa olsun durdurun onu!\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>山狗</color>", NULL, "<color=#f5e6d3>Mountain Dog</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_yamac1004", 128, TRUE);
+	OutputLine(NULL, "「保安了解。",
+		   NULL, "\"Anlaşıldı.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_yamac1005", 128, TRUE);
+	OutputLine(NULL, "これより強制停車に移る。",
+		   NULL, " Onu zorla durduracağız.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_yamac1006", 128, TRUE);
+	OutputLine(NULL, "念のためバックアップを送れ、どうぞ。」",
+		   NULL, " Her ihtimale karşı destek gönderin, tamam.\"", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>山狗</color>", NULL, "<color=#f5e6d3>Mountain Dog</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_yamaa1049", 128, TRUE);
+	OutputLine(NULL, "「本部了解。",
+		   NULL, "\"Anlaşıldı.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_yamaa1050", 128, TRUE);
+	OutputLine(NULL, "鶯をバックアップに送る！",
+		   NULL, " Destek olarak Bülbül'ü göndereceğiz!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_yamaa1051", 128, TRUE);
+	OutputLine(NULL, "　だがバックアップは待つな！",
+		   NULL, " Ama onları beklemeyin!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_yamaa1052", 128, TRUE);
+	OutputLine(NULL, "　直ちに制圧せよ！！」",
+		   NULL, " Hemen şimdi durdurun onu!!\"", Line_Normal);
+	ClearMessage();
+
+	DrawSceneWithMask( "background/sora", "maskc", 7, 0, 300 );
+	SetValidityOfInput( FALSE );
+	Wait( 1000 );
+	SetValidityOfInput( TRUE );
+	DrawScene( "background/kuruma6", 100 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　入江の車がタイヤに悲鳴をあげさせながら疾走させているのを、追う山狗の車は完全に前方に捉えていた。",
+		   NULL, "Dağ Köpekleri, son hızla kaçan Irie'nin arabasını görüş alanlarında tutuyorlardı.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　あとは仕掛ける場所とタイミングを計るだけだ。",
+		   NULL, "Onu durdurmak için mükemmel bir nokta ve zamanlama bulmaları gerekiyordu.", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　車というのは悲しい。",
+		   NULL, "Aceleniz varken araba kullanmak kolay değildir.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　アクセルを深く踏めば速い速度が出るのは間違いない。",
+		   NULL, "Elbette gaz pedalına ne kadar basarsanız o kadar hız kazanırsınız.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　…でも、焦るハンドルでは、必ずしも速く逃れられるとは限らないのだ。",
+		   NULL, "Ama aceleniz olduğunda, hızla kaçabilecek kadar direksiyon hakimiyeti sağlayamazsınız.", Line_Normal);
+	ClearMessage();
+
+	DrawScene( "black", 400 );
+	DrawScene( "background/kuruma2", 400 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　入江はバックミラーに映る追っ手にすっかり取り乱し、大味なハンドルを切っていた。",
+		   NULL, "Irie dikiz aynasından takipçilerini görebiliyordu ve dikkati tamamen dağılmıştı. Dikkatsizce sürüyordu.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　……このまま追っ手に煽られていれば、彼らが仕掛けずとも単独で事故を起こしかねないくらいに、そのハンドルは乱れていた。",
+		   NULL, "Sürüşü o kadar pervasızcaydı ki kendi kendine kolayca kaza yapabilirdi.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　また、恐怖心が頭を真っ白にしてしまい、…こんなにも長く走ってきた道なのに、混乱していつもと違う場所で曲がってしまったのである。",
+		   NULL, "Korku onu kafa karışıklığına sürüklerken yanlış bir dönüş yaptı.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　…その１つのミスがますますの混乱を誘い、入江を焦らせていく…！",
+		   NULL, "...Ve bu hata onu daha da şaşkına çevirip panikletti!", Line_Normal);
+	ClearMessage();
+
+	DrawScene( "black", 400 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>山狗</color>", NULL, "<color=#f5e6d3>Mountain Dog</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_yamac1007", 128, TRUE);
+	OutputLine(NULL, "「へへ、所長、そんな運転じゃ危ねぇぞ。",
+		   NULL, "\"Heh heh, hadi ama Direktör.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_yamac1008", 128, TRUE);
+	OutputLine(NULL, "一発で免停だぜ。」",
+		   NULL, " Böyle sürersen ehliyetini kaptıracaksın.\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　彼らは仕掛けろと命じられているが、このまま追っている内に勝手に事故ってくれるのではないかと思い始めていた。",
+		   NULL, "İki adama onu durdurmaları emredilmiş olsa da, onlar hiçbir şey yapmadan Irie'nin kaza yapacağını düşünmeye başlamışlardı.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　…できることならカーチェイスの真似事はしたくないのだ。",
+		   NULL, "...Zorunda kalmadıkça bu işi bir araba kovalamacasına dönüştürmemeyi tercih ederlerdi.", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#3e5745>小此木</color>", NULL, "<color=#3e5745>Okonogi</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 14, "ps3/s13/14/ds41130093", 128, TRUE);
+	OutputLine(NULL, "「ザザ、ザ、……追跡中の保安車両へ。",
+		   NULL, "\"Cızzt... cızzzt... Burası Anka 1,", Line_WaitForInput);
+	ModPlayVoiceLS(4, 14, "ps3/s13/14/ds41130094", 128, TRUE);
+	OutputLine(NULL, "こちら鳳１、聞こえるか。」",
+		   NULL, " güvenlik aracı, cevap verin.\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>山狗</color>", NULL, "<color=#f5e6d3>Mountain Dog</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_yamac1009", 128, TRUE);
+	OutputLine(NULL, "「隊長だ！",
+		   NULL, "\"Komutan!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_yamac1010", 128, TRUE);
+	OutputLine(NULL, "　…こちら保安車両。",
+		   NULL, " ...Burası güvenlik aracı.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_yamac1011", 128, TRUE);
+	OutputLine(NULL, "現在追跡中。",
+		   NULL, " Hâlâ onu takip ediyoruz.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_yamac1012", 128, TRUE);
+	OutputLine(NULL, "現在位置は５丁目付近林道、詳細な位置は不明。」",
+		   NULL, " Beşinci bölgenin yakınlarındaki orman yolundayız, tam konumdan emin değiliz.\"", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#3e5745>小此木</color>", NULL, "<color=#3e5745>Okonogi</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 14, "ps3/s13/14/ds41130095", 128, TRUE);
+	OutputLine(NULL, "「…本部要請につきバックアップに向ってる。",
+		   NULL, "\"Karargâhın emri doğrultusunda destek olarak sizin tarafınıza doğru geliyoruz.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 14, "ps3/s13/14/ds41130096", 128, TRUE);
+	OutputLine(NULL, "到達予定は１５分後。",
+		   NULL, " Tahmini varış süremiz on beş dakika.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 14, "ps3/s13/14/ds41130097", 128, TRUE);
+	OutputLine(NULL, "こっちはアテにするな。",
+		   NULL, " Bizi beklemeyin.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 14, "ps3/s13/14/ds41130098", 128, TRUE);
+	OutputLine(NULL, "俺だって間に合うわけねぇと思ってんだ。」",
+		   NULL, " Zamanında yetişebileceğimizi sanmıyorum.\"", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　小此木がぼやく。彼の言うところの三佐のお姫様に命じられて興宮から飛び出してきたのだ。",
+		   NULL, "Okonogi homurdandı. Binbaşı Prenses'e yanıt vermek için Okinomiya'dan aceleyle ayrılmak zorunda kalmıştı.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　だが、距離的に間に合うはずがない。",
+		   NULL, "Ancak mesafe yüzünden zamanında oraya yetişmesinin imkânı yoktu.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　それでも出動しろと命令を受けたらしい。",
+		   NULL, "Buna rağmen yine de destek sağlaması emredilmişti.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　……それを説明してわかってくれるお姫様ではない、ということなのだろう。",
+		   NULL, "...Durumu açıklayabilirdi ama prenses zaten onu dinlemezdi.", Line_WaitForInput);
+	OutputLine(NULL, "追跡者の隊員たちはその事情を察し苦笑いする。",
+		   NULL, " Okonogi'nin yanındaki Dağ Köpekleri acı acı gülümsedi.", Line_Normal);
+	ClearMessage();
+
+	DrawSceneWithMask( "background/kuruma1", "maskup", 1, 0, 300 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#3e5745>小此木</color>", NULL, "<color=#3e5745>Okonogi</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 14, "ps3/s13/14/ds41130099", 128, TRUE);
+	OutputLine(NULL, "「追跡の方角は。」",
+		   NULL, "\"Hangi yöne doğru ilerliyorsunuz?\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>山狗</color>", NULL, "<color=#f5e6d3>Mountain Dog</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_yamac1013", 128, TRUE);
+	OutputLine(NULL, "「最悪の場合、町の方へ抜けます。」",
+		   NULL, "\"En kötü senaryoda kasabadan çıkmış olacağız.\"", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#3e5745>小此木</color>", NULL, "<color=#3e5745>Okonogi</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 14, "ps3/s13/14/ds41130100", 128, TRUE);
+	OutputLine(NULL, "「そいつは許すな。",
+		   NULL, "\"Buna izin vermeyin.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 14, "ps3/s13/14/ds41130101", 128, TRUE);
+	OutputLine(NULL, "山狩りはしてやる、足を破壊しろ。",
+		   NULL, " Onu bulmak için tepeleri didik didik aramak zorunda kalırız, o yüzden bacaklarını kırın.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 14, "ps3/s13/14/ds41130102", 128, TRUE);
+	OutputLine(NULL, "そこに人目は？",
+		   NULL, " Etrafta başka kimse var mı?", Line_WaitForInput);
+	ModPlayVoiceLS(4, 14, "ps3/s13/14/ds41130103", 128, TRUE);
+	OutputLine(NULL, "　武装は？」",
+		   NULL, " Silah var mı?\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>山狗</color>", NULL, "<color=#f5e6d3>Mountain Dog</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_yamac1014", 128, TRUE);
+	OutputLine(NULL, "「両脇は深い森林です。",
+		   NULL, "\"Ormanın ortasındayız.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_yamac1015", 128, TRUE);
+	OutputLine(NULL, "人目はなし。",
+		   NULL, " Etrafta kimse yok.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_yamac1016", 128, TRUE);
+	OutputLine(NULL, "武装は保安車両常備の短機関銃が１。」",
+		   NULL, " Güvenlik aracında bir adet hafif makineli tüfeğimiz var.\"", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　助手席の隊員がリクライニングを倒して後部座席に行き、シートを持ち上げると、そこから黒く華奢そうな銃が現れる。",
+		   NULL, "Yolcu koltuğundaki adam koltuğu yatırdı ve arka tarafa geçti. Koltuklardan birini kaldırıp siyah bir makineli tüfek çıkardı.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　角の塗装が剥がれ一部に銀色を光らせていた。",
+		   NULL, "Bir köşesindeki boya soyulmuştu ve parlak gümüş rengi metal görünüyordu.", Line_WaitForInput);
+	OutputLine(NULL, "機関銃と言う名にしては迫力不足、に見えたかもしれない。",
+		   NULL, " Bir makineli tüfekti ama sıradan bir tüfek kadar güçlü görünmüyordu.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　…だが、隊員がショルダーストックを伸ばして構えると、それは雰囲気を一変させ、この上なく凶暴な外見に豹変した。",
+		   NULL, "Ancak Köpek dipçiği uzatıp yerine oturttuğunda silah çok daha acımasız bir görünüme büründü.", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#3e5745>小此木</color>", NULL, "<color=#3e5745>Okonogi</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 14, "ps3/s13/14/ds41130104", 128, TRUE);
+	OutputLine(NULL, "「保安常備はＭＰ５だな。",
+		   NULL, "\"Bu bir MP5, değil mi?", Line_WaitForInput);
+	ModPlayVoiceLS(4, 14, "ps3/s13/14/ds41130105", 128, TRUE);
+	OutputLine(NULL, "Ａ５か？",
+		   NULL, " A5 mi", Line_WaitForInput);
+	ModPlayVoiceLS(4, 14, "ps3/s13/14/ds41130106", 128, TRUE);
+	OutputLine(NULL, "　ＳＤ３か？」",
+		   NULL, " yoksa SD3 mü?\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　後部座席の隊員がバックミラーに銃を構えて見せ、特異な太く長い銃身を見せる。",
+		   NULL, "Arka koltuktaki adam kendine has şekilli namluya baktı. Kalın ve uzundu.", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>山狗</color>", NULL, "<color=#f5e6d3>Mountain Dog</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_yamac1017", 128, TRUE);
+	OutputLine(NULL, "「ＳＤ３です。",
+		   NULL, "\"SD3.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_yamac1018", 128, TRUE);
+	OutputLine(NULL, "サイレンサー付き。」",
+		   NULL, " Susturucusu da var.\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#3e5745>小此木</color>", NULL, "<color=#3e5745>Okonogi</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 14, "ps3/s13/14/ds41130107", 128, TRUE);
+	OutputLine(NULL, "「発砲を許可する。",
+		   NULL, "\"Ateş etme izniniz var.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 14, "ps3/s13/14/ds41130108", 128, TRUE);
+	OutputLine(NULL, "フルバーストでタイヤを破壊しろ。」",
+		   NULL, " Tam otomatik tarayarak lastiklerini parçalayın.\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>山狗</color>", NULL, "<color=#f5e6d3>Mountain Dog</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_yamac1019", 128, TRUE);
+	OutputLine(NULL, "「保安車両了解。",
+		   NULL, "\"Anlaşıldı.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_yamac1020", 128, TRUE);
+	OutputLine(NULL, "攻撃する。」",
+		   NULL, " Saldırıyoruz.\"", Line_Normal);
+	ClearMessage();
+
+	DrawSceneWithMask( "background/kuruma6", "maskleft", 1, 0, 300 );
+	PlayBGM( 0, "kaze", 120, 0 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　後部座席の男が運転手の後方の窓を開けて身を乗り出した。",
+		   NULL, "Arka koltuktaki adam sürücü tarafındaki arka camı açtı ve arabadan dışarı sarktı.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　獲物を狙う鷲のような目が、照準と入江の車のタイヤを重ね合わす…。",
+		   NULL, "Keskin gözleriyle Irie'nin aracının lastiklerinden birine nişan aldı.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　道は一直線。",
+		   NULL, "Düz bir yoldu.", Line_WaitForInput);
+	OutputLine(NULL, "入江の車は多少の蛇行をしているが、その程度では回避運動になりはしない。",
+		   NULL, " Irie'nin arabası zikzak çiziyordu ama atıştan kaçabilecek kadar değil.", Line_WaitForInput);
+	OutputLine(NULL, "まさに追跡者たちは、入江車を完全に捕捉していた。",
+		   NULL, " Takipçiler arabasını nişangâhlarına almışlardı.", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　少しでも集弾するため車間距離を縮めたいところだが、あまり寄せすぎれば、入江の車が横転するなどした時、巻き込まれかねない。",
+		   NULL, "Irie'nin arabasına mümkün olduğunca yaklaşmaya çalışıyorlardı ama takla atarsa kendilerinin de kazaya karışacağından korkuyorlardı.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　これ以上、詰めるのは危険だった。",
+		   NULL, "Çok geçmeden yaklaşabilecekleri en yakın mesafenin bu olduğuna karar verdiler.", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>山狗</color>", NULL, "<color=#f5e6d3>Mountain Dog</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_yamac1021", 128, TRUE);
+	OutputLine(NULL, "「３カウントで発砲する。",
+		   NULL, "\"Üçe kadar sayınca ateş edeceğim.", Line_WaitForInput);
+	SetSpeedOfMessage( TRUE, 128 );
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_yamac1022", 128, TRUE);
+	OutputLine(NULL, "３、",
+		   NULL, " Üç,", Line_Continue);
+	// (backup) SetValidityOfInput( FALSE );
+	Wait( 900 );
+	// (backup) SetValidityOfInput( TRUE );
+	OutputLine(NULL, "２、",
+		   NULL, " iki,", Line_Continue);
+	// (backup) SetValidityOfInput( FALSE );
+	Wait( 700 );
+	// (backup) SetValidityOfInput( TRUE );
+	OutputLine(NULL, "１。」",
+		   NULL, " bir.\"", GetGlobalFlag(GLinemodeSp));
+
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_Continue); }
+
+
+	PlaySE( 0, "s_MGun", 128, 64 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_Continue); }
+	OutputLine(NULL, "　シュカカカカカカカカッ！！！",
+		   NULL, "Ateş!!!", Line_Continue);
+
+	StartShakingOfWindow( 241, 40, 0, 0, 10*2, FALSE );
+	StartShakingOfAllObjects( 241, 40, 0, 0, 10*2, TRUE );
+
+	OutputLineAll(NULL, "", Line_Normal);
+
+	ClearMessage();
+	SetSpeedOfMessage( FALSE, 0 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　誰もが期待する銃声とは違う、滑稽なくらい軽い連射音が響き渡った。",
+		   NULL, "Makineli tüfeğin çıkardığı ses, insanların hayal edeceğinden çok daha sessizdi.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　だが、軽いのは発砲音だけでその威力と連射力は別物だ。",
+		   NULL, "Ancak gücü hayal edilemeyecek boyuttaydı.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　狙われた入江の後部タイヤが細切れに刻まれていき、見る見る内に白煙を噴いて潰れてしまう…！",
+		   NULL, "Irie'nin arabasının lastiklerinden biri paramparça oldu ve beyaz bir duman bulutuyla indi...!", Line_Normal);
+	ClearMessage();
+
+	DrawScene( "black", 400 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　瞬時に後輪の片側を潰され、入江は大きくハンドルを取られた。",
+		   NULL, "Lastiklerden biri aniden patladığı için Irie arabasının kontrolünü kaybetti.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　…焦って大きく切ったハンドルが余計に事態を致命的にする…！",
+		   NULL, "Direksiyonu kırmaya çalıştı ama bu durumu daha da kötüleştirdi...!", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　入江の車は大きくスピンしながら路肩を外れ、勾配の浅くない林の斜面を転げ落ちていく…！",
+		   NULL, "Kendi etrafında dönen Irie'nin arabası yolun banketinden çıktı ve yamaçtan aşağı ormanın içine doğru kaydı...!", Line_Normal);
+	ClearMessage();
+
+	DrawScene( "white", 1000 );
+	DrawScene( "black", 50 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>Irie</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s13/10/ds41100306", 128, TRUE);
+	OutputLine(NULL, "「わああぁあ、うわあああああぁあぁあ！！！」",
+		   NULL, "\"Vaaaaaaa, ahhhhh!!!\"", Line_Normal);
+	ClearMessage();
+
+	FadeOutBGM( 0, 300, FALSE );
+	ModFadeOutBGM( 1, 300, FALSE, 0 );
+	ModFadeOutBGM( 2, 300, FALSE, 1 );
+	PlaySE( 0, "s_glass", 128, 64 );
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　バサバサバキバキと木立をへし折る音と、車体が潰れたりガラスが砕ける音が、斜面の下へと消えていった。",
+		   NULL, "Kırılan ağaçların ve her yönden darbe alan arabanın sesi yamaçtan aşağı doğru kayboldu.", Line_Normal);
+	ClearMessage();
+
+	DrawSceneWithMask( "background/sora", "maskup", 1, 0, 300 );
+	PlayBGM( 0, "semi", 120, 0 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　追跡者たちは車を停め、斜面を見下ろすが、草木が深くその状況をここから確認するのは不可能だった…。",
+		   NULL, "Takipçiler arabalarını durdurup arkasından aşağı baktılar ama bitkiler o kadar uzun boyluydu ki oradan kontrol etmek imkânsızdı.", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>山狗</color>", NULL, "<color=#f5e6d3>Mountain Dog</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_yamac1023", 128, TRUE);
+	OutputLine(NULL, "「攻撃成功。",
+		   NULL, "\"Saldırı başarılı oldu.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_yamac1024", 128, TRUE);
+	OutputLine(NULL, "標的車両は斜面を転落。死亡の可能性もあり。",
+		   NULL, " Hedef araç yamaçtan aşağı uçtu. Sürücünün ölmüş olması muhtemel.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_yamac1025", 128, TRUE);
+	OutputLine(NULL, "これより徒歩で追跡、制圧する。」",
+		   NULL, " Yaya olarak arama yapacağız.\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#3e5745>小此木</color>", NULL, "<color=#3e5745>Okonogi</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 14, "ps3/s13/14/ds41130109", 128, TRUE);
+	OutputLine(NULL, "「鳳１了解。",
+		   NULL, "\"Anka 1, anlaşıldı.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 14, "ps3/s13/14/ds41130110", 128, TRUE);
+	OutputLine(NULL, "鶯が周囲を探し回ってるぞ。",
+		   NULL, " Bülbül bölgede.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 14, "ps3/s13/14/ds41130111", 128, TRUE);
+	OutputLine(NULL, "運が良ければ合流するだろ。",
+		   NULL, " Şanslıysanız onlarla karşılaşırsınız.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 14, "ps3/s13/14/ds41130112", 128, TRUE);
+	OutputLine(NULL, "こっちは相変わらず間に合わん。",
+		   NULL, " Biz yakınlarda bile değiliz.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 14, "ps3/s13/14/ds41130113", 128, TRUE);
+	OutputLine(NULL, "お前らが頼りだ。",
+		   NULL, " Size güveniyorum.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 14, "ps3/s13/14/ds41130114", 128, TRUE);
+	OutputLine(NULL, "頼むぞ！」",
+		   NULL, " İyi şanslar!\"", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>山狗</color>", NULL, "<color=#f5e6d3>Mountain Dog</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_yamac1026", 128, TRUE);
+	OutputLine(NULL, "「了解、交信を終わる。",
+		   NULL, "\"Anlaşıldı, telsiz kapatılıyor.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s13/00/vt4a_yamac1027", 128, TRUE);
+	OutputLine(NULL, "…行くぞ！！」",
+		   NULL, " Hadi gidelim!!\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　隊員は降車し、戸惑うことなく茂みの中に飛び降りていくのだった。",
+		   NULL, "Dağ Köpekleri arabalarından indiler ve hiç tereddüt etmeden ormanın içine doğru ilerlediler.", Line_Normal);
+	ClearMessage();
+
+	FadeOutBGM( 0, 1000, FALSE );
+	DrawScene( "black", 1000 );
+	SetValidityOfInput( FALSE );
+	Wait( 2000 );
+	SetValidityOfInput( TRUE );
+
+}

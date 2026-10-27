@@ -1,0 +1,59 @@
+// Higurashi Türkçe Çeviri & Yerelleştirme: @Remilya | https://github.com/Remilya/Higurashi
+void main()
+{
+}
+
+void dialog000()
+{
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　私は少し急いで飲みすぎたせいか、畳の上でぐったりとしていた。",
+		   NULL, "Belki de içkiyi fazla kaçırmıştım. Tatami zeminin üzerine serilip kalmıştım.", Line_Normal);
+	ClearMessage();
+
+	ModSetLayerFilter(1, 256, "none");
+	ModDrawCharacter(1, 15, "sprite/kasa_2_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 0, 0, FALSE );
+	DrawScene("background/ima1", 400 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　葛西が、車に乗れますか？",
+		   NULL, "Kasai arabaya binip binemeyeceğimi sordu,", Line_WaitForInput);
+	OutputLine(NULL, "と聞いてきたので、乗ったら吐くと言い返してやった。",
+		   NULL, " ben de şimdi arabaya binersem kusacağımı söyledim.", Line_Normal);
+	ClearMessage();
+}
+
+void dialog001()
+{
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　せっかくアルコールで誤魔化した、あの祭具殿での薄気味悪さが…再び戻ってくるのを感じた。",
+		   NULL, "Daha önce alkolle bastırmaya çalıştığım o Saiguden'in ürpertici havasının yeniden üzerime çöktüğünü hissettim.", Line_Normal);
+	ClearMessage();
+}
+
+void dialog002()
+{
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　…だが、酔っ払っていて、寝る身支度なんてしないで布団に潜り込んだから。",
+		   NULL, "Ama yatmaya hazırlanırken içkiden zilzurna sarhoş olduğum için üzerimde kalmıştı.", Line_Normal);
+	ClearMessage();
+	DrawScene("background/rouka1_02", 400 );
+}
+
+void dialog003()
+{
+}
+
+void dialog004()
+{
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>詩音</color>", NULL, "<color=#5ec69a>Shion</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 6, "ps3/s06/06/150601490", 256, TRUE);
+	OutputLine(NULL, "「でも、鬼婆の独断だとしたって。",
+		   NULL, "\"Ama tek başına karar verse bile,", Line_WaitForInput);
+	ModPlayVoiceLS(4, 6, "ps3/s06/06/150601491", 256, TRUE);
+	OutputLine(NULL, "鬼婆はあんたを介してやり取りしてるわけでしょ？",
+		   NULL, " kocakarı türlü işleri halletmek için seni aracı olarak kullanmıyor mu?", Line_WaitForInput);
+	ModPlayVoiceLS(4, 6, "ps3/s06/06/150601492", 256, TRUE);
+	OutputLine(NULL, "　そのあんたが何も知らないなんてあるはず、」",
+		   NULL, " Buna rağmen hiçbir şey bilmediğini mi söylüyorsun?\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+}

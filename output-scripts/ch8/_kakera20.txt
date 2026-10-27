@@ -1,0 +1,532 @@
+// Higurashi Türkçe Çeviri & Yerelleştirme: @Remilya | https://github.com/Remilya/Higurashi
+void main()
+{
+	DrawScene( "black", 400 );
+
+	PlayBGM( 0, "T2", 120, 0 );
+
+	DrawScene( "white", 1000 );
+	DrawSceneWithMask( "background/hi4", "maskm1", 1, 0, 1300 );
+	SetValidityOfInput( FALSE );
+	Wait( 1000 );
+	SetValidityOfInput( TRUE );
+	DrawSceneWithMask( "background/hi9", "maskright", 1, 0, 300 );
+	SetSpeedOfMessage( FALSE, 0 );
+
+	ClearMessage();
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#945c44>富竹</color>", NULL, "<color=#945c44>Tomitake</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 8, "ps3/s20/08/440800056", 128, TRUE);
+	OutputLine(NULL, "「……今日はこれくらいにしようか。",
+		   NULL, "\"Belki de şimdilik burada bitirmeliyiz.", Line_ContinueAfterTyping);
+	OutputLine(NULL, "気が乗らないみたいだからね。」",
+		   NULL, " Bugün pek havanda olduğunu sanmıyorum.\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	DisableWindow();
+	ModSetLayerFilter(2, 256, "none");
+	ModDrawCharacterWithFiltering(2, 9, "sprite/ta1_iradachi_", "0", "maskleft", 1, 160, 0, FALSE, 0, 0, 0, 0, 0, 10, 300, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f6d9a8>鷹野</color>", NULL, "<color=#f6d9a8>Takano</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 9, "ps3/s20/09/440900090", 128, TRUE);
+	OutputLine(NULL, "「え？",
+		   NULL, "\"Eh?", Line_Continue);
+	OutputLine(NULL, "　……あら、そんなことはないのよ。",
+		   NULL, " ...Öyle bir şey yok.", Line_Continue);
+	OutputLine(NULL, "そう見えたならごめんなさいね。」",
+		   NULL, " Sana öyle bir izlenim verdiysem özür dilerim.\"", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　さっきから鷹野さんは、ファインダーを覗いてはいるが、シャッターを切っている様子はまったくない。",
+		   NULL, "Takano-san vizörden bakıp duruyordu ama deklanşöre bastığını hiç görmedim.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　僕に付き合ってくれているだけで、とても野鳥撮影などに興じる気分ではないらしい…。",
+		   NULL, "Yanımda gelmiş olsa da bugün kuş gözlemciliği yapacak havada olduğunu sanmıyorum.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　鷹野さんは、先日の新理事会による方針転換以来、気を落としているようだった。",
+		   NULL, "Takano-san geçen günkü yönetim kurulu toplantısında açıklanan yeni politikalardan beri çok moralsiz.", Line_Normal);
+	ClearMessage();
+
+	DrawSceneWithMask( "background/sora5", "maskdown", 1, 0, 300 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　…無理もない。",
+		   NULL, "Bu anlaşılabilir bir durum.", Line_WaitForInput);
+	OutputLine(NULL, "そもそも入江機関は彼女が作った。",
+		   NULL, " Irie Enstitüsü en başta onun tarafından kurulmuştu.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　雛見沢症候群の研究に生涯を捧げるために作ったものだ。",
+		   NULL, "Hayatını Hinamizawa Sendromu'nu araştırmaya adayabilmesi için oluşturulmuştu.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　それを否定され、数年以内に研究を畳むよう求められては、気落ちするのも無理はない…。",
+		   NULL, "Tüm bunların bir kenara atılıp birkaç yıl içinde çalışmaları toparlamasının istenmesi... elbette moralini bozuyor.", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　しかも、残された期間を精一杯研究に使えるわけじゃない。",
+		   NULL, "Üstelik geriye kalan zamanın tamamını araştırmaya bile ayıramayacak.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　予算は段階的に削減され、最後には研究どころか、残務整理しかできなくなるだろう。",
+		   NULL, "Fonları aşamalı olarak kesiliyor ve sürenin sonuna gelindiğinde bırakın bir şey araştırmayı, kapatma işlemlerini bile zar zor tamamlayabilecekler.", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　……彼女は、故高野先生の孫娘だという。",
+		   NULL, "...Onun merhum Dr. Takano'nun torunu olduğunu duymuştum.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　…そして、祖父の果たせなかった研究を自分が完成させようと意気込んで今日までやって来た。",
+		   NULL, "Büyükbabasının araştırmasını tamamlama kararlılığı, onu bugüne kadar ayakta tutan şeydi.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　しかも、今日までむしろ順調だった分だけ、…突然の風向きの変化に衝撃を隠せないに違いない…。",
+		   NULL, "Yakın zamana kadar her şey çok yolunda gittiği için, rüzgarın yönündeki bu ani değişim tam bir şok etkisi yaratmış olmalı.", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　黒幕たちの政変は相当のレベルらしい。",
+		   NULL, "Perde arkasında ipleri elinde tutan kişilerdeki değişim oldukça ciddi olmalı.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　新生理事会は総入れ替えになり、かつての小泉派の息の掛かった人間や企画には見せしめ的な人事が横行しているとも聞く。",
+		   NULL, "Yönetim kurulu tamamen değiştirildi ve Koizumi fraksiyonunun etkisindeki kişi ve projelerin ibret olsun diye yeniden yapılandırıldığını duydu.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　また、一気に変わった風向きは、もう当分変わりそうもない。",
+		   NULL, "Rüzgarın yeni yönü uzun bir süre böyle kalacak gibi görünüyor.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　……小泉派が再び返り咲く望みは薄く、入江機関がどう訴えようとも、かつての支援を期待するのは不可能だった。",
+		   NULL, "Koizumi fraksiyonunun yeniden gücü ele geçirmesi pek olası değil. Dolayısıyla ne söylersek söyleyelim onlardan aynı türde bir destek beklemek neredeyse imkansız.", Line_Normal);
+	ClearMessage();
+
+	DrawSceneWithMask( "black", "maskdown", 1, 0, 300 );
+	ModSetLayerFilter(0, 256, "none");
+	ModDrawCharacter(0, 9, "sprite/ta1_iradachi_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 9, 0, FALSE );
+	DrawScene( "background/hi9", 400 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f6d9a8>鷹野</color>", NULL, "<color=#f6d9a8>Takano</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 9, "ps3/s20/09/440900091", 128, TRUE);
+	OutputLine(NULL, "「……もう、どうにもならないのかしら。」",
+		   NULL, "\"...Yapabileceğimiz bir şey yok mu?\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　鷹野さんが独り言のように呟いた。",
+		   NULL, "diye mırıldandı Takano-san.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　……それは悲しいことだが、…その通り。",
+		   NULL, "Maalesef... yok.", Line_WaitForInput);
+	OutputLine(NULL, "どうにもならないことなのだ…。",
+		   NULL, " Kimsenin yapabileceği hiçbir şey yok.", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#945c44>富竹</color>", NULL, "<color=#945c44>Tomitake</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 8, "ps3/s20/08/440800057", 128, TRUE);
+	OutputLine(NULL, "「…………最初、理事会では即時研究を中止という話も出たんだ。",
+		   NULL, "\"......Başlangıçta kurul araştırmayı derhal durdurmaktan bahsetti.", Line_Continue);
+	OutputLine(NULL, "…それを、何とか納得させて数年間で段階的に終了というところまで勝ち取ってくれたんだよ。",
+		   NULL, " ...Ama uzun ikna çabalarının ardından nihayet birkaç yıla yayılan kademeli bir askıya alma sürecine razı oldular. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#945c44>富竹</color>", NULL, "<color=#945c44>Tomitake</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 8, "ps3/s20/08/440800058", 128, TRUE);
+	OutputLine(NULL, "……入江機関発足で僕たちを世話してくれた人たちがね。」",
+		   NULL, "Bunu başaranlar, Irie Enstitüsü ilk kurulduğunda bize yardım eden kişilerdi.\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f6d9a8>鷹野</color>", NULL, "<color=#f6d9a8>Takano</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 9, "ps3/s20/09/440900092", 128, TRUE);
+	OutputLine(NULL, "「……くす。",
+		   NULL, "\"...Fufufu.", Line_Continue);
+	OutputLine(NULL, "…なるほど。",
+		   NULL, " ...Anlıyorum.", Line_Continue);
+	OutputLine(NULL, "一見、最悪と思えるこの状況も、それでも影で誰かが勝ち取ったぎりぎりの成果なのね…。」",
+		   NULL, " En kötü senaryo gibi görünse de, aslında bir başkasının binbir güçlükle kazandığı bir zafer, ha?\"", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#945c44>富竹</color>", NULL, "<color=#945c44>Tomitake</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 8, "ps3/s20/08/440800059", 128, TRUE);
+	OutputLine(NULL, "「それで勝ち取った期間が、…せいぜい３年なんだ。",
+		   NULL, "\"Yapabileceklerinin en iyisi üç yıldı.", Line_Continue);
+	OutputLine(NULL, "僕も一応努力はしたんだよ。",
+		   NULL, " Ben de çabaladım, biliyorsun.", Line_Continue);
+	OutputLine(NULL, "鷹野さんが今日までに作った資料を理事会に説明し、とても重要な研究であることをアピールしたつもりなんだけど…。」",
+		   NULL, " Kurula bu araştırmanın ne kadar önemli olduğunu açıklamak için senin verilerini kullandım...\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	DisableWindow();
+	ModDrawCharacter(0, 9, "sprite/ta1_def_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 9, 200, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f6d9a8>鷹野</color>", NULL, "<color=#f6d9a8>Takano</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 9, "ps3/s20/09/440900093", 128, TRUE);
+	OutputLine(NULL, "「……それでも、３年でおしまいなのね。」",
+		   NULL, "\"Sadece...... üç yıl daha, ha?\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　鷹野さんには、僕が新しい理事たちにどれだけの苦労をして説明をしたか、わからないかもしれない。",
+		   NULL, "Belki de Takano-san onları ikna etmek için ne kadar çok çabaladığımı anlamıyor.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　…今の言葉には、何年勝ち取ろうと終わらせられることに変わりはないという響きがあったから。",
+		   NULL, "Çünkü az önce söylediği şey, geriye kalan sürenin uzunluğunun onun için gerçekten hiçbir önemi olmadığını gösteriyor. Önemli olan şey araştırmasının durduruluyor olması.", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　…彼女の期待に応えられず、失望させてしまっているのがわかり、",
+		   NULL, "Gerçek şu ki onun beklentilerini karşılayamadım ve hayal kırıklığına uğramasına neden oldum...", Line_ContinueAfterTyping);
+	SetValidityOfInput( FALSE );
+	Wait( 900 );
+	SetValidityOfInput( TRUE );
+	OutputLine(NULL, "…男として胸が痛んだ。",
+		   NULL, " Bir erkek olarak bu biraz canımı yakıyor.", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#945c44>富竹</color>", NULL, "<color=#945c44>Tomitake</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 8, "ps3/s20/08/440800060", 128, TRUE);
+	OutputLine(NULL, "「僕にできることは、…せめて研究が畳まれるまでの数年間を、心残りがないよう研究できるだけの予算を付けられるよう根回ししてあげることだけだ…。",
+		   NULL, "\"Bu noktada yapabileceğim en iyi şey, geriye kalan birkaç yıl boyunca gönlünce çalışabilmen için araştırmaya mümkün olduğunca fazla fon yönlendirmek.", Line_Continue);
+	OutputLine(NULL, "…………ごめん。",
+		   NULL, " Özür dilerim...", Line_Continue);
+	OutputLine(NULL, "こんな程度のことしかできなくて。」",
+		   NULL, " Başka hiçbir şey yapamıyorum...\"", Line_Normal);
+	ClearMessage();
+
+	DrawScene( "black", 400 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f6d9a8>鷹野</color>", NULL, "<color=#f6d9a8>Takano</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 9, "ps3/s20/09/440900094", 128, TRUE);
+	OutputLine(NULL, "「いいのよ。",
+		   NULL, "\"Sorun değil.", Line_Continue);
+	OutputLine(NULL, "それがジロウさんにできる精一杯なら、…それでとても嬉しいもの。」",
+		   NULL, " Yapabileceğinin en iyisi buysa, bundan çok memnun olurum.\"", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　……彼女の言葉が少し、痛い。",
+		   NULL, "Sözleri canımı yaktı.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　…もう少し角を丸めてもらいたかったが、傷心の彼女にそれを期待するのは、男としてみっともない。",
+		   NULL, "Keşke farklı kelimeler seçseydi ama kalbi bu kadar kırık birinden bunu istemek sanırım fazlaca bencillik olurdu.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　…こういう時こそ、彼女の痛みをわかってやらなければならないのだから。",
+		   NULL, "Böyle bir zamanda onun acısını anlayışla karşılamalıyım.", Line_Normal);
+	ClearMessage();
+
+	DrawScene( "background/sora5", 400 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　それに、亡くなった小泉先生のことを、彼女がおじいちゃんと呼び親しんでいたことも知っている。",
+		   NULL, "Üstelik merhum Koizumi-sensei ile ne kadar yakın olduğunu biliyorum. Ona 'Amca' bile diyordu.", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　彼女にとって、小泉先生の死は、単なる政変の勃発や風向きの変化だけじゃない。",
+		   NULL, "Onun için bu ölüm yalnızca bir darbenin başlangıcı ya da yön değişikliği değil.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　……自分を見守ってくれていた保護者を失った悲しさもあるはずなのだ。",
+		   NULL, "Her zaman kendisine kol kanat geren bir insanı kaybetti.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　彼女は、どう背伸びして悪ぶって見せたところで、",
+		   NULL, "Kötü biri gibi davranmak için kendini ne kadar zorlarsa zorlasın...", Line_ContinueAfterTyping);
+	SetValidityOfInput( FALSE );
+	Wait( 800 );
+	SetValidityOfInput( TRUE );
+	OutputLine(NULL, "…本来、この世界にいる人間じゃない。",
+		   NULL, " ...aslında bu dünyanın bir parçası olmaması gerekiyordu.", Line_WaitForInput);
+	OutputLine(NULL, "……普通の、一人の女性なのだ。",
+		   NULL, " ...O sadece sıradan bir kadındı.", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　それが、雛見沢症候群に魅せられ、自分の力以上の力を得なければ研究が続けられなくなった。",
+		   NULL, "Ama Hinamizawa Sendromu ilgisini çekmişti ve araştırmasını sürdürebilmek için kendisinden daha güçlü birilerinin yardımını bulmak zorunda kalmıştı.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　……そこに手を差し伸べたのが、…本来、彼女が交わってはいけなかった、裏の世界だったのだ。",
+		   NULL, "...Dünyanın karanlık yüzü, asla bulaşmaması gereken o dünya ona ellerini uzatmıştı.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　そんな世界に、今やたったひとり置き去りにされ、気丈を装っている彼女…。",
+		   NULL, "O dünyada yapayalnız bırakılmıştı ve hâlâ cesur bir duruş sergilemeye çalışıyordu.", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　鷹野さんは僕のことを、きっと頼りない男だと思っているだろう。",
+		   NULL, "Takano-san'ın benim güvenilmez biri olduğumu düşündüğüne eminim.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　…実際、僕は彼女の期待に応えられるような器じゃないし、",
+		   NULL, "Gerçekçi olmak gerekirse, onun beklentilerini karşılayabilecek türden biri değilim.", Line_ContinueAfterTyping);
+	SetValidityOfInput( FALSE );
+	Wait( 800 );
+	SetValidityOfInput( TRUE );
+	OutputLine(NULL, "……そんな力もない。",
+		   NULL, " Bunu yapacak gücüm de yok.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　せめてできるのは、……最後まで彼女の味方でいてあげたいという誠意だけだ。",
+		   NULL, "Onun için en azından yapabileceğim şey... samimiyetimi korumak ve sonuna kadar onun müttefiki olarak kalmak.", Line_Normal);
+	ClearMessage();
+
+	DrawScene( "black", 400 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　彼女には行動力がある分、…追い詰められた時、どういう行動に出るのかわからないところがある。",
+		   NULL, "Şimdiye dek hareket alanı çok geniş olduğundan... köşeye sıkıştığında ne tür adımlar atacağına karar vermesi daha zor.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　……彼女に限ってまさか、と思いたいところだが、……最後の最後に何をするかわからない不安はあった。",
+		   NULL, "Yapmayacağına inanmak istesem de, sonunda radikal bir işe kalkışabileceğinden endişeleniyorum.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　その最後の最後の時、それに踏み切る前に、せめて僕が心の支えになれればいいのだが……。",
+		   NULL, "Umarım hamlesini yapmadan önceki o en son anda ona bir faydam dokunabilir.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　……それだけの信用を勝ち取れていない、自分の不甲斐なさが情けなかった…。",
+		   NULL, "Ama bunu yapmak için ondan yeterli güveni bile kazanamıyorum... Ne kadar acınası ve zavallıca.", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　男として、彼女に頼ってもらいたいという気持ちは、…もちろんある。",
+		   NULL, "Elbette bunun bir kısmı... bir erkek olarak bana güvenip dayanmasını istememden kaynaklanıyor.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　でも、そうじゃない。",
+		   NULL, "Ama asıl mesele bu değil.", Line_WaitForInput);
+	OutputLine(NULL, "……たったひとりで、こんな世界に放り出されてしまった彼女に、せめて誰か味方がいなくちゃいけないんだ。",
+		   NULL, " Bu dünyada terk edildi ve yapayalnız kaldı, bu yüzden birinin onun müttefiki olması gerekiyor.", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　そして、それを知っているのが僕ひとりしかいないなら、",
+		   NULL, "Ve eğer bunu bilen tek kişi bensem,", Line_ContinueAfterTyping);
+	SetValidityOfInput( FALSE );
+	Wait( 800 );
+	SetValidityOfInput( TRUE );
+	OutputLine(NULL, "…それは僕の役目ではないのか。",
+		   NULL, " o zaman onun müttefiki olmak benim görevim.", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　彼女が決して助けを求めない性分であることを、僕は今日までによく知っている。",
+		   NULL, "Onu çok iyi tanıdığım için asla yardım istemeyeceğini biliyorum.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　…例え、余計なお節介だと疎まれても、近くに居てあげる人がいなくちゃ駄目なんだと、わかってる。",
+		   NULL, "Gereksiz olduğunu söylese bile birinin onun yanında olması şart. Bunu biliyorum.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　その任に僕が相応しいとは思わない。",
+		   NULL, "Bu iş için gerçekten uygun olduğumu düşünmüyorum.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　…きっと僕より相応しい、頼りがいのある人間はたくさんいると思う。",
+		   NULL, "Dışarıda bu konum için benden çok daha uygun, güvenilir pek çok insan olduğuna eminim.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　でも、だからといって、その誰かが現れるまで、彼女をひとりぼっちにしていていいということはないんだ…。",
+		   NULL, "Ama o kişi ortaya çıkana kadar onu yalnız bırakamam.", Line_Normal);
+	ClearMessage();
+
+	DrawSceneWithMask( "background/sora6", "maskup", 1, 0, 300 );
+
+	PlayBGM( 1, "higurashi", 120, 0 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#945c44>富竹</color>", NULL, "<color=#945c44>Tomitake</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 8, "ps3/s20/08/440800061", 128, TRUE);
+	OutputLine(NULL, "「……鷹野さん。",
+		   NULL, "\"Takano-san,", Line_Continue);
+	OutputLine(NULL, "僕は全然頼りがいもないし、みっともない男かもしれないけど…。」",
+		   NULL, " acınası ve güvenilmez biri olduğumu biliyorum...\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f6d9a8>鷹野</color>", NULL, "<color=#f6d9a8>Takano</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 9, "ps3/s20/09/440900095", 128, TRUE);
+	OutputLine(NULL, "「ん？",
+		   NULL, "\"Hım?", Line_Continue);
+	OutputLine(NULL, "　何、突然。",
+		   NULL, " Nereden çıktı bu şimdi durup dururken?", Line_Continue);
+	OutputLine(NULL, "どうしたのジロウさん。」",
+		   NULL, " Ne oldu, Jirou-san?\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#945c44>富竹</color>", NULL, "<color=#945c44>Tomitake</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 8, "ps3/s20/08/440800062", 128, TRUE);
+	OutputLine(NULL, "「それでも、頼ってもらえたら、きっと力になれることもあると思うんだ。",
+		   NULL, "\"Ama sana bir faydam dokunabileceğini düşünüyorum.", Line_Continue);
+	OutputLine(NULL, "だから、」",
+		   NULL, " O yüzden...\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f6d9a8>鷹野</color>", NULL, "<color=#f6d9a8>Takano</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 9, "ps3/s20/09/440900096", 128, TRUE);
+	OutputLine(NULL, "「ありがとう。",
+		   NULL, "\"Teşekkür ederim.", Line_Continue);
+	OutputLine(NULL, "でも私、しゃべるだけでも心が軽くなるっていうの、あまり信じてないの。",
+		   NULL, " Ama insanlarla konuşmanın kişiyi daha iyi hissettirdiğine inanmıyorum.", Line_Continue);
+	OutputLine(NULL, "ごめんなさいね。",
+		   NULL, " Özür dilerim.", Line_Continue);
+	OutputLine(NULL, "気にしてもらえるだけでも、とても嬉しいわよ。」",
+		   NULL, " Yine de endişelendiğini duymak beni mutlu etti. Gerçekten.\"", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#945c44>富竹</color>", NULL, "<color=#945c44>Tomitake</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 8, "ps3/s20/08/440800063", 128, TRUE);
+	OutputLine(NULL, "「……そ、そうかい。",
+		   NULL, "\"...P-Pekala.", Line_Continue);
+	OutputLine(NULL, "ならいいんだ。",
+		   NULL, " Sorun değil.", Line_Continue);
+	OutputLine(NULL, "…僕はずっと味方だから、それだけは信じていてほしいな。」",
+		   NULL, " Her zaman senin yanında olacağım. Lütfen buna inan, tamam mı?\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f6d9a8>鷹野</color>", NULL, "<color=#f6d9a8>Takano</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 9, "ps3/s20/09/440900097", 128, TRUE);
+	OutputLine(NULL, "「もちろん信じてるわ。",
+		   NULL, "\"Elbette inanırım.", Line_Continue);
+	OutputLine(NULL, "……理事会をうまく説得できる方法があったら、ぜひ、教えてね。」",
+		   NULL, " Kurulu ikna etmek için aklına iyi bir fikir gelirse lütfen bana haber ver, tamam mı?\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#945c44>富竹</color>", NULL, "<color=#945c44>Tomitake</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 8, "ps3/s20/08/440800064", 128, TRUE);
+	OutputLine(NULL, "「うん…。",
+		   NULL, "\"Tabii...", Line_Continue);
+	OutputLine(NULL, "僕なりにも努力してみるよ。」",
+		   NULL, " Elimden geleni yapacağım.\"", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　なぜだろう。",
+		   NULL, "Neden acaba?", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　……彼女の方がずっとしっかりしていて、僕の助けなど何の役にも立たないのはわかっているのに。",
+		   NULL, "Onun çok güçlü bir insan olduğunu ve benim gibi birinin onun için yapabileceği hiçbir şey olmadığını biliyorum.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　……今の彼女には助けや支えが必要な気がする。",
+		   NULL, "Ama...... nedense şu anda yardıma ve desteğe ihtiyacı olduğunu hissediyorum.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　…普段の気丈な彼女と一見、何も変わらないのに、",
+		   NULL, "Her zamanki gibi güçlü görünüyor, ", Line_ContinueAfterTyping);
+	SetValidityOfInput( FALSE );
+	Wait( 800 );
+	SetValidityOfInput( TRUE );
+	OutputLine(NULL, "…なぜか彼女とずっと写真を撮ってきた僕にだけはわかるのだ。",
+		   NULL, "ama bunca zamandır onun fotoğraflarını çeken tek kişi olarak yalnızca ben bunu anlayabilirim.", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　だって、ファインダーは心を覗く窓でもあるのだから。",
+		   NULL, "Ne de olsa vizör dediğiniz şey, aynı zamanda bir insanın kalbine bakılan bir penceredir.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　…そんなことを言うと、また柄にもないと言われるので、口にしない。",
+		   NULL, "...Ama böyle bir şey söylersem benimle yine dalga geçer, o yüzden söylemeyeceğim.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　とにかく。",
+		   NULL, "Her neyse,", Line_WaitForInput);
+	OutputLine(NULL, "…今ほど、彼女に支えが必要だと思うことはなかった…。",
+		   NULL, " ...şu anda desteğe benimkinden çok daha güçlü bir şekilde ihtiyacı olacağını hiç düşünmemiştim...", Line_Normal);
+	ClearMessage();
+
+	CallScript( "&eye" );
+	FadeOutBGM( 0, 1000, FALSE );
+	FadeOutBGM( 1, 1000, FALSE );
+	DrawScene( "black", 1000 );
+
+}

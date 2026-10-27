@@ -1,0 +1,190 @@
+// Higurashi Türkçe Çeviri & Yerelleştirme: @Remilya | https://github.com/Remilya/Higurashi
+void main()
+{
+
+
+//９■スクラップ帳よりⅦ
+//*Sub_Tips_035
+//gosub *tip_s
+	EnableJumpingOfReturnIcon();
+	FadeOutBGM( 0, 1000, FALSE );
+	FadeOutBGM( 1, 1000, FALSE );
+	FadeOutBGM( 2, 1000, TRUE );
+	DisableWindow();
+	DrawScene("black", 1000 );
+	PlayBGM( 1, "msys13", 56, 0 );
+	PlaySE( 3, "wa_021", 56, 64 );
+	DrawScene("background/simen3", 1000 );
+
+//locate 5,6
+	if (GetGlobalFlag(GADVMode) == 0) { SetDrawingPointOfMessage( 0, 6 ); }
+	SetStyleOfMessageSwinging( 1 );
+
+//＜御三家について￥
+	ClearMessage();
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "＜御三家について＞",
+		   NULL, "<Üç Büyük Aile Hakkında>", Line_Normal);
+	ClearMessage();
+
+	SetStyleOfMessageSwinging( 0 );
+	PlaySE( 3, "wa_021", 56, 64 );
+
+//　御三家は鬼ヶ淵村を実効支配してきた３つの旧家を指す＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　御三家は鬼ヶ淵村を実効支配してきた３つの旧家を指す。",
+		   NULL, "\"Üç Büyük Aile\" tabiri, Onigafuchi Köyü'nü fiilen yöneten üç köklü aileyi ifade eder.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+//　内訳は公由家、古手家、園崎家で、いずれも現存している＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　内訳は公由家、古手家、園崎家で、いずれも現存している。",
+		   NULL, "Açmak gerekirse bunlar Kimiyoshi Ailesi, Furude Ailesi ve Sonozaki Ailesi'dir ve her biri bugün hâlâ varlığını sürdürmektedir.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+
+//（古代ほどの支配力はないにせよ、今日でも強い影響力を堅持しているようである。＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "（古代ほどの支配力はないにせよ、今日でも強い影響力を堅持しているようである。）",
+		   NULL, "(Uzak geçmişteki kadar mutlak bir hakimiyetleri olmasa da, bugün bile hatırı sayılır bir nüfuza sahiptirler.)", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+//　御三家は、鬼ヶ淵沼より現れた鬼の血を最も濃く残すと伝えられている￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　御三家は、鬼ヶ淵沼より現れた鬼の血を最も濃く残すと伝えられている。",
+		   NULL, "Efsaneye göre Üç Büyük Aile, bataklıktan çıkan iblislerin kanını en yoğun şekilde taşıyan aileler olarak kabul edilir.", Line_Normal);
+	ClearMessage();
+
+	PlaySE( 3, "wa_021", 56, 64 );
+
+//＜公由（キミヨシ）家＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "＜公由（キミヨシ）家＞",
+		   NULL, "<Kimiyoshi Ailesi>", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+//　公由家は御三家の筆頭家として大きな力を持っていたらしいが、今日にあっては御三家をリードするほどではない＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　公由家は御三家の筆頭家として大きな力を持っていたらしいが、今日にあっては御三家をリードするほどではない。",
+		   NULL, "Kimiyoshi Ailesi geçmişte Üç Büyük Aile'nin başı olarak büyük bir güce sahipmiş gibi görünse de, günümüzde böyle bir liderlik konumunda değildir.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　現村長（公由喜一郎）はこの家の出身である＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　現村長（公由喜一郎）はこの家の出身である。",
+		   NULL, "Köyün şu anki muhtarı (Kiichirou Kimiyoshi) bu ailedendir.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+//　公選制が導入されるまで、自動的に公由家が代々村長に就任してきたのは、古い体制の名残だと思われる＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　公選制が導入されるまで、自動的に公由家が代々村長に就任してきたのは、古い体制の名残だと思われる。",
+		   NULL, "Her nesilde Kimiyoshi Ailesi'nden birinin muhtar seçilmesi, eski sistemin bir kalıntısı olarak düşünülmektedir.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　もっとも対抗馬が出ないため、戦後の公選制導入後も公由家が村長に就くことは変わっていない￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　もっとも対抗馬が出ないため、戦後の公選制導入後も公由家が村長に就くことは変わっていない。",
+		   NULL, "Elbette karşılarına rakip bir aday çıkmadığı için, savaş sonrası dönemde halk oylaması sistemine geçilmiş olmasına rağmen Kimiyoshi Ailesi'nin muhtarlık makamını elinde tutması değişmemiştir.", Line_Normal);
+	ClearMessage();
+
+	PlaySE( 3, "wa_021", 56, 64 );
+
+//＜古手（フルデ）家＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "＜古手（フルデ）家＞",
+		   NULL, "<Furude Ailesi>", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+//　古代から信仰の中心となり、オヤシロさまを祀る唯一の神社を守ってきた一族である＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　古代から信仰の中心となり、オヤシロさまを祀る唯一の神社を守ってきた一族である。",
+		   NULL, "Antik çağlardan beri köyün inanç merkezi olan Furude klanı, Oyashiro-sama'ya adanmış tek tapınağı korumuştur.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+//　オヤシロさまの声を代弁する唯一の存在として、長く崇められてきたが、戦争で分家筋がほとんど絶え、今では本家のみとなっている￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　オヤシロさまの声を代弁する唯一の存在として、長く崇められてきたが、戦争で分家筋がほとんど絶え、今では本家のみとなっている。",
+		   NULL, "Uzun bir süre boyunca Oyashiro-sama'nın sesini temsil eden yegane kişiler olarak el üstünde tutulmuşlardır; ancak savaştan sonra yan kolları neredeyse tamamen tükenmiş ve geriye yalnızca ana hane kalmıştır.", Line_Normal);
+	ClearMessage();
+
+	PlaySE( 3, "wa_021", 56, 64 );
+
+//　その本家も、現在では一人娘（古手梨花）を残すのみなので、この代で潰えるかもしれない＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　その本家も、現在では一人娘（古手梨花）を残すのみなので、この代で潰えるかもしれない。",
+		   NULL, "Ana hanede de şu anda yalnızca tek bir kız çocuğu (Rika Furude) kaldığı için soy bu nesilde sona erebilir.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+//　古手家の女子を尊ぶ古い習慣があるらしく、一人娘の梨花は、年寄り連中に崇められている様子だ￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　古手家の女子を尊ぶ古い習慣があるらしく、一人娘の梨花は、年寄り連中に崇められている様子だ。",
+		   NULL, "Görünüşe göre Furude Ailesi'nin kadınlarına hürmet gösterilen eski bir gelenek var; bu yüzden ailenin tek kızı olan Rika, köyün yaşlıları arasında büyük bir saygı görüyor.", Line_Normal);
+	ClearMessage();
+
+
+	PlaySE( 3, "wa_021", 56, 64 );
+
+//＜園崎（ソノザキ）家＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "＜園崎（ソノザキ）家＞",
+		   NULL, "<Sonozaki Ailesi>", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+//　鬼ヶ淵村の戒律を守るある種の警察官的な役割を担ったと伝えられている＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　鬼ヶ淵村の戒律を守るある種の警察官的な役割を担ったと伝えられている。",
+		   NULL, "Bu ailenin Onigafuchi Köyü'nün dini kurallarını koruyan bir tür polis rolü üstlendiği söylenir.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　御三家の中では比較的、弱い立場であったことが、御三家の末番に数えられることから見てとれる￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　御三家の中では比較的、弱い立場であったことが、御三家の末番に数えられることから見てとれる。",
+		   NULL, "Üç Büyük Aile arasında nispeten zayıf bir konumda oldukları, sıralamada en sonda yer almalarından anlaşılabilir.", Line_Normal);
+	ClearMessage();
+
+	PlaySE( 3, "wa_021", 56, 64 );
+
+//　もっとも、今日の園崎家は隆盛を極め、御三家内における立場は完全に逆転している＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　もっとも、今日の園崎家は隆盛を極め、御三家内における立場は完全に逆転している。",
+		   NULL, "Elbette günümüzde Sonozaki Ailesi altın çağını yaşamaktadır ve Üç Büyük Aile arasındaki güç dengesi tamamen tersine dönmüştür.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　今や雛見沢を牛耳っているとまで言えるだろう＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　今や雛見沢を牛耳っているとまで言えるだろう。",
+		   NULL, "Şu anda bile Hinamizawa'yı tek başlarına kontrol ettikleri söylenebilir.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+//　御三家で合議することが名残となっているだけで、村内の取り決めは事実上、現当主の園崎お魎がひとりで決めていると言っていい￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　御三家で合議することが名残となっているだけで、村内の取り決めは事実上、現当主の園崎お魎がひとりで決めていると言っていい。",
+		   NULL, "Üç Büyük Aile'nin birbirine danışması artık yalnızca eski günlerden kalma bir formalitedir—köydeki tüm kararları fiilen Sonozaki Ailesi'nin şu anki reisi olan Oryou tek başına vermektedir.", Line_Normal);
+	ClearMessage();
+	DisableWindow();
+	SetValidityOfInput( FALSE );
+	DrawBustshotWithFiltering(6, "cinema", "x", 1, 0, 0, FALSE, 0, 0, 0, 0, 0, 25, 1300, TRUE );
+	DrawBustshot(7, "title02", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 26, 3000, TRUE );
+	Wait( 2000 );
+	DrawBustshot(5, "black", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 25, 3000, TRUE );
+	Wait( 1000 );
+	FadeBustshotWithFiltering( 7, "x", 1, FALSE, 0, 0, 1000, TRUE );
+	DrawScene("black", 1000 );
+	SetValidityOfInput( TRUE );
+
+
+}

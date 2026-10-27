@@ -1,0 +1,77 @@
+// Higurashi Türkçe Çeviri & Yerelleştirme: @Remilya | https://github.com/Remilya/Higurashi
+void main()
+{
+	EnableJumpingOfReturnIcon();
+	FadeOutBGM( 0, 0, FALSE );
+	FadeOutBGM( 1, 0, FALSE );
+	FadeOutBGM( 2, 0, FALSE );
+	FadeOutBGM( 3, 0, FALSE );
+	ClearMessage();
+
+	DrawScene("background/nort", 1000 );
+	PlayBGM( 0, "Nazo", 56, 0 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　大石の言う、沙都子の面倒を見るからと園崎家が言い含め、悟史くんを雛見沢から放逐した……というのは、",
+		   NULL, "Ooishi'nin, Sonozaki Ailesi'nin Satoko'ya göz kulak olma karşılığında Satoshi-kun'u Hinamizawa'dan sürgün ettiğine dair teorisini ilk duyduğumda...", Line_WaitForInput);
+	OutputLine(NULL, "最初、こじつけた話だなと思って聞いていた。",
+		   NULL, " tamamen uydurma olduğunu düşünmüştüm.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　だが、後になって考え直して見ると、それは私が馬鹿にするほどズレた話でもない。",
+		   NULL, "Fakat şimdi tekrar düşününce, hiç de alaya alınacak kadar mantıksız gelmiyor.", Line_Normal);
+	ClearMessage();
+	DrawScene("black", 400 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　だって、北条沙都子は、ひとりになったあと、古手梨花と生活を共にしているのだ。",
+		   NULL, "Sonuçta Satoko Houjou, Satoshi-kun'un ortadan kayboluşunun ardından tek başına kalınca Rika Furude ile birlikte yaşamaya başladı.", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　古手梨花はただの小娘じゃない。",
+		   NULL, "Rika Furude sıradan bir kız çocuğu değil.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　御三家の一角、古手家の頭首でもあるのだ。",
+		   NULL, "Üç Büyük Aile'den biri olan Furude Ailesi'nin reisi.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　その古手梨花は、公由家頭首が保護者になっている。",
+		   NULL, "Kimiyoshi Ailesi'nin reisi de Rika Furude'nin vasisi konumunda.", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　さすがに北条家と対立してきた園崎家は表に出ることはできなかったんだろうが、",
+		   NULL, "Muhtemelen Sonozaki Ailesi, geçmişte Houjou Ailesi ile açıkça karşı karşıya geldiği için doğrudan devreye giremedi,", Line_WaitForInput);
+	OutputLine(NULL, "事実上、北条沙都子は御三家の保護下に入っていた。",
+		   NULL, " fakat fiilen Satoko Houjou şu anda Üç Büyük Aile'nin himayesi altında.", Line_Normal);
+	ClearMessage();
+	DrawScene("background/nort", 400 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　ダム戦争中、鬼ヶ淵死守同盟からあれほどまでに攻撃をされた北条家の生き残りが、御三家に保護されているなんて。",
+		   NULL, "Baraj mücadelesi sırasında Houjou Ailesi Baraj Karşıtı İttifak tarafından o kadar ağır dışlanmışken, şimdi Satoko Houjou koruma altına alınmıştı.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　それはまるで北条家の罪から、沙都子だけが許されたような、そんな感じ。",
+		   NULL, "Sanki Houjou Ailesi'nin günahlarından bir tek Satoko muaf tutulmuş gibiydi.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　どうして悟史くんは許してもらえなかったのに、沙都子だけ？",
+		   NULL, "Satoshi-kun affedilmemişken neden sadece o bağışlandı?", Line_Normal);
+	ClearMessage();
+
+	DisableWindow();
+	Wait( 1000 );
+	DrawScene("black", 1000 );
+}

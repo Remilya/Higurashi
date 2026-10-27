@@ -1,0 +1,99 @@
+// Higurashi Türkçe Çeviri & Yerelleştirme: @Remilya | https://github.com/Remilya/Higurashi
+void main()
+{
+
+
+//７■スクラップ帳よりⅡ
+//*Sub_Tips_028
+//gosub *tip_s
+	EnableJumpingOfReturnIcon();
+	FadeOutBGM( 0, 1000, FALSE );
+	FadeOutBGM( 1, 1000, FALSE );
+	FadeOutBGM( 2, 1000, TRUE );
+	DisableWindow();
+	DrawScene("black", 1000 );
+	PlaySE( 3, "wa_021", 56, 64 );
+	DrawScene("background/simen3", 400 );
+	PlayBGM( 1, "msys13", 56, 0 );
+
+//locate 4,6
+
+	if (GetGlobalFlag(GADVMode) == 0) { SetDrawingPointOfMessage( 0, 6 ); }
+	SetStyleOfMessageSwinging( 1 );
+
+//＜生贄の儀式について￥
+	ClearMessage();
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "＜生贄の儀式について＞",
+		   NULL, "<İnsan Kurban Etme Ritüeli Hakkında>", Line_Normal);
+	ClearMessage();
+
+	SetStyleOfMessageSwinging( 0 );
+	PlaySE( 3, "wa_021", 56, 64 );
+
+//　生贄の儀式は、最もシンプルな溺死型で、神聖な沼である鬼ヶ淵沼に犠牲者を沈めることで成立した￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　生贄の儀式は、最もシンプルな溺死型で、神聖な沼である鬼ヶ淵沼に犠牲者を沈めることで成立した。",
+		   NULL, "Kurban ritüeli, kurbanların kutsal kabul edilen Onigafuchi Bataklığı'na batırılmasını içeren basit bir suda boğma işlemiydi.", Line_Normal);
+	ClearMessage();
+
+	PlaySE( 3, "wa_021", 56, 64 );
+
+//　鬼ヶ淵村における儀式で特徴的なのは、犠牲者を三日三晩もの長い時間をかけてゆっくりと沈める点にある＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　鬼ヶ淵村における儀式で特徴的なのは、犠牲者を三日三晩もの長い時間をかけてゆっくりと沈める点にある。",
+		   NULL, "Onigafuchi Köyü'nün ritüelleri arasında bu ritüeli benzersiz kılan nokta, kurbanın üç gün üç gece gibi uzun bir süre boyunca yavaş yavaş batırılmasıydı.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+
+//　犠牲者を沈めて「殺す」ことよりも＠「沈める（鎮める）」行為に重きが置かれていたと考えられる＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　犠牲者を沈めて「殺す」ことよりも、",
+		   NULL, "Burada önemli olanın kurbanı batırarak öldürmekten ziyade,", Line_WaitForInput);
+	OutputLine(NULL, "「沈める（鎮める）」行為に重きが置かれていたと考えられる。",
+		   NULL, " batırma eyleminin Oyashiro-sama'nın öfkesini 'yatıştırmayı' sembolize etmesi olduğuna inanıyorum.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+//　その為、放って置けばあっという間に沈んでしまう犠牲者をいかに緩慢に沈めるかに、様々な工夫が凝らされたはずである＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　その為、放って置けばあっという間に沈んでしまう犠牲者をいかに緩慢に沈めるかに、様々な工夫が凝らされたはずである。",
+		   NULL, "Bu amaçla, kendi haline bırakılsa bir çırpıda dibe batacak olan kurbanın çok hızlı batmasını önlemek—yani onu daha yavaş batmaya zorlamak—için çeşitli yöntemler geliştirmiş olmalılar.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　残念だが、その方法は知る限りの文献には載せられていない￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　残念だが、その方法は知る限りの文献には載せられていない。",
+		   NULL, "Ne yazık ki, inceleyebildiğim kaynakların hiçbirinde bu yöntemler kayıt altına alınmamış.", Line_Normal);
+	ClearMessage();
+
+	PlaySE( 3, "wa_021", 56, 64 );
+
+//　私の想像では、丸太等で巨大なイカダを組み＠そこに処刑台を設え、縄で犠牲者を吊り上げ、時の刻みに合わせて少しずつ沼へ沈めていったのではないかと思う＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　私の想像では、丸太等で巨大なイカダを組み、",
+		   NULL, "Benim tahminimce, kütük veya benzeri malzemeler kullanarak devasa bir sal inşa ediyor,", Line_WaitForInput);
+	OutputLine(NULL, "そこに処刑台を設え、縄で犠牲者を吊り上げ、時の刻みに合わせて少しずつ沼へ沈めていったのではないかと思う。",
+		   NULL, " üzerine bir idam sehbası kuruyor, kurbanı halatlarla asıyor ve zamanın akışıyla birlikte azar azar bataklığa indiriyorlardı.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+//　だがそうだとするのならば、その儀式に使った「祭具」は神聖なものとして崇められ、どこかに祀られていてもおかしくない￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　だがそうだとするのならば、その儀式に使った「祭具」は神聖なものとして崇められ、どこかに祀られていてもおかしくない。",
+		   NULL, "Ancak durum böyleyse, bu törende kullanılan 'ayin aletlerinin' kutsal sayılarak bir yerlerde muhafaza ediliyor olması hiç de tuhaf olmazdı.", Line_Normal);
+	ClearMessage();
+	DisableWindow();
+	SetValidityOfInput( FALSE );
+	DrawBustshotWithFiltering(6, "cinema", "x", 1, 0, 0, FALSE, 0, 0, 0, 0, 0, 25, 1300, TRUE );
+	DrawBustshot(7, "title02", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 26, 3000, TRUE );
+	Wait( 2000 );
+	DrawBustshot(5, "black", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 25, 3000, TRUE );
+	Wait( 1000 );
+	FadeBustshotWithFiltering( 7, "x", 1, FALSE, 0, 0, 1000, TRUE );
+	DrawScene("black", 1000 );
+	SetValidityOfInput( TRUE );
+
+
+}

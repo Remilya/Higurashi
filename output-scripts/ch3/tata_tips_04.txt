@@ -1,0 +1,447 @@
+// Higurashi Türkçe Çeviri & Yerelleştirme: @Remilya | https://github.com/Remilya/Higurashi
+
+void main()
+{
+
+//*Sub_Tips_048
+//gosub *tip_s
+//■タイトル：　サボりマネージャー
+	EnableJumpingOfReturnIcon();
+	FadeOutBGM( 0, 1000, FALSE );
+	FadeOutBGM( 1, 1000, FALSE );
+	FadeOutBGM( 2, 1000, TRUE );
+	DisableWindow();
+	PlayBGM( 1, "msys11", 56, 0 );
+	ModSetLayerFilter(3, 256, "none");
+	ModDrawCharacterWithFiltering(3, 10, "sprite/iri1_def2_", "1", "right", 1, 160, 0, FALSE, 0, 0, 0, 0, 0, 20, 0, FALSE );
+	DrawScene("background/ji1", 400 );
+
+//「詩音さんも少しは手伝ってくださいー。＠
+	ClearMessage();
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>Irie</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/441000024", 256, TRUE);
+	OutputLine(NULL, "「詩音さんも少しは手伝ってくださいー。」",
+		   NULL, "\"Shion-san, biraz da siz yardım etsenize?\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	DisableWindow();
+	ModSetLayerFilter(1, 256, "none");
+	ModDrawCharacterWithFiltering(1, 6, "sprite/si1a_wink_a1_", "2", "left", 1, -160, 0, FALSE, 0, 0, 0, 0, 0, 0, 300, TRUE );
+
+//「女の子に重いものを運ばせようって言うんですか＠そんなだからいい歳になっても相手が見つからないんですよ監督は。￥
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>詩音</color>", NULL, "<color=#5ec69a>Shion</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 6, "ps3/s20/06/440600012", 256, TRUE);
+	OutputLine(NULL, "「女の子に重いものを運ばせようって言うんですか。",
+		   NULL, "\"Bir kızdan ağır eşyalar taşımasını mı istiyorsunuz?", Line_Continue);
+	Wait(2200);
+	OutputLine(NULL, "そんなだからいい歳になっても相手が見つからないんですよ監督は。」",
+		   NULL, " İşte bu yüzden bu yaşınıza gelmenize rağmen hâlâ kendinize uygun bir hanımefendi bulamadınız, Koç.\"", Line_Normal);
+	ClearMessage();
+	DisableWindow();
+	ModDrawCharacter(3, 10, "sprite/iri1_def1_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+
+//「えーとですね、そういうのを曰くこう言います＠えー、余計なお世話です。＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>Irie</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/441000025", 256, TRUE);
+	OutputLine(NULL, "「えーとですね、そういうのを曰くこう言います。",
+		   NULL, "\"Şey, bakın, böyle zamanlarda insanların söylediği bir söz vardır.", Line_Continue);
+	Wait(2500);
+	OutputLine(NULL, "えー、余計なお世話です。」",
+		   NULL, " Öhöm—üstünüze vazife değil.\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	DisableWindow();
+	ModDrawCharacter(1, 6, "sprite/si1a_warai_a1_", "2", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 0, 200, TRUE );
+
+//「あっはははははははは。￥
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>詩音</color>", NULL, "<color=#5ec69a>Shion</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 6, "ps3/s20/06/440600013", 256, TRUE);
+	OutputLine(NULL, "「あっはははははははは。」",
+		   NULL, "\"Ahahahahahahaha.\"", Line_Normal);
+	ClearMessage();
+	DisableWindow();
+	DrawScene("black", 400 );
+	DrawSceneWithMask("background/ji1", "up", 0, 0, 300 );
+
+//　今日のバーベキュー大会に使った器材をワゴン車いっぱいに積む＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　今日のバーベキュー大会に使った器材をワゴン車いっぱいに積む。",
+		   NULL, "Bugünkü mangal etkinliğinde kullandığımız yığınla malzemeyi steyşın arabaya yüklüyordu.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　手伝ってくれた父兄たちもみんな帰り始めている￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　手伝ってくれた父兄たちもみんな帰り始めている。",
+		   NULL, "Yardıma gelen veliler de yavaş yavaş evlerine dönmeye başlamıştı.", Line_Normal);
+	ClearMessage();
+	DisableWindow();
+	ModDrawCharacterWithFiltering(1, 10, "sprite/iri1_def1_", "0", "left", 1, -160, 0, FALSE, 0, 0, 0, 0, 0, 0, 300, TRUE );
+
+//「......さて＠詩音さんはどうしますか＠あなた、ここまでは何で来ました＠　自転車でしたら積んで送って差し上げますよ。＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>Irie</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/441000026", 256, TRUE);
+	OutputLine(NULL, "「……さて。",
+		   NULL, "\"...Pekâlâ.", Line_Continue);
+	Wait(600);
+	OutputLine(NULL, "詩音さんはどうしますか。",
+		   NULL, " Ee, Shion-san...", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/441000027", 256, TRUE);
+	OutputLine(NULL, "あなた、ここまでは何で来ました？",
+		   NULL, " Siz buraya kadar neyle geldiniz?", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/441000028", 256, TRUE);
+	OutputLine(NULL, "　自転車でしたら積んで送って差し上げますよ。」",
+		   NULL, " Bisikletle geldiyseniz bisikletinizi arkaya atıp sizi bırakabilirim.\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	DisableWindow();
+	ModDrawCharacterWithFiltering(3, 6, "sprite/si1b_def_b1_", "0", "right", 1, 160, 0, FALSE, 0, 0, 0, 0, 0, 20, 300, TRUE );
+
+//「バイクだからいいです＠お心遣いだけでうれしいってことにしときます。￥
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>詩音</color>", NULL, "<color=#5ec69a>Shion</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 6, "org/shion2900", 256, TRUE);
+	OutputLine(NULL, "「バイクだからいいです。",
+		   NULL, "\"Motosikletle geldim, kendim dönerim.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 6, "org/shion2901", 256, TRUE);
+	OutputLine(NULL, "お心遣いだけでうれしいってことにしときます。」",
+		   NULL, " Yine de inceliğiniz için teşekkür ederim.\"", Line_Normal);
+	ClearMessage();
+	DisableWindow();
+	ModDrawCharacter(1, 10, "sprite/iri1_def2_", "1", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 0, 200, TRUE );
+
+//「............今日は来てくれてうれしかったですよ＠やはりマネージャーさんがいないとパッとしませんからねぇ。＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>Irie</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/441000029", 256, TRUE);
+	OutputLine(NULL, "「…………今日は来てくれてうれしかったですよ。",
+		   NULL, "\"......Bugün geldiğiniz için çok sevindim.", Line_Continue);
+	Wait(1200);
+	OutputLine(NULL, "やはりマネージャーさんがいないとパッとしませんからねぇ。」",
+		   NULL, " Ne de olsa menajerimiz olmayınca takımın pek bir havası olmuyor.\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	DisableWindow();
+	ModDrawCharacter(3, 6, "sprite/si1a_akuwarai_a1_", "2", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+
+//「まだ私、マネージャーなんですか＠　１年もまるまるサボってんだから、こんな無能マネージャー、いい加減に解雇するべきだと思いますよ。￥
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>詩音</color>", NULL, "<color=#5ec69a>Shion</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 6, "ps3/s20/06/440600015", 256, TRUE);
+	OutputLine(NULL, "「まだ私、マネージャーなんですか？",
+		   NULL, "\"Ben hâlâ menajer miyim?", Line_Continue);
+	Wait(1900);
+	OutputLine(NULL, "　１年もまるまるサボってんだから、こんな無能マネージャー、いい加減に解雇するべきだと思いますよ。」",
+		   NULL, " Koca bir yıldır görevimi tamamen astığıma göre, böyle işe yaramaz bir menajeri artık kovmanız gerekir bence.\"", Line_Normal);
+	ClearMessage();
+	DisableWindow();
+	ModDrawCharacter(1, 10, "sprite/iri1_warai_", "2", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 0, 200, TRUE );
+
+//「えぇ＠詩音さんが辞めたいって自分で言えたらいつでも解雇してあげますよ。＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>Irie</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/441000030", 256, TRUE);
+	OutputLine(NULL, "「えぇ。",
+		   NULL, "\"Olur.", Line_Continue);
+	Wait(800);
+	OutputLine(NULL, "詩音さんが辞めたいって自分で言えたらいつでも解雇してあげますよ。」",
+		   NULL, " Kendi ağzınızla bırakmak istediğinizi söylerseniz sizi istediğiniz zaman kovarım.\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	DisableWindow();
+	ModDrawCharacter(3, 6, "sprite/si1a_tohoho_a1_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+
+//「...ちぇ＠ズルイなぁ＠/
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>詩音</color>", NULL, "<color=#5ec69a>Shion</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 6, "ps3/s20/06/440600016", 256, TRUE);
+	OutputLine(NULL, "「…ちぇ。",
+		   NULL, "\"...Hıh.", Line_Continue);
+	Wait(600);
+	OutputLine(NULL, "ズルイなぁ。",
+		   NULL, " Hiç adil değilsiniz.", Line_WaitForInput);
+
+	DisableWindow();
+	ModDrawCharacter(3, 6, "sprite/si1b_wink_b1_", "2", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+
+//...............早く解放してくださいよね＠試合がある度に来ないかと電話が掛かってくるの、もうウザくてかなわないんですから。￥
+	ModPlayVoiceLS(4, 6, "ps3/s20/06/440600017", 256, TRUE);
+	OutputLine(NULL, "………………早く解放してくださいよね。",
+		   NULL, " .........Yakında beni azat edin lütfen, olur mu?", Line_Continue);
+	Wait( 1500 );
+	OutputLine(NULL, "試合がある度に来ないかと電話が掛かってくるの、もうウザくてかなわないんですから。」",
+		   NULL, " Her maç öncesi gelip gelmeyeceğimi sormak için açtığınız o sinir bozucu telefonlara artık dayanamıyorum çünkü.\"", Line_Normal);
+	ClearMessage();
+	DisableWindow();
+	ModDrawCharacter(1, 10, "sprite/iri1_def2_", "1", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 0, 200, TRUE );
+
+//「詩音ちゃんももっともっと素直になれば、とってもキュートで可愛い女の子なのに＠お父さんは悲しいですよ、一体どこで捻じ曲がってこんなにひねくれてしまったんだか＠　あぁ、お父さんの愛の抱擁で力強く包み込めば目が覚めますか？＠　でしたら遠慮なく！＠/
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>Irie</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/441000031", 256, TRUE);
+	OutputLine(NULL, "「詩音ちゃんももっともっと素直になれば、とってもキュートで可愛い女の子なのに。",
+		   NULL, "\"Kendine karşı biraz daha dürüst olsaydın çok daha sevimli ve tatlı bir kız olurdun, Shion-chan.", Line_Continue);
+	Wait(4000);
+	OutputLine(NULL, "お父さんは悲しいですよ、一体どこで捻じ曲がってこんなにひねくれてしまったんだか！",
+		   NULL, " Baban çok üzülüyor—böyle asi bir kızı hak edecek ne hata yaptı acaba? ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>Irie</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/441000032", 256, TRUE);
+	OutputLine(NULL, "　あぁ、お父さんの愛の抱擁で力強く包み込めば目が覚めますか？！",
+		   NULL, "Ah, yoksa baban seni sevgi dolu, güçlü kollarıyla sımsıkı kucaklasa gözlerin açılır mı?!", Line_Continue);
+	Wait(3800);
+	OutputLine(NULL, "　でしたら遠慮なく！！",
+		   NULL, " Öyleyse hiç çekinmeyeyim!!", Line_WaitForInput);
+
+	PlaySE( 3, "wa_029", 56, 64 );
+
+//　ほぅら～～～♪♪♪￥
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/441000033", 256, TRUE);
+	OutputLine(NULL, "　ほぅら〜〜〜♪♪♪」",
+		   NULL, " Gel bakalım buraya~~~♪♪♪\"", Line_Normal);
+	ClearMessage();
+
+//　...監督が精一杯ふざけてみせるが、詩音は遠くを見るような目で微笑むだけで、取り合わなかった￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　…監督が精一杯ふざけてみせるが、詩音は遠くを見るような目で微笑むだけで、取り合わなかった。",
+		   NULL, "...Koç var gücüyle şaklabanlık yapıyordu ama Shion ona hiç karşılık vermeden uzaklara dalıp hafifçe gülümsedi.", Line_Normal);
+	ClearMessage();
+	DisableWindow();
+	DrawScene("black", 400 );
+	DrawScene("background/sora6", 400 );
+
+//「............何も変わってない＠監督がヘンな人で、みんなの賑わいも何も変わってないのに。＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>詩音</color>", NULL, "<color=#5ec69a>Shion</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 6, "ps3/s20/06/440600018", 256, TRUE);
+	OutputLine(NULL, "「…………何も変わってない。",
+		   NULL, "\"......Hiçbir şey değişmemiş.", Line_Continue);
+	Wait(2000);
+	OutputLine(NULL, "監督がヘンな人で、みんなの賑わいも何も変わってないのに。」",
+		   NULL, " Siz hâlâ tuhaf bir adamsınız Koç, herkesin neşesi de eskisi gibi yerinde.\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//「...悟史くんだけ、いない＠...とおっしゃりたいのですか。＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>Irie</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/441000034", 256, TRUE);
+	OutputLine(NULL, "「…悟史くんだけ、いない。",
+		   NULL, "\"...Sadece Satoshi-kun burada değil.", Line_Continue);
+	Wait(1000);
+	OutputLine(NULL, "…とおっしゃりたいのですか。」",
+		   NULL, " ...Demek istediğiniz bu mu?\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//「.....................。＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>詩音</color>", NULL, "<color=#5ec69a>Shion</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 6, "ps3/s20/06/440600019", 256, TRUE);
+	OutputLine(NULL, "「…………………。」",
+		   NULL, "\"............\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//「帰ってきますよ＠きっと＠待っている人がいるんですから。＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>Irie</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/441000035", 256, TRUE);
+	OutputLine(NULL, "「帰ってきますよ。",
+		   NULL, "\"O geri dönecek.", Line_Continue);
+	Wait(1000);
+	OutputLine(NULL, "きっと。",
+		   NULL, " Bundan eminim.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/441000036", 256, TRUE);
+	OutputLine(NULL, "待っている人がいるんですから。」",
+		   NULL, " Çünkü onu bekleyen biri var.\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//「...............ふん＠...勝手なこと言ってて下さい。￥
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>詩音</color>", NULL, "<color=#5ec69a>Shion</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 6, "ps3/s20/06/440600020", 256, TRUE);
+	OutputLine(NULL, "「……………ふん。",
+		   NULL, "\"......Hıh.", Line_Continue);
+	Wait(1000);
+	OutputLine(NULL, "…勝手なこと言ってて下さい。」",
+		   NULL, " ...Canınız ne istiyorsa onu söyleyin.\"", Line_Normal);
+	ClearMessage();
+
+//「彼も罪作りな人ですよねぇ＠こんな可愛い彼女を置き去りにして、どこへ行ってしまったんだか。＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>Irie</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/441000037", 256, TRUE);
+	OutputLine(NULL, "「彼も罪作りな人ですよねぇ。",
+		   NULL, "\"O da amma zalim biriymiş doğrusu, değil mi?", Line_Continue);
+	Wait(1500);
+	OutputLine(NULL, "こんな可愛い彼女を置き去りにして、どこへ行ってしまったんだか。」",
+		   NULL, " Böyle sevimli bir kız arkadaşı geride bırakıp kim bilir nerelere gitti.\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//「へ？＠　かか、彼女！＠　誰が＠　誰が！＠　......へ？！＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>詩音</color>", NULL, "<color=#5ec69a>Shion</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 6, "ps3/s20/06/440600021", 256, TRUE);
+	OutputLine(NULL, "「へ？！",
+		   NULL, "\"Ha?!", Line_Continue);
+	Wait(1000);
+	OutputLine(NULL, "　かか、彼女！！",
+		   NULL, " K-K-Kız arkadaş mı?!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 6, "ps3/s20/06/440600022", 256, TRUE);
+	OutputLine(NULL, "　誰が！",
+		   NULL, " Kim?!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 6, "ps3/s20/06/440600023", 256, TRUE);
+	OutputLine(NULL, "　誰が！！",
+		   NULL, " Kimmiş o?!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 6, "ps3/s20/06/440600024", 256, TRUE);
+	OutputLine(NULL, "　……へ？！」",
+		   NULL, " ...Ha?!\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//「ぷ、...くっくっく、はっはっはっはっはっは！￥
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>Irie</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/441000038", 256, TRUE);
+	OutputLine(NULL, "「ぷ、…くっくっく、はっはっはっはっはっは！」",
+		   NULL, "\"Pff... küh-hüh-hü, ha ha ha ha ha ha!\"", Line_Normal);
+	ClearMessage();
+
+//「......ちぇー、...もう＠　いつまで笑ってるんですか！＠　かぁんとーくー！！＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>詩音</color>", NULL, "<color=#5ec69a>Shion</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 6, "ps3/s20/06/440600025", 256, TRUE);
+	OutputLine(NULL, "「……ちぇー、…もう！",
+		   NULL, "\"...Of... yeter ama!", Line_Continue);
+	Wait(2300);
+	OutputLine(NULL, "　いつまで笑ってるんですか！！",
+		   NULL, " Kesin artık gülmeyi!!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 6, "ps3/s20/06/440600026", 256, TRUE);
+	OutputLine(NULL, "　かぁんとーくー！！」",
+		   NULL, " Koooç!!\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//「はっはっは＠　わーっはっはっはっは！！＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>Irie</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/441000039", 256, TRUE);
+	OutputLine(NULL, "「はっはっは！",
+		   NULL, "\"Ha ha ha!", Line_Continue);
+	Wait(1300);
+	OutputLine(NULL, "　わーっはっはっはっは！！」",
+		   NULL, " Vahh ha ha ha!!\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+//　しばらくの間、監督はおなかをよじりながら笑い転げていた...￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　しばらくの間、監督はおなかをよじりながら笑い転げていた…。",
+		   NULL, "Koç bir süre karnını tuta tuta katıla katıla güldü...", Line_Normal);
+	ClearMessage();
+	DisableWindow();
+	ModDrawCharacter(1, 10, "sprite/iri1_def2_", "1", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 0, 0, FALSE );
+	DrawSceneWithMask("background/ji1", "up", 0, 0, 300 );
+
+//「では、またお会いしましょうね＠試合にもたまには応援に来てくださいよ。＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>Irie</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/441000040", 256, TRUE);
+	OutputLine(NULL, "「では、またお会いしましょうね。",
+		   NULL, "\"O halde tekrar görüşmek üzere.", Line_Continue);
+	Wait(1300);
+	OutputLine(NULL, "試合にもたまには応援に来てくださいよ。」",
+		   NULL, " Arada sırada maçlara da bizi desteklemeye gelin lütfen, tamam mı?\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	DisableWindow();
+	ModDrawCharacter(3, 6, "sprite/si1a_akuwarai_a1_", "2", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+
+//「ま、気が向いたら＠...私、マネージャーなんか全然、もぅやる気ないんですから。￥
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>詩音</color>", NULL, "<color=#5ec69a>Shion</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 6, "ps3/s20/06/440600027", 256, TRUE);
+	OutputLine(NULL, "「ま、気が向いたら。",
+		   NULL, "\"Eh, içimden gelirse.", Line_Continue);
+	Wait(1700);
+	OutputLine(NULL, "…私、マネージャーなんか全然、もぅやる気ないんですから。」",
+		   NULL, " ...Ne de olsa artık menajerlik yapmaya falan hiç hevesim yok.\"", Line_Normal);
+	ClearMessage();
+	DisableWindow();
+	ModDrawCharacter(1, 10, "sprite/iri1_def1_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 0, 200, TRUE );
+
+//「...いいんですよ＠あなたが嫌ならいつでもクビにしてあげますよ＠嫌がるのを無理やりってのは私の性ではありませんからね。＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>Irie</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/441000041", 256, TRUE);
+	OutputLine(NULL, "「…いいんですよ。",
+		   NULL, "\"...Sorun değil.", Line_Continue);
+	Wait(1000);
+	OutputLine(NULL, "あなたが嫌ならいつでもクビにしてあげますよ。",
+		   NULL, " İstemiyorsanız sizi her zaman kovabilirim.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/441000042", 256, TRUE);
+	OutputLine(NULL, "嫌がるのを無理やりってのは私の性分ではありませんからね。」",
+		   NULL, " İnsanları istemedikleri bir şeye zorlamak benim mizacıma uygun değildir.\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	DisableWindow();
+	ModDrawCharacter(3, 6, "sprite/si1a_warai_a1_", "2", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+
+//「..............................ちぇ＠あーはいはい＠　すみませんねすみませんね＠　私の負けです＠気が向いたらまた応援に来ますので、今日は堪忍して下さい。￥
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>詩音</color>", NULL, "<color=#5ec69a>Shion</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 6, "ps3/s20/06/440600028", 256, TRUE);
+	OutputLine(NULL, "「…………………………ちぇ。",
+		   NULL, "\"..................Hıh.", Line_Continue);
+	Wait(3000);
+	OutputLine(NULL, "あーはいはい！",
+		   NULL, " Ah, tamam, tamam!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 6, "ps3/s20/06/440600029", 256, TRUE);
+	OutputLine(NULL, "　すみませんねすみませんね！",
+		   NULL, " Özür dilerim, özür dilerim!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 6, "ps3/s20/06/440600030", 256, TRUE);
+	OutputLine(NULL, "　私の負けです。",
+		   NULL, " Bu seferlik siz kazandınız.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 6, "ps3/s20/06/440600031", 256, TRUE);
+	OutputLine(NULL, "気が向いたらまた応援に来ますので、今日は堪忍して下さい。」",
+		   NULL, " İçimden gelirse yine sizi desteklemeye geleceğim, o yüzden bugünlük beni affedin.\"", Line_Normal);
+	ClearMessage();
+	DisableWindow();
+	ModDrawCharacter(1, 10, "sprite/iri1_def2_", "1", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 0, 200, TRUE );
+
+//「ふっふっふ＠　おっと、もうこんな時間＠　器材返す約束の時間が...＠　先方をもうだいぶ待たせてますね＠　では、今日はこの辺で＠　また次の試合でお会いしましょう！＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>Irie</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/441000043", 256, TRUE);
+	OutputLine(NULL, "「ふっふっふ！",
+		   NULL, "\"Hu hu hu!", Line_Continue);
+	Wait(1200);
+	OutputLine(NULL, "　おっと、もうこんな時間！",
+		   NULL, " Eyvah, saat bu kadar olmuş mu?!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/441000044", 256, TRUE);
+	OutputLine(NULL, "　器材返す約束の時間が…！",
+		   NULL, " Malzemeleri teslim etme saatim geçti bile...!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/441000045", 256, TRUE);
+	OutputLine(NULL, "　先方をもうだいぶ待たせてますね！",
+		   NULL, " Karşı tarafı şimdiden epey beklettim!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/441000046", 256, TRUE);
+	OutputLine(NULL, "　では、今日はこの辺で！",
+		   NULL, " O halde bugünlük müsaadenizi isteyeyim!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/441000047", 256, TRUE);
+	OutputLine(NULL, "　また次の試合でお会いしましょう！」",
+		   NULL, " Bir sonraki maçta tekrar görüşmek üzere!\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	DisableWindow();
+	ModDrawCharacter(3, 6, "sprite/si1b_wink_b1_", "2", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+
+//「えぇ、気が向いたらね＠さよなら、監督。￥
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>詩音</color>", NULL, "<color=#5ec69a>Shion</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 6, "ps3/s20/06/440600032", 256, TRUE);
+	OutputLine(NULL, "「えぇ、気が向いたらね。",
+		   NULL, "\"Evet, içimden gelirse.", Line_Continue);
+	Wait(2000);
+	OutputLine(NULL, "さよなら、監督。」",
+		   NULL, " Hoşça kalın, Koç.\"", Line_Normal);
+	ClearMessage();
+	SetValidityOfInput( FALSE );
+	Wait( 1000 );
+	SetValidityOfInput( TRUE );
+	DisableWindow();
+	DrawScene("black", 1000 );
+	FadeOutBGM( 0, 1000, FALSE );
+	FadeOutBGM( 1, 1000, FALSE );
+	FadeOutBGM( 2, 1000, TRUE );
+//gosub *tip_e
+//return
+
+
+}

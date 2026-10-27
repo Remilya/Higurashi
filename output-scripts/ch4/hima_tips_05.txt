@@ -1,0 +1,401 @@
+// Higurashi Türkçe Çeviri & Yerelleştirme: @Remilya | https://github.com/Remilya/Higurashi
+void main()
+{
+
+//*Sub_Tips_068
+//gosub *tip_s
+
+//■順調
+	EnableJumpingOfReturnIcon();
+	FadeOutBGM( 0, 1000, FALSE );
+	FadeOutBGM( 1, 1000, FALSE );
+	FadeOutBGM( 2, 1000, TRUE );
+
+	DisableWindow();
+	DrawScene("black", 1000 );
+
+	PlayBGM( 1, "msys12", 56, 0 );
+	DisableWindow();
+	DrawScene("background/so_d1_01", 400 );
+
+//　車の音が近付き、緩いブレーキと音と共にエンジン音を止める￥
+	ClearMessage();
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　車の音が近付き、緩いブレーキ音と共にエンジン音を止める。",
+		   NULL, "Arabanın sesi yaklaştı ve hafif bir fren sesiyle birlikte motor durdu.", Line_Normal);
+	ClearMessage();
+
+
+//　その途端、それまでだらしなさそうに足を投げ出していた男は、ガバッと起き上がって窓の脇の壁に張り付き、用心深く表の様子を伺った…￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　その途端、それまでだらしなさそうに足を投げ出していた男は、ガバッと起き上がって窓の脇の壁に張り付き、用心深く表の様子を伺った…。",
+		   NULL, "Tam o anda, o zamana kadar ayaklarını uzatmış tembel tembel oturan adam hızla yerinden fırlayıp pencerenin yanındaki duvara yaslandı ve dikkatle dışarıyı kolaçan etti...", Line_Normal);
+	ClearMessage();
+
+
+//　……………仲間の車だ＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　……………仲間の車だ。",
+		   NULL, "...Ortağının arabasıydı.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　だが、警戒はまだ解かない＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　だが、警戒はまだ解かない。",
+		   NULL, "Buna rağmen gardını henüz indirmedi.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+//　やがて、足音は扉に近付き＠…ドン、!w1000ドドドン、!w1000と決められた合図のノックをした￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　やがて、足音は扉に近付き、",
+		   NULL, "Çok geçmeden ayak sesleri kapıya yaklaştı.", Line_WaitForInput);
+	OutputLine(NULL, "…ドン、",
+		   NULL, " ...Güm,", Line_ContinueAfterTyping);
+
+	SetValidityOfInput( FALSE );
+	Wait( 1000 );
+	SetValidityOfInput( TRUE );
+
+	OutputLine(NULL, "ドドドン、",
+		   NULL, " güm güm güm.", Line_ContinueAfterTyping);
+
+	SetValidityOfInput( FALSE );
+	Wait( 1000 );
+	SetValidityOfInput( TRUE );
+
+	OutputLine(NULL, "と決められた合図のノックをした。",
+		   NULL, " Kararlaştırdıkları parolaydı.", Line_Normal);
+	ClearMessage();
+
+
+//「……帰ってきたんね＠開けちょくれな、俺だ。＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>男</color>", NULL, "<color=#f5e6d3>Adam</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 14, "ps3/s20/14/443400010", 256, TRUE);
+	OutputLine(NULL, "「……帰ってきたんね。",
+		   NULL, "\"...Döndüm.", Line_WaitForInput);
+	OutputLine(NULL, "開けちょくれな、俺だ。」",
+		   NULL, " Aç bakalım kapıyı, benim.\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//「あぁ、お疲れ＠今、開ける。￥
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>男</color>", NULL, "<color=#f5e6d3>Adam</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/yamab44001", 256, TRUE);
+	OutputLine(NULL, "「あぁ、お疲れ。",
+		   NULL, "\"Aa, hoş geldin.", Line_Continue);
+	Wait( 1700 );
+	OutputLine(NULL, "今、開ける。」",
+		   NULL, " Şimdi açıyorum.\"", Line_Normal);
+	ClearMessage();
+
+	PlaySE( 3, "wa_020", 56, 64 );
+
+//　鍵を外し、扉を開けると、大きく膨らんだスーパーのビニール袋を両手いっぱいに持った男が姿を現す＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　鍵を外し、扉を開けると、大きく膨らんだスーパーのビニール袋を両手いっぱいに持った男が姿を現す。",
+		   NULL, "Kilit açılıp kapı aralandığında, iki eli de ağzına kadar dolu şişkin market poşetleriyle yüklü bir adam belirdi.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+//　両手のビニール袋には「セブンスマート」と書かれていて、菓子パンや牛乳パックなどが顔をのぞかせていた￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　両手のビニール袋には「セブンスマート」と書かれていて、菓子パンや牛乳パックなどが顔をのぞかせていた。",
+		   NULL, "Ellerindeki poşetlerin üzerinde \"Seventh Mart\" yazıyordu; içlerinden tatlı çörekler ve süt kutuları seçilebiliyordu.", Line_Normal);
+	ClearMessage();
+
+
+	PlaySE( 3, "wa_002", 56, 64 );
+	Wait( 200 );
+	PlaySE( 3, "wa_003", 56, 64 );
+
+//　それらの袋の中身を、床に敷かれた毛布の上に広げた￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　それらの袋の中身を、床に敷かれた毛布の上に広げた。",
+		   NULL, "Poşetlerin içindekileri yere serilmiş bir battaniyenin üzerine boşalttı.", Line_Normal);
+	ClearMessage();
+
+
+//「カップラーメン買ってきちょん、お湯沸かせな＠…小僧はどうしてるん。＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>男</color>", NULL, "<color=#f5e6d3>Adam</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 14, "ps3/s20/14/443400011", 256, TRUE);
+	OutputLine(NULL, "「カップラーメン買ってきちょん、お湯沸かせな。",
+		   NULL, "\"Bardak erişte aldım, su kaynatıver.", Line_Continue);
+	Wait( 2500 );
+	OutputLine(NULL, "…小僧はどうしてるん。」",
+		   NULL, " ...Velet ne yapıyo?\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//「ん＠　ずっと寝てる＠手が掛からなくて助かるよ＠ウンコ垂れる時は騒ぐけどな。＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>男</color>", NULL, "<color=#f5e6d3>Adam</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/yamab44002", 256, TRUE);
+	OutputLine(NULL, "「ん？",
+		   NULL, "\"Hı?", Line_Continue);
+	Wait( 1000 );
+	OutputLine(NULL, "　ずっと寝てる。",
+		   NULL, " Baştan beri uyuyor.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/yamab44003", 256, TRUE);
+	OutputLine(NULL, "手が掛からなくて助かるよ。",
+		   NULL, " Neyse ki hiç zorluk çıkarmıyor.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/yamab44004", 256, TRUE);
+	OutputLine(NULL, "ウンコ垂れる時は騒ぐけどな。」",
+		   NULL, " Gerçi altına sıçacağı zaman biraz debelendi.\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//「漏らさせんなぁ＠便臭は万一の時、ヤぁバいって。＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>男</color>", NULL, "<color=#f5e6d3>Adam</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 14, "ps3/s20/14/443400012", 256, TRUE);
+	OutputLine(NULL, "「漏らさせんなぁ。",
+		   NULL, "\"Sakın altına kaçırmasına izin verme ha.", Line_Continue);
+	Wait( 1500 );
+	OutputLine(NULL, "便臭は万一の時、ヤぁバいって。」",
+		   NULL, " Burası hela gibi kokmaya başlarsa işimiz yaş.\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//「……わかってるよ。￥
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>男</color>", NULL, "<color=#f5e6d3>Adam</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/yamab44005", 256, TRUE);
+	OutputLine(NULL, "「……わかってるよ。」",
+		   NULL, "\"...Evet, biliyorum.\"", Line_Normal);
+	ClearMessage();
+
+//「猿ぐつわは定期的にチェックんな＠外れてもまずいん、きつくも締め付けちゃあぁん＠窒息させたら意味がなん。＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>男</color>", NULL, "<color=#f5e6d3>Adam</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 14, "ps3/s20/14/443400013", 256, TRUE);
+	OutputLine(NULL, "「猿ぐつわは定期的にチェックんな。",
+		   NULL, "\"Ağız tıkacını da ara sıra kontrol et.", Line_Continue);
+	Wait( 2000 );
+	OutputLine(NULL, "外れてもまずいん、きつくも締め付けちゃあぁん。",
+		   NULL, " Gevşerse fena olur ama çok da sıkı bağlama...", Line_WaitForInput);
+	ModPlayVoiceLS(4, 14, "ps3/s20/14/443400014", 256, TRUE);
+	OutputLine(NULL, "窒息させたら意味がなん。」",
+		   NULL, " Çocuğu havasızlıktan boğarsak hiçbir anlamı kalmaz.\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//「わかってるって…＠あれ、携帯コンロのガス缶頼まなかった＠　もうガスねえよ。＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>男</color>", NULL, "<color=#f5e6d3>Adam</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/yamab44006", 256, TRUE);
+	OutputLine(NULL, "「わかってるって…。",
+		   NULL, "\"Biliyorum dedim ya...", Line_Continue);
+	Wait( 1800 );
+	OutputLine(NULL, "あれ、携帯コンロのガス缶頼まなかった？",
+		   NULL, " Ha? Kamp ocağı için yedek gaz tüpü almanı söylememiş miydim?", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/yamab44007", 256, TRUE);
+	OutputLine(NULL, "　もうガスねえよ。」",
+		   NULL, " Gazımız bitmiş.\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//「聞いてねん、だぁほ。＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>男</color>", NULL, "<color=#f5e6d3>Adam</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 14, "ps3/s20/14/443400015", 256, TRUE);
+	OutputLine(NULL, "「聞いてねん、だぁほ。」",
+		   NULL, "\"Öyle bi' şey demedin, sersem herif.\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//「…かーー…、マジかよ、付いてくれよ…＠くそくそ！！￥
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>男</color>", NULL, "<color=#f5e6d3>Adam</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/yamab44008", 256, TRUE);
+	OutputLine(NULL, "「…かーー…、マジかよ、付いてくれよ…。",
+		   NULL, "\"...Hadi be... Ciddi misin? Hadi yan artık...", Line_Continue);
+	Wait( 4800 );
+	OutputLine(NULL, "くそくそ！！」",
+		   NULL, " Kahretsin!!\"", Line_Normal);
+	ClearMessage();
+
+
+//　携帯コンロを、ガチャガチャといじり、火が付かないかと悪戦苦闘している＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　携帯コンロを、ガチャガチャといじり、火が付かないかと悪戦苦闘している。",
+		   NULL, "Ateş alır mı diye kamp ocağını şangır şungur kurcalayarak yakmak için boğuşup durdu.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+//　…それを見て、買出しに行っていた男は深くため息をつくのだった￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　…それを見て、買出しに行っていた男は深くため息をつくのだった。",
+		   NULL, "...Bunu gören alışverişten dönen adam derin bir iç çekti.", Line_Normal);
+	ClearMessage();
+
+
+//　そして、その様子を尻目に、……部屋の隅へ歩み寄る￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　そして、その様子を尻目に、……部屋の隅へ歩み寄る。",
+		   NULL, "Ardından göz ucuyla ona bakarak odanın köşesine doğru yürüdü.", Line_Normal);
+	ClearMessage();
+
+
+//　…誘拐された少年は、床に敷かれた毛布の上に転がされていた￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　…誘拐された少年は、床に敷かれた毛布の上に転がされていた。",
+		   NULL, "...Kaçırılan çocuk, yere serilmiş bir battaniyenin üzerinde yatıyordu.", Line_Normal);
+	ClearMessage();
+
+
+//「…………………小僧、!w1000……元気かいね？＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>男</color>", NULL, "<color=#f5e6d3>Adam</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 14, "ps3/s20/14/443400016", 256, TRUE);
+	OutputLine(NULL, "「…………………小僧、",
+		   NULL, "\"...Evlat,", Line_Continue);
+
+	// (backup) SetValidityOfInput( FALSE );
+	Wait( 1000 );
+	// (backup) SetValidityOfInput( TRUE );
+
+	OutputLine(NULL, "……元気かいね？」",
+		   NULL, " iyi misin bakalım?\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　もちろん、その問い掛けが少年の耳に入るとは、男も思ってはいない￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　もちろん、その問い掛けが少年の耳に入るとは、男も思ってはいない。",
+		   NULL, "Elbette adam bu sorunun çocuğun kulağına ulaşacağını düşünmüyordu.", Line_Normal);
+	ClearMessage();
+
+
+//　なぜなら、少年の両耳には栓が詰められ、目と耳を丸ごとぐるぐるにガムテープで塞がれていたからだ＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　なぜなら、少年の両耳には栓が詰められ、目と耳を丸ごとぐるぐるにガムテープで塞がれていたからだ。",
+		   NULL, "Çünkü çocuğun iki kulağına da tıkaç tıkılmış, gözleri ve kulakları koli bandıyla defalarca sarılarak tamamen kapatılmıştı.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+//　そして口には、ねじった薄手のタオルのようなもので猿ぐつわがされていた＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　そして口には、ねじった薄手のタオルのようなもので猿ぐつわがされていた。",
+		   NULL, "Ayrıca ağzına da bükülmüş ince bir havlu parçasıyla tıkaç yapılmıştı.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+//　……そのせいで顎を閉じることができず、少年の頬はよだれでべとべとになっていた￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　……そのせいで顎を閉じることができず、少年の頬はよだれでべとべとになっていた。",
+		   NULL, "...Bu yüzden çocuk çenesini kapatamıyor, yanakları kendi salyasıyla yapış yapış oluyordu.", Line_Normal);
+	ClearMessage();
+
+
+//　もちろん、それだけではない＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　もちろん、それだけではない。",
+		   NULL, "Elbette hepsi bununla da sınırlı değildi.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　両腕は後で組まされ、皮のベルトのようなもので厳重に締め付けられている￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　両腕は後で組まされ、皮のベルトのようなもので厳重に締め付けられている。",
+		   NULL, "İki kolu da arkasından kavuşturulmuş ve deri bir kemerle sıkıca bağlanmıştı.", Line_Normal);
+	ClearMessage();
+
+
+//「今ん所、順調らし＠命の心配はないん＠…お前の祖父さんが渋りよったん、耳たぶのひとつも切り落とさなきゃならんかったんけー、…やらんくて済んで助かりよんよ…＠本家はこうと決めたら…鬼やんね＠…どんな残酷なこと命令するかも想像つかん＠……その本家が、小僧に傷一つ付けるな言うてんから、とにかく順調なんだろんな…。￥
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>男</color>", NULL, "<color=#f5e6d3>Adam</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 14, "ps3/s20/14/443400017", 256, TRUE);
+	OutputLine(NULL, "「今ん所、順調らし。",
+		   NULL, "\"Şimdilik işler yolunda gibi.", Line_Continue);
+	Wait( 2500 );
+	OutputLine(NULL, "命の心配はないん。",
+		   NULL, " En azından canın tehlikede değil.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 14, "ps3/s20/14/443400018", 256, TRUE);
+	OutputLine(NULL, "…お前の祖父さんが渋りよったん、耳たぶのひとつも切り落とさなきゃならんかったんけー、…やらんくて済んで助かりよんよ…。",
+		   NULL, " ...Deden ayak direyecek olsaydı kulak memelerinden birini kesmemiz gerekebilirdi... Bunu yapmak zorunda kalmamamız iyi oldu... ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>男</color>", NULL, "<color=#f5e6d3>Adam</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 14, "ps3/s20/14/443400019", 256, TRUE);
+	OutputLine(NULL, "本家はこうと決めたら…鬼やんね。",
+		   NULL, "Ama Ana Aile kafasına koydu mu tam bir iblis kesilir.", Line_Continue);
+	Wait( 3200 );
+	OutputLine(NULL, "…どんな残酷なこと命令するかも想像つかん。",
+		   NULL, " ...Bize ne kadar acımasız şeyler emredebileceklerini hayal bile edemiyom. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>男</color>", NULL, "<color=#f5e6d3>Adam</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 14, "ps3/s20/14/443400020", 256, TRUE);
+	OutputLine(NULL, "……その本家が、小僧に傷一つ付けるな言うてんから、とにかく順調なんだろんな…。」",
+		   NULL, "...Gerçi Ana Aile çocuğa tek bir çizik bile atmayın dedi, yani şimdilik her şey yolunda gidiyo...\"", Line_Normal);
+	ClearMessage();
+
+
+
+//「大臣はダム計画を撤回で水面下工作＠雛見沢ダム計画は無期凍結へ＠…小僧の解放はいつ頃になるんだろうな＠…早く一服したいもんだぜ。＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>男</color>", NULL, "<color=#f5e6d3>Adam</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/yamab44009", 256, TRUE);
+	OutputLine(NULL, "「大臣はダム計画を撤回で水面下工作。",
+		   NULL, "\"Bakan, baraj projesini geri çekmek için el altından çalışmalara başlamış.", Line_Continue);
+	Wait( 3500 );
+	OutputLine(NULL, "雛見沢ダム計画は無期凍結へ。",
+		   NULL, " Hinamizawa Barajı projesi süresiz olarak dondurulacakmış.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/yamab44010", 256, TRUE);
+	OutputLine(NULL, "…小僧の解放はいつ頃になるんだろうな。",
+		   NULL, " ...Acaba veledi ne zaman serbest bırakacağız?", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/yamab44011", 256, TRUE);
+	OutputLine(NULL, "…早く一服したいもんだぜ。」",
+		   NULL, " ...Bir an önce şu iş bitse de rahat bir nefes alsak.\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//「本家が決着のタイミング、計ってるらし＠いつになるかわぁらんが、近い内やんなぁ…。＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>男</color>", NULL, "<color=#f5e6d3>Adam</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 14, "ps3/s20/14/443400021", 256, TRUE);
+	OutputLine(NULL, "「本家が決着のタイミング、計ってるらし。",
+		   NULL, "\"Ana Aile işi bitirmek için doğru zamanı kolluyo gibi.", Line_Continue);
+	Wait( 4000 );
+	OutputLine(NULL, "いつになるかわぁらんが、近い内やんなぁ…。」",
+		   NULL, " Ne zaman olur bilmem amma yakındır herhalde.\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//「良かったな小僧＠もうじき解放されるぞ、へへへ…。￥
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>男</color>", NULL, "<color=#f5e6d3>Adam</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/yamab44012", 256, TRUE);
+	OutputLine(NULL, "「良かったな小僧。",
+		   NULL, "\"Senin adına sevindim ufaklık.", Line_Continue);
+	Wait( 1000 );
+	OutputLine(NULL, "もうじき解放されるぞ、へへへ…。」",
+		   NULL, " Yakında serbest kalacaksın, heh heh heh...\"", Line_Normal);
+	ClearMessage();
+
+
+//　そんな男たちの声が、少年の耳に届いているかはわからない＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　そんな男たちの声が、少年の耳に届いているかはわからない。",
+		   NULL, "Adamlar seslerinin çocuğa ulaşıp ulaşmadığını bilmiyordu.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+//　…少年は、無惨な現実から、少しでも魂を守るために…こんこんと眠り続けるしか自衛の方法がなかった…￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　…少年は、無惨な現実から、少しでも魂を守るために…こんこんと眠り続けるしか自衛の方法がなかった…。",
+		   NULL, "...Çocuğun bu acımasız gerçeklikten ruhunu biraz olsun koruyabilmek için derin bir uykuya sığınmaktan başka çaresi yoktu...", Line_Normal);
+	ClearMessage();
+
+
+//「それよん、ガスをどうするんね＠　ラーメン食えんよぅ！＠　ガス切れたなら言ぅてえなぁもう！！￥
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>男</color>", NULL, "<color=#f5e6d3>Adam</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 14, "ps3/s20/14/443400022", 256, TRUE);
+	OutputLine(NULL, "「それよん、ガスをどうするんね！",
+		   NULL, "\"Onu bırak da gaz işini ne yapacağız?!", Line_Continue);
+	Wait( 2000 );
+	OutputLine(NULL, "　ラーメン食えんよぅ！！",
+		   NULL, " Erişteyi çiğ çiğ yiyemeyiz ya!!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 14, "ps3/s20/14/443400023", 256, TRUE);
+	OutputLine(NULL, "　ガス切れたなら言ぅてえなぁもう！！」",
+		   NULL, " Gaz bittiyse önceden söyleseydin ya be adam!!\"", Line_Normal);
+	ClearMessage();
+
+
+	SetValidityOfInput( FALSE );
+	Wait( 1000 );
+	SetValidityOfInput( TRUE );
+	DisableWindow();
+	DrawScene("black", 1000 );
+	FadeOutBGM( 1, 1000, TRUE );
+	FadeOutBGM( 2, 1000, TRUE );
+//gosub *tip_e
+//return
+
+}

@@ -1,0 +1,1891 @@
+// Higurashi Türkçe Çeviri & Yerelleştirme: @Remilya | https://github.com/Remilya/Higurashi
+void main()
+{
+
+
+//*Hirukowashi Day 10
+//＜＞＜＞＜＞＜＞＜＞＜＞＜＞＜＞
+//＜＞＜＞＜＞＜＞＜＞＜＞＜＞＜＞
+
+//#10 メイド化計画
+
+	DrawScene("bg/moon", 1000 );
+	PlayBGM( 1, "yoru", 128, 0 );
+	Wait( 2000 );
+	DrawSceneWithMask( "black", "effect/maskc", 0, 0, 500 );
+	DrawScene("bg/sinryou_soto1_01", 500 );
+	Wait( 2000 );
+	ModSetLayerFilter(4, 256, "none");
+	ModDrawCharacter(4, 10, "sprite/iri2_def1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 0, FALSE );
+	DrawScene("bg/sinryou_matiai1", 1000 );
+
+//入江rvS07/10/331000001.「これでよし、と…。kvS07/10/331000002.いやいや、これでやっと今日の仕事も終わりですね。kvS07/10/331000003.ふぅ、やれやれ…」
+	ClearMessage();
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>Irie</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000001", 256, TRUE);
+	OutputLine(NULL, "「これでよし、と…。",
+			NULL, "\"Pekâlâ, bununla birlikte...", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000002", 256, TRUE);
+	OutputLine(NULL, "いやいや、これでやっと今日の仕事も終わりですね。",
+			NULL, " Çok şükür, böylece bugünkü işler de nihayet tamamlandı.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000003", 256, TRUE);
+	OutputLine(NULL, "ふぅ、やれやれ…」",
+			NULL, " Hah, vay canına...\"", Line_Normal);
+	ClearMessage();
+
+	PlaySE(3, "a5_07212", 256, 64);
+
+//rとんとん、とん…。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "とんとん、とん…。",
+			NULL, "*tık* *tık* *tık*", Line_Normal);
+	ClearMessage();
+
+	ModDrawCharacter(4, 10, "sprite/iri2_def2_", "2", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+
+//入江rvS07/10/331000004.「…それにしても、今日はなかなか大変でした。kvS07/10/331000005.医師の方も看護師さんも、皆さんご都合があるということでお休みを取られていましたからね」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>Irie</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000004", 256, TRUE);
+	OutputLine(NULL, "「…それにしても、今日はなかなか大変でした。",
+			NULL, "\"...Her neyse, bugün epey zorlu bir gündü.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000005", 256, TRUE);
+	OutputLine(NULL, "医師の方も看護師さんも、皆さんご都合があるということでお休みを取られていましたからね」",
+			NULL, " Diğer tüm doktorlar ve hemşireler kişisel sebeplerden ötürü izin almak zorunda kaldı.\"", Line_Normal);
+	ClearMessage();
+
+//入江rvS07/10/331000006.「まぁ、それほど患者さんがいらっしゃらなかったのが、せめてもの救いでしたが」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>Irie</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000006", 256, TRUE);
+	OutputLine(NULL, "「まぁ、それほど患者さんがいらっしゃらなかったのが、せめてもの救いでしたが」",
+			NULL, "\"Neyse ki tek tesellim, bugün çok fazla hastanın gelmemiş olmasıydı.\"", Line_Normal);
+	ClearMessage();
+
+//r…………。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "…………。",
+			NULL, "......", Line_Normal);
+	ClearMessage();
+
+	ModDrawCharacter(4, 10, "sprite/iri2_warai_", "2", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+
+//入江rvS07/10/331000007.「大道さんはお母さんのお見舞いに、山口さんはお見合い。kvS07/10/331000008.鷹野さんは、…いやまぁ、たまには羽根を伸ばすことも必要です」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>Irie</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000007", 256, TRUE);
+	OutputLine(NULL, "「大道さんはお母さんのお見舞いに、山口さんはお見合い。",
+			NULL, "\"Masamichi-san annesiyle ilgileniyordu, Yamaguchi-san'ın bugün görücü usulü bir buluşması vardı,", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000008", 256, TRUE);
+	OutputLine(NULL, "鷹野さんは、…いやまぁ、たまには羽根を伸ばすことも必要です」",
+			NULL, " ve Takano-san... Eh, bazen onun da biraz kanatlarını açıp gezmesi gerekiyor.\"", Line_Normal);
+	ClearMessage();
+
+//入江rvS07/10/331000009.「しかし、意外でしたねあのカップルは…いやはや。kvS07/10/331000010.まったく、人の縁とは不思議なものです」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>Irie</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000009", 256, TRUE);
+	OutputLine(NULL, "「しかし、意外でしたねあのカップルは…いやはや。",
+			NULL, "\"Gerçi o çiftin hiç beklediğim gibi çıkmadığını söylemeliyim... Aman Allah'ım.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000010", 256, TRUE);
+	OutputLine(NULL, "まったく、人の縁とは不思議なものです」",
+			NULL, " Cidden, insan ilişkileri bazen çok gizemli olabiliyor.\"", Line_Normal);
+	ClearMessage();
+
+//r…………。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "…………。",
+			NULL, "......", Line_Normal);
+	ClearMessage();
+
+	ModDrawCharacter(4, 10, "sprite/iri2_def2_", "2", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+
+//入江rvS07/10/331000011.「…はぁ、私にもそういう縁が舞い込んでくる日が来るんですかねぇ」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>Irie</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000011", 256, TRUE);
+	OutputLine(NULL, "「…はぁ、私にもそういう縁が舞い込んでくる日が来るんですかねぇ」",
+			NULL, "\"...Hah, acaba bir gün benim başıma da böyle bir kısmet konar mı ki?\"", Line_Normal);
+	ClearMessage();
+
+	DisableWindow();
+	FadeOutBGM(1, 200, FALSE);
+	PlaySE(3, "kyupirn", 256, 64);
+	DrawScene("white", 100 );
+	ModDrawCharacter(4, 10, "sprite/iri2_majime2_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 0, FALSE );
+	DrawScene("bg/sinryou_matiai1", 250 );
+	PlayBGM(2, "hm01_02", 128, 0);
+
+//入江rvS07/10/331000012.「とりあえず贅沢は言いません。kvS07/10/331000013.メイドの心得を持ち、メイド属性があり、お料理・お洗濯・お掃除のメイドとしての最低のスキルをお持ちの方なら、容姿は問いません！」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>Irie</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000012", 256, TRUE);
+	OutputLine(NULL, "「とりあえず贅沢は言いません。",
+			NULL, "\"Gerçi açgözlülük etmemeliyim.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000013", 256, TRUE);
+	OutputLine(NULL, "メイドの心得を持ち、メイド属性があり、お料理・お洗濯・お掃除のメイドとしての最低のスキルをお持ちの方なら、容姿は問いません！」",
+			NULL, " Bir hizmetçinin bilgisine ve vasıflarına —yemek, çamaşır ve temizlik gibi en temel becerilere— sahip olduğu sürece dış görünüşünün hiçbir önemi yok!\"", Line_Normal);
+	ClearMessage();
+
+	PlaySE(3, "daidageki", 256, 64);
+	StartShakingOfWindow( 278, 30, 0, 4, 3*3, FALSE );
+	StartShakingOfAllObjects( 278, 30, 0, 4, 3*3, TRUE );
+	PlaySE(0, "daidageki", 256, 64);
+	StartShakingOfWindow( 278, 30, 0, 4, 3*3, FALSE );
+	StartShakingOfAllObjects( 278, 30, 0, 4, 3*3, TRUE );
+
+//入江rvS07/10/331000014.「もちろん、可愛ければ超々ウェルカム！！kvS07/10/331000015.　さらに２０歳以下なら、私は神の祝福を信じてもいい！！」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>Irie</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000014", 256, TRUE);
+	OutputLine(NULL, "「もちろん、可愛ければ超々ウェルカム！！",
+			NULL, "\"Tabii şirin olursa, o da üstüne fevkalade bir ikramiye olur!!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000015", 256, TRUE);
+	OutputLine(NULL, "　さらに２０歳以下なら、私は神の祝福を信じてもいい！！」",
+			NULL, " Hele bir de yirmi yaşın altındaysa, bunun Tanrı'nın bir lütfu olduğuna inanmam gerekir!!\"", Line_Normal);
+	ClearMessage();
+
+	PlaySE(3, "finish", 256, 64);
+	StartShakingOfWindow( 278, 30, 0, 4, 3*3, FALSE );
+	StartShakingOfAllObjects( 278, 30, 0, 4, 3*3, TRUE );
+
+//入江rvS07/10/331000016.「たとえそれが金銭的な関係だとしても！！kvS07/10/331000017.　でも愛があればベリー・スプレマシー！！」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>Irie</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000016", 256, TRUE);
+	OutputLine(NULL, "「たとえそれが金銭的な関係だとしても！！",
+			NULL, "\"Tamamen maddi bir ilişki olsa bile kabulüm!!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000017", 256, TRUE);
+	OutputLine(NULL, "　でも愛があればベリー・スプレマシー！！」",
+			NULL, " Ama bunun üstüne bir de işin içinde aşk olursa, işte o zaman EN YÜCE MERTEBEYE ulaşır!!\"", Line_Normal);
+	ClearMessage();
+
+	PlaySE(3, "lf164", 256, 64);
+	ModDrawCharacter(4, 10, "sprite/iri2_warai_", "2", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+
+//入江rvS07/10/331000018.「そこに『甘えっ子』『ツンデレ』『意外に家庭的』の三大属性が万が一、いや億が一にもあったとすれば、私は全世界を敵に回しても戦うことができる！！」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>Irie</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000018", 256, TRUE);
+	OutputLine(NULL, "「そこに『甘えっ子』『ツンデレ』『意外に家庭的』の三大属性が万が一、いや億が一にもあったとすれば、私は全世界を敵に回しても戦うことができる！！」",
+			NULL, "\"Ve milyonda bir ihtimalle 'şımarık çocuk', 'tsundere' ve 'şaşırtıcı derecede evcimen' şeklindeki üç büyük özelliğin hepsine birden sahip olursa, onun uğruna bütün dünyayı karşıma alıp savaşabilirim!!\"", Line_Normal);
+	ClearMessage();
+
+	DisableWindow();
+	PlaySE(3, "hit_s8_d", 256, 64);
+	DrawScene("white", 100 );
+	ModDrawCharacter(4, 10, "sprite/iri2_warai_", "2", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 0, FALSE );
+	DrawScene("bg/sinryou_matiai1", 250 );
+	PlaySE(3, "hit_s8_d", 256, 64);
+	DrawScene("white", 100 );
+	ModDrawCharacter(4, 10, "sprite/iri2_warai_", "2", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 0, FALSE );
+	DrawScene("bg/sinryou_matiai1", 250 );
+	ModDrawCharacter(4, 10, "sprite/iri2_def1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+
+//入江rvS07/10/331000019.「…まぁ、さすがに『ヤンデレ』はちょっと考えてしまいますが、それも条件次第ではノーミスクリア！！！」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>Irie</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000019", 256, TRUE);
+	OutputLine(NULL, "「…まぁ、さすがに『ヤンデレ』はちょっと考えてしまいますが、それも条件次第ではノーミスクリア！！！」",
+			NULL, "\"...Tabii bir de 'yandere' ihtimalini biraz düşünelim. Doğru şartlar altında bu da eklenirse, işte o zaman KUSURSUZ ZAFER olur!!!\"", Line_Normal);
+	ClearMessage();
+
+	PlaySE(3, "pou", 256, 64);
+
+//r…………ぺた。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "…………ぺた。",
+			NULL, "*pıt*", Line_Normal);
+	ClearMessage();
+
+	PlaySE(3, "se051", 256, 64);
+	ModDrawCharacter(4, 10, "sprite/iri2_majime2_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+
+//入江rvS07/10/331000020.「…そう。そういう方が、こう…一日の仕事を終えて一休みする私のそばに立つのです」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>Irie</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000020", 256, TRUE);
+	OutputLine(NULL, "「…そう。そういう方が、こう…一日の仕事を終えて一休みする私のそばに立つのです」",
+			NULL, "\"...Evet. Bugünkü gibi uzun bir iş gününün ardından dinlenirken... yanı başımda duracak öyle biri olsa.\"", Line_Normal);
+	ClearMessage();
+
+	PlaySE(3, "kyupirn", 256, 64);
+	ModDrawCharacter(4, 10, "sprite/iri2_def1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+
+//入江rvS07/10/331000021.「そしてそっ、と机の上にアール・グレイの紅茶を、kvS07/10/331000022.…いやまぁ、ダージリンでもインスタントでもなんでもいいのですが、とりあえず気分の問題として香り立つアール・グレイと仮定します」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>Irie</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000021", 256, TRUE);
+	OutputLine(NULL, "「そしてそっ、と机の上にアール・グレイの紅茶を、",
+			NULL, "\"Sonra da masamın üzerine nazikçe bir fincan Earl Grey çay bıraksa...", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000022", 256, TRUE);
+	OutputLine(NULL, "…いやまぁ、ダージリンでもインスタントでもなんでもいいのですが、とりあえず気分の問題として香り立つアール・グレイと仮定します」",
+			NULL, " Gerçi Darjeeling ya da sallama çay da olur ama atmosferi yakalamak adına Earl Grey olduğunu varsayalım.\"", Line_Normal);
+	ClearMessage();
+
+	PlaySE(3, "addse06", 256, 64);
+	ModDrawCharacter(4, 10, "sprite/iri2_warai_", "2", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+
+//入江rvS07/10/331000023.「そして、かすかに聞こえた食器の音に私が目を開けて振り返ると、kvS07/10/331000024.『…今日も一日、お疲れ様でした。kvS07/10/331000025.あまり美味しくないかもしれませんが、どうぞ召し上がってください…ご主人様』」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>Irie</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000023", 256, TRUE);
+	OutputLine(NULL, "「そして、かすかに聞こえた食器の音に私が目を開けて振り返ると、",
+			NULL, "\"Ardından, çay fincanının hafif tıkırtısıyla gözlerimi açıp arkama baksam ve o sırada...", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000024", 256, TRUE);
+	OutputLine(NULL, "『…今日も一日、お疲れ様でした。",
+			NULL, " '...Bugün de çok sıkı çalıştınız.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000025", 256, TRUE);
+	OutputLine(NULL, "あまり美味しくないかもしれませんが、どうぞ召し上がってください…ご主人様』」",
+			NULL, " Tadı pek özel olmayabilir ama lütfen afiyetle için... Efendim.'\"", Line_Normal);
+	ClearMessage();
+
+//入江rvS07/10/331000026.「と、ちょっと照れたように頬を染めながら、丸いお盆を両手で抱え込むようにしてにっこりと微笑んでくれるのです」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>Irie</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000026", 256, TRUE);
+	OutputLine(NULL, "「と、ちょっと照れたように頬を染めながら、丸いお盆を両手で抱え込むようにしてにっこりと微笑んでくれるのです」",
+			NULL, "\"Yanaklarında belli belirsiz bir utangaçlık kızartısıyla yuvarlak tepsiyi iki eliyle tutup bana gülümsese.\"", Line_Normal);
+	ClearMessage();
+
+//入江rvS07/10/331000027.「その時、少し恥ずかしげに口元を隠してくれていたら、これはもう最強です！！kvS07/10/331000028.　言うことは何もない！！」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>Irie</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000027", 256, TRUE);
+	OutputLine(NULL, "「その時、少し恥ずかしげに口元を隠してくれていたら、これはもう最強です！！",
+			NULL, "\"Tam o anda utangaçça yüzünün alt kısmını tepsiyle gizlese, etkisi öyle muazzam olurdu ki!!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000028", 256, TRUE);
+	OutputLine(NULL, "　言うことは何もない！！」",
+			NULL, " Başka tek kelime bile etmeme gerek kalmazdı!!\"", Line_Normal);
+	ClearMessage();
+
+	PlaySE(3, "bb", 256, 64);
+	StartShakingOfWindow( 278, 30, 0, 4, 3*3, FALSE );
+	StartShakingOfAllObjects( 278, 30, 0, 4, 3*3, TRUE );
+	ModDrawCharacter(4, 10, "sprite/iri2_def1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+
+//入江rvS07/10/331000029.「…そして私が、kvS07/10/331000030.『やぁ、いつもありがとう。kvS07/10/331000031.君の淹れてくれるお茶が美味しくないなんてことはないよ。kvS07/10/331000032.うん、…やはり美味い。kvS07/10/331000033.今日の疲れが癒されていくようだ…』」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>Irie</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000029", 256, TRUE);
+	OutputLine(NULL, "「…そして私が、",
+			NULL, "\"...Ve ben de şöyle karşılık verirdim: ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000030", 256, TRUE);
+	OutputLine(NULL, "『やぁ、いつもありがとう。",
+			NULL, " 'Vay canına, her zamanki gibi teşekkürler.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000031", 256, TRUE);
+	OutputLine(NULL, "君の淹れてくれるお茶が美味しくないなんてことはないよ。",
+			NULL, " Senin benim için hazırladığın bir şeyin lezzetli olmaması mümkün mü?", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000032", 256, TRUE);
+	OutputLine(NULL, "うん、…やはり美味い。",
+			NULL, " Mmm... evet, harika olmuş.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000033", 256, TRUE);
+	OutputLine(NULL, "今日の疲れが癒されていくようだ…』」",
+			NULL, " Günün bütün yorgunluğunu alıp götürüyor...'\"", Line_Normal);
+	ClearMessage();
+
+	PlaySE(3, "fly", 256, 64);
+
+//入江rvS07/10/331000034.「と、少しクルー、kvS07/10/331000035.いや違った、少しクールに微笑み返すと、ぱっ、と花が咲き誇るかのような満面の笑顔で『嬉しいです…』と喜んでくれたりなどしてくれた日には、ああっ！！」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>Irie</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000034", 256, TRUE);
+	OutputLine(NULL, "「と、少しクルー、",
+			NULL, "\"Sonra da hafif kuulu,", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000035", 256, TRUE);
+	OutputLine(NULL, "いや違った、少しクールに微笑み返すと、ぱっ、と花が咲き誇るかのような満面の笑顔で『嬉しいです…』と喜んでくれたりなどしてくれた日には、ああっ！！」",
+			NULL, " yani hafif havalı bir tebessümle ve yüzünde açan çiçekleri andıran bir ifadeyle 'Çok sevindim...' diye karşılık verse... Evet, ne muhteşem bir gün olurdu ama!!\"", Line_Normal);
+	ClearMessage();
+
+	PlaySE(3, "furu", 256, 64);
+	Wait( 200 );
+	PlaySE(0, "furu", 256, 64);
+	Wait( 200 );
+	PlaySE(3, "furu", 256, 64);
+	Wait( 200 );
+	PlaySE(0, "finish", 256, 64);
+	StartShakingOfWindow( 278, 30, 0, 4, 3*3, FALSE );
+	StartShakingOfAllObjects( 278, 30, 0, 4, 3*3, TRUE );
+	ModDrawCharacter(4, 10, "sprite/iri2_majime2_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+
+//入江rvS07/10/331000036.「まさに私のハートはマキシマムビートにファイヤーヒートがスクランブルっっ！！」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>Irie</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000036", 256, TRUE);
+	OutputLine(NULL, "「まさに私のハートはマキシマムビートにファイヤーヒートがスクランブルっっ！！」",
+			NULL, "\"KALBİM ALEV ALEV BİR ATEŞLE ÇALKALANIP MAKSİMUM RİTİMDE ATARDI!!\"", Line_Normal);
+	ClearMessage();
+
+//入江rvS07/10/331000037.「お互いの身分の違いと歳の差という巨大な障壁を乗り越えて、二人はめくるめくくんずほぐれつな愛のコリーダへテイク・オフっっ！！」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>Irie</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000037", 256, TRUE);
+	OutputLine(NULL, "「お互いの身分の違いと歳の差という巨大な障壁を乗り越えて、二人はめくるめくくんずほぐれつな愛のコリーダへテイク・オフっっ！！」",
+			NULL, "\"Aramızdaki büyük statü ve yaş farkının yarattığı devasa engeli aşmak için, ikimiz göz kamaştırıcı bir çılgınlık içinde Aşkın Boğa Güreşi'ne KANAT AÇARDIK!!\"", Line_Normal);
+	ClearMessage();
+
+	PlaySE(3, "tatakiwaru", 256, 64);
+	DrawScene("white", 150 );
+	ModDrawCharacter(4, 10, "sprite/iri2_majime2_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 0, FALSE );
+	DrawScene("bg/sinryou_matiai1", 250 );
+	ModDrawCharacter(4, 10, "sprite/iri2_warai_", "2", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+
+//入江rvS07/10/331000038.「ああ、いいっ、最高ッッ！！kvS07/10/331000039.　この愛とともになら、私はアンゴルモアの恐怖すら物の数ではないいぃぃいぃっっ！！」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>Irie</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000038", 256, TRUE);
+	OutputLine(NULL, "「ああ、いいっ、最高ッッ！！",
+			NULL, "\"Evet, harika, muazzam!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000039", 256, TRUE);
+	OutputLine(NULL, "　この愛とともになら、私はアンゴルモアの恐怖すら物の数ではないいぃぃいぃっっ！！」",
+			NULL, " Arkamda bu aşk oldukça, Nostradamus'un kehanetindeki büyük dehşet kralı Angolmois'nın karşısına çıkmak bile çocuk oyuncağııı olurdu!!\"", Line_Normal);
+	ClearMessage();
+
+	PlaySE(3, "pou", 256, 64);
+	Wait( 200 );
+	PlaySE(0, "pou", 256, 64);
+
+//r……ぺた、ぺた。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "……ぺた、ぺた。",
+			NULL, "*pıt* *pıt*", Line_Normal);
+	ClearMessage();
+
+	ModDrawCharacter(4, 10, "sprite/iri2_majime_", "2", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+
+//入江rvS07/10/331000040.「…はぁ、はぁ、…い、いけませんね。kvS07/10/331000041.どうやら少々疲れているようです。kvS07/10/331000042.夜の誰もいない診療所で、何を騒いでいるんだ私は…」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>Irie</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000040", 256, TRUE);
+	OutputLine(NULL, "「…はぁ、はぁ、…い、いけませんね。",
+			NULL, "\"...Hah, hah... B-Böyle yapmamalıyım.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000041", 256, TRUE);
+	OutputLine(NULL, "どうやら少々疲れているようです。",
+			NULL, " Görünüşe göre hâlâ biraz yorgunum.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000042", 256, TRUE);
+	OutputLine(NULL, "夜の誰もいない診療所で、何を騒いでいるんだ私は…」",
+			NULL, " Hem gecenin bir yarısı bomboş klinikte ne diye böyle yaygara koparıyorum ki...?\"", Line_Normal);
+	ClearMessage();
+
+	ModDrawCharacter(4, 10, "sprite/iri2_def1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+
+//入江rvS07/10/331000043.「はぁ～、でもそんな願望が実現する日が来れば、どれほどに幸せなことか…。kvS07/10/331000044.そして、…そのメイドがたとえば沙都子ちゃんであれば、もうスーパーラッキーストライクなんですが」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>Irie</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000043", 256, TRUE);
+	OutputLine(NULL, "「はぁ～、でもそんな願望が実現する日が来れば、どれほどに幸せなことか…。",
+			NULL, "\"Hah~, ama o hayalim bir gün gerçek olsa ne sevinçli bir gün olurdu...", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000044", 256, TRUE);
+	OutputLine(NULL, "そして、…そのメイドがたとえば沙都子ちゃんであれば、もうスーパーラッキーストライクなんですが」",
+			NULL, " Ve... mesela o hizmetçi Satoko-chan olabilse, bu tam anlamıyla bir SÜPER ŞANSLI İSABET olurdu.\"", Line_Normal);
+	ClearMessage();
+
+	ModDrawCharacter(4, 10, "sprite/iri2_warai_", "2", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+
+//入江rvS07/10/331000045.「まぁ、かの元祖プレイボーイの光源氏も、紫の上を妻と迎え入れるために５年を費やしたといいますから、私も先人に見習うとしましょう。kvS07/10/331000046.ん？　ということは彼女と知り合ってもうすぐ３年だから、あと残りは２年、」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>Irie</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000045", 256, TRUE);
+	OutputLine(NULL, "「まぁ、かの元祖プレイボーイの光源氏も、紫の上を妻と迎え入れるために５年を費やしたといいますから、私も先人に見習うとしましょう。",
+			NULL, "\"Eh... çapkınların atası Hikaru Genji'nin bile Leydi Murasaki'yi gelini yapmak için beş yıl uğraştığı söylenir, öyleyse ben de seleflerimin izinden gitmeliyim. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>Irie</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000046", 256, TRUE);
+	OutputLine(NULL, "ん？　ということは彼女と知り合ってもうすぐ３年だから、あと残りは２年、」",
+			NULL, "Hımmm? Onunla tanışalı neredeyse üç yıl olduğuna göre, geriye sadece iki yıl kaldı ve...\"", Line_Normal);
+	ClearMessage();
+
+	FadeOutBGM(2, 200, FALSE);
+	PlaySE(3, "addse06", 256, 64);
+	ModSetLayerFilter(5, 256, "none");
+	ModDrawCharacter(5, 2, "sprite/re2a_warai_a1_", "2", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+
+//レナrvS07/02/330200209.「…どうぞ、監督」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f0953d>レナ</color>", NULL, "<color=#f0953d>Rena</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 2, "ps3/s07/02/330200209", 256, TRUE);
+	OutputLine(NULL, "「…どうぞ、監督」",
+			NULL, "\"...Buyurun, Koç.\"", Line_Normal);
+	ClearMessage();
+
+	DisableWindow();
+	PlaySE(3, "sinzouappaku", 256, 64);
+	Negative( 500, TRUE );
+	Wait( 1000 );
+	FadeFilm( 500, TRUE );
+	FadeBustshot(4, FALSE, 0, 0, 0, 0, 100, TRUE);
+	ModSetLayerFilter(3, 256, "none");
+	ModDrawCharacter(3, 10, "sprite/iri2_majime2_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 100, TRUE );
+	PlayBGM(2, "hm01_06", 128, 0);
+
+//入江rvS07/10/331000047.「――って、どっひゃあぁぁあぁっっ？！」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>Irie</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000047", 256, TRUE);
+	OutputLine(NULL, "「——って、どっひゃあぁぁあぁっっ？！」",
+			NULL, "\"...İiiiiiik?!\"", Line_Normal);
+	ClearMessage();
+
+//r驚くのも無理はない。いきなり前触れもなくかちゃり、と机にカップが置かれ、香り立つ紅茶の気配にふと振り返ると、その先にレナが立っていたからだ。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "驚くのも無理はない。いきなり前触れもなくかちゃり、と机にカップが置かれ、香り立つ紅茶の気配にふと振り返ると、その先にレナが立っていたからだ。",
+			NULL, "Şok olmaması elde değildi. Hiçbir uyarı olmaksızın, masasının üzerine bırakılan bir fincan tıkırdadı. Çayın kokusunu alıp arkasına döndüğünde Rena'nın orada dikildiğini gördü.", Line_Normal);
+	ClearMessage();
+
+//rしかも、しん、と静まり返った夜の診療所に無言で『にっこり』笑顔。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "しかも、しん、と静まり返った夜の診療所に無言で『にっこり』笑顔。",
+			NULL, "Üstelik gecenin bu geç saatinde, bu sessiz klinikte sessizce 'gülümsüyordu'.", Line_Normal);
+	ClearMessage();
+
+//r怖い、怖すぎる…ッ！！
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "怖い、怖すぎる…ッ！！",
+			NULL, "Ne kadar korkunç, fazla korkunç...!!", Line_Normal);
+	ClearMessage();
+
+	ModDrawCharacter(3, 10, "sprite/iri2_def2_", "2", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+
+//入江rvS07/10/331000048.「どっ、どどどどど、どうかしましたか、竜宮さんッッ？！kvS07/10/331000049.　い、いいいい、いつからそこにっっ？！」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>Irie</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000048", 256, TRUE);
+	OutputLine(NULL, "「どっ、どどどどど、どうかしましたか、竜宮さんッッ？！",
+			NULL, "\"B-B-B-B-Bir sorun mu var, Ryuugu-san?!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000049", 256, TRUE);
+	OutputLine(NULL, "　い、いいいい、いつからそこにっっ？！」",
+			NULL, " N-N-N-N-Ne zamandır orada duruyorsun sen öyle?!\"", Line_Normal);
+	ClearMessage();
+
+	ModDrawCharacter(5, 2, "sprite/re2b_kaii_b1_", "2", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+
+//レナrvS07/02/330200210.「…はぅ。kvS07/02/330200211.監督が『今日も一日お疲れ様でした』って、一人芝居を始めたあたりからかな、…かな」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f0953d>レナ</color>", NULL, "<color=#f0953d>Rena</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 2, "ps3/s07/02/330200210", 256, TRUE);
+	OutputLine(NULL, "「…はぅ。",
+			NULL, "\"...Hau.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 2, "ps3/s07/02/330200211", 256, TRUE);
+	OutputLine(NULL, "監督が『今日も一日お疲れ様でした』って、一人芝居を始めたあたりからかな、…かな」",
+			NULL, " Sanırım tam 'Bugün de çok sıkı çalıştınız' deyip kendi kendinize konuşmaya başladığınız sıralarda geldim... sanırım.\"", Line_Normal);
+	ClearMessage();
+
+	DisableWindow();
+	PlaySE(3, "thisikuki", 256, 64);
+	DrawSceneWithMask( "red", "effect/aa", 0, 0, 250 );
+	DrawScene("black", 1000 );
+	PlaySE(3, "daidageki", 256, 64);
+	ModDrawCharacter(5, 2, "sprite/re2b_kaii_b1_", "2", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 0, FALSE );
+	ModDrawCharacter(3, 10, "sprite/iri2_majime_", "2", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 0, FALSE );
+	DrawScene("bg/sinryou_matiai1", 50 );
+	StartShakingOfWindow( 278, 30, 0, 4, 3*3, FALSE );
+	StartShakingOfAllObjects( 278, 30, 0, 4, 3*3, TRUE );
+
+//入江rvS07/10/331000050.「ひっ、ひいぃぃいぃっっ？！」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>Irie</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000050", 256, TRUE);
+	OutputLine(NULL, "「ひっ、ひいぃぃいぃっっ？！」",
+			NULL, "\"İ-İiiiiik?!\"", Line_Normal);
+	ClearMessage();
+
+//rついさっきまでの幸せな幻想を一気にすっ飛ばして、マリアナ海溝並みの深さの絶望に叩き落される入江京介、独身貴族（年齢非公開）。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "ついさっきまでの幸せな幻想を一気にすっ飛ばして、マリアナ海溝並みの深さの絶望に叩き落される入江京介、独身貴族（年齢非公開）。",
+			NULL, "Bir an önceki neşeli kuruntular tek bir darbeyle tuzla buz olurken, aristokrat bekâr (yaşı gizli) Kyousuke Irie, Mariana Çukuru kadar derin bir umutsuzluğun dibine gömüldü.", Line_Normal);
+	ClearMessage();
+
+//rなぜならレナの言うことが正しければ、…彼のステキ妄想はほとんど一部始終を聞かれたということだ。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "なぜならレナの言うことが正しければ、…彼のステキ妄想はほとんど一部始終を聞かれたということだ。",
+			NULL, "Çünkü eğer Rena'nın söyledikleri doğruysa... o zaman az önceki çılgın fantezilerinin neredeyse tamamını duymuş demekti.", Line_Normal);
+	ClearMessage();
+
+//rしかも、…知られた相手はよりにもよって沙都子の友人、竜宮レナ！！
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "しかも、…知られた相手はよりにもよって沙都子の友人、竜宮レナ！！",
+			NULL, "Ve... bunu duyacak onca insan arasından, duyan kişinin Satoko'nun arkadaşı Rena Ryuugu olması gerekiyordu!!", Line_Normal);
+	ClearMessage();
+
+//r当然明日には、先ほどの妄想全開爆裂ストーリーが沙都子の耳にも入ることが容易に想像でき、結果としてもたらされるのは――。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "当然明日には、先ほどの妄想全開爆裂ストーリーが沙都子の耳にも入ることが容易に想像でき、結果としてもたらされるのは——。",
+			NULL, "Doğal olarak, az önce ağzından çıkan o patlayıcı, buram buram kuruntu dolu hikâyenin yarın sabah Satoko'nun kulağına gideceğini tahmin etmek hiç de zor değildi ve bunun sonucunda...", Line_Normal);
+	ClearMessage();
+
+	DrawSceneWithMask( "white", "effect/maskc", 0, 0, 1000 );
+	ModSetLayerFilter(4, 256, "flashback");
+	ModDrawCharacter(4, 4, "sprite/sa1a_hannbeso_a1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 0, FALSE );
+	DrawScene("bg/flashback/sinryou_soto1", 1000 );
+
+//沙都子rvS07/04/330400175.「…監督さん！kvS07/04/330400176.　そのような汚らわしい欲望を私に持っていらしたなんて、…最低です！　見損ないましたわ！kvS07/04/330400177.　もう二度と私の前に姿を見せないで下さいましッ！！」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#fcdb77>沙都子</color>", NULL, "<color=#fcdb77>Satoko</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 4, "ps3/s07/04/330400175", 256, TRUE);
+	OutputLine(NULL, "「…監督さん！",
+			NULL, "\"...Koç!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 4, "ps3/s07/04/330400176", 256, TRUE);
+	OutputLine(NULL, "　そのような汚らわしい欲望を私に持っていらしたなんて、…最低です！　見損ないましたわ！",
+			NULL, " Bana karşı böylesine edepsiz arzular beslediğinize inanamıyorum... İğrençsiniz! Sizin hakkınızda yanılmışım!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 4, "ps3/s07/04/330400177", 256, TRUE);
+	OutputLine(NULL, "　もう二度と私の前に姿を見せないで下さいましッ！！」",
+			NULL, " Lütfen, bir daha yüzünüzü asla görmek istemiyorum efendim!!\"", Line_Normal);
+	ClearMessage();
+
+	DrawSceneWithMask( "white", "effect/maskc", 0, 0, 1000 );
+	ModSetLayerFilter(4, 256, "none");
+	ModDrawCharacter(5, 2, "sprite/re2b_kaii_b1_", "2", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 0, FALSE );
+	ModDrawCharacter(3, 10, "sprite/iri2_majime_", "2", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 0, FALSE );
+	DrawScene("bg/sinryou_matiai1", 1000 );
+	PlaySE(3, "finish", 256, 64);
+	ModDrawCharacter(3, 10, "sprite/iri2_majime2_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, FALSE );
+	StartShakingOfWindow( 278, 30, 0, 4, 3*3, FALSE );
+	StartShakingOfAllObjects( 278, 30, 0, 4, 3*3, TRUE );
+
+//入江rvS07/10/331000051.「うっ、うおぉぉおぉッッ？！kvS07/10/331000052.　ちっ、違うんです違うんです沙都子ちゃぁぁんんっ！！kvS07/10/331000053.　じゃなかった、竜宮さんっ！！」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>Irie</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000051", 256, TRUE);
+	OutputLine(NULL, "「うっ、うおぉぉおぉッッ？！",
+			NULL, "\"U-Uooooooohhhh?!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000052", 256, TRUE);
+	OutputLine(NULL, "　ちっ、違うんです違うんです沙都子ちゃぁぁんんっ！！",
+			NULL, " Ö-Öyle değil, hiç öyle değil, Satoko-chaaaan!!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000053", 256, TRUE);
+	OutputLine(NULL, "　じゃなかった、竜宮さんっ！！」",
+			NULL, " Yani şey, Ryuugu-san!!\"", Line_Normal);
+	ClearMessage();
+
+//入江rvS07/10/331000054_1.「い、いいいい、今の話は少々疲れていたために出てしまった、ちょっとしたストレスの解放を目的とした、一種のレクリエイションでしてっ！！」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>Irie</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000054_1", 256, TRUE);
+	OutputLine(NULL, "「い、いいいい、今の話は少々疲れていたために出てしまった、ちょっとしたストレスの解放を目的とした、一種のレクリエイションでしてっ！！」",
+			NULL, "\"A-A-Az önce duyduğun o hikâye sadece yorgunluktan ağzımdan kaçırdığım bir şeydi, tamamen eğlence amaçlı bir aktivite, ufak bir stres atma yöntemiydi!!\"", Line_Normal);
+	ClearMessage();
+
+//入江rvS07/10/331000055.「け、決して天地神明に誓ってそのような不埒な願望を日々抱いていたわけではなくッ！！kvS07/10/331000056.　だ、だから、そのっ――！！」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>Irie</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000055", 256, TRUE);
+	OutputLine(NULL, "「け、決して天地神明に誓ってそのような不埒な願望を日々抱いていたわけではなくッ！！",
+			NULL, "\"Y-Yer ve gök üzerine yemin ederim ki her gün böylesine küstahça arzular beslemiyorum!!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000056", 256, TRUE);
+	OutputLine(NULL, "　だ、だから、そのっ——！！」",
+			NULL, " O-O yüzden, şey...!!\"", Line_Normal);
+	ClearMessage();
+
+	ModDrawCharacter(5, 2, "sprite/re2b_hau_b1_", "2", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+
+//レナrvS07/02/330200212.「…監督、あの」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f0953d>レナ</color>", NULL, "<color=#f0953d>Rena</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 2, "ps3/s07/02/330200212", 256, TRUE);
+	OutputLine(NULL, "「…監督、あの」",
+			NULL, "\"...Şey, Koç.\"", Line_Normal);
+	ClearMessage();
+
+	PlaySE(3, "sword", 256, 64);
+	StartShakingOfWindow( 278, 30, 0, 4, 3*3, FALSE );
+	StartShakingOfAllObjects( 278, 30, 0, 4, 3*3, TRUE );
+
+//入江rvS07/10/331000057.「は、はいぃっ？！」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>Irie</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000057", 256, TRUE);
+	OutputLine(NULL, "「は、はいぃっ？！」",
+			NULL, "\"E-Evet?!\"", Line_Normal);
+	ClearMessage();
+
+	ModDrawCharacter(5, 2, "sprite/re2a_warai_a1_", "2", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+
+//レナrvS07/02/330200213.「紅茶、…冷めちゃいますから。kvS07/02/330200214.あたたかいうちに、…どうぞ」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f0953d>レナ</color>", NULL, "<color=#f0953d>Rena</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 2, "ps3/s07/02/330200213", 256, TRUE);
+	OutputLine(NULL, "「紅茶、…冷めちゃいますから。",
+			NULL, "\"Çayınız... soğuyor.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 2, "ps3/s07/02/330200214", 256, TRUE);
+	OutputLine(NULL, "あたたかいうちに、…どうぞ」",
+			NULL, " O yüzden lütfen... hâlâ sıcakken biraz için.\"", Line_Normal);
+	ClearMessage();
+
+	ModDrawCharacter(3, 10, "sprite/iri2_def2_", "2", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+
+//入江rvS07/10/331000058.「え？　あ、は、はい…。kvS07/10/331000059.い、いただきます…」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>Irie</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000058", 256, TRUE);
+	OutputLine(NULL, "「え？　あ、は、はい…。",
+			NULL, "\"Ha? Ah, t-tabii ya...", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000059", 256, TRUE);
+	OutputLine(NULL, "い、いただきます…」",
+			NULL, " Ç-Çay için teşekkür ederim...\"", Line_Normal);
+	ClearMessage();
+
+//r一瞬、痺れ薬でも入っているのでは？　と疑いながらカップを手に取り、おそるおそる一口飲む。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "一瞬、痺れ薬でも入っているのでは？　と疑いながらカップを手に取り、おそるおそる一口飲む。",
+			NULL, "Bir anlığına içine anestezik bir ilaç falan katılmış olabilir mi diye merak ederek fincanı aldı ve temkinli bir yudum içti.", Line_Normal);
+	ClearMessage();
+
+//r…アール・グレイ特有の花のような香りが鼻先をくすぐり、少し酸味の利いた味わいが舌の上を撫でてゆく。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "…アール・グレイ特有の花のような香りが鼻先をくすぐり、少し酸味の利いた味わいが舌の上を撫でてゆく。",
+			NULL, "...Earl Grey'in o kendine has çiçeksi aroması burnunu gıdıkladı ve hafif buruk tadı dilini okşadı.", Line_Normal);
+	ClearMessage();
+
+	ModDrawCharacter(5, 2, "sprite/re2b_komaru_b1_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+
+//レナrvS07/02/330200215.「…ど、どうですか？」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f0953d>レナ</color>", NULL, "<color=#f0953d>Rena</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 2, "ps3/s07/02/330200215", 256, TRUE);
+	OutputLine(NULL, "「…ど、どうですか？」",
+			NULL, "\"...N-Nasıl olmuş?\"", Line_Normal);
+	ClearMessage();
+
+	ModDrawCharacter(3, 10, "sprite/iri2_warai_", "2", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+
+//入江rvS07/10/331000060.「い、いや…美味しいですよ？kvS07/10/331000061.　うん、竜宮さんはとても、紅茶を淹れるのが上手ですねぇ…」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>Irie</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000060", 256, TRUE);
+	OutputLine(NULL, "「い、いや…美味しいですよ？",
+			NULL, "\"A-Aman Tanrım... çok lezzetli olmuş değil mi?", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000061", 256, TRUE);
+	OutputLine(NULL, "　うん、竜宮さんはとても、紅茶を淹れるのが上手ですねぇ…」",
+			NULL, " Evet, Ryuugu-san, çay demlemekte gerçekten çok ustasın...\"", Line_Normal);
+	ClearMessage();
+
+//r…本当のことを言うと、とても味わうまでの余裕はなかったのだが。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "…本当のことを言うと、とても味わうまでの余裕はなかったのだが。",
+			NULL, "...Doğrusunu söylemek gerekirse, tadını çıkaracak kadar bile rahatlığı ve soğukkanlılığı kalmamıştı.", Line_Normal);
+	ClearMessage();
+
+//rしかしそれを聞いてレナは、嬉しそうににっこりと微笑んだ。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "しかしそれを聞いてレナは、嬉しそうににっこりと微笑んだ。",
+			NULL, "Fakat Rena bunu duyar duymaz sevinçle gülümsedi.", Line_Normal);
+	ClearMessage();
+
+	ModDrawCharacter(5, 2, "sprite/re2a_kaii_a1_", "2", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+
+//レナrvS07/02/330200216.「はぅ、よかった…。kvS07/02/330200217.あ、あの……監督？」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f0953d>レナ</color>", NULL, "<color=#f0953d>Rena</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 2, "ps3/s07/02/330200216", 256, TRUE);
+	OutputLine(NULL, "「はぅ、よかった…。",
+			NULL, "\"Hau, çok sevindim...", Line_WaitForInput);
+	ModPlayVoiceLS(4, 2, "ps3/s07/02/330200217", 256, TRUE);
+	OutputLine(NULL, "あ、あの……監督？」",
+			NULL, " Şey, ımm... Koç?\"", Line_Normal);
+	ClearMessage();
+
+	ModDrawCharacter(3, 10, "sprite/iri2_def1_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+
+//入江rvS07/10/331000062.「は、はい？　なんでしょうか…」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>Irie</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000062", 256, TRUE);
+	OutputLine(NULL, "「は、はい？　なんでしょうか…」",
+			NULL, "\"E-Evet? Ne oldu...?\"", Line_Normal);
+	ClearMessage();
+
+//r紅茶の効果なのか大人としての威厳なのか、少し落ち着きを取り戻すと紅茶を飲んで平静を保ちながら、…背中にはびっしりと冷や汗をかきつつ回転椅子ごと、レナに向き直る。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "紅茶の効果なのか大人としての威厳なのか、少し落ち着きを取り戻すと紅茶を飲んで平静を保ちながら、…背中にはびっしりと冷や汗をかきつつ回転椅子ごと、レナに向き直る。",
+			NULL, "Çayın etkisinden mi yoksa bir yetişkin olmanın verdiği ağırbaşlılıktan mı bilinmez, biraz sakinleşip soğukkanlılığını koruyarak çayını içti... sırtından soğuk terler boşanırken döner koltuğunu Rena'ya doğru çevirdi.", Line_Normal);
+	ClearMessage();
+
+//rレナは、しばらくの間迷うように俯いて視線を泳がせていたが、…やがて意を決したように顔を上げると、瞳を潤ませて言った。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "レナは、しばらくの間迷うように俯いて視線を泳がせていたが、…やがて意を決したように顔を上げると、瞳を潤ませて言った。",
+			NULL, "Rena bakışlarını yere eğdi ve bir süre tereddüt ediyormuş gibi gözlerini kaçırdı... ama sonunda kararını vermiş gibi başını kaldırdı, gözleri nemlenmiş bir hâlde konuştu.", Line_Normal);
+	ClearMessage();
+
+	FadeOutBGM(2, 200, FALSE);
+	PlaySE(3, "pou", 256, 64);
+	ModDrawCharacter(5, 2, "sprite/re2a_komaru_a1_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+
+//レナrvS07/02/330200218.「…あの、レナじゃだめですか？」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f0953d>レナ</color>", NULL, "<color=#f0953d>Rena</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 2, "ps3/s07/02/330200218", 256, TRUE);
+	OutputLine(NULL, "「…あの、レナじゃだめですか？」",
+			NULL, "\"...Şey, Rena olsa olmaz mı?\"", Line_Normal);
+	ClearMessage();
+
+	ModDrawCharacter(3, 10, "sprite/iri2_majime2_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+
+//入江rvS07/10/331000063.「……。はい？」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>Irie</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000063", 256, TRUE);
+	OutputLine(NULL, "「……。はい？」",
+			NULL, "\"...Efendim?\"", Line_Normal);
+	ClearMessage();
+
+	ModDrawCharacter(5, 2, "sprite/re2b_hau_b1_", "2", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+
+//レナrvS07/02/330200219.「レナでは、理想のメイドさんにはなれませんか？kvS07/02/330200220.　……監督のメイドとして、お仕えすることはできませんか？」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f0953d>レナ</color>", NULL, "<color=#f0953d>Rena</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 2, "ps3/s07/02/330200219", 256, TRUE);
+	OutputLine(NULL, "「レナでは、理想のメイドさんにはなれませんか？",
+			NULL, "\"Rena sizin ideal hizmetçiniz olamaz mı?", Line_WaitForInput);
+	ModPlayVoiceLS(4, 2, "ps3/s07/02/330200220", 256, TRUE);
+	OutputLine(NULL, "　……監督のメイドとして、お仕えすることはできませんか？」",
+			NULL, " Hizmetçiniz olarak size hizmet edemez miyim, Koç?\"", Line_Normal);
+	ClearMessage();
+
+	DisableWindow();
+	ModDrawCharacter(3, 10, "sprite/iri2_majime_", "2", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	DrawSceneWithMask( "white", "effect/maskc", 0, 0, 150 );
+	PlaySE(3, "addse07", 256, 64);
+	DrawScene("bg/sora_01", 50 );
+	StartShakingOfWindow( 278, 30, 0, 4, 3*3, FALSE );
+	StartShakingOfAllObjects( 278, 30, 0, 4, 3*3, TRUE );
+	PlayBGM( 1, "yoru", 128, 0 );
+
+//rぶふうぅぅ――っっ！！
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "ぶふうぅぅ——っっ！！",
+			NULL, "Püfffff!!", Line_Normal);
+	ClearMessage();
+
+//r二度やれといわれてもできないほど芸術的な霧吹きで、紅茶が診療所内に舞い散った。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "二度やれといわれてもできないほど芸術的な霧吹きで、紅茶が診療所内に舞い散った。",
+			NULL, "Bir daha yapması istense asla tekrarlayamayacağı kadar sanatsal bir püskürtmeyle, çay kliniğin dört bir yanına saçıldı.", Line_Normal);
+	ClearMessage();
+
+	PlayBGM(2, "hm01_02", 128, 0);
+	DrawScene("bg/sora_01", 50 );
+	ModDrawCharacter(5, 2, "sprite/re2b_kaii_b1_", "2", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 0, FALSE );
+	ModDrawCharacter(3, 10, "sprite/iri2_majime_", "2", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 0, FALSE );
+	DrawScene("bg/sinryou_matiai1", 1000 );
+	FadeOutBGM(1, 200, FALSE);
+	PlaySE(3, "nageru", 256, 64);
+	StartShakingOfWindow( 278, 30, 0, 4, 2*2, FALSE );
+	StartShakingOfAllObjects( 278, 30, 0, 4, 2*2, TRUE );
+	PlaySE(0, "nageru", 256, 64);
+	StartShakingOfWindow( 278, 30, 0, 4, 2*2, FALSE );
+	StartShakingOfAllObjects( 278, 30, 0, 4, 2*2, TRUE );
+	PlaySE(3, "dageki", 256, 64);
+	StartShakingOfWindow( 278, 30, 0, 4, 2*2, FALSE );
+	StartShakingOfAllObjects( 278, 30, 0, 4, 2*2, TRUE );
+	PlaySE(0, "daidageki", 256, 64);
+	StartShakingOfWindow( 278, 30, 0, 4, 3*3, FALSE );
+	StartShakingOfAllObjects( 278, 30, 0, 4, 3*3, TRUE );
+
+//入江rvS07/10/331000064.「けっほっ！　かっほっ！kvS07/10/331000065.　りゅ、竜宮さんっ？！kvS07/10/331000066.　と、突然何を言い出すのですかっ？！」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>Irie</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000064", 256, TRUE);
+	OutputLine(NULL, "「けっほっ！　かっほっ！",
+			NULL, "\"*öksürük* *öksürük*", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000065", 256, TRUE);
+	OutputLine(NULL, "　りゅ、竜宮さんっ？！",
+			NULL, " R-Ryuugu-san?!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000066", 256, TRUE);
+	OutputLine(NULL, "　と、突然何を言い出すのですかっ？！」",
+			NULL, " D-Durup dururken neler söylüyorsun sen öyle?!\"", Line_Normal);
+	ClearMessage();
+
+	ModDrawCharacter(5, 2, "sprite/re2b_hau_b1_", "2", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+
+//レナrvS07/02/330200221.「…はぅ。kvS07/02/330200222.監督の、沙都子ちゃんへの想いの深さは良くわかっています。kvS07/02/330200223.でもレナも、監督を想う気持ちにかけては誰にも負けないつもりです！kvS07/02/330200224.　だからお願いします、レナを監督専用のメイドにしてください！」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f0953d>レナ</color>", NULL, "<color=#f0953d>Rena</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 2, "ps3/s07/02/330200221", 256, TRUE);
+	OutputLine(NULL, "「…はぅ。",
+			NULL, "\"...Hau.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 2, "ps3/s07/02/330200222", 256, TRUE);
+	OutputLine(NULL, "監督の、沙都子ちゃんへの想いの深さは良くわかっています。",
+			NULL, " Koç, Satoko-chan'a olan duygularınızın ne kadar derin olduğunun gayet iyi farkındayım.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 2, "ps3/s07/02/330200223", 256, TRUE);
+	OutputLine(NULL, "でもレナも、監督を想う気持ちにかけては誰にも負けないつもりです！",
+			NULL, " Ama konu size olan duygulara gelince, Rena da hiç kimseye yenilmez!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 2, "ps3/s07/02/330200224", 256, TRUE);
+	OutputLine(NULL, "　だからお願いします、レナを監督専用のメイドにしてください！」",
+			NULL, " O yüzden lütfen, bırakın sadece size özel hizmetçiniz olayım!\"", Line_Normal);
+	ClearMessage();
+
+	ModDrawCharacter(3, 10, "sprite/iri2_majime2_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+
+//入江rvS07/10/331000067.「ちょ、ちょちょ、ちょっと待ってください、竜宮さんっ？！kvS07/10/331000068.　じょ、冗談なら時と場所を選んで――」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>Irie</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000067", 256, TRUE);
+	OutputLine(NULL, "「ちょ、ちょちょ、ちょっと待ってください、竜宮さんっ？！",
+			NULL, "\"B-B-Bir dakika bekle lütfen, Ryuugu-san?!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000068", 256, TRUE);
+	OutputLine(NULL, "　じょ、冗談なら時と場所を選んで——」",
+			NULL, " E-Eğer bu bir şakaysa, bunun için daha uygun bir zaman ve yer...\"", Line_Normal);
+	ClearMessage();
+
+	ModDrawCharacter(5, 2, "sprite/re2a_okoru_a1_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+
+//レナrvS07/02/330200225.「冗談なんかじゃありません！kvS07/02/330200226.　レナは本気です、…ご主人様っ！！」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f0953d>レナ</color>", NULL, "<color=#f0953d>Rena</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 2, "ps3/s07/02/330200225", 256, TRUE);
+	OutputLine(NULL, "「冗談なんかじゃありません！",
+			NULL, "\"Bu bir şaka falan değil!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 2, "ps3/s07/02/330200226", 256, TRUE);
+	OutputLine(NULL, "　レナは本気です、…ご主人様っ！！」",
+			NULL, " Bunlar Rena'nın gerçek duyguları... Efendim!!\"", Line_Normal);
+	ClearMessage();
+
+	PlaySE(3, "hikaru", 256, 64);
+	ModDrawCharacter(3, 10, "sprite/iri2_majime_", "2", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+
+//入江rvS07/10/331000069.「――ッ？！」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>Irie</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000069", 256, TRUE);
+	OutputLine(NULL, "「——ッ？！」",
+			NULL, "\"...?!\"", Line_Normal);
+	ClearMessage();
+
+	ModDrawCharacter(3, 10, "sprite/iri2_majime2_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+
+//rご主人様…。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "ご主人様…。",
+			NULL, "Efendim...", Line_Normal);
+	ClearMessage();
+
+	ModDrawCharacter(3, 10, "sprite/iri2_def2_", "2", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+
+//rご主人様……。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "ご主人様……。",
+			NULL, "Efendim......", Line_Normal);
+	ClearMessage();
+
+	ModDrawCharacter(3, 10, "sprite/iri2_warai_", "2", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+
+//rご主人様ぁ……？！
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "ご主人様ぁ……？！",
+			NULL, "Efendiiim......?!", Line_Normal);
+	ClearMessage();
+
+	DisableWindow();
+	PlaySE(3, "kyupirn", 256, 64);
+	Wait( 250 );
+	PlaySE(0, "lf164", 256, 64);
+	Wait( 250 );
+	PlaySE(3, "sword", 256, 64);
+	Negative( 800, FALSE );
+	DrawScene("black", 500 );
+	ModDrawCharacter(5, 2, "sprite/re2a_okoru_a1_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 0, FALSE );
+	ModDrawCharacter(3, 10, "sprite/iri2_warai_", "2", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 0, FALSE );
+	DrawScene("bg/sinryou_matiai1", 500 );
+
+//rぺかぴか、きらーん☆
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "ぺかぴか、きらーん☆",
+			NULL, "Çıııııng☆", Line_Normal);
+	ClearMessage();
+
+//rまるで雷撃のような震えが頭のてっぺんからつま先にかけて響き渡り、…全身が凍りついたように固まる。そして、
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "まるで雷撃のような震えが頭のてっぺんからつま先にかけて響き渡り、…全身が凍りついたように固まる。そして、",
+			NULL, "Tıpkı bir yıldırım çarpması gibi, başının tepesinden ayak parmaklarına kadar bir titreme yayıldı... Bütün vücudu olduğu yerde donmuş gibi kaskatı kesildi. Ve ardından,", Line_Normal);
+	ClearMessage();
+
+	DisableWindow();
+	FadeFilm( 1000, TRUE );
+	ModDrawCharacter(3, 10, "sprite/iri2_majime2_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+
+//入江rvS07/10/331000070.「…竜宮さん。kvS07/10/331000071.いやいや、…私もメイド道を極め、それなりのステージに達しているものと自負しておりました。kvS07/10/331000072.だが、…それは幻想だった。kvS07/10/331000073.大いなる慢心、身の程も知らぬ思い上がりでした！！」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>Irie</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000070", 256, TRUE);
+	OutputLine(NULL, "「…竜宮さん。",
+			NULL, "\"Ryuugu-san.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000071", 256, TRUE);
+	OutputLine(NULL, "いやいや、…私もメイド道を極め、それなりのステージに達しているものと自負しておりました。",
+			NULL, " Aman Tanrım... Ben de hizmetçilik sanatında belli bir mertebeye ulaştığımı sanıyor ve bununla gurur duyuyordum.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000072", 256, TRUE);
+	OutputLine(NULL, "だが、…それは幻想だった。",
+			NULL, " Lâkin... bu sadece bir yanılsamaymış.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000073", 256, TRUE);
+	OutputLine(NULL, "大いなる慢心、身の程も知らぬ思い上がりでした！！」",
+			NULL, " Ne büyük bir kibir, haddini bilmez bir kendini beğenmişlikmiş benimkisi!!\"", Line_Normal);
+	ClearMessage();
+
+	ModDrawCharacter(5, 2, "sprite/re2a_hau_a1_", "2", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+
+//レナrvS07/02/330200227.「……はぅ？」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f0953d>レナ</color>", NULL, "<color=#f0953d>Rena</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 2, "ps3/s07/02/330200227", 256, TRUE);
+	OutputLine(NULL, "「……はぅ？」",
+			NULL, "\"...Hau?\"", Line_Normal);
+	ClearMessage();
+
+//rはらはらっ…と。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "はらはらっ…と。",
+			NULL, "Şıp, şıp...", Line_Normal);
+	ClearMessage();
+
+//rはたで見ると非常に暑っ苦しいほどの大粒の涙をどばどばと流しながら、そのこぶしを振りかざして天に向かい咆哮するっ！！
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "はたで見ると非常に暑っ苦しいほどの大粒の涙をどばどばと流しながら、そのこぶしを振りかざして天に向かい咆哮するっ！！",
+			NULL, "İçinde yanan o yoğun ıstırabı gözler önüne seren iri gözyaşları oluk oluk akarken, yumruğunu havaya kaldırıp göklere doğru kükredi!", Line_Normal);
+	ClearMessage();
+
+	ModDrawCharacter(3, 10, "sprite/iri2_warai_", "2", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+
+//入江rvS07/10/331000074.「『ご主人様』…なんて甘美な響きなんでしょう！！kvS07/10/331000075.　想像で思い描いていたものと全く違う、違いすぎるっ！！」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>Irie</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000074", 256, TRUE);
+	OutputLine(NULL, "「『ご主人様』…なんて甘美な響きなんでしょう！！",
+			NULL, "\"'Efendim'... Kulağa ne kadar da tatlı geliyor!!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000075", 256, TRUE);
+	OutputLine(NULL, "　想像で思い描いていたものと全く違う、違いすぎるっ！！」",
+			NULL, " Hayalimde canlandırdığımdan tamamen farklı, kıyaslanamayacak kadar farklı!!\"", Line_Normal);
+	ClearMessage();
+
+	ModDrawCharacter(3, 10, "sprite/iri2_def2_", "2", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+
+//入江rvS07/10/331000076.「それはあたかも、そう！船人を惑わせるセイレーンの歌声のように甘やかで！！kvS07/10/331000077.　雪山の吹雪の中で登山家を夢魔へと誘う雪女のごとき耽美！！kvS07/10/331000078.　この言葉の前には幾千幾万の修辞もまったくの無味乾燥！！」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>Irie</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000076", 256, TRUE);
+	OutputLine(NULL, "「それはあたかも、そう！船人を惑わせるセイレーンの歌声のように甘やかで！！",
+			NULL, "\"Evet! Tıpkı denizcileri büyüleyen sirenlerin şarkısı gibi tatlı!!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000077", 256, TRUE);
+	OutputLine(NULL, "　雪山の吹雪の中で登山家を夢魔へと誘う雪女のごとき耽美！！",
+			NULL, " Karlı dağların tipisinde dağcıları hülyalara sürükleyen bir kar perisi kadar büyüleyici bir güzellik!! ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>Irie</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000078", 256, TRUE);
+	OutputLine(NULL, "　この言葉の前には幾千幾万の修辞もまったくの無味乾燥！！」",
+			NULL, "Bu tek kelimenin karşısında binlerce, on binlerce süslü söz bile tamamen yavan kalır!!\"", Line_Normal);
+	ClearMessage();
+
+	ModDrawCharacter(3, 10, "sprite/iri2_majime2_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+
+//入江rvS07/10/331000079.「百聞は一見にしかずといいますが、私の知っていると思い込んでいた世界は狭い！　狭すぎた！！kvS07/10/331000080.　私は、本当に井の中の蛙だったッッ！！kvS07/10/331000081.　ほあちょおぉぉおぉっっ――ッ！！」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>Irie</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000079", 256, TRUE);
+	OutputLine(NULL, "「百聞は一見にしかずといいますが、私の知っていると思い込んでいた世界は狭い！　狭すぎた！！",
+			NULL, "\"Yüz kere duymaktansa bir kere görmek evladır derler ama benim bildiğimi sandığım dünya çok küçükmüş! Fazla küçükmüş!!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000080", 256, TRUE);
+	OutputLine(NULL, "　私は、本当に井の中の蛙だったッッ！！",
+			NULL, " Meğer ben gerçekten de kuyunun dibindeki bir kurbağadan ibaretmişim!!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000081", 256, TRUE);
+	OutputLine(NULL, "　ほあちょおぉぉおぉっっ——ッ！！」",
+			NULL, " Hoooooaaaaa!!\"", Line_Normal);
+	ClearMessage();
+
+//r最後の咆哮は、もはや言葉になっていなかった。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "最後の咆哮は、もはや言葉になっていなかった。",
+			NULL, "Son kükreyişinde artık kelimeler bile çıkmıyordu ağzından.", Line_Normal);
+	ClearMessage();
+
+//r…しかしなぜ、たとえるものが二つとも妖怪なんだろう。両方とも相手をとり殺す気満々だし。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "…しかしなぜ、たとえるものが二つとも妖怪なんだろう。両方とも相手をとり殺す気満々だし。",
+			NULL, "...İyi de verdiği iki örnek de neden canavardı ki? İkisi de hedeflerini anında öldürmeye can atan yaratıklardı üstelik.", Line_Normal);
+	ClearMessage();
+
+	ModDrawCharacter(5, 2, "sprite/re2a_nande_a1_", "2", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+
+//レナrvS07/02/330200228.「じゃあ、レナをメイドさんにしてくれますか？」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f0953d>レナ</color>", NULL, "<color=#f0953d>Rena</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 2, "ps3/s07/02/330200228", 256, TRUE);
+	OutputLine(NULL, "「じゃあ、レナをメイドさんにしてくれますか？」",
+			NULL, "\"Yani, Rena'yı hizmetçiniz yapacak mısınız?\"", Line_Normal);
+	ClearMessage();
+
+	ModDrawCharacter(3, 10, "sprite/iri2_majime_", "2", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+
+//入江rvS07/10/331000082.「――はっ？！kvS07/10/331000083.　い、いやそれは…」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>Irie</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000082", 256, TRUE);
+	OutputLine(NULL, "「——はっ？！",
+			NULL, "\"...Ha?!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000083", 256, TRUE);
+	OutputLine(NULL, "　い、いやそれは…」",
+			NULL, " Ş-Şey, ımm...\"", Line_Normal);
+	ClearMessage();
+
+	ModDrawCharacter(5, 2, "sprite/re2a_okoru_a1_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+
+//レナrvS07/02/330200229.「お願いしますっ！kvS07/02/330200230.　お料理・お洗濯・お掃除なんでも一生懸命やります！」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f0953d>レナ</color>", NULL, "<color=#f0953d>Rena</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 2, "ps3/s07/02/330200229", 256, TRUE);
+	OutputLine(NULL, "「お願いしますっ！",
+			NULL, "\"Lütfen!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 2, "ps3/s07/02/330200230", 256, TRUE);
+	OutputLine(NULL, "　お料理・お洗濯・お掃除なんでも一生懸命やります！」",
+			NULL, " Yemek, çamaşır, temizlik, her şeyde elimden gelenin en iyisini yapacağım!\"", Line_Normal);
+	ClearMessage();
+
+	ModDrawCharacter(5, 2, "sprite/re2b_komaru_b2_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+
+//レナrvS07/02/330200231.「今はまだご指示をいただかなくては動けませんが、きっといつかは指先ひとつ鳴らしただけでその意図がわかるような、スーパーメイドになってみせます！！」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f0953d>レナ</color>", NULL, "<color=#f0953d>Rena</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 2, "ps3/s07/02/330200231", 256, TRUE);
+	OutputLine(NULL, "「今はまだご指示をいただかなくては動けませんが、きっといつかは指先ひとつ鳴らしただけでその意図がわかるような、スーパーメイドになってみせます！！」",
+			NULL, "\"Şimdilik sizden açık bir talimat almadan hareket edemiyorum ama eminim bir gün sadece parmağınızı şıklatmanızla bile niyetinizi anlayabilen bir Süper Hizmetçi olacağım!!\"", Line_Normal);
+	ClearMessage();
+
+	PlaySE(3, "se051", 256, 64);
+	ModDrawCharacter(5, 2, "sprite/re2b_hau_b1_", "2", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+
+//レナrvS07/02/330200232.「だからご奉仕させてください、…ご主人様ぁ♪」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f0953d>レナ</color>", NULL, "<color=#f0953d>Rena</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 2, "ps3/s07/02/330200232", 256, TRUE);
+	OutputLine(NULL, "「だからご奉仕させてください、…ご主人様ぁ♪」",
+			NULL, "\"O yüzden lütfen size hizmet etmeme izin verin... Efendim♪.\"", Line_Normal);
+	ClearMessage();
+
+	DisableWindow();
+	ModDrawCharacter(3, 10, "sprite/iri2_majime2_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	PlaySE(3, "thisikuki", 256, 64);
+	DrawSceneWithMask( "red", "effect/aa", 0, 0, 150 );
+	ModDrawCharacter(5, 2, "sprite/re2b_hau_b1_", "2", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 0, FALSE );
+	ModDrawCharacter(3, 10, "sprite/iri2_majime2_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 0, FALSE );
+	DrawScene("bg/sinryou_matiai1", 50 );
+	StartShakingOfWindow( 278, 30, 0, 4, 3*3, FALSE );
+	StartShakingOfAllObjects( 278, 30, 0, 4, 3*3, FALSE );
+
+//入江rvS07/10/331000084.「のはあぁっっ？！」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>Irie</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000084", 256, TRUE);
+	OutputLine(NULL, "「のはあぁっっ？！」",
+			NULL, "\"Nvaaah?!\"", Line_Normal);
+	ClearMessage();
+
+//rさすがにそいつぁヤバイだろ、と大人としての自制を働かせる。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "さすがにそいつぁヤバイだろ、と大人としての自制を働かせる。",
+			NULL, "Elbette bu kadarı fazla tehlikeliydi, bu yüzden bir yetişkin olarak kendine hâkim olmaya çalışıyordu.", Line_Normal);
+	ClearMessage();
+
+//rが、レナのほんの少し、小首を傾げながら、
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "が、レナのほんの少し、小首を傾げながら、",
+			NULL, "Fakat Rena başını çok hafif yana eğip,", Line_Normal);
+	ClearMessage();
+
+//r恥ずかしげに頬を染めて、下からのぞき込んでくる笑顔を至近距離から直視してしまった彼は！！
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "恥ずかしげに頬を染めて、下からのぞき込んでくる笑顔を至近距離から直視してしまった彼は！！",
+			NULL, "Yanakları utançla hafifçe kızarmış bir hâlde, bu kadar yakın mesafeden aşağıdan gözlerinin içine bakarak gülümseyince!!", Line_Normal);
+	ClearMessage();
+
+//r…まるで蜘蛛の糸のように細く繋がっていた大人としての理性をその瞬間、
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "…まるで蜘蛛の糸のように細く繋がっていた大人としての理性をその瞬間、",
+			NULL, "...Sanki bir yetişkin olarak mantığını bir arada tutan o örümcek ağı kadar incecik bağ, tam o anda,", Line_Normal);
+	ClearMessage();
+
+	PlaySE(3, "koruku", 256, 64);
+	ModDrawCharacter(3, 10, "sprite/iri2_warai_", "2", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+
+//rぷっちん。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "ぷっちん。",
+			NULL, "*çıt*", Line_Normal);
+	ClearMessage();
+
+//rと切ってしまった――！！
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "と切ってしまった——！！",
+			NULL, "Koptu...!!", Line_Normal);
+	ClearMessage();
+
+	PlaySE(3, "furu", 256, 64);
+	Wait( 200 );
+	PlaySE(0, "furu", 256, 64);
+	Wait( 200 );
+	PlaySE(3, "nageru", 256, 64);
+	Wait( 200 );
+	PlaySE(0, "finish", 256, 64);
+	StartShakingOfWindow( 278, 30, 0, 4, 3*3, FALSE );
+	StartShakingOfAllObjects( 278, 30, 0, 4, 3*3, TRUE );
+	ModDrawCharacter(3, 10, "sprite/iri2_majime_", "2", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+
+//入江rvS07/10/331000085.「わっ、…わかりました、竜宮さん！kvS07/10/331000086.　私も男です、こうなっては腹をくくって見せましょうっ！！」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>Irie</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000085", 256, TRUE);
+	OutputLine(NULL, "「わっ、…わかりました、竜宮さん！",
+			NULL, "\"P... Pekâlâ, Ryuugu-san!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000086", 256, TRUE);
+	OutputLine(NULL, "　私も男です、こうなっては腹をくくって見せましょうっ！！」",
+			NULL, " Ben de bir erkeğim, iş bu noktaya geldiğine göre sana kararlılığımın gücünü göstereceğim!!\"", Line_Normal);
+	ClearMessage();
+
+	PlaySE(3, "daidageki", 256, 64);
+	ModDrawCharacter(3, 10, "sprite/iri2_warai_", "2", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+
+//入江rvS07/10/331000087.「歳の差がなんだ、法律がなんだ！！kvS07/10/331000088.　そんなものは時代とともに推移して、やがては淘汰されてゆく机上の空論！！kvS07/10/331000089.　この入江京介、…あえて反体制の御旗を振りかざし、世界を敵にしてみせましょうっっ！！」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>Irie</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000087", 256, TRUE);
+	OutputLine(NULL, "「歳の差がなんだ、法律がなんだ！！",
+			NULL, "\"Yaş farkı da neymiş! Yasalar da neymiş!!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000088", 256, TRUE);
+	OutputLine(NULL, "　そんなものは時代とともに推移して、やがては淘汰されてゆく机上の空論！！",
+			NULL, " Bunlar zamanla değişecek ve er ya da geç ortadan kalkacak masa başı teorilerinden ibaret!! ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>Irie</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000089", 256, TRUE);
+	OutputLine(NULL, "　この入江京介、…あえて反体制の御旗を振りかざし、世界を敵にしてみせましょうっっ！！」",
+			NULL, "Ben, Kyousuke Irie... düzen karşıtı bayrağı cüretkârca dalgalandırıp bütün dünyayı karşıma alacağııım!!\"", Line_Normal);
+	ClearMessage();
+
+	ModDrawCharacter(5, 2, "sprite/re2a_warai_a1_", "2", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+
+//レナrvS07/02/330200233.「あっ、…ありがとうございます、ご主人様！！」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f0953d>レナ</color>", NULL, "<color=#f0953d>Rena</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 2, "ps3/s07/02/330200233", 256, TRUE);
+	OutputLine(NULL, "「あっ、…ありがとうございます、ご主人様！！」",
+			NULL, "\"Ç... Çok teşekkür ederim, Efendim!!\"", Line_Normal);
+	ClearMessage();
+
+	PlaySE(3, "kyupirn", 256, 64);
+	ModDrawCharacter(3, 10, "sprite/iri2_majime_", "2", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+
+//入江rvS07/10/331000090.「…しかし、竜宮さん。kvS07/10/331000091.ただでさえメイドの道は非常に厳しい世界です。kvS07/10/331000092.辛く、苦難に満ちて、どこまでも限りがない」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>Irie</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000090", 256, TRUE);
+	OutputLine(NULL, "「…しかし、竜宮さん。",
+			NULL, "\"...Fakat, Ryuugu-san.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000091", 256, TRUE);
+	OutputLine(NULL, "ただでさえメイドの道は非常に厳しい世界です。",
+			NULL, " Yine de hizmetçilik yolu son derece çetin bir dünyadır.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000092", 256, TRUE);
+	OutputLine(NULL, "辛く、苦難に満ちて、どこまでも限りがない」",
+			NULL, " Acılarla, zorluklarla doludur ve sonu asla gelmez.\"", Line_Normal);
+	ClearMessage();
+
+	PlaySE(3, "sword", 256, 64);
+	ModDrawCharacter(3, 10, "sprite/iri2_majime2_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+
+//入江rvS07/10/331000093.「そして、一歩足を踏み入れてしまえばこれまでの俗世とは縁を切ることになります。kvS07/10/331000094.それでもいいのですか？kvS07/10/331000095.　親しい人たちと離れることに、未練はありませんか？」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>Irie</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000093", 256, TRUE);
+	OutputLine(NULL, "「そして、一歩足を踏み入れてしまえばこれまでの俗世とは縁を切ることになります。",
+			NULL, "\"Üstelik o dünyaya bir adım attığında, şimdiye dek yaşadığın dünyevi hayatla tüm bağlarını koparman gerekecek.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000094", 256, TRUE);
+	OutputLine(NULL, "それでもいいのですか？",
+			NULL, " Buna hazır mısın? ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>Irie</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000095", 256, TRUE);
+	OutputLine(NULL, "　親しい人たちと離れることに、未練はありませんか？」",
+			NULL, "Yakınındaki insanları geride bırakmak konusunda içinde hiçbir pişmanlık veya tereddüt yok mu?\"", Line_Normal);
+	ClearMessage();
+
+	ModDrawCharacter(5, 2, "sprite/re2b_def_b1_", "2", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+
+//レナrvS07/02/330200234.「ありません！kvS07/02/330200235.　レナは、ご主人様のためなら…たとえ火の中水の中でも、笑顔で渡ってゆけます！！」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f0953d>レナ</color>", NULL, "<color=#f0953d>Rena</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 2, "ps3/s07/02/330200234", 256, TRUE);
+	OutputLine(NULL, "「ありません！",
+			NULL, "\"Hayır, yok!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 2, "ps3/s07/02/330200235", 256, TRUE);
+	OutputLine(NULL, "　レナは、ご主人様のためなら…たとえ火の中水の中でも、笑顔で渡ってゆけます！！」",
+			NULL, " Efendimin hatırına olduktan sonra... ateşe de suya da girsem, yüzümde bir gülümsemeyle hepsini aşarım!!\"", Line_Normal);
+	ClearMessage();
+
+	DrawScene("white", 100 );
+	PlaySE(3, "kaminari2", 256, 64);
+	ModDrawCharacter(5, 2, "sprite/re2b_def_b1_", "2", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 0, FALSE );
+	ModDrawCharacter(3, 10, "sprite/iri2_majime2_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 0, FALSE );
+	DrawScene("bg/sinryou_matiai1", 1000 );
+	ModDrawCharacter(3, 10, "sprite/iri2_def1_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+
+//入江rvS07/10/331000096.「おっ、おおぉぉおぉっっ！！kvS07/10/331000097.　よくぞ、…よくぞ言ってくれました！！kvS07/10/331000098.　もはや、あなたに教えることは何もありません！！」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>Irie</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000096", 256, TRUE);
+	OutputLine(NULL, "「おっ、おおぉぉおぉっっ！！",
+			NULL, "\"O-Ohhhhhhh!!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000097", 256, TRUE);
+	OutputLine(NULL, "　よくぞ、…よくぞ言ってくれました！！",
+			NULL, " Ne güzel söyledin... Ne güzel söyledin!!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000098", 256, TRUE);
+	OutputLine(NULL, "　もはや、あなたに教えることは何もありません！！」",
+			NULL, " Artık sana öğretebileceğim hiçbir şey kalmadı!!\"", Line_Normal);
+	ClearMessage();
+
+//rいや、そもそも何も教えてないじゃん。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "いや、そもそも何も教えてないじゃん。",
+			NULL, "Hayır, zaten en başından beri ona hiçbir şey öğretmedin ki.", Line_Normal);
+	ClearMessage();
+
+	PlaySE(3, "boyoon", 256, 64);
+	ModDrawCharacter(3, 10, "sprite/iri2_warai_", "2", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+
+//入江rvS07/10/331000099.「ではっ、さっそく私のコレクションの中から選びに選び抜いた衣装をあなたに授けましょう！！kvS07/10/331000100.　こんな時のためにＳサイズからＸＬサイズまで幅広く集めてきた秘中の秘蔵物を――」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>Irie</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000099", 256, TRUE);
+	OutputLine(NULL, "「ではっ、さっそく私のコレクションの中から選びに選び抜いた衣装をあなたに授けましょう！！",
+			NULL, "\"Öyleyse, hemen koleksiyonumun içinden özenle seçtiğim bir kıyafeti sana bahşedelim!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000100", 256, TRUE);
+	OutputLine(NULL, "　こんな時のためにＳサイズからＸＬサイズまで幅広く集めてきた秘中の秘蔵物を——」",
+			NULL, " Tam da böyle bir durum için S bedenden XL bedene kadar geniş bir yelpazede biriktirdiğim en gizli hazinelerimi...\"", Line_Normal);
+	ClearMessage();
+
+	FadeOutBGM(2, 200, FALSE);
+	PlaySE(3, "bb", 256, 64);
+	DrawScene("white", 100 );
+	ModDrawCharacter(5, 2, "sprite/re2b_bikkuri_b1_", "1", -240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 0, FALSE );
+	ModDrawCharacter(3, 10, "sprite/iri2_majime2_", "0", 240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 0, FALSE );
+	ModDrawCharacter(4, 1, "sprite/kei1_ikari2_", "2", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 0, FALSE );
+	DrawScene("bg/sinryou_matiai1", 50 );
+	StartShakingOfWindow( 278, 30, 0, 4, 3*3, FALSE );
+	StartShakingOfAllObjects( 278, 30, 0, 4, 3*3, TRUE );
+
+//圭一rvS07/01/330100238.「ちょぉぉっと待ったぁぁ――っっ！！」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#956f6e>圭一</color>", NULL, "<color=#956f6e>Keiichi</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 1, "ps3/s07/01/330100238", 256, TRUE);
+	OutputLine(NULL, "「ちょぉぉっと待ったぁぁ——っっ！！」",
+			NULL, "\"Durun bakalım oradaaa!!\"", Line_Normal);
+	ClearMessage();
+
+	DrawScene("black", 1000 );
+
+//rそこへ俺たち、部活メンバーが到着ッ！！
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "そこへ俺たち、部活メンバーが到着ッ！！",
+			NULL, "Tam o sırada biz Kulüp üyeleri içeri daldık!", Line_Normal);
+	ClearMessage();
+
+	DrawScene("black", 50 );
+	PlayBGM(2, "hm02_10", 128, 0);
+	ModDrawCharacter(4, 3, "sprite/me2_majime_a1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 0, FALSE );
+	DrawScene("bg/sinryou_matiai1", 1000 );
+
+//魅音rvS07/03/330300116.「よっしゃっ！kvS07/03/330300117.　まだメイド衣装にお着替え前だよ！kvS07/03/330300118.　今がチャンス！！」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>Mion</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 3, "ps3/s07/03/330300116", 256, TRUE);
+	OutputLine(NULL, "「よっしゃっ！",
+			NULL, "\"Harika!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 3, "ps3/s07/03/330300117", 256, TRUE);
+	OutputLine(NULL, "　まだメイド衣装にお着替え前だよ！",
+			NULL, " Henüz hizmetçi kıyafetine bürünmemiş!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 3, "ps3/s07/03/330300118", 256, TRUE);
+	OutputLine(NULL, "　今がチャンス！！」",
+			NULL, " İşte fırsatımız!!\"", Line_Normal);
+	ClearMessage();
+
+	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
+	ModDrawCharacter(5, 3, "sprite/me2_majime_a1_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, FALSE );
+	ModDrawCharacter(3, 10, "sprite/iri2_majime2_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+
+//入江rvS07/10/331000101.「な、なんですかあなたたちは？kvS07/10/331000102.　こんな夜遅くにどこか急病でも？？」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>Irie</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000101", 256, TRUE);
+	OutputLine(NULL, "「な、なんですかあなたたちは？",
+			NULL, "\"S-Siz hepiniz burada ne arıyorsunuz?", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000102", 256, TRUE);
+	OutputLine(NULL, "　こんな夜遅くにどこか急病でも？？」",
+			NULL, " Gecenin bu saatinde ani bir hastalık falan mı çıktı yoksa??\"", Line_Normal);
+	ClearMessage();
+
+	FadeBustshot(3, FALSE, 0, 0, 0, 0, 200, FALSE);
+	FadeBustshot(5, FALSE, 0, 0, 0, 0, 200, TRUE);
+	ModDrawCharacter(5, 3, "sprite/me2_majime_a1_", "0", -240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, FALSE );
+	ModDrawCharacter(4, 10, "sprite/iri2_majime2_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
+	ModDrawCharacter(3, 4, "sprite/sa2b_akireru_b1_", "0", 240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+
+//沙都子rvS07/04/330400178.「病気というなら、それはむしろ監督さんのほうですわー！！kvS07/04/330400179.　いったいレナさんに何をさせようとしてたんですのっ？！」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#fcdb77>沙都子</color>", NULL, "<color=#fcdb77>Satoko</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 4, "ps3/s07/04/330400178", 256, TRUE);
+	OutputLine(NULL, "「病気というなら、それはむしろ監督さんのほうですわー！！",
+			NULL, "\"Burada hasta biri varsa o da sizsiniz, Koç!!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 4, "ps3/s07/04/330400179", 256, TRUE);
+	OutputLine(NULL, "　いったいレナさんに何をさせようとしてたんですのっ？！」",
+			NULL, " Rena-san'a ne yaptırmaya çalışıyordunuz öyle efendim?!\"", Line_Normal);
+	ClearMessage();
+
+	ModDrawCharacter(4, 10, "sprite/iri2_majime_", "2", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+
+//入江rvS07/10/331000103.「さ、沙都子ちゃん、それは誤解というものです！kvS07/10/331000104.　私は別に、彼女に何かやましいことを強制するなんてハレンチな真似は、天地神明に誓って一切やっておりません！！」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>Irie</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000103", 256, TRUE);
+	OutputLine(NULL, "「さ、沙都子ちゃん、それは誤解というものです！",
+			NULL, "\"S-Satoko-chan, bu bir yanlış anlaşılma!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000104", 256, TRUE);
+	OutputLine(NULL, "　私は別に、彼女に何かやましいことを強制するなんてハレンチな真似は、天地神明に誓って一切やっておりません！！」",
+			NULL, " Yer ve gök üzerine yemin ederim ki bir kızı utanç verici bir şey yapmaya asla zorlamadım!!\"", Line_Normal);
+	ClearMessage();
+
+	FadeBustshot(3, FALSE, 0, 0, 0, 0, 200, TRUE);
+	ModDrawCharacter(3, 6, "sprite/si1a_majime_a1_", "0", 240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+
+//詩音rvS07/06/330600077.「…その手にメイド衣装を持って、鼻の下伸ばしている姿を見ては、説得力まるで無しってやつです」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>詩音</color>", NULL, "<color=#5ec69a>Shion</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 6, "ps3/s07/06/330600077", 256, TRUE);
+	OutputLine(NULL, "「…その手にメイド衣装を持って、鼻の下伸ばしている姿を見ては、説得力まるで無しってやつです」",
+			NULL, "\"...Elinizde bir hizmetçi kıyafeti tutup ağzınızın suyunu akıtarak ona bakarken bunu söylemeniz hiç de inandırıcı olmuyor.\"", Line_Normal);
+	ClearMessage();
+
+	ModDrawCharacter(3, 6, "sprite/si1b_huteki_b1_", "1", 240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+
+//詩音rvS07/06/330600078.「梨花ちゃま、警察に連絡を。kvS07/06/330600079_01.誘拐でもなんでもいかように！！」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>詩音</color>", NULL, "<color=#5ec69a>Shion</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 6, "ps3/s07/06/330600078", 256, TRUE);
+	OutputLine(NULL, "「梨花ちゃま、警察に連絡を。",
+			NULL, "\"Rika-chama, lütfen polise haber verin.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 6, "ps3/s07/06/330600079_01", 256, TRUE);
+	OutputLine(NULL, "誘拐でもなんでもいかように！！」",
+			NULL, " Adam kaçırma falan diye ihbar edin gitsin!!\"", Line_Normal);
+	ClearMessage();
+
+	ModDrawCharacter(5, 3, "sprite/me2_ikari_a1_", "2", -240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+
+//魅音rvS07/03/330300119.「その前にレナを引き離すよ！！kvS07/03/330300120.　監督、覚悟しなぁぁ～っ？！」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>Mion</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 3, "ps3/s07/03/330300119", 256, TRUE);
+	OutputLine(NULL, "「その前にレナを引き離すよ！！",
+			NULL, "\"Ondan önce Rena'yı onun yanından çekip alacağım!!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 3, "ps3/s07/03/330300120", 256, TRUE);
+	OutputLine(NULL, "　監督、覚悟しなぁぁ～っ？！」",
+			NULL, " Koç, kendini hazırlaaa~!\"", Line_Normal);
+	ClearMessage();
+
+	PlaySE(3, "kyupirn", 256, 64);
+	DrawScene("white", 100 );
+	ModDrawCharacter(3, 6, "sprite/si1b_huteki_b1_", "1", 240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 0, FALSE );
+	ModDrawCharacter(4, 2, "sprite/re2b_kaii_b1_", "2", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 0, FALSE );
+	ModDrawCharacter(5, 3, "sprite/me2_ikari_a1_", "2", -240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 0, FALSE );
+	DrawScene("bg/sinryou_matiai1", 50 );
+
+//レナrvS07/02/330200236.「はぅ～、ご主人様にひどいことしないでよぉぉ～っ！！」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f0953d>レナ</color>", NULL, "<color=#f0953d>Rena</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 2, "ps3/s07/02/330200236", 256, TRUE);
+	OutputLine(NULL, "「はぅ～、ご主人様にひどいことしないでよぉぉ～っ！！」",
+			NULL, "\"Hau~, efendime kötü şeyler yapmayııın~!!\"", Line_Normal);
+	ClearMessage();
+
+	DisableWindow();
+	PlaySE(3, "nageru", 256, 64);
+	DrawScene("black", 150 );
+	PlaySE(0, "dageki", 256, 64);
+	DrawScene("effect/furiker_a", 50 );
+	StartShakingOfWindow( 278, 30, 0, 4, 2*2, FALSE );
+	StartShakingOfAllObjects( 278, 30, 0, 4, 2*2, TRUE );
+	PlaySE(3, "dageki", 256, 64);
+	DrawScene("effect/furiker_b", 50 );
+	StartShakingOfWindow( 278, 30, 0, 4, 2*2, FALSE );
+	StartShakingOfAllObjects( 278, 30, 0, 4, 2*2, TRUE );
+	PlaySE(0, "dageki", 256, 64);
+	DrawScene("effect/furiker_a", 50 );
+	StartShakingOfWindow( 278, 30, 0, 4, 2*2, FALSE );
+	StartShakingOfAllObjects( 278, 30, 0, 4, 2*2, TRUE );
+	PlaySE(3, "dageki", 256, 64);
+	DrawScene("effect/furiker_b", 50 );
+	StartShakingOfWindow( 278, 30, 0, 4, 2*2, FALSE );
+	StartShakingOfAllObjects( 278, 30, 0, 4, 2*2, TRUE );
+	PlaySE(0, "tatakiwaru", 256, 64);
+	DrawScene("bg/oyashirosama", 50 );
+	StartShakingOfWindow( 278, 30, 0, 4, 2*2, FALSE );
+	StartShakingOfAllObjects( 278, 30, 0, 4, 2*2, TRUE );
+	PlaySE(3, "kaminari2", 256, 64);
+	DrawScene("white", 50 );
+	StartShakingOfWindow( 278, 30, 0, 4, 3*3, FALSE );
+	StartShakingOfAllObjects( 278, 30, 0, 4, 3*3, TRUE );
+	DrawScene("black", 500 );
+	PlaySE(0, "dageki", 256, 64);
+	Wait( 150 );
+	PlaySE(3, "dageki", 256, 64);
+	Wait( 150 );
+	PlaySE(0, "dageki", 256, 64);
+	Wait( 150 );
+	PlaySE(3, "dageki", 256, 64);
+	Wait( 150 );
+	PlaySE(0, "finish", 256, 64);
+	DrawScene("white", 50 );
+	StartShakingOfWindow( 278, 30, 0, 4, 3*3, FALSE );
+	StartShakingOfAllObjects( 278, 30, 0, 4, 3*3, TRUE );
+	PlaySE(3, "garasu", 256, 64);
+	StartShakingOfWindow( 278, 30, 0, 4, 3*3, FALSE );
+	StartShakingOfAllObjects( 278, 30, 0, 4, 3*3, TRUE );
+	PlaySE(0, "bb", 256, 64);
+	ModDrawCharacter(4, 3, "sprite/me2_tohoho_a1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 100, FALSE );
+	DrawScene("bg/sinryou_matiai1", 50 );
+	StartShakingOfWindow( 278, 30, 0, 4, 3*3, FALSE );
+	StartShakingOfAllObjects( 278, 30, 0, 4, 3*3, TRUE );
+	PlaySE(3, "down", 256, 64);
+	FadeBustshot(4, FALSE, 0, 0, 0, 0, 50, TRUE);
+	StartShakingOfWindow( 278, 30, 0, 4, 3*3, FALSE );
+	StartShakingOfAllObjects( 278, 30, 0, 4, 3*3, TRUE );
+
+//魅音rvS07/03/330300121.「ぷべらばげびょっ？！」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>Mion</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 3, "ps3/s07/03/330300121", 256, TRUE);
+	OutputLine(NULL, "「ぷべらばげびょっ？！」",
+			NULL, "\"Puberabagegyoh?!\"", Line_Normal);
+	ClearMessage();
+
+//r不用意に近づいた魅音を、レナのパンチがあっという間に撃墜する！！
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "不用意に近づいた魅音を、レナのパンチがあっという間に撃墜する！！",
+			NULL, "Mion dikkatsizce yaklaştı ama Rena'nın yumrukları onu göz açıp kapayıncaya kadar yere serdi!!", Line_Normal);
+	ClearMessage();
+
+	ModDrawCharacter(4, 6, "sprite/si1a_yowaki_a1_", "2", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+
+//詩音rvS07/06/330600080.「お、お姉…。kvS07/06/330600081.昼にも夕方にもあれだけ食らったのに、まだ懲りないんですか？kvS07/06/330600082.　準備もなしに突っ込むから…」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>詩音</color>", NULL, "<color=#5ec69a>Shion</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 6, "ps3/s07/06/330600080", 256, TRUE);
+	OutputLine(NULL, "「お、お姉…。",
+			NULL, "\"A-Abla...", Line_WaitForInput);
+	ModPlayVoiceLS(4, 6, "ps3/s07/06/330600081", 256, TRUE);
+	OutputLine(NULL, "昼にも夕方にもあれだけ食らったのに、まだ懲りないんですか？",
+			NULL, " Öğlen ve akşam yediğin onca darbeden sonra hâlâ dersini almadın mı?", Line_WaitForInput);
+	ModPlayVoiceLS(4, 6, "ps3/s07/06/330600082", 256, TRUE);
+	OutputLine(NULL, "　準備もなしに突っ込むから…」",
+			NULL, " Hazırlıksız dalarsan olacağı budur...\"", Line_Normal);
+	ClearMessage();
+
+	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
+	ModDrawCharacter(3, 6, "sprite/si1a_yowaki_a1_", "2", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, FALSE );
+	ModDrawCharacter(5, 3, "sprite/me2_yowaki_a1_", "2", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+
+//魅音rvS07/03/330300122.「…ご、ごめんねぇ。kvS07/03/330300123.おじさん、油断してたわぁ…」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>Mion</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 3, "ps3/s07/03/330300122", 256, TRUE);
+	OutputLine(NULL, "「…ご、ごめんねぇ。",
+			NULL, "\"...K-Kusura bakmayın.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 3, "ps3/s07/03/330300123", 256, TRUE);
+	OutputLine(NULL, "おじさん、油断してたわぁ…」",
+			NULL, " Bu yaşlı moruk boş bulundu...\"", Line_Normal);
+	ClearMessage();
+
+//圭一rvS07/01/330100239.「…それにしても、レナってすげぇよ。kvS07/01/330100240.好きな相手のためなら、ホントに何でもできちゃうんだな。kvS07/01/330100241.写真、百合ときて、次はメイドかよ。kvS07/01/330100242.本気で恐れ入るぜ…」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#956f6e>圭一</color>", NULL, "<color=#956f6e>Keiichi</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 1, "ps3/s07/01/330100239", 256, TRUE);
+	OutputLine(NULL, "「…それにしても、レナってすげぇよ。",
+			NULL, "\"...Her neyse, Rena cidden inanılmaz biri.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 1, "ps3/s07/01/330100240", 256, TRUE);
+	OutputLine(NULL, "好きな相手のためなら、ホントに何でもできちゃうんだな。",
+			NULL, " Sevdiği insan uğruna gerçekten her şeyi yapabiliyor.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 1, "ps3/s07/01/330100241", 256, TRUE);
+	OutputLine(NULL, "写真、百合ときて、次はメイドかよ。",
+			NULL, " Önce fotoğrafçılık, sonra yuri, şimdi de hizmetçilik.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 1, "ps3/s07/01/330100242", 256, TRUE);
+	OutputLine(NULL, "本気で恐れ入るぜ…」",
+			NULL, " Cidden korkutucu...\"", Line_Normal);
+	ClearMessage();
+
+	ModDrawCharacter(5, 3, "sprite/me2_tohoho_a1_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+
+//魅音rvS07/03/330300124.「かぁいいモードのレナに不可能の文字はないってわけだね…。kvS07/03/330300125.部活の戦績でも、レナほど上下の波が激しい子はいないよ」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>Mion</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 3, "ps3/s07/03/330300124", 256, TRUE);
+	OutputLine(NULL, "「かぁいいモードのレナに不可能の文字はないってわけだね…。",
+			NULL, "\"Onun o çoooook taaatlııı modunun sözlüğünde 'imkânsız' diye bir kelime yok demek ki...", Line_WaitForInput);
+	ModPlayVoiceLS(4, 3, "ps3/s07/03/330300125", 256, TRUE);
+	OutputLine(NULL, "部活の戦績でも、レナほど上下の波が激しい子はいないよ」",
+			NULL, " Kulüp maçlarında bile hiçbirimizin performansı onunki kadar inişli çıkışlı değildir.\"", Line_Normal);
+	ClearMessage();
+
+	FadeBustshot(3, FALSE, 0, 0, 0, 0, 200, FALSE);
+	FadeBustshot(5, FALSE, 0, 0, 0, 0, 200, TRUE);
+	ModDrawCharacter(5, 3, "sprite/me2_tohoho_a1_", "0", -240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, FALSE );
+	ModDrawCharacter(3, 6, "sprite/si1a_yowaki_a1_", "2", 240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, FALSE );
+	ModDrawCharacter(4, 4, "sprite/sa2b_hau_b2_", "2", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+
+//沙都子rvS07/04/330400180.「…確かに。kvS07/04/330400181.爆発した時とそうでない時の成績差があまりに激しいのが特徴ですわね…」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#fcdb77>沙都子</color>", NULL, "<color=#fcdb77>Satoko</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 4, "ps3/s07/04/330400180", 256, TRUE);
+	OutputLine(NULL, "「…確かに。",
+			NULL, "\"...Kesinlikle.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 4, "ps3/s07/04/330400181", 256, TRUE);
+	OutputLine(NULL, "爆発した時とそうでない時の成績差があまりに激しいのが特徴ですわね…」",
+			NULL, " Patlama yaptığı zamanla yapmadığı zaman arasındaki performans farkının bu kadar uçlarda olması onun en belirgin özelliği efendim...\"", Line_Normal);
+	ClearMessage();
+
+	ModDrawCharacter(3, 6, "sprite/si1b_majime_b1_", "0", 240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+
+//詩音rvS07/06/330600083.「とりあえず、監督の処遇は警察にお任せするとして。kvS07/06/330600084.…それより梨花ちゃま！kvS07/06/330600085.　今度こそ間違いありませんか？！」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>詩音</color>", NULL, "<color=#5ec69a>Shion</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 6, "ps3/s07/06/330600083", 256, TRUE);
+	OutputLine(NULL, "「とりあえず、監督の処遇は警察にお任せするとして。",
+			NULL, "\"Her neyse, Koç'un icabına bakmayı polise bırakalım.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 6, "ps3/s07/06/330600084", 256, TRUE);
+	OutputLine(NULL, "…それより梨花ちゃま！",
+			NULL, " ...Daha önemlisi, Rika-chama!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 6, "ps3/s07/06/330600085", 256, TRUE);
+	OutputLine(NULL, "　今度こそ間違いありませんか？！」",
+			NULL, " Bu sefer kesin olarak bulduk, değil mi?!\"", Line_Normal);
+	ClearMessage();
+
+	FadeBustshot(3, FALSE, 0, 0, 0, 0, 200, TRUE);
+	ModDrawCharacter(3, 5, "sprite/ri2_fuman_a1_", "0", 240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+
+//梨花rvS07/05/330500142.「みぃ！　間違いないのです！kvS07/05/330500143.　入江が今、懐に持っていますのです！」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 5, "ps3/s07/05/330500142", 256, TRUE);
+	OutputLine(NULL, "「みぃ！　間違いないのです！",
+			NULL, "\"Mi~! Hiç şüphe yok!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 5, "ps3/s07/05/330500143", 256, TRUE);
+	OutputLine(NULL, "　入江が今、懐に持っていますのです！」",
+			NULL, " Şu anda Irie'nin cebinde duruyor!\"", Line_Normal);
+	ClearMessage();
+
+	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
+	ModDrawCharacter(4, 10, "sprite/iri2_majime_", "2", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+
+//入江rvS07/10/331000105.「な、なんですか梨花さん？kvS07/10/331000106.　私に何か？」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>Irie</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000105", 256, TRUE);
+	OutputLine(NULL, "「な、なんですか梨花さん？",
+			NULL, "\"N-Ne oluyor, Rika-san?", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000106", 256, TRUE);
+	OutputLine(NULL, "　私に何か？」",
+			NULL, " Bende bir şey mi varmış?\"", Line_Normal);
+	ClearMessage();
+
+	ModDrawCharacter(3, 5, "sprite/ri2_def_a1_", "0", 240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+
+//梨花rvS07/05/330500144.「……入江、正直に答えてほしいのです。kvS07/05/330500145.今日、雛見沢で白い勾玉、もしくは白いオットセイのキーホルダーを拾いませんでしたか？」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 5, "ps3/s07/05/330500144", 256, TRUE);
+	OutputLine(NULL, "「……入江、正直に答えてほしいのです。",
+			NULL, "\"...Irie, lütfen bana dürüstçe cevap ver.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 5, "ps3/s07/05/330500145", 256, TRUE);
+	OutputLine(NULL, "今日、雛見沢で白い勾玉、もしくは白いオットセイのキーホルダーを拾いませんでしたか？」",
+			NULL, " Bugün Hinamizawa'da beyaz bir magatama ya da beyaz fok balıklı bir anahtarlık buldun mu?\"", Line_Normal);
+	ClearMessage();
+
+	ModDrawCharacter(4, 10, "sprite/iri2_def2_", "2", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+
+//入江rvS07/10/331000107.「え？kvS07/10/331000108.　あぁ、そうですね、確かに拾いました。kvS07/10/331000109.そうだ、警察に届けようと思ってすっかり忘れていました！kvS07/10/331000110.　後でちゃんと届けないとネコババになってしまいますね」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>Irie</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000107", 256, TRUE);
+	OutputLine(NULL, "「え？",
+			NULL, "\"Ha?", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000108", 256, TRUE);
+	OutputLine(NULL, "　あぁ、そうですね、確かに拾いました。",
+			NULL, " Ha, evet, sanırım buldum.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000109", 256, TRUE);
+	OutputLine(NULL, "そうだ、警察に届けようと思ってすっかり忘れていました！",
+			NULL, " Doğru ya... polise teslim ederim diye düşünmüştüm ama tamamen unutmuşum!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000110", 256, TRUE);
+	OutputLine(NULL, "　後でちゃんと届けないとネコババになってしまいますね」",
+			NULL, " Sonradan götürüp teslim etmezsem zimmete geçirmek olur tabii.\"", Line_Normal);
+	ClearMessage();
+
+	FadeBustshot(3, FALSE, 0, 0, 0, 0, 200, TRUE);
+	ModDrawCharacter(3, 4, "sprite/sa2a_odoroki_a1_", "2", 240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+
+//沙都子rvS07/04/330400182.「それは梨花のなんですのよー！kvS07/04/330400183.　さっさとお返しなさいですわー！！」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#fcdb77>沙都子</color>", NULL, "<color=#fcdb77>Satoko</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 4, "ps3/s07/04/330400182", 256, TRUE);
+	OutputLine(NULL, "「それは梨花のなんですのよー！",
+			NULL, "\"O Rika'ya ait efendim!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 4, "ps3/s07/04/330400183", 256, TRUE);
+	OutputLine(NULL, "　さっさとお返しなさいですわー！！」",
+			NULL, " Derhal geri verin lütfen!!\"", Line_Normal);
+	ClearMessage();
+
+	ModDrawCharacter(5, 3, "sprite/me2_majime_a1_", "0", -240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+
+//魅音rvS07/03/330300126.「そうそう！kvS07/03/330300127.　その勾玉のせいでレナがこんなになっちゃってるの！kvS07/03/330300128.　レナを正気に戻させるから返してください！」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>Mion</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 3, "ps3/s07/03/330300126", 256, TRUE);
+	OutputLine(NULL, "「そうそう！",
+			NULL, "\"Çok doğru!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 3, "ps3/s07/03/330300127", 256, TRUE);
+	OutputLine(NULL, "　その勾玉のせいでレナがこんなになっちゃってるの！",
+			NULL, " Rena'nın bu hâle gelmesinin sebebi o magatama!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 3, "ps3/s07/03/330300128", 256, TRUE);
+	OutputLine(NULL, "　レナを正気に戻させるから返してください！」",
+			NULL, " Onu normale döndüreceğiz, o yüzden lütfen geri verin!\"", Line_Normal);
+	ClearMessage();
+
+//圭一rvS07/01/330100243.「あ、ばか、余計なことをー！」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#956f6e>圭一</color>", NULL, "<color=#956f6e>Keiichi</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 1, "ps3/s07/01/330100243", 256, TRUE);
+	OutputLine(NULL, "「あ、ばか、余計なことをー！」",
+			NULL, "\"Ah, seni aptal, ne diye yumurtluyorsun...?!\"", Line_Normal);
+	ClearMessage();
+
+	PlaySE(3, "kyupirn", 256, 64);
+	DrawScene("white", 100 );
+	ModDrawCharacter(5, 3, "sprite/me2_majime_a1_", "0", -240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 0, FALSE );
+	ModDrawCharacter(4, 10, "sprite/iri2_majime2_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 0, FALSE );
+	ModDrawCharacter(3, 4, "sprite/sa2a_odoroki_a1_", "2", 240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 0, FALSE );
+	DrawScene("bg/sinryou_matiai1", 250 );
+
+//入江rvS07/10/331000111.「な、何ですってぇえぇ？！」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>Irie</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000111", 256, TRUE);
+	OutputLine(NULL, "「な、何ですってぇえぇ？！」",
+			NULL, "\"N-Neeeeeee?!\"", Line_Normal);
+	ClearMessage();
+
+	DisableWindow();
+	FadeOutBGM(2, 200, FALSE);
+	PlaySE(3, "bb", 256, 64);
+	DrawScene("white", 50 );
+	Wait( 150 );
+	DrawScene("scene/209", 50 );
+	if (GetGlobalFlag(GHideCG)) {ModDrawCharacter(5, 3, "sprite/me2_majime_a1_", "0", -240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 0, FALSE );}
+	if (GetGlobalFlag(GHideCG)) {ModDrawCharacter(4, 10, "sprite/iri2_majime_", "2", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 0, FALSE );}
+	if (GetGlobalFlag(GHideCG)) {ModDrawCharacter(3, 4, "sprite/sa2a_odoroki_a1_", "2", 240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 0, FALSE );}
+	if (GetGlobalFlag(GHideCG)) {DrawScene("bg/sinryou_matiai1", 50 );}
+	StartShakingOfWindow( 278, 30, 0, 4, 3*3, FALSE );
+	StartShakingOfAllObjects( 278, 30, 0, 4, 3*3, TRUE );
+	PlayBGM(2, "hm01_06", 128, 0);
+
+//入江rvS07/10/331000112.「…なるほど、そうか、そうだったのですか…。kvS07/10/331000113.てっきりメイドの素晴らしさに目覚めた理想の女性とようやく巡り会えたと思っていましたのに…」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>Irie</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000112", 256, TRUE);
+	OutputLine(NULL, "「…なるほど、そうか、そうだったのですか…。",
+			NULL, "\"...Anlıyorum, demek öyle, demek mesele buydu...", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000113", 256, TRUE);
+	OutputLine(NULL, "てっきりメイドの素晴らしさに目覚めた理想の女性とようやく巡り会えたと思っていましたのに…」",
+			NULL, " Oysa ben de hizmetçiliğin harikalarına uyanmış ideal kadınla nihayet karşılaştığımdan o kadar emindim ki...\"", Line_Normal);
+	ClearMessage();
+
+//入江rvS07/10/331000114.「では、このキーホルダーを皆さんにお返しすると、レナさんは帰ってしまうわけですね？kvS07/10/331000115.　…いや！　それは困ります！kvS07/10/331000116.　私の私による私のためのメイド世界を実現させるためにも、レナさんの協力が必要なんです！」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>Irie</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000114", 256, TRUE);
+	OutputLine(NULL, "「では、このキーホルダーを皆さんにお返しすると、レナさんは帰ってしまうわけですね？",
+			NULL, "\"Yani bu anahtarlığı size geri verirsem Rena-san evine dönecek, öyle mi diyorsunuz?", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000115", 256, TRUE);
+	OutputLine(NULL, "　…いや！　それは困ります！",
+			NULL, " ...Hayır! Bu hiç olmaz!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000116", 256, TRUE);
+	OutputLine(NULL, "　私の私による私のためのメイド世界を実現させるためにも、レナさんの協力が必要なんです！」",
+			NULL, " Kendi iç dünyamın hatırına, hizmetçiler dünyasını gerçeğe dönüştürmek için Rena-san'ın yardımına ihtiyacım var!\"", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GHideCG)) {DisableWindow();}
+	if (GetGlobalFlag(GHideCG)) {ModDrawCharacter(4, 10, "sprite/iri2_warai_", "2", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );}
+
+//入江rvS07/10/331000117.「もう少しだけ、あとたった１世紀だけで構わない！kvS07/10/331000118.　この素敵なドリームを見させてくださいぃぃ！！」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>Irie</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000117", 256, TRUE);
+	OutputLine(NULL, "「もう少しだけ、あとたった１世紀だけで構わない！",
+			NULL, "\"Birazcık daha, sadece bir asır bile sürse razıyım!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000118", 256, TRUE);
+	OutputLine(NULL, "　この素敵なドリームを見させてくださいぃぃ！！」",
+			NULL, " Lütfen bu harikulade rüyayı görmeme izin veriiin!!\"", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GHideCG)) {DisableWindow();}
+	if (GetGlobalFlag(GHideCG)) {ModDrawCharacter(3, 4, "sprite/sa2b_odoroki_b1_", "2", 240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );}
+
+//沙都子rvS07/04/330400184.「１世紀のどこが『たった』なんですのー！kvS07/04/330400185.　ここにいるみんなお墓の中に入っていましてよ～！！」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#fcdb77>沙都子</color>", NULL, "<color=#fcdb77>Satoko</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 4, "ps3/s07/04/330400184", 256, TRUE);
+	OutputLine(NULL, "「１世紀のどこが『たった』なんですのー！",
+			NULL, "\"Bir asrın neresi 'sadece' oluyor acaba!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 4, "ps3/s07/04/330400185", 256, TRUE);
+	OutputLine(NULL, "　ここにいるみんなお墓の中に入っていましてよ～！！」",
+			NULL, " O zamana kadar buradaki herkes mezara girmiş olur efendim~!!\"", Line_Normal);
+	ClearMessage();
+
+//圭一rvS07/01/330100244.「頼む、監督！kvS07/01/330100245.　それはレナの本心じゃないんだ、操られているだけなんだ！kvS07/01/330100246.　おとなしく拾ったオットセイをこっちに渡して、レナを解放してやってくれ！」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#956f6e>圭一</color>", NULL, "<color=#956f6e>Keiichi</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 1, "ps3/s07/01/330100244", 256, TRUE);
+	OutputLine(NULL, "「頼む、監督！",
+			NULL, "\"Lütfen, Koç!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 1, "ps3/s07/01/330100245", 256, TRUE);
+	OutputLine(NULL, "　それはレナの本心じゃないんだ、操られているだけなんだ！",
+			NULL, " Bunlar Rena'nın gerçek duyguları değil, sadece kontrol ediliyor!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 1, "ps3/s07/01/330100246", 256, TRUE);
+	OutputLine(NULL, "　おとなしく拾ったオットセイをこっちに渡して、レナを解放してやってくれ！」",
+			NULL, " Uslu durun da bulduğunuz o fok balığını bize verip Rena'yı serbest bırakın!\"", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GHideCG)) {DisableWindow();}
+	if (GetGlobalFlag(GHideCG)) {ModDrawCharacter(4, 10, "sprite/iri2_def2_", "2", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );}
+
+//入江rvS07/10/331000119.「…前原さん。kvS07/10/331000120.たとえ偽りの言葉であっても、竜宮さんは私にメイドとしてお仕えします！　と、誓いの言葉を述べられたのです！」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>Irie</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000119", 256, TRUE);
+	OutputLine(NULL, "「…前原さん。",
+			NULL, "\"...Maebara-san.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000120", 256, TRUE);
+	OutputLine(NULL, "たとえ偽りの言葉であっても、竜宮さんは私にメイドとしてお仕えします！　と、誓いの言葉を述べられたのです！」",
+			NULL, " Sözleri sahte olsa bile, Ryuugu-san benim hizmetçim olarak hizmet edeceğine dair yemin etti!\"", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GHideCG)) {DisableWindow();}
+	if (GetGlobalFlag(GHideCG)) {ModDrawCharacter(4, 10, "sprite/iri2_majime2_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );}
+
+//入江rvS07/10/331000121.「それはいわば、契約！kvS07/10/331000122.　つまりそれを覆すことができるのは、レナさんの口を持ってしかなしえないことなのです！！」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>Irie</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000121", 256, TRUE);
+	OutputLine(NULL, "「それはいわば、契約！",
+			NULL, "\"Bu bir nevi bağlayıcı sözleşmedir!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000122", 256, TRUE);
+	OutputLine(NULL, "　つまりそれを覆すことができるのは、レナさんの口を持ってしかなしえないことなのです！！」",
+			NULL, " Başka bir deyişle, bu durumu tersine çevirmenin tek yolu bizzat Rena-san'ın kendi ağzıyla bunu beyan etmesidir!!\"", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GHideCG)) {DisableWindow();}
+	if (GetGlobalFlag(GHideCG)) {ModDrawCharacter(5, 3, "sprite/me2_tohoho_a1_", "0", -240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );}
+
+//魅音rvS07/03/330300129.「だ、だめだこの人…！kvS07/03/330300130.　今まで言われたことのない言葉に舞い上がって前後不覚になっちゃってるよ～！！」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>Mion</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 3, "ps3/s07/03/330300129", 256, TRUE);
+	OutputLine(NULL, "「だ、だめだこの人…！",
+			NULL, "\"B-Bu adam cidden laftan anlamıyor...!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 3, "ps3/s07/03/330300130", 256, TRUE);
+	OutputLine(NULL, "　今まで言われたことのない言葉に舞い上がって前後不覚になっちゃってるよ～！！」",
+			NULL, " Şimdiye kadar hiç duymadığı sözlerle böyle havalara girip şuurunu kaybetmesine bayılacağım şimdi~!!\"", Line_Normal);
+	ClearMessage();
+
+	PlayBGM( 1, "denwa", 128, 0 );
+	if (GetGlobalFlag(GHideCG)) {DisableWindow();}
+	if (GetGlobalFlag(GHideCG)) {ModDrawCharacter(3, 4, "sprite/sa2a_akireru_a1_", "0", 240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );}
+
+//沙都子rvS07/04/330400186.「…梨花？kvS07/04/330400187.　なにをなさっているのでございますの？」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#fcdb77>沙都子</color>", NULL, "<color=#fcdb77>Satoko</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 4, "ps3/s07/04/330400186", 256, TRUE);
+	OutputLine(NULL, "「…梨花？",
+			NULL, "\"...Rika?", Line_WaitForInput);
+	ModPlayVoiceLS(4, 4, "ps3/s07/04/330400187", 256, TRUE);
+	OutputLine(NULL, "　なにをなさっているのでございますの？」",
+			NULL, " Ne yapıyorsunuz öyle efendim?\"", Line_Normal);
+	ClearMessage();
+
+	FadeOutBGM(1, 200, FALSE);
+
+//梨花rvS07/05/330500146.「…もしもし警察ですか。kvS07/05/330500147.大石をお願いします。kvS07/05/330500148.…あ、大石ですか？kvS07/05/330500149.　オヤシロさまに祟られた可哀想な人がいるのです。kvS07/05/330500150.救いようがないので緊急に逮捕して――み？kvS07/05/330500151.　みぃっ？！」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 5, "ps3/s07/05/330500146", 256, TRUE);
+	OutputLine(NULL, "「…もしもし警察ですか。",
+			NULL, "\"...Alo, polis mi?", Line_WaitForInput);
+	ModPlayVoiceLS(4, 5, "ps3/s07/05/330500147", 256, TRUE);
+	OutputLine(NULL, "大石をお願いします。",
+			NULL, " Lütfen beni Ooishi'ye bağlayın.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 5, "ps3/s07/05/330500148", 256, TRUE);
+	OutputLine(NULL, "…あ、大石ですか？",
+			NULL, " ...Ah, Ooishi mi?", Line_WaitForInput);
+	ModPlayVoiceLS(4, 5, "ps3/s07/05/330500149", 256, TRUE);
+	OutputLine(NULL, "　オヤシロさまに祟られた可哀想な人がいるのです。",
+			NULL, " Burada Oyashiro-sama tarafından lanetlenmiş zavallı bir adam var.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 5, "ps3/s07/05/330500150", 256, TRUE);
+	OutputLine(NULL, "救いようがないので緊急に逮捕して——み？",
+			NULL, " Kurtarılacak hâli kalmadı, o yüzden lütfen derhal tutuklayı... Mi~?", Line_WaitForInput);
+	ModPlayVoiceLS(4, 5, "ps3/s07/05/330500151", 256, TRUE);
+	OutputLine(NULL, "　みぃっ？！」",
+			NULL, " Miiii~?!\"", Line_Normal);
+	ClearMessage();
+
+	DisableWindow();
+	PlaySE(3, "sword", 256, 64);
+	DrawScene("white", 50 );
+	ModDrawCharacter(5, 2, "sprite/re2a_warai_a1_", "2", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 0, FALSE );
+	ModDrawCharacter(3, 5, "sprite/ri2_komaru_a2_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 0, FALSE );
+	DrawScene("bg/sinryou_matiai1", 250 );
+
+//r突然通話が切れたことで顔を上げた梨花ちゃんは、その目の前の光景に驚いて唖然となる。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "突然通話が切れたことで顔を上げた梨花ちゃんは、その目の前の光景に驚いて唖然となる。",
+			NULL, "Telefon aniden kesilince başını kaldıran Rika-chan, gözlerinin önündeki manzarayla şaşkına dönüp taş kesildi.", Line_Normal);
+	ClearMessage();
+
+//rそこには大きなハサミで電話線をちょん切った、レナがにこやかに立っていたからだ…！
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "そこには大きなハサミで電話線をちょん切った、レナがにこやかに立っていたからだ…！",
+			NULL, "Çünkü orada, elindeki kocaman makasla telefon kablosunu kesmiş olan Rena yüzünde tatlı bir gülümsemeyle dikiliyordu...!", Line_Normal);
+	ClearMessage();
+
+	ModDrawCharacter(5, 2, "sprite/re2b_kaii_b1_", "2", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+
+//レナrvS07/02/330200237.「駄目だよ、ダメダメ！！kvS07/02/330200238.　ご主人様を警察になんて渡したりしないんだから～！」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f0953d>レナ</color>", NULL, "<color=#f0953d>Rena</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 2, "ps3/s07/02/330200237", 256, TRUE);
+	OutputLine(NULL, "「駄目だよ、ダメダメ！！",
+			NULL, "\"Olmaz, ASLA OLMAZ!!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 2, "ps3/s07/02/330200238", 256, TRUE);
+	OutputLine(NULL, "　ご主人様を警察になんて渡したりしないんだから～！」",
+			NULL, " Efendimi polise falan teslim etmem ben~!\"", Line_Normal);
+	ClearMessage();
+
+//圭一rvS07/01/330100247.「…というか、電話線切ったら監督とここの診療所の人たち、明日からの仕事で困ると思うぞ？kvS07/01/330100248.　いいんですか監督？」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#956f6e>圭一</color>", NULL, "<color=#956f6e>Keiichi</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 1, "ps3/s07/01/330100247", 256, TRUE);
+	OutputLine(NULL, "「…というか、電話線切ったら監督とここの診療所の人たち、明日からの仕事で困ると思うぞ？",
+			NULL, "\"...İyi de telefon hattını kesersen yarın klinikte çalışan herkes iş yaparken zor durumda kalmaz mı?", Line_WaitForInput);
+	ModPlayVoiceLS(4, 1, "ps3/s07/01/330100248", 256, TRUE);
+	OutputLine(NULL, "　いいんですか監督？」",
+			NULL, " Koç, bu gerçekten sorun değil mi?\"", Line_Normal);
+	ClearMessage();
+
+	FadeBustshot(3, FALSE, 0, 0, 0, 0, 200, FALSE);
+	FadeBustshot(5, FALSE, 0, 0, 0, 0, 200, TRUE);
+	ModDrawCharacter(3, 5, "sprite/ri2_komaru_a2_", "0", 240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, FALSE );
+	ModSetLayerFilter(2, 256, "none");
+	ModDrawCharacter(2, 2, "sprite/re2b_kaii_b1_", "2", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 10, 200, FALSE );
+	ModDrawCharacter(4, 10, "sprite/iri2_warai_", "2", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+
+//入江rvS07/10/331000123.「ええ、ええ構いませんとも！！kvS07/10/331000124.　このような理想のメイドさんが私のものになるのであれば、私は今の肩書きも生活も全てドブに捨てて構わない！！」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>Irie</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000123", 256, TRUE);
+	OutputLine(NULL, "「ええ、ええ構いませんとも！！",
+			NULL, "\"Evet, elbette, hiç umurumda değil!!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000124", 256, TRUE);
+	OutputLine(NULL, "　このような理想のメイドさんが私のものになるのであれば、私は今の肩書きも生活も全てドブに捨てて構わない！！」",
+			NULL, " Böyle ideal bir hizmetçinin benim olması için şu anki unvanımı da geçimimi de çöpe atmaya razıyım!!\"", Line_Normal);
+	ClearMessage();
+
+	ModDrawCharacter(4, 10, "sprite/iri2_majime_", "2", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+
+//入江rvS07/10/331000125.「…前原さん。男の人生は、浪漫なのです！！kvS07/10/331000126.　食うことのみに頭を縛られていては、それこそこの世に何のために生まれてきたというのですかっ？！」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>Irie</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000125", 256, TRUE);
+	OutputLine(NULL, "「…前原さん。男の人生は、浪漫なのです！！",
+			NULL, "\"...Maebara-san. Bir erkeğin hayatı romantizmden ibarettir!!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000126", 256, TRUE);
+	OutputLine(NULL, "　食うことのみに頭を縛られていては、それこそこの世に何のために生まれてきたというのですかっ？！」",
+			NULL, " Eğer tek derdin karnını doyurmaksa, bu dünyaya gelmenin ne anlamı var ki?!\"", Line_Normal);
+	ClearMessage();
+
+	FadeBustshot(3, FALSE, 0, 0, 0, 0, 200, TRUE);
+	ModDrawCharacter(3, 6, "sprite/si1a_yowaki_a1_", "2", 240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+
+//詩音rvS07/06/330600086.「…なんか、とっても格好いい事言っているように聞こえますけど、この人本当に駄目な大人の典型ですねぇ」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>詩音</color>", NULL, "<color=#5ec69a>Shion</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 6, "ps3/s07/06/330600086", 256, TRUE);
+	OutputLine(NULL, "「…なんか、とっても格好いい事言っているように聞こえますけど、この人本当に駄目な大人の典型ですねぇ」",
+			NULL, "\"...Kulağa çok havalı bir laf ediyormuş gibi geliyor ama bu adam tam bir işe yaramaz yetişkin örneği.\"", Line_Normal);
+	ClearMessage();
+
+//圭一rvS07/01/330100249.「そうは行かねぇぜぇ！！kvS07/01/330100250.　レナに頼まれたんだ。kvS07/01/330100251.レナを助けてってな！kvS07/01/330100252.　そして俺はレナを助けると約束した！kvS07/01/330100253.　今すぐそいつを返してもらうぜぇえぇ！！」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#956f6e>圭一</color>", NULL, "<color=#956f6e>Keiichi</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 1, "ps3/s07/01/330100249", 256, TRUE);
+	OutputLine(NULL, "「そうは行かねぇぜぇ！！",
+			NULL, "\"Buna izin veremeyiz!!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 1, "ps3/s07/01/330100250", 256, TRUE);
+	OutputLine(NULL, "　レナに頼まれたんだ。",
+			NULL, " Rena bizden...", Line_WaitForInput);
+	ModPlayVoiceLS(4, 1, "ps3/s07/01/330100251", 256, TRUE);
+	OutputLine(NULL, "レナを助けてってな！",
+			NULL, " onu kurtarmamızı istedi!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 1, "ps3/s07/01/330100252", 256, TRUE);
+	OutputLine(NULL, "　そして俺はレナを助けると約束した！",
+			NULL, " Ve ben de Rena'yı kurtaracağıma söz verdim!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 1, "ps3/s07/01/330100253", 256, TRUE);
+	OutputLine(NULL, "　今すぐそいつを返してもらうぜぇえぇ！！」",
+			NULL, " Onu hemen şimdi geri ver!!\"", Line_Normal);
+	ClearMessage();
+
+	ModDrawCharacter(4, 10, "sprite/iri2_def2_", "2", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+
+//入江rvS07/10/331000127.「くっくっくっ…それならば前原さん、勝負です！kvS07/10/331000128.　皆さんが教室での決め事を部活で決着するように、ここはひとつ、部活ルールで決着をつけましょう！」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>Irie</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000127", 256, TRUE);
+	OutputLine(NULL, "「くっくっくっ…それならば前原さん、勝負です！",
+			NULL, "\"Heh heh heh... öyleyse bu bir karşılaşma olacak, Maebara-san.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000128", 256, TRUE);
+	OutputLine(NULL, "　皆さんが教室での決め事を部活で決着するように、ここはひとつ、部活ルールで決着をつけましょう！」",
+			NULL, " Pekâlâ, tıpkı sınıftaki anlaşmazlıklarınızı Kulüp oyunlarıyla çözdüğünüz gibi, gelin bu işi de burada Kulüp kurallarınızla çözelim!\"", Line_Normal);
+	ClearMessage();
+
+	ModDrawCharacter(4, 10, "sprite/iri2_warai_", "2", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+
+//入江rvS07/10/331000129.「…とはいえ、もう夜も遅い。kvS07/10/331000130.これ以上引き止めてしまうと、皆さんの親御さんも心配なされるでしょう」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>Irie</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000129", 256, TRUE);
+	OutputLine(NULL, "「…とはいえ、もう夜も遅い。",
+			NULL, "\"...Gerçi vakit bir hayli geç oldu.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000130", 256, TRUE);
+	OutputLine(NULL, "これ以上引き止めてしまうと、皆さんの親御さんも心配なされるでしょう」",
+			NULL, " Sizi burada daha fazla tutarsam eminim hepinizin ailesi endişelenecektir.\"", Line_Normal);
+	ClearMessage();
+
+	ModDrawCharacter(4, 10, "sprite/iri2_def1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+
+//入江rvS07/10/331000131.「そんなわけですから明日の１時、興宮小学校グラウンド前に集合！！kvS07/10/331000132.　いいですね？！」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>Irie</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000131", 256, TRUE);
+	OutputLine(NULL, "「そんなわけですから明日の１時、興宮小学校グラウンド前に集合！！",
+			NULL, "\"Bu yüzden, yarın öğleden sonra saat 1'de Okinomiya İlkokulu bahçesinin önünde buluşalım!!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s07/10/331000132", 256, TRUE);
+	OutputLine(NULL, "　いいですね？！」",
+			NULL, " Anlaşıldı mı?!\"", Line_Normal);
+	ClearMessage();
+
+//圭一rvS07/01/330100254.「おうよ！！kvS07/01/330100255.　…って、なんでそんな場所で？」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#956f6e>圭一</color>", NULL, "<color=#956f6e>Keiichi</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 1, "ps3/s07/01/330100254", 256, TRUE);
+	OutputLine(NULL, "「おうよ！！",
+			NULL, "\"Kabul!!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 1, "ps3/s07/01/330100255", 256, TRUE);
+	OutputLine(NULL, "　…って、なんでそんな場所で？」",
+			NULL, " ...Bir dakika, neden orada?\"", Line_Normal);
+	ClearMessage();
+
+	ModDrawCharacter(3, 6, "sprite/si1b_odoroki_b1_", "2", 240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+
+//詩音rvS07/06/330600087.「え？kvS07/06/330600088.　ちょっとあの、それってまさか…」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>詩音</color>", NULL, "<color=#5ec69a>Shion</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 6, "ps3/s07/06/330600087", 256, TRUE);
+	OutputLine(NULL, "「え？",
+			NULL, "\"Ha?", Line_WaitForInput);
+	ModPlayVoiceLS(4, 6, "ps3/s07/06/330600088", 256, TRUE);
+	OutputLine(NULL, "　ちょっとあの、それってまさか…」",
+			NULL, " Durun bir saniye... Yoksa, olamaz değil mi...?\"", Line_Normal);
+	ClearMessage();
+
+	CallScript("&eye");
+
+}

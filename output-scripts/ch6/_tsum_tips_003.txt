@@ -1,0 +1,69 @@
+// Higurashi Türkçe Çeviri & Yerelleştirme: @Remilya | https://github.com/Remilya/Higurashi
+void main()
+{
+	EnableJumpingOfReturnIcon();
+
+	FadeOutBGM( 0, 0, FALSE );
+	FadeOutBGM( 1, 0, FALSE );
+	FadeOutBGM( 2, 0, FALSE );
+	FadeOutBGM( 3, 0, TRUE );
+
+	Wait( 100 );
+
+	DrawSceneWithMask( "background/nort", "maskleft", 1, 0, 300 );
+
+	PlayBGM( 0, "amber", 56, 0 );
+
+	ClearMessage();
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　きょうは、お母さんといっしょにプールリゾートにあそびに行きました。",
+		   NULL, "Bugün annemle yüzme havuzuna gittik.", Line_Normal);
+	ClearMessage();
+
+	PlaySE( 0, "s_page", 56, 64 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　そしたらアキヒトおじさんもいっしょでした。",
+		   NULL, "Akihito Amca da bizimle geldi.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　たまに礼奈にいじわるするからきらいだけど、とてもやさしくておもしろいおじさんです。",
+		   NULL, "Bazen bana kötü davrandığı için onu sevmiyorum ama çok kibar ve komik bir amca.", Line_Normal);
+	ClearMessage();
+
+	PlaySE( 0, "s_page", 56, 64 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　プールにいるときはアキヒトおじさんがお父さんになってあげるから、礼奈ちゃんはおじさんのことをパパってよぶんだよと言われました。",
+		   NULL, "Havuzda benimle tıpkı babammış gibi oynayacağı için o gün ona Babacığım dememi söyledi.", Line_Normal);
+	ClearMessage();
+
+	PlaySE( 0, "s_page", 56, 64 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　お母さんもパパってよんだので礼奈もパパとよんだら、",
+		   NULL, "Annem ona Babacığım dedi, ben de öyle dedim.", Line_WaitForInput);
+	OutputLine(NULL, "アキヒトおじさんはすごいうれしそうで、礼奈にいっぱいいっぱいおこずかいをくれました。",
+		   NULL, " Akihito Amca çok mutlu göründü ve bana bir sürü para verdi.", Line_Normal);
+	ClearMessage();
+
+	PlaySE( 0, "s_page", 56, 64 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　お母さんもすごいうれしそうで、礼奈もすごいうれしかったです。",
+		   NULL, "Annem çok mutlu görünüyordu, bu da beni mutlu etti.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　またあそびにきたいです。",
+		   NULL, "Onunla tekrar oynamak istiyorum.", Line_WaitForInput);
+	OutputLine(NULL, "こんどはお父さんもいっしょがいいなと思いました。",
+		   NULL, " Umarım bir dahaki sefere babam da bizimle gelebilir.", Line_Normal);
+	ClearMessage();
+
+	DisableWindow();
+	Wait( 1000 );
+	DrawScene( "black", 1000 );
+}

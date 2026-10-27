@@ -1,0 +1,331 @@
+// Higurashi Türkçe Çeviri & Yerelleştirme: @Remilya | https://github.com/Remilya/Higurashi
+void main()
+{
+
+
+//*Hirukowashi Day 9
+//＜＞＜＞＜＞＜＞＜＞＜＞＜＞＜＞
+//＜＞＜＞＜＞＜＞＜＞＜＞＜＞＜＞
+
+//#9 レナ暴走
+
+	DrawSceneWithMask( "bg/ma2", "effect/up", 0, 0, 1000 );
+	PlayBGM( 1, "denwa", 128, 0 );
+	Wait( 3000 );
+	DrawSceneWithMask( "black", "effect/left", 0, 0, 500 );
+	FadeOutBGM(1, 200, TRUE);
+	DrawSceneWithMask( "bg/ma_g3_01", "effect/left", 0, 0, 500 );
+	PlayBGM( 1, "yoru", 128, 0 );
+
+//r夜になり、俺たちが夕食を食べかけていたところに、電話がかかってきた。
+	ClearMessage();
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "夜になり、俺たちが夕食を食べかけていたところに、電話がかかってきた。",
+			NULL, "Hava karardıktan sonra, tam akşam yemeği yemek üzereyken telefon çaldı.", Line_Normal);
+	ClearMessage();
+
+//r準備をひと通り終えたばかりのおふくろが、玄関口へと駆けだしてゆく。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "準備をひと通り終えたばかりのおふくろが、玄関口へと駆けだしてゆく。",
+			NULL, "Hazırlıkları yeni bitiren annem aceleyle ön kapıya doğru koştu.", Line_Normal);
+	ClearMessage();
+
+//圭一rvS07/01/330100211.「うん？kvS07/01/330100213.　誰からだろう。kvS07/01/330100214.まさかレナ絡みか？！」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#956f6e>圭一</color>", NULL, "<color=#956f6e>Keiichi</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 1, "ps3/s07/01/330100211", 256, TRUE);
+	OutputLine(NULL, "「うん？",
+			NULL, "\"Ha?", Line_WaitForInput);
+	ModPlayVoiceLS(4, 1, "ps3/s07/01/330100213", 256, TRUE);
+	OutputLine(NULL, "　誰からだろう。",
+			NULL, " Kim arıyor acaba.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 1, "ps3/s07/01/330100214", 256, TRUE);
+	OutputLine(NULL, "まさかレナ絡みか？！」",
+			NULL, " Rena hakkında olabilir mi?!\"", Line_Normal);
+	ClearMessage();
+
+	FadeOutBGM(1, 500, FALSE);
+	DrawScene("black", 500 );
+	PlaySE(3, "semi_r", 256, 64);
+
+//rまさにその予感通り、電話はレナのお父さんからだった。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "まさにその予感通り、電話はレナのお父さんからだった。",
+			NULL, "Tam da tahmin ettiğim gibi, arayan Rena'nın babasıydı.", Line_Normal);
+	ClearMessage();
+
+//圭一rvS07/01/330100217.「も、もしもし！kvS07/01/330100218.　どうも、こんばんは！」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#956f6e>圭一</color>", NULL, "<color=#956f6e>Keiichi</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 1, "ps3/s07/01/330100217", 256, TRUE);
+	OutputLine(NULL, "「も、もしもし！",
+			NULL, "\"A-Alo?", Line_WaitForInput);
+	ModPlayVoiceLS(4, 1, "ps3/s07/01/330100218", 256, TRUE);
+	OutputLine(NULL, "　どうも、こんばんは！」",
+			NULL, " Evet, iyi akşamlar!\"", Line_Normal);
+	ClearMessage();
+
+//レナの父rvS07/00/VT2A_renaF1001.「夜分遅くにすみませんね。kvS07/00/VT2A_renaF1002.そちらにウチの礼奈がおうかがいしていませんか。kvS07/00/VT2A_renaF1003.夕方頃に急に家を飛び出したっきりまだ帰ってこないんです」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>レナの父</color>", NULL, "<color=#f5e6d3>Rena'nın babası</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s07/00/vt2a_renaf1001", 256, TRUE);
+	OutputLine(NULL, "「夜分遅くにすみませんね。",
+			NULL, "\"Bu kadar geç bir saatte aradığım için özür dilerim.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s07/00/vt2a_renaf1002", 256, TRUE);
+	OutputLine(NULL, "そちらにウチの礼奈がおうかがいしていませんか。",
+			NULL, " Reina orada mı acaba?", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s07/00/vt2a_renaf1003", 256, TRUE);
+	OutputLine(NULL, "夕方頃に急に家を飛び出したっきりまだ帰ってこないんです」",
+			NULL, " Bu akşamın erken saatlerinde evden koşarak çıktı ve hâlâ dönmedi.\"", Line_Normal);
+	ClearMessage();
+
+//圭一rvS07/01/330100219.「急に家を飛び出した？！kvS07/01/330100220.　あの、どんな様子でしたか」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#956f6e>圭一</color>", NULL, "<color=#956f6e>Keiichi</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 1, "ps3/s07/01/330100219", 256, TRUE);
+	OutputLine(NULL, "「急に家を飛び出した？！",
+			NULL, "\"Evden koşarak mı çıktı?", Line_WaitForInput);
+	ModPlayVoiceLS(4, 1, "ps3/s07/01/330100220", 256, TRUE);
+	OutputLine(NULL, "　あの、どんな様子でしたか」",
+			NULL, " Şey, durumu nasıldı?\"", Line_Normal);
+	ClearMessage();
+
+//レナの父rvS07/00/VT2A_renaF1004.「礼奈が悪ふざけをする時のような、猪突猛進な感じでね。kvS07/00/VT2A_renaF1005.てっきり、誰かお友達の家かと思ったんだが……」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>レナの父</color>", NULL, "<color=#f5e6d3>Rena'nın babası</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s07/00/vt2a_renaf1004", 256, TRUE);
+	OutputLine(NULL, "「礼奈が悪ふざけをする時のような、猪突猛進な感じでね。",
+			NULL, "\"Şey, birine şaka yapacağı zamanlardaki gibi gözü hiçbir şeyi görmeden, bodoslama koşar bir haldeydi.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s07/00/vt2a_renaf1005", 256, TRUE);
+	OutputLine(NULL, "てっきり、誰かお友達の家かと思ったんだが……」",
+			NULL, " Arkadaşlarından birinin evine gittiğini düşünmüştüm...\"", Line_Normal);
+	ClearMessage();
+
+//圭一rvS07/01/330100221.「……間違いない。kvS07/01/330100222.誰かが白の勾玉を拾ったんだッ！！」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#956f6e>圭一</color>", NULL, "<color=#956f6e>Keiichi</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 1, "ps3/s07/01/330100221", 256, TRUE);
+	OutputLine(NULL, "「……間違いない。",
+			NULL, "\"...Bu her şeyi kesinleştiriyor.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 1, "ps3/s07/01/330100222", 256, TRUE);
+	OutputLine(NULL, "誰かが白の勾玉を拾ったんだッ！！」",
+			NULL, " Birisi beyaz magatamayı yerden aldı!!\"", Line_Normal);
+	ClearMessage();
+
+	DrawScene("bg/moon", 1000 );
+	PlayBGM(2, "hm02_12", 128, 0);
+	StopSE( 3 );
+	Wait( 2000 );
+	DrawSceneWithMask( "bg/re_s4_01", "effect/up", 0, 0, 1000 );
+	Wait( 2000 );
+	DrawSceneWithMask( "black", "effect/maskc", 0, 0, 500 );
+	ModSetLayerFilter(3, 256, "none");
+	ModDrawCharacter(3, 4, "sprite/sa2a_odoroki_a1_", "2", 240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 0, FALSE );
+	DrawSceneWithMask( "bg/re_h3", "effect/left", 0, 0, 500 );
+
+//沙都子rvS07/04/330400170.「遅れてごめんなさいですわー！！」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#fcdb77>沙都子</color>", NULL, "<color=#fcdb77>Satoko</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 4, "ps3/s07/04/330400170", 256, TRUE);
+	OutputLine(NULL, "「遅れてごめんなさいですわー！！」",
+			NULL, "\"Geç kaldığım için çok özür dilerim!!\"", Line_Normal);
+	ClearMessage();
+
+	ModSetLayerFilter(5, 256, "none");
+	ModDrawCharacter(5, 5, "sprite/ri2_majime_a1_", "2", -240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+
+//梨花rvS07/05/330500139.「……どんな状況なのですか」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 5, "ps3/s07/05/330500139", 256, TRUE);
+	OutputLine(NULL, "「……どんな状況なのですか」",
+			NULL, "\"...Durum nedir?\"", Line_Normal);
+	ClearMessage();
+
+	ModSetLayerFilter(4, 256, "none");
+	ModDrawCharacter(4, 3, "sprite/me2_majime_a1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+
+//魅音rvS07/03/330300105.「うん、今からレナの部屋に入れてもらうところ。kvS07/03/330300106.学校での傾向から見るに、きっと室内に何らかの痕跡が残されてるよ」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>Mion</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 3, "ps3/s07/03/330300105", 256, TRUE);
+	OutputLine(NULL, "「うん、今からレナの部屋に入れてもらうところ。",
+			NULL, "\"Az önce Rena'nın odasına girmek için izin aldık.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 3, "ps3/s07/03/330300106", 256, TRUE);
+	OutputLine(NULL, "学校での傾向から見るに、きっと室内に何らかの痕跡が残されてるよ」",
+			NULL, " Okuldaki davranışlarına bakılırsa içeride bazı ipuçları bırakmış olmalı.\"", Line_Normal);
+	ClearMessage();
+
+//圭一rvS07/01/330100223.「だなぁ。kvS07/01/330100224.そう言えば俺、レナの部屋に入るのって初めてだよ。kvS07/01/330100225.…何だか緊張するなぁ！」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#956f6e>圭一</color>", NULL, "<color=#956f6e>Keiichi</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 1, "ps3/s07/01/330100223", 256, TRUE);
+	OutputLine(NULL, "「だなぁ。",
+			NULL, "\"Evet.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 1, "ps3/s07/01/330100224", 256, TRUE);
+	OutputLine(NULL, "そう言えば俺、レナの部屋に入るのって初めてだよ。",
+			NULL, " Düşünüyorum da, daha önce Rena'nın odasına hiç girmemiştim.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 1, "ps3/s07/01/330100225", 256, TRUE);
+	OutputLine(NULL, "…何だか緊張するなぁ！」",
+			NULL, " ...İnsanı biraz geriyor doğrusu!\"", Line_Normal);
+	ClearMessage();
+
+	FadeOutBGM( 2, 300, FALSE );
+	DrawSceneWithMask( "black", "effect/right", 0, 0, 500 );
+	PlayBGM(2, "hm03_14", 128, 0);
+
+//部活メンバーro55.vS07/01/330100226|S07/03/330300107|S07/04/330400171|S07/05/330500140|S07/06/330600070.「「うっわぁあぁぁ……」」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>部活メンバー</color>", NULL, "<color=#f5e6d3>Kulüp Üyeleri</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 1, "ps3/s07/01/330100226", 256, TRUE);
+	ModPlayVoiceLS(5, 3, "ps3/s07/03/330300107", 256, TRUE);
+	ModPlayVoiceLS(6, 4, "ps3/s07/04/330400171", 256, TRUE);
+	ModPlayVoiceLS(7, 5, "ps3/s07/05/330500140", 256, TRUE);
+	ModPlayVoiceLS(8, 6, "ps3/s07/06/330600070", 256, TRUE);
+	OutputLine(NULL, "「「うっわぁあぁぁ……」」",
+			NULL, "\"\"\"Vay canına...\"\"\"", Line_Normal);
+	ClearMessage();
+
+	DrawSceneWithMask( "bg/si_h2", "effect/up", 0, 0, 1000 );
+
+//圭一rvS07/01/330100227.「何となく想像はついちゃいたが…、すっげえ部屋だなぁ。kvS07/01/330100227_1.散らかっているのか小物だらけで満載なのか区別がつかないぞ！」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#956f6e>圭一</color>", NULL, "<color=#956f6e>Keiichi</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 1, "ps3/s07/01/330100227", 256, TRUE);
+	OutputLine(NULL, "「何となく想像はついちゃいたが…、すっげえ部屋だなぁ。",
+			NULL, "\"Böyle olacağını tahmin etmiştim ama... Bu oda gerçekten bir alem.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 1, "ps3/s07/01/330100227_1", 256, TRUE);
+	OutputLine(NULL, "散らかっているのか小物だらけで満載なのか区別がつかないぞ！」",
+			NULL, " Süs eşyası koleksiyonu mu yoksa sadece hurda yığını mı ayırt edemiyorum!\"", Line_Normal);
+	ClearMessage();
+
+//詩音rvS07/06/330600071.「……それでいて本人にはどこに何があるのか、ちゃんとわかっていたりするんですけどね」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>詩音</color>", NULL, "<color=#5ec69a>Shion</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 6, "ps3/s07/06/330600071", 256, TRUE);
+	OutputLine(NULL, "「……それでいて本人にはどこに何があるのか、ちゃんとわかっていたりするんですけどね」",
+			NULL, "\"...Buna rağmen hazinelerinin her birini tam olarak nerede bulacağını çok iyi biliyor efendim.\"", Line_Normal);
+	ClearMessage();
+
+//魅音rvS07/03/330300108.「相変わらずすごいなぁ。kvS07/03/330300109.よくもこれだけ色々溜め込むもんだよねぇ…。kvS07/03/330300110.レナの前世は犬だね！kvS07/03/330300111.　きっと靴とかを大量に集めてたに違いないよ」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>Mion</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 3, "ps3/s07/03/330300108", 256, TRUE);
+	OutputLine(NULL, "「相変わらずすごいなぁ。",
+			NULL, "\"Tıpkı kendisi gibi müthiş bir yer.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 3, "ps3/s07/03/330300109", 256, TRUE);
+	OutputLine(NULL, "よくもこれだけ色々溜め込むもんだよねぇ…。",
+			NULL, " Bütün bu şeyleri buraya nasıl sığdırmış acaba?", Line_WaitForInput);
+	ModPlayVoiceLS(4, 3, "ps3/s07/03/330300110", 256, TRUE);
+	OutputLine(NULL, "レナの前世は犬だね！",
+			NULL, " Geçmiş yaşamında kesin bir köpek olmalı!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 3, "ps3/s07/03/330300111", 256, TRUE);
+	OutputLine(NULL, "　きっと靴とかを大量に集めてたに違いないよ」",
+			NULL, " Bir sürü ayakkabı falan toplamayı sevdiğine bahse girerim.\"", Line_Normal);
+	ClearMessage();
+
+//圭一rvS07/01/330100228.「俺さぁ、女の子の部屋ってもっと片付いてて、女の子らしいきゃぴきゃぴした部屋なんだって思ってたんだが、kvS07/01/330100229.あれって男の幻想なのかなぁ？kvS07/01/330100230.　レナの部屋もこんなだし、魅音の部屋だって漫画だらけでこんな感じだったぜ？」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#956f6e>圭一</color>", NULL, "<color=#956f6e>Keiichi</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 1, "ps3/s07/01/330100228", 256, TRUE);
+	OutputLine(NULL, "「俺さぁ、女の子の部屋ってもっと片付いてて、女の子らしいきゃぴきゃぴした部屋なんだって思ってたんだが、",
+			NULL, "\"Kızların odalarının her zaman şey... daha düzenli, daha sevimli, aydınlık ve kızsı olacağını düşünürdüm...", Line_WaitForInput);
+	ModPlayVoiceLS(4, 1, "ps3/s07/01/330100229", 256, TRUE);
+	OutputLine(NULL, "あれって男の幻想なのかなぁ？",
+			NULL, " Belki de bu sadece erkeklerin sahip olduğu bir yanılgıdır. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#956f6e>圭一</color>", NULL, "<color=#956f6e>Keiichi</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 1, "ps3/s07/01/330100230", 256, TRUE);
+	OutputLine(NULL, "　レナの部屋もこんなだし、魅音の部屋だって漫画だらけでこんな感じだったぜ？」",
+			NULL, "Yani Rena'nın odası bu halde ve Mion'un odasında da her yerde mangalar saçılmış durumda.\"", Line_Normal);
+	ClearMessage();
+
+//魅音rvS07/03/330300112.「あははははは、おじさんは女の子じゃないからねぇ～！」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>Mion</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 3, "ps3/s07/03/330300112", 256, TRUE);
+	OutputLine(NULL, "「あははははは、おじさんは女の子じゃないからねぇ～！」",
+			NULL, "\"Ahahahaha, şey, ne de olsa bu yaşlı moruk küçük bir kız değil~\"", Line_Normal);
+	ClearMessage();
+
+//詩音rvS07/06/330600072.「…あれぇ？kvS07/06/330600073.　多分それはお姉の漫画部屋の方ですよ？kvS07/06/330600074.　圭ちゃんはお姉の本当の部屋に入ったことはないんですか？kvS07/06/330600075.　母屋じゃなくて離れにある…、むがッ！！」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>詩音</color>", NULL, "<color=#5ec69a>Shion</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 6, "ps3/s07/06/330600072", 256, TRUE);
+	OutputLine(NULL, "「…あれぇ？",
+			NULL, "\"...Ha?", Line_WaitForInput);
+	ModPlayVoiceLS(4, 6, "ps3/s07/06/330600073", 256, TRUE);
+	OutputLine(NULL, "　多分それはお姉の漫画部屋の方ですよ？",
+			NULL, " Sanırım orası sadece Ablamın manga odasıydı.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 6, "ps3/s07/06/330600074", 256, TRUE);
+	OutputLine(NULL, "　圭ちゃんはお姉の本当の部屋に入ったことはないんですか？",
+			NULL, " Kei-chan, daha önce Ablamın asıl odasına hiç girdin mi?", Line_WaitForInput);
+	ModPlayVoiceLS(4, 6, "ps3/s07/06/330600075", 256, TRUE);
+	OutputLine(NULL, "　母屋じゃなくて離れにある…、むがッ！！」",
+			NULL, " Ana binada değil, daha uzaktaki binada— mmff!!\"", Line_Normal);
+	ClearMessage();
+
+	PlaySE(3, "boyoon", 256, 64);
+	StartShakingOfWindow( 278, 30, 0, 4, 2*2, FALSE );
+	StartShakingOfAllObjects( 278, 30, 0, 4, 2*2, TRUE );
+
+//魅音rvS07/03/330300113.「し、詩音！！kvS07/03/330300114.　シーーー！！　シーーーッ！！！」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>Mion</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 3, "ps3/s07/03/330300113", 256, TRUE);
+	OutputLine(NULL, "「し、詩音！！",
+			NULL, "\"Sh-Shion!!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 3, "ps3/s07/03/330300114", 256, TRUE);
+	OutputLine(NULL, "　シーーー！！　シーーーッ！！！」",
+			NULL, " Şşşş!! Şşşş!!!\"", Line_Normal);
+	ClearMessage();
+
+//沙都子rvS07/04/330400172.「あー、見てくださいな！kvS07/04/330400173.　ほら、レナさんの机の上にこんなにも本が！！」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#fcdb77>沙都子</color>", NULL, "<color=#fcdb77>Satoko</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 4, "ps3/s07/04/330400172", 256, TRUE);
+	OutputLine(NULL, "「あー、見てくださいな！",
+			NULL, "\"Aa, şuna bir bakın efendim!!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 4, "ps3/s07/04/330400173", 256, TRUE);
+	OutputLine(NULL, "　ほら、レナさんの机の上にこんなにも本が！！」",
+			NULL, " Şuradaki bütün bu kitaplara bakın!!\"", Line_Normal);
+	ClearMessage();
+
+//r沙都子が指差す先には、レナの学習机。そこには読み散らして積み上げた本の山があった。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "沙都子が指差す先には、レナの学習机。そこには読み散らして積み上げた本の山があった。",
+			NULL, "Satoko parmağıyla Rena'nın çalışma masasını işaret etti. Masanın üzerinde bazıları açık halde duran büyük bir kitap yığını vardı.", Line_Normal);
+	ClearMessage();
+
+	DrawSceneWithMask( "black", "effect/down", 0, 0, 500 );
+
+//圭一rvS07/01/330100231.「今度は何の本だ？！kvS07/01/330100232.　ん～？kvS07/01/330100233.　なんかのハードカバー本か？kvS07/01/330100234.　図書館で借りてきたのかな。kvS07/01/330100235.何々、『現代メイド理論』『メイドの道は一日にして成らず』『美しきご奉仕とは』。kvS07/01/330100236.…何だ、みんなメイドの本じゃないか」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#956f6e>圭一</color>", NULL, "<color=#956f6e>Keiichi</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 1, "ps3/s07/01/330100231", 256, TRUE);
+	OutputLine(NULL, "「今度は何の本だ？！",
+			NULL, "\"Bu sefer ne tür kitaplar var?!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 1, "ps3/s07/01/330100232", 256, TRUE);
+	OutputLine(NULL, "　ん～？",
+			NULL, " Hmm~?", Line_WaitForInput);
+	ModPlayVoiceLS(4, 1, "ps3/s07/01/330100233", 256, TRUE);
+	OutputLine(NULL, "　なんかのハードカバー本か？",
+			NULL, " Bir çeşit ciltli kitaplar mı?", Line_WaitForInput);
+	ModPlayVoiceLS(4, 1, "ps3/s07/01/330100234", 256, TRUE);
+	OutputLine(NULL, "　図書館で借りてきたのかな。",
+			NULL, " Bunları kütüphaneden mi ödünç almış? ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#956f6e>圭一</color>", NULL, "<color=#956f6e>Keiichi</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 1, "ps3/s07/01/330100235", 256, TRUE);
+	OutputLine(NULL, "何々、『現代メイド理論』『メイドの道は一日にして成らず』『美しきご奉仕とは』。",
+			NULL, "Bakalım... 'Modern Hizmetçi Teorisi', 'Hizmetçilik Yolu Bir Günde Yürünmez', 'Güzel Hizmet Nedir'.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 1, "ps3/s07/01/330100236", 256, TRUE);
+	OutputLine(NULL, "…何だ、みんなメイドの本じゃないか」",
+			NULL, " ...Ne oluyor yahu? Bunların hepsi hizmetçiler hakkında kitaplar mı?\"", Line_Normal);
+	ClearMessage();
+
+//r……ん？
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "……ん？",
+			NULL, "...Hmm?", Line_Normal);
+	ClearMessage();
+
+	PlaySE(3, "daidageki", 256, 64);
+	StartShakingOfWindow( 278, 30, 0, 4, 3*3, FALSE );
+	StartShakingOfAllObjects( 278, 30, 0, 4, 3*3, TRUE );
+
+//部活メンバーro55.vS07/01/330100237|S07/03/330300115|S07/04/330400174|S07/05/330500141|S07/06/330600076.「「な、なんだとおぉおおぉおぉ？！」」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>部活メンバー</color>", NULL, "<color=#f5e6d3>Kulüp Üyeleri</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 1, "ps3/s07/01/330100237", 256, TRUE);
+	ModPlayVoiceLS(5, 3, "ps3/s07/03/330300115", 256, TRUE);
+	ModPlayVoiceLS(6, 4, "ps3/s07/04/330400174", 256, TRUE);
+	ModPlayVoiceLS(7, 5, "ps3/s07/05/330500141", 256, TRUE);
+	ModPlayVoiceLS(8, 6, "ps3/s07/06/330600076", 256, TRUE);
+	OutputLine(NULL, "「「な、なんだとおぉおおぉおぉ？！」」",
+			NULL, "\"\"B-bu da neyin nesiiiii?!\"\"", Line_Normal);
+	ClearMessage();
+
+	PlaySE(3, "bb", 256, 64);
+	DrawScene( "white", 1000 );
+
+	CallScript("&eye");
+
+}

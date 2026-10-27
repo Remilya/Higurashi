@@ -1,0 +1,97 @@
+// Higurashi Türkçe Çeviri & Yerelleştirme: @Remilya | https://github.com/Remilya/Higurashi
+void main()
+{
+	EnableJumpingOfReturnIcon();
+	FadeOutBGM( 0, 0, FALSE );
+	FadeOutBGM( 1, 0, FALSE );
+	FadeOutBGM( 2, 0, FALSE );
+	FadeOutBGM( 3, 0, FALSE );
+	ClearMessage();
+
+	DrawScene("background/nort", 1000 );
+	PlayBGM( 0, "semi", 56, 0 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　大石との情報交換は、たまに思い出した頃に行なわれた。",
+		   NULL, "Arada sırada aklımıza geldikçe Ooishi ile bilgi alışverişinde bulunduk.", Line_Normal);
+	ClearMessage();
+	PlaySE( 0, "s_page", 56, 64 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　私も大石も、互いの新情報に期待したが、どちらにも新情報はなく、いつも茶飲み話に終わった。",
+		   NULL, "İkimiz de birbirimizden yeni ipuçları bekliyorduk ama hiçbirimizde yeni bir bilgi yoktu; görüşmelerimiz hep havadan sudan sohbetlerle sona eriyordu.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　もはや、新幹線で東京へなどという話は心の拠り所にさえならない。",
+		   NULL, "Satoshi-kun'un hızlı trenle Tokyo'ya gitmiş olabileceğine dair o söylentiye artık hiç inanmıyorum.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　デマであることは明白だった。",
+		   NULL, "Zaten asılsız bir dedikodu olduğu apaçık ortadaydı.", Line_Normal);
+	ClearMessage();
+	PlaySE( 0, "s_page", 56, 64 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　大石は心を許せないやつではあったけど、…公平な取引という意味での誠意はある男で。",
+		   NULL, "Ooishi'ye güvenip dost olamasam da, anlaşmamız konusunda adil ve samimi davrandı.", Line_WaitForInput);
+	OutputLine(NULL, "単身、根気強く調べてくれたと思う。",
+		   NULL, " Tek başına, sabırla yeni bilgiler ortaya çıkarmak için ciddi bir çaba sarf etti.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　私も大石なら真偽を確かめてくれるに違いない怪情報やデマを仕入れてきては伝えた。",
+		   NULL, "Ooishi'nin kaynakları oldukça güvenilirdi; bu yüzden ne zaman şüpheli bir duyum alsam doğruluğunu teyit etmek için ona danışırdım.", Line_Normal);
+	ClearMessage();
+	PlaySE( 0, "s_page", 56, 64 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　いつしか、そんな会合もだんだん、大石の新しい仕事に圧迫されるようになって。",
+		   NULL, "Yeni davalara atanmasıyla birlikte görüşmelerimiz giderek seyrekleşti.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　……何かあったらいつでもお電話ください、と言う風になって、潰えた。",
+		   NULL, "......Sonunda tamamen görüşmez olduk.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　大石が調べなくなり、私の調べに限界が来し。",
+		   NULL, "Ooishi soruşturmayı bıraktı, benim bilgi kaynaklarım da sınırına dayandı.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　……悟史くんの失踪は「鬼隠し」という超常現象によるもの…",
+		   NULL, "...İnsanlar artık Satoshi-kun'un ortadan kayboluşunun", Line_ContinueAfterTyping);
+	SetValidityOfInput( FALSE );
+	Wait( 1000 );
+	SetValidityOfInput( TRUE );
+	OutputLine(NULL, "という、とんでもない意見がまかり通るようになってくる。",
+		   NULL, " 'iblislerce kaçırılma' (Onikakushi) adında doğaüstü bir olaydan kaynaklandığını düşünüyor.", Line_Normal);
+	ClearMessage();
+	PlaySE( 0, "s_page", 56, 64 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　雛見沢では、悟史くんの失踪は「転校」と称され、口にすることがはばかられるようになっていた。",
+		   NULL, "Hinamizawa'da onun kayboluşundan 'başka okula nakil oldu' diye bahsediliyor ve kimse bunun aksini ağzına almaya cesaret edemiyor.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　…「転校」",
+		   NULL, "...'Nakil oldu' gibi bir ifadeyle...", Line_ContinueAfterTyping);
+	SetValidityOfInput( FALSE );
+	Wait( 1000 );
+	SetValidityOfInput( TRUE );
+	OutputLine(NULL, "なんて言う言葉で、…悟史くんを消してしまうな…。",
+		   NULL, " Satoshi-kun'u silip atmalarından nefret ediyorum.", Line_Normal);
+	ClearMessage();
+	DisableWindow();
+	Wait( 1000 );
+	DrawScene("black", 1000 );
+}

@@ -1,0 +1,37 @@
+// Higurashi Türkçe Çeviri & Yerelleştirme: @Remilya | https://github.com/Remilya/Higurashi
+void main()
+{
+}
+
+void dialog000()
+{
+}
+
+void dialog001()
+{
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 11, "ps3/s20/11/440700099", 256, TRUE);
+	OutputLine(NULL, "「熊ちゃん。",
+		   NULL, "\"Hey, Kuma-chan.", Line_Continue);
+
+	// (backup) SetValidityOfInput( FALSE );
+	Wait( 1000 );
+	// (backup) SetValidityOfInput( TRUE );
+
+	OutputLine(NULL, "ゲート車に同行してバイク持ってきてあげて。",
+		   NULL, " Kamyonetle git ve motosikletleri geri getir.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 11, "ps3/s20/11/440700100", 256, TRUE);
+	OutputLine(NULL, "ヤマハのごつい赤いヤツと、テールランプの右側が割れたヤツ。",
+		   NULL, " Sert görünümlü kırmızı YAMAHA'yı, sağ arka lambası kırık olanı,", Line_WaitForInput);
+	ModPlayVoiceLS(4, 11, "ps3/s20/11/440700101", 256, TRUE);
+	OutputLine(NULL, "あとシートにガムテ貼ってあった白いヤツ。",
+		   NULL, " ve koltuğuna koli bandı yapıştırılmış beyaz olanı al.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 11, "ps3/s20/11/440700102", 256, TRUE);
+	OutputLine(NULL, "それだろ？",
+		   NULL, " Onlar, değil mi? ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 11, "ps3/s20/11/440700103", 256, TRUE);
+	OutputLine(NULL, "　兄さんたちのバイク。」",
+		   NULL, "Sizin motosikletleriniz onlardı, değil mi?\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+}

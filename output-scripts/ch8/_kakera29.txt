@@ -1,0 +1,525 @@
+// Higurashi Türkçe Çeviri & Yerelleştirme: @Remilya | https://github.com/Remilya/Higurashi
+void main()
+{
+	DrawScene( "black", 400 );
+
+	DrawScene( "background/ho1", 1000 );
+
+	PlayBGM( 0, "hgrs03", 120, 0 );
+
+	ClearMessage();
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　北条家と言えば、ダム戦争時に村全体と対立していた名物一家だ。",
+		   NULL, "Houjou Ailesi, baraj anlaşmazlığı sırasında bütün köye karşı çıkmasıyla tanınır.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　夫婦共に気性の激しいタイプで、特に園崎家と敵意剥き出しの喧嘩をしていた。",
+		   NULL, "Hem koca hem de karısı oldukça saldırgan insanlardı ve özellikle Sonozaki Ailesi'ne karşı çetin bir mücadele verdiler.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　反ダムで結束していた村中から冷たい目で見られていたが、夫婦は共に蛙の面に水といった感じで、実にふてぶてしく戦っていたことが知られている。",
+		   NULL, "Bütün köy onlara soğuk davransa da karı koca bunu pek umursamadı ve savaşmaya devam etti.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　ある意味、実にたくましい夫婦だった。",
+		   NULL, "Bir bakıma son derece güçlü iradeli insanlardı.", Line_Normal);
+	ClearMessage();
+
+	DrawSceneWithMask( "black", "maskup", 1, 0, 300 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　だが、それに付き合わされる子供は大変だったに違いない。",
+		   NULL, "Gerçi çocuklarının onlar yüzünden çok şey çekmek zorunda kaldığına eminim.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　沙都子ちゃんも、悟史くんも、親のとばっちりで村中から冷遇されていたのだから。",
+		   NULL, "Satoko-chan ve Satoshi-kun da köylüler tarafından soğuk bir muameleye maruz kaldı.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　さらにそれに加え、血のつながっていない父親と沙都子ちゃんの不仲というトラブルもあって、２人の精神的ストレスは限界まで高まっていたに違いない。",
+		   NULL, "Buna ek olarak Satoko-chan ile üvey babası anlaşamıyordu, dolayısıyla stres seviyeleri sınırına dayanmış olmalıydı.", Line_Normal);
+	ClearMessage();
+
+	DrawScene( "background/sinryou_sinsatu1", 1000 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　私は診療所の所長という、厚かましく言えば、村の名士的立場だったため、色々な人から話を聞けた。",
+		   NULL, "Yerel kliniğin direktörü ve toplumun oldukça saygın bir üyesi olduğum için insanlar genelde bana pek çok şey anlatır.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　……だから、２人がどれだけ冷遇されていて辛い目に遭っているかは、実際に会う前から知っていたのだった。",
+		   NULL, "Bu yüzden onlarla tanışmadan önce bile gördükleri muamelenin farkındaydım.", Line_Normal);
+	ClearMessage();
+
+	DisableWindow();
+	ModSetLayerFilter(0, 256, "none");
+	ModDrawCharacterWithFiltering(0, 7, "sprite/sato1_komaru_", "0", "maskleft", 1, 0, 0, FALSE, 0, 0, 0, 0, 0, 9, 1300, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　北条兄妹との縁は、沙都子ちゃんより悟史くんの方が先だった。",
+		   NULL, "İlk olarak Satoshi-kun ile tanıştım.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　日々のストレスに耐えかねて体調を崩し、悟史くんが診療所にやってきたからだ。",
+		   NULL, "Satoshi-kun aşırı stresten dolayı kendini hasta hissettiği için kliniğe gelmişti.", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　彼自身は最初、自分の症状を風邪か何かだと信じていたようだった。",
+		   NULL, "Soğuk algınlığına yakalandığını düşünmüş olmalıydı.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　だから本人も、多分、風邪だと思いますと私に自己申告した。",
+		   NULL, "Onu muayene ettiğimde bana bizzat öyle söyledi.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　……その時の、ため息の多い様子や、疲れ切った目。",
+		   NULL, "Ama art arda iç çekişlerini duyduğumda ve gözlerindeki bitkin ifadeyi gördüğümde,", Line_WaitForInput);
+
+	OutputLine(NULL, "　悟史くんの体調不良が、風邪などという単純な理由によるものでないことを、私はすぐに感じ取ったのだった。",
+		   NULL, " bunun basit bir soğuk algınlığı olmadığını hemen anladım.", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　多少の薬を与えれば、今この場の症状を癒すことはできるだろう。",
+		   NULL, "İlaçlar belirtilerini iyileştirirdi.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　だが、それは一時の誤魔化しにしかならない。",
+		   NULL, "Ama bu yalnızca geçici bir önlem olurdu.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　本当の意味で治療するには、彼の生活環境そのものを治療する他なかった。",
+		   NULL, "Onu gerçekten iyileştirmenin tek yolu yaşam ortamını değiştirmekti.", Line_Normal);
+	ClearMessage();
+
+	DrawSceneWithMask( "background/sinryou_sinsatu4", "maskdown", 1, 0, 300 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　だが、口で言うのは容易い。",
+		   NULL, "Fakat bunu söylemek yapmaktan çok daha kolaydı.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　…彼を取り巻く村や家庭の環境は複雑に絡み合い、薬を飲ませて三日も安静にすればすっきり治る、などという状況では決してない。",
+		   NULL, "Köyle ve ailesiyle iç içe geçmiş karmaşık ilişkilerle kuşatılmıştı; bu yüzden sadece birkaç gün dinlenip biraz ilaç almak işe yaramazdı.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　北条家を冷遇する村の気質は、おそらく時間にしか解消できず、しかもそれはとてもとても長い年月をかけることになるのは間違いなかった。",
+		   NULL, "Köylülerin soğuk muamelesini yumuşatabilecek tek şey zamandı ama çok, çok uzun bir zamandan bahsediyorduk.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　………だからこそ、村中から冷遇されている彼を救うため、私がこの村で最初の味方になってあげなくてはと思った。",
+		   NULL, "...İşte bu yüzden onları kurtarabilmek adına bu köydeki ilk müttefikleri olmam gerektiğini hissettim.", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　ストレスを与える環境を治すことができないなら、彼が受けるストレスを、何とか緩和できるようにするしかない。",
+		   NULL, "Stresli ortamı hakkında bir şey yapamazdım ama kaygısını azaltmaya çalışabilirdim.", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　それには、彼にストレスの発散方法を教えるのが一番だと考えた。",
+		   NULL, "Bunun en iyi yolunun da ona stresini nasıl atacağını öğretmek olduğunu düşündüm.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　ストレスを発散するならば、適度な運動に勝るものはない。",
+		   NULL, "Ve spor yapmak bunun için en iyi yoldur.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　私は自分が監督を務める少年野球チームに彼を誘った。",
+		   NULL, "Ben de ona koç olarak çalıştırdığım genç beyzbol takımına katılmasını teklif ettim.", Line_Normal);
+	ClearMessage();
+
+	DrawScene( "background/oki_g3", 400 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　もちろん、私は若い研究の徒であり、時間の限りを雛見沢症候群の研究に捧げていたわけだが、それだけでは気が滅入る。",
+		   NULL, "Bir araştırmacı olarak vaktimin çoğunu Hinamizawa Sendromu'na adıyorum ama rahatlamak için benim de başka bir şeyler yapmaya ihtiyacım var.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　少年時代に野球をやっていたこともあり、地域の少年野球チームに指導者として参加するようになっていた。",
+		   NULL, "Eskiden beyzbol oynardım, bu yüzden yerel çocuk takımına koç olmaya karar verdim.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　……それがいつの間にやら、雛見沢の子たちで分離独立することになり、その監督に祭り上げられてしまったのだ。",
+		   NULL, "Bir süre sonra Hinamizawa'nın çocukları kendi beyzbol takımlarını kurdular ve bir şekilde onlara da koç oldum.", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　医師は薬だけで健康を守るのではない。",
+		   NULL, "Doktorlar sadece ilaç vererek sağlık sağlayamazlar.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　健全な魂は健全な肉体に宿る。",
+		   NULL, "Sağlam kafa sağlam vücutta bulunur.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　スポーツを通じても健康を守ることができるはずだ。",
+		   NULL, "Sağlığın spor yoluyla da korunabileceğine inanıyorum.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　だが、新造チームではメンバーが足りない。",
+		   NULL, "Ama takımımızın daha fazla oyuncuya ihtiyacı vardı.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　…そこで、悟史くんを野球に誘うことを思いついたのだった。",
+		   NULL, "Ben de Satoshi-kun'a katılmasını teklif etmeyi düşündüm.", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　悟史くんは自他ともに認める文学少年で、スポーツにはそれほど関心がなく、現在の窒息しそうな状況が、野球チームに加わることでどう解消できるのか疑問なようだった。",
+		   NULL, "Tam bir kitap kurdu olan Satoshi-kun spor yapmakla pek ilgilenmiyordu. Beyzbol takımına katılmanın kendi durumuna nasıl bir faydası olacağından emin değildi.", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　どうしてスポーツがストレス発散に効果的なのか、スポーツ医学を延々と説く必要はない。",
+		   NULL, "Sporun insanların sağlıklı olmasına neden yardımcı olduğunu açıklamak için spor hekimliği hakkında uzun uzadıya nutuk çekmeme gerek yoktu.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　彼自身が実際にスポーツで汗を流し、その効果を実感してくれればそれに勝る説明はないのだ。",
+		   NULL, "Sadece spor yapmanın ne kadar harika hissettirdiğini fark etmesi için bunu bizzat deneyimlemesini istedim.", Line_Normal);
+	ClearMessage();
+
+	DrawScene( "background/sora", 400 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　彼もそれを次第に実感していったに違いない。",
+		   NULL, "Sanırım bunu yavaş yavaş fark etti.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　…最後の最後まで渋々ではあったけど、チームの行事や試合には、熱心に参加してくれたのだから。",
+		   NULL, "En sonuna kadar çekimser kaldı ama tüm takım etkinliklerine ve maçlara katıldı.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　私は少しずつ溌剌さを取り戻していく悟史くんを見て、自分の指導は間違ってなかったと、ひとり悦に浸っていた。",
+		   NULL, "Satoshi-kun'un canlılığını yavaş yavaş geri kazandığını gördükçe planımın işe yaradığını anladım.", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　だが、悟史くんがこれほどのストレスを抱えていたならば、",
+		   NULL, "Ancak Satoshi-kun bu kadar stres altındaysa,", Line_WaitForInput);
+	OutputLine(NULL, "同じ家庭環境を持つ沙都子ちゃんだって、まったく同じに違いない。",
+		   NULL, " aynı aile ortamında yaşayan Satoko-chan da aynı şekilde hissediyor olmalıydı.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　浅はかにも、この頃の私は沙都子ちゃんのことまでは考えていなかった。",
+		   NULL, "Maalesef o zamanlar onu akıl edemedim.", Line_Normal);
+	ClearMessage();
+
+	DrawScene( "black", 400 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　………だから、沙都子ちゃんが私の前に患者として運ばれてきた時、沙都子ちゃんの境遇を失念していたことをひどく後悔した。",
+		   NULL, "...Bu yüzden Satoko-chan kliniğime hasta olarak taşındığında, durumu bilmeme rağmen onun için hiçbir şey yapmadığıma çok pişman oldum.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　悟史くんが、私の指導のもとで次第に元気さを取り戻していく間にも、沙都子ちゃんはストレス環境にひとり置き去りにされていたのだ。",
+		   NULL, "Satoshi-kun benim rehberliğimde iyileşirken Satoko-chan o stresli ortamda yapayalnız kalmıştı.", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　また、この時期、沙都子ちゃんが倒れるに値するだろう事件もあった。",
+		   NULL, "Ayrıca tam o sıralarda Satoko-chan'ın yıkılmasına yetecek kadar kötü bir olay yaşandı.", Line_Normal);
+	ClearMessage();
+
+	DrawScene( "background/aka1", 400 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　それは、両親の事故だった。",
+		   NULL, "Bu elbette ebeveynlerinin ölümüydü.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　村祭りの意味の他に、ダム戦争の勝利記念日の意味合いも強かった当時は、北条一家にとって綿流しの当日は、非常に居心地の悪い時期だった。",
+		   NULL, "Watanagashi festivali günü Houjou Ailesi için çok rahatsız edici bir zamandı; çünkü bir köy festivali olmasının yanı sıra baraj inşaatı projesine karşı kazanılan zaferin de kutlandığı gündü.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　その時期に家族旅行の予定を入れ村をしばらく離れようとしたのは、とても理解できることだった。",
+		   NULL, "Köyden uzaklaşabilmek için o sıralarda bir aile gezisi planlamaları anlaşılabilir bir durumdu.", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　その旅行先の公園で、沙都子ちゃんの両親は転落する。",
+		   NULL, "Satoko-chan'ın ebeveynleri ziyaret ettikleri parktaki uçurumdan düştü.", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　本当に運の悪い日の事故だった。",
+		   NULL, "Böylesine uğursuz bir günde yaşanmıştı.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　……綿流しの日であったばかりに、それはやがて、オヤシロさまの祟りとして語り継がれることになるからだ。",
+		   NULL, "Watanagashi gününde gerçekleştiği için insanlar bunun Oyashiro-sama'nın laneti olduğunu söyledi.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　そして、北条家はオヤシロさまの祟りを受けた呪われた一家というレッテルを貼られることにも…。",
+		   NULL, "Ve insanlar Houjou Ailesi'ni Oyashiro-sama tarafından lanetlenmiş bir aile olarak yaftaladı.", Line_Normal);
+	ClearMessage();
+
+	DrawScene( "background/aka2", 400 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　村中から後ろ指を指されているのは両親だった。",
+		   NULL, "Ebeveynlerine köydeki herkes sırt çevirmişti.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　だから両親が死んだなら、それで冷遇はおしまいになるはずだったろうに。",
+		   NULL, "Dolayısıyla ebeveynleri öldükten sonra Satoshi ve Satoko'nun bundan kurtulmuş olması gerekirdi ama...", Line_WaitForInput);
+	OutputLine(NULL, "……本当に運の悪いことに、綿流しの日に事故があったばっかりに…。",
+		   NULL, " Maalesef kaza Watanagashi gününde meydana geldi. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "北条家への冷遇は、清算されることなくいつまでも残り続けることになる……。",
+		   NULL, "Bu yüzden Houjou Ailesi'nin fertleri dışlanmaya devam ediyor.", Line_Normal);
+	ClearMessage();
+
+	DrawScene( "black", 400 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　転落事故の現場には沙都子ちゃんだけがいた。",
+		   NULL, "Kaza yerinde bulunan tek kişi Satoko-chan'dı.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "（その日は私の野球チームの行事に参加していたため、悟史くんは旅行に行っていなかったのだ）",
+		   NULL, "(Beyzbol takımıyla bir etkinliği olduğu için Satoshi-kun geziye gitmemişti.)", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　その為、警察の事情聴取などは沙都子ちゃん１人に集中した。",
+		   NULL, "Bu nedenle polis ağırlıklı olarak onu sorguya çekti.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　……警察の大石は、村の組織犯罪を疑っているとか何とかで、唯一、現場に居合わせた沙都子ちゃんを質問攻めにしたという。",
+		   NULL, "...Dedektif Ooishi köy tarafından işlenen organize bir suçtan şüpheleniyordu, bu yüzden olay yerindeki tek tanık olan Satoko-chan'ı soru yağmuruna tuttu.", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　悟史くん以上のストレスを持ち、これだけのことが一度に押し寄せてどうにかならない方がおかしい。",
+		   NULL, "Satoko-chan da en az Satoshi-kun kadar, hatta belki daha da fazla stres altındaydı; dolayısıyla buna dayanamaması çok doğaldı.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　警察の事情聴取中、感情が高ぶり呼吸困難を起こした、とのことだった。",
+		   NULL, "Sorgu sırasında hırıltıyla solumaya ve nefes almakta zorlanmaya başladı.", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　運び込まれてきた時の沙都子ちゃんの、苦悶に満ちた表情は、とてもとても痛ましいものだった。",
+		   NULL, "Kliniğe taşındığında Satoko-chan'ın yüzünde gördüğüm o ızdırap dolu ifade çok ama çok trajikti.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　この華奢な体で、どれほどの辛い思いを受け止めてきたのか、それを測るだけでも胸が痛んだ。",
+		   NULL, "Neler çekmek zorunda kaldığını hayal etmek bile kalbimi parçaladı.", Line_Normal);
+	ClearMessage();
+
+	FadeOutBGM( 0, 300, FALSE );
+	ModSetLayerFilter(2, 256, "none");
+	ModDrawCharacter(2, 7, "sprite/sato1_ikari_", "1", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 10, 0, FALSE );
+	DrawSceneWithMask( "background/sinryou_matiai1", "maskup", 1, 0, 300 );
+
+	PlayBGM( 0, "higurashi", 120, 0 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#ffdc6f>悟史</color>", NULL, "<color=#ffdc6f>Satoshi</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 7, "ps3/s20/07/vtk1_satoshi1027", 128, TRUE);
+	OutputLine(NULL, "「……監督、沙都子は大丈夫ですか…！」",
+		   NULL, "\"...Koç, Satoko iyi mi?\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>Irie</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/vtk1_irie1097", 128, TRUE);
+	OutputLine(NULL, "「えぇ、安心してください。",
+		   NULL, "\"Evet, merak etme.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/vtk1_irie1098", 128, TRUE);
+	OutputLine(NULL, "一時的に混乱してしまっただけですよ。」",
+		   NULL, " Kafası biraz karışık ama bu sadece geçici bir durum. Hepsi bu.\"", Line_Normal);
+	ClearMessage();
+
+	FadeBustshot( 2, FALSE, 0, 0, 0, 0, 200, TRUE );
+	ModDrawCharacterWithFiltering(0, 7, "sprite/sato1_def1_", "0", "maskright", 1, 0, 0, FALSE, 0, 0, 0, 0, 0, 9, 200, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#ffdc6f>悟史</color>", NULL, "<color=#ffdc6f>Satoshi</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 7, "ps3/s20/07/vtk1_satoshi1028", 128, TRUE);
+	OutputLine(NULL, "「会っても大丈夫ですか？」",
+		   NULL, "\"Onu görebilir miyim?\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>Irie</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/vtk1_irie1099", 128, TRUE);
+	OutputLine(NULL, "「やっと薬でぐっすり眠れたところです。",
+		   NULL, "\"Nihayet uykuya daldı...", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/vtk1_irie1100", 128, TRUE);
+	OutputLine(NULL, "できれば起こさないであげたいところです。",
+		   NULL, " o yüzden şimdilik onu uyandırmamayı tercih ederim.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/vtk1_irie1101", 128, TRUE);
+	OutputLine(NULL, "しばらくゆっくり休ませてあげましょう。",
+		   NULL, " Bırakalım biraz dinlensin.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/vtk1_irie1102", 128, TRUE);
+	OutputLine(NULL, "様子を見て、数日入院させてあげるのもいいかもしれません。",
+		   NULL, " Birkaç gün burada kalması da iyi bir fikir olabilir.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/vtk1_irie1103", 128, TRUE);
+	OutputLine(NULL, "…大丈夫。",
+		   NULL, " ...Merak etme.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/vtk1_irie1104", 128, TRUE);
+	OutputLine(NULL, "私に任せてください。」",
+		   NULL, " Ona çok iyi bakacağım.\"", Line_Normal);
+	ClearMessage();
+
+	DisableWindow();
+	ModDrawCharacter(0, 7, "sprite/sato1_warai_", "1", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 9, 200, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#ffdc6f>悟史</color>", NULL, "<color=#ffdc6f>Satoshi</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 7, "ps3/s20/07/vtk1_satoshi1029", 128, TRUE);
+	OutputLine(NULL, "「…あ、ありがとうございます。」",
+		   NULL, "\"T-Teşekkür ederim.\"", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　悟史くんがとても妹思いな尊敬できる兄であることは知っていた。",
+		   NULL, "Satoshi-kun'un kız kardeşini gerçekten önemseyen harika bir ağabey olduğunu biliyorum.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　そして、妹の心の痛みを共有できる感受性があることも。",
+		   NULL, "Onunla derin bir empati kuruyor.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　……つまり、悟史くんが持つ悩みもストレスも、全て沙都子ちゃんを映す鏡だったのだ。",
+		   NULL, "Başka bir deyişle, Satoshi-kun'un endişeleri ve stresi bizzat Satoko-chan'ın durumunu yansıtıyordu.", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　不謹慎だからと思い口にしなかっただろうが、…悟史くんは両親の事故を悲しむと同時に、安堵したところもあったかもしれない。",
+		   NULL, "Belki bunu söylememeliyim ama Satoshi-kun ebeveynlerinin ölümüne elbette üzülmüş olsa da, aynı zamanda artık hayatta olmadıkları için biraz rahatlamış olabilir.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　なぜなら、これでもう、妹は心を追い詰められることがないからだ。",
+		   NULL, "Kız kardeşi artık köşeye sıkıştırılmak zorunda kalmayacaktı.", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　悟史くんのような、血のつながらない父とうまくやれる世渡り上手さは、沙都子ちゃんにまったくなかった。",
+		   NULL, "Satoshi-kun'un aksine Satoko-chan üvey babasıyla geçinebilecek sosyal becerilere sahip değildi.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　だから、母はともかく、最大のストレス源である父がいなくなったのは、沙都子ちゃんの環境に、大きな変化をもたらすに違いなかったのだ。",
+		   NULL, "Bu nedenle annesini bir kenara bırakırsak, hayatındaki en büyük stres kaynağı olan babasını kaybetmenin ev ortamına büyük bir değişim getireceğinden emindim.", Line_Normal);
+	ClearMessage();
+
+	DrawScene( "black", 400 );
+
+	PlayBGM( 1, "semi_r", 120, 0 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　…………しかし何ということ。",
+		   NULL, "......Ama sonrasında yaşananlara inanamadım.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　…この後に２人は、さらに劣悪な環境である叔父夫婦のところへ預けられることになってしまう……。",
+		   NULL, "İkisi, yengeleri ve amcalarıyla birlikte çok daha kötü bir ortamda yaşamaya gönderildi.", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　この時点では、新しい生活環境が兄妹にとってやさしいものであればいいという、少し楽観的な印象を持っていた…。",
+		   NULL, "Gerçi o sıralarda bu yeni ortamın kardeşler için daha iyi olacağını düşünerek oldukça iyimserdim.", Line_Normal);
+	ClearMessage();
+
+	CallScript( "&eye" );
+	FadeOutBGM( 0, 1000, FALSE );
+	FadeOutBGM( 1, 1000, FALSE );
+	DrawScene( "black", 1000 );
+
+}

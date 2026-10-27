@@ -1,0 +1,87 @@
+// Higurashi Türkçe Çeviri & Yerelleştirme: @Remilya | https://github.com/Remilya/Higurashi
+void main()
+{
+	DrawScene( "black", 400 );
+
+	DrawScene( "white", 1000 );
+
+	PlayBGM( 0, "maturi_01_Ver2", 120, 0 );
+
+	DrawSceneWithMask( "background/fure2", "maskm1", 1, 0, 1300 );
+
+	ClearMessage();
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　……長かった。",
+		   NULL, "Uzundu.", Line_WaitForInput);
+	OutputLine(NULL, "…本当に長かった。",
+		   NULL, " Gerçekten çok uzundu.", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　大丈夫…？",
+		   NULL, "İyi misiniz?", Line_WaitForInput);
+	OutputLine(NULL, "　まだ、あなたの精神は生きている…？",
+		   NULL, " Ruhunuz hâlâ canlı mı?", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　これで、私たちが欲しい駒は全てゲーム盤に並んだのかしら。",
+		   NULL, "Oyun tahtasında dizilmiş olarak görmek istediğimiz tüm taşlara sahip miyiz?", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　昭和５８年６月を巡る、運命のゲームで、鷹野たちに勝てるだけの駒が並んだのかしら。",
+		   NULL, "1983 Haziran'ındaki kader oyununda Takano ve yardakçılarının karşısına çıkabilecek elimizdeki her şey bu mu?", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　……私は、",
+		   NULL, "Sanırım,", Line_WaitForInput);
+	OutputLine(NULL, "多分、",
+		   NULL, " belki de,", Line_ContinueAfterTyping);
+	SetValidityOfInput( FALSE );
+	Wait( 800 );
+	SetValidityOfInput( TRUE );
+	OutputLine(NULL, "並んだと思ってる。",
+		   NULL, " her şeye sahibiz.", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　あとは、羽入。",
+		   NULL, "Ve son olarak ama en az diğerleri kadar önemli olan, Hanyuu,", Line_WaitForInput);
+	OutputLine(NULL, "…あなただけね。",
+		   NULL, " sensin.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　あなたが駒として登場できる時間は、もう相当に制限されている。",
+		   NULL, "Bir taş olmak için geriye kalan zamanın sınırlı.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　でも、ゲームに登場できなくなったわけじゃない。",
+		   NULL, "Ama bu, oyunda boy gösteremeyeceğin anlamına gelmez.", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　………さぁ、始めましょう？",
+		   NULL, "...Başlayalım mı?", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　この日のために、数百年もの時間を賭けたのだから。",
+		   NULL, "Sırf bu an için yüzlerce yıl harcadım.", Line_Normal);
+	ClearMessage();
+
+	DisableWindow();
+	SetValidityOfInput( FALSE );
+	Wait( 5000 );
+	SetValidityOfInput( TRUE );
+	CallScript( "&eye" );
+	FadeOutBGM( 0, 1000, FALSE );
+	DrawScene( "black", 1000 );
+
+}

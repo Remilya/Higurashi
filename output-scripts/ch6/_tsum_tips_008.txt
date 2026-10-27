@@ -1,0 +1,235 @@
+// Higurashi Türkçe Çeviri & Yerelleştirme: @Remilya | https://github.com/Remilya/Higurashi
+void main()
+{
+	EnableJumpingOfReturnIcon();
+
+	FadeOutBGM( 0, 0, FALSE );
+	FadeOutBGM( 1, 0, FALSE );
+	FadeOutBGM( 2, 0, FALSE );
+	FadeOutBGM( 3, 0, TRUE );
+
+	Wait( 100 );
+
+	DrawSceneWithMask( "background/sinryou_sinsatu4", "maskleft", 1, 0, 300 );
+
+	PlayBGM( 0, "depressive paranoia", 56, 0 );
+
+	if (GetGlobalFlag(GADVMode) == 0) { SetDrawingPointOfMessage( 0, 6 ); }
+
+	ClearMessage();
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "黒田メンタルクリニック殿",
+		   NULL, "         Alıcı: Kuroda Ruh Sağlığı Kliniği", Line_Normal);
+	ClearMessage();
+
+	PlaySE( 0, "s_page", 56, 64 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　前略。",
+		   NULL, "Merhaba.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　まず結論から申し上げて、急性の心的外傷後ストレス障害の一種であると考えられます。",
+		   NULL, "Doğrudan konuya girecek olursak, bunun akut bir travma sonrası stres bozukluğu vakası olduğunu varsayabiliriz.", Line_Normal);
+	ClearMessage();
+
+	PlaySE( 0, "s_page", 56, 64 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　両親の突然の離婚により、どちらかの親を選択しなければならない葛藤が、患者に強いストレスを与えたものと推測します。",
+		   NULL, "Hasta, ebeveynlerinin ani boşanması ve annesi ya da babasından biriyle yaşamayı seçmeye zorlanması nedeniyle muazzam bir stres altındadır.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　加えて、患者は両親の離婚に対し自身に責任があると強い思い込みがあり、それが自己破壊願望を助長しているものと思われます。",
+		   NULL, "Ayrıca hasta, ebeveynlerinin boşanmasından kendisinin sorumlu olduğuna kesin bir şekilde inanmakta, bu da onu kendine zarar vermeye daha da itmektedir.", Line_Normal);
+	ClearMessage();
+
+	PlaySE( 0, "s_page", 56, 64 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　患者にとって最大のショックは、両親の離婚によって、絶対に安全だと心を許していた家庭という居場所に裏切られたことによります。",
+		   NULL, "Hastanın yaşadığı en büyük şok, mutlak bir güvenli liman olduğuna inandığı kendi yuvasının ihanete uğradığı hissinden kaynaklanmaktadır.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　よって今後、親子の居場所に対して、偏執的な防衛をする傾向が予想されます。",
+		   NULL, "Bundan böyle, hastanın ailesini korumak amacıyla psikolojik savunma mekanizmalarına başvurma ihtimali oldukça yüksektir.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　（例えば、父親に対して特に異性の接近を嫌う。",
+		   NULL, "(Örneğin, babasına yaklaşan karşı cinsten herhangi bir kişiye karşı aşırı bir nefret ve küçümseme duyabilir.", Line_WaitForInput);
+	OutputLine(NULL, "自宅に他人を招き入れることを嫌う。",
+		   NULL, " Evinde başka insanların bulunmasından rahatsızlık duyabilir. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "もしくは招き入れられないように何らかの奇抜な行為を行なう可能性もあります。",
+		   NULL, "Ayrıca insanları evden uzak tutmak amacıyla tuhaf davranışlar sergileyebilir.", Line_WaitForInput);
+	OutputLine(NULL, "事例では、意識せずして自宅内にゴミを溜め込んだケースがあります）",
+		   NULL, " İkincisine bir örnek olarak, hastaların bilinçsizce eve çöp taşıdığı bildirilmiş vakalar mevcuttur.)", Line_Normal);
+	ClearMessage();
+
+	PlaySE( 0, "s_page", 56, 64 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　まず大切なことは、患者が同居を決めた父親とのコミュニケーションです。",
+		   NULL, "Hastanın babasıyla yakın iletişim içinde kalması son derece önemlidir.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　父親は患者とのコミュニケーションを深めることで、家族仲を一層強めて、その不安を和らげることが何よりも大切となります。",
+		   NULL, "İkisi arasındaki iletişimin derinleştirilmesi, aile bağlarını güçlendirecek ve hastanın kaygısını hafifletecektir.", Line_Normal);
+	ClearMessage();
+
+	PlaySE( 0, "s_page", 56, 64 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　今回の患者のケースでは、おそらくは急性のものと思われますので、父親の協力があればおそらく、然るべき薬物との併用で、３ヶ月以内に治癒するものと思います。",
+		   NULL, "Hasta bu vakada yalnızca akut bir sendromun belirtilerini gösterdiğinden, babasının desteği ve uygun ilaç tedavisiyle üç ay içinde iyileşme şansı oldukça yüksektir.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　ただし、一見治癒したかに見えても、トラウマ体験から１０年以上を経てなお再体験（フラッシュバック）を起こすケースも少なくありません。",
+		   NULL, "Bununla birlikte, iyileşmiş gibi görünen bir hastanın on yıl sonra bile ani bir nüksetme (geriye dönüş / flashback) yaşaması yaygın bir durumdur.", Line_Normal);
+	ClearMessage();
+
+	PlaySE( 0, "s_page", 56, 64 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　父親はまだ若く、再婚の可能性も将来、充分に残っています。",
+		   NULL, "Babası hâlâ oldukça gençtir ve yeniden evlenme ihtimali mevcuttur.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　ですが、再婚によって見知らぬ異性を見ることは、患者に再体験を引き起こし、回避行為、過覚醒を誘発するものと考えられます。",
+		   NULL, "Ancak, yeniden evlilik yoluyla karşı cinsten yabancı birini görmek hastada geçmişe dönüşü tetikleyebilir; bu da kaçınma davranışına veya aşırı tetikte olma haline yol açabilir.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　父親にこの辺りをよく説明し、患者のケアに理解を得るようにしてください。",
+		   NULL, "İyileşme sürecini anlayabilmesi için lütfen bu kısmı babaya etraflıca açıklayın.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　もしも父親に再婚が内定していた場合、最低でも患者が独立して親離れをするまで打ち明けるべきではありません。",
+		   NULL, "Babanın yeniden evlenmeye karar vermesi halinde, hasta kendi başına yaşayabilecek yaşa gelene kadar bunu ona söylemeyi ertelemesi tavsiye edilir.", Line_Normal);
+	ClearMessage();
+
+	PlaySE( 0, "s_page", 56, 64 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　そして今回の患者のケースで重要な点は、患者の自傷の原因であると思われる「寄生虫妄想症」には、「文化依存症候群」も関係していると思われる点です。",
+		   NULL, "Ayrıca hastanın psikosomatik kendine zarar verme davranışının nedeni olan sanrısal parazitoz, kendine özgü bir kültüre bağlı sendrom gibi görünmektedir.", Line_Normal);
+	ClearMessage();
+
+	PlaySE( 0, "s_page", 56, 64 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　患者は郷里の村を離れることで祟りがあると妄信しており、この祟りの結果によって両親が離婚したとしています。",
+		   NULL, "Hasta, memleketi olan köyden ayrılmanın bir lanete yol açacağına ve ebeveynlerinin boşanmasının sebebinin bu lanet olduğuna körü körüne inanmaktadır.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　これにより、自己の責任から郷里の祟りに責任を転嫁することで、心的損傷の軽減・防衛を無意識に行なっているものと思います。",
+		   NULL, "Bunun, suçu kendisinden köyünün lanetine yükleyerek ruhsal travmasını hafifletmeye yönelik bilinçaltı bir savunma mekanizması olduğuna inanıyoruz.", Line_Normal);
+	ClearMessage();
+
+	PlaySE( 0, "s_page", 56, 64 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　問題となるのは、この郷里の風習が非常に厳格かつ閉鎖的である点です。",
+		   NULL, "Hastanın ifadesine göre, memleketi olan köyün kültürü son derece katı ve dışa kapalıdır.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　患者の話によるならば、郷里に戻る以外に祟りから逃れる術はなく、現在の環境に居続ける限り、その祟りは続くとしています。",
+		   NULL, "Hasta, mevcut çevresinde yaşadığı sürece lanetin devam edeceğini düşünmekte ve köye geri dönmekten başka bu lanetten kurtulmanın hiçbir yolu olmadığına inanmaktadır.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　これには人格変容の傾向が見られ、以後、現実を改変し続ける高い可能性があります。",
+		   NULL, "Buradan hareketle, şizofreniye yönelik bir eğilim görüyor ve hastanın algıladığı gerçekliği değiştirmeye devam etme ihtimalinin yüksek olduğuna inanıyoruz.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　（人格変容：人格の低レベル化により現実を改変、妄想化するケースです）",
+		   NULL, "(Şizofreni: Hastaların kişilik bütünlüğünün zayıfladığı, gerçeklik algısında bozulmalara ve sanrılara yol açan durum.)", Line_Normal);
+	ClearMessage();
+
+	PlaySE( 0, "s_page", 56, 64 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　患者の自傷行為の理由であるとする、血の中に虫が潜んでいるという妄想は、まさにその最たるものと言えるでしょう。",
+		   NULL, "Kanında kurtçukların kaynaştığına dair sanrısı bunun mükemmel bir örneğidir ve aynı zamanda psikosomatik kendine zarar verme davranışının da sebebidir.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　妄想と自傷が関連しているケースは、患者にとって極めて危険な状態であることを意味しています。",
+		   NULL, "Bir sanrı, psikosomatik kendine zarar verme davranışını içerdiğinde son derece tehlikelidir.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　もしも父親に経済的な余裕があるならば郷里への引越し。",
+		   NULL, "Maddi durumu elveriyorsa babanın köye geri taşınmasını şiddetle tavsiye ederim.", Line_WaitForInput);
+	OutputLine(NULL, "もしくは郷里の親類の下へ患者の生活環境を移すことも重要なポイントになると思われます。",
+		   NULL, " Hastanın köydeki akrabalarının yanında yaşamasına izin vermek de işe yarayabilir.", Line_Normal);
+	ClearMessage();
+
+	PlaySE( 0, "s_page", 56, 64 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　また、これほど顕著な症状を引き起こす「信仰」ならば、本件以外にも事例が多数存在する可能性があります。",
+		   NULL, "Eğer böylesine güçlü bir inanç kendine zarar verme gibi semptomları tetikleyebiliyorsa, buna benzer başka vakalar da mevcut olabilir.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　ひょっとすると、郷里の大病院等に文化依存症候群に関する資料があるかもしれません。",
+		   NULL, "Belki de yerel bölgedeki büyük bir sağlık kuruluşunda, benzer kültüre bağlı sendromları belgeleyen geçmiş tıbbi dosyalar bulunabilir.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　それを取り寄せることで、効果的なメンタルケアが可能になるものと思います。",
+		   NULL, "Bu vaka dosyalarını temin ederek hastaya daha iyi ve daha doğru bir ruh sağlığı bakımı sağlamak mümkün olacaktır.", Line_Normal);
+	ClearMessage();
+	PlaySE( 0, "s_page", 56, 64 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "※このＢ５の便箋は、裏面使用のメモ帳の束の中に含まれていた。",
+		   NULL, "--B5 boyutundaki bu mektup bir tomar notun arasındaydı.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　なお、裏面白紙部分に書かれたメモは以下のとおり。",
+		   NULL, "Mektubun arka yüzünde ise şunlar yazılıydı:", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	PlaySE( 0, "s_boyoon", 56, 64 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　中華丼１、上海風五目やきそば３、チャーハン大盛り１",
+		   NULL, "1 Chuuka-don, 3 Şanghay usulü Gomoku Yakisoba, 1 büyük boy kızarmış pilav.", Line_Normal);
+	ClearMessage();
+
+	DisableWindow();
+	Wait( 1000 );
+	DrawScene( "black", 1000 );
+
+}

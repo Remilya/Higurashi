@@ -1,0 +1,246 @@
+// Higurashi Türkçe Çeviri & Yerelleştirme: @Remilya | https://github.com/Remilya/Higurashi
+void main()
+{
+	EnableJumpingOfReturnIcon();
+	FadeOutBGM( 0, 1000, FALSE );
+	FadeOutBGM( 1, 1000, FALSE );
+	FadeOutBGM( 2, 1000, TRUE );
+//*Sub_Tips_074
+//gosub *tip_s
+	DisableWindow();
+	DrawScene("background/sinryou_sinsatu4", 400 );
+
+	PlayBGM( 1, "msys12", 56, 0 );
+
+
+//■とてもやさしい人なの
+
+//　入院患者に電話が取り次がれる時間は決まっている＠
+	ClearMessage();
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　入院患者に電話が取り次がれる時間は決まっている。",
+		   NULL, "Hastanede yatan hastalara telefonların bağlandığı saatler bellidir.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　…だから、今日はもうあの人からの電話は来ない￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　…だから、今日はもうあの人からの電話は来ない。",
+		   NULL, "...Bu yüzden bugün artık ondan telefon gelmeyecekti.", Line_Normal);
+	ClearMessage();
+
+
+//　昨日、寂しがり屋だとからかったから、ひょっとすると電話をかけるかかけまいか、さんざん迷った末に我慢したのかもしれない＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　昨日、寂しがり屋だとからかったから、ひょっとすると電話をかけるかかけまいか、さんざん迷った末に我慢したのかもしれない。",
+		   NULL, "Dün onunla kolayca yalnızlık çektiği için şakalaşmıştı; belki de bu yüzden arayıp aramamak arasında uzun uzun gidip geldikten sonra kendini tutmuştu.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　忙しくて電話できなかったと言うより、そっちの方がはるかに説得力のある想像だった＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　忙しくて電話できなかったと言うより、そっちの方がはるかに説得力のある想像だった。",
+		   NULL, "Çok meşgul olduğu için arayamadığını düşünmektense böylesini hayal etmek çok daha inandırıcıydı.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+//　…あの人はそういう人だから＠雪絵はそう呟き、ひとり笑った￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　…あの人はそういう人だから。",
+		   NULL, "...Çünkü o böyle bir insandı.", Line_WaitForInput);
+	OutputLine(NULL, "雪絵はそう呟き、ひとり笑った。",
+		   NULL, " Yukie kendi kendine böyle fısıldayarak gülümsedi.", Line_Normal);
+	ClearMessage();
+
+
+//　面会時間の終わりを告げる院内放送と音楽が流れ始める＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　面会時間の終わりを告げる院内放送と音楽が流れ始める。",
+		   NULL, "Ziyaret saatlerinin sona erdiğini bildiren hastane anonsu hafif bir müzik eşliğinde duyulmaya başladı.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　見知った顔の、同室の患者を見舞う家族たちとの挨拶＠母の退院を心待ちにしているのだろう、小さな子の笑顔が眩しい＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　見知った顔の、同室の患者を見舞う家族たちとの挨拶。",
+		   NULL, "Aynı odada kalan hastayı ziyarete gelen tanıdık yüzlü aile üyeleriyle selamlaştı.", Line_WaitForInput);
+	OutputLine(NULL, "母の退院を心待ちにしているのだろう、小さな子の笑顔が眩しい。",
+		   NULL, " Annesinin taburcu olacağı günü dört gözle bekleyen küçük çocuklarının yüzünde ışıl ışıl bir gülümseme vardı.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+//　その子の母親は、私の隣のベッドで、その子の弟、もしくは妹になる子を身篭っていた＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　その子の母親は、私の隣のベッドで、その子の弟、もしくは妹になる子を身篭っていた。",
+		   NULL, "Çocuğun annesi hemen yanımdaki yatakta yatıyordu ve ona yeni bir erkek ya da kız kardeş olacak bebeğe hamileydi.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　新しい兄弟に寄せる期待や不安、夢に、その子の想像ははちきれんばかりになっているのだろう￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　新しい兄弟に寄せる期待や不安、夢に、その子の想像ははちきれんばかりになっているのだろう。",
+		   NULL, "Küçük çocuğun hayal dünyası, yeni bir kardeşe kavuşmanın getirdiği beklentiler, endişeler ve düşlerle dolup taşıyor olmalıydı.", Line_Normal);
+	ClearMessage();
+
+
+//　家族が増えていく喜び＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　家族が増えていく喜び。",
+		   NULL, "Büyüyen bir ailenin sevinci.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　………そんな温かな気持ちに満たされながら、私はだいぶ大きくなった自分のお腹を撫でた￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　………そんな温かな気持ちに満たされながら、私はだいぶ大きくなった自分のお腹を撫でた。",
+		   NULL, "...İçimi ısıtan bu duygularla dolarken, epey büyümüş olan kendi karnımı okşadım.", Line_Normal);
+	ClearMessage();
+
+
+//　子どもを何人もうけるか、あの人と話したことはある＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　子どもを何人もうけるか、あの人と話したことはある。",
+		   NULL, "Kaç çocuk istediğimizi onunla konuşmuştuk.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　３人もいたら、きっと賑やかだろうねと、話したことはある＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　３人もいたら、きっと賑やかだろうねと、話したことはある。",
+		   NULL, "Üç çocuğumuz olursa evin kesinlikle çok neşeli ve hareketli olacağını konuşmuştuk.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+//　…でも、目を背けられない現実として、私がそれだけの出産に耐えられるかの不安はある￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　…でも、目を背けられない現実として、私がそれだけの出産に耐えられるかの不安はある。",
+		   NULL, "...Ancak göz ardı edemeyeceğim bir gerçek olarak, o kadar doğuma dayanıp dayanamayacağıma dair içimde bir endişe vardı.", Line_Normal);
+	ClearMessage();
+
+
+//「でも、そんなことを不安に思って出産を嫌う母なんて、いないですものねぇ…。＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>雪絵</color>", NULL, "<color=#f5e6d3>Yukie</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/yukie44021", 256, TRUE);
+	OutputLine(NULL, "「でも、そんなことを不安に思って出産を嫌う母なんて、いないですものねぇ…。」",
+		   NULL, "\"Gerçi sırf bundan endişe ediyor diye doğum yapmaktan kaçınacak bir anne de yoktur ya...\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+
+//　雪絵はそう独り言を言って笑いながら、自分のお腹をやさしくさするのだった￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　雪絵はそう独り言を言って笑いながら、自分のお腹をやさしくさするのだった。",
+		   NULL, "Yukie kendi kendine böyle söyleyip gülümseyerek karnını şefkatle okşadı.", Line_Normal);
+	ClearMessage();
+
+
+//　警視庁公安部＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　警視庁公安部。",
+		   NULL, "Tokyo Emniyet Müdürlüğü Kamu Güvenliği Şubesi.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+//　あの人の正義心がたどり着いた先＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　あの人の正義心がたどり着いた先。",
+		   NULL, "O adamın adalet duygusunun kendisini ulaştırdığı yer.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　……あの人は本当はとてもやさしくて、傷つきやすい人￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　……あの人は本当はとてもやさしくて、傷つきやすい人。",
+		   NULL, "...Aslında o çok nazik, çok kolay incinebilen biriydi.", Line_Normal);
+	ClearMessage();
+
+//　あまり詳しくは聞かせてくれないけれど、…今の仕事はあまりあの人には向いていないと思っている＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　あまり詳しくは聞かせてくれないけれど、…今の仕事はあまりあの人には向いていないと思っている。",
+		   NULL, "Ayrıntılardan pek bahsetmese de... şu an yaptığı işin ona pek uygun olmadığını düşünüyordum.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　でも、…あの人が頑張ると言い続けている内は、私も温かく見守るつもりだ￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　でも、…あの人が頑張ると言い続けている内は、私も温かく見守るつもりだ。",
+		   NULL, "Fakat... o elinden geleni yapacağını söylemeye devam ettiği sürece, ben de onu sıcak bir şefkatle desteklemeye devam edecektim.", Line_Normal);
+	ClearMessage();
+
+//「あなたのお父さんはね、…とっても頑張り屋さんなのよ＠　こちょこちょこちょこちょ……☆＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>雪絵</color>", NULL, "<color=#f5e6d3>Yukie</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/yukie44022", 256, TRUE);
+	OutputLine(NULL, "「あなたのお父さんはね、…とっても頑張り屋さんなのよ？",
+		   NULL, "\"Biliyor musun, senin baban... çok çalışkan ve azimli biridir.", Line_Continue);
+	Wait( 3000 );
+	OutputLine(NULL, "　こちょこちょこちょこちょ……☆」",
+		   NULL, " Agu gugu, agu gugu...☆\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　雪絵は自分のお腹に話しかけながら、とても楽しそうだった￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　雪絵は自分のお腹に話しかけながら、とても楽しそうだった。",
+		   NULL, "Yukie karnındaki bebeğiyle konuşurken çok mutlu görünüyordu.", Line_Normal);
+	ClearMessage();
+
+
+//　…その時、雪絵はなぜかふと気になり、窓を見た￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　…その時、雪絵はなぜかふと気になり、窓を見た。",
+		   NULL, "...Tam o sırada Yukie'nin içine nedense bir şeyler doğdu ve pencereden dışarı baktı.", Line_Normal);
+	ClearMessage();
+	DisableWindow();
+	DrawScene("background/sora2", 400 );
+
+
+//　刻限は夕方＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　刻限は夕方。",
+		   NULL, "Vakit akşamdı...", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+//　……昔＠小さかった頃、祖母の田舎ではこんな時間には、ひぐらしの合唱でいっぱいに満たされていたのを思い出す￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　……昔。",
+		   NULL, "Çok eskiden.", Line_WaitForInput);
+	OutputLine(NULL, "小さかった頃、祖母の田舎ではこんな時間には、ひぐらしの合唱でいっぱいに満たされていたのを思い出す。",
+		   NULL, " Küçükken büyükannesinin yaşadığı taşrada bu saatlerde havanın higurashi'lerin korosuyla dolup taştığını hatırladı.", Line_Normal);
+	ClearMessage();
+
+
+//　ここは東京のど真ん中＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　ここは東京のど真ん中。",
+		   NULL, "Burası Tokyo'nun tam göbeğiydi.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　田舎と違い、ひぐらしの合唱は聞くことができない＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　田舎と違い、ひぐらしの合唱は聞くことができない。",
+		   NULL, "Taşranın aksine burada higurashi'lerin şarkısını duymak imkânsızdı.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+//　……なのになぜか、…その時の行雪絵は、ひぐらしの声が聞きたい…と思った￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　……なのになぜか、…その時の雪絵は、ひぐらしの声が聞きたい…と思った。",
+		   NULL, "...Ama nedense... o an Yukie o şarkıyı duymayı çok istediğini hissetti.", Line_Normal);
+	ClearMessage();
+
+
+
+	SetValidityOfInput( FALSE );
+	Wait( 1000 );
+	SetValidityOfInput( TRUE );
+	DisableWindow();
+	DrawScene("black", 1000 );
+	FadeOutBGM( 1, 1000, TRUE );
+	FadeOutBGM( 2, 1000, TRUE );
+//gosub *tip_e
+//return
+
+
+}

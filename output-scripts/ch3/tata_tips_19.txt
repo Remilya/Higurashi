@@ -1,0 +1,183 @@
+// Higurashi Türkçe Çeviri & Yerelleştirme: @Remilya | https://github.com/Remilya/Higurashi
+void main()
+{
+
+//*Sub_Tips_063
+//gosub *tip_s
+
+//■タイトル：　研究ノートⅡ
+	EnableJumpingOfReturnIcon();
+	FadeOutBGM( 0, 1000, FALSE );
+	FadeOutBGM( 1, 1000, FALSE );
+	FadeOutBGM( 2, 1000, TRUE );
+
+
+	PlayBGM( 1, "msys21", 56, 0 );
+
+//locate 5,7
+	if (GetGlobalFlag(GADVMode) == 0) { SetDrawingPointOfMessage( 0, 7 ); }
+	SetStyleOfMessageSwinging( 1 );
+//＜オヤシロさまについて￥
+	ClearMessage();
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "＜オヤシロさまについて＞",
+		   NULL, "<Oyashiro-sama Hakkında>", Line_Normal);
+	ClearMessage();
+
+	PlaySE( 3, "wa_021", 56, 64 );
+
+//　オヤシロさまだが、どういう字で書くのかはあまり知られていない＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　オヤシロさまだが、どういう字で書くのかはあまり知られていない。",
+		   NULL, "Konu Oyashiro-sama olduğunda, adının hangi karakterlerle yazıldığı pek bilinmez.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+//　と言うのも、時代によって様々な修飾詞が付き、微妙に名称が変わったり、当て字が変わったりするため＠本来の正確な名称が何なのか、知る事が大変難しいからだ￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　と言うのも、時代によって様々な修飾詞が付き、微妙に名称が変わったり、当て字が変わったりするため、",
+		   NULL, "Bunu bilmenin zor olmasının bir sebebi de, döneme bağlı olarak adına çeşitli sıfatların eklenmesi,", Line_WaitForInput);
+	OutputLine(NULL, "本来の正確な名称が何なのか、知る事が大変難しいからだ。",
+		   NULL, " adının ufak değişikliklere uğraması ve kullanılan karakterlerin değişmesi yüzünden asıl ve doğru adının ne olduğunu bilmenin son derece güç olmasıdır.", Line_Normal);
+	ClearMessage();
+
+	PlaySE( 3, "wa_021", 56, 64 );
+
+//　全ての時代に共通するのは、名称の読みに必ず「オヤシロ」の４文字が入るということだけ＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　全ての時代に共通するのは、名称の読みに必ず「オヤシロ」の４文字が入るということだけ。",
+		   NULL, "Tüm dönemlerde ortak olan tek şey, adının okunuşunda mutlaka \"o\", \"ya\", \"shi\" ve \"ro\" şeklindeki dört hecenin yer almasıdır.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+//　オヤシロさまを祀る「社（やしろ）」が、そのまま礼拝対象になり＠「御社さま」と呼ばれるに至ったと言う説があるが、実にセンスの欠片もない￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　オヤシロさまを祀る「社（やしろ）」が、そのまま礼拝対象になり、",
+		   NULL, "Oyashiro-sama'nın kutsandığı tapınağın, yani \"yashiro\"nun doğrudan doğruya birer tapınma nesnesi haline geldiğini ileri süren bir teori vardır.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「御社さま」と呼ばれるに至ったと言う説があるが、実にセンスの欠片もない。",
+		   NULL, " Ve insanların buna \"o-yashiro-sama\", yani \"saygıdeğer tapınak efendisi\" demeye başladığı söylenir—ancak bu teoride zerre kadar mantık ve incelik yoktur.", Line_Normal);
+	ClearMessage();
+
+	PlaySE( 3, "wa_021", 56, 64 );
+
+//　これに関連するかわからないが、オヤシロさまを祀る高貴な血筋である古手家の人間には、オヤシロさまの血が流れているという＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　これに関連するかわからないが、オヤシロさまを祀る高貴な血筋である古手家の人間には、オヤシロさまの血が流れているという。",
+		   NULL, "Bununla bir ilgisi var mıdır bilmiyorum ama Oyashiro-sama'ya hizmet eden soylu bir kan bağına sahip Furude Ailesi fertlerinin damarlarında Oyashiro-sama'nın kanının aktığı söylenir.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+//　そして古手家に伝えられる伝説では、八代続いて第一子が女子ならば、八代目のその娘はオヤシロさまの生まれ変わりである...というのだ＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　そして古手家に伝えられる伝説では、八代続いて第一子が女子ならば、八代目のその娘はオヤシロさまの生まれ変わりである…というのだ。",
+		   NULL, "Ve Furude Ailesi'nde kuşaktan kuşağa aktarılan efsaneye göre, sekiz kuşak boyunca üst üste doğan ilk çocuk kız olursa, sekizinci kuşaktaki o kız çocuğu Oyashiro-sama'nın reenkarne olmuş halidir.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+//　この伝説に従うなら、オヤシロさまは「御八代さま」と書くのが正しいように思う＠（この当て字はあくまでも私の思いつきなので、真偽は確かめようもないが￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　この伝説に従うなら、オヤシロさまは「御八代さま」と書くのが正しいように思う。",
+		   NULL, "Bu efsaneye uyacak olursak, Oyashiro-sama'nın adını yazarken \"saygıdeğer\" anlamında \"o\", \"sekiz\" anlamında \"ya\" ve \"kuşak\" anlamında \"shiro\" karakterlerini kullanmak doğru görünmektedir. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "（この当て字はあくまでも私の思いつきなので、真偽は確かめようもないが）",
+		   NULL, "(Bu karakter eşleştirmesi tamamen benim kendi fikrim olduğundan doğruluğunu teyit etmenin bir yolu yoktur.)", Line_Normal);
+	ClearMessage();
+
+	PlaySE( 3, "wa_021", 56, 64 );
+
+//　だとするなら、御八代さまは再び降臨することを前提にした名称ということになる＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　だとするなら、御八代さまは再び降臨することを前提にした名称ということになる。",
+		   NULL, "Eğer bu doğruysa, Oyashiro-sama'ya bu adın yeniden yeryüzüne ineceği varsayımıyla verilmiş olduğu anlaşılır.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　崇拝対象の再臨は、いくつかの宗教でも見受けられるので、そんなに珍しいものではない＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　崇拝対象の再臨は、いくつかの宗教でも見受けられるので、そんなに珍しいものではない。",
+		   NULL, "Tapınılan varlığın ikinci kez gelişine birkaç dinde daha rastlandığından, bu o kadar da nadir görülen bir durum değildir.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+//　だが、さらにその中のいくつかでは、崇拝対象の再臨を、「審判の日」等と呼び、世界の終末を意味するものであることも忘れてはならないだろう￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　だが、さらにその中のいくつかでは、崇拝対象の再臨を、「審判の日」等と呼び、世界の終末を意味するものであることも忘れてはならないだろう。",
+		   NULL, "Ancak bu dinlerden bazılarının, tapınılan varlığın ikinci gelişini \"Kıyamet Günü\" ve benzeri isimlerle adlandırdığını ve bunun dünyanın sonu anlamına geldiğini de unutmamak gerekir.", Line_Normal);
+	ClearMessage();
+
+	PlaySE( 3, "wa_021", 56, 64 );
+
+//　村中の年寄り連中に、目に入れても痛くないくらいに甘やかされている少女、古手梨花＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　村中の年寄り連中に、目に入れても痛くないくらいに甘やかされている少女、古手梨花。",
+		   NULL, "Köydeki bütün yaşlıların gözünden bile sakınarak el üstünde tuttuğu ve şımarttığı genç kız, Rika Furude.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+//　......彼女が、その八代目、「御八代さま」であるという噂がある＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　……彼女が、その八代目、「御八代さま」であるという噂がある。",
+		   NULL, "...Söylentilere göre o sekizinci kuşak, yani Oyashiro-sama'nın ta kendisiymiş.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　古手家の家系図はわからないが、少なくとも、過去２代の間、第一子が女子であることは私も確認している￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　古手家の家系図はわからないが、少なくとも、過去２代の間、第一子が女子であることは私も確認している。",
+		   NULL, "Furude Ailesi'nin soyağacını bilmiyorum ama en azından son iki kuşaktır ilk doğan çocukların kız olduğunu bizzat doğruladım.", Line_Normal);
+	ClearMessage();
+
+	PlaySE( 3, "wa_021", 56, 64 );
+
+//　雛見沢を見守る少女、古手梨花＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　雛見沢を見守る少女、古手梨花。",
+		   NULL, "Hinamizawa'yı koruyup gözeten kız, Rika Furude.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+//　彼女の加護を村が失ったなら、どうなるのか＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　彼女の加護を村が失ったなら、どうなるのか？",
+		   NULL, "Eğer köy onun korumasını kaybederse ne olur?", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　人と鬼は和を失い、どうなるのか＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　人と鬼は和を失い、どうなるのか？",
+		   NULL, "İnsanlar ve iblisler arasındaki barış bozulursa ne olur?", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+//　再び、人食い鬼たちが跋扈する地獄が再現されるのか￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　再び、人食い鬼たちが跋扈する地獄が再現されるのか？",
+		   NULL, "İnsan yiyen iblislerin kol gezdiği o cehennem manzarası yeniden mi canlanır?", Line_Normal);
+	ClearMessage();
+
+	PlaySE( 3, "wa_021", 56, 64 );
+
+//　泣き、叫び、逃げ惑うしかできないひ弱な人間どもと、それらがいかに美味であったかを思い出した鬼たちの、凄惨な宴＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　泣き、叫び、逃げ惑うしかできないひ弱な人間どもと、それらがいかに美味であったかを思い出した鬼たちの、凄惨な宴。",
+		   NULL, "Ağlamak, çığlık atmak ve can havliyle kaçışmaktan başka hiçbir şey yapamayan çaresiz insanlarla, onların ne kadar lezzetli olduğunu yeniden hatırlayan iblislerin korkunç ziyafeti.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+//　......それはどんな光景だろう＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　……それはどんな光景だろう。",
+		   NULL, "...Acaba nasıl bir manzara olurdu?", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+//　想像するだけでも...胸が、躍る￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　想像するだけでも…胸が、躍る。",
+		   NULL, "Sadece hayal etmek bile... kalbimi heyecanla çarptırmaya yetiyor.", Line_Normal);
+	ClearMessage();
+	SetValidityOfInput( FALSE );
+	Wait( 1000 );
+	SetValidityOfInput( TRUE );
+	DisableWindow();
+	DrawScene("black", 1000 );
+	FadeOutBGM( 0, 1000, FALSE );
+	FadeOutBGM( 1, 1000, FALSE );
+	FadeOutBGM( 2, 1000, TRUE );
+//gosub *tip_e
+//return
+
+
+}

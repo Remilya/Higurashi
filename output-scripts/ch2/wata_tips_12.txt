@@ -1,0 +1,193 @@
+// Higurashi Türkçe Çeviri & Yerelleştirme: @Remilya | https://github.com/Remilya/Higurashi
+void main()
+{
+//８■スクラップ帳よりⅤ
+
+//*Sub_Tips_032
+
+//gosub *tip_s
+	EnableJumpingOfReturnIcon();
+	FadeOutBGM( 0, 1000, FALSE );
+	FadeOutBGM( 1, 1000, FALSE );
+	FadeOutBGM( 2, 1000, TRUE );
+	DisableWindow();
+	DrawScene("black", 1000 );
+	PlayBGM( 1, "msys13", 56, 0 );
+	PlaySE( 3, "wa_021", 56, 64 );
+	DrawScene("background/simen3", 1000 );
+
+
+//locate 2,6
+	if (GetGlobalFlag(GADVMode) == 0) { SetDrawingPointOfMessage( 0, 6 ); }
+//	SetStyleOfMessageSwinging( 1 );
+
+//＜なぜ祭具はこれほどまでに必要なのか￥
+	ClearMessage();
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "＜なぜ祭具はこれほどまでに必要なのか＞",
+		   NULL, "<Ayin Aletlerine Neden Bu Kadar İhtiyaç Duyuluyordu?>", Line_Normal);
+	ClearMessage();
+
+	PlaySE( 3, "wa_021", 56, 64 );
+
+//　「祭具」の具体的な形状についての記述はほとんど見つからない＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　「祭具」の具体的な形状についての記述はほとんど見つからない。",
+		   NULL, "Ayin aletlerinin somut şekillerine dair net bir tasvir veren neredeyse hiçbir kaynak bulamıyorum.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+
+//　だが実在し、それも多種多様のさまざまな種類が存在していたことは間違いない＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　だが実在し、それも多種多様のさまざまな種類が存在していたことは間違いない。",
+		   NULL, "Ancak gerçek oldukları ve birbirinden çok farklı türlerinin var olduğu kesindi.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+//　一部の文献では、綿流しの儀に用いた祭具だけでも二百を数えると記されている＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　一部の文献では、綿流しの儀に用いた祭具だけでも二百を数えると記されている。",
+		   NULL, "Bazı kaynaklar, yalnızca Watanagashi ayininde kullanılan aletlerin sayısının bile iki yüzü bulduğunu belirtmektedir.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+//　ここでぶつかる疑問は、なぜ多種多様なものが必要だったかという点だ￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　ここでぶつかる疑問は、なぜ多種多様なものが必要だったかという点だ。",
+		   NULL, "Burada akla gelen bariz soru, neden bu kadar çok çeşitli alete ihtiyaç duyduklarıdır.", Line_Normal);
+	ClearMessage();
+
+
+	PlaySE( 3, "wa_021", 56, 64 );
+
+//　綿流しの儀は、鬼隠しによって誘拐した人間を解体して食すものだ＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　綿流しの儀は、鬼隠しによって誘拐した人間を解体して食すものだ。",
+		   NULL, "Watanagashi ayini, 'iblislerce kaçırılma' yoluyla kaçırılan insanların parçalara ayrılıp yenmesiydi.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　そのための解体道具や拘束道具が考えられるが、それでも二百を超えるとは多過ぎる￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　そのための解体道具や拘束道具が考えられるが、それでも二百を超えるとは多過ぎる。",
+		   NULL, "Aletlerin parçalama ve zaptedilme amacıyla kullanıldığına inanıyorum, fakat yine de iki yüzü aşkın sayı çok fazladır.", Line_Normal);
+	ClearMessage();
+
+	PlaySE( 3, "wa_021", 56, 64 );
+
+//　基本的に道具の進化は、ある到達点への模索である＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　基本的に道具の進化は、ある到達点への模索である。",
+		   NULL, "Genel olarak aletler, belirli bir soruna çözüm bulmak amacıyla evrimleşir.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　一定以上の効率に行き着いたなら、それ以上の進化は求められないのが普通だ＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　一定以上の効率に行き着いたなら、それ以上の進化は求められないのが普通だ。",
+		   NULL, "Nihai hedefe—yani belirli bir verimlilik düzeyine—ulaşıldığında, aletin evrimi normal şartlarda orada durur.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　にも関わらず、これほどまで多くの種が生み出されるのはなぜなのか￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　にも関わらず、これほどまで多くの種が生み出されるのはなぜなのか。",
+		   NULL, "Buna rağmen neden bu kadar çok farklı tür üretilmiş olabilir?", Line_Normal);
+	ClearMessage();
+
+	PlaySE( 3, "wa_021", 56, 64 );
+
+//　時代と共に多様化する文化のひとつに娯楽がある＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　時代と共に多様化する文化のひとつに娯楽がある。",
+		   NULL, "Zaman içinde çeşitlenmeden sorumlu kültürel unsurlardan biri de eğlencedir.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　娯楽に使用する道具は時間と共に進化し、多様化する＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　娯楽に使用する道具は時間と共に進化し、多様化する。",
+		   NULL, "Eğlence amacıyla kullanılan araçlar zamanla evrimleşir ve dallanıp budaklanır.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+//　一般的な道具と違い、到達点に至ることはすなわち行き詰まり（マンネリ）であり、次なる到達点を求め、いくつもの亜種にも分裂する￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　一般的な道具と違い、到達点に至ることはすなわち行き詰まり（マンネリ）であり、次なる到達点を求め、いくつもの亜種にも分裂する。",
+		   NULL, "Normal aletlerin aksine, nihai hedefe ulaşmak bir çıkmaz sokağa girmek (monotonlaşmak) demektir ve bir sonraki hedef arayışında pek çok farklı alt türe ayrılırlar.", Line_Normal);
+	ClearMessage();
+
+	PlaySE( 3, "wa_021", 56, 64 );
+
+//　では二百を超えると伝えられる「祭具」にも、娯楽性が宿っているとは考えられないか＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　では二百を超えると伝えられる「祭具」にも、娯楽性が宿っているとは考えられないか。",
+		   NULL, "Öyleyse, iki yüzü aşkın olduğu söylenen bu ayin aletlerinin de bir tür eğlence değeri taşıdığını öne sürmek abartı olmayacaktır.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+//　もちろんこれも仮説だが、人間を解体する過程が一種の娯楽（見世物）として扱われていたのではないだろうか＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　もちろんこれも仮説だが、人間を解体する過程が一種の娯楽（見世物）として扱われていたのではないだろうか。",
+		   NULL, "Elbette bu da sadece bir varsayım ama belki de insan parçalama süreci bir tür eğlence (gösteri) olarak görülüyordu.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　観客を飽きさせないため、様々な、斬新で興味を惹く「祭具（解体道具）」が歴代の御三家当主たちによって、次々開発されていった...＠そう考えられなくもない￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　観客を飽きさせないため、様々な、斬新で興味を惹く「祭具（解体道具）」が歴代の御三家当主たちによって、次々開発されていった…。",
+		   NULL, "Geçmişteki Üç Büyük Aile'nin reisleri, izleyicilerin sıkılmasını önlemek adına her biri farklı, özgün ve ilgi çekici olan yeni ayin aletlerini (parçalama araçlarını) birbiri ardına geliştirmişti...", Line_WaitForInput);
+	OutputLine(NULL, "そう考えられなくもない。",
+		   NULL, " Bunu hayal etmek imkansız değil.", Line_Normal);
+	ClearMessage();
+
+	PlaySE( 3, "wa_021", 56, 64 );
+
+//　あの祭具殿の中に、それらが全て祀られているのは間違いない＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　あの祭具殿の中に、それらが全て祀られているのは間違いない。",
+		   NULL, "Hepsinin o Saiguden'in içinde muhafaza edildiğine şüphe yok.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+//　綿流しの夜まであと少し＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　綿流しの夜まであと少し。",
+		   NULL, "Watanagashi gecesine çok az kaldı.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　本来の意味が失われたとは言え、古式ゆかしい儀式の夜に祭具殿の神秘を解き明かせるのだ＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　本来の意味が失われたとは言え、古式ゆかしい儀式の夜に祭具殿の神秘を解き明かせるのだ。",
+		   NULL, "Asıl amacı unutulmuş olsa da, o geleneksel tören gecesinde Saiguden'in gizemlerini gün yüzüne çıkaracağım.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　...胸の高まりが押えられない＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　…胸の高まりが押えられない。",
+		   NULL, "...İçimdeki heyecanı bastıramıyorum.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+
+//　綿流しが、待ち遠しい￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　綿流しが、待ち遠しい。",
+		   NULL, "Watanagashi'yi iple çekiyorum.", Line_Normal);
+	ClearMessage();
+	DisableWindow();
+	SetValidityOfInput( FALSE );
+	DrawBustshotWithFiltering(6, "cinema", "x", 1, 0, 0, FALSE, 0, 0, 0, 0, 0, 25, 1300, TRUE );
+	DrawBustshot(7, "title02", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 26, 3000, TRUE );
+	Wait( 2000 );
+	DrawBustshot(5, "black", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 25, 3000, TRUE );
+	Wait( 1000 );
+	FadeBustshotWithFiltering( 7, "x", 1, FALSE, 0, 0, 1000, TRUE );
+	DrawScene("black", 1000 );
+	SetValidityOfInput( TRUE );
+
+
+}

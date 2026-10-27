@@ -1,0 +1,76 @@
+// Higurashi Türkçe Çeviri & Yerelleştirme: @Remilya | https://github.com/Remilya/Higurashi
+void main()
+{
+	EnableJumpingOfReturnIcon();
+	FadeOutBGM( 0, 0, FALSE );
+	FadeOutBGM( 1, 0, FALSE );
+	FadeOutBGM( 2, 0, FALSE );
+	FadeOutBGM( 3, 0, FALSE );
+	ClearMessage();
+
+	DrawScene("background/nort", 400 );
+	PlayBGM( 0, "hig_sample_kyouki", 56, 0 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　この時の祭具殿侵入が、結局、鷹野さんたちの祟られる理由となった。",
+		   NULL, "Takano-san ve Tomitake-san'ın lanete uğramalarının nedeni, Saiguden'e gizlice girmeleriydi.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　祭具殿侵入がどういう形で発覚したのかは分からない。",
+		   NULL, "Köylülerin bunu nasıl öğrendiğini bilmiyorum.", Line_Normal);
+	ClearMessage();
+	PlaySE( 0, "s_page", 56, 64 );
+	DrawSceneWithMask("black", "maskright", 7, 0, 300 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　最初に思いつくのは、何者かに目撃されていたこと。",
+		   NULL, "Belki birileri gözetliyordu.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　次に思いつくのは、侵入警報のようなものがあったこと。",
+		   NULL, "Belki de hırsızlığa karşı bir alarm sistemi vardı.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　何れにせよ、この祭具殿侵入はおそらくリアルタイムで祟りのシステムの上位者に通報されていた。",
+		   NULL, "Her halükarda, Saiguden'e izinsiz girişimiz lanet sisteminin en üst kademesine anında bildirilmiş olmalı.", Line_Normal);
+	ClearMessage();
+	PlaySE( 0, "s_page", 56, 64 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　なぜなら、もっとも遠い地で遺体が見つかることになる鷹野さんの殺された時間などを考えると、",
+		   NULL, "Çünkü köy ile Takano-san'ın cesedinin bulunduğu yer arasındaki mesafe ve ölüm saati göz önüne alındığında,", Line_WaitForInput);
+	OutputLine(NULL, "祭具殿を出て私たちが分かれてすぐくらいに殺されてなければならないからだ。",
+		   NULL, " biz Saiguden'den çıkıp ayrıldıktan hemen sonra öldürülmüş olması gerekiyor.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　この手際の良さは特筆に値する。",
+		   NULL, "Her şey son derece hızlı ve kusursuzca gerçekleştirildi.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　相当高度な暗殺部隊が組織されているのか、さもなければ「５年目の祟りの準備」がすでにされていたからなのか。",
+		   NULL, "Ya bu amaçla kurulmuş özel bir suikast ekibi var ya da beşinci yılın laneti için hazırlıklar çok önceden tamamlanmıştı.", Line_Normal);
+	ClearMessage();
+	PlaySE( 0, "s_page", 56, 64 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　園崎家の暗部を担当する秘密の集団の存在も否定できないが、後者の説の方が信憑性がある。",
+		   NULL, "Sonozaki Ailesi'nin karanlık işlerini yürüten gizli ajanlar olmaları da mümkün, ancak ikinci ihtimal kulağa daha inandırıcı geliyor.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　しかし、だとすると、５年目の祟りは、祭具殿侵入がなかったら「本来」誰に下されていたのか、という疑問にぶつかる。",
+		   NULL, "Ama eğer öyleyse, kimse Saiguden'e girmemiş olsaydı beşinci yılın lanetinde asıl kurban kim olacaktı?", Line_Normal);
+	ClearMessage();
+	DisableWindow();
+	Wait( 1000 );
+	DrawScene("black", 1000 );
+}

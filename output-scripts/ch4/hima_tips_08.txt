@@ -1,0 +1,284 @@
+// Higurashi Türkçe Çeviri & Yerelleştirme: @Remilya | https://github.com/Remilya/Higurashi
+void main()
+{
+
+
+//*Sub_Tips_071
+//gosub *tip_s
+	EnableJumpingOfReturnIcon();
+	FadeOutBGM( 0, 1000, FALSE );
+	FadeOutBGM( 1, 1000, FALSE );
+	FadeOutBGM( 2, 1000, TRUE );
+
+
+
+	DisableWindow();
+	DrawScene("black", 1000 );
+
+	PlayBGM( 2, "lsys20", 56, 0 );
+
+
+//■調査は暗礁
+
+//「……うん＠昨日、銀座の料亭でお会いしてね＠そういう話が出たんだよ。￥
+	ClearMessage();
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>室長</color>", NULL, "<color=#f5e6d3>Şef</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/kataoka44001", 256, TRUE);
+	OutputLine(NULL, "「……うん。",
+		   NULL, "\"...Evet.", Line_Continue);
+	Wait( 500 );
+	OutputLine(NULL, "昨日、銀座の料亭でお会いしてね。",
+		   NULL, " Dün Ginza'daki restoranda bir araya geldiğimizde,", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/kataoka44002", 256, TRUE);
+	OutputLine(NULL, "そういう話が出たんだよ。」",
+		   NULL, " o konu açıldı.\"", Line_Normal);
+	ClearMessage();
+
+	DisableWindow();
+	DrawScene("background/ke_s2", 1000 );
+
+//「別室の越権でしょ＠連中、公安に干渉し過ぎですよ＠あまり迎合すると悪い先例を残しますね。＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>嘉納</color>", NULL, "<color=#f5e6d3>Kanou</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/442600001", 256, TRUE);
+	OutputLine(NULL, "「別室の越権でしょ。",
+		   NULL, "\"Bu yetki aşımı değil mi?", Line_Continue);
+	Wait( 1500 );
+	OutputLine(NULL, "連中、公安に干渉し過ぎですよ。",
+		   NULL, " Kamu Güvenliği'nin işlerine fazla burnunu sokuyorlar.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/442600002", 256, TRUE);
+	OutputLine(NULL, "あまり迎合すると悪い先例を残しますね。」",
+		   NULL, " Onlara fazla yüz verirsek kötü bir emsal teşkil edecek.\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//「犬飼大臣は公安の動きに不快感を顕わにしているらしい＠多分、月曜の庁議で次官からその旨の話が出るんじゃないかと思う＠…まいったなぁ…。＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>室長</color>", NULL, "<color=#f5e6d3>Şef</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/kataoka44003", 256, TRUE);
+	OutputLine(NULL, "「犬飼大臣は公安の動きに不快感を顕わにしているらしい。",
+		   NULL, "\"Görünüşe göre Bakan Inukai, Kamu Güvenliği'nin hareketlerinden duyduğu rahatsızlığı açıkça dile getiriyormuş.", Line_Continue);
+	Wait( 4000 );
+	OutputLine(NULL, "多分、月曜の庁議で次官からその旨の話が出るんじゃないかと思う。",
+		   NULL, " Muhtemelen pazartesi günkü kurul toplantısında Müsteşar da bu yönde bir şeyler söyleyecektir. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>室長</color>", NULL, "<color=#f5e6d3>Şef</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/kataoka44004", 256, TRUE);
+	OutputLine(NULL, "…まいったなぁ…。」",
+		   NULL, "...Başımız ağrıyacak...\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//「次官へは局長級に話し付けてもらうしかないですよ＠給料を多くもらってる人の当然の仕事ってことで。￥
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>嘉納</color>", NULL, "<color=#f5e6d3>Kanou</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/442600003", 256, TRUE);
+	OutputLine(NULL, "「次官へは局長級に話し付けてもらうしかないですよ。",
+		   NULL, "\"Müsteşar ile konuşma işini Direktör'e bırakmaktan başka çaremiz yok.", Line_Continue);
+	Wait( 3200 );
+	OutputLine(NULL, "給料を多くもらってる人の当然の仕事ってことで。」",
+		   NULL, " Ne de olsa o kadar yüksek maaşı bunun için alıyor.\"", Line_Normal);
+	ClearMessage();
+
+
+//「まぁ、そうなると局長からは絶対に、大臣脅迫の物証を求められるよな。＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>室長</color>", NULL, "<color=#f5e6d3>Şef</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/kataoka44005", 256, TRUE);
+	OutputLine(NULL, "「まぁ、そうなると局長からは絶対に、大臣脅迫の物証を求められるよな。」",
+		   NULL, "\"Tabii iş oraya varırsa, Direktör de bizden Bakan'ın tehdit edildiğine dair somut kanıt isteyecektir.\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//「あの人、たまにどっちの味方かわかんなくなりますね＠うちらの味方しなくてどうすんの、っての！￥
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>嘉納</color>", NULL, "<color=#f5e6d3>Kanou</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/442600004", 256, TRUE);
+	OutputLine(NULL, "「あの人、たまにどっちの味方かわかんなくなりますね。",
+		   NULL, "\"O adam bazen kimin tarafında hiç anlamıyorum.", Line_Continue);
+	Wait( 3000 );
+	OutputLine(NULL, "うちらの味方しなくてどうすんの、っての！」",
+		   NULL, " Bizim tarafımızı tutmayacaksa ne işe yarıyor ki?!\"", Line_Normal);
+	ClearMessage();
+
+
+//「ま、多分、大臣を経由しての圧力だと思ってるけどね＠俺が次官室で脂汗かいて時間稼ぐ間に調査進めてもらうしかないよな＠…全身の汗、搾られて絞りカスになっちゃうかもしれないけどなぁ＠…で、どうなの？　調査の進行は。＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>室長</color>", NULL, "<color=#f5e6d3>Şef</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/kataoka44006", 256, TRUE);
+	OutputLine(NULL, "「ま、多分、大臣を経由しての圧力だと思ってるけどね。",
+		   NULL, "\"Muhtemelen Bakan üzerinden ona da baskı yapılıyordur.", Line_Continue);
+	Wait( 4500 );
+	OutputLine(NULL, "俺が次官室で脂汗かいて時間稼ぐ間に調査進めてもらうしかないよな。",
+		   NULL, " Ben Müsteşar'ın odasında soğuk terler döküp zaman kazanırken sizin de soruşturmayı ilerletmenizden başka çare yok. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>室長</color>", NULL, "<color=#f5e6d3>Şef</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/kataoka44007", 256, TRUE);
+	OutputLine(NULL, "…全身の汗、搾られて絞りカスになっちゃうかもしれないけどなぁ。",
+		   NULL, "...Gerçi bütün terimi akıta akıta posam çıkabilir ya neyse.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/kataoka44008", 256, TRUE);
+	OutputLine(NULL, "…で、どうなの？　調査の進行は。」",
+		   NULL, " ...Ee, soruşturma nasıl gidiyor?\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//「期待してた濃厚なラインがことごとく外れて、正直、途方に暮れてます。￥
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>嘉納</color>", NULL, "<color=#f5e6d3>Kanou</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/442600005", 256, TRUE);
+	OutputLine(NULL, "「期待してた濃厚なラインがことごとく外れて、正直、途方に暮れてます。」",
+		   NULL, "\"Umut bağladığım tüm güçlü ipuçları fos çıktı. Açıkçası ne yapacağımı şaşırmış durumdayım.\"", Line_Normal);
+	ClearMessage();
+
+
+//「最近の大臣発言をまとめると、雛見沢ダムの計画の話が目立つっていう報告を聞いたけど、それはどうなの？＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>室長</color>", NULL, "<color=#f5e6d3>Şef</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/kataoka44009", 256, TRUE);
+	OutputLine(NULL, "「最近の大臣発言をまとめると、雛見沢ダムの計画の話が目立つっていう報告を聞いたけど、それはどうなの？」",
+		   NULL, "\"Bakan'ın son zamanlardaki açıklamalarında Hinamizawa Barajı Projesi'nin sıkça öne çıktığına dair bir rapor duydum, o konuda ne diyorsun?\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//「…………ん～～～～…＠目立つって言うか、…本当に微細な程度の違和感ですね＠たまたま××県の県議連でのスピーチだったから、時事ネタを話しただけかもしれないし。￥
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>嘉納</color>", NULL, "<color=#f5e6d3>Kanou</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/442600006", 256, TRUE);
+	OutputLine(NULL, "「…………ん〜〜〜〜…。",
+		   NULL, "\"...Hımmm...", Line_Continue);
+	Wait( 400 );
+	OutputLine(NULL, "目立つって言うか、…本当に微細な程度の違和感ですね。",
+		   NULL, " 'Öne çıkıyor' diyorsunuz ama aslında çok ufak bir tuhaflık hissinden ibaret. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>嘉納</color>", NULL, "<color=#f5e6d3>Kanou</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/442600007", 256, TRUE);
+	OutputLine(NULL, "たまたま××県の県議連でのスピーチだったから、時事ネタを話しただけかもしれないし。」",
+		   NULL, "Sadece XX İli Meclis Forumu'ndaki konuşmasında tesadüfen değindi; yani o anki güncel bir konu olduğu için bahsetmiş olabilir.\"", Line_Normal);
+	ClearMessage();
+
+
+//「確か地元団体が過激に抵抗してるってヤツだっけ＠　鬼ヶ淵死守同盟＠確か、赤坂くんに調べてもらってたよね。＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>室長</color>", NULL, "<color=#f5e6d3>Şef</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/kataoka44010", 256, TRUE);
+	OutputLine(NULL, "「確か地元団体が過激に抵抗してるってヤツだっけ？",
+		   NULL, "\"Yanlış hatırlamıyorsam orada oldukça şiddetli bir şekilde direnen yerel bir örgüt vardı, değil mi?", Line_Continue);
+	Wait( 3200 );
+	OutputLine(NULL, "　鬼ヶ淵死守同盟。",
+		   NULL, " Onigafuchi Baraj Karşıtı İttifakı.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/kataoka44011", 256, TRUE);
+	OutputLine(NULL, "確か、赤坂くんに調べてもらってたよね。」",
+		   NULL, " Sanırım orayı Akasaka-kun araştırıyordu.\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//「僕は連中には、今回の事件は起こせないと踏んでます＠ですが、疑わしいところのほとんどが真っ白な以上、疑いの枠から外すわけにはいかないかもですね…＠赤坂くんからは、その可能性は否定できないとの軽い報告は受けてます。￥
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>嘉納</color>", NULL, "<color=#f5e6d3>Kanou</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/442600008", 256, TRUE);
+	OutputLine(NULL, "「僕は連中には、今回の事件は起こせないと踏んでます。",
+		   NULL, "\"Şahsen bu olayı onların tezgâhlayabileceğini pek sanmıyorum.", Line_Continue);
+	Wait( 3800 );
+	OutputLine(NULL, "ですが、疑わしいところのほとんどが真っ白な以上、疑いの枠から外すわけにはいかないかもですね…。",
+		   NULL, " Ama şüpheli gördüğümüz diğer yerler temiz çıktığına göre, onları göz ardı etmek pek akıllıca olmayabilir... ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>嘉納</color>", NULL, "<color=#f5e6d3>Kanou</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/442600009", 256, TRUE);
+	OutputLine(NULL, "赤坂くんからは、その可能性は否定できないとの軽い報告は受けてます。」",
+		   NULL, "Akasaka-kun da bu ihtimalin tamamen dışlanamayacağına dair kısa bir rapor geçti.\"", Line_Normal);
+	ClearMessage();
+
+
+
+//「…なら、調べて見る価値はあるんじゃないの＠　しらみ潰しなんだから、残る疑わしい団体がそこひとつなら、やるしかないでしょ。＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>室長</color>", NULL, "<color=#f5e6d3>Şef</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/kataoka44012", 256, TRUE);
+	OutputLine(NULL, "「…なら、調べて見る価値はあるんじゃないの？",
+		   NULL, "\"...Öyleyse onları araştırmaya değer, değil mi?", Line_Continue);
+	Wait( 2800 );
+	OutputLine(NULL, "　しらみ潰しなんだから、残る疑わしい団体がそこひとつなら、やるしかないでしょ。」",
+		   NULL, " Her yeri didik didik aradığımıza göre, geriye kalan şüpheli gruplardan biri onlarsa mecbur bakacağız.\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//「まぁ、調べる団体はそこだけじゃないんですがね＠　あははは＠　鬼ヶ淵と同じ程度のレベルで疑わしい団体になると、もう相当の数になりますよ＠人手も時間も残業代も全然足りません。￥
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>嘉納</color>", NULL, "<color=#f5e6d3>Kanou</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/442600010", 256, TRUE);
+	OutputLine(NULL, "「まぁ、調べる団体はそこだけじゃないんですがね？",
+		   NULL, "\"İyi de araştırmamız gereken tek grup onlar değil ki, değil mi?", Line_Continue);
+	Wait( 2800 );
+	OutputLine(NULL, "　あははは！",
+		   NULL, " Ahahaha! ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>嘉納</color>", NULL, "<color=#f5e6d3>Kanou</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/442600011", 256, TRUE);
+	OutputLine(NULL, "鬼ヶ淵と同じ程度のレベルで疑わしい団体になると、もう相当の数になりますよ。",
+		   NULL, "Sadece Onigafuchi ile aynı düzeyde şüpheli olan grupları sayacak olsak bile bir sürü örgüt çıkar.", Line_WaitForInput);
+
+
+//「赤坂くんからさ、もうちょっと詳しく聞いてみてよ＠…俺はちょっと要注意に感じるけどなぁ、その死守同盟。＠
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/442600012", 256, TRUE);
+	OutputLine(NULL, "人手も時間も残業代も全然足りません。」",
+		   NULL, " Hepsine yetecek ne elemanımız, ne vaktimiz ne de fazla mesai bütçemiz var.\"", Line_Normal);
+	ClearMessage();
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>室長</color>", NULL, "<color=#f5e6d3>Şef</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/kataoka44013", 256, TRUE);
+	OutputLine(NULL, "「赤坂くんからさ、もうちょっと詳しく聞いてみてよ。",
+		   NULL, "\"Akasaka-kun'dan biraz daha ayrıntılı bilgi isteyiver.", Line_Continue);
+	Wait( 2000 );
+
+//「彼、村人とうまく接触できたって連絡してきました＠現地の警察とも連携できてるみたいですね。￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "…俺はちょっと要注意に感じるけどなぁ、その死守同盟。」",
+		   NULL, " ...Bana kalırsa o İttifak'a biraz daha dikkat etmeliyiz.\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>嘉納</color>", NULL, "<color=#f5e6d3>Kanou</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/442600013", 256, TRUE);
+	OutputLine(NULL, "「彼、村人とうまく接触できたって連絡してきました。",
+		   NULL, "\"Köylülerle iyi bir iletişim kurduğunu bildirdi.", Line_Continue);
+	Wait( 3500 );
+
+//「赤坂くんとの連絡、密にしてください＠それで、彼からの情報が引っ掛かるようであれば、増援を送ることもありということで。￥
+	OutputLine(NULL, "現地の警察とも連携できてるみたいですね。」",
+		   NULL, " Görünüşe göre yerel polisle de iş birliği yapıyormuş.\"", Line_Normal);
+	ClearMessage();
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>室長</color>", NULL, "<color=#f5e6d3>Şef</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/kataoka44014", 256, TRUE);
+	OutputLine(NULL, "「赤坂くんとの連絡、密にしてください。",
+		   NULL, "\"Akasaka-kun ile iletişimi sıkı tutun.", Line_Continue);
+	Wait( 2500 );
+
+	OutputLine(NULL, "それで、彼からの情報が引っ掛かるようであれば、増援を送ることもありということで。」",
+		   NULL, " Ayrıca ondan gelen bilgilerde dikkat çeken bir şey olursa takviye gönderebiliriz.\"", Line_Normal);
+	ClearMessage();
+
+//「………あ、すみません、片岡室長～＠　局長からお電話です＠こっちに回しますか？＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>嘉納</color>", NULL, "<color=#f5e6d3>Kanou</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/442600014", 256, TRUE);
+	OutputLine(NULL, "「わっかりました。",
+		   NULL, "\"Anlaşıldı.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>嘉納</color>", NULL, "<color=#f5e6d3>Kanou</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/442600015", 256, TRUE);
+	OutputLine(NULL, " ………あ、すみません、片岡室長〜！",
+		   NULL, " ...Aa, affedersiniz, Şef Kataoka~!", Line_Continue);
+	Wait( 2000 );
+	OutputLine(NULL, "　局長からお電話です。",
+		   NULL, " Direktör'den telefon var.", Line_WaitForInput);
+
+
+//「あ、いい、いい＠　そっち行きます＠…もしもし＠　片岡です…………。￥
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>嘉納</color>", NULL, "<color=#f5e6d3>Kanou</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/442600016", 256, TRUE);
+	OutputLine(NULL, "こっちに回しますか？」",
+		   NULL, " Buraya bağlayayım mı?\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>室長</color>", NULL, "<color=#f5e6d3>Şef</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/kataoka44015", 256, TRUE);
+	OutputLine(NULL, "「あ、いい、いい！",
+		   NULL, "\"Ha, yok, gerek yok!", Line_Continue);
+	Wait( 500 );
+	OutputLine(NULL, "　そっち行きます。",
+		   NULL, " Ben oraya geçiyorum.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/kataoka44016", 256, TRUE);
+	OutputLine(NULL, "…もしもし！",
+		   NULL, " ...Alo, buyurun?\"", Line_Normal);
+	ClearMessage();
+
+
+	SetValidityOfInput( FALSE );
+	Wait( 1000 );
+	SetValidityOfInput( TRUE );
+	DisableWindow();
+	DrawScene("black", 1000 );
+	FadeOutBGM( 1, 1000, TRUE );
+	FadeOutBGM( 2, 1000, TRUE );
+//gosub *tip_e
+//return
+
+
+}

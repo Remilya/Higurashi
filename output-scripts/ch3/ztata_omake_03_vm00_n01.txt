@@ -1,0 +1,360 @@
+// Higurashi Türkçe Çeviri & Yerelleştirme: @Remilya | https://github.com/Remilya/Higurashi
+void main()
+{
+}
+
+void dialog000()
+{
+}
+
+void dialog001()
+{
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>詩音</color>", NULL, "<color=#5ec69a>Shion</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "", 128, TRUE);
+	OutputLine(NULL, "「じゃあ圭ちゃん、私と一緒に言いましょうね。",
+		   NULL, " Bir, iki, üç!\"", Line_WaitForInput);
+	OutputLine(NULL, "せーの！」",
+		   NULL, "\"\"Bir sonraki hikâyenin ana karakteri Shion Sonozaki olacak~~!!\"\"", GetGlobalFlag(GLinemodeSp));
+
+//＜詩音
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+	DisableWindow();
+	PlaySE( 3, "wa_015", 56, 64 );
+	Wait( 300 );
+	PlaySE( 3, "wa_015", 56, 64 );
+	Wait( 300 );
+	PlaySE( 3, "wa_015", 56, 64 );
+	Wait( 300 );
+	DrawBustshot(5, "background/furiker_a", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 25, 100, TRUE );
+
+	FadeOutBGM( 1, 1000, TRUE );
+
+//!s0「「次回のシナリオの主人公は園崎詩音になりました～～！！」」!sd/
+//!s0
+	SetSpeedOfMessage( TRUE, 127, );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>詩音</color>＆<color=#956f6e>圭一</color>", NULL, "<color=#5ec69a>Shion</color> ve <color=#956f6e>Keiichi</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "", 128, TRUE);
+	OutputLine(NULL, "「「次回のシナリオの主人公は園崎詩音になりました〜〜！！」」",
+		   NULL, "\"\"\"N-Neeeeeeeee?!?!\"\"\"", Line_Continue);
+// !sd/
+	SetSpeedOfMessage( FALSE, 0, );
+
+	PlaySE( 3, "wa_007", 56, 64 );
+	ShakeScreen( 1, 50, 20, 3, 0, );
+	OutputLineAll(NULL, "", Line_Normal);
+}
+
+void dialog002()
+{
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#956f6e>圭一</color>", NULL, "<color=#956f6e>Keiichi</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 1, "ps3/s20/01/440100218", 256, TRUE);
+	OutputLine(NULL, "　風の噂じゃ、とうとう俺にも立ち絵が実装とか？！",
+		   NULL, " Yaşasııın!!\"", Line_WaitForInput);
+	ModPlayVoiceLS(4, 1, "ps3/s20/01/440100219", 256, TRUE);
+	OutputLine(NULL, "　ひゃっほ〜い！！」",
+		   NULL, "\"Eh, Kei-chan'ın karakter çizimleri disk alanında büyük bir israftan başka bir şey olmazdı doğrusu.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+}
+
+void dialog003()
+{
+//　私個人としては、ガスに包まれて、ひとり、またひとりと村人が痙攣して泡を吹きながら息絶えていくシーンの描写も欲しかったところだけど、みんなの感想も同じかしら？」/
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f6d9a8>鷹野</color>", NULL, "<color=#f6d9a8>Takano</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 9, "ps3/s20/09/440900124", 256, TRUE);
+	OutputLine(NULL, "　私個人としては、ガスに包まれて、ひとり、またひとりと村人が痙攣して泡を吹きながら息絶えていくシーンの描写も欲しかったところだけど、みんなの感想も同じかしら？」",
+		   NULL, "Şahsen ben gazın köye yayıldığı, köylülerin teker teker kasılarak ağızlarından köpükler saça saça can verdiği bir sahnenin de tasvir edilmesini isterdim—sizler de öyle düşünmüyor musunuz?\"", Line_Continue);
+}
+
+void dialog004()
+{
+	ModPlayVoiceLS(4, 2, "ps3/s20/02/440200239", 256, TRUE);
+	OutputLine(NULL, "　ではここで、今回のシナリオから立ち絵新登場の皆さんです。",
+		   NULL, " Şimdi karşınızda bu bölümde ilk kez karakter çizimiyle boy gösteren isimler var.", Line_WaitForInput);
+}
+
+void dialog005()
+{
+	ModPlayVoiceLS(4, 4, "ps3/s20/04/440400215", 256, TRUE);
+	OutputLine(NULL, "今回限りの脇役にしては出番もセリフも多過ぎでしてよ。」",
+		   NULL, "\"Hahahaha☆.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+}
+
+void dialog006()
+{
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/441000075", 256, TRUE);
+	OutputLine(NULL, "　次回のシナリオでも出番があるかはわかりませんが、その節は応援よろしくお願いしますね〜。」",
+		   NULL, "\"Çok teşekkür ederiz!", Line_Normal);
+	ClearMessage();
+}
+
+void dialog007()
+{
+	ModPlayVoiceLS(4, 2, "ps3/s20/02/440200243", 256, TRUE);
+	OutputLine(NULL, "　では次に、第１回から登場していたにも関わらず、ずっと立ち絵がなかった、知恵先生〜！！」",
+		   NULL, "\"Herkese merhabalar!", Line_Normal);
+	ClearMessage();
+}
+
+void dialog008()
+{
+	ModPlayVoiceLS(4, 22, "ps3/s20/22/441400026", 256, TRUE);
+	OutputLine(NULL, "　第１回からずーっと学校シーンで登場させてもらってたんですけど、どういうわけか立ち絵がいただけなくて。",
+		   NULL, " ...Neden acaba?\"", Line_WaitForInput);
+	ModPlayVoiceLS(4, 22, "ps3/s20/22/441400027", 256, TRUE);
+	OutputLine(NULL, "…どうしてなんでしょうねぇ。」",
+		   NULL, "\"...Ah, haha, hahahahaha!", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+}
+
+void dialog009()
+{
+	ModPlayVoiceLS(4, 2, "ps3/s20/02/440200245", 256, TRUE);
+	OutputLine(NULL, "　ど、どうしてなんでしょうね！",
+		   NULL, " Aa, birisi Chie-sensei'ye yer açsın lütfen~!\"", Line_WaitForInput);
+}
+
+void dialog010()
+{
+//「劇中の私が、制服の可愛いレストランと言っているのは、きっとエンジェルモートのことに違いありません＠で、エンジェルモートってのは園崎一族が持つお店ですから...。＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 11, "ps3/s20/11/440700405", 256, TRUE);
+	OutputLine(NULL, "「劇中の私が、制服の可愛いレストランと言っているのは、きっとエンジェルモートのことに違いありません。",
+		   NULL, " Ve Angel Mort da Sonozaki Ailesi'ne ait bir mekân olduğuna göre...\"", Line_WaitForInput);
+	ModPlayVoiceLS(4, 11, "ps3/s20/11/440700406", 256, TRUE);
+	OutputLine(NULL, "で、エンジェルモートってのは園崎一族が持つお店ですから…。」",
+		   NULL, "\"Kei-chan'ı tanıyan biri de oradaydı ve bunu bana haber verdi... diye düşünürsek gayet mantıklı oluyor, değil mi?", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+}
+
+void dialog011()
+{
+//「......鬼隠し編の私はコワイ人だけど、それは鬼隠し編だけの設定、ということじゃなくて＠...私は私で、３つのシナリオに、まったく変わらない設定で出演している、ということですね？￥
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f0953d>レナ</color>", NULL, "<color=#f0953d>Rena</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 2, "ps3/s20/02/440200258", 256, TRUE);
+	OutputLine(NULL, "「……鬼隠し編の私はコワイ人だけど、それは鬼隠し編だけの設定、ということじゃなくて。",
+		   NULL, " her üç hikâyede de karakterim birebir aynı olduğu içindi, bunu mu demek istiyorsunuz?\"", Line_WaitForInput);
+	ModPlayVoiceLS(4, 2, "ps3/s20/02/440200259", 256, TRUE);
+	OutputLine(NULL, "…私は私で、３つのシナリオに、まったく変わらない設定で出演している、ということですね？」",
+		   NULL, "\"Karakter kurgularının birebir aynı olduğu görüşüne katılıyorum.", Line_Normal);
+	ClearMessage();
+}
+
+void dialog012()
+{
+//「一般的なサウンドノベル的に考えると...物語が派生する分岐点が存在したってことになりますね。＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>Irie</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/441000086", 256, TRUE);
+	OutputLine(NULL, "「一般的なサウンドノベル的に考えると…物語が派生する分岐点が存在したってことになりますね。」",
+		   NULL, "\"Yani Watanagashi'de... bebeği Abla'ya vermemiş olman gibi mi?\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+}
+
+void dialog013()
+{
+//「綿流し編で言うと、...お姉に人形を渡さなかった、という辺り？＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>詩音</color>", NULL, "<color=#5ec69a>Shion</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 6, "ps3/s20/06/440600106", 256, TRUE);
+	OutputLine(NULL, "「綿流し編で言うと、…お姉に人形を渡さなかった、という辺り？」",
+		   NULL, "\"...Daha hikâyenin en başındaki tek bir seçenek yüzünden kaçınılmaz kötü sona girmek mi... Amma da korkutucu bir seçenekmiş!\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+}
+
+void dialog014()
+{
+//「では......うーん＠祟殺し編の場合ですと、...叔父を殺そうと決意する辺りですかしら。＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#fcdb77>沙都子</color>", NULL, "<color=#fcdb77>Satoko</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 4, "ps3/s20/04/440400220", 256, TRUE);
+	OutputLine(NULL, "「では……うーん。",
+		   NULL, " Tatarigoroshi'de ise... belki amcayı öldürmeye karar verip vermemek olabilir efendim.\"", Line_Continue);
+	Wait(2000);
+	OutputLine(NULL, "祟殺し編の場合ですと、…叔父を殺そうと決意する辺りですかしら。」",
+		   NULL, "\"Bence ondan çok daha önceydi.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+}
+
+void dialog015()
+{
+	ModPlayVoiceLS(4, 9, "ps3/s20/09/440900135", 256, TRUE);
+	OutputLine(NULL, "…愛人がトラブルで失踪して、叔父が雛見沢に帰ってくることになった辺りから、もう分岐しちゃってると思うわね。」",
+		   NULL, "\"...Peki en baştaki Onikakushi bölümünün ilk kırılma noktası neresiydi nanodesu?\"", Line_Normal);
+	ClearMessage();
+}
+
+void dialog016()
+{
+	ModPlayVoiceLS(4, 4, "ps3/s20/04/440400222", 256, TRUE);
+	OutputLine(NULL, "…ちゃんと圭一さんが魅音さんにお人形をあげて。",
+		   NULL, " Ve ne Ooishi-san ne de amcam ortaya çıksaydı... hiçbir şey yaşanmadan huzur içinde vakit geçirmez miydik efendim?\"", Line_WaitForInput);
+	ModPlayVoiceLS(4, 4, "ps3/s20/04/440400223", 256, TRUE);
+	OutputLine(NULL, "それで大石さんも私の叔父さんも現れなかったら、……何も起こらずに平和に過せるってことなんじゃありませんの？」",
+		   NULL, "\"...Vay be...", Line_Normal);
+	ClearMessage();
+}
+
+void dialog017()
+{
+	ModPlayVoiceLS(4, 3, "ps3/s20/03/440300383", 256, TRUE);
+	OutputLine(NULL, "　あんたにゃ次は容赦なく釘を打つからね！！",
+		   NULL, " Çatır çatır hem de!!!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 3, "ps3/s20/03/440300384", 256, TRUE);
+	OutputLine(NULL, "　もうガシガシにー！！！",
+		   NULL, " Bekle sen görürsüüüün!!\"", Line_WaitForInput);
+}
+
+void dialog018()
+{
+//「鬼ヶ淵の沼に生贄を沈める...生贄の儀式、ですね！＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>詩音</color>", NULL, "<color=#5ec69a>Shion</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 6, "ps3/s20/06/440600110", 256, TRUE);
+	OutputLine(NULL, "「鬼ヶ淵の沼に生贄を沈める…生贄の儀式、ですね！」",
+		   NULL, "\"...K-Kurban mı... Kimi kurban edeceğiz ki?\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+//＜詩音
+	DisableWindow();
+	ModSetLayerFilter(3, 256, "none");
+	ModDrawCharacterWithFiltering(3, 2, "sprite/re1b_bikkuri_b1_", "2", "right", 1, 160, 0, FALSE, 0, 0, 0, 0, 0, 20, 300, TRUE );
+
+//A 「…さ、捧げ物って、…何をオヤシロさまに捧げるっていうんですか？」
+//「...い、生贄って、...誰を生贄にするんですか？＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f0953d>レナ</color>", NULL, "<color=#f0953d>Rena</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 2, "ps3/s20/02/440200266", 256, TRUE);
+	OutputLine(NULL, "「…い、生贄って、…誰を生贄にするんですか？」",
+		   NULL, "\"Hadi ama, kafanı biraz çalıştırsana!", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+}
+
+void dialog019()
+{
+	ModPlayVoiceLS(4, 3, "ps3/s20/03/440300387", 256, TRUE);
+	OutputLine(NULL, "どんな分岐にも関係なく死亡が確定している人だよ！",
+		   NULL, " Nasıl olsa ölecekse, bari Hinamizawa uğruna kurban gitsin de bir işe yarasın!\"", Line_WaitForInput);
+}
+
+void dialog020()
+{
+//「......あー...、!w1000...その死亡が確定している人って、!w1000...やっぱり僕のことかな。＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#945c44>富竹</color>", NULL, "<color=#945c44>Tomitake</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 8, "ps3/s20/08/440800139", 256, TRUE);
+	OutputLine(NULL, "「……あー…、",
+		   NULL, " ...'Ne olursa olsun ölen kişi' derken...", Line_Continue);
+
+	// (backup) SetValidityOfInput( FALSE );
+	Wait( 1000 );
+	// (backup) SetValidityOfInput( TRUE );
+
+	OutputLine(NULL, "…その死亡が確定している人って、",
+		   NULL, " benden bahsediyorsunuz, değil mi?\"", Line_Continue);
+
+	// (backup) SetValidityOfInput( FALSE );
+	Wait( 1000 );
+	// (backup) SetValidityOfInput( TRUE );
+
+	OutputLine(NULL, "…やっぱり僕のことかな。」",
+		   NULL, "\"Başından beri biliyordum... Bu hikâyede vazgeçilmez, çok önemli bir rolün olduğuna inanıyordum Jirou-san.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+}
+
+void dialog021()
+{
+//「やぁ、私が北条叔父ですよ～。（立ち絵がないので代役です☆）＠愛人に逃げられてロンリーブル～＠　早く雛見沢に帰って、沙都子ちゃんを拉致監禁してハァハァに調教してご奉仕メイドですよ～～♪/
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>Irie</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/441000094", 256, TRUE);
+	OutputLine(NULL, "「やぁ、私が北条叔父ですよ〜。（立ち絵がないので代役です☆）、",
+		   NULL, " Sevgilim kaçıp gittiği için çok yalnız ve kederliyim~♪.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/441000095", 256, TRUE);
+	OutputLine(NULL, "愛人に逃げられてロンリーブル〜♪",
+		   NULL, "En iyisi bir an önce Hinamizawa'ya döneyim, Satoko-chan'ı eve kilitleyeyim ve—hah, hah—onu kendime hizmetçi olarak eğiteyim~~♪.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>Irie</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/441000096", 256, TRUE);
+	OutputLine(NULL, "　早く雛見沢に帰って、沙都子ちゃんを拉致監禁してハァハァに調教してご奉仕メイドですよ〜〜♪",
+		   NULL, " Motosikletimle mi dönsem acaba?", Line_Continue);
+}
+
+void dialog022()
+{
+	ModPlayVoiceLS(4, 2, "ps3/s20/02/440200269", 256, TRUE);
+	OutputLine(NULL, "　突然、私の腕が光って唸って、大変なことに☆」",
+		   NULL, "\"...Bu ceset yığını epey büyük bir mesele oldu nanodesu.\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+}
+
+void dialog023()
+{
+	ModPlayVoiceLS(4, 1, "ps3/s20/01/440100215", 256, TRUE);
+	OutputLine(NULL, "　出してくれ。」",
+		   NULL, "\"Aa?", Line_Normal);
+	ClearMessage();
+}
+
+void dialog024()
+{
+	ModPlayVoiceLS(4, 6, "ps3/s20/06/440600117", 256, TRUE);
+	OutputLine(NULL, "　もう少し秘密にしたかったけど、まぁいいか。」",
+		   NULL, "\"Shion-san ile Keiichi-san arasında baş başa bir sır mı?!\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+}
+
+void dialog025()
+{
+//双子姉妹の遅れ登場妹は絶対に人気が出るってのは、東鳩の時代から決められたお約束ですしー♪＠
+	ModPlayVoiceLS(4, 6, "ps3/s20/06/440600123", 256, TRUE);
+	OutputLine(NULL, "双子姉妹の遅れ登場妹は絶対に人気が出るってのは、東鳩の時代から決められたお約束ですしー♪」",
+		   NULL, "\"Ne demek istediğine dair hiçbir fikrim yok, umurumda da değil.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+}
+
+void dialog026()
+{
+	ModPlayVoiceLS(4, 1, "ps3/s20/01/440100217", 256, TRUE);
+	OutputLine(NULL, "とにかく俺は次回に限り、主人公のお役御免！　",
+		   NULL, " Söylentiler doğruysa sonunda benim de bir karakter çizimim olacakmış galiba?!", GetGlobalFlag(GLinemodeSp));
+}
+
+void dialog027()
+{
+//「まー、圭ちゃんの立ち絵なんてディスク容量の無駄遣いもいいとこですからね＠ディスク１枚に納まらなくなったら、バッサリ没になる可能性激大ですけど。￥
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>詩音</color>", NULL, "<color=#5ec69a>Shion</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 6, "ps3/s20/06/440600124", 256, TRUE);
+	OutputLine(NULL, "「まー、圭ちゃんの立ち絵なんてディスク容量の無駄遣いもいいとこですからね。",
+		   NULL, " Eğer tek bir diske sığmazsa ilk gözden çıkarılacak şeyin o olma ihtimali epey yüksek.\"", Line_WaitForInput);
+	ModPlayVoiceLS(4, 6, "ps3/s20/06/440600125", 256, TRUE);
+	OutputLine(NULL, "ディスク１枚に納まらなくなったら、バッサリ没になる可能性激大ですけど。」",
+		   NULL, "\"...Ama bunun sizin için bir sakıncası yok mu Shion-san?", Line_Normal);
+	ClearMessage();
+}
+
+void dialog028()
+{
+//「『ひぐらしのなく頃に』も、今回の祟殺し編で３作目＠ミステリアスな謎を次々と提示してきた前半部はここで折り返しになり＠/
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f0953d>レナ</color>", NULL, "<color=#f0953d>Rena</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 2, "ps3/s20/02/440200276", 256, TRUE);
+	OutputLine(NULL, "「「ひぐらしのなく頃に」も、今回の祟殺し編で３作目。",
+		   NULL, "Birbirinden esrarengiz ve heyecan verici gizemler sunan ilk yarı burada tamamlanıyor ve bir dahaki seferden itibaren...", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f0953d>レナ</color>", NULL, "<color=#f0953d>Rena</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 2, "ps3/s20/02/440200277", 256, TRUE);
+	OutputLine(NULL, "ミステリアスな謎を次々と提示してきた前半部はここで折り返しになり、",
+		   NULL, " gizemlerin çözülmeye başlayacağı ikinci yarı, yani Araştırma Bölümü (geçici isim) başlıyor.\"", Line_WaitForInput);
+
+	PlaySE( 3, "wa_007", 56, 64 );
+
+//次回からはこれまでの謎を解決していく後半部、究明編（仮称）のスタートとなります。
+	ModPlayVoiceLS(4, 2, "ps3/s20/02/440200278b", 256, TRUE);
+	OutputLine(NULL, "次回からはこれまでの謎を解決していく後半部、究明編（仮称）のスタートとなります。」",
+		   NULL, "\"Yani benim usta bir dedektif olup tüm bu akıl almaz, mantıksız gizemleri çatır çatır çözdüğüm nefes kesici bir hikâye olacak.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+}
+
+void dialog029()
+{
+	ModPlayVoiceLS(4, 3, "ps3/s20/03/440300396", 256, TRUE);
+	OutputLine(NULL, "　御三家の秘密に近付きすぎて、監禁されて拷問されて！",
+		   NULL, " Korkunç ve trajik bir ölümle karşılaşacağın kesin!!\"", Line_WaitForInput);
+	ModPlayVoiceLS(4, 3, "ps3/s20/03/440300397", 256, TRUE);
+	OutputLine(NULL, "　非業の最期を遂げる役に決まってるー！！」",
+		   NULL, "\"Abla, asıl ben sana sormalıyım—tüm gizemlerini ve sırlarını tek tek ortaya çıkarmama, ardından benden özür dileyerek intihar etmeye ruhen hazır mısın?\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+}

@@ -1,0 +1,77 @@
+// Higurashi Türkçe Çeviri & Yerelleştirme: @Remilya | https://github.com/Remilya/Higurashi
+void main()
+{
+	EnableJumpingOfReturnIcon();
+
+	PlayBGM( 1, "denwa_m", 56, 0 );
+	SetValidityOfInput( FALSE );
+	Wait( 4000 );
+	SetValidityOfInput( TRUE );
+	FadeOutBGM( 1, 1000, FALSE );
+	DrawSceneWithMask( "background/denwa", "maskup", 1, 0, 300 );
+	PlayBGM( 0, "Mati", 56, 0 );
+
+	ClearMessage();
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>所長</color>", NULL, "<color=#f5e6d3>Şef</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/442100001", 256, TRUE);
+	OutputLine(NULL, "「そうですか。裏に、町会も、その鬼ヶ淵死守同盟とかいう恫喝団体もいないとわかれば、これで安心でしょう。",
+		   NULL, "\"Anlıyorum... Köy Meclisi ve Onigafuchi Muhafızları işin içinde olmadığı sürece bizim için sorun yok.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/442100002", 256, TRUE);
+	OutputLine(NULL, "北条沙都子さんの件は、特別扱いせずに慎重に対応してください。」",
+		   NULL, " Lütfen üzerinde çok fazla endişelenmeden Satoko Houjou-san'ın vakasıyla ilgilenin.\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>原山</color>", NULL, "<color=#f5e6d3>Harayama</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/442900001", 256, TRUE);
+	OutputLine(NULL, "「はい。雛見沢の総意でないとわかればこちらも落ち着いて処理ができます。」",
+		   NULL, "\"İlgileneceğim. Bütün köyün onların arkasında olmadığını öğrendiğime sevindim.\"", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>所長</color>", NULL, "<color=#f5e6d3>Şef</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/442100003", 256, TRUE);
+	OutputLine(NULL, "「しかし、私は好きになれませんね。裏に誰がいようがいなかろうが、常に公平な対応をするのが公務員です。",
+		   NULL, "\"Gerçi arkalarında olsalardı bile onlara katılmazdım. İpleri kimin çektiği önemli olmaksızın her vakaya eşit davranmalıyız. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>所長</color>", NULL, "<color=#f5e6d3>Şef</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/442100004", 256, TRUE);
+	OutputLine(NULL, "恫喝がまかり通るようなことがあったという先例を残したから、雛見沢は特別扱いだという妙なルールができてしまったのではないですか？」",
+		   NULL, "Hinamizawa'ya özel muamele göstermemiz gerektiğine dair bu tuhaf kural, yalnızca geçmişte tehditlerin bizi etkilemesine izin verdiğimizde oluşan emsalden kaynaklanıyor.\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>原山</color>", NULL, "<color=#f5e6d3>Harayama</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/442900002", 256, TRUE);
+	OutputLine(NULL, "「……まぁ、確かに所長の仰るとおりだとは思いますが、……一応ですね、その…。」",
+		   NULL, "\"...Şey, kesinlikle haklısınız efendim... ama...\"", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>所長</color>", NULL, "<color=#f5e6d3>Şef</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/442100005", 256, TRUE);
+	OutputLine(NULL, "「わざわざ自治の係長が、連合町会が背景にいないことを確認してくれたんですから、うちの職員も厳粛に事務を進めてください。",
+		   NULL, "\"Lütfen bu vaka üzerinde çalışmaya devam edin. Belediyedeki müdür, Köy Meclisi'nin bu dilekçeyle hiçbir ilgisi olmadığı konusunda bize güvence verdi. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>所長</color>", NULL, "<color=#f5e6d3>Şef</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/442100006", 256, TRUE);
+	OutputLine(NULL, "雛見沢だからどうすべきかとお伺いを立てること自体がすでに公務員の心構えとして問題です。係長も、その辺をよく職員に教えてくれなければ困ります。」",
+		   NULL, "Kurumumuzun küçücük bir topluluktan bu kadar korkması büyük bir sorun. Bir müdür olarak bunun üzerinde biraz düşünmelisiniz.\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>原山</color>", NULL, "<color=#f5e6d3>Harayama</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/442900003", 256, TRUE);
+	OutputLine(NULL, "「はい、申し訳ございません…。とにかく、裏に村がいないとわかれば安心です。」",
+		   NULL, "\"Evet, özür dilerim... Her neyse, köyün onları desteklemediğini duyduğuma sevindim...\"", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>所長</color>", NULL, "<color=#f5e6d3>Şef</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/442100007", 256, TRUE);
+	OutputLine(NULL, "「裏に村がいるとわかっても、対応を焦るべきではありません。何があろうとも！",
+		   NULL, "\"Köy onları desteklese bile aynı şekilde hareket etmelisiniz. Perde arkasında kim olursa olsun!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/442100008", 256, TRUE);
+	OutputLine(NULL, "　北条沙都子さんの件は慎重に対応してください。",
+		   NULL, " Lütfen Satoko Houjou vakasında çok dikkatli olun.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/442100009", 256, TRUE);
+	OutputLine(NULL, "くれぐれも異例の措置は取らないよう、担当に念を押しておいてくださいよ。」",
+		   NULL, " Ona herhangi bir özel muamele göstermeye kalkışmayın, anlaşıldı mı?\"", Line_Normal);
+	ClearMessage();
+
+	DisableWindow();
+	Wait( 1000 );
+	DrawScene( "black", 1000 );
+}

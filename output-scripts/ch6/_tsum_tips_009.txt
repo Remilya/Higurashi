@@ -1,0 +1,87 @@
+// Higurashi Türkçe Çeviri & Yerelleştirme: @Remilya | https://github.com/Remilya/Higurashi
+void main()
+{
+
+	EnableJumpingOfReturnIcon();
+
+	FadeOutBGM( 0, 0, FALSE );
+	FadeOutBGM( 1, 0, FALSE );
+	FadeOutBGM( 2, 0, FALSE );
+	FadeOutBGM( 3, 0, TRUE );
+
+	Wait( 100 );
+
+	ModPlayBGM( 0, "higurashi_utu", 56, 0, 1 );
+
+	DrawSceneWithMask( "background/sinryou_sinsatu4", "maskleft", 1, 0, 300 );
+
+	ClearMessage();
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　また、父親に関しても注意を払う必要があります。",
+		   NULL, "Ayrıca, babasını da yakından takip etmemiz büyük önem taşımaktadır.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　父親も離婚を経験して少なからずの精神的打撃を受けている上、患者に親身になろうとする余り、感応性妄想性障害を起こす可能性があります。",
+		   NULL, "Boşanma nedeniyle kendisi de ruhsal bir şok yaşadığından ve hastayla ilgilenmek için büyük çaba sarf ettiğinden, babada da uyarılmış sanrısal bozukluk gelişmesi ihtimali oldukça güçlüdür.", Line_Normal);
+	ClearMessage();
+
+	PlaySE( 0, "s_page", 56, 64 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	if (GetGlobalFlag(GADVMode)) { OutputLine(NULL, "", NULL, "<size=-2>", Line_Continue); }
+	OutputLine(NULL, "　メンタルケアの第一歩として、相手の話を充分に聞き、頭ごなしに否定しないことは初歩の初歩でありますが、特に家族の場合、これによって感応してしまうことが少なくありません。",
+		   NULL, "Ruhsal bakımın ilk adımı olarak, hastanın anlattıklarını reddetmeden dikkatle dinlemek gerekir. Bu, işin en temel kuralıdır. Ancak hasta ile dinleyici arasında akrabalık bağı olduğunda, dinleyicinin hastanın sanrılarından derinden etkilenmesi çok kolaydır.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　また、寄生虫妄想症は感応を起こすことが広く知られており、時に１つのコミュニティ全体に広がることも少なくありません。",
+		   NULL, "Ek olarak, sanrısal parazitozun insanları telkine son derece açık hale getirdiği yaygın olarak bilinmektedir ve bu etki bazen bütün bir topluluğa yayılabilmektedir.", Line_Normal);
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { ClearMessage(); }
+	PlaySE( 0, "s_page", 56, 64 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "（よって複数人から訴えがあったとしても、必ずしも寄生虫が存在するとは限りません。",
+		   NULL, "(Dolayısıyla, birden fazla kişi parazit enfeksiyonuna yakalandığını iddia etse bile, bu durum mutlaka bir parazitin varlığını kanıtlamaz. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "保健所などへの害虫駆除の訴えにはしばしば、こうした集団妄想が含まれます）",
+		   NULL, "Haşere ilaçlaması için Sağlık Merkezlerine yapılan telefon ihbarlarının bir kısmı kitlesel bir sanrıdan ibarettir.)", Line_Normal);
+	ClearMessage();
+
+	PlaySE( 0, "s_page", 56, 64 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　しかも今回のケースでは、共有される妄想の内容が非常に過激であるため、",
+		   NULL, "Bu vakadaki sanrının konusu son derece şiddetli ve saplantılı olduğundan, ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "最悪の場合、寄生虫の治療と称して、感応者同士が異常な方法で相互を傷付けあい死に至らしめる、もしくは悲観して心中するなどの行為に走ることも考えられます。",
+		   NULL, "hastalar bunun hastalığın tedavisi olduğuna inanarak anormal yollarla birbirlerine zarar verebilir, hatta birbirlerini öldürebilirler. En kötü ihtimalle ise umutlarını kaybedip birlikte intihar edebilirler.", Line_Normal);
+	ClearMessage();
+
+	PlaySE( 0, "s_page", 56, 64 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　また、この感応性妄想性障害は、二人組精神病の呼び名もあり、親身な相方に対して特に強い感応性を示します。",
+		   NULL, "Paylaşılmış psikotik bozukluk olarak da bilinen bu bulaşıcı sanrısal bozukluk, özellikle yakın çevredeki kişileri etkileme konusunda güçlü bir potansiyel göstermektedir.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　患者に接する人間には、患者が現在治療中であることを理解させ、妄想に感応しないよう充分に注意を促す必要があるでしょう。",
+		   NULL, "Hastalarla temas kuracak herkesin, hastaların tıbbi tedavi altında olduğunu anlaması sağlanmalı ve bu kişiler hastaların sanrılarından etkilenmemeleri konusunda uyarılmalıdır.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　なお、感応しやすい人間としては、家族、もしくは恋人のような親身になってくれる人間が挙げられます。",
+		   NULL, "Kolayca etkilenme olasılığı yüksek olan bireyler; hastaların aile üyeleri ile erkek veya kız arkadaşları gibi hastalara derinden değer veren kişilerdir.", Line_Normal);
+	ClearMessage();
+
+	DisableWindow();
+	Wait( 1000 );
+	DrawScene( "black", 1000 );
+}

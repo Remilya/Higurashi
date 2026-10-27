@@ -1,0 +1,1890 @@
+// Higurashi Türkçe Çeviri & Yerelleştirme: @Remilya | https://github.com/Remilya/Higurashi
+void main()
+{
+
+
+
+	//Unhandled: *Hiru_day2
+
+
+	//;■翌朝、学校
+	ClearMessage();
+	DrawSceneWithMask( "white", "effect/m1", 0, 0, 1300 );
+	DrawSceneWithMask( "bg/g1", "effect/up", 0, 0, 1300 );
+	PlaySE( 0, "chaimu", 128, 64 );
+	Wait( 2000 );
+	DrawSceneWithMask( "white", "effect/right", 0, 0, 500 );
+	PlayBGM( 1, "semi", 120, 0 );
+	DrawScene( "bg/gk1", 1000 );
+
+	SetSpeedOfMessage( FALSE, 0 );
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　楽しいはずのお弁当の時間だったが、どうも今日は盛り上がりに欠けた。",
+		   NULL, "Bugün, normalde eğlenceli geçen öğle yemeği vaktimiz nedense pek sönüktü.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　レナの様子が朝から変だからだ。",
+		   NULL, "Bunun sebebi Rena'nın bu sabahtan beri tuhaf davranmasıydı.", Line_Normal);
+	ClearMessage();
+
+	DisableWindow();
+	ModSetLayerFilter(1, 256, "none");
+	ModDrawCharacterWithFiltering(1, 3, "sprite/me1a_def_a1_", "1", "effect/left", 0, -160, 0, FALSE, 0, 0, 0, 0, 0, 0, 300, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>Mion</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「さっきから調子悪そうだね。",
+		   NULL, "\"Bütün gün pek iyi görünmüyordun.", Line_WaitForInput);
+	OutputLine(NULL, "…今日は体調悪いの？」",
+		   NULL, " ...Kendini hasta mı hissediyorsun?\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	DisableWindow();
+	ModSetLayerFilter(2, 256, "none");
+	ModDrawCharacter(2, 2, "sprite/re1a_hau_a1_", "2", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 10, 300, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f0953d>レナ</color>", NULL, "<color=#f0953d>Rena</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「……うぅん、体調悪くないよぅ。",
+		   NULL, "\"...Hayır, hasta değilim.", Line_WaitForInput);
+	OutputLine(NULL, "………はぅ…。」",
+		   NULL, " ......Hau...\"", Line_Normal);
+	ClearMessage();
+
+	DisableWindow();
+	FadeBustshotWithFiltering( 1, "effect/right", 0, FALSE, 0, 0, 300, TRUE );
+	ModSetLayerFilter(3, 256, "none");
+	ModDrawCharacterWithFiltering(3, 4, "sprite/sa1b_yareyare_b1_", "0", "effect/left", 0, -160, 0, FALSE, 0, 0, 0, 0, 0, 20, 300, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#fcdb77>沙都子</color>", NULL, "<color=#fcdb77>Satoko</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「また溜め息をついてますわね。",
+		   NULL, "\"Yine iç çektin işte.", Line_WaitForInput);
+	OutputLine(NULL, "溜め息をひとつつく度に幸せが逃げてっちゃいますのよー？」",
+		   NULL, " Her iç çektiğinde mutluluğunun biraz daha uçup gittiğini biliyor muydun?\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	DisableWindow();
+	ModDrawCharacter(2, 2, "sprite/re1b_hau_b1_", "2", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 10, 300, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f0953d>レナ</color>", NULL, "<color=#f0953d>Rena</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「……うん。",
+		   NULL, "\"...Evet.", Line_WaitForInput);
+	OutputLine(NULL, "……幸せ…。",
+		   NULL, " ...Mutluluk...", Line_WaitForInput);
+	OutputLine(NULL, "………はぅ…。」",
+		   NULL, " ......Hau...\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　登校した時はこれほどではなかったのだが…。",
+		   NULL, "Okula ilk geldiğimizde durumu bu kadar kötü değildi...", Line_WaitForInput);
+	OutputLine(NULL, "やっぱり風邪なのだろうか。",
+		   NULL, " Yoksa gerçekten hasta mıydı?", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　朝からどこかぼんやりとしていて微熱がありそうな感じだった。",
+		   NULL, "Hafif ateşi varmış gibi bütün sabah biraz dalgındı.", Line_Normal);
+	ClearMessage();
+
+	DisableWindow();
+	FadeBustshotWithFiltering( 3, "effect/right", 0, FALSE, 0, 0, 300, TRUE );
+	ModSetLayerFilter(4, 256, "none");
+	ModDrawCharacterWithFiltering(4, 3, "sprite/me1a_def_a1_", "1", "effect/left", 0, -160, 0, FALSE, 0, 0, 0, 0, 0, 5, 300, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>Mion</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「保健室で風邪薬でももらう？",
+		   NULL, "\"Revirden soğuk algınlığı ilacı ister misin?", Line_WaitForInput);
+	OutputLine(NULL, "　最近、昼夜の温度差が激しいからね。」",
+		   NULL, " Son zamanlarda gece ile gündüz arasındaki sıcaklık farkı epey aşırı boyutlarda.\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	DisableWindow();
+	ModDrawCharacter(2, 2, "sprite/re1b_kaii_b1_", "2", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 10, 300, TRUE );
+	FadeOutBGM( 1, 300, FALSE );
+	PlayBGM( 0, "u2_rika", 120, 0 );
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f0953d>レナ</color>", NULL, "<color=#f0953d>Rena</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「………うぅん、いい。",
+		   NULL, "\"...Hayır, ben iyiyim.", Line_WaitForInput);
+	OutputLine(NULL, "…今日はその、…レナは放っておいてくれないかな。",
+		   NULL, " ...Bugün, şey... Rena'yı yalnız bırakabilir misiniz?", Line_WaitForInput);
+	OutputLine(NULL, "……かな。」",
+		   NULL, " ...Olur mu?\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	DisableWindow();
+	FadeBustshotWithFiltering( 2, "effect/left", 0, FALSE, 0, 0, 300, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　レナはぽやんとした口調でそれだけを言うと、俺たちの輪を抜け、自分の席へ戻ってしまった。",
+		   NULL, "Rena uyuşuk bir ses tonuyla sadece bunu söyledi ve yanımızdan ayrılıp kendi sırasına döndü.", Line_WaitForInput);
+	OutputLine(NULL, "そして頬杖を突きながら、窓の外を見て再び溜め息を漏らす。",
+		   NULL, " Sonra çenesini eline dayadı, pencereden dışarı dikti gözlerini ve tekrar iç çekti.", Line_Normal);
+	ClearMessage();
+
+	DisableWindow();
+	ModDrawCharacter(4, 3, "sprite/me1b_tokui_a1_", "2", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 5, 300, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>Mion</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「ふふ〜〜ん？",
+		   NULL, "\"Hm-hmmm?", Line_WaitForInput);
+
+	PlaySE( 0, "kira", 128, 64 );
+
+	OutputLine(NULL, "　おじさんの見たところ、あれは恋だねぇ！」",
+		   NULL, " Bu yaşlı moruğun gördüğü kadarıyla, bu kesinlikle aşk olmalı!\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	DisableWindow();
+	ModDrawCharacterWithFiltering(2, 4, "sprite/sa1b_odoroki_b1_", "2", "effect/right", 1, 160, 0, FALSE, 0, 0, 0, 0, 0, 10, 300, FALSE );
+	PlaySE( 0, "daidageki", 128, 64 );
+	StartShakingOfWindow( 278, 30, 0, 4, 3*3, FALSE );
+	StartShakingOfAllObjects( 278, 30, 0, 4, 3*3, TRUE );
+
+	SetSpeedOfMessage( TRUE, 128 );
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#fcdb77>沙都子</color>", NULL, "<color=#fcdb77>Satoko</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「ここ、恋ですってぇええぇ？！",
+		   NULL, "\"A-A-Aşk mı?!", Line_WaitForInput);
+	OutputLine(NULL, "　あわわわわ、そそ、それはその、をほほ、おめでたいことでございますわねぇ！」",
+		   NULL, " Avavava, b-bu, şey, ohohoho, ne kadar da muhteşem bir durum efendim!\"", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode) == 0) { ClearMessage(); }
+	DisableWindow();
+	ModDrawCharacter(4, 3, "sprite/me1a_wink_a1_", "1", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 5, 300, TRUE );
+	PlaySE( 0, "furu", 128, 64 );
+	Wait( 200 );
+	PlaySE( 0, "furu", 128, 64 );
+	Wait( 200 );
+	PlaySE( 0, "furu", 128, 64 );
+	Wait( 300 );
+	PlaySE( 0, "kyupirn", 128, 64 );
+	StartShakingOfWindow( 278, 30, 0, 4, 2*2, FALSE );
+	StartShakingOfAllObjects( 278, 30, 0, 4, 2*2, TRUE );
+
+	SetSpeedOfMessage( TRUE, 128 );
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>Mion</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「間違いないね！",
+		   NULL, "\"Hiç şüphe yok!", Line_Continue);
+	SetSpeedOfMessage( FALSE, 0 );
+	OutputLineAll(NULL, "", Line_WaitForInput);
+	OutputLine(NULL, "　心ここに在らずで、一日中想い人のことでいっぱい。",
+		   NULL, " Bütün gün aklı bir karış havadaydı, malum birinin düşünceleriyle dolup taşıyor.", Line_WaitForInput);
+	OutputLine(NULL, "頬杖を突いて溜め息なんて、恋する乙女そのものじゃなーい！」",
+		   NULL, " Çeneni eline dayayıp öyle iç çekmek; tam da âşık bir genç kızın yapacağı şey değil mi?\"", Line_Normal);
+	ClearMessage();
+
+	DrawSceneWithMask( "bg/gk3", "effect/left", 0, 0, 500 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#956f6e>圭一</color>", NULL, "<color=#956f6e>Keiichi</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「そ、そうなのかぁ…？",
+		   NULL, "\"Ö... öyle mi dersin...?", Line_WaitForInput);
+	OutputLine(NULL, "　俺には、その、…昨日、飲み込んじまった妙なもんのせいで体調を崩してるようにしか見えないんだがなぁ…。」",
+		   NULL, " Bana kalırsa, şey... dün tuhaf bir şey yuttuğu için midesi bulanıyor gibi görünüyor...\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	DisableWindow();
+	ModDrawCharacterWithFiltering(1, 4, "sprite/sa1a_akireru_a1_", "0", "effect/right", 0, 160, 0, FALSE, 0, 0, 0, 0, 0, 0, 300, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#fcdb77>沙都子</color>", NULL, "<color=#fcdb77>Satoko</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「妙なものって何ですの？」",
+		   NULL, "\"Tuhaf bir şey mi?\"", Line_Continue);
+	PlaySE( 0, "boyon", 128, 64 );
+	OutputLineAll(NULL, "", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#956f6e>圭一</color>", NULL, "<color=#956f6e>Keiichi</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「ん？",
+		   NULL, "\"Hm?", Line_WaitForInput);
+	OutputLine(NULL, "　あぁ。昨日さ、宝探しに行った先でさ。",
+		   NULL, " Evet. Dün hazine avına gittiğimizde oldu.", Line_WaitForInput);
+	OutputLine(NULL, "…何なんだろうなぁ、何か降って来たみたいなんだよ。",
+		   NULL, " ...Ne olduğunu bilmediğim bir şey üzerine düştü.", Line_WaitForInput);
+	OutputLine(NULL, "そいつがスポンと口ん中に飛びこんじまって、それを飲み込んじゃったらしいんだよ。」",
+		   NULL, " Sonra hop diye ağzının içine girdi ve onu olduğu gibi yuttu.\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	DisableWindow();
+	ModDrawCharacterWithFiltering(2, 3, "sprite/me1a_akuwarai_a1_", "2", "effect/left", 0, -160, 0, FALSE, 0, 0, 0, 0, 0, 10, 300, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>Mion</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「天から降って来たぁ？",
+		   NULL, "\"Yani ne, gökten mi düştü?", Line_WaitForInput);
+	OutputLine(NULL, "　あははははは！",
+		   NULL, " Ahahahaha!", Line_WaitForInput);
+	OutputLine(NULL, "　ならきっと、それはキューピッドの恋の矢だねぇ。」",
+		   NULL, " Aşk tanrısı Eros'un aşk oklarından biri olmalı.\"", Line_Normal);
+	ClearMessage();
+
+	DrawScene( "bg/gk3", 200 );
+	ModDrawCharacter(3, 5, "sprite/ri4_warai_a1_", "2", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	ModDrawCharacter(3, 5, "sprite/ri1_warai_a1_", "2", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 300, TRUE );
+	FadeOutBGM( 0, 300, FALSE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「……天から、降って来た？」",
+		   NULL, "\"......Gökten... mi düştü?\"", Line_Normal);
+	ClearMessage();
+	//;＜梨花
+
+	PlayBGM( 2, "semi", 120, 0 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　俺たちがレナの話に夢中になっている隙に、沙都子の席にこっそりとカエルの玩具を仕掛けていた梨花ちゃんが、猫耳をぴくんと反応させて振り向いた。",
+		   NULL, "Biz Rena hakkındaki tartışmamıza odaklanmışken, Satoko'nun sırasına gizlice oyuncak kurbağa yerleştiren Rika-chan kediye benzeyen kulaklarını dikti ve arkasına döndü.", Line_WaitForInput);
+	OutputLine(NULL, "……人間の耳って側面だよな？",
+		   NULL, " ...Onlar sadece yandan görünen insan kulakları, değil mi? ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　今のは錯覚か。",
+		   NULL, "Hayal görüyor olmalıyım.", Line_Normal);
+	ClearMessage();
+
+	DrawSceneWithMask( "black", "effect/left", 0, 0, 500 );
+	DrawSceneWithMask( "bg/gk3", "effect/left", 0, 0, 500 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「……圭一。",
+		   NULL, "\"...Keiichi.", Line_WaitForInput);
+	OutputLine(NULL, "レナがどうしたんですか？」",
+		   NULL, " Rena'nın neyi var?\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	DisableWindow();
+	ModDrawCharacterWithFiltering(1, 1, "sprite/kei1_def1_", "0", "effect/right", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 300, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#956f6e>圭一</color>", NULL, "<color=#956f6e>Keiichi</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「うん、いやな？",
+		   NULL, "\"Bak şimdi, dinle.", Line_WaitForInput);
+	OutputLine(NULL, "　昨日、ダム現場に新しいゴミ山が出来たとかで、宝探しに出掛けたんだよ。",
+		   NULL, " Dün birilerinin baraj inşaat sahasına yeni bir çöp yığını döktüğünü söyledi ve oraya hazine avına gittik. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#956f6e>圭一</color>", NULL, "<color=#956f6e>Keiichi</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "んで、いつものように馬鹿騒ぎして、大口開けて空を見上げて笑ってたら、そこに何かが落ちてきて、綺麗に口の中に飛び込んで、思わず飲み込んじまったってんだよ。」",
+		   NULL, "Her zamanki saçma sapan şeyler oldu ve tam ağzı ardına kadar açık gökyüzüne bakarken bir şey düştü, doğruca ağzının içine girdi ve o da yanlışlıkla olduğu gibi yuttu.\"", Line_Normal);
+	ClearMessage();
+
+	PlayBGM( 1, "semi_r", 120, 0 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「……天から落ちてきたものが、口の中に？",
+		   NULL, "\"......Gökten ağzının içine bir şey mi düştü?", Line_WaitForInput);
+	OutputLine(NULL, "　飲み込んだ？」",
+		   NULL, " Ve onu yuttu mu?\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　羽入、今の聞いた？！",
+		   NULL, "Hanyuu, bunu duydun mu?!", Line_Normal);
+	ClearMessage();
+
+	DisableWindow();
+	DrawBustshot( 21, "filter_hanyu", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 21, 600, FALSE );
+	//print 22
+	ModSetLayerFilter(22, 256, "none");
+	ModDrawCharacter(22, 12, "sprite/ha1_odoroki_", "2", -120, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 22, 600, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#8676cf>羽入</color>", NULL, "<color=#8676cf>Hanyuu</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「ま、まさかそんな！",
+		   NULL, "\"Bu... Bu olamaz!", Line_WaitForInput);
+	OutputLine(NULL, "　あぅあぅあぅあぅ！！」",
+		   NULL, " Au au au au!!\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　こういう時、姿が見えない羽入は便利でいい。",
+		   NULL, "Hanyuu'nun görünmez olması böyle zamanlarda işe yarıyordu.", Line_Normal);
+	ClearMessage();
+
+	//csp %Ha_sp
+	ModDrawCharacter(2, 2, "sprite/re1a_hau_a1_", "2", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 10, 0, FALSE );
+	DrawBustshot( 21, "filter_hanyu", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 21, 0, FALSE );
+	DrawSceneWithMask( "bg/gk1", "effect/left", 0, 0, 500 );
+	//print 23
+	ModDrawCharacterWithFiltering(22, 12, "sprite/ha1_muhyou_", "0", "effect/left", 0, -120, 0, FALSE, 0, 0, 0, 0, 0, 22, 300, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　うっとりとした表情を浮かべながら溜め息を零すレナに堂々と近付き、その頭上に両手をかざして、微弱な何かを感じ取ろうとする仕草をしていた…。",
+		   NULL, "Rena dalgın bir ifadeyle bir kez daha iç çekerken, Hanyuu doğruca yanına gitti, ellerini başının üzerinde tuttu ve bir şeyler hissetmeye çalıştı...", Line_Normal);
+	ClearMessage();
+
+	DisableWindow();
+	//print 80
+	ModDrawCharacter(22, 12, "sprite/ha1_au_", "2", -120, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 22, 500, TRUE);
+	FadeOutBGM( 2, 300, FALSE );
+	FadeOutBGM( 1, 300, FALSE );
+	PlaySE( 0, "daidageki", 128, 64 );
+	PlayBGM( 0, "u2_3", 120, 0 );
+
+	SetSpeedOfMessage( TRUE, 128 );
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#8676cf>羽入</color>", NULL, "<color=#8676cf>Hanyuu</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「あ、あぅあぅあぅあぅーッ！！！」",
+		   NULL, "\"Ah, au au au auuu!!!\"", Line_Continue);
+	SetSpeedOfMessage( FALSE, 0 );
+	StartShakingOfWindow( 278, 30, 0, 4, 3*3, FALSE );
+	StartShakingOfAllObjects( 278, 30, 0, 4, 3*3, TRUE );
+	OutputLineAll(NULL, "", GetGlobalFlag(GLinemodeSp));
+
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「ひィイ！！！",
+		   NULL, "\"İiiik!!!", Line_WaitForInput);
+	OutputLine(NULL, "　なな、何て声出すのよ！",
+		   NULL, " Az önce ne diye bağırdın öyle?!", Line_WaitForInput);
+	OutputLine(NULL, "　ってことはまさか！」",
+		   NULL, " Dur yoksa...\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	DisableWindow();
+	//print 80
+	ModDrawCharacter(22, 12, "sprite/ha1_odoroki_", "2", -120, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 22, 500, TRUE);
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#8676cf>羽入</color>", NULL, "<color=#8676cf>Hanyuu</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「レレ、レナの中に、勾玉があるのです！！",
+		   NULL, "\"R-Rena'nın içinde b-bir magatama var!!", Line_WaitForInput);
+	OutputLine(NULL, "　勾玉の力がレナに宿ってしまってるのです！！」",
+		   NULL, " Magatamanın gücü onun içinde!!\"", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「そりゃー話は早いわね。",
+		   NULL, "\"Eh, bu işleri kolaylaştırır.", Line_WaitForInput);
+	OutputLine(NULL, "通りすがりにローブローでも叩き込んで見る？",
+		   NULL, " Geçerken karnına bir yumruk indirmeyi deneyelim mi?", Line_WaitForInput);
+	OutputLine(NULL, "　…反撃で殺されるわね。",
+		   NULL, " ...Gerçi karşı saldırısı beni öldürür.", Line_WaitForInput);
+	OutputLine(NULL, "なら下剤でも飲ませてみる？",
+		   NULL, " Müshil vermeye ne dersin?", Line_WaitForInput);
+	OutputLine(NULL, "　…冗談じゃないわ！！」",
+		   NULL, " ...Dur, bu şaka yapılacak bir durum değil!!\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	DisableWindow();
+	//print 80
+	ModDrawCharacter(22, 12, "sprite/ha1_yowaki_", "0", -120, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 22, 500, TRUE);
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#8676cf>羽入</color>", NULL, "<color=#8676cf>Hanyuu</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「そんな簡単な問題じゃないのです、あぅあぅ！",
+		   NULL, "\"O kadar basit değil, au au!", Line_WaitForInput);
+	OutputLine(NULL, "　もう勾玉の形はしていないのです。",
+		   NULL, " Artık magatama şeklinde bile değil.", Line_WaitForInput);
+	OutputLine(NULL, "勾玉はレナに食べられてしまったので、形の意味を失い、その力をレナに宿らせてしまったのです！！」",
+		   NULL, " Rena onu yediği için şekli tüm anlamını yitirdi ve şimdi gücü Rena'nın içinde yaşıyor!!\"", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「つまり何？",
+		   NULL, "\"Yani bu ne anlama geliyor?", Line_WaitForInput);
+	OutputLine(NULL, "　あの勾玉は服用可能で、飲んだら消化吸収できるってわけ？",
+		   NULL, " Bir doz magatama alıp sindirim yoluyla özümseyebiliyor musun?", Line_WaitForInput);
+	OutputLine(NULL, "　どーすんのよ、あんたの生み出したアイテムでしょ、何とかならないの？！」",
+		   NULL, " Şimdi ne olacak? Bu eşyayı yaratan sendin. Bir şeyler yapamaz mısın?!\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	DisableWindow();
+	//print 80
+	ModDrawCharacter(22, 12, "sprite/ha1_muhyou_", "0", -120, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 22, 500, TRUE);
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#8676cf>羽入</color>", NULL, "<color=#8676cf>Hanyuu</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「もも、もちろん何とかはできますです！",
+		   NULL, "\"T-T-Tabii ki bir şeyler yapabilirim!", Line_WaitForInput);
+	OutputLine(NULL, "　紅白の勾玉を揃え、僕の神域、つまり古手神社の境内で解呪のおまじないをすれば、ちゃんと解けますです！」",
+		   NULL, " Kırmızı ve beyaz magatamaları bir araya getirip onu kutsal alanıma, yani Furude Tapınağı arazisine götürürsek lanet bozucu bir efsun okuyup bunu tersine çevirebilirim!\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「なら簡単ね！",
+		   NULL, "\"O zaman çok basit!", Line_WaitForInput);
+	OutputLine(NULL, "　帰りにレナを神社に連行して一丁上がり！」",
+		   NULL, " Eve dönerken Rena'yı tapınağa götürelim ve bu iş bitsin!\"", Line_Normal);
+	ClearMessage();
+
+	DisableWindow();
+	//print 80
+	ModDrawCharacter(22, 12, "sprite/ha1_odoroki_", "2", -120, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 22, 500, TRUE);
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#8676cf>羽入</color>", NULL, "<color=#8676cf>Hanyuu</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「ところが、レナが飲み込んだのは赤の勾玉だけなのです！",
+		   NULL, "\"Ama Rena sadece kırmızı magatamayı yuttu!", Line_WaitForInput);
+	OutputLine(NULL, "　白の勾玉が一緒になきゃ解呪はできないのですよー！！",
+		   NULL, " Beyaz olan olmadan laneti bozamam!!", Line_WaitForInput);
+	OutputLine(NULL, "　このままではレナは、白の勾玉を拾った人を無差別に好きになってしまうのです！",
+		   NULL, " Beyaz magatamayı yerden kim alırsa Rena ona âşık olacak! ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#8676cf>羽入</color>", NULL, "<color=#8676cf>Hanyuu</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　レナに赤の勾玉の効果が表れているということは、誰かが白の勾玉を拾ったということなのです！",
+		   NULL, "Ve kırmızı magatamanın etkileri şu an Rena'da ortaya çıktığına göre, birisi onu çoktan almış demektir!", Line_WaitForInput);
+	OutputLine(NULL, "　だからレナは、今その人のことで頭がいっぱいになってるに違いないのですよー！！",
+		   NULL, " Şu anda Rena'nın aklındaki tek şey o kişi!! ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#8676cf>羽入</color>", NULL, "<color=#8676cf>Hanyuu</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　あぅあぅあぅ、もしレナがこのまま暴走してキセイジジツとかで取り返しのつかないことになってしまったら、レナの一生は台無しなのですー、あぅあぅあぅ！！！」",
+		   NULL, "Au au au! Rena kontrolden çıkar da geri dönüşü olmayan bir şey yaparsa, işi oldu bittiye getirirse tüm hayatı mahvolur, au au au!!!\"", Line_Normal);
+	ClearMessage();
+
+	PlaySE( 0, "furu", 128, 64 );
+	Wait( 200 );
+	PlaySE( 0, "furu", 128, 64 );
+	Wait( 200 );
+
+	PlayBGM( 1, "semi", 120, 0 );
+
+	SetSpeedOfMessage( TRUE, 128 );
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「あ、",
+		   NULL, "\"Seni...", Line_Continue);
+	Wait( 200 );
+	OutputLine(NULL, "ん、",
+		   NULL, " gidi...", Line_Continue);
+	Wait( 200 );
+
+	PlaySE( 0, "nageru", 128, 64 );
+
+	OutputLine(NULL, "たぁああぁああぁーッ！！！",
+		   NULL, " seni...!!!", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	//csp -1
+	DrawScene( "bg/ke5", 50 );
+	PlaySE( 0, "daidageki", 128, 64 );
+	StartShakingOfWindow( 278, 30, 0, 4, 3*3, FALSE );
+	StartShakingOfAllObjects( 278, 30, 0, 4, 3*3, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　あんたの作ったマジックアイテムでしょ、あんたが責任取りなさい！",
+		   NULL, "Bu sihirli eşyaları sen yaptın! Sorumluluğunu üstlensen iyi edersin!", Line_Continue);
+
+	PlaySE( 0, "dageki", 128, 64 );
+	StartShakingOfWindow( 278, 30, 0, 4, 3*3, FALSE );
+	StartShakingOfAllObjects( 278, 30, 0, 4, 3*3, TRUE );
+	PlaySE( 0, "dageki", 128, 64 );
+	StartShakingOfWindow( 278, 30, 0, 4, 3*3, FALSE );
+	StartShakingOfAllObjects( 278, 30, 0, 4, 3*3, TRUE );
+
+	OutputLineAll(NULL, "", Line_WaitForInput);
+
+	OutputLine(NULL, "　何だってこんな危険なアイテム作ったのー！！」",
+		   NULL, " Neden böyle tehlikeli bir şey yaptın ki?!\"", Line_Continue);
+
+	PlaySE( 0, "tatakiwaru", 128, 64 );
+	StartShakingOfWindow( 278, 30, 0, 4, 3*3, FALSE );
+	StartShakingOfAllObjects( 278, 30, 0, 4, 3*3, TRUE );
+
+	OutputLineAll(NULL, "", Line_Normal);
+
+	ClearMessage();
+
+
+	//print 26
+	DrawBustshot( 21, "filter_hanyu", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 21, 0, FALSE );
+	ModDrawCharacter(22, 12, "sprite/ha1_odoroki_", "2", 40, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 22, 0, FALSE );
+	DrawSceneWithMask( "bg/gk3", "effect/up", 0, 0, 500 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#8676cf>羽入</color>", NULL, "<color=#8676cf>Hanyuu</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「使い方さえ間違わなければ縁結びの素敵な効果なのですー！",
+		   NULL, "\"Doğru kullanıldıkları takdirde harika bir etkileri var! İnsanları aşkla birbirine bağlayabilirler!", Line_WaitForInput);
+	OutputLine(NULL, "　あぅあぅあぅ！！」",
+		   NULL, " Au au au!!\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「それを巡って大騒動が昔に起こって大変なことになったんでしょ？！",
+		   NULL, "\"Ama çok uzun zaman önce büyük bir felakete yol açmışlardı, değil mi?!", Line_WaitForInput);
+	OutputLine(NULL, "　あぁ、今こそ理解したわ、何でご先祖様が封印したかよくわかったわ！",
+		   NULL, " Ahh, şimdi anlıyorum. Atalarımın onları neden mühürlediğini çok iyi anlıyorum!", Line_WaitForInput);
+	OutputLine(NULL, "　何て傍迷惑な神さまなのあんたはーーー！！」",
+		   NULL, " Ne kadar da zahmetli ve baş belası bir tanrısın sen!!\"", Line_Normal);
+	ClearMessage();
+
+	DisableWindow();
+	//print 80
+	ModDrawCharacter(22, 12, "sprite/ha1_muhyou_", "0", 40, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 22, 500, TRUE);
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#8676cf>羽入</color>", NULL, "<color=#8676cf>Hanyuu</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「あ、あぅあぅ、それを言ったら梨花のご先祖さまが、解けちゃうような中途半端な封印をしたのがいけないのです！",
+		   NULL, "\"Ah, au au, ama diğer yandan mühür böyle çözüldüğüne göre ataların mühürleme işini pek de iyi becerememiş! ", GetGlobalFlag(GLinemodeSp));
+
+	PlaySE( 0, "boyon", 128, 64 );
+	Wait( 100 );
+	PlaySE( 0, "boyon", 128, 64 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#8676cf>羽入</color>", NULL, "<color=#8676cf>Hanyuu</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　封印する時、ちゃんと僕にお饅頭とかのお供えをしてれば、もっとしっかり封印できたのです！」",
+		   NULL, "Onu mühürlediklerinde, yapmaları gerektiği gibi bana buharda pişmiş çörek falan sunsalardı mühür çok daha güçlü olurdu!\"", Line_Normal);
+	ClearMessage();
+
+	SetSpeedOfMessage( TRUE, 128 );
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「ほぉおおお！！",
+		   NULL, "\"Pekâlâ, tamam!!", Line_WaitForInput);
+
+	PlaySE( 0, "kira", 128, 64 );
+
+	OutputLine(NULL, "　それはいいこと聞いたわ、お供え物が大事なのね！",
+		   NULL, " Bunu sen istedin! Adaklar önemli, değil mi?!", Line_WaitForInput);
+	OutputLine(NULL, "　食べれないあんたに代わって私が食べてお供えしてあげるわ！！",
+		   NULL, " O zaman sen yiyemediğine göre senin yerine ben yiyeceğim!!", Line_WaitForInput);
+
+	PlaySE( 0, "kyupirn", 128, 64 );
+
+	OutputLine(NULL, "　昨日、セブンスマートで大特価だったアレをねッ！！",
+		   NULL, " Yani dün Seventh Mart'tan kelepir fiyata aldığımız o şeyi!! ", GetGlobalFlag(GLinemodeSp));
+
+	PlaySE( 0, "furu", 128, 64 );
+	Wait( 150 );
+	PlaySE( 0, "furu", 128, 64 );
+	Wait( 150 );
+	PlaySE( 0, "furu", 128, 64 );
+	Wait( 150 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　お徳用キングサイズキムチ激辛ＭＡＸ！！",
+		   NULL, "Dev boy, maksimum acılı kimchiyi!!", Line_Continue);
+
+	PlaySE( 0, "daidageki", 128, 64 );
+	StartShakingOfWindow( 278, 30, 0, 4, 3*3, FALSE );
+	StartShakingOfAllObjects( 278, 30, 0, 4, 3*3, TRUE );
+
+
+	OutputLineAll(NULL, "", Line_WaitForInput);
+
+	OutputLine(NULL, "　それにマスタードにわさびにタバスコまでミックスした、",
+		   NULL, " Üstelik sırf senin için özel bir karışım hazırlayacağım...", Line_Continue);
+
+	PlaySE( 0, "kyupirn", 128, 64 );
+	Wait( 100 );
+	PlaySE( 0, "kyupirn", 128, 64 );
+	Wait( 100 );
+	PlaySE( 0, "kyupirn", 128, 64 );
+	Wait( 100 );
+
+
+	OutputLine(NULL, "あんた懲罰用のスペシャルバージョンよ！！",
+		   NULL, " hardal, vasabi ve acı sosu birbirine karıştırıp hepsini üzerine dökeceğim!! ", GetGlobalFlag(GLinemodeSp));
+
+	DrawScene( "effect/furiker_c", 50 );
+	PlaySE( 0, "finish", 128, 64 );
+	StartShakingOfWindow( 278, 30, 0, 4, 3*3, FALSE );
+	StartShakingOfAllObjects( 278, 30, 0, 4, 3*3, TRUE );
+	DrawScene( "bg/ke5", 500 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　あぁ、ちなみに私は全然平気だったけど、あんたにはどうかしらぁ？！」",
+		   NULL, "Bana hiç koymaz ama ya sana?!\"", Line_Continue);
+	SetSpeedOfMessage( FALSE, 0 );
+	OutputLineAll(NULL, "", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#8676cf>羽入</color>", NULL, "<color=#8676cf>Hanyuu</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「り、梨花は味覚が変なのです！！",
+		   NULL, "\"R-Rika, senin tat alma duyun kafayı yemiş!", Line_WaitForInput);
+	OutputLine(NULL, "　そんなの食べたら舌が焼け切れちゃいますのですぅううぅ！！」",
+		   NULL, " Onu yersen dilin yanıp kül olur!!\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「しかもそれをあんたのために持ってきたこのシュークリームの中にたっぷり詰めるわ！！」",
+		   NULL, "\"Sonra da hepsini senin için aldığım o kremalı puf böreklerinin içine tıkıştıracağım!!\"", Line_Continue);
+
+	PlaySE( 0, "daidageki", 128, 64 );
+	StartShakingOfWindow( 278, 30, 0, 4, 3*3, FALSE );
+	StartShakingOfAllObjects( 278, 30, 0, 4, 3*3, TRUE );
+
+	OutputLineAll(NULL, "", Line_Normal);
+	ClearMessage();
+
+	DrawSceneWithMask( "black", "effect/up", 1, 0, 200 );
+
+	SetSpeedOfMessage( TRUE, 128 );
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#8676cf>羽入</color>", NULL, "<color=#8676cf>Hanyuu</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「ぎぃやああああぁあああぁあッ！！",
+		   NULL, "\"Giiyaaahhhhhhhhh!!", Line_Continue);
+
+	PlaySE( 0, "daidageki-kai2", 128, 64 );
+	StartShakingOfWindow( 278, 30, 0, 4, 3*3, FALSE );
+	StartShakingOfAllObjects( 278, 30, 0, 4, 3*3, TRUE );
+
+	OutputLineAll(NULL, "", Line_WaitForInput);
+
+	OutputLine(NULL, "　鬼、",
+		   NULL, " İblis...", Line_Continue);
+
+	PlaySE( 0, "dageki", 128, 64 );
+	Wait( 100 );
+
+	OutputLine(NULL, "鬼、",
+		   NULL, " Sen bir iblissin,", Line_Continue);
+
+	PlaySE( 0, "dageki", 128, 64 );
+	Wait( 100 );
+
+	OutputLine(NULL, "鬼畜、",
+		   NULL, " bir zalim,", Line_Continue);
+
+	PlaySE( 0, "tatakiwaru", 128, 64 );
+	Wait( 300 );
+
+	OutputLine(NULL, "人でなしぃいぃ！！",
+		   NULL, " bir canavarsın!!", Line_Continue);
+
+	PlaySE( 0, "down3", 128, 64 );
+	Wait( 200 );
+	PlaySE( 0, "down2", 128, 64 );
+	OutputLineAll(NULL, "", Line_WaitForInput);
+	OutputLine(NULL, "　やめてやめてあぅあぅあぅあぅあぅあぅ！！」",
+		   NULL, " Yapma, dur, au au au au au au!!\"", Line_Continue);
+
+	PlaySE( 0, "dageki", 128, 64 );
+	StartShakingOfWindow( 278, 30, 0, 4, 3*3, FALSE );
+	StartShakingOfAllObjects( 278, 30, 0, 4, 3*3, TRUE );
+	PlaySE( 0, "dageki", 128, 64 );
+	StartShakingOfWindow( 278, 30, 0, 4, 3*3, FALSE );
+	StartShakingOfAllObjects( 278, 30, 0, 4, 3*3, TRUE );
+	PlaySE( 0, "dageki", 128, 64 );
+	StartShakingOfWindow( 278, 30, 0, 4, 3*3, FALSE );
+	StartShakingOfAllObjects( 278, 30, 0, 4, 3*3, TRUE );
+
+	SetSpeedOfMessage( FALSE, 0 );
+	OutputLineAll(NULL, "", GetGlobalFlag(GLinemodeSp));
+
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「くすくす、くーっくっくっく！！",
+		   NULL, "\"*kıkırdar* Ku ku ku ku!!", Line_WaitForInput);
+	OutputLine(NULL, "　もう謝っても遅いわよー！！",
+		   NULL, " Özür dilemek için çok geç!!", Line_WaitForInput);
+
+	PlaySE( 0, "nageru", 128, 64 );
+	Wait( 200 );
+	PlaySE( 0, "nageru", 128, 64 );
+	Wait( 200 );
+	PlaySE( 0, "nageru", 128, 64 );
+
+	OutputLine(NULL, "　くらいなさいッ！！",
+		   NULL, " Al bakalım şunu!!", Line_Continue);
+
+	PlaySE( 0, "kyupirn", 128, 64 );
+
+	FadeOutBGM( 1, 300, FALSE );
+
+	OutputLineAll(NULL, "", Line_WaitForInput);
+
+	SetSpeedOfMessage( TRUE, 128 );
+	OutputLine(NULL, "　…………って、",
+		   NULL, " ......Dur...", Line_Continue);
+	Wait( 600 );
+	OutputLine(NULL, "みぃ？」",
+		   NULL, " Mi~?\"", Line_Continue);
+
+	PlaySE( 0, "boyon", 128, 64 );
+
+	SetSpeedOfMessage( FALSE, 0 );
+	OutputLineAll(NULL, "", GetGlobalFlag(GLinemodeSp));
+
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　突然、私の背中が摘み上げられる。",
+		   NULL, "Aniden birisi beni gömleğimin ensesinden tutup kaldırdı.", Line_WaitForInput);
+	OutputLine(NULL, "…私ゃ子猫か。",
+		   NULL, " ...Neyim ben, kedi yavrusu mu?", Line_WaitForInput);
+	OutputLine(NULL, "ふにゃん。",
+		   NULL, " Miyav.", Line_Normal);
+	ClearMessage();
+
+	ModDrawCharacter(1, 1, "sprite/kei1_majime2_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 0, 0, FALSE );
+	DrawSceneWithMask( "bg/gk3", "effect/up", 0, 0, 500 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　見ると摘み上げているのは圭一だった。",
+		   NULL, "Başımı kaldırdığımda beni tutan kişinin Keiichi olduğunu gördüm.", Line_Normal);
+	ClearMessage();
+
+	DisableWindow();
+	ModDrawCharacterWithFiltering(2, 4, "sprite/sa1a_akireru_a1_", "0", "effect/right", 0, 240, 0, FALSE, 0, 0, 0, 0, 0, 10, 300, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#fcdb77>沙都子</color>", NULL, "<color=#fcdb77>Satoko</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「…梨花がひとりで何をじたばたしてるのかわかりませんけど。",
+		   NULL, "\"...Ne diye böyle çırpınıp durduğunu anlamıyorum.", Line_WaitForInput);
+	OutputLine(NULL, "梨花が何か知ってますのね？",
+		   NULL, " Ama bir şeyler biliyorsun, değil mi?", Line_WaitForInput);
+	OutputLine(NULL, "　レナさんのあれ！」",
+		   NULL, " Rena'ya ne olduğu hakkında bir şeyler!\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「……みぃ？",
+		   NULL, "\"...Mi~?", Line_WaitForInput);
+	OutputLine(NULL, "　み〜♪」",
+		   NULL, " Mi~♪\"", Line_Normal);
+	ClearMessage();
+	DisableWindow();
+
+	ModDrawCharacter(1, 1, "sprite/kei1_komaru_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 0, 300, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#956f6e>圭一</color>", NULL, "<color=#956f6e>Keiichi</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「梨花ちゃん語の翻訳にはみ〜リンガルとか必要だよなぁ。",
+		   NULL, "\"Bunu tercüme etmesi için Mi~ce konuşan birine ihtiyacımız olacak.", Line_WaitForInput);
+	OutputLine(NULL, "これはつまりどっちの意味なんだ？」",
+		   NULL, " Hangisi, evet mi hayır mı?\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	DisableWindow();
+
+	ModDrawCharacterWithFiltering(3, 3, "sprite/me1b_akuwarai_a1_", "2", "effect/left", 0, -240, 0, FALSE, 0, 0, 0, 0, 0, 20, 300, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>Mion</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「こーのすっとぼけ方はクロだねぇ。",
+		   NULL, "\"Masum rolü yapıyor, bu da suçlu olduğu anlamına gelir.", Line_WaitForInput);
+	OutputLine(NULL, "あんたレナに何かしたの？！」",
+		   NULL, " Rena'ya ne yaptın?!\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　…………まぁ、もうすっとぼけても仕方ないか。",
+		   NULL, "......Sanırım artık rol yapmanın bir anlamı yok.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　とにかくレナをこのままにはしておけない。",
+		   NULL, "Her halükârda Rena'yı böyle bırakamazdım.", Line_WaitForInput);
+	OutputLine(NULL, "大人しく白状して協力を仰ごう…。",
+		   NULL, " Onlara her şeyi itiraf ettim ve yardımlarını istedim...", Line_Normal);
+	ClearMessage();
+
+	DrawScene( "black", 1000 );
+	FadeOutBGM( 0, 1000, FALSE );
+	Wait( 2000 );
+	DrawScene( "bg/gk3", 50 );
+
+	SetSpeedOfMessage( TRUE, 128 );
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#956f6e>圭一</color>", NULL, "<color=#956f6e>Keiichi</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「古手神社の至宝、フワラズの勾玉ぁ？！」",
+		   NULL, "\"Kutsal Furude Tapınağı hazineleri, Fuwarazu Magatama mı?!\"", Line_Continue);
+
+	PlaySE( 0, "daidageki", 128, 64 );
+	StartShakingOfWindow( 278, 30, 0, 4, 3*3, FALSE );
+	StartShakingOfAllObjects( 278, 30, 0, 4, 3*3, TRUE );
+	PlayBGM( 0, "u2_2", 120, 0 );
+	SetSpeedOfMessage( FALSE, 0 );
+	OutputLineAll(NULL, "", Line_Normal);
+
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「……はいなのです。",
+		   NULL, "\"...Doğru.", Line_WaitForInput);
+	OutputLine(NULL, "不和知らずに通じると言われる、縁結びのありがた〜ぃ（迷惑の）宝物なのですよ。」",
+		   NULL, " İsminin 'uyumsuzluk bilmeyen' anlamına geldiği söylenen, insanları aşkla birbirine bağlayan çok muhteşem (derecede sinir bozucu) hazineler.\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	DisableWindow();
+	ModDrawCharacterWithFiltering(1, 3, "sprite/me1a_tohoho_a1_", "0", "effect/right", 0, 160, 0, FALSE, 0, 0, 0, 0, 0, 0, 300, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>Mion</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「巻物の挿絵を見る限りじゃ、…オットセイのキーホルダーにしか見えないねぇ？」",
+		   NULL, "\"Parşömendeki resimlere bakılırsa... üzerinde fok balığı olan anahtarlıklara benziyorlar, değil mi?\"", Line_Normal);
+	ClearMessage();
+	DisableWindow();
+
+	ModDrawCharacterWithFiltering(2, 4, "sprite/sa1a_akireru_a1_", "0", "effect/left", 0, -160, 0, FALSE, 0, 0, 0, 0, 0, 10, 300, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#fcdb77>沙都子</color>", NULL, "<color=#fcdb77>Satoko</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「同感ですわね。",
+		   NULL, "\"Katılıyorum.", Line_WaitForInput);
+	OutputLine(NULL, "口の中に飛び込まなくても、レナさんがお持ち帰りしそうな形状ですわ。",
+		   NULL, " Ağzına düşmemiş olsaydı bile Rena'yı tanıyorsam onları kesin eve götürürdü.", Line_WaitForInput);
+	OutputLine(NULL, "何で宝物がこんな可愛い形なんですの？」",
+		   NULL, " Bu mücevherler neden bu kadar sevimli görünüyor ki?\"", Line_Normal);
+	ClearMessage();
+	DisableWindow();
+	FadeAllBustshots( 200, TRUE );
+	ModDrawCharacter(3, 1, "sprite/kei1_warai_", "2", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#956f6e>圭一</color>", NULL, "<color=#956f6e>Keiichi</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「オットセイは繁殖力旺盛だから、熱愛のシンボルだーってテレビで見た気がするぜ？」",
+		   NULL, "\"Kürklü foklar güçlü üreme alışkanlıklarıyla bilinir, sanırım televizyonda tutkulu aşkı simgelemek için kullanıldıklarını görmüştüm.\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	DisableWindow();
+
+	ModDrawCharacterWithFiltering(4, 3, "sprite/me1a_odoroki_a1_", "2", "effect/left", 0, -160, 0, FALSE, 0, 0, 0, 0, 0, 5, 300, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>Mion</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「へー…！",
+		   NULL, "\"Anlıyorum...!", Line_WaitForInput);
+	OutputLine(NULL, "　だとすると、オットセイという生き物の存在が、数百年、あるいは千年以上も前に日本、それも古手神社に伝来していた証拠になるねぇ？！",
+		   NULL, " Bu da kürklü fokların yüzlerce hatta binlerce yıldır Japonya'da olduğunu ve hatta Furude Tapınağı'na kadar girdiğini mi kanıtlıyor?!", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+	DisableWindow();
+	ModDrawCharacter(4, 3, "sprite/me1b_wink_a1_", "1", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 5, 300, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>Mion</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　なるほど、これはとんでもないオーパーツかもしれないよ。」",
+		   NULL, "Anlıyorum... bunlar gerçekten de çağının ötesinde kalıntılar olabilir.\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	DisableWindow();
+
+	ModDrawCharacter(3, 1, "sprite/kei1_nayamu_", "2", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 300, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#956f6e>圭一</color>", NULL, "<color=#956f6e>Keiichi</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「しかし、わからねぇなぁ！",
+		   NULL, "\"Ama mantıklı gelmeyen bir şey var!", Line_WaitForInput);
+	OutputLine(NULL, "　何でそんな宝物が空から降ってきてレナの口の中に飛び込むんだ？」",
+		   NULL, " Böyle hazineler neden gökten düşüp Rena'nın ağzına girsin ki?\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「……にぱ〜☆…。」",
+		   NULL, "\"...Nipah~☆...\"", Line_Normal);
+	ClearMessage();
+	DisableWindow();
+
+	ModDrawCharacter(3, 1, "sprite/kei1_warai_", "2", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 300, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#956f6e>圭一</color>", NULL, "<color=#956f6e>Keiichi</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「しかし、オヤシロさまの宝物が縁結びとは、ちょいと意外だなぁ？",
+		   NULL, "\"Yine de Oyashiro-sama'ya ait hazinelerin insanları aşkla birbirine bağlamasına biraz şaşırdım.", Line_WaitForInput);
+	OutputLine(NULL, "　もうちょっと祟られたり呪われたりしそうなイメージがあるんだが。」",
+		   NULL, " Onu hep insanlara eziyet eden ve onları lanetleyen biri olarak düşünürdüm.\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	DisableWindow();
+
+	ModDrawCharacter(4, 3, "sprite/me1a_tokui_a1_", "2", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 5, 300, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>Mion</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「確かに、近年はオヤシロさまの祟りとか言われて、イメージがずいぶん物騒になっちゃったけど、本来のオヤシロさまは縁結びの神さまでもあるんだよね。",
+		   NULL, "\"Son yıllarda insanlar Oyashiro-sama'nın laneti ve benzeri şeyler hakkında çok konuştuğu için kötücül bir şöhrete kavuştu ama aslında kendisi bir evlilik tanrısıydı.", Line_WaitForInput);
+	OutputLine(NULL, "…仲良くしないと祟る、",
+		   NULL, " Tabii...", Line_Continue);
+	Wait( 800 );
+	OutputLine(NULL, "ってのがメインだけど。」",
+		   NULL, " genelde iyi geçinmediğiniz takdirde sizi lanetlerdi.\"", Line_Normal);
+	ClearMessage();
+	DisableWindow();
+	FadeAllBustshots( 200, TRUE );
+	ModDrawCharacter(1, 4, "sprite/sa1b_def_b1_", "2", 240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 0, 200, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#fcdb77>沙都子</color>", NULL, "<color=#fcdb77>Satoko</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「そうですわねぇ。",
+		   NULL, "\"Aa, gerçekten de öyle.", Line_WaitForInput);
+	OutputLine(NULL, "昔の古手神社では縁結びのお札とかを売ってたような気がしますわ！」",
+		   NULL, " Furude Tapınağı'nın eskiden evlilik tılsımları sattığını hatırlıyorum!\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	DisableWindow();
+
+	ModDrawCharacterWithFiltering(2, 1, "sprite/kei1_def1_", "0", "effect/left", 0, -240, 0, FALSE, 0, 0, 0, 0, 0, 10, 300, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#956f6e>圭一</color>", NULL, "<color=#956f6e>Keiichi</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「んで、……その勾玉の縁結びの効果は、単なる気休めじゃなくて、霊験あらたかなホンモノってわけなんだな？！」",
+		   NULL, "\"Yani... bu sadece magatamalar hakkında anlatılan bir masal değil, gerçekten de mucizeler mi gerçekleştiriyorlar?!\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「……そうなのです。",
+		   NULL, "\"...Doğru.", Line_WaitForInput);
+	OutputLine(NULL, "だから、レナは今、フワラズの勾玉の力に取り憑かれてしまっているのです。」",
+		   NULL, " Şu anda Fuwarazu Magatama'nın gücü Rena'nın içinde kök salmış durumda.\"", Line_Normal);
+	ClearMessage();
+	DisableWindow();
+
+	FadeBustshotWithFiltering( 1, "effect/left", 0, FALSE, 0, 0, 300, TRUE );
+	ModDrawCharacterWithFiltering(3, 3, "sprite/me1a_akuwarai_a1_", "2", "effect/right", 0, 240, 0, FALSE, 0, 0, 0, 0, 0, 20, 300, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>Mion</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「えっと、赤と白でペアなんだっけ？",
+		   NULL, "\"Şey, kırmızı ve beyaz bir çifttiler, değil mi?", Line_WaitForInput);
+	OutputLine(NULL, "　赤を持つ人が、白を持つ人を好きになる、だっけ？",
+		   NULL, " Ve kırmızı olanı tutan kişi, beyaz olanı tutan kişiye âşık mı oluyor?", Line_WaitForInput);
+	OutputLine(NULL, "　相思相愛じゃなくて片道なんだねぇ。」",
+		   NULL, " Karşılıklı bir aşktan ziyade fazlasıyla tek taraflı geliyor kulağa.\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「……はいです。",
+		   NULL, "\"...Evet.", Line_WaitForInput);
+	OutputLine(NULL, "レナはその赤を飲み込んでしまいましたですから、白を誰かが拾えば、もれなくレナも付いてきちゃうわけなのです。",
+		   NULL, " Rena kırmızı olanı yuttu, bu yüzden beyaz olanı kim yerden alırsa alsın ona tutulacak.", Line_WaitForInput);
+	OutputLine(NULL, "みー。」",
+		   NULL, " Mi~.\"", Line_Normal);
+	ClearMessage();
+	DisableWindow();
+
+	ModDrawCharacter(1, 4, "sprite/sa1a_odoroki_a1_", "2", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 0, 400, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#fcdb77>沙都子</color>", NULL, "<color=#fcdb77>Satoko</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「そ、それは何だか珍妙な話になってきましたわねぇ！",
+		   NULL, "\"B-Bu oldukça fantastik bir hikâyeye dönüşmeye başladı!", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+	DisableWindow();
+
+	ModDrawCharacter(1, 4, "sprite/sa1a_yareyare_a1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 0, 300, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#fcdb77>沙都子</color>", NULL, "<color=#fcdb77>Satoko</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　…そしてレナさんを元に戻すには、白の勾玉も見つけなくてはならないというわけですのね？」",
+		   NULL, "...Ve Rena-san'ı normale döndürmek için beyaz magatamayı mı bulmamız gerekiyor?\"", Line_Normal);
+	ClearMessage();
+	DisableWindow();
+
+	ModDrawCharacter(2, 1, "sprite/kei1_komaru_", "0", -240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 10, 300, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#956f6e>圭一</color>", NULL, "<color=#956f6e>Keiichi</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「しかも、レナの様子から見るに、誰かがすでに白の勾玉は拾っちまったわけだろ？！",
+		   NULL, "\"Ayrıca davranışlarına bakılırsa birisi beyaz olanı çoktan bulmuş, değil mi?!", Line_WaitForInput);
+	OutputLine(NULL, "　このまま放っておくと、レナはどんどんその人のことが好きになっていっちまうわけか。",
+		   NULL, " Bunu kendi hâline bırakırsak Rena o kişiye giderek daha da sırılsıklam âşık olacak.", Line_WaitForInput);
+	OutputLine(NULL, "レナの本当の気持ちとは別に。」",
+		   NULL, " Gerçekte ne hissettiğinden bağımsız olarak hem de.\"", Line_Normal);
+	ClearMessage();
+	DisableWindow();
+	ModDrawCharacter(3, 3, "sprite/me1b_tohoho_a1_", "0", 240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 300, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>Mion</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「ちょっとロマンチックな話ではあるけど、相手がどこの馬の骨かもわからないってのは、ちょっといただけないねぇ。",
+		   NULL, "\"Kulağa romantik geliyor ama karşıdaki kişinin hangi lağımdan çıktığına dair hiçbir fikrimiz yok. Buna izin veremeyiz.", Line_WaitForInput);
+	OutputLine(NULL, "拾いさえすれば、誰にでも惚れちゃうわけでしょ？」",
+		   NULL, " Kalbini çalmak için herhangi birinin onu yerden alması yeterli, değil mi?\"", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「……そうです。",
+		   NULL, "\"...Doğru.", Line_WaitForInput);
+	OutputLine(NULL, "拾った人が、子供だろうとお年寄りだろうと、男女お構いなしなのです。",
+		   NULL, " Bir çocuk ya da yaşlı biri, bir erkek ya da bir kadın olabilir; hiç fark etmez.", Line_WaitForInput);
+	OutputLine(NULL, "増してや相手が家族持ちだった日には色々と悲劇なのですよ、にぱ〜☆」",
+		   NULL, " Aileden birinin onu yerden alma ihtimalinden bahsetmiyorum bile; bu birçok açıdan tam bir felaket olurdu, nipah~☆\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	DisableWindow();
+
+	ModDrawCharacter(1, 4, "sprite/sa1b_odoroki_b1_", "2", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 0, 300, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#fcdb77>沙都子</color>", NULL, "<color=#fcdb77>Satoko</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「それはよろしくありませんわね…。",
+		   NULL, "\"Bu kesinlikle hiç iyi olmazdı...", Line_WaitForInput);
+	OutputLine(NULL, "どうも事態は一刻を争うようでございましてよ！！」",
+		   NULL, " Görünüşe göre durum derhâl harekete geçmemizi gerektiriyor!!\"", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「一刻を争いますのです。",
+		   NULL, "\"Zamana karşı yarışıyoruz.", Line_WaitForInput);
+	OutputLine(NULL, "しかも、食べても作用するので、もし通りかかった犬さんが食べてしまったら、",
+		   NULL, " Üstelik yuttuğunda da işe yarıyor, yani bir köpek tesadüfen oradan geçerken onu mideye indirirse...", Line_Continue);
+	Wait( 800 );
+	OutputLine(NULL, "……それはもう大変なことになってしまうのです。」",
+		   NULL, " korkunç bir şey olur.\"", Line_Normal);
+	ClearMessage();
+	DisableWindow();
+
+	ModDrawCharacter(2, 1, "sprite/kei1_nayamu_", "2", -240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 10, 300, FALSE );
+	ModDrawCharacter(3, 3, "sprite/me1a_odoroki_a1_", "2", 240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 300, TRUE );
+
+	PlayBGM( 1, "semi", 120, 0 );
+
+	SetSpeedOfMessage( TRUE, 128 );
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#956f6e>圭一</color>", NULL, "<color=#956f6e>Keiichi</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「そそそ、",
+		   NULL, "\"B-B-B...", Line_Continue);
+	Wait( 400 );
+	OutputLine(NULL, "…それは、",
+		   NULL, " Bu...", Line_Continue);
+	Wait( 300 );
+	OutputLine(NULL, "…その、",
+		   NULL, " şey...", Line_Continue);
+	Wait( 600 );
+	OutputLine(NULL, "はは、",
+		   NULL, " haha,", Line_Continue);
+	Wait( 300 );
+	OutputLine(NULL, "大変だ、",
+		   NULL, " bu...", Line_Continue);
+	Wait( 300 );
+	OutputLine(NULL, "なぁ…？」",
+		   NULL, " korkunç olurdu, ha...?\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	DisableWindow();
+
+	ModDrawCharacter(3, 3, "sprite/me1b_tohoho_a1_", "0", 240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 300, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>Mion</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「う、うぇ、",
+		   NULL, "\"Şey, öğk...", Line_Continue);
+	Wait( 400 );
+	OutputLine(NULL, "……おじさんはちょっと、",
+		   NULL, " Bu yaşlı moruk, ıı...", Line_Continue);
+	Wait( 700 );
+	OutputLine(NULL, "…そういうのはパスだなぁ…。」",
+		   NULL, " o tür şeyleri pas geçsin...\"", Line_Continue);
+	SetSpeedOfMessage( FALSE, 0 );
+	OutputLineAll(NULL, "", GetGlobalFlag(GLinemodeSp));
+
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	DisableWindow();
+
+	ModDrawCharacter(1, 4, "sprite/sa1a_akireru_a1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 0, 300, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#fcdb77>沙都子</color>", NULL, "<color=#fcdb77>Satoko</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「どうしてですの？",
+		   NULL, "\"Neden ki?", Line_WaitForInput);
+
+	PlaySE( 0, "boyon", 128, 64 );
+
+	OutputLine(NULL, "　レナさんと犬が仲良く戯れるだけなら、一番被害は軽微でしてよ？？」",
+		   NULL, " Rena-san bir köpekle oynayabilse bu, hasarı en aza indirmez miydi efendim??\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「……沙都子は穢れてないのです。",
+		   NULL, "\"...Satoko hâlâ çok saf.", Line_WaitForInput);
+	OutputLine(NULL, "なでなで☆」",
+		   NULL, " Pış pış☆.\"", Line_Normal);
+	ClearMessage();
+
+	DrawSceneWithMask( "black", "effect/down", 0, 0, 1300 );
+	Wait( 1000 );
+	ModDrawCharacter(1, 1, "sprite/kei1_def1_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 0, 0, FALSE );
+	DrawSceneWithMask( "bg/gk3", "effect/up", 0, 0, 500 );
+
+	FadeOutBGM( 1, 300, FALSE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#956f6e>圭一</color>", NULL, "<color=#956f6e>Keiichi</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「とにかく、人心を惑わす魔性の勾玉だってことは理解できたぜ。",
+		   NULL, "\"Her neyse, bu magatamaların insanların kalplerini sihirle kandırdığını biliyoruz.", Line_WaitForInput);
+	OutputLine(NULL, "手遅れにならん内にどうかした方がいいな！」",
+		   NULL, " Çok geç olmadan bir şeyler yapmalıyız!\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	DisableWindow();
+
+	ModDrawCharacterWithFiltering(2, 3, "sprite/me1b_majime_a1_", "0", "effect/left", 0, -160, 0, FALSE, 0, 0, 0, 0, 0, 10, 300, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>Mion</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「そうだね。",
+		   NULL, "\"Evet.", Line_WaitForInput);
+	OutputLine(NULL, "恋愛は自由意志が大事だよ。",
+		   NULL, " Aşkta özgür irade önemlidir.", Line_WaitForInput);
+	OutputLine(NULL, "魔法の力で強制されるなんて、よくないね！",
+		   NULL, " Bunu öyle büyüyle falan zorla dayatamazsın!", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+	DisableWindow();
+
+	ModDrawCharacter(2, 3, "sprite/me1a_warai_a1_", "2", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 10, 300, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>Mion</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　……まぁ、ちょっぴりはロマンチックだと思うけどさ！」",
+		   NULL, "...Kulağa biraz romantik gelse bile!\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「……とにかく、キセイジジツを作る前に何とかしましょうです。",
+		   NULL, "\"...Her neyse, iş oldu bittiye gelmeden bir şeyler yapalım.", Line_WaitForInput);
+	OutputLine(NULL, "じゃないとこれはこれで大惨事なのですよ。」",
+		   NULL, " Yapmazsak gerçek bir felakete dönüşecek.\"", Line_Normal);
+	ClearMessage();
+	DisableWindow();
+
+	FadeBustshotWithFiltering( 1, "effect/left", 0, FALSE, 0, 0, 300, TRUE );
+	ModDrawCharacterWithFiltering(3, 4, "sprite/sa1a_odoroki_a1_", "2", "effect/right", 0, 160, 0, FALSE, 0, 0, 0, 0, 0, 20, 300, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#fcdb77>沙都子</color>", NULL, "<color=#fcdb77>Satoko</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「問題は、白のオットセイを誰が拾ったかですわよ？",
+		   NULL, "\"Sorun şu ki beyaz foklu anahtarlığı kim yerden aldı?", Line_WaitForInput);
+	OutputLine(NULL, "　いくら雛見沢が田舎とは言え、どこの誰が拾ったのかわからないんじゃ、手の打ちようがありませんですわ！」",
+		   NULL, " Hinamizawa küçük bir taşra köyü olabilir ama onu kimin bulduğunu bilmezsek elimizden hiçbir şey gelmez!\"", Line_Normal);
+	ClearMessage();
+	DisableWindow();
+
+	ModDrawCharacter(2, 3, "sprite/me1a_wink_a1_", "1", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 10, 300, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>Mion</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「うん？",
+		   NULL, "\"Ha?", Line_WaitForInput);
+
+	PlaySE( 0, "kyupirn", 128, 64 );
+
+	OutputLine(NULL, "　そりゃ簡単じゃない！",
+		   NULL, " En kolay kısmı o!", Line_WaitForInput);
+	OutputLine(NULL, "　だって、魔法の力で、レナは白の勾玉を持った人を好きになるんでしょ？",
+		   NULL, " Büyü, Rena'nın beyaz magatamayı taşıyan kişiye âşık olmasını sağlıyor, değil mi?", Line_WaitForInput);
+	OutputLine(NULL, "　なら、レナの頭の中はその人のことでいっぱいだよ！",
+		   NULL, " Şu anda düşündüğü tek şey o kişi! ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>Mion</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　つまり、レナに直接聞けばいいわけさ！",
+		   NULL, "Başka bir deyişle, bizzat Rena'ya sormamız yeterli!", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+	DisableWindow();
+
+	FadeBustshotWithFiltering( 2, "effect/right", 0, FALSE, 0, 0, 300, TRUE );
+	PlaySE( 0, "boyon", 128, 64 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>Mion</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　レぇナぁ〜〜！！！",
+		   NULL, "Reenaaa~~!!!", Line_WaitForInput);
+	OutputLine(NULL, "　おじさんに教えてよぅ！",
+		   NULL, " Bu yaşlı moruk bilmek istiyor!", Line_WaitForInput);
+	OutputLine(NULL, "　レナのハートを射止めちゃった意中の相手はだぁれぇえぇ？」",
+		   NULL, " Kalbini çalan kişi kim bakalım, Renaaaa?\"", Line_Normal);
+	ClearMessage();
+
+
+	PlayBGM( 1, "semi", 120, 0 );
+
+	if (GetGlobalFlag(GADVMode) == 0) { ClearMessage(); }
+	DisableWindow();
+	PlaySE( 0, "nageru", 128, 64 );
+	DrawScene( "black", 500 );
+	DrawScene( "effect/furiker_a", 50 );
+	PlaySE( 0, "dageki", 128, 64 );
+	Wait( 50 );
+	PlaySE( 0, "dageki", 128, 64 );
+	Wait( 50 );
+	//print 1
+	DrawScene( "bg/gk1", 50 );
+	PlaySE( 3, "daidageki", 128, 64 );
+	StartShakingOfWindow( 278, 30, 0, 4, 3*3, FALSE );
+	StartShakingOfAllObjects( 278, 30, 0, 4, 3*3, TRUE );
+	PlaySE( 0, "dageki", 128, 64 );
+	StartShakingOfWindow( 278, 30, 0, 4, 3*3, FALSE );
+	StartShakingOfAllObjects( 278, 30, 0, 4, 3*3, TRUE );
+	PlaySE( 0, "dageki", 128, 64 );
+	StartShakingOfWindow( 278, 30, 0, 4, 3*3, FALSE );
+	StartShakingOfAllObjects( 278, 30, 0, 4, 3*3, TRUE );
+	DrawScene( "effect/furiker_b", 50 );
+	PlaySE( 0, "dageki", 128, 64 );
+	StartShakingOfWindow( 278, 30, 0, 4, 3*3, FALSE );
+	StartShakingOfAllObjects( 278, 30, 0, 4, 3*3, TRUE );
+	PlaySE( 0, "daidageki", 128, 64 );
+	StartShakingOfWindow( 278, 30, 0, 4, 3*3, FALSE );
+	StartShakingOfAllObjects( 278, 30, 0, 4, 3*3, TRUE );
+	PlaySE( 5, "kaminari2", 128, 64 );
+	PlaySE( 0, "dageki", 128, 64 );
+	StartShakingOfWindow( 278, 30, 0, 4, 3*3, FALSE );
+	StartShakingOfAllObjects( 278, 30, 0, 4, 3*3, TRUE );
+	PlaySE( 0, "dageki", 128, 64 );
+	StartShakingOfWindow( 278, 30, 0, 4, 3*3, FALSE );
+	StartShakingOfAllObjects( 278, 30, 0, 4, 3*3, TRUE );
+	PlaySE( 0, "dageki", 128, 64 );
+	StartShakingOfWindow( 278, 30, 0, 4, 3*3, FALSE );
+	StartShakingOfAllObjects( 278, 30, 0, 4, 3*3, TRUE );
+	PlaySE( 0, "dageki", 128, 64 );
+	StartShakingOfWindow( 278, 30, 0, 4, 3*3, FALSE );
+	StartShakingOfAllObjects( 278, 30, 0, 4, 3*3, TRUE );
+	PlaySE( 0, "dageki", 128, 64 );
+	StartShakingOfWindow( 278, 30, 0, 4, 3*3, FALSE );
+	StartShakingOfAllObjects( 278, 30, 0, 4, 3*3, TRUE );
+	PlaySE( 0, "dageki", 128, 64 );
+	StartShakingOfWindow( 278, 30, 0, 4, 3*3, FALSE );
+	StartShakingOfAllObjects( 278, 30, 0, 4, 3*3, TRUE );
+	DrawScene( "effect/furiker_a", 50 );
+	PlaySE( 0, "dageki", 128, 64 );
+	StartShakingOfWindow( 278, 30, 0, 4, 3*3, FALSE );
+	StartShakingOfAllObjects( 278, 30, 0, 4, 3*3, TRUE );
+	PlaySE( 0, "dageki", 128, 64 );
+	StartShakingOfWindow( 278, 30, 0, 4, 3*3, FALSE );
+	StartShakingOfAllObjects( 278, 30, 0, 4, 3*3, TRUE );
+	PlaySE( 3, "daidageki", 128, 64 );
+	StartShakingOfWindow( 278, 30, 0, 4, 3*3, FALSE );
+	StartShakingOfAllObjects( 278, 30, 0, 4, 3*3, TRUE );
+	PlaySE( 0, "dageki", 128, 64 );
+	StartShakingOfWindow( 278, 30, 0, 4, 3*3, FALSE );
+	StartShakingOfAllObjects( 278, 30, 0, 4, 3*3, TRUE );
+	PlaySE( 0, "dageki", 128, 64 );
+	StartShakingOfWindow( 278, 30, 0, 4, 3*3, FALSE );
+	StartShakingOfAllObjects( 278, 30, 0, 4, 3*3, TRUE );
+	PlaySE( 0, "kyupirn", 128, 64 );
+	Wait( 500 );
+	PlaySE( 0, "nageru", 128, 64 );
+	Wait( 300 );
+	//print 1
+	PlaySE( 0, "daidageki-kai2", 128, 64 );
+	PlaySE( 5, "kaminari2", 128, 64 );
+	PlaySE( 3, "daidageki", 128, 64 );
+	StartShakingOfWindow( 278, 30, 0, 4, 3*3, FALSE );
+	StartShakingOfAllObjects( 278, 30, 0, 4, 3*3, TRUE );
+	DrawScene( "effect/furiker_c", 50 );
+	PlaySE( 0, "tatakiwaru", 128, 64 );
+	Wait( 200 );
+	PlaySE( 0, "dageki", 128, 64 );
+	Wait( 50 );
+	PlaySE( 0, "dageki", 128, 64 );
+	Wait( 50 );
+	PlaySE( 0, "dageki", 128, 64 );
+	Wait( 50 );
+	PlaySE( 0, "dageki", 128, 64 );
+	Wait( 50 );
+	PlaySE( 3, "daidageki", 128, 64 );
+	PlaySE( 0, "finish", 128, 64 );
+	StartShakingOfWindow( 278, 30, 0, 4, 3*3, FALSE );
+	StartShakingOfAllObjects( 278, 30, 0, 4, 3*3, TRUE );
+	DrawScene( "white", 100 );
+	PlaySE( 0, "garasu", 128, 64 );
+	StartShakingOfWindow( 278, 30, 0, 4, 3*3, FALSE );
+	StartShakingOfAllObjects( 278, 30, 0, 4, 3*3, TRUE );
+	DrawScene( "bg/g1", 100 );
+	PlaySE( 0, "down2", 128, 64 );
+	StartShakingOfWindow( 278, 30, 0, 4, 3*3, FALSE );
+	StartShakingOfAllObjects( 278, 30, 0, 4, 3*3, TRUE );
+	PlaySE( 0, "down3", 128, 64 );
+	StartShakingOfWindow( 278, 30, 0, 4, 3*3, FALSE );
+	StartShakingOfAllObjects( 278, 30, 0, 4, 3*3, TRUE );
+	SetSpeedOfMessage( FALSE, 0 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　……レナ乱舞って今日まで色々見てきたけど、コイツはこれまでの中で一番長かった。",
+		   NULL, "...Rena'nın daha önce birkaç kez çılgına döndüğünü görmüştüm ama bu seferki kesinlikle en uzun süreniydi.", Line_Normal);
+	ClearMessage();
+
+	//Unhandled: btndef ""
+	DrawSceneWithMask( "black", "effect/left", 0, 0, 500 );
+	ModDrawCharacter(1, 2, "sprite/re1b_hau_b1_", "2", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 0, 0, FALSE );
+	DrawSceneWithMask( "bg/gk1", "effect/left", 0, 0, 500 );
+
+	FadeOutBGM( 1, 300, FALSE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f0953d>レナ</color>", NULL, "<color=#f0953d>Rena</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「…は、…はぅうぅぅ、そんなこと言えないよぅ…。",
+		   NULL, "\"...Ha... Hauuuu, söyleyemem...", Line_WaitForInput);
+	OutputLine(NULL, "はぅ〜！」",
+		   NULL, " Hau~!\"", Line_Normal);
+	ClearMessage();
+
+	ModDrawCharacter(2, 1, "sprite/kei1_nayamu_", "2", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 10, 0, FALSE );
+	DrawSceneWithMask( "bg/gk3", "effect/left", 0, 0, 500 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#956f6e>圭一</color>", NULL, "<color=#956f6e>Keiichi</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「…い、いや、多分こうなると思ったよ。",
+		   NULL, "\"...Ş-Şey, böyle olacağını tahmin etmiştim.", Line_WaitForInput);
+	OutputLine(NULL, "しかしずいぶん威力が向上したな…。",
+		   NULL, " Vay be, çok daha güçlenmiş...", Line_WaitForInput);
+	OutputLine(NULL, "ヒット数も大幅に増加してるぞ…。」",
+		   NULL, " Kombosundaki vuruş sayısı da epey artmış...\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	DisableWindow();
+
+	//;■ここで梨花の立ち絵を左に〜〜
+
+	ModDrawCharacterWithFiltering(3, 5, "sprite/ri1_warai_a1_", "2", "effect/right", 0, -160, 0, FALSE, 0, 0, 0, 0, 0, 20, 300, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「……次のパッチでは弱体化に違いないのですよ。",
+		   NULL, "\"...Eminim bir sonraki yamada gücünü kısarlar.", Line_WaitForInput);
+	OutputLine(NULL, "にぱ〜☆」",
+		   NULL, " Nipah~☆\"", Line_Normal);
+	ClearMessage();
+
+	DrawScene( "bg/gk3", 200 );
+	ModDrawCharacter(1, 4, "sprite/sa1b_akireru_b1_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 0, 200, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#fcdb77>沙都子</color>", NULL, "<color=#fcdb77>Satoko</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「大丈夫ですの、魅音さん。",
+		   NULL, "\"Sorun değil, Mion-san.", Line_WaitForInput);
+	OutputLine(NULL, "女の子に好きな人のことを直接聞くなんて、どうかしてましてよー！」",
+		   NULL, " Bir kıza kimden hoşlandığını böyle doğrudan sormak hiç doğru değil!\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	DisableWindow();
+
+	ModDrawCharacterWithFiltering(2, 3, "sprite/me1b_tohoho_a1_", "0", "effect/up", 0, 160, 0, FALSE, 0, 0, 0, 0, 0, 10, 1300, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>Mion</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「…………ごめんねぇ、おじさん、女の子じゃないもんでわかんなかったわぁ…。」",
+		   NULL, "\"......Özür dilerim; bu yaşlı moruk küçük bir kız olmadığı için anlayamadı...\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　あああぁあぁ、もう厄介なことになったわねぇ…。",
+		   NULL, "Ahhhhh, bu iş gerçekten can sıkıcı olmaya başladı...", Line_Normal);
+	ClearMessage();
+
+	DrawBustshot( 21, "filter_hanyu", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 21, 600, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「よりによってレナ？",
+		   NULL, "\"Bula bula Rena'yı buldu...", Line_WaitForInput);
+	OutputLine(NULL, "　恋心がそのまま攻撃力に転換されるような子なのよ？",
+		   NULL, " Kalbindeki aşkı saf saldırı gücüne dönüştürebildiğini bilmiyor muyduk sanki?", Line_WaitForInput);
+	OutputLine(NULL, "　何だか話がこじれそうね…。",
+		   NULL, " Durum gittikçe kötüleşiyor...", Line_WaitForInput);
+
+	PlaySE( 0, "hikaru", 128, 64 );
+
+	OutputLine(NULL, "あんたも当事者なんだから対策を何か考えなさい！」",
+		   NULL, " Hey, bundan doğrudan sen sorumlusun, o yüzden bunu düzeltmenin bir yolunu düşünmeye başla!\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	DisableWindow();
+
+	//print 22
+	ModDrawCharacter(22, 12, "sprite/ha1_au_", "2", 40, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 22, 600, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#8676cf>羽入</color>", NULL, "<color=#8676cf>Hanyuu</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「あぅあぅあぅ、その辛い悪魔をしまってくれたら考えますのです…！」",
+		   NULL, "\"Au au au, şu acılı iblisi ortadan kaldırırsan düşüneceğim...!\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	PlaySE( 0, "kyupirn", 128, 64 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「……あらそう？",
+		   NULL, "\"...Öyle mi dersin?", Line_WaitForInput);
+	OutputLine(NULL, "　何口食べる内にあんたが妙案を閃いてくれるか試してみようかしら！」",
+		   NULL, " Bakalım parlak bir fikir bulman için kaç lokma yemem gerekecek!\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	DisableWindow();
+
+	//print 80
+	ModDrawCharacter(22, 12, "sprite/ha1_odoroki_", "2", 40, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 22, 500, TRUE);
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#8676cf>羽入</color>", NULL, "<color=#8676cf>Hanyuu</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「考えます考えます！！",
+		   NULL, "\"Düşüneceğim!!", Line_WaitForInput);
+	SetSpeedOfMessage( TRUE, 128 );
+	OutputLine(NULL, "　あぅ",
+		   NULL, " Au", Line_Continue);
+
+	PlaySE( 0, "furu", 128, 64 );
+	Wait( 200 );
+
+	OutputLine(NULL, "あぅ",
+		   NULL, " au", Line_Continue);
+
+	PlaySE( 0, "furu", 128, 64 );
+	Wait( 200 );
+
+	OutputLine(NULL, "あぅ",
+		   NULL, " au", Line_Continue);
+
+	PlaySE( 0, "furu", 128, 64 );
+	Wait( 200 );
+
+	OutputLine(NULL, "チーン！",
+		   NULL, " ting!", Line_Continue);
+
+	PlaySE( 0, "lf164", 128, 64 );
+
+	SetSpeedOfMessage( FALSE, 0 );
+	OutputLineAll(NULL, "", Line_WaitForInput);
+
+	OutputLine(NULL, "　ほら、あれです！」",
+		   NULL, " Buldum!\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「…ずいぶん投げ遣りに思いついたみたいだけど、何？」",
+		   NULL, "\"...Bu epey ucuz bir numaraydı... Eee, aklına ne geldi?\"", Line_Normal);
+	ClearMessage();
+
+	//csp -1
+	DrawSceneWithMask( "bg/gk1", "effect/right", 0, 0, 500 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　羽入が指差すのはレナの席だった。",
+		   NULL, "Hanyuu parmağıyla Rena'nın sırasını işaret etti.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　……レナはさすがに頬杖に飽きたのか、読書を始めていた。",
+		   NULL, "...Şimdi bir kitap okuyordu; muhtemelen eli yanağında oturup pencereden dışarıyı seyretmekten yorulmuştu.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　時には悪ふざけを抜け読書をすることもある。",
+		   NULL, "Bazen şamatayı bir kenara bırakıp kitap okurdu.", Line_WaitForInput);
+	OutputLine(NULL, "別に珍しい光景でもなかった。",
+		   NULL, " Hiç de alışılmadık bir manzara değildi.", Line_Normal);
+	ClearMessage();
+
+	FadeOutBGM( 0, 300, FALSE );
+	FadeOutBGM( 1, 300, FALSE );
+	PlayBGM( 2, "semi", 120, 0 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「……でも何だか様子が違うわね。",
+		   NULL, "\"...Ama yine de farklı görünüyor.", Line_WaitForInput);
+	OutputLine(NULL, "普段とは違う雰囲気の本を何冊も持ってきてるわ。」",
+		   NULL, " Yanında her zamankilerden biraz farklı kitaplar getirmiş.\"", Line_Normal);
+	ClearMessage();
+	DisableWindow();
+
+	ModDrawCharacterWithFiltering(1, 4, "sprite/sa1a_def_a1_", "2", "effect/left", 0, -160, 0, FALSE, 0, 0, 0, 0, 0, 0, 300, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#fcdb77>沙都子</color>", NULL, "<color=#fcdb77>Satoko</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「どうしたんですの、梨花。」",
+		   NULL, "\"Sorun ne, Rika?\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「……みー。",
+		   NULL, "\"...Mi~.", Line_WaitForInput);
+	OutputLine(NULL, "レナの様子を見るのです。",
+		   NULL, " Rena'yı izliyorum.", Line_WaitForInput);
+	OutputLine(NULL, "何かヒントになるかもしれませんです。」",
+		   NULL, " Bize bir ipucu verebilir.\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	DisableWindow();
+
+	ModDrawCharacterWithFiltering(2, 3, "sprite/me1a_tohoho_a1_", "0", "effect/right", 0, 160, 0, FALSE, 0, 0, 0, 0, 0, 10, 300, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>Mion</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「何読んでんだろ。",
+		   NULL, "\"Acaba ne okuyor.", Line_WaitForInput);
+	OutputLine(NULL, "ここからじゃよくわかんないね…。」",
+		   NULL, " Buradan pek seçemiyorum...\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　さっきのレナの攻撃で懲りたのか、魅音は必要以上に距離を取って慎重そうだった。",
+		   NULL, "Rena'nın az önceki saldırılarından dersini alan Mion, aradaki mesafeyi gerektiğinden de fazla korumaya özen gösteriyordu.", Line_Normal);
+	ClearMessage();
+
+	ModDrawCharacter(3, 1, "sprite/kei1_def1_", "0", -240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 0, FALSE );
+	DrawSceneWithMask( "bg/gk3", "effect/right", 0, 0, 500 );
+	FadeOutBGM( 2, 300, FALSE );
+	PlayBGM( 0, "u2_rika", 120, 0 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#956f6e>圭一</color>", NULL, "<color=#956f6e>Keiichi</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「何だ？",
+		   NULL, "\"Neymiş o?", Line_WaitForInput);
+	OutputLine(NULL, "　ありゃ多分、何かのハウツー本だな。",
+		   NULL, " Aa, sanırım bir rehber kitabı.", Line_WaitForInput);
+	OutputLine(NULL, "何を勉強しようとしてるんだ？」",
+		   NULL, " Acaba ne hakkında bilgi ediniyor.\"", Line_Normal);
+	ClearMessage();
+	DisableWindow();
+
+	ModDrawCharacterWithFiltering(4, 4, "sprite/sa1b_odoroki_b1_", "2", "effect/right", 0, 240, 0, FALSE, 0, 0, 0, 0, 0, 5, 300, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#fcdb77>沙都子</color>", NULL, "<color=#fcdb77>Satoko</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「あッ！",
+		   NULL, "\"Ah!", Line_WaitForInput);
+	OutputLine(NULL, "　写真ですわ！",
+		   NULL, " Bunlar fotoğraf!", Line_WaitForInput);
+	OutputLine(NULL, "　写真撮影の専門誌ですわよッ！！」",
+		   NULL, " Bu bir fotoğrafçılık dergisi!!\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	DisableWindow();
+
+	ModDrawCharacter(3, 1, "sprite/kei1_ikari1_", "0", -240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 300, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#956f6e>圭一</color>", NULL, "<color=#956f6e>Keiichi</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「他にもカメラのカタログまであるぜ！",
+		   NULL, "\"Yanında bir de kamera kataloğu var!", Line_WaitForInput);
+	OutputLine(NULL, "　この雛見沢でこのキーワードが意味する人物はひとりしかいねぇだろ！！」",
+		   NULL, " Hinamizawa'da bu anahtar kelimelere uyan tek bir kişi var!!\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	DisableWindow();
+
+	ModDrawCharacter(1, 3, "sprite/me1a_wink_a1_", "1", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 0, 400, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>Mion</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「うん、間違いないね！",
+		   NULL, "\"Evet, hiç şüphe yok!", Line_WaitForInput);
+	OutputLine(NULL, "　週間闘撮別冊、ナースローアングル特集号まであるよ！！",
+		   NULL, " Hatta yanında haftalık dikizleme eki olan 'Alt Açıdan Hemşireler Özel Sayısı' bile var!!", Line_WaitForInput);
+	OutputLine(NULL, "　もう該当人物はひとりしかいないッ！！」",
+		   NULL, " Bunun olabileceği tek bir kişi var!!\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　…最後の一項目が致命的だが、とにかくとにかく、あの男しかいないというわけだ。",
+		   NULL, "...Son parça tabuta çakılan son çiviydi ama neyse... Her neyse, bu o adam olmak zorunda olduğu anlamına geliyordu.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　ったく、何であの男はいつの世界でも、ぼんやりしているクセにいつもキーパーソンなのか！",
+		   NULL, "İlahi yani, her zaman sadece etrafta aylak aylak dolaşıyor ama nasıl oluyor da her bir dünyada kilit bir isim hâline geliyor?!", Line_Normal);
+	ClearMessage();
+
+	DrawSceneWithMask( "bg/gk1", "effect/left", 0, 0, 500 );
+	ModDrawCharacterWithFiltering(1, 2, "sprite/re1a_hau_a1_", "2", "effect/up", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 300, TRUE );
+	PlayBGM( 1, "semi", 120, 0 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f0953d>レナ</color>", NULL, "<color=#f0953d>Rena</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「はぅ〜、レナにもカメラの使い方教えてくださいって言ったら教えてくれるかな、かな…！",
+		   NULL, "\"Hau~ Acaba rica etsem bana kameranın nasıl kullanılacağını öğretir mi? Rica etsem...!", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+	DisableWindow();
+
+	ModDrawCharacter(1, 2, "sprite/re1a_kaii_a1_", "2", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 0, 300, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f0953d>レナ</color>", NULL, "<color=#f0953d>Rena</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　そしたら手取り足取り教えてくれるかな、かなかなかな！",
+		   NULL, "Acaba en ince ayrıntısına kadar anlatır mı, anlatır mı, anlatır mı!", Line_WaitForInput);
+	OutputLine(NULL, "　看護婦さんの格好して行ったらやさしくしてくれるかなッ！",
+		   NULL, " Hemşire kılığına girsem acaba bana iyi davranır mı! ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f0953d>レナ</color>", NULL, "<color=#f0953d>Rena</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　かなかなかなかなッ！！",
+		   NULL, "Kılığa girsem, kılığa girsem, kılığa girsem!", Line_WaitForInput);
+	OutputLine(NULL, "　そしたらそしたら、はぅはぅ、はぅ〜〜〜！！」",
+		   NULL, " Ve sonra, ve sonra, hau hau, hau~~~!!\"", Line_Normal);
+	ClearMessage();
+
+	FadeOutBGM( 0, 300, FALSE );
+	FadeOutBGM( 1, 300, FALSE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　おもむろにレナが席を立つ！",
+		   NULL, "Rena sakin bir tavırla sırasından kalktı!", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	PlayBGM( 1, "semi_r", 120, 0 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　瞳の中にはハートと花びらがいっぱいで、覗き込めばさぞやすごい光景が映っているに違いなかった。",
+		   NULL, "Gözleri kalpler ve çiçek yapraklarıyla doluydu ve içine dikkatle baksanız hiç şüphesiz çok daha inanılmaz bir manzara görürdünüz.", Line_Normal);
+	ClearMessage();
+
+	ModDrawCharacter(2, 3, "sprite/me1a_tohoho_a1_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 10, 0, FALSE );
+	DrawSceneWithMask( "bg/gk3", "effect/left", 1, 0, 500 );
+	ModDrawCharacterWithFiltering(3, 2, "sprite/re1a_kaii_a1_", "2", "effect/right", 1, 160, 0, FALSE, 0, 0, 0, 0, 0, 3, 300, TRUE );
+	FadeOutBGM( 1, 300, FALSE );
+	PlayBGM( 0, "u2_3", 120, 0 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f0953d>レナ</color>", NULL, "<color=#f0953d>Rena</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「あのねあのね魅ぃちゃん！",
+		   NULL, "\"Hey, hey, Mii-chan!", Line_WaitForInput);
+	OutputLine(NULL, "　レナは急に具合が悪くなっちゃったから早退するね、はぅ〜！！」",
+		   NULL, " Rena aniden kendini çok kötü hissetmeye başladı, o yüzden eve erken gidiyor, hau~!!\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	DisableWindow();
+
+	FadeBustshotWithFiltering( 3, "effect/left", 1, FALSE, 0, 0, 300, TRUE );
+	PlaySE( 0, "door", 128, 64 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　何てメチャクチャ！",
+		   NULL, "Ne cüretkârlık!", Line_WaitForInput);
+	OutputLine(NULL, "　放課後を待たずにレナは教室を飛び出す！！",
+		   NULL, " Rena okulun bitmesini bile beklemeden sınıftan fırlayıp çıktı!!", Line_Normal);
+	ClearMessage();
+	DisableWindow();
+
+	ModDrawCharacter(2, 3, "sprite/me1b_odoroki_a1_", "2", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 10, 300, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>Mion</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「あぁああぁ、レナぁ！！",
+		   NULL, "\"Ahhhh, Renaaa!!", Line_WaitForInput);
+	OutputLine(NULL, "　ちょうどいい場所に富田くんと岡村くん！！",
+		   NULL, " Aa, Tomita-kun, Okamura-kun, harika zamanlama!!", Line_WaitForInput);
+	OutputLine(NULL, "　レナを行かせるな、引き止めろぉおぉ！！」",
+		   NULL, " Rena'nın gitmesine izin vermeyin! Durdurun onu!!\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	PlaySE( 0, "daidageki", 128, 64 );
+
+	SetSpeedOfMessage( TRUE, 128 );
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a17d6b>富田</color>＆<color=#7a7e7d>岡村</color>", NULL, "<color=#a17d6b>Tomita</color> ve <color=#7a7e7d>Okamura</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「「む、無理っすよぉおおぉ！！",
+		   NULL, "\"Bunu yapamayız!!", Line_Continue);
+	StartShakingOfWindow( 278, 30, 0, 4, 2*2, FALSE );
+	StartShakingOfAllObjects( 278, 30, 0, 4, 2*2, TRUE );
+
+	SetSpeedOfMessage( FALSE, 0 );
+	OutputLineAll(NULL, "", Line_WaitForInput);
+
+	OutputLine(NULL, "　さっき委員長が大変な目にあってたじゃないっすかぁあぁ！！」」",
+		   NULL, " Az önce Sınıf Temsilcisi'ne ne yaptığını gördük!!\"", Line_Normal);
+	ClearMessage();
+	DisableWindow();
+
+	ModDrawCharacterWithFiltering(4, 5, "sprite/ri1_majime_a1_", "2", "effect/right", 1, 160, 0, FALSE, 0, 0, 0, 0, 0, 5, 300, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「……確かに、今のレナが相手じゃ部活メンバー総掛かりでも無理そうなのです。」",
+		   NULL, "\"...Tüm Kulüp üyeleri aynı anda saldırsa bile onu yenmek imkânsız görünüyor.\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	DisableWindow();
+
+	ModDrawCharacter(2, 3, "sprite/me1b_majime_a1_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 10, 300, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>Mion</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「だからってまずい！！",
+		   NULL, "\"Yine de bunun olmasına izin veremeyiz!!", Line_WaitForInput);
+	OutputLine(NULL, "　沙都子ッ！！」",
+		   NULL, " Satoko!!\"", Line_Normal);
+	ClearMessage();
+
+	DrawScene( "bg/gk3", 200 );
+	ModDrawCharacter(1, 4, "sprite/sa1b_akuwarai_b1_", "2", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 0, 200, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　魅音が指をバチンと鳴らすと、沙都子の手元に天井から一本の紐が垂れてくる。",
+		   NULL, "Mion parmaklarını şıklattı ve tavandan tek bir ip sarkarak Satoko'nun ellerine düştü.", Line_Normal);
+	ClearMessage();
+	DisableWindow();
+
+	ModDrawCharacter(1, 4, "sprite/sa1b_warai_b1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 0, 300, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#fcdb77>沙都子</color>", NULL, "<color=#fcdb77>Satoko</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「あいあいさーですわぁ！！",
+		   NULL, "\"Oo, emredersiniz efendim!!", Line_WaitForInput);
+	OutputLine(NULL, "　そおれッ！！」",
+		   NULL, " Al bakalım!!\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	DisableWindow();
+
+	PlaySE( 0, "nageru", 128, 64 );
+	ModDrawCharacter(1, 4, "sprite/sa1a_warai_a1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 0, 300, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　それを沙都子が勢いよく引いた時！　昇降口へ駆けて行くレナの足元にビーンと縄跳びが張られる仕掛けが作動する！",
+		   NULL, "Satoko ipi hızla çekti! Ve tam o anda, okul girişine doğru koşan Rena'nın ayaklarının dibinde atlama ipiyle kurulan tuzak devreye girdi!", Line_Normal);
+	ClearMessage();
+	DisableWindow();
+
+	ModDrawCharacter(1, 4, "sprite/sa1a_akuwarai_a1_", "2", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 0, 300, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#fcdb77>沙都子</color>", NULL, "<color=#fcdb77>Satoko</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「取りあえず転ばせて、その上からみんなで圧殺するんですのよ！！",
+		   NULL, "\"Önce çelme takıp düşüreceğiz, sonra da hep birlikte üzerine çullanacağız!!", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+	DisableWindow();
+
+	PlaySE( 0, "dageki", 128, 64 );
+	DrawScene( "white", 100 );
+	ModDrawCharacter(1, 4, "sprite/sa1b_hannbeso_b1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 0, 0, FALSE );
+	DrawScene( "bg/gk3", 200 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#fcdb77>沙都子</color>", NULL, "<color=#fcdb77>Satoko</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　ふぎゃッ？！」",
+		   NULL, "Fugyah?!\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　と、沙都子が言い終わる前に縄跳びが千切れたすごい音がした。",
+		   NULL, "Ama daha Satoko sözünü bitiremeden, atlama ipi yüksek bir yırtılma sesiyle koptu.", Line_WaitForInput);
+	OutputLine(NULL, "……ナイロン製の縄跳びを引き千切るって、どういう怪力なんだろう…。",
+		   NULL, " ...Naylon bir atlama ipini böyle koparmak nasıl bir insanüstü güçtü öyle...", Line_Normal);
+	ClearMessage();
+
+	DrawSceneWithMask( "black", "effect/right", 1, 0, 500 );
+	DrawSceneWithMask( "bg/g2", "effect/right", 1, 0, 500 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　縄跳び如きではレナを静止できず、もはや下駄箱で靴を履き替えてる！",
+		   NULL, "Basit bir atlama ipi Rena'yı durdurmaya yetmemişti ve şimdi ayakkabı dolaplarının orada dışarı ayakkabılarını giyiyordu bile!", Line_Normal);
+	ClearMessage();
+	DisableWindow();
+
+	ModDrawCharacterWithFiltering(1, 22, "sprite/tie_2_", "0", "effect/left", 1, -160, 0, FALSE, 0, 0, 0, 0, 0, 0, 300, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#68aee5>知恵</color>", NULL, "<color=#68aee5>Chie</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「こぉら！！",
+		   NULL, "\"Hey!!", Line_WaitForInput);
+	OutputLine(NULL, "　廊下を走っちゃいけません！！」",
+		   NULL, " Koridorlarda koşmak yasak!!\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	DisableWindow();
+
+	ModDrawCharacterWithFiltering(2, 2, "sprite/re1a_nande_a1_", "2", "effect/right", 1, 160, 0, FALSE, 0, 0, 0, 0, 0, 10, 300, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f0953d>レナ</color>", NULL, "<color=#f0953d>Rena</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「先生ごめんなさい、今日は早退します〜〜！！",
+		   NULL, "\"Sensei, özür dilerim, bugün eve erken gidiyorum~~!!", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+	DisableWindow();
+
+	PlaySE( 0, "boyon", 128, 64 );
+	ModDrawCharacter(2, 2, "sprite/re1b_kaii_b1_", "2", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 10, 300, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f0953d>レナ</color>", NULL, "<color=#f0953d>Rena</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　披露宴には呼びますからね！",
+		   NULL, "Sizi düğün resepsiyonuna davet edeceğim!", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+	DisableWindow();
+
+	PlaySE( 0, "nageru", 128, 64 );
+	FadeBustshotWithFiltering( 2, "effect/left", 1, FALSE, 0, 0, 300, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f0953d>レナ</color>", NULL, "<color=#f0953d>Rena</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　はぅ〜！！」",
+		   NULL, "Hau~!!\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	DisableWindow();
+
+	ModDrawCharacter(1, 22, "sprite/tie_3_", "2", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 0, 300, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#68aee5>知恵</color>", NULL, "<color=#68aee5>Chie</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「は、はぁ？！",
+		   NULL, "\"N-Ne?!", Line_WaitForInput);
+	OutputLine(NULL, "　……ってお待ちなさい！",
+		   NULL, " ...Hey, dur!", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+	DisableWindow();
+
+	FadeBustshotWithFiltering( 1, "effect/down", 1, FALSE, 0, 0, 300, TRUE );
+	PlaySE( 0, "down2", 128, 64 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#68aee5>知恵</color>", NULL, "<color=#68aee5>Chie</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　ううぅ、教え子に先を越されたくなかった…！」",
+		   NULL, "*inler* Bir öğrencinin beni geçmesine nasıl izin verdim...?!\"", Line_Normal);
+	ClearMessage();
+	DisableWindow();
+
+	ModDrawCharacterWithFiltering(3, 3, "sprite/me1a_odoroki_a1_", "2", "effect/right", 1, 160, 0, FALSE, 0, 0, 0, 0, 0, 20, 300, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>Mion</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「って、そこ落ち込むトコ違いますから！！",
+		   NULL, "\"Dur bir dakika, üzüldüğünüz şey bu mu yani?!", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+	DisableWindow();
+
+	ModDrawCharacter(3, 3, "sprite/me1b_majime_a1_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 300, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>Mion</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　わ、私たちも早退します！",
+		   NULL, "B-Biz de erken çıkıyoruz!", Line_WaitForInput);
+	OutputLine(NULL, "　とにかくレナより先に富竹さんを見つけて白い勾玉を奪おう！」",
+		   NULL, " Rena'dan önce Tomitake-san'ı bulmalı ve beyaz magatamayı ele geçirmeliyiz!\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	DisableWindow();
+
+	ModDrawCharacterWithFiltering(4, 1, "sprite/kei1_komaru_", "0", "effect/left", 1, -160, 0, FALSE, 0, 0, 0, 0, 0, 5, 300, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#956f6e>圭一</color>", NULL, "<color=#956f6e>Keiichi</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「それしかねぇな！",
+		   NULL, "\"Tek seçeneğimiz bu!", Line_WaitForInput);
+	OutputLine(NULL, "　富竹さんのいそうなところを探そう！！」",
+		   NULL, " Tomitake-san'ın olabileceği yerleri arayalım!!\"", Line_Normal);
+	ClearMessage();
+
+	DrawSceneWithMask( "black", "effect/right", 1, 0, 500 );
+	DrawSceneWithMask( "bg/g1", "effect/right", 1, 0, 500 );
+	DrawBustshot( 21, "filter_hanyu", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 21, 600, TRUE );
+	PlayBGM( 1, "semi", 120, 0 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「……羽入！",
+		   NULL, "\"...Hanyuu!", Line_WaitForInput);
+	OutputLine(NULL, "　あんたの妖気レーダーで富竹を探しなさい！」",
+		   NULL, " Hayalet enerjisi radarını kullanarak Tomitake'yi ara!\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	DisableWindow();
+
+	//print 63
+	ModDrawCharacterWithFiltering(22, 12, "sprite/ha1_odoroki_", "2", "effect/left", 1, 40, 0, FALSE, 0, 0, 0, 0, 0, 22, 300, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#8676cf>羽入</color>", NULL, "<color=#8676cf>Hanyuu</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「あぅあぅ、その呼び名が嫌ですが教えますです、神社の境内にいますですよー！",
+		   NULL, "\"Au au, ona bu ismi takmandan hoşlanmıyorum ama tapınak arazisinde olduğunu söyleyebilirim!", Line_WaitForInput);
+	OutputLine(NULL, "　鷹野も一緒なのです！」",
+		   NULL, " Ve Takano da onunla birlikte!\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	DisableWindow();
+
+	//csp -1
+	//print 62
+	FadeBustshot( 21, FALSE, 0, 0, 0, 0, 500, FALSE );
+	FadeBustshot( 22, FALSE, 0, 0, 0, 0, 300, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「…あぁ素敵。",
+		   NULL, "\"...Oo, harika.", Line_WaitForInput);
+	OutputLine(NULL, "お約束万歳！",
+		   NULL, " Yaşasın klişeler!", Line_WaitForInput);
+	OutputLine(NULL, "　こーゆう時のカップルって必ず二人一緒なのよねー。",
+		   NULL, " Çiftler böyle zamanlarda her zaman bir arada olurlar, değil mi?", Line_WaitForInput);
+	OutputLine(NULL, "魅ぃ、富竹はきっと神社なのです！！」",
+		   NULL, " Mii, Tomitake tapınakta olmalı!!\"", Line_Normal);
+	ClearMessage();
+	DisableWindow();
+
+	ModDrawCharacterWithFiltering(1, 3, "sprite/me1a_wink_a1_", "1", "effect/left", 1, -240, 0, FALSE, 0, 0, 0, 0, 0, 0, 300, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>Mion</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「梨花ちゃんもそう思う？！",
+		   NULL, "\"Sen de mi öyle düşünüyorsun, Rika-chan?!", Line_WaitForInput);
+	OutputLine(NULL, "　私もそう思ってたとこだわ！！」",
+		   NULL, " Ben de tam onu düşünüyordum!!\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	DisableWindow();
+
+	ModDrawCharacterWithFiltering(2, 4, "sprite/sa1b_odoroki_b1_", "2", "effect/right", 1, 240, 0, FALSE, 0, 0, 0, 0, 0, 10, 300, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#fcdb77>沙都子</color>", NULL, "<color=#fcdb77>Satoko</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「でもそれはレナさんも思ってるみたいですわよ！！",
+		   NULL, "\"Ama görünüşe göre Rena-san da aynı şeyi düşünüyor!!", Line_WaitForInput);
+	OutputLine(NULL, "　神社の方向へ走っていきますわ！」",
+		   NULL, " Tapınağa doğru koşuyor!\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	DisableWindow();
+
+	ModDrawCharacter(3, 1, "sprite/kei1_ikari1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 300, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#956f6e>圭一</color>", NULL, "<color=#956f6e>Keiichi</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「しっかし何て速度だ！！",
+		   NULL, "\"Ne canavarca bir hız!!", Line_WaitForInput);
+	OutputLine(NULL, "　見る見る視界から遠のいていくぞ…！！」",
+		   NULL, " Bu gidişle göz açıp kapayıncaya kadar gözden kaybolacak...!!\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	DisableWindow();
+
+	ModDrawCharacter(1, 3, "sprite/me1b_majime_a1_", "0", -240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 0, 300, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>Mion</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「それでも追うしかないよ！",
+		   NULL, "\"Yapabileceğimiz tek şey peşinden koşmak!", Line_WaitForInput);
+	OutputLine(NULL, "　レナが富竹さんを口説き出す前に何とかしなきゃ！」",
+		   NULL, " Rena, Tomitake-san'a asılmaya başlamadan önce bir şeyler yapmalıyız!\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「……で、鷹野が妬いて気まずい三角関係で大変なのです。",
+		   NULL, "\"...Takano kıskançlık krizine girdiğinde bu aşk üçgeni çok tuhaf bir hâl alacak.", Line_WaitForInput);
+	OutputLine(NULL, "にぱ〜☆」",
+		   NULL, " Nipah~☆\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　別にあのカップルが破綻するのは構わないけど、八つ当たりで終末作戦なんか実行されたらたまったもんじゃない！",
+		   NULL, "İkisinin ayrılması pek umurumda değil ama öfkesini son planlarını hemen devreye sokarak çıkarırsa korkunç olur!", Line_Normal);
+	ClearMessage();
+
+	FadeOutBGM( 1, 300, FALSE );
+	DrawSceneWithMask( "bg/sora", "effect/down", 1, 0, 500 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　レナはとっくに俺たちの視界から消え去っている。",
+		   NULL, "Rena çoktan gözden kaybolmuştu.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　でも立ち止まるわけにはいかない。",
+		   NULL, "Ama burada duramazdık.", Line_WaitForInput);
+	OutputLine(NULL, "魅音の言う通り、１秒でも早く追いついて被害を最小限に食い止めるしかない！",
+		   NULL, " Tek seçeneğimiz, tıpkı Mion'un dediği gibi, olabildiğince hızlı bir şekilde peşinden koşmak ve zayiatı en aza indirmekti!", Line_Normal);
+	ClearMessage();
+
+	CallScript("&eye");
+}

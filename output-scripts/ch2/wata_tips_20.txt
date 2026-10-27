@@ -1,0 +1,219 @@
+// Higurashi Türkçe Çeviri & Yerelleştirme: @Remilya | https://github.com/Remilya/Higurashi
+void main()
+{
+
+//１０深■園崎家の老当主は？
+//（深夜の車中のイメージ）
+//*Sub_Tips_040
+//gosub *tip_s
+	EnableJumpingOfReturnIcon();
+	FadeOutBGM( 0, 1000, FALSE );
+	FadeOutBGM( 1, 1000, FALSE );
+	FadeOutBGM( 2, 1000, TRUE );
+	DisableWindow();
+	DrawScene("black", 1000 );
+	DrawScene("background/kuruma4", 1000 );
+	PlayBGM( 1, "msys13", 56, 0 );
+
+
+//「はい。郵便局員も目撃してないそうです＠...園崎本家は、郵便受けにハンコが吊るしてあるそうで、書留も宅急便も勝手にハンコを押して投函していい事になってるんだそうっす。＠
+	ClearMessage();
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#8f6d8f>熊谷</color>", NULL, "<color=#8f6d8f>Kumagai</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 19, "ps3/s20/19/443100030", 256, TRUE);
+	OutputLine(NULL, "「はい。郵便局員も目撃してないそうです。",
+		   NULL, "\"Evet. Postacı da hiçbir şey görmemiş.", Line_Continue);
+	OutputLine(NULL, "…園崎本家は、郵便受けにハンコが吊るしてあるそうで、書留も宅急便も勝手にハンコを押して投函していい事になってるんだそうっす。」",
+		   NULL, " ...Sonozaki Malikanesi'nin posta kutusunda mühürleri asılı duruyormuş; böylece gelen herkes taahhütlü mektupları veya kargoları o mühürle damgalayıp kutuya bırakabiliyormuş.\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//「なっはっは、そりゃ無用心ですねぇ＠...ってことは、最後の目撃はいつになるんです？＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 11, "ps3/s20/11/440700154", 256, TRUE);
+	OutputLine(NULL, "「なっはっは、そりゃ無用心ですねぇ。",
+		   NULL, "\"Na-ha-ha, bu epey dikkatsizce bir davranışmış.", Line_Continue);
+	OutputLine(NULL, "…ってことは、最後の目撃はいつになるんです？」",
+		   NULL, " ...Peki en son ne zaman görülmüş?\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//「綿流しの開会式でした挨拶が最後です＠その後すぐに帰宅したらしいっすから。￥
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#8f6d8f>熊谷</color>", NULL, "<color=#8f6d8f>Kumagai</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 19, "ps3/s20/19/443100031", 256, TRUE);
+	OutputLine(NULL, "「綿流しの開会式でした挨拶が最後です。",
+		   NULL, "\"En son Watanagashi açılış törenindeki selamlama konuşmasında görülmüş.", Line_Continue);
+	OutputLine(NULL, "その後すぐに帰宅したらしいっすから。」",
+		   NULL, " Görünüşe göre hemen ardından eve dönmüş.\"", Line_Normal);
+	ClearMessage();
+
+//「高齢ですからねぇ＠...話じゃ、週に何回かお稽古事で外出してるそうじゃないですか＠そっちはどうです？＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 11, "ps3/s20/11/440700155", 256, TRUE);
+	OutputLine(NULL, "「高齢ですからねぇ。",
+		   NULL, "\"Eh, oldukça yaşlı bir kadın sonuçta.", Line_Continue);
+	OutputLine(NULL, "…話じゃ、週に何回かお稽古事で外出してるそうじゃないですか。",
+		   NULL, " ...Duyduğuma göre haftada birkaç kez kurs almak için dışarı çıkıyormuş, değil mi?", Line_WaitForInput);
+	ModPlayVoiceLS(4, 11, "ps3/s20/11/440700156", 256, TRUE);
+	OutputLine(NULL, "そっちはどうです？」",
+		   NULL, " O konuda bir şey öğrenebildiniz mi?\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//「毎週月曜に集会所で大正琴を習ってるんですが、今週は休んだそうです。＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>小宮山</color>", NULL, "<color=#f5e6d3>Komiyama</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/442500008", 256, TRUE);
+	OutputLine(NULL, "「毎週月曜に集会所で大正琴を習ってるんですが、今週は休んだそうです。」",
+		   NULL, "\"Her pazartesi taishougoto çalışmak için toplantı salonuna gidiyormuş ama bu hafta gitmemiş.\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//「欠席の電話とかは＠　それを誰かが確認したとかは？＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 11, "ps3/s20/11/440700157", 256, TRUE);
+	OutputLine(NULL, "「欠席の電話とかは？",
+		   NULL, "\"Gelemeyeceğini bildirmek için telefon falan açmış mı peki?", Line_Continue);
+	OutputLine(NULL, "　それを誰かが確認したとかは？」",
+		   NULL, " Bunu doğrulayan biri var mı?\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//「いえ、誰も＠ただ、たまに休むことがあったらしいので誰も不審には思わなかったようです。￥
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>小宮山</color>", NULL, "<color=#f5e6d3>Komiyama</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/442500009", 256, TRUE);
+	OutputLine(NULL, "「いえ、誰も。",
+		   NULL, "\"Hayır, kimse yok.", Line_Continue);
+	OutputLine(NULL, "ただ、たまに休むことがあったらしいので誰も不審には思わなかったようです。」",
+		   NULL, " Fakat ara sıra gitmediği günler olduğu için kimse bunu tuhaf karşılamamış.\"", Line_Normal);
+	ClearMessage();
+
+//「明日さ、１０時くらいになったら市役所のふりして電話してみましょうかね＠在宅を確認してみて下さい。＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 11, "ps3/s20/11/440700158", 256, TRUE);
+	OutputLine(NULL, "「明日さ、１０時くらいになったら市役所のふりして電話してみましょうかね。",
+		   NULL, "\"Yarın saat on civarında belediye binasından arıyormuş gibi yapıp telefon açsak nasıl olur?", Line_Continue);
+	OutputLine(NULL, "在宅を確認してみて下さい。」",
+		   NULL, " Lütfen evde olup olmadığını öğrenin.\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//「１０時ですね。了解っす！￥
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#8f6d8f>熊谷</color>", NULL, "<color=#8f6d8f>Kumagai</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 19, "ps3/s20/19/443100032", 256, TRUE);
+	OutputLine(NULL, "「１０時ですね。了解っす！」",
+		   NULL, "\"Saat onda mı? Anlaşıldı!\"", Line_Normal);
+	ClearMessage();
+
+//　雛見沢の古い因習が関わっている気配が濃厚になった頃から、御三家をこっそりと監視していた＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　雛見沢の古い因習が関わっている気配が濃厚になった頃から、御三家をこっそりと監視していた。",
+		   NULL, "Hinamizawa'nın kadim geleneklerinin bütün bu olanlarla bir ilgisi olduğu ihtimali güçlendiğinden beri, Üç Büyük Aile'yi gizlice gözetim altında tutuyordu.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　今日までに御三家の公由家の当主と、古手家の当主が消えた￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　今日までに御三家の公由家の当主と、古手家の当主が消えた。",
+		   NULL, "Bugüne kadar Kimiyoshi Ailesi'nin reisi ve Furude Ailesi'nin reisi ortadan kaybolmuştu.", Line_Normal);
+	ClearMessage();
+
+//　残る当主は１人＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　残る当主は１人。",
+		   NULL, "Geriye yalnızca tek bir aile reisi kalmıştı.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　園崎家当主の園崎お魎。（そのざきおりょう＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　園崎家当主の園崎お魎。（そのざきおりょう）",
+		   NULL, "Sonozaki Ailesi'nin reisi Oryou Sonozaki.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　高齢の婆さまらしい＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　高齢の婆さまらしい。",
+		   NULL, "Görünüşe göre oldukça yaşlı bir kadındı.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+//　威厳は衰えないものの、人前に姿を現すことは稀だそうで、確認がなかなか取れなかった＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　威厳は衰えないものの、人前に姿を現すことは稀だそうで、確認がなかなか取れなかった。",
+		   NULL, "Saygınlığı ve ağırlığı hiç azalmamıştı ama insanların karşısına nadiren çıkıyordu; bu yüzden herhangi bir anda nerede olduğunu doğrulamak zordu.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　...その最後の当主も、綿流しの日に目撃されたのを最後に、誰からも目撃されていない＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　…その最後の当主も、綿流しの日に目撃されたのを最後に、誰からも目撃されていない。",
+		   NULL, "...O son aile reisi de Watanagashi gününden beri hiç kimse tarafından görülmemişti.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+//　園崎本家の中にいて今も健在なのか＠　...それとも......もう￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　園崎本家の中にいて今も健在なのか？",
+		   NULL, "Acaba hâlâ Sonozaki Malikanesi'nin içinde sağ salim duruyor muydu?", Line_WaitForInput);
+	OutputLine(NULL, "　…それとも……もう？",
+		   NULL, " ...Yoksa o da çoktan...?", Line_Normal);
+	ClearMessage();
+
+//「園崎魅音が言うには、体調を崩して寝込んでるんだそうです。＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#8f6d8f>熊谷</color>", NULL, "<color=#8f6d8f>Kumagai</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 19, "ps3/s20/19/443100033", 256, TRUE);
+	OutputLine(NULL, "「園崎魅音が言うには、体調を崩して寝込んでるんだそうです。」",
+		   NULL, "\"Mion Sonozaki'nin söylediğine göre, rahatsızlanmış ve yatakta dinleniyormuş.\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//「本当に寝込んでるのかなぁ＠顔と脈を見てみたいですねぇ...。＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 11, "ps3/s20/11/440700159", 256, TRUE);
+	OutputLine(NULL, "「本当に寝込んでるのかなぁ。",
+		   NULL, "\"Acaba gerçekten uyuyor mu dersin?", Line_Continue);
+	OutputLine(NULL, "顔と脈を見てみたいですねぇ…。」",
+		   NULL, " Yüzüne—ve nabzına—bir bakmak isterdim doğrusu...\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//「..................まったくっす。￥
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#8f6d8f>熊谷</color>", NULL, "<color=#8f6d8f>Kumagai</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 19, "ps3/s20/19/443100034", 256, TRUE);
+	OutputLine(NULL, "「………………まったくっす。」",
+		   NULL, "\"............Kesinlikle haklısınız.\"", Line_Normal);
+	ClearMessage();
+
+//　２人してタバコの煙を大きく吐き出す...￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　２人してタバコの煙を大きく吐き出す…。",
+		   NULL, "İkisi birlikte ağızlarından kocaman birer sigara dumanı üfledi...", Line_Normal);
+	ClearMessage();
+
+//「大石さん、...園崎本家と古手神社の捜査令状＠申請、通ると思います？＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#8f6d8f>熊谷</color>", NULL, "<color=#8f6d8f>Kumagai</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 19, "ps3/s20/19/443100035", 256, TRUE);
+	OutputLine(NULL, "「大石さん、…園崎本家と古手神社の捜査令状。",
+		   NULL, "\"Ooishi-san... Sonozaki Malikanesi ve Furude Tapınağı için arama emri talebimiz vardı ya.", Line_Continue);
+	OutputLine(NULL, "申請、通ると思います？」",
+		   NULL, " Sizce onaylanır mı?\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+//　大石は特に答えず、再び紫煙を吐き出して、文字通り煙に巻いていた...￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　大石は特に答えず、再び紫煙を吐き出して、文字通り煙に巻いていた…。",
+		   NULL, "Ooishi cevap vermedi; zihni kadar bulanıklaşan etrafına bir bulut daha tütün dumanı üfleyerek soruyu geçiştirdi...", Line_Normal);
+	ClearMessage();
+	DisableWindow();
+	SetValidityOfInput( FALSE );
+	DrawBustshotWithFiltering(6, "cinema", "x", 1, 0, 0, FALSE, 0, 0, 0, 0, 0, 25, 1300, TRUE );
+	DrawBustshot(7, "title02", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 26, 3000, TRUE );
+	Wait( 2000 );
+	DrawBustshot(5, "black", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 25, 3000, TRUE );
+	Wait( 1000 );
+	FadeBustshotWithFiltering( 7, "x", 1, FALSE, 0, 0, 1000, TRUE );
+	DrawScene("black", 1000 );
+	SetValidityOfInput( TRUE );
+
+}

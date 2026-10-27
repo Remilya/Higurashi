@@ -1,0 +1,738 @@
+// Higurashi Türkçe Çeviri & Yerelleştirme: @Remilya | https://github.com/Remilya/Higurashi
+void main()
+{
+
+	//Unhandled: *Staff_room7
+	//;スタッフルーム
+
+	//;■スタッフルーム
+	//Unhandled subroutine: omake_s
+
+	//csp -1
+
+	//Unhandled: *Staff_room8
+
+	//csp -1
+	//print 7
+	//Unhandled: mov %ZERO_MUGIC,0
+
+	PlaySE( 0, "wav/taitoru", 70, 64 );
+	DrawScene( "white", 3000 );
+	DrawScene( "black", 1000 );
+
+	//;setwindow 31,16,22,16,26,26,0,2,20,1,1,#999999,0,0,640,480
+	//Unhandled: rmode ON
+
+	PlayBGM( 0, "bgm1/rika", 70, 0 );
+	SetSpeedOfMessage( FALSE, 0 );
+
+	if (GetGlobalFlag(GADVMode) == 0) { SetDrawingPointOfMessage( 0, 6 ); }
+	ClearMessage();
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "<align=center>今回の修羅場を過ごした戦友へ。</align>",
+		   NULL, "<align=center>Bu cehennemden benimle birlikte geçen tüm dostlarıma.</align>", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　『ひぐらし』を作る上でたくさんの皆さんにお世話になっていますが、",
+		   NULL, "Higurashi'yi yaratırken pek çok insandan yardım aldım,", Line_WaitForInput);
+	OutputLine(NULL, "ここでは特に、今回の祭囃し編でお世話になった皆さんへ…。",
+		   NULL, " ancak bu özellikle sizin için, bu Matsuribayashi-hen'de bana yardım edenler için...", Line_Normal);
+	ClearMessage();
+	DisableWindow();
+
+
+	DrawSceneWithMask( "background/ke_shiryou1_02", "effect/up", 0, 0, 1300 );
+	ModSetLayerFilter(1, 256, "none");
+	ModDrawCharacter(1, 14, "sprite/oko3_niyari_", "2", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 2, 400, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　前日まで風邪で寝込んでいた竜騎士07は、病み上がりにも関わらず、シナリオを熱演。",
+		   NULL, "Daha bir önceki güne kadar Ryukishi07, kendisini yatağa düşüren bir soğuk algınlığından yeni kurtulmuş olmasına rağmen hevesle senaryoyu yazıyordu.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　大胆かつあまりに進捗の遅れた執筆に、スタッフは老若男女を問わず絶望するのだった。",
+		   NULL, "Personel üyelerinin her biri, senaryodaki cüretkâr ve ciddi gecikmeler yüzünden umutsuzluk içindeydi.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　それは、スタッフたちにとって見れば、いつも通りのコミケ前だったろう…。",
+		   NULL, "Gerçi onların bakış açısından bu, Comiket öncesindeki her zamanki durumdu...", Line_Normal);
+	ClearMessage();
+	DisableWindow();
+
+	DrawScene( "black", 100 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　ひとつ決定的に違うことがあり、",
+		   NULL, "Tek belirleyici fark ise......", Line_WaitForInput);
+	OutputLine(NULL, "………それを勝ち取るために、スタッフたちが気が遠くなるほどの時間、数多の世界で戦ってきたことを知ることができる人間は、いない。",
+		   NULL, " amacımıza ulaşmak için personelimizden hiçbirinin pek çok dünya ve ezici bir zaman dilimi boyunca savaşamayacak olmasıydı.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	if (GetGlobalFlag(GADVMode)) { OutputLine(NULL, "", NULL, "<size=-2>", Line_Continue); }
+	OutputLine(NULL, "　八咫桜さんの、有給はもう使い切りましたので、冬コミが同じスケジュールだったら７００％間に合いませんのでそのつもりで、という言葉が重過ぎる…。",
+		   NULL, "Yatazakura-san, \"Bütün ücretli izinlerimi çoktan kullandım, bu yüzden program geçen Kış Comiket'indeki gibi olursa zamanında yetiştirmemiz %700 imkânsız, buna hazırlıklı olun,\" dediğinde sözleri fazlasıyla ağır basmıştı...", Line_Normal);
+	ClearMessage();
+	DisableWindow();
+
+	DrawScene( "background/sora", 400 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　……あぁ、大きな変化があった。",
+		   NULL, "......Evet, büyük bir değişiklik oldu.", Line_Normal);
+	ClearMessage();
+	DisableWindow();
+
+	PlaySE( 0, "wav/hikaru", 70, 64 );
+	ModDrawCharacterWithFiltering(1, 14, "sprite/oko3_niyari_", "2", "effect/right", 1, 0, 0, FALSE, 0, 0, 0, 0, 0, 2, 300, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　竜騎士07が、夏になったらプールに行きたいと言い出したのだ。",
+		   NULL, "Ryukishi07 bu yaz havuza gitmek istediğini söyledi.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	DisableWindow();
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	PlaySE( 0, "wav/kyupirn", 70, 64 );
+	DrawFilm( 3, 255, 255, 255, 256, 0, 500, TRUE ); //negative color
+	//Unhandled: print 1
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　そりゃあ浮くだろうよぷかぷかと。",
+		   NULL, "Suyun üzerinde öylece süzülüp durmak istiyormuş.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　まだマスターアップもしてないのにプールかよ。",
+		   NULL, "Havuz mu? Ana Kopya bile henüz bitmemişken mi?", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　東京湾でよければいつでも浮かべますよというスタッフの言葉がとてもひんやりしていて涼やかだ。",
+		   NULL, "Personel üyelerinden birinin soğukkanlılıkla, \"Tokyo Körfezi senin için sorun değilse, seni istediğin zaman suya bırakabiliriz,\" dediğini duymak çok ferahlatıcıydı.", Line_Normal);
+	ClearMessage();
+	DisableWindow();
+
+	FadeFilm( 300, TRUE ); //end negative color
+	//Unhandled: print 1
+
+	SetSpeedOfMessage( TRUE, 128 );
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　そして、ゲームがしたいとか、",
+		   NULL, "Ayrıca \"Oyun oynamak istiyorum,\"", Line_ContinueAfterTyping);
+	Wait( 600 );
+
+	PlaySE( 0, "wav/koruku", 70, 64 );
+
+	OutputLine(NULL, "信長の野望がまだ途中だとか、",
+		   NULL, " \"Hâlâ Nobunaga's Ambition'ın ortasındayım,\"", Line_ContinueAfterTyping);
+	Wait( 500 );
+
+	PlaySE( 0, "wav/kyupirn", 70, 64 );
+
+	OutputLine(NULL, "ハンゲの麻雀っていいねとか、",
+		   NULL, " \"Hangames'in Mahjong'u harika,\"", Line_ContinueAfterTyping);
+	Wait( 400 );
+
+	PlaySE( 0, "wav/hikaru", 70, 64 );
+
+	OutputLine(NULL, "夏休み中はオールナイト麻雀大会をやろうとか、",
+		   NULL, " \"Bu yaz tatilinde sabaha kadar süren bir mahjong turnuvası yapalım,\"", Line_ContinueAfterTyping);
+	Wait( 800 );
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_Normal); }
+
+	PlaySE( 0, "wav/nageru", 70, 64 );
+	Wait( 200 );
+	PlaySE( 0, "wav/nageru", 70, 64 );
+	Wait( 200 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "おのれ奈■さん、次回こそは07thの総力を挙げて叩き潰す、",
+		   NULL, " \"Lanet olsun sana, Na**-san! Bir dahaki sefere tüm 07th ile seni ezip geçeceğim!\"", Line_ContinueAfterTyping);
+
+	PlaySE( 0, "wav/hikaru", 70, 64 );
+
+	Wait( 600 );
+	OutputLine(NULL, "ジュンチャン三色に振り込んでも泣かないもん！",
+		   NULL, " \"Üç Renkli Terminal Setine yem olduğumda ağlamayacağım!\"", Line_ContinueAfterTyping);
+
+
+	PlaySE( 0, "wav/daidageki", 70, 64 );
+	ShakeScreen( 2, 12,  100 , 5, 20, );
+
+	OutputLine(NULL, "　ぅわあぁん、強すぎだぉぉとか、夏休みにやりたいことの夢が、尽きない。",
+		   NULL, " ve \"Ühühühü, o çok güçlü!\" gibi şeyler de söyledi. Yaz tatilinde yapılacak şeylere dair hayallerinin sonu yoktu.", Line_ContinueAfterTyping);
+	SetSpeedOfMessage( FALSE, 0 );
+	OutputLineAll(NULL, "", Line_Normal);
+
+	ClearMessage();
+	DisableWindow();
+
+	DrawScene( "black", 400 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　…そう。",
+		   NULL, "...Evet.", Line_WaitForInput);
+	OutputLine(NULL, "竜騎士07は初めて、…平成１８年７月以降の予定を建てたのだ。",
+		   NULL, " İlk kez... Ryukishi07, Temmuz 2006 sonrası için planlar yaptı.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　だってそれは、４年半を経て初めて得る夏休みなのだから。",
+		   NULL, "Ne de olsa bu, dört buçuk yılın ardından yapacağı ilk yaz tatili olacaktı.", Line_WaitForInput);
+	OutputLine(NULL, "心が躍るのも無理からぬことだった。",
+		   NULL, " Kalbinin bunun heyecanıyla kıpır kıpır olmasına şaşmamalı.", Line_Normal);
+	ClearMessage();
+	DisableWindow();
+
+	DrawScene( "background/ke_shiryou1_02", 50 );
+	PlaySE( 0, "wav/boyon", 70, 64 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　…だがとりあえず、今この瞬間はマスターアップの７２時間前だ。",
+		   NULL, "...Ama şimdilik, tam şu anda Master Up teslim tarihine 72 saat uzaklıktayız.", Line_WaitForInput);
+	OutputLine(NULL, "　夢を見るより誤字脱字を探した方がいいんじゃあないだろうか。",
+		   NULL, " Şu an hayal kurmaktansa yazım hatalarının peşine düşmek muhtemelen daha iyidir. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "それよりも冗談抜きで、マスターアップしたら本当に夏休みが訪れるのだろうか。",
+		   NULL, "Gerçi şaka bir yana, Master Up'a ulaştığımızda gerçekten bir yaz tatili yapabilecek miyiz?", Line_WaitForInput);
+	OutputLine(NULL, "…修羅場を理由に延期していた数々の仕事がどっと押し寄せてくるだけではないのだろうか。",
+		   NULL, " ...Bu cehennem yüzünden ertelediğimiz iş dalgasının altında ezilmeyiz, değil mi?", Line_WaitForInput);
+	OutputLine(NULL, "…そんなはずはないそんなはずはない。",
+		   NULL, " ...Böyle bir şey olamaz, böyle bir şey olamaz. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "きっとそこは素敵な夏休み…。",
+		   NULL, "Eminim harika bir yaz tatili olacak...", Line_WaitForInput);
+	OutputLine(NULL, "言ってて悲しくなってきたので話を変えよう。",
+		   NULL, " Bundan bahsetmek beni üzüyor, o yüzden konuyu değiştirelim.", Line_Normal);
+	ClearMessage();
+	DisableWindow();
+
+	DrawSceneWithMask( "black", "effect/down", 0, 0, 300 );
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　竜騎士07と共に戦った他の人間たちにも触れよう。",
+		   NULL, "Ryukishi07 ile omuz omuza savaşan diğer tüm insanlardan bahsedelim.", Line_Normal);
+	ClearMessage();
+	DisableWindow();
+
+	DrawScene( "background/ke_shiryou1_02", 400 );
+	ModDrawCharacterWithFiltering(1, 11, "sprite/oisi2_10_", "2", "effect/left", 0, -160, 0, FALSE, 0, 0, 0, 0, 0, 1, 300, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　八咫桜は、コミケが終わったら積みゲー消化のため、ゲームに専念するように誓わされているらしい。",
+		   NULL, "Görünüşe göre Yatazakura, birikmiş oyunlarını eritmek amacıyla Comiket biter bitmez kendisini oyun oynamaya adayacağına yemin etmiş.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	PlaySE( 0, "wav/pou", 70, 64 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　…竜騎士07に言わせれば、明らかに購入速度がクリア速度を超えているため、",
+		   NULL, "...Gerçi Ryukishi07'ye göre oyun satın alma hızı, onları bitirme hızından açıkça daha yüksek, ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "部屋には未開封ソフトが増える一方で、本当に消化できるのか疑問だ、とのこと。",
+		   NULL, "bu yüzden odasındaki açılmamış oyunların sayısı giderek artıyor ve onları eritip eritemeyeceği şüpheli.", Line_Normal);
+	ClearMessage();
+	DisableWindow();
+
+	ModDrawCharacter(1, 11, "sprite/oisi2_7_", "2", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 1, 200, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　もっとも、稀代の名将（何のだよｗ）、八咫桜がまさか積みゲーに埋もれて死亡なんてことはあるまい。",
+		   NULL, "Gerçi saygıdeğer komutanımız (Ne? lol) Yatazakura, el sürülmemiş oyunlardan oluşan bir dağın altında asla can vermez.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　……とんでもない方法でＣＧをコンプリートして次々クリアしていきそうな気がする。",
+		   NULL, "......CG setlerini tamamlamak ve onları birbiri ardına bitirmek için inanılmaz bir yol bulacağına dair içimde bir his var.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　…それが犯罪でないことを祈りたい。",
+		   NULL, "...Tek duam bunun yasa dışı bir yol olmaması.", Line_WaitForInput);
+	OutputLine(NULL, "というか、犯罪的なソフトって何だ。",
+		   NULL, " Ayrıca, nasıl bir yasa dışı program olurdu ki o?", Line_ContinueAfterTyping);
+
+	PlaySE( 0, "wav/hikaru", 70, 64 );
+
+	OutputLineAll(NULL, "", Line_WaitForInput);
+
+	OutputLine(NULL, "それおいらにもインストールさせてくれー！！",
+		   NULL, " Benim bilgisayarıma da kur şunu!!", Line_ContinueAfterTyping);
+
+	PlaySE( 0, "wav/daidageki", 70, 64 );
+	ShakeScreen( 2, 15,  100 , 4, 25, );
+
+	OutputLineAll(NULL, "", Line_Normal);
+
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　そんなわけで、最後の夏休みを満喫すると、今から遊び倒す予定をぎっしり考えているらしかった。",
+		   NULL, "Yani son yaz tatilini oyun oynayarak nasıl geçireceğine ve tadını çıkaracağına dair planlarını şimdiden yapıyor.", Line_WaitForInput);
+	OutputLine(NULL, "今日まで本当にありがとうなー。",
+		   NULL, " Şimdiye kadarki her şey için teşekkürler.", Line_WaitForInput);
+	OutputLine(NULL, "いっぱいいっぱい遊んで鋭気を養ってくれ～！",
+		   NULL, " Bol bol oyun oyna ve moralini tazele! ", GetGlobalFlag(GLinemodeSp));
+	SetSpeedOfMessage( TRUE, 128 );
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　何しろ次の修羅場はすぐそｋ",
+		   NULL, "Ne de olsa bir sonraki cehennem hemen köş", Line_ContinueAfterTyping);
+	Wait( 500 );
+
+	PlaySE( 0, "wav/nageru", 70, 64 );
+	Wait( 300 );
+	DisableWindow();
+	PlaySE( 0, "wav/tatakiwaru", 70, 64 );
+	DrawScene( "effect/ryuuketu1", 50 );
+	ShakeScreen( 0, 12, 100, 3, 33, );
+
+	OutputLine(NULL, "（ry",
+		   NULL, " (ry", Line_Normal);
+	ClearMessage();
+	DisableWindow();
+
+	DrawScene( "black", 400 );
+	//;dwaveload 13,"WAV\Heri1.wav"
+	//;dwaveplay 13
+
+	DrawSceneWithMask( "background/heri_gunji_01", "effect/up", 0, 0, 1300 );
+	ModDrawCharacterWithFiltering(1, 5, "sprite/ri4_komaru_a1_", "0", "effect/left", 0, -160, 0, FALSE, 0, 0, 0, 0, 0, 1, 300, TRUE );
+	SetSpeedOfMessage( FALSE, 0 );
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　ＢＴは、今後もどうか我がサークルＨＰの管理人をと打診されているという。",
+		   NULL, "BT'den topluluğumuzun ana sayfasını yönetmeye devam etmesi isteniyor.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　ゆくゆくはサークルの総務部長も…なんて言われて大慌てで固辞したという。",
+		   NULL, "Sonunda topluluğumuzun genel müdürü olacağını söylediğimizde... panik içinde aceleyle reddetti.", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　総務部長という言い方が実に怪しい。",
+		   NULL, "'Genel müdür' tabiri gerçekten çok şüpheli.", Line_WaitForInput);
+	OutputLine(NULL, "どうせ面倒な仕事を全て押し付けるだけの役職だ。",
+		   NULL, " Sadece tüm can sıkıcı işlerin üzerine yıkıldığı bir pozisyon.", Line_WaitForInput);
+	OutputLine(NULL, "そこで止めておけばいいものを、竜騎士07が",
+		   NULL, " Konuyu orada kapatabilirdik ama Ryukishi07 defalarca kez,", Line_ContinueAfterTyping);
+	Wait( 300 );
+	OutputLine(NULL, "「社長！」",
+		   NULL, " \"Patron!\"", Line_ContinueAfterTyping);
+
+	PlaySE( 0, "wav/boyon", 70, 64 );
+	ShakeScreen( 2, 9,  100 , 2, 50, );
+
+	OutputLine(NULL, "「大統領！」",
+		   NULL, " \"Başkan!\"", Line_ContinueAfterTyping);
+
+	PlaySE( 0, "wav/pou", 70, 64 );
+	ShakeScreen( 0, 9, 100, 2, 50, );
+
+	OutputLine(NULL, "「どうせ無駄なのです、あぅあぅあぅｗｗｗうぇｗｗｗうぇっ」",
+		   NULL, " \"Zaten faydası yok, auauau lol ue lol ue!\"", Line_ContinueAfterTyping);
+
+	PlaySE( 0, "wav/boyon", 70, 64 );
+	Wait( 100 );
+	PlaySE( 0, "wav/boyon", 70, 64 );
+	ShakeScreen( 2, 12,  100 , 3, 33, );
+
+	OutputLine(NULL, "なんて何度も連呼したもんだからむくれられた。",
+		   NULL, " diye tempo tutunca sinirlendi.", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　…竜騎士07にはその理由がわからず、相変わらず人の気持ちと空気の読めないヤツみたいだった。",
+		   NULL, "...Yine de Ryukishi07 onun neden kızdığını anlamadı. İnsanların duyguları söz konusu olduğunda her zamanki gibi dünyadan bihaber.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　でも、彼の管理するＨＰはおかげさまで大変な賑わいで、１日に８０ＨＩＴしたらお赤飯だとまで言われていたＨＰを、１日に２万ＨＩＴするまでに盛り上げてくれた。",
+		   NULL, "Ama sizin sayenizde, yönettiği ana sayfa oldukça büyük bir kalabalık çekiyor. Bir zamanlar günde 80 ziyaretçi alsa kutlamaya değer dediği ana sayfa şimdi 20.000 ziyaretçi alacak kadar büyüdü. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "いつもご多忙中、本当にありがとうございます…。",
+		   NULL, "Yoğun programından vakit ayırdığı için gerçekten minnettarız...", Line_WaitForInput);
+	OutputLine(NULL, "というかＬＡＮの構築、本当に助かりました…。",
+		   NULL, " Ayrıca yerel ağımızı (LAN) kurarak bize gerçekten çok yardımcı oldu...", Line_WaitForInput);
+	OutputLine(NULL, "これがなかったら間に合わなかったと断言できます…。",
+		   NULL, " Kesin olarak söyleyebilirim ki o olmasaydı zamanında yetiştiremezdik... ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "すみません、あぅあぅ…。",
+		   NULL, "Özür dilerim, auau...", Line_WaitForInput);
+	OutputLine(NULL, "あと八咫桜邸にクーラーが来たことに気付かず、扇風機を買ってきたお茶目さに萌えｗ",
+		   NULL, " Ayrıca Yatazakura'nın evinde takılı olan klimayı fark etmeyip vantilatör satın alması çok moe'ydi, lol", Line_Normal);
+	ClearMessage();
+	DisableWindow();
+
+	DrawScene( "black", 400 );
+	DrawSceneWithMask( "background/res5", "effect/maskc", 0, 0, 1300 );
+	ModDrawCharacterWithFiltering(1, 9, "sprite/ta2_akuwarai_", "2", "effect/right", 0, 160, 0, FALSE, 0, 0, 0, 0, 0, 3, 300, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　ｄａｉさんもまた、ますます元気になっていく。",
+		   NULL, "dai-san da giderek daha iyi işler çıkarıyor.", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　本当は音楽協力だけのはずだったのに、",
+		   NULL, "Sadece müzik konusunda yardım etmesi gerekiyor olsa da, Ryukishi07 acınası bir halde,", Line_WaitForInput);
+
+	PlaySE( 0, "wav/boyon", 70, 64 );
+
+	OutputLine(NULL, "今回の修羅場はマジヤバイんす、",
+		   NULL, " \"Bu sefer başımız cidden büyük belada.", Line_ContinueAfterTyping);
+	Wait( 500 );
+
+	PlaySE( 0, "wav/kyupirn", 70, 64 );
+
+	OutputLine(NULL, "応援を頼みます～、",
+		   NULL, " Yardıma ihtiyacımız var!", Line_ContinueAfterTyping);
+	Wait( 400 );
+
+	PlaySE( 0, "wav/kira", 70, 64 );
+
+	OutputLine(NULL, "猫の手でもいいんです、",
+		   NULL, " Kim olsa olur.", Line_ContinueAfterTyping);
+	Wait( 500 );
+
+
+	PlaySE( 0, "wav/hikaru", 70, 64 );
+
+	OutputLine(NULL, "ただいてくれればいいですと竜騎士07があまりに哀れっぽく言うので仕方なく引き受けてやったらこれが実は大トラップ。",
+		   NULL, " Lütfen bana sarılın,\" diye ağladığında çağrıya kulak verdi ve devasa tuzağımıza düştü.", Line_Normal);
+	ClearMessage();
+	DisableWindow();
+
+	ModDrawCharacter(1, 9, "sprite/ta2_iradachi_", "2", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 3, 200, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　監禁生活は長期にわたり、自分はこのまま誘拐されたことになって郷里の両親に捜索願を出されてしまうのではと、戦々恐々としながら過ごしているという。",
+		   NULL, "Onu o kadar çok gün boyunca kapalı tuttuk ki, memleketteki ailesinin onun kaçırıldığını varsayıp kayıp ihbarında bulunacağından ödümüz koptu.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　いえ、マジで助かりました、本当にありがとうございます…。",
+		   NULL, "Vay be, bizi cidden kurtardı. Gerçekten çok teşekkür ederim...", Line_WaitForInput);
+	OutputLine(NULL, "川口もびっくりの神セーブで数々のバグを発見してくださいました。",
+		   NULL, " Kawaguchi de bizim için pek çok hata keşfederek ilahi bir kurtarışla bizi şaşırttı. ", GetGlobalFlag(GLinemodeSp));
+
+	PlaySE( 0, "wav/kyupirn", 70, 64 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "あ、某社の社長さんに聞いたんだけど、食事に外出できたならそれは監禁とは言わないんだってよ？",
+		   NULL, "Ha, bunu belirli bir şirketin başkanından duyduk ama görünüşe göre akşam yemeğini dışarıda yiyorlarsa bu alıkoyma sayılmıyormuş.", Line_WaitForInput);
+	OutputLine(NULL, "　だからこれは監禁じゃなくて軟禁。",
+		   NULL, " Yani alıkonulmuş değildi, ev hapsindeydi.", Line_WaitForInput);
+	OutputLine(NULL, "ゆえに合法！！",
+		   NULL, " Bu da işi yasal kılar!!", Line_ContinueAfterTyping);
+
+	PlaySE( 0, "wav/hikaru", 70, 64 );
+
+	OutputLineAll(NULL, " ", GetGlobalFlag(GLinemodeSp));
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　あと、今回も神曲を本当にありがとうございます…。",
+		   NULL, "Ayrıca bu seferki muhteşem şarkıların için de çok teşekkürler...", Line_Normal);
+	ClearMessage();
+	DisableWindow();
+
+	DrawScene( "background/je1", 400 );
+	ModDrawCharacterWithFiltering(1, 21, "sprite/tetu_1_", "0", "effect/up", 0, -160, 0, FALSE, 0, 0, 0, 0, 0, 1, 400, TRUE );
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　なるせ椿だって、ますますに元気が止まらなくなっていく。",
+		   NULL, "Naruse Tsubaki de giderek daha fazla hayat doluyordu.", Line_Normal);
+	ClearMessage();
+
+	PlaySE( 0, "wav/furu", 70, 64 );
+	Wait( 100 );
+	PlaySE( 0, "wav/furu", 70, 64 );
+	Wait( 100 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　デジカメ使えてフォトショップが使えて本職の料理人で特に中華が得意でエビチリもよかったけど揚げだし豆腐もなかなか！",
+		   NULL, "Dijital fotoğraf makinesi kullanabiliyor, Photoshop kullanabiliyor ve Çin mutfağında uzmanlaşmış profesyonel bir şef; bu yüzden acılı karidesi ne kadar iyiyse kızarmış tofusu da o kadar iyiydi!", Line_ContinueAfterTyping);
+
+	PlaySE( 0, "wav/kyupirn", 70, 64 );
+
+	OutputLineAll(NULL, " ", GetGlobalFlag(GLinemodeSp));
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　食器洗いからゴミの分別、部屋の片付けまでしてくれる。",
+		   NULL, "Ayrıca bulaşıkları yıkamakla, çöpü çıkarmakla ve odalarımızı temizlemekle de ilgilendi.", Line_WaitForInput);
+
+	PlaySE( 0, "wav/hikaru", 70, 64 );
+
+	OutputLine(NULL, "売り子もできるしサークル申し込みもできるし、荷物運びから飲み屋の手配まで何でもござれ！",
+		   NULL, " Satış görevlisi olarak çalışabiliyor ve topluluk başvurumuzu yapabiliyor, bunun yanı sıra kolileri taşıyabiliyor, bar rezervasyonları yapabiliyor ve diğer her şeye yetişebiliyor! ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　染色体が一本違ってたら求婚してそうだよな…。",
+		   NULL, "Kromozomlarından yalnızca biri farklı olsaydı ona evlenme teklif edebilirdim...", Line_WaitForInput);
+	OutputLine(NULL, "その上、酒は強くて麻雀は強くて最近はパンヤショットの成功率まで上がってるらしい。",
+		   NULL, " Bütün bunların üzerine içkiye dayanıklı, mahjongda iyi ve son zamanlarda PangYa vuruşlarında yüksek bir başarı oranına sahip.", Line_ContinueAfterTyping);
+
+	PlaySE( 0, "wav/finish", 70, 64 );
+	ShakeScreen( 2, 12,  100 , 3, 33, );
+
+	OutputLineAll(NULL, " ", GetGlobalFlag(GLinemodeSp));
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "同情すべきはその忙しすぎる職場シフトか…。",
+		   NULL, "Onun adına üzüldüğüm tek şey aşırı yoğun çalışma vardiyaları...", Line_WaitForInput);
+
+
+
+	OutputLine(NULL, "君の口から聞かされる、労働基準法？",
+		   NULL, " \"İş Kanunu mu?", Line_ContinueAfterTyping);
+	Wait( 900 );
+
+	PlaySE( 0, "wav/boyon", 70, 64 );
+
+	OutputLine(NULL, "　それって食べれるの？",
+		   NULL, " Yenilen bir şey mi o?\" dediğinde", Line_WaitForInput);
+	OutputLine(NULL, "　という言葉はあまりに深すぎる…。",
+		   NULL, " sözleri fazlasıyla ağır basmıştı...", Line_Normal);
+	ClearMessage();
+	DisableWindow();
+
+	DrawScene( "black", 400 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　かつては八咫桜さんと二人きりで過ごしてきた修羅場も、いつの間にか倍の人数になっていました。",
+		   NULL, "Eskiden Yatazakura-san ile yapayalnız geçirdiğim bu cehennem, aniden iki katından fazla insanı ağırlamaya başladı.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　皆さん、本当にありがとうございます。",
+		   NULL, "Hepinize gerçekten çok teşekkür etmek istiyorum.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　何度も言うけど、これ監禁じゃないからね？",
+		   NULL, "Bunu şimdiye kadar birkaç kez söyledim ama bu alıkoyma değil, tamam mı?", Line_WaitForInput);
+
+	PlaySE( 0, "wav/kira", 70, 64 );
+
+	OutputLine(NULL, "　うひひひひ？",
+		   NULL, " Uhihihihi?", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　これを打ってる時点ではまだマスターアップじゃないけれど、終わったら焼肉でも行こうな～！",
+		   NULL, "Bunu yazarken henüz Master Up'a ulaşmadık ama işi bitirdiğimizde mangala gidelim!", Line_Normal);
+	ClearMessage();
+	DisableWindow();
+
+	DrawScene( "background/ryoutei2_01", 400 );
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　ひっひっひ、今日はとことん振舞うぜ、豪華三昧だ！！",
+		   NULL, "Hihihi, bugün hepinize ben ısmarlayacağım! Dibine kadar vuralım!!", Line_Normal);
+	ClearMessage();
+	DisableWindow();
+
+
+	ModDrawCharacterWithFiltering(1, 14, "sprite/oko3_def_", "0", "effect/right", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 2, 300, TRUE );
+
+	PlaySE( 0, "wav/nageru", 70, 64 );
+	Wait( 200 );
+	PlaySE( 0, "wav/nageru", 70, 64 );
+	Wait( 200 );
+	PlaySE( 0, "wav/nageru", 70, 64 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>竜騎士07</color>", NULL, "<color=#f5e6d3>Ryukishi07</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「あーすみません～！",
+		   NULL, "\"Şey, bakar mısınız!", Line_WaitForInput);
+	OutputLine(NULL, "　こっち注文お願いします～！！",
+		   NULL, " Siparişimizi alabilir misiniz?!!", Line_WaitForInput);
+
+	PlaySE( 0, "wav/dageki", 70, 64 );
+
+	OutputLine(NULL, "　へっへっへ、いいかぃ姉ちゃん。",
+		   NULL, " Hehehe, pekâlâ küçük hanım.", Line_WaitForInput);
+	OutputLine(NULL, "俺がこれから頼むものには全部、頭に“特上”をつけてくれよ？",
+		   NULL, " Şimdi sipariş edeceğim her şeyin önüne 'birinci sınıf' ekleyebilir misiniz? ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>竜騎士07</color>", NULL, "<color=#f5e6d3>Ryukishi07</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　ロースと特上ロースじゃあ、雲泥の差があるんだからよ～ぅ。",
+		   NULL, "Ne de olsa normal kızartma et ile birinci sınıf kızartma et arasında dünyalar kadar fark vardır.", Line_WaitForInput);
+	DisableWindow();
+
+	PlaySE( 0, "wav/hikaru", 70, 64 );
+	ModDrawCharacter(1, 14, "sprite/oko3_niyari_", "2", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 2, 200, TRUE );
+
+	OutputLine(NULL, "へっへっへ、",
+		   NULL, " Hehehe.", Line_ContinueAfterTyping);
+	Wait( 800 );
+	OutputLine(NULL, "特上ロースなんて食っちまったら、もう普通のロースなんて犬のエサに思えちまうぜ、げっへっへ！",
+		   NULL, " Bir kez birinci sınıf kızartma et yedikten sonra tüm normal kızartma etler köpek maması gibi gelecektir, gehehe!", Line_WaitForInput);
+
+	PlaySE( 0, "wav/kyupirn", 70, 64 );
+
+	OutputLine(NULL, "　じゃあ注文行くぜ！！",
+		   NULL, " Şimdi, işte siparişimiz!! ", GetGlobalFlag(GLinemodeSp));
+
+	PlaySE( 0, "wav/boyon", 70, 64 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>竜騎士07</color>", NULL, "<color=#f5e6d3>Ryukishi07</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　……まずナムルにクッパにユッケを人数分、",
+		   NULL, "......Öncelikle buradaki herkes için birer namul, gukbap ve yukhoe,", Line_ContinueAfterTyping);
+
+	PlaySE( 0, "wav/dageki", 70, 64 );
+	ShakeScreen( 2, 9,  100 , 3, 33, );
+
+	OutputLine(NULL, "ライスはもちろん大盛り、",
+		   NULL, " ardından elbette büyük bir porsiyon pilav,", Line_ContinueAfterTyping);
+
+	PlaySE( 0, "wav/pou", 70, 64 );
+	ShakeScreen( 0, 6, 100, 2, 50, );
+
+	OutputLine(NULL, "カクテキにキムチ盛り合わせに、",
+		   NULL, " yanında bolca kimchi ve kkakdugi,", Line_ContinueAfterTyping);
+
+	PlaySE( 0, "wav/koruku", 70, 64 );
+	ShakeScreen( 2, 9,  100 , 3, 33, );
+
+	OutputLine(NULL, "肉巻く菜っ葉みたいヤツも山盛りで。",
+		   NULL, " ve eti sarmak için kullanılan o sebzelerden bir demet.", Line_ContinueAfterTyping);
+
+
+	PlaySE( 0, "wav/finish", 70, 64 );
+	ShakeScreen( 2, 15,  100 , 5, 20, );
+
+	OutputLineAll(NULL, " ", GetGlobalFlag(GLinemodeSp));
+
+
+	PlaySE( 0, "wav/boyon", 70, 64 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>竜騎士07</color>", NULL, "<color=#f5e6d3>Ryukishi07</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "……あとはコーラでいい？」",
+		   NULL, "......Ayrıca biraz da gazoz alabilir miyiz?\"", Line_Normal);
+	ClearMessage();
+	DisableWindow();
+
+	DrawScene( "background/sora", 50 );
+	PlaySE( 0, "bb", 70, 64 );
+	ShakeScreen( 2, 15,  100 , 4, 25, );
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>全員</color>", NULL, "<color=#f5e6d3>Herkes</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「「「肉頼めよ肉ぅううううぅ！」」」",
+		   NULL, "\"\"\"Biraz et söyle! Biraz eeeeet!\"\"\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>竜騎士07</color>", NULL, "<color=#f5e6d3>Ryukishi07</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「どれも特上ないじゃんって突っ込めよーー！！」",
+		   NULL, "\"Bunların hiçbirinin birinci sınıf olmadığı gerçeğini yüzüme vurun--!!\"", Line_Normal);
+	ClearMessage();
+	DisableWindow();
+
+	DrawScene( "black", 400 );
+	DrawSceneWithMask( "background/fure2", "effect/maskc", 0, 0, 1300 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　修羅場を共にしてくれた戦友諸君に敬礼…！！",
+		   NULL, "Bu cehennemi benimle paylaşan tüm silah arkadaşlarımı selamlıyorum...!!", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　あと、修羅場へ応援や差し入れをしてくれた戦友諸君にも敬礼！",
+		   NULL, "Ayrıca bu cehennem sırasında bize ikramlar ve destek getiren silah arkadaşlarımı da selamlıyorum!", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　これだから修羅場はやめられない。",
+		   NULL, "İşte bu yüzden buna bir türlü doyamıyorum.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　次なる修羅場へ向けて、あの夕日を目指して走るんだーー！！",
+		   NULL, "Şimdi bir sonraki cehennemimize doğru gün batımına sürme vakti--!!", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　さて、次はどんな作品を作ろうね。",
+		   NULL, "Pekâlâ o zaman, sırada ne tür bir eser yaratmalıyım?", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　またみんなで喫茶店で、ドリンクバーしながら案を出し合おうかね。",
+		   NULL, "Muhtemelen yine herkesi bir kafede bir araya getireceğim ve içecek barının tadını çıkarırken birbirimizle beyin fırtınası yapacağız.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　妙に希薄なコーラを飲んでる内に、きっとまたアイデアが思いつくさ！",
+		   NULL, "Eminim o tuhaf derecede sulandırılmış gazozu içerken yine bir şeyler bulacağız!", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　ではまた会おう戦友たち！！",
+		   NULL, "Öyleyse yeniden buluşalım, yoldaşlarım!!", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　今はしばしの休息を取るがいい。",
+		   NULL, "Şimdilik hepiniz biraz dinlenmelisiniz.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　だが次に待つ修羅場こそが真の修羅場となる…！！",
+		   NULL, "Ama sırada bizi bekleyen cehennem, gerçek cehennem olacak...!!", Line_Normal);
+	ClearMessage();
+
+	PlaySE( 0, "wav/koruku", 70, 64 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　え？",
+		   NULL, "Ha?", Line_WaitForInput);
+	OutputLine(NULL, "　修羅場になるのは全部、おいらが遅いから…？",
+		   NULL, " Bu cehennemle yüzleşmemizin tek sebebi benim yavaş olmam mı...?", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　次はもっと早く書くように頑張るよ～～。",
+		   NULL, "Bir dahaki sefere daha erken yazmak için elimden geleni yapacağım~~", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　こんな、私信だらけの裏スタッフルームまで見つけてくれてありがとうー！",
+		   NULL, "Özel mesajlarla dolu bu gizli personel odasını ortaya çıkardığınız için teşekkürler!", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　それでは皆さん、またお会いしましょう～～！！",
+		   NULL, "Öyleyse millet, yeniden görüşmek dileğiyle~~!! (TR: @Remilya • github.com/Remilya/Higurashi)", Line_Normal);
+	ClearMessage();
+
+
+
+	//Unhandled: mov %CAMP_MUGIC,0
+	CallScriptSection( "util", "EyeCatch" );
+
+	//Unhandled subroutine: omake_e
+
+
+	//Unhandled: goto *Omake_mode
+}

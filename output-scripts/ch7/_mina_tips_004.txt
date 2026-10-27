@@ -1,0 +1,146 @@
+// Higurashi Türkçe Çeviri & Yerelleştirme: @Remilya | https://github.com/Remilya/Higurashi
+void main()
+{
+	EnableJumpingOfReturnIcon();
+
+	ModPlayBGM( 0, "semi", 56, 0, 0 );
+	ModPlayBGM( 0, "semi", 28, 0, 1 );
+	DrawScene( "background/si_h2", 400 );
+
+	ClearMessage();
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>チンピラ</color>", NULL, "<color=#f5e6d3>Serseri</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/bada44001", 256, TRUE);
+	OutputLine(NULL, "「これが航空券だ。",
+		   NULL, "\"İşte uçak biletin.", Line_Continue);
+	Wait( 1900 );
+	OutputLine(NULL, "遅れんなよ。",
+		   NULL, " Geç kalma.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/bada44002", 256, TRUE);
+	OutputLine(NULL, "後のカネは現地だ。」",
+		   NULL, " Paranın geri kalanını oraya vardığında alacaksın.\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>チンピラ</color>", NULL, "<color=#f5e6d3>Serseri</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/badb44001", 256, TRUE);
+	OutputLine(NULL, "「おおきにおおきに。",
+		   NULL, "\"Çok teşekkürler.", Line_Continue);
+	Wait( 1300 );
+	OutputLine(NULL, "ほい間宮ン。」",
+		   NULL, " Al bakalım, Mamiya.\"", Line_Normal);
+	ClearMessage();
+
+	ModSetLayerFilter(0, 256, "none");
+	ModDrawCharacter(0, 20, "sprite/rina_warai_", "2", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 5, 0, FALSE );
+	DrawSceneWithMask( "background/hoteru", "maskleft", 1, 0, 300 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#cd74a7>リナ</color>", NULL, "<color=#cd74a7>Rina</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 20, "ps3/s20/20/442400001", 256, TRUE);
+	OutputLine(NULL, "「きゃははは、サンキュー！",
+		   NULL, "\"Kyahahaha! Teşekkür ederim!", Line_Continue);
+	Wait( 2500 );
+	OutputLine(NULL, "　私、札幌って一度行ってみたかったのよねー。」",
+		   NULL, " Hep Sapporo'ya gitmek istemişimdir.\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>チンピラ</color>", NULL, "<color=#f5e6d3>Serseri</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/bada44003", 256, TRUE);
+	OutputLine(NULL, "「……北条の野郎にゃ気取られてねぇだろうな。」",
+		   NULL, "\"......Houjou'nun senden şüphelenmediğine emin misin?\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	DisableWindow();
+	ModDrawCharacter(0, 20, "sprite/rina_def_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 5, 200, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#cd74a7>リナ</color>", NULL, "<color=#cd74a7>Rina</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 20, "ps3/s20/20/442400002", 256, TRUE);
+	OutputLine(NULL, "「大丈夫だよ。",
+		   NULL, "\"Merak etme.", Line_Continue);
+	Wait( 1300 );
+	OutputLine(NULL, "あいつ馬鹿だもん。",
+		   NULL, " Aptalın teki o.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	DisableWindow();
+	ModDrawCharacter(0, 20, "sprite/rina_warai_", "2", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 5, 200, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#cd74a7>リナ</color>", NULL, "<color=#cd74a7>Rina</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 20, "ps2/20/442400003", 540, TRUE);
+	OutputLine(NULL, "でかいのはナニと態度だけー。」",
+		   NULL, "Koca bir aleti ve koca bir afra tafrası var ama sahip olduğu tek şey de bundan ibaret.\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>チンピラ</color>", NULL, "<color=#f5e6d3>Serseri</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/bada44004", 256, TRUE);
+	OutputLine(NULL, "「へははは、そうなのかよ。」",
+		   NULL, "\"Heehahaha, öyle mi?\"", Line_Normal);
+	ClearMessage();
+
+	FadeOutBGM( 0, 300, FALSE );
+	PlayBGM( 1, "semi_r", 56, 0 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　その時、突然、タイヤの鋭い泣き声がいくつも聞こえてくる。",
+		   NULL, "Bir sonraki an, kendilerine doğru gelen birkaç arabanın sesini duydular.", Line_Normal);
+	ClearMessage();
+
+	DrawSceneWithMask( "black", "maskright", 7, 0, 300 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　ぎょっとして男がカーテンの隙間から外を見ると、黒い車が３台、アパートの前に乱暴な停め方をしたところだった。",
+		   NULL, "Adam pencereden dışarı baktı ve üç siyah arabanın lastik yakarak apartmanın önünde durduğunu gördü.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　車からは見るからにガラの悪そうな男たちがわらわらと降りてきた。",
+		   NULL, "O arabalardan göz korkutucu birkaç adam indi.", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　その男たちの何人かがこの窓を見上げる。",
+		   NULL, "Hatta bazıları yukarı, pencereye doğru baktı.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　目が合った気がして慌ててカーテンのわずかの隙間を締めた。",
+		   NULL, "Adam hızla perdenin arkasına saklandı.", Line_Normal);
+	ClearMessage();
+
+	DrawScene( "background/si_h2", 300 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>チンピラ</color>", NULL, "<color=#f5e6d3>Serseri</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/badb44002", 256, TRUE);
+	OutputLine(NULL, "「畜生、嗅ぎ付けやがった！！",
+		   NULL, "\"Siktir! Buradalar!!", Line_Continue);
+	Wait( 1800 );
+	OutputLine(NULL, "　ズラかれッ！！」",
+		   NULL, " Kaç!!\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#cd74a7>リナ</color>", NULL, "<color=#cd74a7>Rina</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 20, "ps3/s20/20/442400004", 256, TRUE);
+	OutputLine(NULL, "「ちょっと…、嘘、マジ？！",
+		   NULL, "\"Ciddi misin?!", Line_Continue);
+	Wait( 1600 );
+	OutputLine(NULL, "　何で今日バレるのよ！」",
+		   NULL, " Ama neden?!\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>チンピラ</color>", NULL, "<color=#f5e6d3>Serseri</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/badb44003", 256, TRUE);
+	OutputLine(NULL, "「間宮ン、ボケっとすんな！！",
+		   NULL, "\"Hadi, Mamiya!!", Line_Continue);
+	Wait( 1500 );
+	OutputLine(NULL, "　捕まったら殺されンぞ！！！」",
+		   NULL, " Seni öldürecekler!!!\"", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　非常階段を大勢が駆け上ってくる音と怒声はすぐそこまで迫ってきていた。",
+		   NULL, "Adamların merdivenlerden yukarı koşturduğunu duydular. Sesleri öfkeli geliyordu.", Line_Normal);
+	ClearMessage();
+
+	DisableWindow();
+	Wait( 1000 );
+	DrawScene( "black", 1000 );
+}

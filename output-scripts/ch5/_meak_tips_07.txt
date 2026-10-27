@@ -1,0 +1,113 @@
+// Higurashi Türkçe Çeviri & Yerelleştirme: @Remilya | https://github.com/Remilya/Higurashi
+void main()
+{
+	EnableJumpingOfReturnIcon();
+	FadeOutBGM( 0, 0, FALSE );
+	FadeOutBGM( 1, 0, FALSE );
+	FadeOutBGM( 2, 0, FALSE );
+	FadeOutBGM( 3, 0, FALSE );
+	ClearMessage();
+
+	DrawScene("background/nort", 1000 );
+	PlayBGM( 0, "hgrs01", 56, 0 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　悟史くんがよほど狡猾だったか、幸運に恵まれたか、",
+		   NULL, "Satoshi-kun ya çok kurnazdı ya da çok şanslıydı.", Line_WaitForInput);
+	OutputLine(NULL, "…それとも本当に悟史くんではないのか、犯行現場には悟史くんが犯人であることを示す痕跡は残されていなかった。",
+		   NULL, " Ya da belki de katil gerçekten o değildi... Polis, olay yerinde cinayetle bağlantısını gösterecek hiçbir ize rastlamadı.", Line_Normal);
+	ClearMessage();
+	PlaySE( 0, "s_page", 56, 64 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　それでも、この時点では、悟史くんが犯人ということでほぼ確定だった。",
+		   NULL, "Yine de Satoshi-kun hâlâ baş şüpheliydi.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　悟史くんの家庭の状況を見れば殺意は充分。",
+		   NULL, "Evdeki durumu göz önüne alındığında, cinayet işlemek için fazlasıyla güçlü bir sebebi vardı.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　アリバイもない。",
+		   NULL, "Suçsuzluğunu kanıtlayacak bir tanığı da yoktu.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　物証以外の外堀は全て埋まっていた。",
+		   NULL, "Polisin elinde fiziksel kanıt dışında her şey tamamdı.", Line_Normal);
+	ClearMessage();
+	PlaySE( 0, "s_page", 56, 64 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　大石があそこで勝負に出てきたのは至極当然だ。",
+		   NULL, "Ooishi'nin orada şansını denemesi hiç de şaşırtıcı değildi.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　私と言うジョーカーの登場までは予想できなかったろうが、それでも悟史くんの圧倒的に不利な状況を覆すほどではない。",
+		   NULL, "Muhtemelen benim bir joker gibi araya girmemi beklemiyordu. Ama yaptığım şey, Satoshi-kun üzerindeki şüphelerini dağıtmaya yetmeyecek kadar zayıftı.", Line_Normal);
+	ClearMessage();
+	PlaySE( 0, "s_page", 56, 64 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　大石は動物的嗅覚で、悟史くんに違いないともう当たりをつけている。",
+		   NULL, "Ooishi, hayvani içgüdüleriyle bunu Satoshi-kun'un yaptığına çoktan kanaat getirmişti.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　あとは悟史くんが揺れて、勝手に折れてくれるのを待つだけ……。",
+		   NULL, "Sadece Satoshi-kun'un sarsılıp kendi kendine çözülmesini ve itiraf etmesini bekliyordu...", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　そう思っていた。",
+		   NULL, "İşte", Line_WaitForInput);
+	OutputLine(NULL, "私も。",
+		   NULL, " hem Ooishi'nin", Line_WaitForInput);
+	OutputLine(NULL, "大石も。",
+		   NULL, " hem de benim düşündüğümüz şey buydu.", Line_Normal);
+	ClearMessage();
+	PlaySE( 0, "s_page", 56, 64 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　後日、そのちゃぶ台がひっくり返されることになる。",
+		   NULL, "Fakat bu varsayım daha sonra tamamen altüst oldu.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　それについてはここでは割愛するが、",
+		   NULL, "Şimdilik o konunun ayrıntılarına girmeyeceğim,", Line_WaitForInput);
+	OutputLine(NULL, "とにかく、大石の目論見は完全に崩れ、警察はノックアウトされることになるのだ。",
+		   NULL, " ama Ooishi'nin teorisi çürütülecek ve polis tam anlamıyla nakavt olacaktı.", Line_Normal);
+	ClearMessage();
+	PlaySE( 0, "s_page", 56, 64 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　そうすると、私が抱く疑問はひとつしかない。",
+		   NULL, "Bu durumda aklıma tek bir soru geliyor.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　誰が悟史くんを救ってくれたの？",
+		   NULL, "O da şu....", Line_WaitForInput);
+	OutputLine(NULL, "　ということ。",
+		   NULL, " Satoshi-kun'u kim kurtardı?", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　この時点での私は、園崎本家が暗躍して犯人をでっちあげてくれた他に、何も思いつくことはできなかった。",
+		   NULL, "Aklıma, Sonozaki Ailesi'nin ve Sonozaki Malikanesi'nin perde arkasından devreye girerek sahte bir suçlu uydurduğu ihtimalinden başka bir şey gelmiyor.", Line_Normal);
+	ClearMessage();
+	DisableWindow();
+	Wait( 1000 );
+	DrawScene("black", 1000 );
+}

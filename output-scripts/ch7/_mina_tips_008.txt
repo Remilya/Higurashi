@@ -1,0 +1,232 @@
+// Higurashi Türkçe Çeviri & Yerelleştirme: @Remilya | https://github.com/Remilya/Higurashi
+void main()
+{
+	EnableJumpingOfReturnIcon();
+
+	PlayBGM( 1, "M_Denwa8k", 56, 0 );
+	SetValidityOfInput( FALSE );
+	Wait( 3000 );
+	SetValidityOfInput( TRUE );
+	FadeOutBGM( 1, 1000, FALSE );
+	SetValidityOfInput( FALSE );
+	Wait( 2000 );
+	SetValidityOfInput( TRUE );
+	DrawSceneWithMask( "background/re_tel", "maskup", 1, 0, 300 );
+	ModPlayBGM( 0, "higurashi", 56, 0, 0 );
+	ModPlayBGM( 0, "higurashi", 28, 0, 1 );
+
+	ClearMessage();
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>沁子</color>", NULL, "<color=#f5e6d3>Shimiko</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/shimiko44001", 256, TRUE);
+	OutputLine(NULL, "「お待ちください、今代わりますね。……お魎さん、役所の自治係の人から電話が入ってますけど。」",
+		   NULL, "\"Lütfen bir dakika bekleyin, onu çağıracağım... Oryou-san, belediyeden biri arıyor...\"", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#d7e6de>お魎</color>", NULL, "<color=#d7e6de>Oryou</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 17, "ps3/s20/17/442300043", 256, TRUE);
+	OutputLine(NULL, "「……あぁん、もしもし。」",
+		   NULL, "\"...Aah, alo?\"", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>相田</color>", NULL, "<color=#f5e6d3>Aida</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/443000001", 256, TRUE);
+	OutputLine(NULL, "「どうも園崎顧問、こんにちは。自治の相田でございます。",
+		   NULL, "\"Merhaba, Sonozaki-san. Ben belediyeden Aida.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/443000002", 256, TRUE);
+	OutputLine(NULL, "先日はおはぎをどうもご馳走さまでした。」",
+		   NULL, " Geçen günkü ohagiler için çok teşekkür ederim.\"", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#d7e6de>お魎</color>", NULL, "<color=#d7e6de>Oryou</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 17, "ps3/s20/17/442300044", 256, TRUE);
+	OutputLine(NULL, "「いいんねいいんね。こちらこそ文化祭りの時は世話んなったんね。",
+		   NULL, "\"Rica ederim. Kültür festivalindeki çalışmalarınız için ben teşekkür ederim.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 17, "ps3/s20/17/442300045", 256, TRUE);
+	OutputLine(NULL, "野点傘の件、ありがとよぅ。",
+		   NULL, " Ayrıca o büyük güneşliği temin ettiğiniz için de.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 17, "ps3/s20/17/442300046", 256, TRUE);
+	OutputLine(NULL, "あれ、一本いくらくらいすんかんね。",
+		   NULL, " O şeyin fiyatı ne kadar?", Line_WaitForInput);
+	ModPlayVoiceLS(4, 17, "ps3/s20/17/442300047", 256, TRUE);
+	OutputLine(NULL, "すったら毎年使うもんなんだから自治で一本、買っといてくらんとよ。」",
+		   NULL, " Her yıl kullanıyoruz, bari kendimiz bir tane satın alalım.\"", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>相田</color>", NULL, "<color=#f5e6d3>Aida</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/443000003", 256, TRUE);
+	OutputLine(NULL, "「あれはですね、一応、先生からの借り物になっておりまして。一応、値段を調べたんですが、国産だと２０万くらいするらしいんですよ。",
+		   NULL, "\"Onu bir öğretmenden ödünç almıştık. Fiyatını araştırdım ama yerli üretim olanlar yaklaşık 200.000 yen tutuyor.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/443000004", 256, TRUE);
+	OutputLine(NULL, "中国製によく似たものがありまして、こっちなら８万円くらいで何とか買えそうでして…。」",
+		   NULL, " Çin yapımı bir tane de buldum, fiyatı yarıdan bile az...\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#d7e6de>お魎</color>", NULL, "<color=#d7e6de>Oryou</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 17, "ps3/s20/17/442300048", 256, TRUE);
+	OutputLine(NULL, "「別に中国製でもどこ製でも構わんぎゃあ、お呼びする先生に失礼んならんとよ、よぅ選んどくれぇな。」",
+		   NULL, "\"Çin yapımı olup olmaması umurumda değil. Bir tane alın da öğretmenlere daha fazla zahmet vermeyelim.\"", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>相田</color>", NULL, "<color=#f5e6d3>Aida</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/443000005", 256, TRUE);
+	OutputLine(NULL, "「一応ですね、今、その８万の傘の方を取り寄せさせていただいております。届きましたら、顧問にも一度見ていただきまして、それで判断ということではいかがでしょうか…。」",
+		   NULL, "\"Aslında şimdiden siparişini veriyoruz. Geldiğinde bir göz atıp son kararınızı vermek isteyebilirsiniz...\"", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#d7e6de>お魎</color>", NULL, "<color=#d7e6de>Oryou</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 17, "ps3/s20/17/442300049", 256, TRUE);
+	OutputLine(NULL, "「それから、もう３年、江戸千家が続いとるんね、先生がたまには他の先生もお呼びしないとバランスがようないっちゅうんしゃあ。",
+		   NULL, "\"Ayrıca, son üç yıldır aynı Edo usulü çay seremonisini düzenliyoruz. Muhtemelen farklı bir ekolden bir eğitmen bulmalıyız.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 17, "ps3/s20/17/442300050", 256, TRUE);
+	OutputLine(NULL, "表でも裏でもいいから他の先生をちょいと自治の方で来年までに探してもらってもいいかんね。」",
+		   NULL, " Gelecek yıl için yeni bir eğitmen bakabilir misiniz?\"", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>相田</color>", NULL, "<color=#f5e6d3>Aida</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/443000006", 256, TRUE);
+	OutputLine(NULL, "「は、はぁ……そうですか…。わ…わかりました！",
+		   NULL, "\"A-Ah... Anlıyorum... H-Hemen ilgileneceğim, efendim!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/443000007", 256, TRUE);
+	OutputLine(NULL, "　ちょっとこちらでもお茶の先生を探してみます。",
+		   NULL, " Farklı bir çay seremonisi eğitmeni bulacağız.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/443000008", 256, TRUE);
+	OutputLine(NULL, "…それでですね顧問。",
+		   NULL, " ...Şey, Danışman Hanım.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/443000009", 256, TRUE);
+	OutputLine(NULL, "実は今日はちょぉっとご相談がございまして。」",
+		   NULL, " Size sormam gereken başka bir konu daha vardı.\"", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#d7e6de>お魎</color>", NULL, "<color=#d7e6de>Oryou</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 17, "ps3/s20/17/442300051", 256, TRUE);
+	OutputLine(NULL, "「こっちの傘の話ばっかりですまんね。で、何の話なんしゃあ。」",
+		   NULL, "\"Ben de burada tutmuş güneşlikten bahsediyorum. Ee, ne lazımdı?\"", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>相田</color>", NULL, "<color=#f5e6d3>Aida</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/443000010", 256, TRUE);
+	OutputLine(NULL, "「実はですね、雛見沢にお住まいの北条沙都子さんの件で顧問のお耳に入っておりますかどうかと思いましてお電話させていただいたんです。」",
+		   NULL, "\"Hinamizawa'daki Satoko Houjou-san vakası hakkında bir şey duyup duymadığınızı merak ediyorduk.\"", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#d7e6de>お魎</color>", NULL, "<color=#d7e6de>Oryou</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 17, "ps3/s20/17/442300052", 256, TRUE);
+	OutputLine(NULL, "「……北条沙都子ぉ？　あぁん！",
+		   NULL, "\"...Satoko Houjou mu? Haaah?", Line_WaitForInput);
+	ModPlayVoiceLS(4, 17, "ps3/s20/17/442300053", 256, TRUE);
+	OutputLine(NULL, "　バチ当たり北条のとこの娘かぁ。",
+		   NULL, " Şu kahrolası Houjou kızından mı bahsediyorsun?", Line_WaitForInput);
+	ModPlayVoiceLS(4, 17, "ps3/s20/17/442300054", 256, TRUE);
+	OutputLine(NULL, "何かしよりましたんかいね。」",
+		   NULL, " Ne yapmış yine?\"", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>相田</color>", NULL, "<color=#f5e6d3>Aida</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/443000011", 256, TRUE);
+	OutputLine(NULL, "「いえ、実はですね。最近、叔父さんと同居を始めたとかでですね、",
+		   NULL, "\"Şey... Yakın zamanda amcasının yanına taşındı,", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/443000012", 256, TRUE);
+	OutputLine(NULL, "その叔父さんから虐待を受けているとか、そんな話は顧問のお耳には入っておりますでしょうか。」",
+		   NULL, " ama görünüşe göre istismara uğruyormuş... bu konuda bir şey duydunuz mu?\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#d7e6de>お魎</color>", NULL, "<color=#d7e6de>Oryou</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 17, "ps3/s20/17/442300055", 256, TRUE);
+	OutputLine(NULL, "「叔父？　沙都子がぁ？",
+		   NULL, "\"Amcası mı? Satoko istismara mı uğruyormuş?", Line_WaitForInput);
+	ModPlayVoiceLS(4, 17, "ps3/s20/17/442300056", 256, TRUE);
+	OutputLine(NULL, "　私ゃあそんな話は知らんがね！」",
+		   NULL, " Böyle bir şey hiç duymadım!\"", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>相田</color>", NULL, "<color=#f5e6d3>Aida</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/443000013", 256, TRUE);
+	OutputLine(NULL, "「いえいえいえ、知らなければ結構なんです。実はですね、そういった旨の陳情が児童相談所に入ったらしいです。",
+		   NULL, "\"Ah, pekala, bilmiyorsanız sorun değil. Doğrusunu söylemek gerekirse, Hinamizawa'dan birileri Çocuk Esirgeme Kurumu'na dilekçe vermeye geldi.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/443000014", 256, TRUE);
+	OutputLine(NULL, "相談所が言うにはだいぶ強い口調で来られていると、そういう話らしいんです。",
+		   NULL, " Kuruma göre, dilekçeyi veren kişi oldukça ısrarcıymış. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>相田</color>", NULL, "<color=#f5e6d3>Aida</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/443000015", 256, TRUE);
+	OutputLine(NULL, "それでですね、相談所の係長から、お魎さんのお耳に入ってる話なら取り扱いを急いだほうがいいんじゃないかという話が来まして、」",
+		   NULL, "Müdür Bey, eğer konu hakkında zaten bilginiz varsa sizinle konuşmanın daha iyi olacağını düşündü...\"", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#d7e6de>お魎</color>", NULL, "<color=#d7e6de>Oryou</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 17, "ps3/s20/17/442300057", 256, TRUE);
+	OutputLine(NULL, "「私ゃあ何も知らんし、全然わからん！　なぁんでわしが北条のバチ当たり娘何ぞに骨を折らんしゃああかんがね！！",
+		   NULL, "\"Hiçbir şey bilmiyorum ve umurumda da değil! O acınası çocuk için neden bir şey yapayım ki?!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 17, "ps3/s20/17/442300058", 256, TRUE);
+	OutputLine(NULL, "　園崎家は全然知りませんし関係も何もありゃんせんね！！」",
+		   NULL, " Sonozaki Ailesi'nin bu işle hiçbir ilgisi yok!!\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>相田</color>", NULL, "<color=#f5e6d3>Aida</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/443000016", 256, TRUE);
+	OutputLine(NULL, "「では……連町の方からそういう話が出てるとか、そういう話はお耳には…、」",
+		   NULL, "\"Köy Meclisi'nden bu konuda bir şey duydunuz mu...?\"", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#d7e6de>お魎</color>", NULL, "<color=#d7e6de>Oryou</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 17, "ps3/s20/17/442300059", 256, TRUE);
+	OutputLine(NULL, "「知らん知らん！！！　何の話しゃあね！！",
+		   NULL, "\"Hayır, hayır!! Neler söylüyorsun sen?!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 17, "ps3/s20/17/442300060", 256, TRUE);
+	OutputLine(NULL, "　公由んところが北条のバチ当たり娘になんぞ肩入れしたらんきゃあ、すったらんなぁんて園崎には話が入らんね、どういうこっちゃあ！！",
+		   NULL, " Kimiyoshi o kahrolası Houjou veledine yardım ediyor olsaydı, Sonozaki Ailesi'nin bundan haberi olurdu!!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 17, "ps3/s20/17/442300061", 256, TRUE);
+	OutputLine(NULL, "　誰じゃあね、その相談所に陳情したったちゅうんわ！！」",
+		   NULL, " Çocuk Esirgeme Kurumu'na kim dilekçe veriyor?!\"", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>相田</color>", NULL, "<color=#f5e6d3>Aida</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/443000017", 256, TRUE);
+	OutputLine(NULL, "「クラスメートが何人かいらっしゃった…とまぁ、そういう感じなんですが。……ではこれはクラスの子たちが独自にやったことで、連町も顧問もご存じない、関係ない話という認識でもよろしいでしょうか？」",
+		   NULL, "\"Duyduğuma göre sınıf arkadaşlarından bazıları oradaymış... Yani, en azından bildiğim kadarıyla öyle. ...Sanırım bu sadece sınıf arkadaşlarının yaptığı bir şey ve köyün bununla hiçbir ilgisi yok, değil mi?\"", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#d7e6de>お魎</color>", NULL, "<color=#d7e6de>Oryou</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 17, "ps3/s20/17/442300062", 256, TRUE);
+	OutputLine(NULL, "「そんに決まっとんしゃあ、なぁん勝手な真似をしさらしとん！！　知らん知らん！！",
+		   NULL, "\"Elbette yok!! Hiçbir şey bilmiyorum!!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 17, "ps3/s20/17/442300063", 256, TRUE);
+	OutputLine(NULL, "　村は沙都子とは何の関係もなあね！！」",
+		   NULL, " Köyün Satoko ile hiçbir ilgisi yok!!\"", Line_Normal);
+	ClearMessage();
+
+	FadeOutBGM( 0, 400, FALSE );
+	DrawScene( "black", 400 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　その内容は自治係から児童相談所に伝えられた。",
+		   NULL, "Bu konuşmanın içeriği Çocuk Esirgeme Kurumu'na iletildi.", Line_Normal);
+	ClearMessage();
+
+	ModPlayBGM( 0, "Feel", 56, 0, 0 );
+	ModPlayBGM( 0, "hgrs03", 56, 0, 1 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　……つまり、裏にお魎がいないということは、この陳情は特別扱いする必要はないということだ。",
+		   NULL, "Bu kargaşanın arkasında Oryou yoksa, vakayı ciddiye almalarına da gerek yoktu.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　相談所の係長は、もし仮に明日も来ても話だけ聞いて、",
+		   NULL, "Müdür, personeline dilekçe sahiplerinin söyleyeceklerini dinlemelerini,", Line_WaitForInput);
+	OutputLine(NULL, "決して安易な口約束をしないようにと窓口の職員に釘を刺すのだった。",
+		   NULL, " ancak kızın güvenliğini garanti eden hiçbir söz vermemelerini söyledi.", Line_Normal);
+	ClearMessage();
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「前原圭一くんか。",
+		   NULL, "\"Keiichi Maebara-kun, ha?", Line_WaitForInput);
+	OutputLine(NULL, "こういう子が将来、行政専門のクレーマーになるんだろうなぁ！」",
+		   NULL, " Sanırım böyle bir çocuk büyüyünce gelecekte siyasi bir savunucu olur!\"", Line_Normal);
+	ClearMessage();
+
+	DisableWindow();
+	Wait( 1000 );
+	DrawScene( "black", 1000 );
+}
