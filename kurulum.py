@@ -759,8 +759,119 @@ def run_gui_wizard(repo_root: Path | None = None) -> int:
 
         threading.Thread(target=worker, daemon=True).start()
 
+    def show_prerequisite_popup() -> None:
+        pop = tk.Toplevel(win)
+        pop.title("⚠ DİKKAT — KURULUMDAN ÖNCE ZORUNLU KONTROL (07TH-MOD)")
+        pop.configure(bg="#140c14")
+        pop.geometry("780x500")
+        pop.minsize(740, 480)
+        pop.transient(win)
+        pop.grab_set()
+        pop.attributes("-topmost", True)
+
+        # Center popup over main window
+        win.update_idletasks()
+        x = win.winfo_x() + (win.winfo_width() // 2) - 390
+        y = win.winfo_y() + (win.winfo_height() // 2) - 250
+        pop.geometry(f"780x500+{max(20, x)}+{max(20, y)}")
+
+        outer = tk.Frame(pop, bg="#1b101d", highlightbackground="#ff2a4b", highlightthickness=3)
+        outer.pack(fill="both", expand=True, padx=14, pady=14)
+
+        tk.Label(
+            outer,
+            text="⚠ DUR! TÜRKÇE YAMAYI KURMADAN ÖNCE BUNU OKU! ⚠",
+            font=("Segoe UI", 17, "bold"),
+            fg="#ff4d6d",
+            bg="#1b101d",
+        ).pack(pady=(16, 4))
+
+        tk.Label(
+            outer,
+            text="Bu Türkçe yama doğrudan saf (Steam/GOG) oyunun üzerine KURULMAZ.\nDevam etmeden önce aşağıdaki 3 şartın TAMAMININ yapıldığından emin ol:",
+            font=("Segoe UI", 10, "bold"),
+            fg="#f2eef7",
+            bg="#1b101d",
+            justify="center",
+        ).pack(pady=(0, 12))
+
+        q_box = tk.Frame(outer, bg="#26162b", highlightbackground="#e6b450", highlightthickness=2)
+        q_box.pack(fill="x", padx=22, pady=6)
+
+        questions = [
+            (
+                "1) OYUNA 07TH-MOD YAMASINI KURDUN MU?",
+                "Resmi 07th-Mod Kurulum Aracı (python-patcher) ile oyuna önce 07th-Mod kurulmuş olmalıdır.",
+            ),
+            (
+                "2) 07TH-MOD'U \"İNGİLİZCE (ENGLISH)\" SEÇEREK KURDUN MU?",
+                "Kurulumda dil seçeneği olarak mutlaka İngilizce (English) seçilmiş olmalıdır.",
+            ),
+            (
+                "3) 07TH-MOD'UN \"TAM HALİNİ (FULL PATCH)\" KURDUN MU?",
+                "Sadece Lite/Mini değil; Seslendirme, Konsol Grafikleri ve Menü içeren TAM sürüm kurulmuş olmalıdır.",
+            ),
+        ]
+
+        for q_title, q_sub in questions:
+            item = tk.Frame(q_box, bg="#26162b")
+            item.pack(fill="x", padx=16, pady=8)
+            tk.Label(
+                item,
+                text=f"❗ {q_title}",
+                font=("Segoe UI", 12, "bold"),
+                fg="#ffd43b",
+                bg="#26162b",
+                anchor="w",
+            ).pack(fill="x")
+            tk.Label(
+                item,
+                text=f"     ↳ {q_sub}",
+                font=("Segoe UI", 9, "bold"),
+                fg="#d8cce6",
+                bg="#26162b",
+                anchor="w",
+            ).pack(fill="x", pady=(2, 0))
+
+        btn_row = tk.Frame(outer, bg="#1b101d")
+        btn_row.pack(fill="x", padx=22, pady=(18, 14))
+
+        def open_07th_and_warn() -> None:
+            webbrowser.open("https://github.com/07th-mod/python-patcher")
+
+        tk.Button(
+            btn_row,
+            text="❌ HAYIR, DAHA KURMADIM\n(07th-Mod İndirme Sayfasını Aç)",
+            command=open_07th_and_warn,
+            bg="#8a1c2d",
+            fg="#ffffff",
+            activebackground="#a62236",
+            activeforeground="#ffffff",
+            relief="flat",
+            font=("Segoe UI", 10, "bold"),
+            padx=14,
+            pady=10,
+            cursor="hand2",
+        ).pack(side="left", fill="x", expand=True, padx=(0, 8))
+
+        tk.Button(
+            btn_row,
+            text="✔ EVET, 07TH-MOD'U İNGİLİZCE VE TAM KURDUM!\n(Türkçe Yama Kurulumuna Geç →)",
+            command=pop.destroy,
+            bg="#2b8a3e",
+            fg="#ffffff",
+            activebackground="#37b24d",
+            activeforeground="#ffffff",
+            relief="flat",
+            font=("Segoe UI", 10, "bold"),
+            padx=14,
+            pady=10,
+            cursor="hand2",
+        ).pack(side="right", fill="x", expand=True, padx=(8, 0))
+
     install_btn.config(command=start_installation)
     win.after(100, poll_queue)
+    win.after(150, show_prerequisite_popup)
     win.mainloop()
     return 0
 
