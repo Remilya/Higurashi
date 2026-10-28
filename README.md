@@ -49,13 +49,15 @@ Bu proje, **07th-Mod** yamalı **Higurashi When They Cry Hou** ve **Hou+** küll
 1. **[07th-Mod Kurulum Aracını (`python-patcher`)](https://github.com/07th-mod/python-patcher)** indirin ve çalıştırın.
 2. Kurmak istediğiniz Higurashi bölümünü/bölümlerini (Ch.1 *Onikakushi* – Ch.10 *Hou+*) seçin ve **İngilizce (English)** dil seçeneğiyle 07th-Mod kurulumunu tamamlayın.
 
-### Adım 2: Higurashi Türkçe Yama Kurulum Sihirbazı (`kurulum.bat`)
+### Adım 2: Higurashi Türkçe Yama Kurulum Sihirbazı (`Higurashi-Kurulum.exe` / `kurulum.bat`)
 07th-Mod kurulumunu tamamladıktan sonra projede yer alan **Higurashi Türkçe Yama Kurulum Sihirbazı**, bilgisayarınızdaki Higurashi bölümlerini otomatik olarak tespit eder; istediğiniz bölümleri seçip **tek tıkla** hem senaryo çevirilerini hem de Türkçe menü/arayüz/CG yamasını kurmanızı sağlar.
 
-#### A) Grafiksel Kurulum Sihirbazı (GUI — Önerilen)
-Ana dizindeki **`kurulum.bat`** dosyasına çift tıklayın veya terminalden şu komutu çalıştırın:
+#### A) Grafiksel Kurulum Sihirbazı (GUI — Önerilen, Python Gerektirmez)
+Ana dizindeki **`Higurashi-Kurulum.exe`** (veya **`kurulum.bat`**) dosyasına çift tıklayın (ya da Python ile çalıştırmak için terminalden `py kurulum.py` komutunu çalıştırın):
 ```bash
-python kurulum.py
+Higurashi-Kurulum.exe
+# veya Python ile:
+py kurulum.py
 ```
 
 <div align="center">

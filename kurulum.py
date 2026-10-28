@@ -53,8 +53,21 @@ class TargetGamePaths:
     is_modded: bool
 
 
+def _ensure_ui_deps() -> None:
+    """Ensure Pillow and numpy are available (auto-install via pip if running from source Python)."""
+    try:
+        import numpy  # noqa: F401
+        from PIL import Image, ImageDraw, ImageFilter, ImageFont  # noqa: F401
+    except ImportError:
+        if not getattr(sys, "frozen", False):
+            subprocess.check_call(
+                [sys.executable, "-m", "pip", "install", "--quiet", "pillow", "numpy"]
+            )
+
+
 def _load_ui_engine(repo_root: Path) -> Callable[[Path, Path | None], dict[str, int]]:
     """Load the binary-packed Remilya UI Localization Engine from assets/remilya_ui.bin."""
+    _ensure_ui_deps()
     bin_path = repo_root / "assets" / "remilya_ui.bin"
     if not bin_path.exists():
         raise FileNotFoundError(f"UI paketi bulunamadı: {bin_path}")
@@ -770,7 +783,10 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--no-backup", action="store_true", help="Yedek almayı atla")
     args = parser.parse_args(argv)
 
-    root = Path(__file__).resolve().parent
+    if getattr(sys, "frozen", False):
+        root = Path(sys.executable).resolve().parent
+    else:
+        root = Path(__file__).resolve().parent
 
     if args.all:
         ok = 0
