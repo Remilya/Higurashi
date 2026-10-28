@@ -4,10 +4,13 @@
 ### Tam Külliyat Türkçe Çeviri, Arayüz (UI) & Görsel (CG) Yerelleştirme Projesi
 
 [![Çeviri: @Remilya](https://img.shields.io/badge/Çeviri_%26_Yerelleştirme-%40Remilya-c92a42?style=for-the-badge&logo=github)](https://github.com/Remilya)
+[![Web Portalı & Alıntı Arama](https://img.shields.io/badge/🔎_Alıntı_Arama_%26_Web_Portalı-remilya.dev%2FHigurashi-e6b450?style=for-the-badge)](https://remilya.dev/Higurashi/)
 [![Durum: %100 Tamamlandı](https://img.shields.io/badge/Külliyat_Durumu-%25100_Tamamlandı_(Bölüm_1--10)-2b8a3e?style=for-the-badge)](https://github.com/Remilya/Higurashi)
-[![Toplam Satır: 139.818](https://img.shields.io/badge/Diyalog_Satırı-139.818_%2F_139.818-e6b450?style=for-the-badge)](https://github.com/Remilya/Higurashi)
+[![Toplam Satır: 139.818](https://img.shields.io/badge/Diyalog_Satırı-139.818_%2F_139.818-e6b450?style=for-the-badge)](https://remilya.dev/Higurashi/#alinti-arama)
 [![Dosya: 456/456](https://img.shields.io/badge/Senaryo_Dosyası-456_%2F_456-1971c2?style=for-the-badge)](https://github.com/Remilya/Higurashi)
 [![Ön Koşul: 07th-Mod](https://img.shields.io/badge/Ön_Koşul-07th--Mod_(python--patcher)-7048e8?style=for-the-badge)](https://github.com/07th-mod/python-patcher)
+
+### 🌐 [Resmi Web Portalı & 139.818 Satırlık Türkçe Alıntı Arama Motoru → `remilya.dev/Higurashi`](https://remilya.dev/Higurashi/)
 
 ---
 
