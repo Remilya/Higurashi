@@ -1,0 +1,2002 @@
+<!DOCTYPE html>
+<html lang="tr" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Higurashi When They Cry Hou &amp; Hou+ — Türkçe Yama &amp; Alıntı Arama Motoru | @Remilya</title>
+  <meta name="description" content="Higurashi When They Cry Hou ve Hou+ (Bölüm 1–10) %100 Türkçe Yerelleştirme Projesi ve 139.818 satırlık Türkçe / İngilizce / Japonca İnteraktif Alıntı Arama Motoru. @Remilya tarafından çevrilmiştir." />
+  <meta property="og:title" content="Higurashi When They Cry — Türkçe Külliyat &amp; Alıntı Arama Motoru (@Remilya)" />
+  <meta property="og:description" content="10 Oyun, 456 Senaryo Dosyası ve 139.818 Satırlık Diyalog Veritabanında Türkçe, İngilizce ve Japonca Anlık Alıntı Arama Motoru ve v1.0 Türkçe Yama Kurulum Merkezi." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://remilya.dev/Higurashi/" />
+  <meta property="og:image" content="https://remilya.dev/Higurashi/kurulum_sihirbazi.png" />
+  <meta name="theme-color" content="#8b001a" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&amp;family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;family=Noto+Serif+JP:wght@400;600&amp;display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg-deep: #09070c;
+      --bg-card: #120e18;
+      --bg-elevated: #1a1423;
+      --bg-input: #0e0b14;
+      --border-subtle: rgba(230, 180, 80, 0.14);
+      --border-crimson: rgba(201, 42, 66, 0.35);
+      --crimson: #c92a42;
+      --crimson-bright: #ff3b56;
+      --crimson-glow: rgba(201, 42, 66, 0.25);
+      --gold: #e6b450;
+      --gold-soft: #f3d28c;
+      --text-main: #f2eef7;
+      --text-muted: #a39bb5;
+      --text-dim: #6e6582;
+      --emerald: #34d399;
+      --radius-lg: 14px;
+      --radius-md: 10px;
+      --radius-sm: 6px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background-color: var(--bg-deep);
+      color: var(--text-main);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.6;
+    }
+
+    body {
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 15% 0%, rgba(160, 20, 45, 0.18) 0%, transparent 45%),
+        radial-gradient(circle at 85% 10%, rgba(230, 180, 80, 0.09) 0%, transparent 40%),
+        radial-gradient(circle at 50% 100%, rgba(120, 15, 35, 0.14) 0%, transparent 50%),
+        var(--bg-deep);
+      overflow-x: hidden;
+    }
+
+    a {
+      color: var(--gold);
+      text-decoration: none;
+      transition: color 0.2s ease, opacity 0.2s ease;
+    }
+    a:hover {
+      color: var(--gold-soft);
+    }
+
+    /* Top Navbar */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      background: rgba(9, 7, 12, 0.86);
+      border-bottom: 1px solid var(--border-subtle);
+      padding: 0.75rem 1.5rem;
+    }
+    .navbar-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-family: 'Cinzel', serif;
+      font-weight: 700;
+      font-size: 1.15rem;
+      color: var(--text-main);
+      letter-spacing: 0.03em;
+    }
+    .brand-emblem {
+      width: 34px;
+      height: 34px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, var(--crimson) 0%, #5c0a18 100%);
+      border: 1px solid rgba(230, 180, 80, 0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Noto Serif JP', serif;
+      font-weight: 600;
+      color: var(--gold-soft);
+      font-size: 1.05rem;
+      box-shadow: 0 0 15px var(--crimson-glow);
+    }
+    .brand-sub {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--gold);
+      background: rgba(230, 180, 80, 0.12);
+      border: 1px solid rgba(230, 180, 80, 0.3);
+      padding: 0.15rem 0.5rem;
+      border-radius: 999px;
+      letter-spacing: 0.04em;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+    .nav-link {
+      color: var(--text-muted);
+      font-size: 0.88rem;
+      font-weight: 500;
+      padding: 0.45rem 0.85rem;
+      border-radius: var(--radius-sm);
+      transition: all 0.2s ease;
+    }
+    .nav-link:hover, .nav-link.active {
+      color: var(--text-main);
+      background: rgba(255, 255, 255, 0.06);
+    }
+    .nav-cta {
+      background: linear-gradient(135deg, var(--crimson) 0%, #9e192e 100%);
+      color: #fff !important;
+      font-weight: 600;
+      font-size: 0.86rem;
+      padding: 0.48rem 1rem;
+      border-radius: var(--radius-sm);
+      border: 1px solid rgba(255, 120, 140, 0.35);
+      box-shadow: 0 4px 14px var(--crimson-glow);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .nav-cta:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(201, 42, 66, 0.45);
+    }
+
+    /* Container */
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Hero Header */
+    .hero {
+      padding: 3.2rem 0 2.2rem;
+      text-align: center;
+      position: relative;
+    }
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--gold);
+      background: rgba(230, 180, 80, 0.08);
+      border: 1px solid rgba(230, 180, 80, 0.28);
+      padding: 0.35rem 0.9rem;
+      border-radius: 999px;
+      margin-bottom: 1.1rem;
+    }
+    .hero-title {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(2rem, 4.2vw, 3.35rem);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: 0.02em;
+      margin-bottom: 0.85rem;
+      background: linear-gradient(180deg, #ffffff 0%, #e9dfef 65%, var(--gold-soft) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero-title span.crimson-accent {
+      background: linear-gradient(180deg, #ff4d67 0%, var(--crimson) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero-subtitle {
+      max-width: 780px;
+      margin: 0 auto 1.6rem;
+      color: var(--text-muted);
+      font-size: 1.02rem;
+    }
+    .hero-stats {
+      display: flex;
+      justify-content: center;
+      gap: 0.85rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.8rem;
+    }
+    .stat-pill {
+      background: rgba(18, 14, 24, 0.85);
+      border: 1px solid var(--border-subtle);
+      padding: 0.55rem 1.1rem;
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.88rem;
+    }
+    .stat-pill strong {
+      color: var(--gold-soft);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.98rem;
+    }
+
+    /* Mode Switcher Tabs */
+    .mode-tabs {
+      display: inline-flex;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 0.35rem;
+      gap: 0.35rem;
+      margin-bottom: 1rem;
+    }
+    .mode-tab {
+      border: none;
+      background: transparent;
+      color: var(--text-muted);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.92rem;
+      font-weight: 600;
+      padding: 0.65rem 1.35rem;
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.2s ease;
+    }
+    .mode-tab:hover {
+      color: var(--text-main);
+    }
+    .mode-tab.active {
+      background: linear-gradient(135deg, var(--crimson) 0%, #8c1629 100%);
+      color: #fff;
+      box-shadow: 0 4px 15px var(--crimson-glow);
+    }
+
+    /* Quote Search Section */
+    .search-shell {
+      background: var(--bg-card);
+      border: 1px solid var(--border-crimson);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.55), 0 0 35px rgba(201, 42, 66, 0.08);
+      margin-bottom: 2.5rem;
+    }
+
+    /* Database Loader Bar */
+    .db-status-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+      background: var(--bg-input);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 0.65rem 1rem;
+      margin-bottom: 1.15rem;
+      font-size: 0.84rem;
+    }
+    .db-status-left {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+    }
+    .status-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--gold);
+      box-shadow: 0 0 8px var(--gold);
+      animation: pulse 1.5s infinite;
+    }
+    .status-dot.ready {
+      background: var(--emerald);
+      box-shadow: 0 0 10px var(--emerald);
+      animation: none;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+    .progress-track {
+      width: 180px;
+      height: 6px;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 999px;
+      overflow: hidden;
+    }
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--crimson), var(--gold));
+      width: 0%;
+      transition: width 0.25s ease;
+    }
+
+    /* Search Input Row */
+    .search-input-wrap {
+      position: relative;
+      display: flex;
+      gap: 0.65rem;
+      margin-bottom: 1rem;
+    }
+    .search-icon {
+      position: absolute;
+      left: 1.05rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-muted);
+      pointer-events: none;
+      font-size: 1.1rem;
+    }
+    .search-input {
+      width: 100%;
+      background: var(--bg-input);
+      border: 1.5px solid rgba(230, 180, 80, 0.28);
+      color: var(--text-main);
+      font-size: 1.02rem;
+      font-family: 'Inter', sans-serif;
+      padding: 0.9rem 2.8rem 0.9rem 2.9rem;
+      border-radius: var(--radius-md);
+      outline: none;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+    .search-input:focus {
+      border-color: var(--crimson-bright);
+      box-shadow: 0 0 0 3px rgba(201, 42, 66, 0.22);
+    }
+    .clear-btn {
+      position: absolute;
+      right: 0.85rem;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255, 255, 255, 0.08);
+      border: none;
+      color: var(--text-muted);
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+    }
+    .clear-btn:hover {
+      background: rgba(255, 255, 255, 0.18);
+      color: #fff;
+    }
+
+    /* Preset Chips */
+    .preset-row {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.15rem;
+    }
+    .preset-label {
+      font-size: 0.78rem;
+      color: var(--text-dim);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-right: 0.25rem;
+    }
+    .preset-chip {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: var(--text-muted);
+      font-size: 0.8rem;
+      padding: 0.28rem 0.7rem;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: all 0.18s ease;
+    }
+    .preset-chip:hover {
+      border-color: var(--gold);
+      color: var(--gold-soft);
+      background: rgba(230, 180, 80, 0.08);
+    }
+
+    /* Filters Grid */
+    .filters-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 0.85rem;
+      padding-top: 0.85rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.07);
+    }
+    .filter-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+    .filter-label {
+      font-size: 0.76rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+    }
+    .filter-select {
+      background: var(--bg-input);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      color: var(--text-main);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.88rem;
+      padding: 0.55rem 0.75rem;
+      border-radius: var(--radius-sm);
+      outline: none;
+      cursor: pointer;
+    }
+    .filter-select:focus {
+      border-color: var(--gold);
+    }
+
+    .toggle-group {
+      display: flex;
+      gap: 0.4rem;
+      flex-wrap: wrap;
+    }
+    .lang-toggle {
+      flex: 1;
+      min-width: 64px;
+      background: var(--bg-input);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      color: var(--text-muted);
+      font-size: 0.82rem;
+      font-weight: 600;
+      padding: 0.5rem 0.55rem;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      text-align: center;
+      user-select: none;
+      transition: all 0.18s ease;
+    }
+    .lang-toggle.active {
+      background: rgba(201, 42, 66, 0.2);
+      border-color: var(--crimson-bright);
+      color: #fff;
+    }
+
+    /* Results Toolbar */
+    .results-toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin: 1.2rem 0 0.85rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .results-count {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+    }
+    .results-count strong {
+      color: var(--gold-soft);
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .pagination-controls {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .page-btn {
+      background: var(--bg-elevated);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: var(--text-main);
+      font-size: 0.84rem;
+      font-weight: 600;
+      padding: 0.4rem 0.85rem;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .page-btn:hover:not(:disabled) {
+      border-color: var(--gold);
+      color: var(--gold-soft);
+    }
+    .page-btn:disabled {
+      opacity: 0.35;
+      cursor: not-allowed;
+    }
+    .page-indicator {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.84rem;
+      color: var(--text-muted);
+      padding: 0 0.4rem;
+    }
+
+    /* Quote Cards */
+    .quotes-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+    .quote-card {
+      background: var(--bg-elevated);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-left: 4px solid var(--crimson);
+      border-radius: var(--radius-md);
+      padding: 1rem 1.2rem;
+      transition: transform 0.15s ease, border-color 0.15s ease;
+    }
+    .quote-card:hover {
+      border-color: rgba(230, 180, 80, 0.3);
+      border-left-color: var(--gold);
+    }
+    .quote-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin-bottom: 0.65rem;
+    }
+    .quote-meta-left {
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+      flex-wrap: wrap;
+    }
+    .speaker-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-weight: 700;
+      font-size: 0.86rem;
+      padding: 0.2rem 0.65rem;
+      border-radius: 6px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+    .speaker-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+    .ch-badge {
+      font-size: 0.76rem;
+      font-weight: 600;
+      color: var(--gold-soft);
+      background: rgba(230, 180, 80, 0.1);
+      border: 1px solid rgba(230, 180, 80, 0.25);
+      padding: 0.18rem 0.55rem;
+      border-radius: 5px;
+    }
+    .file-badge {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      color: var(--text-dim);
+      background: rgba(0, 0, 0, 0.3);
+      padding: 0.18rem 0.5rem;
+      border-radius: 5px;
+    }
+    .voice-badge {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.73rem;
+      color: #a78bfa;
+      background: rgba(167, 139, 250, 0.1);
+      border: 1px solid rgba(167, 139, 250, 0.25);
+      padding: 0.15rem 0.5rem;
+      border-radius: 5px;
+    }
+    .quote-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .action-btn {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: var(--text-muted);
+      font-size: 0.76rem;
+      font-weight: 600;
+      padding: 0.28rem 0.65rem;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .action-btn:hover {
+      background: rgba(201, 42, 66, 0.2);
+      border-color: var(--crimson-bright);
+      color: #fff;
+    }
+
+    /* Language Rows in Card */
+    .quote-lines {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .quote-lang-row {
+      display: grid;
+      grid-template-columns: 36px 1fr;
+      gap: 0.5rem;
+      align-items: baseline;
+      padding: 0.35rem 0.55rem;
+      border-radius: 6px;
+      background: rgba(0, 0, 0, 0.22);
+    }
+    .quote-lang-row.tr-row {
+      background: rgba(201, 42, 66, 0.07);
+      border-left: 2px solid var(--crimson);
+    }
+    .lang-tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--text-dim);
+      text-transform: uppercase;
+    }
+    .tr-row .lang-tag {
+      color: var(--crimson-bright);
+    }
+    .quote-text-tr {
+      font-size: 0.98rem;
+      color: var(--text-main);
+      font-weight: 500;
+      word-break: break-word;
+    }
+    .quote-text-en {
+      font-size: 0.9rem;
+      color: #b8b0c8;
+      word-break: break-word;
+    }
+    .quote-text-jp {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 0.9rem;
+      color: #968ea8;
+      word-break: break-word;
+    }
+    mark.hl {
+      background: rgba(230, 180, 80, 0.28);
+      color: #fff2cc;
+      padding: 0.05rem 0.2rem;
+      border-radius: 3px;
+      font-weight: 600;
+    }
+
+    /* Empty / Initial State */
+    .empty-state {
+      text-align: center;
+      padding: 3rem 1rem;
+      color: var(--text-muted);
+    }
+    .empty-state h3 {
+      color: var(--text-main);
+      margin-bottom: 0.5rem;
+      font-family: 'Cinzel', serif;
+    }
+
+    /* Scene Context Modal */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      z-index: 200;
+      background: rgba(5, 3, 8, 0.85);
+      backdrop-filter: blur(8px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1.25rem;
+    }
+    .modal-backdrop.open {
+      display: flex;
+    }
+    .modal-window {
+      width: 100%;
+      max-width: 960px;
+      max-height: 88vh;
+      background: var(--bg-card);
+      border: 1px solid var(--border-crimson);
+      border-radius: var(--radius-lg);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8);
+    }
+    .modal-header {
+      padding: 1rem 1.35rem;
+      background: var(--bg-elevated);
+      border-bottom: 1px solid var(--border-subtle);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .modal-title {
+      font-family: 'Cinzel', serif;
+      font-size: 1.05rem;
+      color: var(--gold-soft);
+    }
+    .modal-close {
+      background: rgba(255, 255, 255, 0.08);
+      border: none;
+      color: var(--text-main);
+      width: 32px;
+      height: 32px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+    .modal-close:hover {
+      background: var(--crimson);
+    }
+    .modal-body {
+      padding: 1.2rem;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+    }
+    .context-line {
+      padding: 0.7rem 0.9rem;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+    }
+    .context-line.target-line {
+      background: rgba(201, 42, 66, 0.14);
+      border: 1.5px solid var(--crimson-bright);
+      box-shadow: 0 0 20px rgba(201, 42, 66, 0.2);
+    }
+
+    /* Sections below Search */
+    .section {
+      margin: 4rem 0;
+    }
+    .section-header {
+      text-align: center;
+      margin-bottom: 2.2rem;
+    }
+    .section-title {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(1.55rem, 3vw, 2.2rem);
+      color: var(--text-main);
+      margin-bottom: 0.5rem;
+    }
+    .section-desc {
+      color: var(--text-muted);
+      max-width: 680px;
+      margin: 0 auto;
+      font-size: 0.95rem;
+    }
+
+    /* Installation Steps */
+    .install-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 1.5rem;
+      align-items: stretch;
+    }
+    .install-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 1.6rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .step-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--gold);
+      background: rgba(230, 180, 80, 0.12);
+      border: 1px solid rgba(230, 180, 80, 0.3);
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      width: fit-content;
+    }
+    .install-card h3 {
+      font-family: 'Cinzel', serif;
+      font-size: 1.25rem;
+      color: var(--text-main);
+    }
+    .install-card p {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+    }
+    .wizard-preview {
+      width: 100%;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-subtle);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+      margin-top: 0.4rem;
+    }
+    .code-block {
+      background: var(--bg-input);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: var(--radius-sm);
+      padding: 0.85rem 1rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.82rem;
+      color: var(--gold-soft);
+      overflow-x: auto;
+    }
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.55rem;
+      background: linear-gradient(135deg, var(--crimson) 0%, #99172c 100%);
+      color: #fff !important;
+      font-weight: 600;
+      padding: 0.8rem 1.4rem;
+      border-radius: var(--radius-sm);
+      border: 1px solid rgba(255, 130, 150, 0.4);
+      box-shadow: 0 6px 20px var(--crimson-glow);
+      margin-top: auto;
+      transition: all 0.2s ease;
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(201, 42, 66, 0.45);
+    }
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.55rem;
+      background: rgba(230, 180, 80, 0.12);
+      color: var(--gold-soft) !important;
+      font-weight: 600;
+      padding: 0.8rem 1.4rem;
+      border-radius: var(--radius-sm);
+      border: 1px solid rgba(230, 180, 80, 0.35);
+      margin-top: auto;
+      transition: all 0.2s ease;
+    }
+    .btn-secondary:hover {
+      background: rgba(230, 180, 80, 0.2);
+    }
+
+    /* Chapters Table */
+    .table-wrap {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      overflow-x: auto;
+    }
+    table.ch-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+    .ch-table th, .ch-table td {
+      padding: 0.85rem 1.1rem;
+      text-align: left;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+    .ch-table th {
+      background: var(--bg-elevated);
+      color: var(--gold-soft);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .ch-table tr:hover td {
+      background: rgba(255, 255, 255, 0.02);
+    }
+    .status-complete {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      color: var(--emerald);
+      background: rgba(52, 211, 153, 0.1);
+      border: 1px solid rgba(52, 211, 153, 0.3);
+      padding: 0.18rem 0.6rem;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 600;
+    }
+
+    /* Architecture Cards */
+    .arch-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 1.2rem;
+    }
+    .arch-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 1.35rem;
+    }
+    .arch-card h4 {
+      font-family: 'Cinzel', serif;
+      color: var(--gold-soft);
+      font-size: 1.05rem;
+      margin-bottom: 0.5rem;
+    }
+    .arch-card p {
+      color: var(--text-muted);
+      font-size: 0.88rem;
+    }
+
+    /* Credits Grid */
+    .credits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.15rem;
+    }
+    .credit-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 1.35rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+      transition: transform 0.18s ease, border-color 0.18s ease;
+    }
+    .credit-card:hover {
+      transform: translateY(-2px);
+      border-color: var(--gold);
+    }
+    .credit-role {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--crimson-bright);
+    }
+    .credit-name {
+      font-family: 'Cinzel', serif;
+      font-size: 1.18rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+    .credit-desc {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+    }
+
+    footer {
+      border-top: 1px solid var(--border-subtle);
+      padding: 2.2rem 1.5rem;
+      text-align: center;
+      color: var(--text-dim);
+      font-size: 0.85rem;
+      margin-top: 4rem;
+    }
+
+    @media (max-width: 768px) {
+      .navbar-inner {
+        justify-content: center;
+      }
+      .quote-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Navigation -->
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a href="#" class="brand">
+        <span class="brand-emblem">蜩</span>
+        <span>Higurashi Türkçe Külliyat</span>
+        <span class="brand-sub">@Remilya v1.0</span>
+      </a>
+      <div class="nav-links">
+        <a href="#alinti-arama" class="nav-link active">🔎 Alıntı Arama Motoru</a>
+        <a href="#kurulum" class="nav-link">📥 Kurulum Rehberi</a>
+        <a href="#bolumler" class="nav-link">📊 Bölüm 1–10 Durumu</a>
+        <a href="#mimari" class="nav-link">⚙️ Remilya Engine</a>
+        <a href="#tesekkurler" class="nav-link">🙏 Teşekkürler</a>
+        <a href="https://github.com/Remilya/Higurashi/releases/tag/v1.0" target="_blank" rel="noopener" class="nav-cta">
+          <span>⬇️ Türkçe Yamayı İndir (v1.0)</span>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container">
+    <!-- Hero Header -->
+    <header class="hero">
+      <div class="hero-eyebrow">
+        <span>⛩️ Hinamizawa Külliyat Arşivi &amp; Türkçe Yerelleştirme Merkezi</span>
+      </div>
+      <h1 class="hero-title">
+        Higurashi When They Cry <span class="crimson-accent">Türkçe</span><br />
+        Alıntı Arama Motoru &amp; Yama Portalı
+      </h1>
+      <p class="hero-subtitle">
+        <strong>@Remilya</strong> tarafından geliştirilen <strong>Bölüm 1–10 (Hou &amp; Hou+)</strong> tam Türkçe yerelleştirme projesi.
+        Tüm <strong>139.818</strong> diyalog satırı arasında Türkçe, İngilizce ve Japonca anlık arama yapın, karakter repliklerini filtreleyin ve sahne bağlamını inceleyin.
+      </p>
+
+      <div class="hero-stats">
+        <div class="stat-pill">⛩️ Oyun Külliyatı: <strong>10 Bölüm (Ch.1–10)</strong></div>
+        <div class="stat-pill">📜 Senaryo Dosyası: <strong>456 Dosya</strong></div>
+        <div class="stat-pill">💬 Toplam Replik: <strong>139.818 Satır</strong></div>
+        <div class="stat-pill">🌐 Dil Desteği: <strong>TR / EN / JP</strong></div>
+      </div>
+    </header>
+
+    <!-- Interactive Quote Search Engine -->
+    <section id="alinti-arama" class="search-shell">
+      <!-- Database Loading Status -->
+      <div class="db-status-bar">
+        <div class="db-status-left">
+          <span id="dbStatusDot" class="status-dot"></span>
+          <span id="dbStatusText">Hinamizawa Veritabanı yükleniyor... (0 / 10 Bölüm)</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:0.75rem;">
+          <div class="progress-track">
+            <div id="dbProgressFill" class="progress-fill"></div>
+          </div>
+          <span id="dbLineCount" style="font-family:'JetBrains Mono',monospace;font-size:0.8rem;color:var(--gold-soft);">0 satır</span>
+        </div>
+      </div>
+
+      <!-- Search Input -->
+      <div class="search-input-wrap">
+        <span class="search-icon">🔎</span>
+        <input
+          type="text"
+          id="searchInput"
+          class="search-input"
+          placeholder="Türkçe, İngilizce veya Japonca bir replik arayın... (Örn: 'Yalan!', 'Nipah', 'Oyashiro-sama', 'Hinamizawa Sendromu')"
+          autocomplete="off"
+        />
+        <button id="clearSearchBtn" class="clear-btn" title="Aramayı Temizle">✕</button>
+      </div>
+
+      <!-- Quick Preset Chips -->
+      <div class="preset-row">
+        <span class="preset-label">Popüler Aramalar:</span>
+        <button class="preset-chip" data-q="Yalan!">❝ Yalan! (Usoda) ❞</button>
+        <button class="preset-chip" data-q="Nipah">✨ Nipah~☆</button>
+        <button class="preset-chip" data-q="Auau">🔮 Auau~</button>
+        <button class="preset-chip" data-q="Oyashiro">⛩️ Oyashiro-sama</button>
+        <button class="preset-chip" data-q="Hinamizawa Sendromu">🧬 Hinamizawa Sendromu</button>
+        <button class="preset-chip" data-q="Watanagashi">🏮 Watanagashi</button>
+        <button class="preset-chip" data-q="götürmek istiyorum">🏠 Eve götürmek istiyorum!</button>
+        <button class="preset-chip" data-q="Remilya">👑 @Remilya</button>
+      </div>
+
+      <!-- Filters -->
+      <div class="filters-grid">
+        <div class="filter-group">
+          <label class="filter-label" for="chapterSelect">📚 Bölüm (Chapter)</label>
+          <select id="chapterSelect" class="filter-select">
+            <option value="0">Tüm Bölümler (Bölüm 1–10 • 139.818 Satır)</option>
+            <option value="1">Bölüm 1 — Onikakushi (12.347 Satır)</option>
+            <option value="2">Bölüm 2 — Watanagashi (16.365 Satır)</option>
+            <option value="3">Bölüm 3 — Tatarigoroshi (15.983 Satır)</option>
+            <option value="4">Bölüm 4 — Himatsubushi (6.862 Satır)</option>
+            <option value="5">Bölüm 5 — Meakashi (14.963 Satır)</option>
+            <option value="6">Bölüm 6 — Tsumihoroboshi (15.739 Satır)</option>
+            <option value="7">Bölüm 7 — Minagoroshi (17.748 Satır)</option>
+            <option value="8">Bölüm 8 — Matsuribayashi (22.901 Satır)</option>
+            <option value="9">Bölüm 9 — Rei (Saikoroshi / Hirukowashi) (9.726 Satır)</option>
+            <option value="10">Bölüm 10 — Hou+ (Outbreak / Kamikashimashi) (7.184 Satır)</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label class="filter-label" for="speakerSelect">🎭 Konuşmacı (Karakter)</label>
+          <select id="speakerSelect" class="filter-select">
+            <option value="__ALL__">Tüm Karakterler &amp; Anlatıcı</option>
+            <option value="__NARRATOR__">📖 Sadece Anlatıcı (İç Monolog)</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label class="filter-label" for="searchLangSelect">🌐 Arama Yapılacak Dil</label>
+          <select id="searchLangSelect" class="filter-select">
+            <option value="all">Üç Dilde Birden Ara (TR + EN + JP)</option>
+            <option value="tr">🇹🇷 Sadece Türkçe Metinde Ara</option>
+            <option value="en">🇬🇧 Sadece İngilizce Metinde Ara</option>
+            <option value="jp">🇯🇵 Sadece Japonca Metinde Ara</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label class="filter-label">👁️ Kartlarda Gösterilen Diller &amp; Mod</label>
+          <div class="toggle-group">
+            <button type="button" class="lang-toggle active" data-show-lang="tr">🇹🇷 TR</button>
+            <button type="button" class="lang-toggle active" data-show-lang="en">🇬🇧 EN</button>
+            <button type="button" class="lang-toggle active" data-show-lang="jp">🇯🇵 JP</button>
+            <button type="button" id="regexToggle" class="lang-toggle" title="Düzenli İfade (Regex) Arama Modu">.*</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Results Toolbar -->
+      <div class="results-toolbar">
+        <div id="resultsSummary" class="results-count">
+          Arama yapmak için yukarıdaki kutuya bir kelime yazın veya popüler aramalardan birini seçin.
+        </div>
+        <div class="pagination-controls">
+          <button id="prevPageBtn" class="page-btn" disabled>◀ Önceki</button>
+          <span id="pageIndicator" class="page-indicator">Sayfa 1 / 1</span>
+          <button id="nextPageBtn" class="page-btn" disabled>Sonraki ▶</button>
+        </div>
+      </div>
+
+      <!-- Results Container -->
+      <div id="quotesContainer" class="quotes-list">
+        <div class="empty-state">
+          <h3>⛩️ Hinamizawa Replik Arşivine Hoş Geldiniz</h3>
+          <p>Bölüm 1 (Onikakushi) ile Bölüm 10 (Hou+) arasındaki 139.818 satırlık diyalog veritabanı tarayıcınıza yükleniyor.<br/>Yukarıdan herhangi bir kelime yazarak veya karakter seçerek anında arama yapabilirsiniz.</p>
+        </div>
+      </div>
+
+      <!-- Bottom Pagination -->
+      <div id="bottomPagination" class="results-toolbar" style="display:none; border-bottom:none; border-top:1px solid rgba(255,255,255,0.08); margin-top:1.2rem; padding-top:0.85rem; padding-bottom:0;">
+        <div id="bottomResultsSummary" class="results-count"></div>
+        <div class="pagination-controls">
+          <button id="prevPageBtnBottom" class="page-btn" disabled>◀ Önceki</button>
+          <span id="pageIndicatorBottom" class="page-indicator">Sayfa 1 / 1</span>
+          <button id="nextPageBtnBottom" class="page-btn" disabled>Sonraki ▶</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Installation Guide Section -->
+    <section id="kurulum" class="section">
+      <div class="section-header">
+        <h2 class="section-title">📥 2 Adımda Türkçe Yama Kurulum Rehberi</h2>
+        <p class="section-desc">
+          Higurashi Türkçe Yama paketi, <strong>07th-Mod</strong> altyapısı üzerine inşa edilmiştir. Aşağıdaki iki adımı takip ederek tüm 10 oyunu dakikalar içinde Türkçeleştirebilirsiniz.
+        </p>
+      </div>
+
+      <div class="install-grid">
+        <!-- Step 1 -->
+        <div class="install-card">
+          <span class="step-badge">ADIM 1 • ÖN KOŞUL</span>
+          <h3>1. 07th-Mod Kurulumu (İngilizce Altyapı)</h3>
+          <p>
+            Türkçe yama; seslendirmeler (Voice), PS3/Console grafik paketleri, dudak senkronizasyonu (Lip-Sync) ve gelişmiş oyun motoru özellikleri için <strong>07th-Mod</strong> altyapısını kullanır.
+          </p>
+          <p>
+            Eğer oyunlarınıza henüz 07th-Mod kurmadıysanız, resmi <strong>07th-Mod Python Patcher</strong> kurulum aracını indirip oyunlarınıza standart <strong>İngilizce (English)</strong> yamasını uygulayın:
+          </p>
+          <div class="code-block">
+            🔗 Resmi İndirme: github.com/07th-mod/python-patcher
+          </div>
+          <a href="https://github.com/07th-mod/python-patcher" target="_blank" rel="noopener" class="btn-secondary">
+            <span>🛠️ 07th-Mod Kurulum Aracını İndir</span>
+          </a>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="install-card">
+          <span class="step-badge">ADIM 2 • REMILYA KURULUM SİHİRBAZI</span>
+          <h3>2. Higurashi Türkçe Yama Sihirbazı (v1.0)</h3>
+          <p>
+            07th-Mod kurulu oyunlarınız için <strong>Higurashi-Turkce-Yama-v1.0-Remilya.zip</strong> arşivini indirin ve içerisindeki <code>kurulum.bat</code> (veya <code>python kurulum.py</code>) dosyasını çalıştırın. Sihirbaz bilgisayarınızdaki Steam / GOG oyunlarını otomatik tespit eder:
+          </p>
+          <img src="kurulum_sihirbazi.png" alt="Higurashi Türkçe Yama Kurulum Sihirbazı (@Remilya)" class="wizard-preview" loading="lazy" />
+          <a href="https://github.com/Remilya/Higurashi/releases/tag/v1.0" target="_blank" rel="noopener" class="btn-primary">
+            <span>⬇️ Higurashi Türkçe Yama v1.0 İndir (51.5 MB)</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Chapter 1-10 Progress Table -->
+    <section id="bolumler" class="section">
+      <div class="section-header">
+        <h2 class="section-title">📊 Bölüm 1–10 Yerelleştirme Külliyat Tablosu</h2>
+        <p class="section-desc">
+          Ana hikâye arkları (Soru ve Cevap Arkları), Rei yan hikâyeleri ve Hou+ bonus bölümleri dahil olmak üzere tüm senaryo dosyaları, arayüz (UI) dokuları, CG görselleri ve F10 Mod Menüsü %100 Türkçeleştirilmiştir.
+        </p>
+      </div>
+
+      <div class="table-wrap">
+        <table class="ch-table">
+          <thead>
+            <tr>
+              <th>Bölüm</th>
+              <th>Orijinal Ark Adı</th>
+              <th>Türkçe Ark Adı</th>
+              <th>Senaryo</th>
+              <th>Diyalog Satırı</th>
+              <th>UI / CG / F10</th>
+              <th>Durum</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Bölüm 1</strong></td>
+              <td>Onikakushi-hen</td>
+              <td>İblisler Tarafından Kaçırılma</td>
+              <td>39 Dosya</td>
+              <td>12.347 Satır</td>
+              <td>Tam Türkçe</td>
+              <td><span class="status-complete">✔ %100 Tamamlandı</span></td>
+            </tr>
+            <tr>
+              <td><strong>Bölüm 2</strong></td>
+              <td>Watanagashi-hen</td>
+              <td>Pamuk Sürükleme Festivali</td>
+              <td>46 Dosya</td>
+              <td>16.365 Satır</td>
+              <td>Tam Türkçe</td>
+              <td><span class="status-complete">✔ %100 Tamamlandı</span></td>
+            </tr>
+            <tr>
+              <td><strong>Bölüm 3</strong></td>
+              <td>Tatarigoroshi-hen</td>
+              <td>Lanet Kırım Bölümü</td>
+              <td>42 Dosya</td>
+              <td>15.983 Satır</td>
+              <td>Tam Türkçe</td>
+              <td><span class="status-complete">✔ %100 Tamamlandı</span></td>
+            </tr>
+            <tr>
+              <td><strong>Bölüm 4</strong></td>
+              <td>Himatsubushi-hen</td>
+              <td>Zaman Öldürme Bölümü</td>
+              <td>27 Dosya</td>
+              <td>6.862 Satır</td>
+              <td>Tam Türkçe</td>
+              <td><span class="status-complete">✔ %100 Tamamlandı</span></td>
+            </tr>
+            <tr>
+              <td><strong>Bölüm 5</strong></td>
+              <td>Meakashi-hen</td>
+              <td>Göz Açma Bölümü</td>
+              <td>60 Dosya</td>
+              <td>14.963 Satır</td>
+              <td>Tam Türkçe</td>
+              <td><span class="status-complete">✔ %100 Tamamlandı</span></td>
+            </tr>
+            <tr>
+              <td><strong>Bölüm 6</strong></td>
+              <td>Tsumihoroboshi-hen</td>
+              <td>Kefaret Bölümü</td>
+              <td>54 Dosya</td>
+              <td>15.739 Satır</td>
+              <td>Tam Türkçe</td>
+              <td><span class="status-complete">✔ %100 Tamamlandı</span></td>
+            </tr>
+            <tr>
+              <td><strong>Bölüm 7</strong></td>
+              <td>Minagoroshi-hen</td>
+              <td>Katliam Bölümü</td>
+              <td>51 Dosya</td>
+              <td>17.748 Satır</td>
+              <td>Tam Türkçe</td>
+              <td><span class="status-complete">✔ %100 Tamamlandı</span></td>
+            </tr>
+            <tr>
+              <td><strong>Bölüm 8</strong></td>
+              <td>Matsuribayashi-hen</td>
+              <td>Festival Eşliği Bölümü</td>
+              <td>81 Dosya</td>
+              <td>22.901 Satır</td>
+              <td>Tam Türkçe</td>
+              <td><span class="status-complete">✔ %100 Tamamlandı</span></td>
+            </tr>
+            <tr>
+              <td><strong>Bölüm 9</strong></td>
+              <td>Higurashi Rei</td>
+              <td>Saikoroshi / Batsukoishi / Hirukowashi</td>
+              <td>42 Dosya</td>
+              <td>9.726 Satır</td>
+              <td>Tam Türkçe</td>
+              <td><span class="status-complete">✔ %100 Tamamlandı</span></td>
+            </tr>
+            <tr>
+              <td><strong>Bölüm 10</strong></td>
+              <td>Higurashi Hou+</td>
+              <td>Outbreak / Kamikashimashi /Mehagashi / Durak</td>
+              <td>14 Dosya</td>
+              <td>7.184 Satır</td>
+              <td>Tam Türkçe</td>
+              <td><span class="status-complete">✔ %100 Tamamlandı</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Technical Architecture Section -->
+    <section id="mimari" class="section">
+      <div class="section-header">
+        <h2 class="section-title">⚙️ Remilya Engine — Teknik Yerelleştirme Mimarisi</h2>
+        <p class="section-desc">
+          Oyun motorunun ses senkronizasyonunu, ifade değişimlerini veya kayıt dosyalarını bozmadan gerçekleştirilen 4 katmanlı mühendislik altyapısı.
+        </p>
+      </div>
+
+      <div class="arch-grid">
+        <div class="arch-card">
+          <h4>1. BurikoScript AST &amp; Voice Sync</h4>
+          <p>
+            <code>OutputLine()</code> ve <code>OutputLineAll()</code> çağrılarındaki Japonca/İngilizce parametre çiftleri, ses kanalları (<code>PlayVoice</code>), dudak senkronizasyonu ve <code>GADVMode</code> bayrakları AST düzeyinde korunarak derlenmiştir.
+          </p>
+        </div>
+        <div class="arch-card">
+          <h4>2. Unity NGUI &amp; TMP SDF Font Hattı</h4>
+          <p>
+            <code>sharedassets0.assets</code> içerisindeki <code>TitleHigurashi</code> NGUI atlası, bölüm seçim ekranları ve Türkçe glifler (<code>ğ, ü, ş, ı, ö, ç, İ, Ğ, Ü, Ş, Ö, Ç</code>) kayıpsız ikili (binary) yamalama ile gömülmüştür.
+          </p>
+        </div>
+        <div class="arch-card">
+          <h4>3. 139.818 Satırlık Bağlamsal Sözlük</h4>
+          <p>
+            Tüm 10 bölüm boyunca karakter konuşma üslupları (Rika'nın <em>~nano desu / ~dır</em> ve <em>Nipah~☆</em> kullanımı, Hanyuu'nun <em>Auau~</em> tepkileri, Ooishi'nin <em>Nfu~</em> gülüşü) ve Hinamizawa folklor terimleri %100 tutarlıdır.
+          </p>
+        </div>
+        <div class="arch-card">
+          <h4>4. F10 Mod Menüsü &amp; .mg Derleyici</h4>
+          <p>
+            <code>Assembly-CSharp.dll</code> içerisindeki 07th-Mod F10 yapılandırma menüsü tamamen Türkçeleştirilmiş; kurulum sırasında ANTLR3 <code>CompiledUpdateScripts/*.mg</code> önbelleği otomatik yenilenecek şekilde tasarlanmıştır.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Credits & Acknowledgments -->
+    <section id="tesekkurler" class="section">
+      <div class="section-header">
+        <h2 class="section-title">🙏 Emeği Geçenler &amp; Teşekkürler</h2>
+        <p class="section-desc">
+          Bu devasa külliyatın Türkçeye kazandırılmasında ve arama motorunun geliştirilmesinde emeği geçen kişi ve topluluklar:
+        </p>
+      </div>
+
+      <div class="credits-grid">
+        <a href="https://github.com/Remilya/Higurashi" target="_blank" rel="noopener" class="credit-card">
+          <span class="credit-role">Baş Çevirmen &amp; Sistem Mühendisi</span>
+          <span class="credit-name">👑 @Remilya</span>
+          <span class="credit-desc">
+            Bölüm 1–10 (139.818 satır) tam külliyat çevirisi, Unity arayüz/CG yerelleştirmesi, F10 Mod Menüsü yaması, Kurulum Sihirbazı ve Türkçe Alıntı Arama Motoru.
+          </span>
+        </a>
+
+        <a href="https://github.com/Witch-Love/higurashi-scripting-tr" target="_blank" rel="noopener" class="credit-card">
+          <span class="credit-role">Öncü Türkçe Çeviri Katkıları</span>
+          <span class="credit-name">🦋 Witch Love</span>
+          <span class="credit-desc">
+            <code>Witch-Love/higurashi-scripting-tr</code> deposundaki erken dönem Türkçe senaryo çalışmaları ve projeye ilham veren değerli emekleri için teşekkürler.
+          </span>
+        </a>
+
+        <a href="https://github.com/07th-mod" target="_blank" rel="noopener" class="credit-card">
+          <span class="credit-role">Mod Altyapısı &amp; Oyun Motoru</span>
+          <span class="credit-name">🛠️ 07th-Mod Ekibi</span>
+          <span class="credit-desc">
+            Konsol grafikleri, Japonca seslendirme entegrasyonu, F10 gelişmiş mod menüsü ve açık kaynaklı <code>python-patcher</code> mimarisi için teşekkürler.
+          </span>
+        </a>
+
+        <a href="https://github.com/VictoriqueMoe/umineko_quote_finder" target="_blank" rel="noopener" class="credit-card">
+          <span class="credit-role">Alıntı Arama Motoru İlhamı</span>
+          <span class="credit-name">🔎 VictoriqueMoe</span>
+          <span class="credit-desc">
+            <code>VictoriqueMoe/umineko_quote_finder</code> projesiyle 07th Expansion topluluğuna kazandırdığı alıntı arama vizyonu ve emekleri için teşekkürler.
+          </span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Scene Context Modal -->
+  <div id="contextModal" class="modal-backdrop" role="dialog" aria-modal="true">
+    <div class="modal-window">
+      <div class="modal-header">
+        <div>
+          <div id="modalTitle" class="modal-title">Sahne Bağlamı</div>
+          <div id="modalSubtitle" style="font-size:0.78rem;color:var(--text-muted);"></div>
+        </div>
+        <button id="closeModalBtn" class="modal-close" title="Kapat">✕</button>
+      </div>
+      <div id="modalBody" class="modal-body"></div>
+    </div>
+  </div>
+
+  <footer>
+    <p>
+      <strong>Higurashi When They Cry Hou &amp; Hou+ Türkçe Yerelleştirme Projesi</strong> • Geliştirici &amp; Çevirmen:
+      <a href="https://github.com/Remilya/Higurashi" target="_blank" rel="noopener">@Remilya</a>
+    </p>
+    <p style="margin-top:0.35rem;">
+      Orijinal Eser: <strong>07th Expansion / Ryukishi07</strong> • Mod Altyapısı:
+      <a href="https://github.com/07th-mod" target="_blank" rel="noopener">07th-Mod</a> • Katkılar:
+      <a href="https://github.com/Witch-Love/higurashi-scripting-tr" target="_blank" rel="noopener">Witch Love</a> &amp;
+      <a href="https://github.com/VictoriqueMoe/umineko_quote_finder" target="_blank" rel="noopener">VictoriqueMoe</a>
+    </p>
+  </footer>
+
+  <!-- Application Script -->
+  <script>
+    (() => {
+      const CHAPTER_NAMES = {
+        1: "Bölüm 1 — Onikakushi",
+        2: "Bölüm 2 — Watanagashi",
+        3: "Bölüm 3 — Tatarigoroshi",
+        4: "Bölüm 4 — Himatsubushi",
+        5: "Bölüm 5 — Meakashi",
+        6: "Bölüm 6 — Tsumihoroboshi",
+        7: "Bölüm 7 — Minagoroshi",
+        8: "Bölüm 8 — Matsuribayashi",
+        9: "Bölüm 9 — Rei",
+        10: "Bölüm 10 — Hou+"
+      };
+
+      // State
+      const chapterData = new Map(); // ch -> { ch, arc, files, speakers, lines }
+      let loadedChapters = 0;
+      let totalLoadedLines = 0;
+      let currentResults = [];
+      let currentPage = 1;
+      const PAGE_SIZE = 50;
+
+      const showLangs = { tr: true, en: true, jp: true };
+      let useRegex = false;
+
+      // DOM Elements
+      const dbStatusDot = document.getElementById('dbStatusDot');
+      const dbStatusText = document.getElementById('dbStatusText');
+      const dbProgressFill = document.getElementById('dbProgressFill');
+      const dbLineCount = document.getElementById('dbLineCount');
+
+      const searchInput = document.getElementById('searchInput');
+      const clearSearchBtn = document.getElementById('clearSearchBtn');
+      const chapterSelect = document.getElementById('chapterSelect');
+      const speakerSelect = document.getElementById('speakerSelect');
+      const searchLangSelect = document.getElementById('searchLangSelect');
+      const regexToggle = document.getElementById('regexToggle');
+
+      const resultsSummary = document.getElementById('resultsSummary');
+      const bottomResultsSummary = document.getElementById('bottomResultsSummary');
+      const quotesContainer = document.getElementById('quotesContainer');
+      const bottomPagination = document.getElementById('bottomPagination');
+
+      const prevPageBtn = document.getElementById('prevPageBtn');
+      const nextPageBtn = document.getElementById('nextPageBtn');
+      const pageIndicator = document.getElementById('pageIndicator');
+      const prevPageBtnBottom = document.getElementById('prevPageBtnBottom');
+      const nextPageBtnBottom = document.getElementById('nextPageBtnBottom');
+      const pageIndicatorBottom = document.getElementById('pageIndicatorBottom');
+
+      const contextModal = document.getElementById('contextModal');
+      const modalTitle = document.getElementById('modalTitle');
+      const modalSubtitle = document.getElementById('modalSubtitle');
+      const modalBody = document.getElementById('modalBody');
+      const closeModalBtn = document.getElementById('closeModalBtn');
+
+      // Turkish-aware normalization for fast & forgiving search
+      function normalizeTR(str) {
+        if (!str) return '';
+        return str
+          .replace(/İ/g, 'i')
+          .replace(/I/g, 'i')
+          .replace(/ı/g, 'i')
+          .toLowerCase()
+          .replace(/ş/g, 's')
+          .replace(/ğ/g, 'g')
+          .replace(/ü/g, 'u')
+          .replace(/ö/g, 'o')
+          .replace(/ç/g, 'c')
+          .replace(/â/g, 'a')
+          .replace(/î/g, 'i')
+          .replace(/û/g, 'u');
+      }
+
+      function escapeHtml(str) {
+        if (!str) return '';
+        return str
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;')
+          .replace(/"/g, '&quot;');
+      }
+
+      // Highlight matching substring (supports Turkish diacritic-insensitive length mapping)
+      function highlightText(text, rawQuery) {
+        if (!text) return '';
+        if (!rawQuery || !rawQuery.trim()) return escapeHtml(text);
+
+        const q = rawQuery.trim();
+        if (useRegex) {
+          try {
+            const re = new RegExp(q, 'gi');
+            let lastIdx = 0;
+            let out = '';
+            let match;
+            while ((match = re.exec(text)) !== null) {
+              if (match[0].length === 0) { re.lastIndex++; continue; }
+              out += escapeHtml(text.slice(lastIdx, match.index));
+              out += '<mark class="hl">' + escapeHtml(match[0]) + '</mark>';
+              lastIdx = match.index + match[0].length;
+            }
+            out += escapeHtml(text.slice(lastIdx));
+            return out;
+          } catch {
+            return escapeHtml(text);
+          }
+        }
+
+        // Since normalizeTR maps 1 char -> 1 char, indices match 1:1!
+        const normText = normalizeTR(text);
+        const normQ = normalizeTR(q);
+        if (!normQ) return escapeHtml(text);
+
+        let out = '';
+        let start = 0;
+        let idx = normText.indexOf(normQ, start);
+        if (idx === -1) return escapeHtml(text);
+
+        while (idx !== -1) {
+          out += escapeHtml(text.slice(start, idx));
+          out += '<mark class="hl">' + escapeHtml(text.slice(idx, idx + normQ.length)) + '</mark>';
+          start = idx + normQ.length;
+          idx = normText.indexOf(normQ, start);
+        }
+        out += escapeHtml(text.slice(start));
+        return out;
+      }
+
+      // Fetch and decompress .json.gz safely (checks 0x1f 0x8b magic bytes in case CDN already gunzipped)
+      async function fetchGzipJson(url) {
+        const res = await fetch(url);
+        if (!res.ok) throw new Error(`HTTP ${res.status} for ${url}`);
+        const buf = await res.arrayBuffer();
+        const u8 = new Uint8Array(buf);
+        if (u8.length >= 2 && u8[0] === 0x1f && u8[1] === 0x8b) {
+          const ds = new DecompressionStream('gzip');
+          const decompressedStream = new Blob([buf]).stream().pipeThrough(ds);
+          const text = await new Response(decompressedStream).text();
+          return JSON.parse(text);
+        } else {
+          const text = new TextDecoder('utf-8').decode(u8);
+          return JSON.parse(text);
+        }
+      }
+
+      // Load metadata + all 10 chapters
+      async function initDatabase() {
+        try {
+          const metaRes = await fetch('data/meta.json');
+          if (metaRes.ok) {
+            const meta = await metaRes.json();
+            populateSpeakerDropdown(meta.top_speakers || []);
+          }
+        } catch (e) {
+          console.warn('Meta load warning:', e);
+        }
+
+        // Load URL query params if present
+        const params = new URLSearchParams(window.location.search);
+        if (params.get('q')) searchInput.value = params.get('q');
+        if (params.get('ch')) chapterSelect.value = params.get('ch');
+        if (params.get('sp')) speakerSelect.value = params.get('sp');
+        if (params.get('lang')) searchLangSelect.value = params.get('lang');
+        clearSearchBtn.style.display = searchInput.value ? 'flex' : 'none';
+
+        // Fetch chapters 1..10 concurrently in batches of 4 for smooth UI responsiveness
+        const chapters = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        await Promise.all(chapters.map(async (ch) => {
+          try {
+            const data = await fetchGzipJson(`data/ch${ch}.json.gz`);
+            // Precompute normalized strings on load or lazy? Lazy or lightweight is super fast.
+            chapterData.set(ch, data);
+            loadedChapters++;
+            totalLoadedLines += data.lines.length;
+
+            const pct = Math.round((loadedChapters / 10) * 100);
+            dbProgressFill.style.width = `${pct}%`;
+            dbLineCount.textContent = `${totalLoadedLines.toLocaleString('tr-TR')} satır`;
+
+            if (loadedChapters < 10) {
+              dbStatusText.textContent = `Hinamizawa Veritabanı yükleniyor... (${loadedChapters} / 10 Bölüm)`;
+            } else {
+              dbStatusDot.classList.add('ready');
+              dbStatusText.textContent = `Tüm Külliyat Hazır (10 Bölüm • 456 Senaryo • 139.818 Satır)`;
+            }
+
+            // Re-run search if user already typed something or selected a filter
+            if (searchInput.value.trim() || speakerSelect.value !== '__ALL__' || chapterSelect.value !== '0') {
+              runSearch(false);
+            } else if (loadedChapters === 1) {
+              // Show sample iconic quotes on initial load so the page looks alive immediately!
+              showInitialShowcase();
+            }
+          } catch (err) {
+            console.error(`Failed loading chapter ${ch}:`, err);
+          }
+        }));
+      }
+
+      function populateSpeakerDropdown(speakers) {
+        const frag = document.createDocumentFragment();
+        for (const sp of speakers) {
+          const opt = document.createElement('option');
+          opt.value = sp.name;
+          opt.textContent = `${sp.name} (${sp.count.toLocaleString('tr-TR')} satır)`;
+          frag.appendChild(opt);
+        }
+        speakerSelect.appendChild(frag);
+      }
+
+      // Show iconic quotes when search input is empty and no filters are selected
+      function showInitialShowcase() {
+        if (searchInput.value.trim() || speakerSelect.value !== '__ALL__' || chapterSelect.value !== '0') return;
+        const ch1 = chapterData.get(1);
+        if (!ch1) return;
+        // Pick a few memorable lines from Chapter 1
+        const showcase = [];
+        for (let i = 0; i < ch1.lines.length && showcase.length < 12; i++) {
+          const row = ch1.lines[i];
+          const tr = row[3] || '';
+          if (tr.includes('Yalan') || tr.includes('Oyashiro') || tr.includes('Hinamizawa') || tr.includes('Rena')) {
+            showcase.push({ ch: 1, rowIdx: i, row });
+          }
+        }
+        currentResults = showcase;
+        currentPage = 1;
+        resultsSummary.innerHTML = `✨ <strong>Öne Çıkan Replikler</strong> — Tüm <strong>${totalLoadedLines.toLocaleString('tr-TR')}</strong> satırda arama yapmak için yukarıdaki kutuya yazmaya başlayın.`;
+        bottomPagination.style.display = 'none';
+        renderPage();
+      }
+
+      function runSearch(resetPage = true) {
+        const rawQuery = searchInput.value.trim();
+        const selectedCh = parseInt(chapterSelect.value, 10) || 0;
+        const selectedSpeaker = speakerSelect.value;
+        const searchLang = searchLangSelect.value;
+
+        clearSearchBtn.style.display = rawQuery ? 'flex' : 'none';
+
+        // Update URL query string cleanly without reloading
+        const url = new URL(window.location);
+        if (rawQuery) url.searchParams.set('q', rawQuery); else url.searchParams.delete('q');
+        if (selectedCh) url.searchParams.set('ch', selectedCh); else url.searchParams.delete('ch');
+        if (selectedSpeaker !== '__ALL__') url.searchParams.set('sp', selectedSpeaker); else url.searchParams.delete('sp');
+        window.history.replaceState({}, '', url);
+
+        if (!rawQuery && selectedCh === 0 && selectedSpeaker === '__ALL__') {
+          showInitialShowcase();
+          return;
+        }
+
+        const t0 = performance.now();
+        const matches = [];
+        const normQuery = normalizeTR(rawQuery);
+        let regexObj = null;
+        if (useRegex && rawQuery) {
+          try {
+            regexObj = new RegExp(rawQuery, 'i');
+          } catch (e) {
+            resultsSummary.innerHTML = `<span style="color:var(--crimson-bright);">⚠️ Geçersiz Regex İfadesi: ${escapeHtml(e.message)}</span>`;
+            return;
+          }
+        }
+
+        const chList = selectedCh > 0 ? [selectedCh] : [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+        for (const ch of chList) {
+          const data = chapterData.get(ch);
+          if (!data) continue;
+          const speakers = data.speakers;
+          const lines = data.lines;
+
+          // Find speaker indices that match selectedSpeaker
+          let allowedSpeakerSet = null;
+          if (selectedSpeaker === '__NARRATOR__') {
+            allowedSpeakerSet = new Set();
+            speakers.forEach((sp, idx) => {
+              if (!sp[0]) allowedSpeakerSet.add(idx);
+            });
+          } else if (selectedSpeaker !== '__ALL__') {
+            allowedSpeakerSet = new Set();
+            const targetNorm = normalizeTR(selectedSpeaker);
+            speakers.forEach((sp, idx) => {
+              if (sp[0] && normalizeTR(sp[0]).includes(targetNorm)) {
+                allowedSpeakerSet.add(idx);
+              }
+            });
+          }
+
+          for (let i = 0; i < lines.length; i++) {
+            const row = lines[i];
+            // row = [file_idx, line_index, speaker_idx, text_tr, text_en, text_jp, voice_id]
+            if (allowedSpeakerSet && !allowedSpeakerSet.has(row[2])) continue;
+
+            if (rawQuery) {
+              const tr = row[3] || '';
+              const en = row[4] || '';
+              const jp = row[5] || '';
+
+              let hit = false;
+              if (useRegex && regexObj) {
+                if ((searchLang === 'all' || searchLang === 'tr') && regexObj.test(tr)) hit = true;
+                else if ((searchLang === 'all' || searchLang === 'en') && regexObj.test(en)) hit = true;
+                else if ((searchLang === 'all' || searchLang === 'jp') && regexObj.test(jp)) hit = true;
+              } else {
+                if ((searchLang === 'all' || searchLang === 'tr') && normalizeTR(tr).includes(normQuery)) hit = true;
+                else if ((searchLang === 'all' || searchLang === 'en') && normalizeTR(en).includes(normQuery)) hit = true;
+                else if ((searchLang === 'all' || searchLang === 'jp') && jp.toLowerCase().includes(rawQuery.toLowerCase())) hit = true;
+              }
+              if (!hit) continue;
+            }
+
+            matches.push({ ch, rowIdx: i, row });
+          }
+        }
+
+        const elapsedMs = (performance.now() - t0).toFixed(1);
+        currentResults = matches;
+        if (resetPage) currentPage = 1;
+
+        const summaryHtml = `🔎 Toplam <strong>${matches.length.toLocaleString('tr-TR')}</strong> eşleşen replik bulundu <span style="color:var(--text-dim);font-size:0.8rem;">(${elapsedMs} ms)</span>`;
+        resultsSummary.innerHTML = summaryHtml;
+        bottomResultsSummary.innerHTML = summaryHtml;
+
+        renderPage();
+      }
+
+      function renderPage() {
+        const total = currentResults.length;
+        const totalPages = Math.max(1, Math.ceil(total / PAGE_SIZE));
+        if (currentPage > totalPages) currentPage = totalPages;
+
+        const startIdx = (currentPage - 1) * PAGE_SIZE;
+        const slice = currentResults.slice(startIdx, startIdx + PAGE_SIZE);
+        const rawQuery = searchInput.value.trim();
+
+        // Update pagination buttons
+        const pageText = `Sayfa ${currentPage} / ${totalPages.toLocaleString('tr-TR')}`;
+        pageIndicator.textContent = pageText;
+        pageIndicatorBottom.textContent = pageText;
+
+        prevPageBtn.disabled = currentPage <= 1;
+        nextPageBtn.disabled = currentPage >= totalPages;
+        prevPageBtnBottom.disabled = currentPage <= 1;
+        nextPageBtnBottom.disabled = currentPage >= totalPages;
+
+        bottomPagination.style.display = total > PAGE_SIZE ? 'flex' : 'none';
+
+        if (slice.length === 0) {
+          quotesContainer.innerHTML = `
+            <div class="empty-state">
+              <h3>Sonuç Bulunamadı</h3>
+              <p>Aradığınız kriterlere uygun bir replik bulunamadı. Farklı bir anahtar kelime veya bölüm filtresi deneyin.</p>
+            </div>
+          `;
+          return;
+        }
+
+        const htmlParts = [];
+        for (const item of slice) {
+          const data = chapterData.get(item.ch);
+          if (!data) continue;
+          const [fileIdx, lineIndex, spIdx, tr, en, jp, voiceId] = item.row;
+          const fileName = data.files[fileIdx] || '';
+          const [speakerName, speakerColor] = data.speakers[spIdx] || ['', ''];
+          const displaySpeaker = speakerName ? speakerName : 'Anlatıcı';
+          const dotColor = speakerColor || '#9ca3af';
+
+          const langRows = [];
+          if (showLangs.tr && tr) {
+            langRows.push(`
+              <div class="quote-lang-row tr-row">
+                <span class="lang-tag">TR</span>
+                <div class="quote-text-tr">${highlightText(tr, rawQuery)}</div>
+              </div>
+            `);
+          }
+          if (showLangs.en && en) {
+            langRows.push(`
+              <div class="quote-lang-row">
+                <span class="lang-tag">EN</span>
+                <div class="quote-text-en">${highlightText(en, rawQuery)}</div>
+              </div>
+            `);
+          }
+          if (showLangs.jp && jp) {
+            langRows.push(`
+              <div class="quote-lang-row">
+                <span class="lang-tag">JP</span>
+                <div class="quote-text-jp">${highlightText(jp, rawQuery)}</div>
+              </div>
+            `);
+          }
+
+          htmlParts.push(`
+            <article class="quote-card" style="border-left-color: ${escapeHtml(dotColor)};">
+              <div class="quote-header">
+                <div class="quote-meta-left">
+                  <span class="speaker-badge" style="color: ${escapeHtml(dotColor)};">
+                    <span class="speaker-dot" style="background: ${escapeHtml(dotColor)};"></span>
+                    ${escapeHtml(displaySpeaker)}
+                  </span>
+                  <span class="ch-badge">${escapeHtml(CHAPTER_NAMES[item.ch] || ('Bölüm ' + item.ch))}</span>
+                  <span class="file-badge">${escapeHtml(fileName)} #${lineIndex}</span>
+                  ${voiceId ? `<span class="voice-badge">🎙️ ${escapeHtml(voiceId)}</span>` : ''}
+                </div>
+                <div class="quote-actions">
+                  <button type="button" class="action-btn" data-context-ch="${item.ch}" data-context-idx="${item.rowIdx}">
+                    📖 Sahne Bağlamı (±15 Satır)
+                  </button>
+                  <button type="button" class="action-btn" data-copy-ch="${item.ch}" data-copy-idx="${item.rowIdx}">
+                    📋 Kopyala
+                  </button>
+                </div>
+              </div>
+              <div class="quote-lines">
+                ${langRows.join('')}
+              </div>
+            </article>
+          `);
+        }
+
+        quotesContainer.innerHTML = htmlParts.join('');
+      }
+
+      // Open Scene Context Modal (±15 lines in the same script file)
+      function openContextModal(ch, centerRowIdx) {
+        const data = chapterData.get(ch);
+        if (!data) return;
+        const targetRow = data.lines[centerRowIdx];
+        if (!targetRow) return;
+
+        const targetFileIdx = targetRow[0];
+        const fileName = data.files[targetFileIdx];
+
+        modalTitle.textContent = `${CHAPTER_NAMES[ch]} — Sahne Bağlamı`;
+        modalSubtitle.textContent = `Senaryo Dosyası: ${fileName} • Satır #${targetRow[1]}`;
+
+        const start = Math.max(0, centerRowIdx - 15);
+        const end = Math.min(data.lines.length - 1, centerRowIdx + 15);
+
+        const parts = [];
+        for (let i = start; i <= end; i++) {
+          const row = data.lines[i];
+          if (row[0] !== targetFileIdx) continue; // Keep within same script file
+          const [fIdx, lineIndex, spIdx, tr, en, jp, voiceId] = row;
+          const [spName, spColor] = data.speakers[spIdx] || ['', ''];
+          const displaySp = spName || 'Anlatıcı';
+          const color = spColor || '#9ca3af';
+          const isTarget = i === centerRowIdx;
+
+          parts.push(`
+            <div class="context-line ${isTarget ? 'target-line' : ''}" ${isTarget ? 'id="modalTargetLine"' : ''}>
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.35rem;font-size:0.78rem;">
+                <strong style="color:${escapeHtml(color)};">${escapeHtml(displaySp)}</strong>
+                <span style="font-family:'JetBrains Mono',monospace;color:var(--text-dim);">#${lineIndex} ${voiceId ? '• 🎙️ ' + escapeHtml(voiceId) : ''}</span>
+              </div>
+              ${tr ? `<div class="quote-text-tr" style="margin-bottom:0.25rem;">${escapeHtml(tr)}</div>` : ''}
+              ${en ? `<div class="quote-text-en" style="font-size:0.84rem;margin-bottom:0.15rem;">${escapeHtml(en)}</div>` : ''}
+              ${jp ? `<div class="quote-text-jp" style="font-size:0.82rem;">${escapeHtml(jp)}</div>` : ''}
+            </div>
+          `);
+        }
+
+        modalBody.innerHTML = parts.join('');
+        contextModal.classList.add('open');
+
+        setTimeout(() => {
+          const targetEl = document.getElementById('modalTargetLine');
+          if (targetEl) targetEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }, 60);
+      }
+
+      // Event Listeners
+      let debounceTimer = null;
+      searchInput.addEventListener('input', () => {
+        clearTimeout(debounceTimer);
+        debounceTimer = setTimeout(() => runSearch(true), 140);
+      });
+
+      clearSearchBtn.addEventListener('click', () => {
+        searchInput.value = '';
+        searchInput.focus();
+        runSearch(true);
+      });
+
+      chapterSelect.addEventListener('change', () => runSearch(true));
+      speakerSelect.addEventListener('change', () => runSearch(true));
+      searchLangSelect.addEventListener('change', () => runSearch(true));
+
+      document.querySelectorAll('.preset-chip').forEach((chip) => {
+        chip.addEventListener('click', () => {
+          searchInput.value = chip.getAttribute('data-q') || '';
+          runSearch(true);
+        });
+      });
+
+      document.querySelectorAll('[data-show-lang]').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const lang = btn.getAttribute('data-show-lang');
+          // Prevent turning off all languages
+          const activeCount = Object.values(showLangs).filter(Boolean).length;
+          if (showLangs[lang] && activeCount <= 1) return;
+          showLangs[lang] = !showLangs[lang];
+          btn.classList.toggle('active', showLangs[lang]);
+          renderPage();
+        });
+      });
+
+      regexToggle.addEventListener('click', () => {
+        useRegex = !useRegex;
+        regexToggle.classList.toggle('active', useRegex);
+        runSearch(true);
+      });
+
+      function goToPage(delta) {
+        currentPage += delta;
+        renderPage();
+        document.getElementById('alinti-arama').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+      prevPageBtn.addEventListener('click', () => goToPage(-1));
+      nextPageBtn.addEventListener('click', () => goToPage(1));
+      prevPageBtnBottom.addEventListener('click', () => goToPage(-1));
+      nextPageBtnBottom.addEventListener('click', () => goToPage(1));
+
+      quotesContainer.addEventListener('click', (e) => {
+        const ctxBtn = e.target.closest('[data-context-ch]');
+        if (ctxBtn) {
+          const ch = parseInt(ctxBtn.getAttribute('data-context-ch'), 10);
+          const idx = parseInt(ctxBtn.getAttribute('data-context-idx'), 10);
+          openContextModal(ch, idx);
+          return;
+        }
+        const copyBtn = e.target.closest('[data-copy-ch]');
+        if (copyBtn) {
+          const ch = parseInt(copyBtn.getAttribute('data-copy-ch'), 10);
+          const idx = parseInt(copyBtn.getAttribute('data-copy-idx'), 10);
+          const data = chapterData.get(ch);
+          if (!data) return;
+          const [fIdx, lineIdx, spIdx, tr, en, jp] = data.lines[idx];
+          const spName = (data.speakers[spIdx] && data.speakers[spIdx][0]) || 'Anlatıcı';
+          const textToCopy = `[${CHAPTER_NAMES[ch]} • ${data.files[fIdx]} #${lineIdx}] ${spName}:\nTR: ${tr}\nEN: ${en}\nJP: ${jp}\n— https://remilya.dev/Higurashi/`;
+          navigator.clipboard.writeText(textToCopy).then(() => {
+            const orig = copyBtn.textContent;
+            copyBtn.textContent = '✔ Kopyalandı!';
+            setTimeout(() => { copyBtn.textContent = orig; }, 1500);
+          });
+        }
+      });
+
+      closeModalBtn.addEventListener('click', () => contextModal.classList.remove('open'));
+      contextModal.addEventListener('click', (e) => {
+        if (e.target === contextModal) contextModal.classList.remove('open');
+      });
+      window.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && contextModal.classList.contains('open')) {
+          contextModal.classList.remove('open');
+        }
+      });
+
+      initDatabase();
+    })();
+  </script>
+</body>
+</html>
