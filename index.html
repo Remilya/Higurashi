@@ -1042,67 +1042,233 @@
         box-shadow: 0 0 16px rgba(168, 85, 247, 0.55);
       }
 
-      /* ══════════ 0.8px HAIRLINE GRIDS (CHAPTERS, ENGINE, CREDITS) ══════════ */
+      /* ══════════ CLASSIC COVER SHELF (FLANDRE CRYSTAL WINGS + 3D TILT) ══════════ */
 
-      .chapter-matrix {
-        display: grid;
-        grid-template-columns: repeat(5, minmax(0, 1fr));
-        gap: 1px;
-        border: 0.8px solid var(--border-dim);
-        background: var(--border-dim);
+      .shelf-subhead {
+        margin: 0 auto 2rem;
+        text-align: center;
+        color: var(--violet-text);
+        font-family: var(--font-display);
+        font-size: 0.66rem;
+        font-weight: 500;
+        letter-spacing: 2.5px;
+        text-transform: uppercase;
       }
 
-      .chapter-cell {
-        padding: 1.45rem 1.25rem;
-        background: var(--abyss);
+      .translations-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 2.4rem 1.8rem;
+        max-width: 1080px;
+        margin: 0 auto;
+      }
+
+      .translations-grid--editions {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        max-width: 880px;
+        margin-bottom: 3.8rem;
+      }
+
+      .translation-card {
+        position: relative;
         display: flex;
         flex-direction: column;
-        gap: 0.35rem;
-        cursor: pointer;
-        text-align: left;
+        align-items: center;
+        text-align: center;
+        text-decoration: none;
+        background: none;
         border: none;
-        color: inherit;
-        transition: background 0.35s var(--ease-dramatic);
+        padding: 0;
+        cursor: pointer;
+        color: var(--text);
+        perspective: 1000px;
+        transform-style: preserve-3d;
+        transform: translateY(0) perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1);
+        transition: transform 0.5s ease-out, box-shadow 0.5s ease-out, z-index 0s;
+        z-index: 1;
       }
 
-      .chapter-cell:hover {
-        background: var(--surface);
+      .translation-card:hover,
+      .translation-card:focus-visible {
+        transform: translateY(-6px) perspective(1000px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)) scale3d(1.05, 1.05, 1.05);
+        transition: transform 0.1s ease-out, box-shadow 0.1s ease-out;
+        z-index: 10;
       }
 
-      .chapter-cell__idx {
-        font-family: var(--font-mono);
-        font-size: 0.64rem;
-        letter-spacing: 2px;
+      .glossy-overlay {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        z-index: 40;
+        border-radius: 4px;
+        opacity: 0;
+        transition: opacity 0.3s ease-out;
+        mix-blend-mode: overlay;
+        background: radial-gradient(circle at var(--mx, 50%) var(--my, 50%), rgba(255, 255, 255, 0.16), transparent 60%);
+        transform: translateZ(40px);
+      }
+
+      .translation-card:hover .glossy-overlay,
+      .translation-card:focus-visible .glossy-overlay {
+        opacity: 1;
+      }
+
+      .translation-cover {
+        position: relative;
+        width: 100%;
+        max-width: 230px;
+        aspect-ratio: 1 / 1;
+        overflow: hidden;
+        background: var(--void);
+        border: 0.8px solid var(--border-dim);
+        border-radius: 4px;
+        margin-bottom: 1.1rem;
+        box-shadow: 0 16px 36px rgba(0, 0, 0, 0.65);
+        transition: border-color 0.5s var(--ease-dramatic), box-shadow 0.5s var(--ease-dramatic);
+      }
+
+      .translation-cover--tall {
+        max-width: 240px;
+        aspect-ratio: 0.75;
+      }
+
+      /* Flandre actual crystal wings effect on hover */
+      .translation-card::before,
+      .translation-card::after {
+        content: "";
+        position: absolute;
+        top: 36%;
+        width: 14px;
+        height: 14px;
+        background: transparent;
+        transform: rotate(45deg) scale(0.4);
+        opacity: 0;
+        transition: transform 0.6s var(--ease-dramatic), opacity 0.6s var(--ease-dramatic), filter 0.6s var(--ease-dramatic);
+        z-index: -1;
+        border-radius: 2px;
+      }
+
+      /* Left wing crystals (Cyan, Blue, Purple, Magenta) */
+      .translation-card::before {
+        left: 50%;
+        margin-left: -7px;
+        box-shadow:
+          -95px 95px 0 0 #00ffff,
+          -122px 122px 0 0 #0000ff,
+          -150px 150px 0 0 #8a2be2,
+          -178px 178px 0 0 #ff00ff;
+      }
+
+      /* Right wing crystals (Red, Orange, Yellow, Green) */
+      .translation-card::after {
+        right: 50%;
+        margin-right: -7px;
+        box-shadow:
+          95px -95px 0 0 #ff0055,
+          122px -122px 0 0 #ffa500,
+          150px -150px 0 0 #ffff00,
+          178px -178px 0 0 #00ff00;
+      }
+
+      .translation-card:hover::before,
+      .translation-card:focus-visible::before {
+        transform: rotate(45deg) scale(1) translate(-22px, 22px);
+        opacity: 1;
+        filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.4));
+        animation: wingFloatLeft 3s infinite alternate ease-in-out;
+      }
+
+      .translation-card:hover::after,
+      .translation-card:focus-visible::after {
+        transform: rotate(45deg) scale(1) translate(22px, -22px);
+        opacity: 1;
+        filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.4));
+        animation: wingFloatRight 3s infinite alternate ease-in-out;
+      }
+
+      @keyframes wingFloatLeft {
+        0% { transform: rotate(45deg) scale(1) translate(-22px, 22px); filter: drop-shadow(0 0 8px rgba(0, 255, 255, 0.4)); }
+        100% { transform: rotate(45deg) scale(1) translate(-32px, 12px); filter: drop-shadow(0 0 14px rgba(255, 0, 255, 0.6)); }
+      }
+
+      @keyframes wingFloatRight {
+        0% { transform: rotate(45deg) scale(1) translate(22px, -22px); filter: drop-shadow(0 0 8px rgba(255, 90, 0, 0.4)); }
+        100% { transform: rotate(45deg) scale(1) translate(32px, -12px); filter: drop-shadow(0 0 14px rgba(0, 255, 0, 0.6)); }
+      }
+
+      .translation-card:hover .translation-cover,
+      .translation-card:focus-visible .translation-cover {
+        border-color: var(--crystal-rose);
+        box-shadow: 0 0 30px rgba(168, 85, 247, 0.35);
+      }
+
+      .translation-cover img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.6s var(--ease-dramatic), filter 0.6s var(--ease-dramatic);
+      }
+
+      .translation-card:hover .translation-cover img,
+      .translation-card:focus-visible .translation-cover img {
+        transform: scale(1.04);
+        filter: brightness(1.08) saturate(1.12);
+      }
+
+      .translation-card__ep {
+        display: block;
+        margin-bottom: 0.35rem;
         color: var(--scarlet-text);
+        font-family: var(--font-display);
+        font-size: 0.55rem;
+        font-weight: 500;
+        letter-spacing: 3px;
         text-transform: uppercase;
+        text-shadow: 0 0 12px var(--scarlet-dim);
       }
 
-      .chapter-cell__title {
+      .translation-card__title {
         font-family: var(--font-display);
-        font-size: 0.92rem;
+        font-size: 0.85rem;
         font-weight: 600;
-        letter-spacing: 1px;
+        letter-spacing: 1.8px;
         text-transform: uppercase;
         color: var(--text-bright);
+        margin-bottom: 0.25rem;
       }
 
-      .chapter-cell__tr {
-        font-size: 0.86rem;
+      .translation-card__sub {
+        font-family: var(--font-body);
+        font-size: 0.84rem;
         font-style: italic;
         color: var(--text-dim);
-        margin-bottom: 0.5rem;
+        letter-spacing: 0.5px;
       }
 
-      .chapter-cell__stats {
-        margin-top: auto;
-        padding-top: 0.65rem;
-        border-top: 0.8px solid var(--border-dim);
-        display: flex;
-        justify-content: space-between;
+      .translation-card__role {
+        display: inline-block;
+        margin-top: 0.55rem;
+        padding: 0.24rem 0.6rem;
+        border: 0.8px solid var(--border-dim);
+        border-radius: 3px;
         font-family: var(--font-mono);
-        font-size: 0.64rem;
+        font-size: 0.54rem;
+        font-weight: 500;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
         color: var(--violet-text);
-        font-variant-numeric: tabular-nums;
+      }
+
+      .translation-card__action {
+        display: inline-flex;
+        align-items: center;
+        margin-top: 0.45rem;
+        color: var(--violet-text);
+        font-family: var(--font-display);
+        font-size: 0.64rem;
+        font-weight: 600;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
       }
 
       .capability-grid {
@@ -1325,7 +1491,8 @@
         .search-filters-row {
           grid-template-columns: 1fr 1fr;
         }
-        .chapter-matrix {
+        .translations-grid,
+        .translations-grid--editions {
           grid-template-columns: repeat(2, 1fr);
         }
         .wii-shelf,
@@ -1351,9 +1518,13 @@
         .header-actions {
           display: none;
         }
-        .search-filters-row,
-        .chapter-matrix {
+        .search-filters-row {
           grid-template-columns: 1fr;
+        }
+        .translations-grid,
+        .translations-grid--editions {
+          grid-template-columns: 1fr;
+          max-width: 280px;
         }
         .section {
           padding: 3.5rem 1.15rem;
@@ -1575,115 +1746,140 @@
 
         <div class="section-divider" aria-hidden="true">✦</div>
 
-        <!-- Section 3: Chapter 1-10 Hairline Matrix -->
+        <!-- Section 3: Classic Cover Shelf (Flandre Crystal Wings + 3D Tilt) -->
         <section id="bolumler" class="section">
           <div class="section-heading">
-            <p class="eyebrow">ARCHIVE MATRIX / CHAPTERS 01–10</p>
-            <h2>Tamamlanan oyun külliyatı.</h2>
+            <p class="eyebrow">ARCHIVE SHELF / 07TH EXPANSION CLASSIC COVERS</p>
+            <h2>Orijinal kapaklarla tamamlanan külliyat rafı.</h2>
             <p class="section-copy">
-              Bir bölüme tıklayarak yukarıdaki arama motorunu doğrudan ilgili oyun arkına filtreleyebilirsiniz.
+              07th Expansion orijinal CD/kutu kapaklarından herhangi birini seçerek yukarıdaki arama motorunu ilgili oyun arkına filtreleyebilirsiniz.
             </p>
           </div>
 
-          <div class="chapter-matrix">
-            <button type="button" class="chapter-cell" data-filter-ch="1">
-              <span class="chapter-cell__idx">CH.01 // %100</span>
-              <span class="chapter-cell__title">Onikakushi</span>
-              <span class="chapter-cell__tr">İblisler Tarafından Kaçırılma</span>
-              <div class="chapter-cell__stats">
-                <span>39 DOSYA</span>
-                <span>12.347 SATIR</span>
+          <p class="shelf-subhead">TAM SÜRÜMLER &amp; ÖZEL PAKETLER // HOU · REI · HOU+</p>
+          <div class="translations-grid translations-grid--editions">
+            <button type="button" class="translation-card" data-filter-ch="0">
+              <div class="translation-cover translation-cover--tall">
+                <img src="covers/HigurashiHou.webp" alt="Higurashi When They Cry Hou Tam Külliyat Kapağı" width="465" height="640" loading="lazy" />
               </div>
+              <span class="translation-card__ep">TAM KÜLLİYAT // CH.01–10</span>
+              <h3 class="translation-card__title">Higurashi Hou</h3>
+              <span class="translation-card__sub">ひぐらしのなく頃に奉 · Tüm Hikâye Arkları</span>
+              <span class="translation-card__role">139.818 SATIR · 456 DOSYA · %100 TR</span>
+              <span class="translation-card__action">Tüm Külliyatta Ara →</span>
             </button>
 
-            <button type="button" class="chapter-cell" data-filter-ch="2">
-              <span class="chapter-cell__idx">CH.02 // %100</span>
-              <span class="chapter-cell__title">Watanagashi</span>
-              <span class="chapter-cell__tr">Pamuk Sürükleme Festivali</span>
-              <div class="chapter-cell__stats">
-                <span>46 DOSYA</span>
-                <span>16.365 SATIR</span>
+            <button type="button" class="translation-card" data-filter-ch="9">
+              <div class="translation-cover translation-cover--tall">
+                <img src="covers/HigurashiRei.webp" alt="Higurashi When They Cry Rei Kapağı" width="420" height="420" loading="lazy" />
               </div>
+              <span class="translation-card__ep">BÖLÜM 09 // FANDISC</span>
+              <h3 class="translation-card__title">Higurashi Rei</h3>
+              <span class="translation-card__sub">Saikoroshi / Batsukoishi / Hirukowashi</span>
+              <span class="translation-card__role">9.726 SATIR · 42 DOSYA · %100 TR</span>
+              <span class="translation-card__action">Rei Repliklerini Ara →</span>
             </button>
 
-            <button type="button" class="chapter-cell" data-filter-ch="3">
-              <span class="chapter-cell__idx">CH.03 // %100</span>
-              <span class="chapter-cell__title">Tatarigoroshi</span>
-              <span class="chapter-cell__tr">Lanet Kırım Bölümü</span>
-              <div class="chapter-cell__stats">
-                <span>42 DOSYA</span>
-                <span>15.983 SATIR</span>
+            <button type="button" class="translation-card" data-filter-ch="10">
+              <div class="translation-cover translation-cover--tall">
+                <img src="covers/HigurashiHouPlus.webp" alt="Higurashi When They Cry Hou+ Kapağı" width="800" height="1000" loading="lazy" />
               </div>
+              <span class="translation-card__ep">BÖLÜM 10 // BONUS ARKLAR</span>
+              <h3 class="translation-card__title">Higurashi Hou+</h3>
+              <span class="translation-card__sub">Outbreak / Kamikashimashi / Mehagashi / Durak</span>
+              <span class="translation-card__role">7.184 SATIR · 14 DOSYA · %100 TR</span>
+              <span class="translation-card__action">Hou+ Repliklerini Ara →</span>
+            </button>
+          </div>
+
+          <p class="shelf-subhead">SORU VE CEVAP ARKLARI // ORİJİNAL COMIKET CD KAPAKLARI (CH.01–08)</p>
+          <div class="translations-grid">
+            <button type="button" class="translation-card" data-filter-ch="1">
+              <div class="translation-cover">
+                <img src="covers/HigurashiCh1.webp" alt="Bölüm 1 Onikakushi-hen Orijinal Kapak" width="467" height="515" loading="lazy" />
+              </div>
+              <span class="translation-card__ep">CH.01 // SORU ARKI</span>
+              <h3 class="translation-card__title">Onikakushi-hen</h3>
+              <span class="translation-card__sub">İblisler Tarafından Kaçırılma</span>
+              <span class="translation-card__role">12.347 SATIR · 39 DOSYA</span>
+              <span class="translation-card__action">Bölümde Ara →</span>
             </button>
 
-            <button type="button" class="chapter-cell" data-filter-ch="4">
-              <span class="chapter-cell__idx">CH.04 // %100</span>
-              <span class="chapter-cell__title">Himatsubushi</span>
-              <span class="chapter-cell__tr">Zaman Öldürme Bölümü</span>
-              <div class="chapter-cell__stats">
-                <span>27 DOSYA</span>
-                <span>6.862 SATIR</span>
+            <button type="button" class="translation-card" data-filter-ch="2">
+              <div class="translation-cover">
+                <img src="covers/HigurashiCh2.webp" alt="Bölüm 2 Watanagashi-hen Orijinal Kapak" width="480" height="487" loading="lazy" />
               </div>
+              <span class="translation-card__ep">CH.02 // SORU ARKI</span>
+              <h3 class="translation-card__title">Watanagashi-hen</h3>
+              <span class="translation-card__sub">Pamuk Sürükleme Festivali</span>
+              <span class="translation-card__role">16.365 SATIR · 46 DOSYA</span>
+              <span class="translation-card__action">Bölümde Ara →</span>
             </button>
 
-            <button type="button" class="chapter-cell" data-filter-ch="5">
-              <span class="chapter-cell__idx">CH.05 // %100</span>
-              <span class="chapter-cell__title">Meakashi</span>
-              <span class="chapter-cell__tr">Göz Açma Bölümü</span>
-              <div class="chapter-cell__stats">
-                <span>60 DOSYA</span>
-                <span>14.963 SATIR</span>
+            <button type="button" class="translation-card" data-filter-ch="3">
+              <div class="translation-cover">
+                <img src="covers/HigurashiCh3.webp" alt="Bölüm 3 Tatarigoroshi-hen Orijinal Kapak" width="512" height="512" loading="lazy" />
               </div>
+              <span class="translation-card__ep">CH.03 // SORU ARKI</span>
+              <h3 class="translation-card__title">Tatarigoroshi-hen</h3>
+              <span class="translation-card__sub">Lanet Kırım Bölümü</span>
+              <span class="translation-card__role">15.983 SATIR · 42 DOSYA</span>
+              <span class="translation-card__action">Bölümde Ara →</span>
             </button>
 
-            <button type="button" class="chapter-cell" data-filter-ch="6">
-              <span class="chapter-cell__idx">CH.06 // %100</span>
-              <span class="chapter-cell__title">Tsumihoroboshi</span>
-              <span class="chapter-cell__tr">Kefaret Bölümü</span>
-              <div class="chapter-cell__stats">
-                <span>54 DOSYA</span>
-                <span>15.739 SATIR</span>
+            <button type="button" class="translation-card" data-filter-ch="4">
+              <div class="translation-cover">
+                <img src="covers/HigurashiCh4.webp" alt="Bölüm 4 Himatsubushi-hen Orijinal Kapak" width="480" height="480" loading="lazy" />
               </div>
+              <span class="translation-card__ep">CH.04 // SORU ARKI</span>
+              <h3 class="translation-card__title">Himatsubushi-hen</h3>
+              <span class="translation-card__sub">Zaman Öldürme Bölümü</span>
+              <span class="translation-card__role">6.862 SATIR · 27 DOSYA</span>
+              <span class="translation-card__action">Bölümde Ara →</span>
             </button>
 
-            <button type="button" class="chapter-cell" data-filter-ch="7">
-              <span class="chapter-cell__idx">CH.07 // %100</span>
-              <span class="chapter-cell__title">Minagoroshi</span>
-              <span class="chapter-cell__tr">Katliam Bölümü</span>
-              <div class="chapter-cell__stats">
-                <span>51 DOSYA</span>
-                <span>17.748 SATIR</span>
+            <button type="button" class="translation-card" data-filter-ch="5">
+              <div class="translation-cover">
+                <img src="covers/HigurashiCh5.webp" alt="Bölüm 5 Meakashi-hen Orijinal Kapak" width="480" height="480" loading="lazy" />
               </div>
+              <span class="translation-card__ep">CH.05 // CEVAP ARKI</span>
+              <h3 class="translation-card__title">Meakashi-hen</h3>
+              <span class="translation-card__sub">Göz Açma Bölümü</span>
+              <span class="translation-card__role">14.963 SATIR · 60 DOSYA</span>
+              <span class="translation-card__action">Bölümde Ara →</span>
             </button>
 
-            <button type="button" class="chapter-cell" data-filter-ch="8">
-              <span class="chapter-cell__idx">CH.08 // %100</span>
-              <span class="chapter-cell__title">Matsuribayashi</span>
-              <span class="chapter-cell__tr">Festival Eşliği Bölümü</span>
-              <div class="chapter-cell__stats">
-                <span>81 DOSYA</span>
-                <span>22.901 SATIR</span>
+            <button type="button" class="translation-card" data-filter-ch="6">
+              <div class="translation-cover">
+                <img src="covers/HigurashiCh6.webp" alt="Bölüm 6 Tsumihoroboshi-hen Orijinal Kapak" width="600" height="600" loading="lazy" />
               </div>
+              <span class="translation-card__ep">CH.06 // CEVAP ARKI</span>
+              <h3 class="translation-card__title">Tsumihoroboshi-hen</h3>
+              <span class="translation-card__sub">Kefaret Bölümü</span>
+              <span class="translation-card__role">15.739 SATIR · 54 DOSYA</span>
+              <span class="translation-card__action">Bölümde Ara →</span>
             </button>
 
-            <button type="button" class="chapter-cell" data-filter-ch="9">
-              <span class="chapter-cell__idx">CH.09 // %100</span>
-              <span class="chapter-cell__title">Higurashi Rei</span>
-              <span class="chapter-cell__tr">Saikoroshi / Batsukoishi / Hirukowashi</span>
-              <div class="chapter-cell__stats">
-                <span>42 DOSYA</span>
-                <span>9.726 SATIR</span>
+            <button type="button" class="translation-card" data-filter-ch="7">
+              <div class="translation-cover">
+                <img src="covers/HigurashiCh7.webp" alt="Bölüm 7 Minagoroshi-hen Orijinal Kapak" width="480" height="480" loading="lazy" />
               </div>
+              <span class="translation-card__ep">CH.07 // CEVAP ARKI</span>
+              <h3 class="translation-card__title">Minagoroshi-hen</h3>
+              <span class="translation-card__sub">Katliam Bölümü</span>
+              <span class="translation-card__role">17.748 SATIR · 51 DOSYA</span>
+              <span class="translation-card__action">Bölümde Ara →</span>
             </button>
 
-            <button type="button" class="chapter-cell" data-filter-ch="10">
-              <span class="chapter-cell__idx">CH.10 // %100</span>
-              <span class="chapter-cell__title">Higurashi Hou+</span>
-              <span class="chapter-cell__tr">Outbreak / Kamikashimashi / Durak</span>
-              <div class="chapter-cell__stats">
-                <span>14 DOSYA</span>
-                <span>7.184 SATIR</span>
+            <button type="button" class="translation-card" data-filter-ch="8">
+              <div class="translation-cover">
+                <img src="covers/HigurashiCh8.webp" alt="Bölüm 8 Matsuribayashi-hen Orijinal Kapak" width="480" height="480" loading="lazy" />
               </div>
+              <span class="translation-card__ep">CH.08 // FİNAL CEVAP ARKI</span>
+              <h3 class="translation-card__title">Matsuribayashi-hen</h3>
+              <span class="translation-card__sub">Festival Eşliği Bölümü</span>
+              <span class="translation-card__role">22.901 SATIR · 81 DOSYA</span>
+              <span class="translation-card__action">Bölümde Ara →</span>
             </button>
           </div>
         </section>
@@ -2450,6 +2646,53 @@
           });
         }
 
+        // 3D Tilt + Glossy Overlay for Classic Cover Shelf (from local remilya.dev)
+        function init3DCards() {
+          if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+          const cards = document.querySelectorAll(".translation-card");
+          cards.forEach((card) => {
+            if (!card.querySelector(".glossy-overlay")) {
+              const gloss = document.createElement("div");
+              gloss.className = "glossy-overlay";
+              card.appendChild(gloss);
+            }
+            let cachedRect = null;
+            let rafId = 0;
+            card.addEventListener("mouseenter", () => {
+              cachedRect = card.getBoundingClientRect();
+            });
+            card.addEventListener("mousemove", (e) => {
+              const rect = cachedRect || (cachedRect = card.getBoundingClientRect());
+              const mouseX = e.clientX - rect.left;
+              const mouseY = e.clientY - rect.top;
+              if (rafId) cancelAnimationFrame(rafId);
+              rafId = requestAnimationFrame(() => {
+                const xPct = mouseX / rect.width - 0.5;
+                const yPct = mouseY / rect.height - 0.5;
+                const rotateY = xPct * 24;
+                const rotateX = yPct * -24;
+                card.style.setProperty("--rx", `${rotateX}deg`);
+                card.style.setProperty("--ry", `${rotateY}deg`);
+                card.style.setProperty("--mx", `${50 - rotateY * 3}%`);
+                card.style.setProperty("--my", `${50 - rotateX * 3}%`);
+                rafId = 0;
+              });
+            });
+            card.addEventListener("mouseleave", () => {
+              if (rafId) {
+                cancelAnimationFrame(rafId);
+                rafId = 0;
+              }
+              cachedRect = null;
+              card.style.removeProperty("--rx");
+              card.style.removeProperty("--ry");
+              card.style.removeProperty("--mx");
+              card.style.removeProperty("--my");
+            });
+          });
+        }
+
+        init3DCards();
         initDanmakuParticles();
         initCursorTrail();
         initDatabase();
