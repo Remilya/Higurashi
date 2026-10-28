@@ -65,10 +65,23 @@ def _ensure_ui_deps() -> None:
             )
 
 
+def _resolve_bundle_root(repo_root: Path) -> Path:
+    """Return directory containing output-scripts and assets (prefers external folder if present, else PyInstaller _MEIPASS)."""
+    if (repo_root / "output-scripts").exists() and (repo_root / "assets").exists():
+        return repo_root
+    meipass = getattr(sys, "_MEIPASS", None)
+    if meipass:
+        mp = Path(meipass)
+        if (mp / "output-scripts").exists():
+            return mp
+    return repo_root
+
+
 def _load_ui_engine(repo_root: Path) -> Callable[[Path, Path | None], dict[str, int]]:
     """Load the binary-packed Remilya UI Localization Engine from assets/remilya_ui.bin."""
     _ensure_ui_deps()
-    bin_path = repo_root / "assets" / "remilya_ui.bin"
+    bundle_root = _resolve_bundle_root(repo_root)
+    bin_path = bundle_root / "assets" / "remilya_ui.bin"
     if not bin_path.exists():
         raise FileNotFoundError(f"UI paketi bulunamadı: {bin_path}")
     enc = bin_path.read_bytes()
@@ -242,7 +255,8 @@ def run_chapter_install(
             f"    https://github.com/07th-mod/python-patcher"
         )
 
-    out_ch_dir = repo_root / "output-scripts" / f"ch{chapter}"
+    bundle_root = _resolve_bundle_root(repo_root)
+    out_ch_dir = bundle_root / "output-scripts" / f"ch{chapter}"
     if not out_ch_dir.exists():
         log_fn(f"✖ HATA: Yama paket dizini bulunamadı: {out_ch_dir}")
         return False
@@ -254,7 +268,7 @@ def run_chapter_install(
         if sf.is_file() and sf.suffix.lower() in (".txt", ".json"):
             files_to_copy.append((sf, target.update_dir / sf.name, "script"))
 
-    assets_ch_dir = repo_root / "assets" / f"ch{chapter}"
+    assets_ch_dir = bundle_root / "assets" / f"ch{chapter}"
     if assets_ch_dir.exists():
         ep_data_dir = assets_ch_dir / f"HigurashiEp{chapter:02d}_Data"
         if ep_data_dir.exists():
