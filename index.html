@@ -293,6 +293,37 @@
         text-shadow: 0 0 20px var(--accent-dim);
       }
 
+      .locale-switcher {
+        display: inline-flex;
+        gap: 0;
+        margin-left: 0.5rem;
+        border-left: 0.8px solid var(--border-dim);
+        padding-left: 0.5rem;
+      }
+
+      .locale-button {
+        min-width: 40px;
+        min-height: 40px;
+        padding: 0.4rem 0.55rem;
+        background: none;
+        border: none;
+        color: var(--text-dim);
+        cursor: pointer;
+        font-family: var(--font-body);
+        font-size: 0.72rem;
+        font-weight: 600;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        transition: color 0.3s var(--ease-dramatic);
+      }
+
+      .locale-button:hover { color: var(--text-bright); }
+
+      .locale-button.is-active {
+        color: var(--violet-text);
+        text-shadow: 0 0 16px var(--accent-dim);
+      }
+
       .header-actions {
         display: inline-flex;
         align-items: center;
@@ -1542,27 +1573,32 @@
     <div class="site-shell">
       <!-- Header -->
       <header class="site-header">
-        <a class="brand" href="https://remilya.dev/" aria-label="Remilya.dev Ana Sayfa">
+        <a class="brand" href="https://remilya.dev/" aria-label="Remilya.dev">
           <img class="brand-avatar" src="https://github.com/Remilya.png" alt="Remilya" width="42" height="42" />
           <span class="brand-copy">
             <strong>Remilya</strong>
-            <small>Higurashi When They Cry / Türkçe Yerelleştirme &amp; Arşiv</small>
+            <small data-i18n="brandSubtitle">Higurashi When They Cry / Türkçe Yerelleştirme &amp; Arşiv</small>
           </span>
         </a>
 
         <div class="header-controls">
           <nav class="site-nav" aria-label="Primary">
-            <a href="#alinti-arama" class="is-active">Replik Arşivi</a>
-            <a href="#kurulum">Kurulum</a>
-            <a href="#bolumler">Oyunlar</a>
-            <a href="#tesekkurler">Katkılar</a>
+            <a href="#alinti-arama" class="is-active" data-i18n="navArchive">Replik Arşivi</a>
+            <a href="#kurulum" data-i18n="navInstall">Kurulum</a>
+            <a href="#bolumler" data-i18n="navGames">Oyunlar</a>
+            <a href="#tesekkurler" data-i18n="navCredits">Katkılar</a>
           </nav>
+
+          <div class="locale-switcher" id="localeSwitcher" aria-label="Language switcher">
+            <button class="locale-button is-active" type="button" data-locale="tr">TR</button>
+            <button class="locale-button" type="button" data-locale="en">EN</button>
+          </div>
 
           <div class="header-actions">
             <a class="cyber-button" href="https://remilya.dev/">Remilya.dev ↗</a>
             <a class="cyber-button cyber-button--primary" href="https://github.com/Remilya/Higurashi/releases/tag/v1.0" target="_blank" rel="noreferrer">
               <i class="bi bi-download" aria-hidden="true"></i>
-              <span>Türkçe Yama v1.0</span>
+              <span data-i18n="navReleaseBtn">Türkçe Yama v1.0</span>
             </a>
           </div>
         </div>
@@ -1572,9 +1608,9 @@
         <!-- Section 1: Quote Search Engine (Terminal Tome) -->
         <section id="alinti-arama" class="section section--top">
           <div class="section-heading">
-            <p class="eyebrow">HINAMIZAWA ARCHIVE / REPLİK ARAMA MOTORU</p>
-            <h1>Higurashi When They Cry — Türkçe Yama &amp; Replik Arşivi.</h1>
-            <p class="section-copy">
+            <p class="eyebrow" data-i18n="heroEyebrow">HINAMIZAWA ARCHIVE / REPLİK ARAMA MOTORU</p>
+            <h1 data-i18n="heroTitle">Higurashi When They Cry — Türkçe Yama &amp; Replik Arşivi.</h1>
+            <p class="section-copy" data-i18n="heroCopy">
               Ana hikâye arkları, Rei ve Hou+ bölümlerinin tamamında Türkçe, İngilizce ve Japonca anlık arama yapın; karakter repliklerini ve sahne akışını inceleyin.
             </p>
           </div>
@@ -1607,65 +1643,65 @@
                   placeholder="Türkçe, İngilizce veya Japonca bir replik arayın... (Örn: Yalan!, Nipah, Oyashiro-sama, Hinamizawa Sendromu)"
                   autocomplete="off"
                 />
-                <button type="button" id="clearSearchBtn" class="search-clear">TEMİZLE [ESC]</button>
+                <button type="button" id="clearSearchBtn" class="search-clear" data-i18n="clearBtn">TEMİZLE [ESC]</button>
               </div>
 
               <div class="search-filters-row">
                 <div class="filter-cell">
-                  <label for="chapterSelect">01 / Bölüm</label>
+                  <label for="chapterSelect" data-i18n="filterChLabel">01 / Bölüm</label>
                   <select id="chapterSelect" class="filter-select">
-                    <option value="0">Tüm Bölümler (Hou &amp; Hou+)</option>
-                    <option value="1">Bölüm 1 — Onikakushi</option>
-                    <option value="2">Bölüm 2 — Watanagashi</option>
-                    <option value="3">Bölüm 3 — Tatarigoroshi</option>
-                    <option value="4">Bölüm 4 — Himatsubushi</option>
-                    <option value="5">Bölüm 5 — Meakashi</option>
-                    <option value="6">Bölüm 6 — Tsumihoroboshi</option>
-                    <option value="7">Bölüm 7 — Minagoroshi</option>
-                    <option value="8">Bölüm 8 — Matsuribayashi</option>
-                    <option value="9">Bölüm 9 — Rei</option>
-                    <option value="10">Bölüm 10 — Hou+</option>
+                    <option value="0" data-i18n="chOpt0">Tüm Bölümler (Hou &amp; Hou+)</option>
+                    <option value="1" data-i18n="chOpt1">Bölüm 1 — Onikakushi</option>
+                    <option value="2" data-i18n="chOpt2">Bölüm 2 — Watanagashi</option>
+                    <option value="3" data-i18n="chOpt3">Bölüm 3 — Tatarigoroshi</option>
+                    <option value="4" data-i18n="chOpt4">Bölüm 4 — Himatsubushi</option>
+                    <option value="5" data-i18n="chOpt5">Bölüm 5 — Meakashi</option>
+                    <option value="6" data-i18n="chOpt6">Bölüm 6 — Tsumihoroboshi</option>
+                    <option value="7" data-i18n="chOpt7">Bölüm 7 — Minagoroshi</option>
+                    <option value="8" data-i18n="chOpt8">Bölüm 8 — Matsuribayashi</option>
+                    <option value="9" data-i18n="chOpt9">Bölüm 9 — Rei</option>
+                    <option value="10" data-i18n="chOpt10">Bölüm 10 — Hou+</option>
                   </select>
                 </div>
 
                 <div class="filter-cell">
-                  <label for="speakerSelect">02 / Karakter</label>
+                  <label for="speakerSelect" data-i18n="filterSpLabel">02 / Karakter</label>
                   <select id="speakerSelect" class="filter-select">
-                    <option value="__ALL__">Tüm Karakterler &amp; Anlatıcı</option>
-                    <option value="__NARRATOR__">Anlatıcı (İç Monolog)</option>
+                    <option value="__ALL__" data-i18n="spOptAll">Tüm Karakterler &amp; Anlatıcı</option>
+                    <option value="__NARRATOR__" data-i18n="spOptNarrator">Anlatıcı (İç Monolog)</option>
                   </select>
                 </div>
 
                 <div class="filter-cell">
-                  <label for="searchLangSelect">03 / Arama Dili</label>
+                  <label for="searchLangSelect" data-i18n="filterLangLabel">03 / Arama Dili</label>
                   <select id="searchLangSelect" class="filter-select">
-                    <option value="all">TR + EN + JP (Üç Dilde)</option>
-                    <option value="tr">Sadece Türkçe (TR)</option>
-                    <option value="en">Sadece İngilizce (EN)</option>
-                    <option value="jp">Sadece Japonca (JP)</option>
+                    <option value="all" data-i18n="langOptAll">TR + EN + JP (Üç Dilde)</option>
+                    <option value="tr" data-i18n="langOptTr">Sadece Türkçe (TR)</option>
+                    <option value="en" data-i18n="langOptEn">Sadece İngilizce (EN)</option>
+                    <option value="jp" data-i18n="langOptJp">Sadece Japonca (JP)</option>
                   </select>
                 </div>
 
                 <div class="filter-cell">
-                  <label>04 / Görünüm &amp; Mod</label>
+                  <label data-i18n="filterModeLabel">04 / Görünüm &amp; Mod</label>
                   <div class="mode-toggles">
                     <button type="button" class="mode-btn is-active" data-show-lang="tr">TR</button>
                     <button type="button" class="mode-btn is-active" data-show-lang="en">EN</button>
                     <button type="button" class="mode-btn is-active" data-show-lang="jp">JP</button>
-                    <button type="button" id="regexToggle" class="mode-btn" title="Regex Düzenli İfade Modu">REGEX</button>
+                    <button type="button" id="regexToggle" class="mode-btn" title="Regex">REGEX</button>
                   </div>
                 </div>
               </div>
 
               <div class="preset-bar">
-                <span class="preset-bar__label">Örnek Aramalar //</span>
-                <button type="button" class="tag" data-q="Yalan!">Yalan! (Usoda)</button>
+                <span class="preset-bar__label" data-i18n="presetLabel">Örnek Aramalar //</span>
+                <button type="button" class="tag" data-q="Yalan!" data-i18n="presetUsoda">Yalan! (Usoda)</button>
                 <button type="button" class="tag" data-q="Nipah">Nipah~☆</button>
                 <button type="button" class="tag" data-q="Auau">Auau~</button>
                 <button type="button" class="tag" data-q="Oyashiro">Oyashiro-sama</button>
-                <button type="button" class="tag" data-q="Hinamizawa Sendromu">Hinamizawa Sendromu</button>
+                <button type="button" class="tag" data-q="Hinamizawa" data-i18n="presetSyndrome">Hinamizawa Sendromu</button>
                 <button type="button" class="tag" data-q="Watanagashi">Watanagashi</button>
-                <button type="button" class="tag" data-q="götürmek istiyorum">Eve götürmek istiyorum</button>
+                <button type="button" class="tag" data-q="götürmek istiyorum" id="presetTakeHome" data-i18n="presetTakeHome">Eve götürmek istiyorum</button>
               </div>
             </div>
 
@@ -1673,15 +1709,15 @@
             <div class="results-bar">
               <div id="resultsSummary">SEÇKİN REPLİKLER</div>
               <div class="pager">
-                <button type="button" id="prevPageBtn" class="pager-btn" disabled>← ÖNCEKİ</button>
+                <button type="button" id="prevPageBtn" class="pager-btn" disabled data-i18n="prevBtn">← ÖNCEKİ</button>
                 <span id="pageIndicator" style="padding: 0 0.5rem;">01 / 01</span>
-                <button type="button" id="nextPageBtn" class="pager-btn" disabled>SONRAKİ →</button>
+                <button type="button" id="nextPageBtn" class="pager-btn" disabled data-i18n="nextBtn">SONRAKİ →</button>
               </div>
             </div>
 
             <!-- Results List -->
             <div id="quotesContainer" class="terminal-shell__body">
-              <div class="empty-state">
+              <div class="empty-state" data-i18n="loadingArchive">
                 Hinamizawa replik arşivi yükleniyor... Arama yapmak için yukarıdaki satıra bir ifade girin.
               </div>
             </div>
@@ -1690,9 +1726,9 @@
             <div id="bottomPagination" class="results-bar" style="display: none; border-bottom: none; border-top: 0.8px solid var(--border-dim);">
               <div id="bottomResultsSummary"></div>
               <div class="pager">
-                <button type="button" id="prevPageBtnBottom" class="pager-btn" disabled>← ÖNCEKİ</button>
+                <button type="button" id="prevPageBtnBottom" class="pager-btn" disabled data-i18n="prevBtn">← ÖNCEKİ</button>
                 <span id="pageIndicatorBottom" style="padding: 0 0.5rem;">01 / 01</span>
-                <button type="button" id="nextPageBtnBottom" class="pager-btn" disabled>SONRAKİ →</button>
+                <button type="button" id="nextPageBtnBottom" class="pager-btn" disabled data-i18n="nextBtn">SONRAKİ →</button>
               </div>
             </div>
           </div>
@@ -1703,9 +1739,9 @@
         <!-- Section 2: Installation (Wii-Channel Cartridges) -->
         <section id="kurulum" class="section">
           <div class="section-heading">
-            <p class="eyebrow">INSTALLATION / 2-STEP SETUP</p>
-            <h2>İki adımda Türkçe yama kurulumu.</h2>
-            <p class="section-copy">
+            <p class="eyebrow" data-i18n="installEyebrow">INSTALLATION / 2-STEP SETUP</p>
+            <h2 data-i18n="installTitle">İki adımda Türkçe yama kurulumu.</h2>
+            <p class="section-copy" data-i18n="installCopy">
               Türkçe yerelleştirme paketi 07th-Mod altyapısı üzerine çalışır. Önce 07th-Mod yaması kurulmalı, ardından Türkçe Yama Kurulum Sihirbazı çalıştırılmalıdır.
             </p>
           </div>
@@ -1713,29 +1749,29 @@
           <div class="wii-shelf">
             <a class="wii-card" href="https://github.com/07th-mod/python-patcher" target="_blank" rel="noreferrer">
               <div class="wii-card__screen">
-                <img src="higurashi-cover.webp" alt="07th-Mod Python Patcher ön koşul kurulumu" width="460" height="215" loading="lazy" />
-                <span class="wii-card__badge">ADIM 01 · ÖN KOŞUL (07TH-MOD)</span>
+                <img src="higurashi-cover.webp" alt="07th-Mod Python Patcher" width="460" height="215" loading="lazy" />
+                <span class="wii-card__badge" data-i18n="step1Badge">ADIM 01 · ÖN KOŞUL (07TH-MOD)</span>
               </div>
               <div class="wii-card__body">
-                <h3 class="wii-card__title">07th-Mod Temel Kurulumu (English)</h3>
-                <p class="wii-card__desc">
+                <h3 class="wii-card__title" data-i18n="step1Title">07th-Mod Temel Kurulumu (English)</h3>
+                <p class="wii-card__desc" data-i18n="step1Desc">
                   Konsol grafikleri, Japonca seslendirme (Voice), dudak senkronizasyonu ve gelişmiş menü altyapısı için oyunlarınıza resmi 07th-Mod Python Patcher ile İngilizce yamayı kurun.
                 </p>
-                <span class="wii-card__action">07th-Mod Patcher İndir →</span>
+                <span class="wii-card__action" data-i18n="step1Action">07th-Mod Patcher İndir →</span>
               </div>
             </a>
 
             <a class="wii-card" href="https://github.com/Remilya/Higurashi/releases/tag/v1.0" target="_blank" rel="noreferrer">
               <div class="wii-card__screen">
                 <img src="kurulum_sihirbazi.png" alt="Higurashi Türkçe Yama Kurulum Sihirbazı" width="920" height="518" loading="lazy" />
-                <span class="wii-card__badge">ADIM 02 · TÜRKÇE YAMA SİHİRBAZI V1.0</span>
+                <span class="wii-card__badge" data-i18n="step2Badge">ADIM 02 · TÜRKÇE YAMA SİHİRBAZI V1.0</span>
               </div>
               <div class="wii-card__body">
-                <h3 class="wii-card__title">Higurashi Türkçe Yama v1.0</h3>
-                <p class="wii-card__desc">
+                <h3 class="wii-card__title" data-i18n="step2Title">Higurashi Türkçe Yama v1.0</h3>
+                <p class="wii-card__desc" data-i18n="step2Desc">
                   İndirdiğiniz arşivdeki kurulum.bat dosyasını çalıştırın. Sihirbaz bilgisayarınızdaki oyunları otomatik tespit ederek hikâyeyi, arayüzleri ve görselleri Türkçeleştirir.
                 </p>
-                <span class="wii-card__action">Türkçe Yamayı İndir (v1.0) →</span>
+                <span class="wii-card__action" data-i18n="step2Action">Türkçe Yamayı İndir (v1.0) →</span>
               </div>
             </a>
           </div>
@@ -1746,137 +1782,137 @@
         <!-- Section 3: Classic Cover Shelf (Flandre Crystal Wings + 3D Tilt) -->
         <section id="bolumler" class="section">
           <div class="section-heading">
-            <p class="eyebrow">ARCHIVE SHELF / 07TH EXPANSION CLASSIC COVERS</p>
-            <h2>Orijinal kapaklarla tamamlanan külliyat rafı.</h2>
-            <p class="section-copy">
+            <p class="eyebrow" data-i18n="shelfEyebrow">ARCHIVE SHELF / 07TH EXPANSION CLASSIC COVERS</p>
+            <h2 data-i18n="shelfTitle">Orijinal kapaklarla tamamlanan külliyat rafı.</h2>
+            <p class="section-copy" data-i18n="shelfCopy">
               07th Expansion orijinal kapaklarından herhangi birini seçerek yukarıdaki arama motorunu ilgili oyun arkına filtreleyebilirsiniz.
             </p>
           </div>
 
-          <p class="shelf-subhead">TAM SÜRÜMLER &amp; ÖZEL PAKETLER // HOU · REI · HOU+</p>
+          <p class="shelf-subhead" data-i18n="shelfSubEditions">TAM SÜRÜMLER &amp; ÖZEL PAKETLER // HOU · REI · HOU+</p>
           <div class="translations-grid translations-grid--editions">
             <button type="button" class="translation-card" data-filter-ch="0">
               <div class="translation-cover translation-cover--tall">
-                <img src="covers/HigurashiHou.webp" alt="Higurashi When They Cry Hou Tam Külliyat Kapağı" width="465" height="640" loading="lazy" />
+                <img src="covers/HigurashiHou.webp" alt="Higurashi When They Cry Hou" width="465" height="640" loading="lazy" />
               </div>
-              <span class="translation-card__ep">TAM SÜRÜM // HOU</span>
+              <span class="translation-card__ep" data-i18n="epHou">TAM SÜRÜM // HOU</span>
               <h3 class="translation-card__title">Higurashi Hou</h3>
-              <span class="translation-card__sub">ひぐらしのなく頃に奉 · Tüm Hikâye Arkları</span>
-              <span class="translation-card__role">TÜRKÇE YERELLEŞTİRME</span>
-              <span class="translation-card__action">Tüm Külliyatta Ara →</span>
+              <span class="translation-card__sub" data-i18n="subHou">ひぐらしのなく頃に奉 · Tüm Hikâye Arkları</span>
+              <span class="translation-card__role" data-i18n="roleLocalized">TÜRKÇE YERELLEŞTİRME</span>
+              <span class="translation-card__action" data-i18n="actSearchAll">Tüm Külliyatta Ara →</span>
             </button>
 
             <button type="button" class="translation-card" data-filter-ch="9">
               <div class="translation-cover translation-cover--tall">
-                <img src="covers/HigurashiRei.webp" alt="Higurashi When They Cry Rei Kapağı" width="420" height="420" loading="lazy" />
+                <img src="covers/HigurashiRei.webp" alt="Higurashi When They Cry Rei" width="420" height="420" loading="lazy" />
               </div>
-              <span class="translation-card__ep">BÖLÜM 09 // FANDISC</span>
+              <span class="translation-card__ep" data-i18n="epRei">BÖLÜM 09 // FANDISC</span>
               <h3 class="translation-card__title">Higurashi Rei</h3>
               <span class="translation-card__sub">Saikoroshi / Batsukoishi / Hirukowashi</span>
-              <span class="translation-card__role">TÜRKÇE YERELLEŞTİRME</span>
-              <span class="translation-card__action">Rei Repliklerini Ara →</span>
+              <span class="translation-card__role" data-i18n="roleLocalized">TÜRKÇE YERELLEŞTİRME</span>
+              <span class="translation-card__action" data-i18n="actSearchCh">Bölümde Ara →</span>
             </button>
 
             <button type="button" class="translation-card" data-filter-ch="10">
               <div class="translation-cover translation-cover--tall">
-                <img src="covers/HigurashiHouPlus.webp" alt="Higurashi When They Cry Hou+ Kapağı" width="800" height="1000" loading="lazy" />
+                <img src="covers/HigurashiHouPlus.webp" alt="Higurashi When They Cry Hou+" width="800" height="1000" loading="lazy" />
               </div>
-              <span class="translation-card__ep">BÖLÜM 10 // BONUS ARKLAR</span>
+              <span class="translation-card__ep" data-i18n="epHouPlus">BÖLÜM 10 // BONUS ARKLAR</span>
               <h3 class="translation-card__title">Higurashi Hou+</h3>
-              <span class="translation-card__sub">Outbreak / Kamikashimashi / Mehagashi / Durak</span>
-              <span class="translation-card__role">TÜRKÇE YERELLEŞTİRME</span>
-              <span class="translation-card__action">Hou+ Repliklerini Ara →</span>
+              <span class="translation-card__sub">Outbreak / Kamikashimashi / Mehagashi / Bus Stop</span>
+              <span class="translation-card__role" data-i18n="roleLocalized">TÜRKÇE YERELLEŞTİRME</span>
+              <span class="translation-card__action" data-i18n="actSearchCh">Bölümde Ara →</span>
             </button>
           </div>
 
-          <p class="shelf-subhead">SORU VE CEVAP ARKLARI // ORİJİNAL COMIKET CD KAPAKLARI (CH.01–08)</p>
+          <p class="shelf-subhead" data-i18n="shelfSubArcs">SORU VE CEVAP ARKLARI // ORİJİNAL COMIKET CD KAPAKLARI (CH.01–08)</p>
           <div class="translations-grid">
             <button type="button" class="translation-card" data-filter-ch="1">
               <div class="translation-cover">
-                <img src="covers/HigurashiCh1.webp" alt="Bölüm 1 Onikakushi-hen Orijinal Kapak" width="467" height="515" loading="lazy" />
+                <img src="covers/HigurashiCh1.webp" alt="Onikakushi-hen" width="467" height="515" loading="lazy" />
               </div>
-              <span class="translation-card__ep">BÖLÜM 01 // SORU ARKI</span>
+              <span class="translation-card__ep" data-i18n="epCh1">BÖLÜM 01 // SORU ARKI</span>
               <h3 class="translation-card__title">Onikakushi-hen</h3>
-              <span class="translation-card__sub">İblisler Tarafından Kaçırılma</span>
-              <span class="translation-card__role">TÜRKÇE YERELLEŞTİRME</span>
-              <span class="translation-card__action">Bölümde Ara →</span>
+              <span class="translation-card__sub" data-i18n="subCh1">İblisler Tarafından Kaçırılma</span>
+              <span class="translation-card__role" data-i18n="roleLocalized">TÜRKÇE YERELLEŞTİRME</span>
+              <span class="translation-card__action" data-i18n="actSearchCh">Bölümde Ara →</span>
             </button>
 
             <button type="button" class="translation-card" data-filter-ch="2">
               <div class="translation-cover">
-                <img src="covers/HigurashiCh2.webp" alt="Bölüm 2 Watanagashi-hen Orijinal Kapak" width="480" height="487" loading="lazy" />
+                <img src="covers/HigurashiCh2.webp" alt="Watanagashi-hen" width="480" height="487" loading="lazy" />
               </div>
-              <span class="translation-card__ep">BÖLÜM 02 // SORU ARKI</span>
+              <span class="translation-card__ep" data-i18n="epCh2">BÖLÜM 02 // SORU ARKI</span>
               <h3 class="translation-card__title">Watanagashi-hen</h3>
-              <span class="translation-card__sub">Pamuk Sürükleme Festivali</span>
-              <span class="translation-card__role">TÜRKÇE YERELLEŞTİRME</span>
-              <span class="translation-card__action">Bölümde Ara →</span>
+              <span class="translation-card__sub" data-i18n="subCh2">Pamuk Sürükleme Festivali</span>
+              <span class="translation-card__role" data-i18n="roleLocalized">TÜRKÇE YERELLEŞTİRME</span>
+              <span class="translation-card__action" data-i18n="actSearchCh">Bölümde Ara →</span>
             </button>
 
             <button type="button" class="translation-card" data-filter-ch="3">
               <div class="translation-cover">
-                <img src="covers/HigurashiCh3.webp" alt="Bölüm 3 Tatarigoroshi-hen Orijinal Kapak" width="512" height="512" loading="lazy" />
+                <img src="covers/HigurashiCh3.webp" alt="Tatarigoroshi-hen" width="512" height="512" loading="lazy" />
               </div>
-              <span class="translation-card__ep">BÖLÜM 03 // SORU ARKI</span>
+              <span class="translation-card__ep" data-i18n="epCh3">BÖLÜM 03 // SORU ARKI</span>
               <h3 class="translation-card__title">Tatarigoroshi-hen</h3>
-              <span class="translation-card__sub">Lanet Kırım Bölümü</span>
-              <span class="translation-card__role">TÜRKÇE YERELLEŞTİRME</span>
-              <span class="translation-card__action">Bölümde Ara →</span>
+              <span class="translation-card__sub" data-i18n="subCh3">Lanet Kırım Bölümü</span>
+              <span class="translation-card__role" data-i18n="roleLocalized">TÜRKÇE YERELLEŞTİRME</span>
+              <span class="translation-card__action" data-i18n="actSearchCh">Bölümde Ara →</span>
             </button>
 
             <button type="button" class="translation-card" data-filter-ch="4">
               <div class="translation-cover">
-                <img src="covers/HigurashiCh4.webp" alt="Bölüm 4 Himatsubushi-hen Orijinal Kapak" width="480" height="480" loading="lazy" />
+                <img src="covers/HigurashiCh4.webp" alt="Himatsubushi-hen" width="480" height="480" loading="lazy" />
               </div>
-              <span class="translation-card__ep">BÖLÜM 04 // SORU ARKI</span>
+              <span class="translation-card__ep" data-i18n="epCh4">BÖLÜM 04 // SORU ARKI</span>
               <h3 class="translation-card__title">Himatsubushi-hen</h3>
-              <span class="translation-card__sub">Zaman Öldürme Bölümü</span>
-              <span class="translation-card__role">TÜRKÇE YERELLEŞTİRME</span>
-              <span class="translation-card__action">Bölümde Ara →</span>
+              <span class="translation-card__sub" data-i18n="subCh4">Zaman Öldürme Bölümü</span>
+              <span class="translation-card__role" data-i18n="roleLocalized">TÜRKÇE YERELLEŞTİRME</span>
+              <span class="translation-card__action" data-i18n="actSearchCh">Bölümde Ara →</span>
             </button>
 
             <button type="button" class="translation-card" data-filter-ch="5">
               <div class="translation-cover">
-                <img src="covers/HigurashiCh5.webp" alt="Bölüm 5 Meakashi-hen Orijinal Kapak" width="480" height="480" loading="lazy" />
+                <img src="covers/HigurashiCh5.webp" alt="Meakashi-hen" width="480" height="480" loading="lazy" />
               </div>
-              <span class="translation-card__ep">BÖLÜM 05 // CEVAP ARKI</span>
+              <span class="translation-card__ep" data-i18n="epCh5">BÖLÜM 05 // CEVAP ARKI</span>
               <h3 class="translation-card__title">Meakashi-hen</h3>
-              <span class="translation-card__sub">Göz Açma Bölümü</span>
-              <span class="translation-card__role">TÜRKÇE YERELLEŞTİRME</span>
-              <span class="translation-card__action">Bölümde Ara →</span>
+              <span class="translation-card__sub" data-i18n="subCh5">Göz Açma Bölümü</span>
+              <span class="translation-card__role" data-i18n="roleLocalized">TÜRKÇE YERELLEŞTİRME</span>
+              <span class="translation-card__action" data-i18n="actSearchCh">Bölümde Ara →</span>
             </button>
 
             <button type="button" class="translation-card" data-filter-ch="6">
               <div class="translation-cover">
-                <img src="covers/HigurashiCh6.webp" alt="Bölüm 6 Tsumihoroboshi-hen Orijinal Kapak" width="600" height="600" loading="lazy" />
+                <img src="covers/HigurashiCh6.webp" alt="Tsumihoroboshi-hen" width="600" height="600" loading="lazy" />
               </div>
-              <span class="translation-card__ep">BÖLÜM 06 // CEVAP ARKI</span>
+              <span class="translation-card__ep" data-i18n="epCh6">BÖLÜM 06 // CEVAP ARKI</span>
               <h3 class="translation-card__title">Tsumihoroboshi-hen</h3>
-              <span class="translation-card__sub">Kefaret Bölümü</span>
-              <span class="translation-card__role">TÜRKÇE YERELLEŞTİRME</span>
-              <span class="translation-card__action">Bölümde Ara →</span>
+              <span class="translation-card__sub" data-i18n="subCh6">Kefaret Bölümü</span>
+              <span class="translation-card__role" data-i18n="roleLocalized">TÜRKÇE YERELLEŞTİRME</span>
+              <span class="translation-card__action" data-i18n="actSearchCh">Bölümde Ara →</span>
             </button>
 
             <button type="button" class="translation-card" data-filter-ch="7">
               <div class="translation-cover">
-                <img src="covers/HigurashiCh7.webp" alt="Bölüm 7 Minagoroshi-hen Orijinal Kapak" width="480" height="480" loading="lazy" />
+                <img src="covers/HigurashiCh7.webp" alt="Minagoroshi-hen" width="480" height="480" loading="lazy" />
               </div>
-              <span class="translation-card__ep">BÖLÜM 07 // CEVAP ARKI</span>
+              <span class="translation-card__ep" data-i18n="epCh7">BÖLÜM 07 // CEVAP ARKI</span>
               <h3 class="translation-card__title">Minagoroshi-hen</h3>
-              <span class="translation-card__sub">Katliam Bölümü</span>
-              <span class="translation-card__role">TÜRKÇE YERELLEŞTİRME</span>
-              <span class="translation-card__action">Bölümde Ara →</span>
+              <span class="translation-card__sub" data-i18n="subCh7">Katliam Bölümü</span>
+              <span class="translation-card__role" data-i18n="roleLocalized">TÜRKÇE YERELLEŞTİRME</span>
+              <span class="translation-card__action" data-i18n="actSearchCh">Bölümde Ara →</span>
             </button>
 
             <button type="button" class="translation-card" data-filter-ch="8">
               <div class="translation-cover">
-                <img src="covers/HigurashiCh8.webp" alt="Bölüm 8 Matsuribayashi-hen Orijinal Kapak" width="480" height="480" loading="lazy" />
+                <img src="covers/HigurashiCh8.webp" alt="Matsuribayashi-hen" width="480" height="480" loading="lazy" />
               </div>
-              <span class="translation-card__ep">BÖLÜM 08 // FİNAL CEVAP ARKI</span>
+              <span class="translation-card__ep" data-i18n="epCh8">BÖLÜM 08 // FİNAL CEVAP ARKI</span>
               <h3 class="translation-card__title">Matsuribayashi-hen</h3>
-              <span class="translation-card__sub">Festival Eşliği Bölümü</span>
-              <span class="translation-card__role">TÜRKÇE YERELLEŞTİRME</span>
-              <span class="translation-card__action">Bölümde Ara →</span>
+              <span class="translation-card__sub" data-i18n="subCh8">Festival Eşliği Bölümü</span>
+              <span class="translation-card__role" data-i18n="roleLocalized">TÜRKÇE YERELLEŞTİRME</span>
+              <span class="translation-card__action" data-i18n="actSearchCh">Bölümde Ara →</span>
             </button>
           </div>
         </section>
@@ -1886,18 +1922,18 @@
         <!-- Section 4: Credits & Acknowledgments -->
         <section id="tesekkurler" class="section">
           <div class="section-heading">
-            <p class="eyebrow">CREDITS / ACKNOWLEDGMENTS</p>
-            <h2>Emeği geçenler ve açık kaynak katkıları.</h2>
+            <p class="eyebrow" data-i18n="creditsEyebrow">CREDITS / ACKNOWLEDGMENTS</p>
+            <h2 data-i18n="creditsTitle">Emeği geçenler ve açık kaynak katkıları.</h2>
           </div>
 
           <div class="support-grid">
             <article class="support-card">
-              <p class="support-card__meta">TÜRKÇE ÇEVİRİ &amp; YERELLEŞTİRME</p>
+              <p class="support-card__meta" data-i18n="credRemilyaMeta">TÜRKÇE ÇEVİRİ &amp; YERELLEŞTİRME</p>
               <div class="case-mark">
                 <span class="case-glyph">RML</span>
                 <h3>Remilya</h3>
               </div>
-              <p>
+              <p data-i18n="credRemilyaDesc">
                 Higurashi When They Cry Hou ve Hou+ Türkçe çevirisi, oyun içi arayüz ve görsel yerelleştirmesi, kurulum sihirbazı ve replik arşivi.
               </p>
               <div class="support-card__links">
@@ -1907,12 +1943,12 @@
             </article>
 
             <article class="support-card">
-              <p class="support-card__meta">ÖNCÜ TÜRKÇE ÇEVİRİ KATKILARI</p>
+              <p class="support-card__meta" data-i18n="credWlMeta">ÖNCÜ TÜRKÇE ÇEVİRİ KATKILARI</p>
               <div class="case-mark">
                 <span class="case-glyph">WL</span>
                 <h3>Witch Love</h3>
               </div>
-              <p>
+              <p data-i18n="credWlDesc">
                 Witch-Love/higurashi-scripting-tr projesindeki erken dönem Türkçe çeviri çalışmaları ve seriye verdikleri değerli emekler için teşekkürler.
               </p>
               <div class="support-card__links">
@@ -1921,12 +1957,12 @@
             </article>
 
             <article class="support-card">
-              <p class="support-card__meta">MOD ALTYAPISI &amp; KURULUM ARACI</p>
+              <p class="support-card__meta" data-i18n="cred07Meta">MOD ALTYAPISI &amp; KURULUM ARACI</p>
               <div class="case-mark">
                 <span class="case-glyph">07M</span>
                 <h3>07th-Mod</h3>
               </div>
-              <p>
+              <p data-i18n="cred07Desc">
                 Konsol grafikleri, Japonca seslendirme entegrasyonu, gelişmiş oyun motoru özellikleri ve açık kaynaklı python-patcher altyapısı için teşekkürler.
               </p>
               <div class="support-card__links">
@@ -1936,12 +1972,12 @@
             </article>
 
             <article class="support-card">
-              <p class="support-card__meta">REPLİK ARAMA MOTORU İLHAMI</p>
+              <p class="support-card__meta" data-i18n="credVmMeta">REPLİK ARAMA MOTORU İLHAMI</p>
               <div class="case-mark">
                 <span class="case-glyph">VM</span>
                 <h3>VictoriqueMoe</h3>
               </div>
-              <p>
+              <p data-i18n="credVmDesc">
                 VictoriqueMoe/umineko_quote_finder projesiyle 07th Expansion topluluğuna kazandırdığı alıntı arama vizyonu ve emekleri için teşekkürler.
               </p>
               <div class="support-card__links">
@@ -1964,7 +2000,7 @@
             </div>
             <div style="display:flex;align-items:center;gap:0.85rem;">
               <span id="modalSubtitle" class="terminal-entry__kind"></span>
-              <button type="button" id="closeModalBtn" class="pager-btn">KAPAT [ESC]</button>
+              <button type="button" id="closeModalBtn" class="pager-btn" data-i18n="closeModalBtn">KAPAT [ESC]</button>
             </div>
           </div>
           <div id="modalBody" class="modal-body"></div>
@@ -1974,30 +2010,270 @@
       <!-- Footer -->
       <footer class="site-footer">
         <p class="site-footer-signature">
-          BY <a href="https://remilya.dev/" class="site-footer-signature-brand">REMILYA</a> // HIGURASHI WHEN THEY CRY TÜRKÇE YERELLEŞTİRME &amp; REPLİK ARŞİVİ
+          BY <a href="https://remilya.dev/" class="site-footer-signature-brand">REMILYA</a> // <span data-i18n="footerSuffix">HIGURASHI WHEN THEY CRY TÜRKÇE YERELLEŞTİRME &amp; REPLİK ARŞİVİ</span>
         </p>
       </footer>
     </div>
 
     <script>
       (() => {
-        const CHAPTER_NAMES = {
-          1: "BÖLÜM 1 · ONIKAKUSHI",
-          2: "BÖLÜM 2 · WATANAGASHI",
-          3: "BÖLÜM 3 · TATARIGOROSHI",
-          4: "BÖLÜM 4 · HIMATSUBUSHI",
-          5: "BÖLÜM 5 · MEAKASHI",
-          6: "BÖLÜM 6 · TSUMIHOROBOSHI",
-          7: "BÖLÜM 7 · MINAGOROSHI",
-          8: "BÖLÜM 8 · MATSURIBAYASHI",
-          9: "BÖLÜM 9 · REI",
-          10: "BÖLÜM 10 · HOU+"
+        const STORAGE_KEY = "remilya-locale";
+        let currentLocale = "tr";
+
+        const I18N = {
+          tr: {
+            pageTitle: "Higurashi When They Cry — Türkçe Yama & Replik Arşivi | Remilya",
+            brandSubtitle: "Higurashi When They Cry / Türkçe Yerelleştirme & Arşiv",
+            navArchive: "Replik Arşivi",
+            navInstall: "Kurulum",
+            navGames: "Oyunlar",
+            navCredits: "Katkılar",
+            navReleaseBtn: "Türkçe Yama v1.0",
+            heroEyebrow: "HINAMIZAWA ARCHIVE / REPLİK ARAMA MOTORU",
+            heroTitle: "Higurashi When They Cry — Türkçe Yama & Replik Arşivi.",
+            heroCopy: "Ana hikâye arkları, Rei ve Hou+ bölümlerinin tamamında Türkçe, İngilizce ve Japonca anlık arama yapın; karakter repliklerini ve sahne akışını inceleyin.",
+            searchPlaceholder: "Türkçe, İngilizce veya Japonca bir replik arayın... (Örn: Yalan!, Nipah, Oyashiro-sama, Hinamizawa Sendromu)",
+            clearBtn: "TEMİZLE [ESC]",
+            filterChLabel: "01 / Bölüm",
+            chOpt0: "Tüm Bölümler (Hou & Hou+)",
+            chOpt1: "Bölüm 1 — Onikakushi",
+            chOpt2: "Bölüm 2 — Watanagashi",
+            chOpt3: "Bölüm 3 — Tatarigoroshi",
+            chOpt4: "Bölüm 4 — Himatsubushi",
+            chOpt5: "Bölüm 5 — Meakashi",
+            chOpt6: "Bölüm 6 — Tsumihoroboshi",
+            chOpt7: "Bölüm 7 — Minagoroshi",
+            chOpt8: "Bölüm 8 — Matsuribayashi",
+            chOpt9: "Bölüm 9 — Rei",
+            chOpt10: "Bölüm 10 — Hou+",
+            filterSpLabel: "02 / Karakter",
+            spOptAll: "Tüm Karakterler & Anlatıcı",
+            spOptNarrator: "Anlatıcı (İç Monolog)",
+            filterLangLabel: "03 / Arama Dili",
+            langOptAll: "TR + EN + JP (Üç Dilde)",
+            langOptTr: "Sadece Türkçe (TR)",
+            langOptEn: "Sadece İngilizce (EN)",
+            langOptJp: "Sadece Japonca (JP)",
+            filterModeLabel: "04 / Görünüm & Mod",
+            presetLabel: "Örnek Aramalar //",
+            presetUsoda: "Yalan! (Usoda)",
+            presetUsodaQ: "Yalan!",
+            presetSyndrome: "Hinamizawa Sendromu",
+            presetSyndromeQ: "Hinamizawa",
+            presetTakeHome: "Eve götürmek istiyorum",
+            presetTakeHomeQ: "götürmek istiyorum",
+            prevBtn: "← ÖNCEKİ",
+            nextBtn: "SONRAKİ →",
+            loadingArchive: "Hinamizawa replik arşivi yükleniyor... Arama yapmak için yukarıdaki satıra bir ifade girin.",
+            installEyebrow: "INSTALLATION / 2-STEP SETUP",
+            installTitle: "İki adımda Türkçe yama kurulumu.",
+            installCopy: "Türkçe yerelleştirme paketi 07th-Mod altyapısı üzerine çalışır. Önce 07th-Mod yaması kurulmalı, ardından Türkçe Yama Kurulum Sihirbazı çalıştırılmalıdır.",
+            step1Badge: "ADIM 01 · ÖN KOŞUL (07TH-MOD)",
+            step1Title: "07th-Mod Temel Kurulumu (English)",
+            step1Desc: "Konsol grafikleri, Japonca seslendirme (Voice), dudak senkronizasyonu ve gelişmiş menü altyapısı için oyunlarınıza resmi 07th-Mod Python Patcher ile İngilizce yamayı kurun.",
+            step1Action: "07th-Mod Patcher İndir →",
+            step2Badge: "ADIM 02 · TÜRKÇE YAMA SİHİRBAZI V1.0",
+            step2Title: "Higurashi Türkçe Yama v1.0",
+            step2Desc: "İndirdiğiniz arşivdeki kurulum.bat dosyasını çalıştırın. Sihirbaz bilgisayarınızdaki oyunları otomatik tespit ederek hikâyeyi, arayüzleri ve görselleri Türkçeleştirir.",
+            step2Action: "Türkçe Yamayı İndir (v1.0) →",
+            shelfEyebrow: "ARCHIVE SHELF / 07TH EXPANSION CLASSIC COVERS",
+            shelfTitle: "Orijinal kapaklarla tamamlanan külliyat rafı.",
+            shelfCopy: "07th Expansion orijinal kapaklarından herhangi birini seçerek yukarıdaki arama motorunu ilgili oyun arkına filtreleyebilirsiniz.",
+            shelfSubEditions: "TAM SÜRÜMLER & ÖZEL PAKETLER // HOU · REI · HOU+",
+            epHou: "TAM SÜRÜM // HOU",
+            subHou: "ひぐらしのなく頃に奉 · Tüm Hikâye Arkları",
+            roleLocalized: "TÜRKÇE YERELLEŞTİRME",
+            actSearchAll: "Tüm Külliyatta Ara →",
+            epRei: "BÖLÜM 09 // FANDISC",
+            epHouPlus: "BÖLÜM 10 // BONUS ARKLAR",
+            actSearchCh: "Bölümde Ara →",
+            shelfSubArcs: "SORU VE CEVAP ARKLARI // ORİJİNAL COMIKET CD KAPAKLARI (CH.01–08)",
+            epCh1: "BÖLÜM 01 // SORU ARKI",
+            subCh1: "İblisler Tarafından Kaçırılma",
+            epCh2: "BÖLÜM 02 // SORU ARKI",
+            subCh2: "Pamuk Sürükleme Festivali",
+            epCh3: "BÖLÜM 03 // SORU ARKI",
+            subCh3: "Lanet Kırım Bölümü",
+            epCh4: "BÖLÜM 04 // SORU ARKI",
+            subCh4: "Zaman Öldürme Bölümü",
+            epCh5: "BÖLÜM 05 // CEVAP ARKI",
+            subCh5: "Göz Açma Bölümü",
+            epCh6: "BÖLÜM 06 // CEVAP ARKI",
+            subCh6: "Kefaret Bölümü",
+            epCh7: "BÖLÜM 07 // CEVAP ARKI",
+            subCh7: "Katliam Bölümü",
+            epCh8: "BÖLÜM 08 // FİNAL CEVAP ARKI",
+            subCh8: "Festival Eşliği Bölümü",
+            creditsEyebrow: "CREDITS / ACKNOWLEDGMENTS",
+            creditsTitle: "Emeği geçenler ve açık kaynak katkıları.",
+            credRemilyaMeta: "TÜRKÇE ÇEVİRİ & YERELLEŞTİRME",
+            credRemilyaDesc: "Higurashi When They Cry Hou ve Hou+ Türkçe çevirisi, oyun içi arayüz ve görsel yerelleştirmesi, kurulum sihirbazı ve replik arşivi.",
+            credWlMeta: "ÖNCÜ TÜRKÇE ÇEVİRİ KATKILARI",
+            credWlDesc: "Witch-Love/higurashi-scripting-tr projesindeki erken dönem Türkçe çeviri çalışmaları ve seriye verdikleri değerli emekler için teşekkürler.",
+            cred07Meta: "MOD ALTYAPISI & KURULUM ARACI",
+            cred07Desc: "Konsol grafikleri, Japonca seslendirme entegrasyonu, gelişmiş oyun motoru özellikleri ve açık kaynaklı python-patcher altyapısı için teşekkürler.",
+            credVmMeta: "REPLİK ARAMA MOTORU İLHAMI",
+            credVmDesc: "VictoriqueMoe/umineko_quote_finder projesiyle 07th Expansion topluluğuna kazandırdığı alıntı arama vizyonu ve emekleri için teşekkürler.",
+            closeModalBtn: "KAPAT [ESC]",
+            footerSuffix: "HIGURASHI WHEN THEY CRY TÜRKÇE YERELLEŞTİRME & REPLİK ARŞİVİ",
+            statusLoading: "ARŞİV YÜKLENİYOR",
+            statusReady: "ARŞİV HAZIR",
+            showcaseSummary: "SEÇKİN REPLİKLER // ARAMA YAPMAK İÇİN YUKARIDAKİ KUTUYA YAZIN",
+            matchSummaryPrefix: "BULUNAN REPLİK:",
+            invalidRegexPrefix: "GEÇERSİZ İFADE //",
+            emptyResult: "Aradığınız ifadeyle eşleşen bir replik bulunamadı.",
+            narrator: "ANLATICI",
+            sceneContextBtn: "SAHNE BAĞLAMI",
+            copyBtn: "KOPYALA",
+            copiedBtn: "KOPYALANDI",
+            modalSceneFlow: "SAHNE AKIŞI",
+            chapters: {
+              1: "BÖLÜM 1 · ONIKAKUSHI",
+              2: "BÖLÜM 2 · WATANAGASHI",
+              3: "BÖLÜM 3 · TATARIGOROSHI",
+              4: "BÖLÜM 4 · HIMATSUBUSHI",
+              5: "BÖLÜM 5 · MEAKASHI",
+              6: "BÖLÜM 6 · TSUMIHOROBOSHI",
+              7: "BÖLÜM 7 · MINAGOROSHI",
+              8: "BÖLÜM 8 · MATSURIBAYASHI",
+              9: "BÖLÜM 9 · REI",
+              10: "BÖLÜM 10 · HOU+"
+            }
+          },
+          en: {
+            pageTitle: "Higurashi When They Cry — Turkish Localization & Quote Finder | Remilya",
+            brandSubtitle: "Higurashi When They Cry / Localization & Quote Archive",
+            navArchive: "Quote Finder",
+            navInstall: "Installation",
+            navGames: "Games",
+            navCredits: "Credits",
+            navReleaseBtn: "Turkish Patch v1.0",
+            heroEyebrow: "HINAMIZAWA ARCHIVE / QUOTE SEARCH ENGINE",
+            heroTitle: "Higurashi When They Cry — Localization & Quote Archive.",
+            heroCopy: "Search across all main story arcs, Rei, and Hou+ chapters in Turkish, English, and Japanese in real time; explore character lines and full scene context.",
+            searchPlaceholder: "Search quotes in Turkish, English, or Japanese... (e.g. That's a lie!, Nipah, Oyashiro-sama, Hinamizawa Syndrome)",
+            clearBtn: "CLEAR [ESC]",
+            filterChLabel: "01 / Chapter",
+            chOpt0: "All Chapters (Hou & Hou+)",
+            chOpt1: "Chapter 1 — Onikakushi",
+            chOpt2: "Chapter 2 — Watanagashi",
+            chOpt3: "Chapter 3 — Tatarigoroshi",
+            chOpt4: "Chapter 4 — Himatsubushi",
+            chOpt5: "Chapter 5 — Meakashi",
+            chOpt6: "Chapter 6 — Tsumihoroboshi",
+            chOpt7: "Chapter 7 — Minagoroshi",
+            chOpt8: "Chapter 8 — Matsuribayashi",
+            chOpt9: "Chapter 9 — Rei",
+            chOpt10: "Chapter 10 — Hou+",
+            filterSpLabel: "02 / Character",
+            spOptAll: "All Characters & Narrator",
+            spOptNarrator: "Narrator (Monologue)",
+            filterLangLabel: "03 / Search Language",
+            langOptAll: "TR + EN + JP (Trilingual)",
+            langOptTr: "Turkish Only (TR)",
+            langOptEn: "English Only (EN)",
+            langOptJp: "Japanese Only (JP)",
+            filterModeLabel: "04 / Display & Mode",
+            presetLabel: "Sample Queries //",
+            presetUsoda: "That's a lie! (Usoda)",
+            presetUsodaQ: "lie!",
+            presetSyndrome: "Hinamizawa Syndrome",
+            presetSyndromeQ: "Hinamizawa",
+            presetTakeHome: "I want to take it home",
+            presetTakeHomeQ: "take it home",
+            prevBtn: "← PREV",
+            nextBtn: "NEXT →",
+            loadingArchive: "Loading Hinamizawa quote archive... Type a query above to search.",
+            installEyebrow: "INSTALLATION / 2-STEP SETUP",
+            installTitle: "Two-step localization setup.",
+            installCopy: "The Turkish localization package builds on top of the 07th-Mod framework. Install the 07th-Mod patch first, then run the Turkish Patch Setup Wizard.",
+            step1Badge: "STEP 01 · PREREQUISITE (07TH-MOD)",
+            step1Title: "07th-Mod Base Installation (English)",
+            step1Desc: "Install the base 07th-Mod patch via the official Python Patcher to enable console sprites, Japanese voice acting, lip-sync, and enhanced ADV/NVL menus.",
+            step1Action: "Download 07th-Mod Patcher →",
+            step2Badge: "STEP 02 · TURKISH PATCH WIZARD V1.0",
+            step2Title: "Higurashi Turkish Patch v1.0",
+            step2Desc: "Run kurulum.bat from the release archive. The setup wizard automatically detects installed chapters and localizes story scripts, menus, and graphics.",
+            step2Action: "Download Turkish Patch (v1.0) →",
+            shelfEyebrow: "ARCHIVE SHELF / 07TH EXPANSION CLASSIC COVERS",
+            shelfTitle: "Complete collection shelf with classic covers.",
+            shelfCopy: "Select any original 07th Expansion cover below to filter the quote search engine to that specific arc.",
+            shelfSubEditions: "COMPLETE EDITIONS & SPECIAL PACKAGES // HOU · REI · HOU+",
+            epHou: "COMPLETE EDITION // HOU",
+            subHou: "ひぐらしのなく頃に奉 · All Story Arcs",
+            roleLocalized: "TURKISH LOCALIZATION",
+            actSearchAll: "Search Entire Archive →",
+            epRei: "CHAPTER 09 // FANDISC",
+            epHouPlus: "CHAPTER 10 // BONUS ARCS",
+            actSearchCh: "Search in Chapter →",
+            shelfSubArcs: "QUESTION & ANSWER ARCS // ORIGINAL COMIKET CD COVERS (CH.01–08)",
+            epCh1: "CHAPTER 01 // QUESTION ARC",
+            subCh1: "Spirited Away by the Demon",
+            epCh2: "CHAPTER 02 // QUESTION ARC",
+            subCh2: "Cotton Drifting",
+            epCh3: "CHAPTER 03 // QUESTION ARC",
+            subCh3: "Curse Killing",
+            epCh4: "CHAPTER 04 // QUESTION ARC",
+            subCh4: "Time Wasting",
+            epCh5: "CHAPTER 05 // ANSWER ARC",
+            subCh5: "Eye Opening",
+            epCh6: "CHAPTER 06 // ANSWER ARC",
+            subCh6: "Atonement",
+            epCh7: "CHAPTER 07 // ANSWER ARC",
+            subCh7: "Massacre",
+            epCh8: "CHAPTER 08 // FINAL ANSWER ARC",
+            subCh8: "Festival Accompanying",
+            creditsEyebrow: "CREDITS / ACKNOWLEDGMENTS",
+            creditsTitle: "Contributors and open-source acknowledgments.",
+            credRemilyaMeta: "TURKISH TRANSLATION & LOCALIZATION",
+            credRemilyaDesc: "Higurashi When They Cry Hou and Hou+ Turkish localization, in-game UI and image localization, setup wizard, and trilingual quote archive.",
+            credWlMeta: "PIONEERING TURKISH TRANSLATION",
+            credWlDesc: "Special thanks to Witch-Love/higurashi-scripting-tr for their early Turkish translation work and dedication to the series.",
+            cred07Meta: "MOD FRAMEWORK & INSTALLER",
+            cred07Desc: "Special thanks to 07th-Mod for console graphics, Japanese voice integration, engine enhancements, and the open-source python-patcher.",
+            credVmMeta: "QUOTE FINDER INSPIRATION",
+            credVmDesc: "Special thanks to VictoriqueMoe/umineko_quote_finder for inspiring the quote search experience for the 07th Expansion community.",
+            closeModalBtn: "CLOSE [ESC]",
+            footerSuffix: "HIGURASHI WHEN THEY CRY LOCALIZATION & QUOTE ARCHIVE",
+            statusLoading: "LOADING ARCHIVE",
+            statusReady: "ARCHIVE READY",
+            showcaseSummary: "FEATURED QUOTES // TYPE IN THE SEARCH BAR ABOVE TO EXPLORE",
+            matchSummaryPrefix: "MATCHING QUOTES:",
+            invalidRegexPrefix: "INVALID REGEX //",
+            emptyResult: "No quotes matched your search query.",
+            narrator: "NARRATOR",
+            sceneContextBtn: "SCENE CONTEXT",
+            copyBtn: "COPY",
+            copiedBtn: "COPIED",
+            modalSceneFlow: "SCENE FLOW",
+            chapters: {
+              1: "CHAPTER 1 · ONIKAKUSHI",
+              2: "CHAPTER 2 · WATANAGASHI",
+              3: "CHAPTER 3 · TATARIGOROSHI",
+              4: "CHAPTER 4 · HIMATSUBUSHI",
+              5: "CHAPTER 5 · MEAKASHI",
+              6: "CHAPTER 6 · TSUMIHOROBOSHI",
+              7: "CHAPTER 7 · MINAGOROSHI",
+              8: "CHAPTER 8 · MATSURIBAYASHI",
+              9: "CHAPTER 9 · REI",
+              10: "CHAPTER 10 · HOU+"
+            }
+          }
         };
+
+        function t(key) {
+          return (I18N[currentLocale] && I18N[currentLocale][key]) || I18N.tr[key] || key;
+        }
+
+        function getChapterName(ch) {
+          return (I18N[currentLocale] && I18N[currentLocale].chapters[ch]) || I18N.tr.chapters[ch] || `CH ${ch}`;
+        }
 
         const chapterData = new Map();
         let loadedChapters = 0;
         let currentResults = [];
         let currentPage = 1;
+        let isShowcaseMode = true;
         const PAGE_SIZE = 50;
 
         const showLangs = { tr: true, en: true, jp: true };
@@ -2032,6 +2308,50 @@
         const modalSubtitle = document.getElementById("modalSubtitle");
         const modalBody = document.getElementById("modalBody");
         const closeModalBtn = document.getElementById("closeModalBtn");
+
+        function applyLocale(locale) {
+          currentLocale = locale === "en" ? "en" : "tr";
+          document.documentElement.lang = currentLocale;
+          document.title = t("pageTitle");
+
+          try {
+            window.localStorage.setItem(STORAGE_KEY, currentLocale);
+          } catch {}
+
+          document.querySelectorAll("[data-locale]").forEach((btn) => {
+            const active = btn.getAttribute("data-locale") === currentLocale;
+            btn.classList.toggle("is-active", active);
+            btn.setAttribute("aria-pressed", String(active));
+          });
+
+          document.querySelectorAll("[data-i18n]").forEach((el) => {
+            const key = el.getAttribute("data-i18n");
+            if (key && I18N[currentLocale][key]) {
+              el.textContent = I18N[currentLocale][key];
+            }
+          });
+
+          searchInput.placeholder = t("searchPlaceholder");
+
+          // Update localized sample query targets
+          const usodaBtn = document.querySelector('[data-i18n="presetUsoda"]');
+          if (usodaBtn) usodaBtn.setAttribute("data-q", t("presetUsodaQ"));
+          const synBtn = document.querySelector('[data-i18n="presetSyndrome"]');
+          if (synBtn) synBtn.setAttribute("data-q", t("presetSyndromeQ"));
+          const takeBtn = document.getElementById("presetTakeHome");
+          if (takeBtn) takeBtn.setAttribute("data-q", t("presetTakeHomeQ"));
+
+          dbStatusText.textContent = loadedChapters < 10 ? t("statusLoading") : t("statusReady");
+
+          if (loadedChapters > 0) {
+            if (isShowcaseMode) {
+              resultsSummary.innerHTML = t("showcaseSummary");
+              renderPage();
+            } else {
+              runSearch(false);
+            }
+          }
+        }
 
         function normalizeTR(str) {
           if (!str) return "";
@@ -2154,10 +2474,10 @@
                 dbProgressFill.style.width = `${pct}%`;
 
                 if (loadedChapters < 10) {
-                  dbStatusText.textContent = `ARŞİV YÜKLENİYOR`;
+                  dbStatusText.textContent = t("statusLoading");
                 } else {
                   dbStatusDot.classList.add("is-ready");
-                  dbStatusText.textContent = `ARŞİV HAZIR`;
+                  dbStatusText.textContent = t("statusReady");
                 }
 
                 if (searchInput.value.trim() || speakerSelect.value !== "__ALL__" || chapterSelect.value !== "0") {
@@ -2176,6 +2496,7 @@
           if (searchInput.value.trim() || speakerSelect.value !== "__ALL__" || chapterSelect.value !== "0") return;
           const ch1 = chapterData.get(1);
           if (!ch1) return;
+          isShowcaseMode = true;
           const showcase = [];
           for (let i = 0; i < ch1.lines.length && showcase.length < 10; i++) {
             const row = ch1.lines[i];
@@ -2186,7 +2507,7 @@
           }
           currentResults = showcase;
           currentPage = 1;
-          resultsSummary.innerHTML = `SEÇKİN REPLİKLER // ARAMA YAPMAK İÇİN YUKARIDAKİ KUTUYA YAZIN`;
+          resultsSummary.innerHTML = t("showcaseSummary");
           bottomPagination.style.display = "none";
           renderPage();
         }
@@ -2213,6 +2534,7 @@
             return;
           }
 
+          isShowcaseMode = false;
           const matches = [];
           const normQuery = normalizeTR(rawQuery);
           let regexObj = null;
@@ -2220,7 +2542,7 @@
             try {
               regexObj = new RegExp(rawQuery, "i");
             } catch (e) {
-              resultsSummary.innerHTML = `<span style="color:var(--scarlet-text);">GEÇERSİZ İFADE // ${escapeHtml(e.message)}</span>`;
+              resultsSummary.innerHTML = `<span style="color:var(--scarlet-text);">${t("invalidRegexPrefix")} ${escapeHtml(e.message)}</span>`;
               return;
             }
           }
@@ -2278,7 +2600,8 @@
           currentResults = matches;
           if (resetPage) currentPage = 1;
 
-          const summaryHtml = `BULUNAN REPLİK: <strong>${matches.length.toLocaleString("tr-TR")}</strong>`;
+          const numLocale = currentLocale === "en" ? "en-US" : "tr-TR";
+          const summaryHtml = `${t("matchSummaryPrefix")} <strong>${matches.length.toLocaleString(numLocale)}</strong>`;
           resultsSummary.innerHTML = summaryHtml;
           bottomResultsSummary.innerHTML = summaryHtml;
 
@@ -2306,7 +2629,7 @@
           bottomPagination.style.display = total > PAGE_SIZE ? "flex" : "none";
 
           if (slice.length === 0) {
-            quotesContainer.innerHTML = `<div class="empty-state">Aradığınız ifadeyle eşleşen bir replik bulunamadı.</div>`;
+            quotesContainer.innerHTML = `<div class="empty-state">${escapeHtml(t("emptyResult"))}</div>`;
             return;
           }
 
@@ -2316,7 +2639,7 @@
             if (!data) continue;
             const [fileIdx, lineIndex, spIdx, tr, en, jp] = item.row;
             const [speakerName, speakerColor] = data.speakers[spIdx] || ["", ""];
-            const displaySpeaker = speakerName || "ANLATICI";
+            const displaySpeaker = speakerName || t("narrator");
             const dotColor = speakerColor || "#a78bfa";
 
             const langRows = [];
@@ -2353,11 +2676,11 @@
                       <span class="speaker-pip" style="background: ${escapeHtml(dotColor)};"></span>
                       ${escapeHtml(displaySpeaker)}
                     </span>
-                    <span class="terminal-entry__period">${escapeHtml(CHAPTER_NAMES[item.ch] || "BÖLÜM " + item.ch)}</span>
+                    <span class="terminal-entry__period">${escapeHtml(getChapterName(item.ch))}</span>
                   </div>
                   <div class="entry-actions">
-                    <button type="button" class="tag" data-context-ch="${item.ch}" data-context-idx="${item.rowIdx}">SAHNE BAĞLAMI</button>
-                    <button type="button" class="tag" data-copy-ch="${item.ch}" data-copy-idx="${item.rowIdx}">KOPYALA</button>
+                    <button type="button" class="tag" data-context-ch="${item.ch}" data-context-idx="${item.rowIdx}">${escapeHtml(t("sceneContextBtn"))}</button>
+                    <button type="button" class="tag" data-copy-ch="${item.ch}" data-copy-idx="${item.rowIdx}">${escapeHtml(t("copyBtn"))}</button>
                   </div>
                 </div>
                 <div class="quote-rows">
@@ -2378,7 +2701,7 @@
 
           const targetFileIdx = targetRow[0];
 
-          modalTitle.textContent = `${CHAPTER_NAMES[ch]} // SAHNE AKIŞI`;
+          modalTitle.textContent = `${getChapterName(ch)} // ${t("modalSceneFlow")}`;
           modalSubtitle.textContent = "";
 
           const start = Math.max(0, centerRowIdx - 15);
@@ -2390,7 +2713,7 @@
             if (row[0] !== targetFileIdx) continue;
             const [fIdx, lineIndex, spIdx, tr, en, jp] = row;
             const [spName, spColor] = data.speakers[spIdx] || ["", ""];
-            const displaySp = spName || "ANLATICI";
+            const displaySp = spName || t("narrator");
             const color = spColor || "#a78bfa";
             const isTarget = i === centerRowIdx;
 
@@ -2417,6 +2740,24 @@
             if (el) el.scrollIntoView({ behavior: "smooth", block: "center" });
           }, 50);
         }
+
+        // Locale Switcher Events
+        document.querySelectorAll("[data-locale]").forEach((btn) => {
+          btn.addEventListener("click", () => {
+            applyLocale(btn.getAttribute("data-locale") || "tr");
+          });
+        });
+
+        // Initialize saved or URL locale
+        try {
+          const urlLang = new URLSearchParams(window.location.search).get("ui");
+          const savedLocale = window.localStorage.getItem(STORAGE_KEY);
+          if (urlLang === "en" || urlLang === "tr") {
+            applyLocale(urlLang);
+          } else if (savedLocale === "en" || savedLocale === "tr") {
+            applyLocale(savedLocale);
+          }
+        } catch {}
 
         // Events
         let debounceTimer = null;
@@ -2494,11 +2835,11 @@
             const data = chapterData.get(ch);
             if (!data) return;
             const [fIdx, lineIdx, spIdx, tr, en, jp] = data.lines[idx];
-            const spName = (data.speakers[spIdx] && data.speakers[spIdx][0]) || "Anlatıcı";
-            const text = `[${CHAPTER_NAMES[ch]}] ${spName}:\nTR: ${tr}\nEN: ${en}\nJP: ${jp}`;
+            const spName = (data.speakers[spIdx] && data.speakers[spIdx][0]) || t("narrator");
+            const text = `[${getChapterName(ch)}] ${spName}:\nTR: ${tr}\nEN: ${en}\nJP: ${jp}`;
             navigator.clipboard.writeText(text).then(() => {
               const orig = copyBtn.textContent;
-              copyBtn.textContent = "KOPYALANDI";
+              copyBtn.textContent = t("copiedBtn");
               setTimeout(() => {
                 copyBtn.textContent = orig;
               }, 1400);
