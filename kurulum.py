@@ -436,9 +436,19 @@ def run_gui_wizard(repo_root: Path | None = None) -> int:
         return run_cli_wizard(repo_root)
 
     win.title("Higurashi When They Cry Hou / Hou+ — Türkçe Yama Kurulum Sihirbazı (@Remilya)")
-    win.geometry("920x740")
-    win.minsize(860, 680)
     win.configure(bg="#121016")
+    win.resizable(True, True)
+
+    sw = win.winfo_screenwidth()
+    sh = win.winfo_screenheight()
+    is_compact = sh < 920 or sw < 1600
+
+    win_w = min(920 if not is_compact else 860, max(680, sw - 40))
+    win_h = min(720 if not is_compact else 620, max(500, sh - 76))
+    pos_x = max(10, (sw - win_w) // 2)
+    pos_y = max(10, (sh - win_h - 40) // 2)
+    win.geometry(f"{win_w}x{win_h}+{pos_x}+{pos_y}")
+    win.minsize(min(680, sw - 40), min(480, sh - 80))
 
     BG_DARK = "#121016"
     BG_CARD = "#1c1824"
@@ -449,27 +459,60 @@ def run_gui_wizard(repo_root: Path | None = None) -> int:
     ACCENT_GOLD = "#e6b450"
     ACCENT_GREEN = "#40c057"
 
+    pad_x = 12 if is_compact else 16
+    title_fs = 12 if is_compact else 14
+    row_fs = 8 if is_compact else 9
+
+    # 1. Pack bottom_bar FIRST (side="bottom") so the Install button is NEVER clipped on small screens
+    bottom_bar = tk.Frame(win, bg="#191321", highlightbackground=ACCENT_RED, highlightthickness=1)
+    bottom_bar.pack(side="bottom", fill="x", padx=pad_x, pady=(4, 10 if not is_compact else 6))
+
+    install_btn = tk.Button(
+        bottom_bar,
+        text="▶  SEÇİLİ BÖLÜMLERE TÜRKÇE YAMAYI KUR",
+        font=("Segoe UI", 10 if is_compact else 11, "bold"),
+        bg=ACCENT_RED,
+        fg="#ffffff",
+        activebackground="#e03131",
+        activeforeground="#ffffff",
+        relief="flat",
+        padx=20 if is_compact else 24,
+        pady=6 if is_compact else 8,
+        cursor="hand2",
+    )
+    install_btn.pack(side="right", padx=8, pady=6)
+
+    status_summary = tk.Label(
+        bottom_bar,
+        text="Hazır — Kurulacak bölümleri seçip sağdaki butona tıklayın.",
+        font=("Segoe UI", 9, "bold"),
+        fg=FG_MUTED,
+        bg="#191321",
+    )
+    status_summary.pack(side="left", padx=10, pady=6)
+
+    # 2. Pack header at top
     header = tk.Frame(win, bg="#191321", highlightbackground=ACCENT_RED, highlightthickness=1)
-    header.pack(fill="x", padx=16, pady=(14, 8))
+    header.pack(side="top", fill="x", padx=pad_x, pady=(8 if is_compact else 12, 4))
 
     tk.Label(
         header,
         text="HIGURASHI WHEN THEY CRY HOU / HOU+ — TÜRKÇE YAMA SİHİRBAZI",
-        font=("Segoe UI", 14, "bold"),
+        font=("Segoe UI", title_fs, "bold"),
         fg=ACCENT_GOLD,
         bg="#191321",
-    ).pack(anchor="w", padx=16, pady=(10, 2))
+    ).pack(anchor="w", padx=12, pady=(6 if is_compact else 8, 1))
 
     tk.Label(
         header,
         text="Bölüm 1–10 Tam Külliyat (456 Dosya, 139.818 Satır) + Türkçe Menü / Arayüz / CG Yaması  •  Çeviri: @Remilya",
-        font=("Segoe UI", 9, "bold"),
+        font=("Segoe UI", 8 if is_compact else 9, "bold"),
         fg=FG_MAIN,
         bg="#191321",
-    ).pack(anchor="w", padx=16, pady=(0, 4))
+    ).pack(anchor="w", padx=12, pady=(0, 2))
 
     credits_frame = tk.Frame(header, bg="#191321")
-    credits_frame.pack(anchor="w", padx=16, pady=(0, 10))
+    credits_frame.pack(anchor="w", padx=12, pady=(0, 6 if is_compact else 8))
 
     tk.Label(
         credits_frame,
@@ -498,16 +541,17 @@ def run_gui_wizard(repo_root: Path | None = None) -> int:
         btn.pack(side="left", padx=4)
         btn.bind("<Button-1>", lambda _e, u=url: webbrowser.open(u))
 
+    # 3. Chapter selection card
     list_card = tk.Frame(win, bg=BG_CARD, highlightbackground="#332b42", highlightthickness=1)
-    list_card.pack(fill="both", expand=False, padx=16, pady=6)
+    list_card.pack(side="top", fill="x", expand=False, padx=pad_x, pady=3)
 
     top_bar = tk.Frame(list_card, bg=BG_CARD)
-    top_bar.pack(fill="x", padx=12, pady=(8, 4))
+    top_bar.pack(fill="x", padx=10, pady=(5 if is_compact else 7, 2))
 
     tk.Label(
         top_bar,
         text="Kurulacak Bölümleri Seçin (Otomatik Tespit Edilen Oyun Klasörleri):",
-        font=("Segoe UI", 10, "bold"),
+        font=("Segoe UI", 9 if is_compact else 10, "bold"),
         fg=FG_MAIN,
         bg=BG_CARD,
     ).pack(side="left")
@@ -531,21 +575,21 @@ def run_gui_wizard(repo_root: Path | None = None) -> int:
 
     tk.Button(
         top_bar, text="Seçimi Temizle", command=clear_all,
-        bg="#2f283d", fg=FG_MAIN, relief="flat", font=("Segoe UI", 8), padx=8, pady=2
-    ).pack(side="right", padx=3)
+        bg="#2f283d", fg=FG_MAIN, relief="flat", font=("Segoe UI", 8), padx=8, pady=1
+    ).pack(side="right", padx=2)
 
     tk.Button(
         top_bar, text="Tümünü Seç", command=select_all,
-        bg="#2f283d", fg=FG_MAIN, relief="flat", font=("Segoe UI", 8), padx=8, pady=2
-    ).pack(side="right", padx=3)
+        bg="#2f283d", fg=FG_MAIN, relief="flat", font=("Segoe UI", 8), padx=8, pady=1
+    ).pack(side="right", padx=2)
 
     tk.Button(
         top_bar, text="Bulunanları Seç", command=select_detected,
-        bg="#3b314d", fg=ACCENT_GOLD, relief="flat", font=("Segoe UI", 8, "bold"), padx=8, pady=2
-    ).pack(side="right", padx=3)
+        bg="#3b314d", fg=ACCENT_GOLD, relief="flat", font=("Segoe UI", 8, "bold"), padx=8, pady=1
+    ).pack(side="right", padx=2)
 
     rows_frame = tk.Frame(list_card, bg=BG_CARD)
-    rows_frame.pack(fill="x", padx=12, pady=(2, 10))
+    rows_frame.pack(fill="x", padx=10, pady=(1, 6 if not is_compact else 4))
 
     def browse_chapter(c: int) -> None:
         folder = filedialog.askdirectory(title=f"Bölüm {c} ({CHAPTER_INFO[c][0]}) Oyun Klasörünü Seçin")
@@ -558,7 +602,7 @@ def run_gui_wizard(repo_root: Path | None = None) -> int:
         _, title, lcount = CHAPTER_INFO[ch]
         detected_dir = find_game_dir(root_path, chapter=ch)
         row = tk.Frame(rows_frame, bg=BG_ROW if ch % 2 == 1 else BG_CARD)
-        row.pack(fill="x", pady=1)
+        row.pack(fill="x", pady=0 if is_compact else 1)
 
         var = tk.BooleanVar(value=detected_dir is not None)
         ch_vars[ch] = var
@@ -567,15 +611,16 @@ def run_gui_wizard(repo_root: Path | None = None) -> int:
             row,
             text=f"{title} ({lcount:,} satır)".replace(",", "."),
             variable=var,
-            font=("Segoe UI", 9, "bold"),
+            font=("Segoe UI", row_fs, "bold"),
             fg=FG_MAIN,
             bg=row["bg"],
             selectcolor="#121016",
             activebackground=row["bg"],
             activeforeground=ACCENT_GOLD,
-            width=52,
+            width=48 if is_compact else 52,
             anchor="w",
-        ).pack(side="left", padx=(6, 4))
+            pady=0 if is_compact else 1,
+        ).pack(side="left", padx=(4, 2))
 
         p_var = tk.StringVar(value=str(detected_dir) if detected_dir else "")
         ch_path_vars[ch] = p_var
@@ -588,7 +633,7 @@ def run_gui_wizard(repo_root: Path | None = None) -> int:
             fg=FG_MUTED,
             insertbackground=FG_MAIN,
             relief="flat",
-        ).pack(side="left", fill="x", expand=True, padx=4, pady=3)
+        ).pack(side="left", fill="x", expand=True, padx=4, pady=1 if is_compact else 2)
 
         st_lbl = tk.Label(
             row,
@@ -610,10 +655,11 @@ def run_gui_wizard(repo_root: Path | None = None) -> int:
             relief="flat",
             font=("Segoe UI", 8),
             padx=6,
-        ).pack(side="right", padx=6, pady=2)
+            pady=0 if is_compact else 1,
+        ).pack(side="right", padx=4, pady=1)
 
     opts_frame = tk.Frame(win, bg=BG_DARK)
-    opts_frame.pack(fill="x", padx=16, pady=4)
+    opts_frame.pack(side="top", fill="x", padx=pad_x, pady=2)
 
     ui_patch_var = tk.BooleanVar(value=True)
     backup_var = tk.BooleanVar(value=True)
@@ -622,18 +668,18 @@ def run_gui_wizard(repo_root: Path | None = None) -> int:
         opts_frame,
         text="Menü, Oyun İçi Arayüz (UI Atlas + DLL) ve CG Görsel Yamasını Uygula (Önerilen)",
         variable=ui_patch_var,
-        font=("Segoe UI", 9, "bold"),
+        font=("Segoe UI", row_fs, "bold"),
         fg=ACCENT_GOLD,
         bg=BG_DARK,
         selectcolor=BG_CARD,
         activebackground=BG_DARK,
-    ).pack(side="left", padx=(0, 16))
+    ).pack(side="left", padx=(0, 12))
 
     tk.Checkbutton(
         opts_frame,
         text="Kurulum Öncesi Otomatik Yedek Al (backups/)",
         variable=backup_var,
-        font=("Segoe UI", 9),
+        font=("Segoe UI", row_fs),
         fg=FG_MUTED,
         bg=BG_DARK,
         selectcolor=BG_CARD,
@@ -641,7 +687,7 @@ def run_gui_wizard(repo_root: Path | None = None) -> int:
     ).pack(side="left")
 
     prog_frame = tk.Frame(win, bg=BG_DARK)
-    prog_frame.pack(fill="both", expand=True, padx=16, pady=(4, 12))
+    prog_frame.pack(side="top", fill="both", expand=True, padx=pad_x, pady=(2, 4))
 
     style = ttk.Style()
     style.theme_use("default")
@@ -649,21 +695,21 @@ def run_gui_wizard(repo_root: Path | None = None) -> int:
         "Higurashi.Horizontal.TProgressbar",
         troughcolor="#1c1824",
         background=ACCENT_RED,
-        thickness=14,
+        thickness=10 if is_compact else 13,
     )
 
     progress = ttk.Progressbar(prog_frame, style="Higurashi.Horizontal.TProgressbar", mode="determinate")
-    progress.pack(fill="x", pady=(0, 6))
+    progress.pack(fill="x", pady=(0, 4))
 
     log_box = tk.Text(
         prog_frame,
-        height=10,
+        height=4 if is_compact else 7,
         bg="#0e0c12",
         fg="#d8d0e5",
-        font=("Consolas", 9),
+        font=("Consolas", 8 if is_compact else 9),
         relief="flat",
-        padx=10,
-        pady=8,
+        padx=8,
+        pady=6,
     )
     log_box.pack(fill="both", expand=True, side="left")
 
@@ -681,33 +727,6 @@ def run_gui_wizard(repo_root: Path | None = None) -> int:
     append_log("Çeviri & Yerelleştirme: @Remilya  |  Katkılar: Witch Love, 07th-Mod, VictoriqueMoe")
     append_log("⚠ ÖN KOŞUL: Bu yamayı kurmadan önce oyunlarınıza 07th-Mod (https://github.com/07th-mod/python-patcher) İngilizce yamasını kurmuş olmalısınız.")
     append_log("Kurmak istediğiniz bölümleri işaretleyip 'SEÇİLİ BÖLÜMLERE TÜRKÇE YAMAYI KUR' butonuna tıklayın.")
-
-    bottom_bar = tk.Frame(win, bg=BG_DARK)
-    bottom_bar.pack(fill="x", padx=16, pady=(0, 14))
-
-    install_btn = tk.Button(
-        bottom_bar,
-        text="▶  SEÇİLİ BÖLÜMLERE TÜRKÇE YAMAYI KUR",
-        font=("Segoe UI", 11, "bold"),
-        bg=ACCENT_RED,
-        fg="#ffffff",
-        activebackground="#e03131",
-        activeforeground="#ffffff",
-        relief="flat",
-        padx=24,
-        pady=8,
-        cursor="hand2",
-    )
-    install_btn.pack(side="right")
-
-    status_summary = tk.Label(
-        bottom_bar,
-        text="Hazır.",
-        font=("Segoe UI", 9, "bold"),
-        fg=FG_MUTED,
-        bg=BG_DARK,
-    )
-    status_summary.pack(side="left")
 
     def poll_queue() -> None:
         while not msg_queue.empty():
@@ -777,40 +796,78 @@ def run_gui_wizard(repo_root: Path | None = None) -> int:
         pop = tk.Toplevel(win)
         pop.title("⚠ DİKKAT — KURULUMDAN ÖNCE ZORUNLU KONTROL (07TH-MOD)")
         pop.configure(bg="#140c14")
-        pop.geometry("780x500")
-        pop.minsize(740, 480)
+        pop_w = min(760 if not is_compact else 700, max(580, sw - 40))
+        pop_h = min(460 if not is_compact else 410, max(360, sh - 80))
+        pop.minsize(min(580, sw - 40), min(350, sh - 80))
         pop.transient(win)
         pop.grab_set()
         pop.attributes("-topmost", True)
 
         # Center popup over main window
         win.update_idletasks()
-        x = win.winfo_x() + (win.winfo_width() // 2) - 390
-        y = win.winfo_y() + (win.winfo_height() // 2) - 250
-        pop.geometry(f"780x500+{max(20, x)}+{max(20, y)}")
+        x = win.winfo_x() + (win.winfo_width() // 2) - (pop_w // 2)
+        y = win.winfo_y() + (win.winfo_height() // 2) - (pop_h // 2)
+        pop.geometry(f"{pop_w}x{pop_h}+{max(10, x)}+{max(10, y)}")
 
         outer = tk.Frame(pop, bg="#1b101d", highlightbackground="#ff2a4b", highlightthickness=3)
-        outer.pack(fill="both", expand=True, padx=14, pady=14)
+        outer.pack(fill="both", expand=True, padx=12, pady=12)
+
+        # Pack button row FIRST at bottom so buttons are never clipped on small screens
+        btn_row = tk.Frame(outer, bg="#1b101d")
+        btn_row.pack(side="bottom", fill="x", padx=18, pady=(8, 12))
+
+        def open_07th_and_warn() -> None:
+            webbrowser.open("https://github.com/07th-mod/python-patcher")
+
+        tk.Button(
+            btn_row,
+            text="❌ HAYIR, DAHA KURMADIM\n(07th-Mod İndirme Sayfasını Aç)",
+            command=open_07th_and_warn,
+            bg="#8a1c2d",
+            fg="#ffffff",
+            activebackground="#a62236",
+            activeforeground="#ffffff",
+            relief="flat",
+            font=("Segoe UI", 9 if is_compact else 10, "bold"),
+            padx=12,
+            pady=8 if is_compact else 10,
+            cursor="hand2",
+        ).pack(side="left", fill="x", expand=True, padx=(0, 6))
+
+        tk.Button(
+            btn_row,
+            text="✔ EVET, 07TH-MOD'U İNGİLİZCE VE TAM KURDUM!\n(Türkçe Yama Kurulumuna Geç →)",
+            command=pop.destroy,
+            bg="#2b8a3e",
+            fg="#ffffff",
+            activebackground="#37b24d",
+            activeforeground="#ffffff",
+            relief="flat",
+            font=("Segoe UI", 9 if is_compact else 10, "bold"),
+            padx=12,
+            pady=8 if is_compact else 10,
+            cursor="hand2",
+        ).pack(side="right", fill="x", expand=True, padx=(6, 0))
 
         tk.Label(
             outer,
             text="⚠ DUR! TÜRKÇE YAMAYI KURMADAN ÖNCE BUNU OKU! ⚠",
-            font=("Segoe UI", 17, "bold"),
+            font=("Segoe UI", 14 if is_compact else 16, "bold"),
             fg="#ff4d6d",
             bg="#1b101d",
-        ).pack(pady=(16, 4))
+        ).pack(side="top", pady=(10 if is_compact else 14, 3))
 
         tk.Label(
             outer,
             text="Bu Türkçe yama doğrudan saf (Steam/GOG) oyunun üzerine KURULMAZ.\nDevam etmeden önce aşağıdaki 3 şartın TAMAMININ yapıldığından emin ol:",
-            font=("Segoe UI", 10, "bold"),
+            font=("Segoe UI", 9 if is_compact else 10, "bold"),
             fg="#f2eef7",
             bg="#1b101d",
             justify="center",
-        ).pack(pady=(0, 12))
+        ).pack(side="top", pady=(0, 8))
 
         q_box = tk.Frame(outer, bg="#26162b", highlightbackground="#e6b450", highlightthickness=2)
-        q_box.pack(fill="x", padx=22, pady=6)
+        q_box.pack(side="top", fill="x", padx=18, pady=4)
 
         questions = [
             (
@@ -829,11 +886,11 @@ def run_gui_wizard(repo_root: Path | None = None) -> int:
 
         for q_title, q_sub in questions:
             item = tk.Frame(q_box, bg="#26162b")
-            item.pack(fill="x", padx=16, pady=8)
+            item.pack(fill="x", padx=14, pady=5 if is_compact else 7)
             tk.Label(
                 item,
                 text=f"❗ {q_title}",
-                font=("Segoe UI", 12, "bold"),
+                font=("Segoe UI", 10 if is_compact else 11, "bold"),
                 fg="#ffd43b",
                 bg="#26162b",
                 anchor="w",
@@ -841,47 +898,11 @@ def run_gui_wizard(repo_root: Path | None = None) -> int:
             tk.Label(
                 item,
                 text=f"     ↳ {q_sub}",
-                font=("Segoe UI", 9, "bold"),
+                font=("Segoe UI", 8 if is_compact else 9, "bold"),
                 fg="#d8cce6",
                 bg="#26162b",
                 anchor="w",
-            ).pack(fill="x", pady=(2, 0))
-
-        btn_row = tk.Frame(outer, bg="#1b101d")
-        btn_row.pack(fill="x", padx=22, pady=(18, 14))
-
-        def open_07th_and_warn() -> None:
-            webbrowser.open("https://github.com/07th-mod/python-patcher")
-
-        tk.Button(
-            btn_row,
-            text="❌ HAYIR, DAHA KURMADIM\n(07th-Mod İndirme Sayfasını Aç)",
-            command=open_07th_and_warn,
-            bg="#8a1c2d",
-            fg="#ffffff",
-            activebackground="#a62236",
-            activeforeground="#ffffff",
-            relief="flat",
-            font=("Segoe UI", 10, "bold"),
-            padx=14,
-            pady=10,
-            cursor="hand2",
-        ).pack(side="left", fill="x", expand=True, padx=(0, 8))
-
-        tk.Button(
-            btn_row,
-            text="✔ EVET, 07TH-MOD'U İNGİLİZCE VE TAM KURDUM!\n(Türkçe Yama Kurulumuna Geç →)",
-            command=pop.destroy,
-            bg="#2b8a3e",
-            fg="#ffffff",
-            activebackground="#37b24d",
-            activeforeground="#ffffff",
-            relief="flat",
-            font=("Segoe UI", 10, "bold"),
-            padx=14,
-            pady=10,
-            cursor="hand2",
-        ).pack(side="right", fill="x", expand=True, padx=(8, 0))
+            ).pack(fill="x", pady=(1, 0))
 
     install_btn.config(command=start_installation)
     win.after(100, poll_queue)
