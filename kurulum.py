@@ -20,13 +20,14 @@ import json
 import os
 from pathlib import Path
 import queue
+import re
 import shutil
-import subprocess
 import sys
 import threading
 from typing import Any, Callable
 import webbrowser
-import zlib
+
+from remilya_ui_core import localize_game_ui
 
 CHAPTER_INFO: dict[int, tuple[str, str, int]] = {
     1: ("Onikakushi", "Bölüm 1 — Onikakushi (Şeytanın Kaçırdıkları)", 9939),
@@ -53,18 +54,6 @@ class TargetGamePaths:
     is_modded: bool
 
 
-def _ensure_ui_deps() -> None:
-    """Ensure Pillow and numpy are available (auto-install via pip if running from source Python)."""
-    try:
-        import numpy  # noqa: F401
-        from PIL import Image, ImageDraw, ImageFilter, ImageFont  # noqa: F401
-    except ImportError:
-        if not getattr(sys, "frozen", False):
-            subprocess.check_call(
-                [sys.executable, "-m", "pip", "install", "--quiet", "pillow", "numpy"]
-            )
-
-
 def _resolve_bundle_root(repo_root: Path) -> Path:
     """Return directory containing output-scripts and assets (prefers external folder if present, else PyInstaller _MEIPASS)."""
     if (repo_root / "output-scripts").exists() and (repo_root / "assets").exists():
@@ -77,20 +66,9 @@ def _resolve_bundle_root(repo_root: Path) -> Path:
     return repo_root
 
 
-def _load_ui_engine(repo_root: Path) -> Callable[[Path, Path | None], dict[str, int]]:
-    """Load the binary-packed Remilya UI Localization Engine from assets/remilya_ui.bin."""
-    _ensure_ui_deps()
-    bundle_root = _resolve_bundle_root(repo_root)
-    bin_path = bundle_root / "assets" / "remilya_ui.bin"
-    if not bin_path.exists():
-        raise FileNotFoundError(f"UI paketi bulunamadı: {bin_path}")
-    enc = bin_path.read_bytes()
-    key = b"RemilyaHigurashi07thEngine2026"
-    comp = bytes(b ^ key[i % len(key)] for i, b in enumerate(enc))
-    src = zlib.decompress(comp).decode("utf-8")
-    ns: dict[str, Any] = {"__name__": "remilya_ui_core"}
-    exec(compile(src, "<remilya_ui_core>", "exec"), ns)
-    return ns["localize_game_ui"]
+def _load_ui_engine(_repo_root: Path) -> Callable[[Path, Path | None], dict[str, int]]:
+    """Return the native Remilya UI Localization Engine function."""
+    return localize_game_ui
 
 
 def find_game_dir(repo_root: Path, chapter: int = 1, custom_path: Path | str | None = None) -> Path | None:
@@ -134,18 +112,21 @@ def find_game_dir(repo_root: Path, chapter: int = 1, custom_path: Path | str | N
         Path(r"C:\Program Files\Steam\steamapps\common"),
         Path(r"D:\SteamLibrary\steamapps\common"),
         Path(r"E:\SteamLibrary\steamapps\common"),
+        Path(r"F:\SteamLibrary\steamapps\common"),
     ]
-    try:
-        import winreg
-        key = winreg.OpenKey(winreg.HKEY_CURRENT_USER, r"Software\Valve\Steam")
-        steam_path_val, _ = winreg.QueryValueEx(key, "SteamPath")
-        winreg.CloseKey(key)
-        if steam_path_val:
-            s_p = Path(steam_path_val) / "steamapps/common"
-            if s_p not in steam_common_candidates:
-                steam_common_candidates.insert(0, s_p)
-    except Exception:
-        pass
+    for vdf_candidate in (
+        Path(r"C:\Program Files (x86)\Steam\steamapps\libraryfolders.vdf"),
+        Path(r"C:\Program Files\Steam\steamapps\libraryfolders.vdf"),
+    ):
+        if vdf_candidate.exists():
+            try:
+                vdf_txt = vdf_candidate.read_text(encoding="utf-8", errors="ignore")
+                for m_path in re.findall(r'"path"\s+"([^"]+)"', vdf_txt):
+                    lib_common = Path(m_path.replace("\\\\", "\\")) / "steamapps" / "common"
+                    if lib_common not in steam_common_candidates:
+                        steam_common_candidates.append(lib_common)
+            except Exception:
+                pass
 
     for steam_common in steam_common_candidates:
         if steam_common.exists():
@@ -204,16 +185,21 @@ def resolve_game_paths(chapter: int, game_path: Path | str) -> TargetGamePaths:
     )
 
 
-def is_game_running(chapter: int) -> bool:
-    """Check if HigurashiEpXX.exe is currently running."""
-    try:
-        res = subprocess.run(["tasklist", "/FO", "CSV", "/NH"], capture_output=True, text=True, timeout=5)
-        if res.returncode != 0:
-            return False
-        out = res.stdout.lower()
-        return any(p in out for p in (f"higurashiep{chapter:02d}.exe", f"higurashiep{chapter}.exe"))
-    except Exception:
+def is_game_running(chapter: int, game_dir: Path | None = None) -> bool:
+    """Check if HigurashiEpXX.exe is currently running by testing OS write lock on executable."""
+    if not game_dir or not game_dir.exists():
         return False
+    for exe_name in (f"HigurashiEp{chapter:02d}.exe", f"HigurashiEp{chapter}.exe"):
+        exe_path = game_dir / exe_name
+        if exe_path.exists():
+            try:
+                with open(exe_path, "r+b"):
+                    pass
+            except PermissionError:
+                return True
+            except Exception:
+                return False
+    return False
 
 
 def _atomic_copy(src: Path, dest: Path) -> None:
@@ -243,7 +229,7 @@ def run_chapter_install(
 
     log_fn(f"  • Oyun Dizini: {resolved_dir}")
 
-    if is_game_running(chapter):
+    if is_game_running(chapter, resolved_dir):
         log_fn(f"✖ HATA: HigurashiEp{chapter:02d}.exe şu anda açık! Lütfen oyunu kapatıp tekrar deneyin.")
         return False
 
