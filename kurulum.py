@@ -424,6 +424,12 @@ def run_gui_wizard(repo_root: Path | None = None) -> int:
     win.title("Higurashi When They Cry Hou / Hou+ — Türkçe Yama Kurulum Sihirbazı (@Remilya)")
     win.configure(bg="#121016")
     win.resizable(True, True)
+    try:
+        ico_file = _resolve_bundle_root(root_path) / "assets" / "higurashi_icon.ico"
+        if ico_file.exists():
+            win.iconbitmap(default=str(ico_file))
+    except Exception:
+        pass
 
     sw = win.winfo_screenwidth()
     sh = win.winfo_screenheight()
