@@ -4,13 +4,13 @@
 ### Tam Külliyat Türkçe Çeviri, Arayüz (UI) & Görsel (CG) Yerelleştirme Projesi
 
 [![Çeviri: @Remilya](https://img.shields.io/badge/Çeviri_%26_Yerelleştirme-%40Remilya-c92a42?style=for-the-badge&logo=github)](https://github.com/Remilya)
-[![Web Portalı & Alıntı Arama](https://img.shields.io/badge/🔎_Alıntı_Arama_%26_Web_Portalı-remilya.dev%2FHigurashi-e6b450?style=for-the-badge)](https://remilya.dev/Higurashi/)
+[![Web Portalı](https://img.shields.io/badge/🌐_Resmi_Web_Portalı-remilya.dev%2FHigurashi-e6b450?style=for-the-badge)](https://remilya.dev/Higurashi/)
 [![Durum: %100 Tamamlandı](https://img.shields.io/badge/Külliyat_Durumu-%25100_Tamamlandı_(Bölüm_1--10)-2b8a3e?style=for-the-badge)](https://github.com/Remilya/Higurashi)
-[![Toplam Satır: 139.818](https://img.shields.io/badge/Diyalog_Satırı-139.818_%2F_139.818-e6b450?style=for-the-badge)](https://remilya.dev/Higurashi/#alinti-arama)
+[![Toplam Satır: 139.818](https://img.shields.io/badge/Diyalog_Satırı-139.818_%2F_139.818-e6b450?style=for-the-badge)](https://github.com/Remilya/Higurashi)
 [![Dosya: 456/456](https://img.shields.io/badge/Senaryo_Dosyası-456_%2F_456-1971c2?style=for-the-badge)](https://github.com/Remilya/Higurashi)
 [![Ön Koşul: 07th-Mod](https://img.shields.io/badge/Ön_Koşul-07th--Mod_(python--patcher)-7048e8?style=for-the-badge)](https://github.com/07th-mod/python-patcher)
 
-### 🌐 [Resmi Web Portalı & 139.818 Satırlık Türkçe Alıntı Arama Motoru → `remilya.dev/Higurashi`](https://remilya.dev/Higurashi/)
+### 🌐 [Resmi Web Portalı & Kurulum Rehberi → `remilya.dev/Higurashi`](https://remilya.dev/Higurashi/)
 
 ---
 
@@ -32,9 +32,8 @@ Bu proje, **07th-Mod** yamalı **Higurashi When They Cry Hou** ve **Hou+** küll
 | **Baş Çevirmen, Külliyat (Ch.1–10), UI/CG Yerelleştirme & Araç Seti** | **@Remilya** | [github.com/Remilya/Higurashi](https://github.com/Remilya/Higurashi) |
 | **Orijinal Açık Kaynak Altyapısı & İlk Bölüm Katkıları** | **Witch Love** | [github.com/Witch-Love/higurashi-scripting-tr](https://github.com/Witch-Love/higurashi-scripting-tr) |
 | **Seslendirme, Konsol Grafikleri & Çok Dilli Motor Altyapısı** | **07th-Mod** | [github.com/07th-mod](https://github.com/07th-mod) / [python-patcher](https://github.com/07th-mod/python-patcher) |
-| **Alıntı Arama Motoru & Veritabanı Mimarisi İlhamı** | **VictoriqueMoe** (*umineko_quote_finder*) | [github.com/VictoriqueMoe/umineko_quote_finder](https://github.com/VictoriqueMoe/umineko_quote_finder) |
 
-> **[@Remilya](https://github.com/Remilya)** tarafından çevrilmiş ve tamamlanmıştır. **[Witch Love](https://github.com/Witch-Love/higurashi-scripting-tr)** ekibine, **[07th-Mod](https://github.com/07th-mod)** geliştiricilerine ve **[VictoriqueMoe (`umineko_quote_finder`)](https://github.com/VictoriqueMoe/umineko_quote_finder)**'ya değerli emekleri ve açık kaynak katkıları için sonsuz teşekkürler!
+> **[@Remilya](https://github.com/Remilya)** tarafından çevrilmiş ve tamamlanmıştır. **[Witch Love](https://github.com/Witch-Love/higurashi-scripting-tr)** ekibine ve **[07th-Mod](https://github.com/07th-mod)** geliştiricilerine değerli emekleri ve açık kaynak katkıları için sonsuz teşekkürler!
 
 ---
 
@@ -85,7 +84,6 @@ python kurulum.py --cli
 ║  Özel Teşekkürler:                                                       ║
 ║   • Witch Love    (github.com/Witch-Love/higurashi-scripting-tr)         ║
 ║   • 07th-Mod      (github.com/07th-mod)                                  ║
-║   • VictoriqueMoe (github.com/VictoriqueMoe/umineko_quote_finder)        ║
 ╚══════════════════════════════════════════════════════════════════════════╝
 
   [ 1] Bölüm 1 — Onikakushi (Şeytanın Kaçırdıkları)        | ✔ Bulundu
@@ -136,7 +134,7 @@ flowchart LR
 - **Türkçe Glif & SDF Font Yönlendirmesi:** Oyun içi `msgothic_0 SDF` ve `LiberationSans SDF` işaretçileri Türkçe karakter kümesini (`ğ, ü, ş, ı, ö, ç, İ, Ğ, Ü, Ş, Ö, Ç`) tam destekleyen SDF font varlıklarına yönlendirilmiş; `.NET` `Assembly-CSharp.dll` içerisindeki `#US` (User Strings) UTF-16LE yığını bayt hizalaması korunarak Türkçeleştirilmiştir.
 
 ### 3. Bağlam Duyarlı Terminoloji, Hitap & Karakter Ses Tonu Motoru
-- **139.818 Satırlık Çapraz Referanslı Külliyat:** *VictoriqueMoe*'nun *umineko_quote_finder* mimarisinden ilham alan tam metin indeksleme (SQLite FTS5) ve terim sözlüğü altyapısı sayesinde; *Oyashiro-sama*, *Watanagashi*, *Hinamizawa Sendromu (Seviye 1–5)*, *Üç Büyük Aile*, *Tokyo*, *Bölüm 48*, *Hifumi Takano* belgeleri ve 52 *Kakera* boyunca %100 terim tutarlılığı sağlanmıştır.
+- **139.818 Satırlık Çapraz Referanslı Külliyat:** Tam metin indeksleme (SQLite FTS5) ve terim sözlüğü altyapısı sayesinde; *Oyashiro-sama*, *Watanagashi*, *Hinamizawa Sendromu (Seviye 1–5)*, *Üç Büyük Aile*, *Tokyo*, *Bölüm 48*, *Hifumi Takano* belgeleri ve 52 *Kakera* boyunca %100 terim tutarlılığı sağlanmıştır.
 - **Karakter İmzaları ve Arkaik Lehçeler:** Rika'nın *«~nano desu / Mii / Nipah~☆»* ifadeleri, Hanyuu'nun *«Auau~»* tınısı, Mion'un *«amca (ojii-chan)»* üslubu, Satoko'nun kibirli *«~wa / Ohohoho!»* konuşma tarzı, *Kamikashimashi-hen*'de **Tamurahime-no-Mikoto**'nun arkaik tanrıça dili ve *Hinamizawa Otobüs Durağı* tiyatro prototipindeki Rika–Mion (*senpai–kouhai*) hiyerarşisi sadakatle korunmuştur.
 
 ### 4. Otomatik ANTLR3 (`.mg`) Bayt Kodu Önbellek Geçersiz Kılma
@@ -696,6 +694,6 @@ python kurulum.py --chapter 10
 <div align="center">
 
 **Higurashi When They Cry Hou / Hou+ Türkçe Yerelleştirme Projesi**  
-Çeviri & Yerelleştirme: **[@Remilya](https://github.com/Remilya)** • Katkılar: **[Witch Love](https://github.com/Witch-Love/higurashi-scripting-tr)** • **[07th-Mod](https://github.com/07th-mod)** • **[VictoriqueMoe](https://github.com/VictoriqueMoe/umineko_quote_finder)**
+Çeviri & Yerelleştirme: **[@Remilya](https://github.com/Remilya)** • Katkılar: **[Witch Love](https://github.com/Witch-Love/higurashi-scripting-tr)** • **[07th-Mod](https://github.com/07th-mod)**
 
 </div>
