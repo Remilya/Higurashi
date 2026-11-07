@@ -30,10 +30,9 @@ Bu proje, **07th-Mod** yamalı **Higurashi When They Cry Hou** ve **Hou+** küll
 | Rol / Katkı | İsim / Proje | Bağlantı |
 | :--- | :--- | :--- |
 | **Baş Çevirmen, Külliyat (Ch.1–10), UI/CG Yerelleştirme & Araç Seti** | **@Remilya** | [github.com/Remilya/Higurashi](https://github.com/Remilya/Higurashi) |
-| **Orijinal Açık Kaynak Altyapısı & İlk Bölüm Katkıları** | **Witch Love** | [github.com/Witch-Love/higurashi-scripting-tr](https://github.com/Witch-Love/higurashi-scripting-tr) |
 | **Seslendirme, Konsol Grafikleri & Çok Dilli Motor Altyapısı** | **07th-Mod** | [github.com/07th-mod](https://github.com/07th-mod) / [python-patcher](https://github.com/07th-mod/python-patcher) |
 
-> **[@Remilya](https://github.com/Remilya)** tarafından çevrilmiş ve tamamlanmıştır. **[Witch Love](https://github.com/Witch-Love/higurashi-scripting-tr)** ekibine ve **[07th-Mod](https://github.com/07th-mod)** geliştiricilerine değerli emekleri ve açık kaynak katkıları için sonsuz teşekkürler!
+> **[@Remilya](https://github.com/Remilya)** tarafından çevrilmiş ve tamamlanmıştır. **[07th-Mod](https://github.com/07th-mod)** geliştiricilerine değerli emekleri ve açık kaynak katkıları için sonsuz teşekkürler!
 
 ---
 
@@ -82,7 +81,6 @@ python kurulum.py --cli
 ║    -> https://github.com/07th-mod/python-patcher                         ║
 ╠══════════════════════════════════════════════════════════════════════════╣
 ║  Özel Teşekkürler:                                                       ║
-║   • Witch Love    (github.com/Witch-Love/higurashi-scripting-tr)         ║
 ║   • 07th-Mod      (github.com/07th-mod)                                  ║
 ╚══════════════════════════════════════════════════════════════════════════╝
 
@@ -694,6 +692,6 @@ python kurulum.py --chapter 10
 <div align="center">
 
 **Higurashi When They Cry Hou / Hou+ Türkçe Yerelleştirme Projesi**  
-Çeviri & Yerelleştirme: **[@Remilya](https://github.com/Remilya)** • Katkılar: **[Witch Love](https://github.com/Witch-Love/higurashi-scripting-tr)** • **[07th-Mod](https://github.com/07th-mod)**
+Çeviri & Yerelleştirme: **[@Remilya](https://github.com/Remilya)** • Altyapı: **[07th-Mod](https://github.com/07th-mod)**
 
 </div>

@@ -7,7 +7,6 @@ olarak oyun dizinlerinize kurar ve ANTLR3 (.mg) önbelleğini temizler.
 
 Çeviri & Yerelleştirme: @Remilya (https://github.com/Remilya/Higurashi)
 Özel Teşekkürler:
-- Witch Love (https://github.com/Witch-Love/higurashi-scripting-tr)
 - 07th-Mod (https://github.com/07th-mod)
 """
 from __future__ import annotations
@@ -345,7 +344,6 @@ def run_cli_wizard(repo_root: Path | None = None) -> int:
     print("║    -> https://github.com/07th-mod/python-patcher                         ║")
     print("╠══════════════════════════════════════════════════════════════════════════╣")
     print("║  Özel Teşekkürler:                                                       ║")
-    print("║   • Witch Love    (github.com/Witch-Love/higurashi-scripting-tr)         ║")
     print("║   • 07th-Mod      (github.com/07th-mod)                                  ║")
     print("╚══════════════════════════════════════════════════════════════════════════╝\n")
 
@@ -515,7 +513,6 @@ def run_gui_wizard(repo_root: Path | None = None) -> int:
     links = [
         ("@Remilya", "https://github.com/Remilya/Higurashi"),
         ("07th-Mod Installer (Ön Koşul)", "https://github.com/07th-mod/python-patcher"),
-        ("Witch Love", "https://github.com/Witch-Love/higurashi-scripting-tr"),
         ("07th-Mod", "https://github.com/07th-mod"),
     ]
     for label_txt, url in links:
@@ -713,7 +710,7 @@ def run_gui_wizard(repo_root: Path | None = None) -> int:
         log_box.see("end")
 
     append_log("Higurashi When They Cry Hou / Hou+ Türkçe Yama Kurulum Sihirbazına hoş geldiniz!")
-    append_log("Çeviri & Yerelleştirme: @Remilya  |  Katkılar: Witch Love, 07th-Mod")
+    append_log("Çeviri & Yerelleştirme: @Remilya  |  Altyapı: 07th-Mod")
     append_log("⚠ ÖN KOŞUL: Bu yamayı kurmadan önce oyunlarınıza 07th-Mod (https://github.com/07th-mod/python-patcher) İngilizce yamasını kurmuş olmalısınız.")
     append_log("Kurmak istediğiniz bölümleri işaretleyip 'SEÇİLİ BÖLÜMLERE TÜRKÇE YAMAYI KUR' butonuna tıklayın.")
 
